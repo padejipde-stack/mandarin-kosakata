@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kosakata Mandarin</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+      --red:    #c0392b;
+      --gold:   #f39c12;
+      --dark:   #1a1a2e;
+      --card-bg:#ffffff;
+      --bg:     #f0f2f5;
+      --text:   #2d3436;
+      --sub:    #636e72;
+      --radius: 14px;
+      --shadow: 0 4px 20px rgba(0,0,0,.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #c0392b 0%, #8e1a12 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '中文';
+      position: absolute;
+      font-size: 12rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: rgba(255,255,255,.05);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      position: relative;
+    }
+    header p {
+      margin-top: .4rem;
+      font-size: .95rem;
+      opacity: .85;
+      position: relative;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 20px;
+      padding: .15rem .75rem;
+      font-size: .78rem;
+      font-weight: 600;
+      margin-top: .6rem;
+      position: relative;
+    }
+
+    /* ── CONTROLS ── */
+    .controls {
+      max-width: 1100px;
+      margin: 1.8rem auto .5rem;
+      padding: 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      align-items: center;
+    }
+    .search-wrap {
+      flex: 1;
+      min-width: 200px;
+      position: relative;
+    }
+    .search-wrap input {
+      width: 100%;
+      padding: .65rem 1rem .65rem 2.6rem;
+      border: 2px solid #dfe6e9;
+      border-radius: var(--radius);
+      font-size: .9rem;
+      font-family: inherit;
+      background: #fff;
+      transition: border .2s;
+      outline: none;
+    }
+    .search-wrap input:focus { border-color: var(--red); }
+    .search-wrap .icon {
+      position: absolute;
+      left: .85rem; top: 50%;
+      transform: translateY(-50%);
+      color: var(--sub);
+      pointer-events: none;
+    }
+
+    .btn-group { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .btn {
+      padding: .55rem 1rem;
+      border: 2px solid #dfe6e9;
+      background: #fff;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .btn:hover, .btn.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+
+    /* ── STATS BAR ── */
+    .stats {
+      max-width: 1100px;
+      margin: 0 auto .8rem;
+      padding: 0 1rem;
+      font-size: .82rem;
+      color: var(--sub);
+    }
+    .stats span { color: var(--red); font-weight: 600; }
+
+    /* ── VIEW TOGGLE ── */
+    .view-toggle {
+      max-width: 1100px;
+      margin: 0 auto .8rem;
+      padding: 0 1rem;
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+    }
+    .view-btn {
+      background: #fff;
+      border: 2px solid #dfe6e9;
+      border-radius: 8px;
+      padding: .4rem .7rem;
+      cursor: pointer;
+      transition: all .2s;
+      line-height: 1;
+      font-size: 1rem;
+    }
+    .view-btn.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+    .view-label { font-size: .82rem; color: var(--sub); }
+
+    /* ── GRID / TABLE CONTAINER ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+    }
+
+    /* ── CARD GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      perspective: 800px;
+      cursor: pointer;
+      height: 200px;
+    }
+    .card-inner {
+      width: 100%; height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform .5s ease;
+    }
+    .card.flipped .card-inner { transform: rotateY(180deg); }
+
+    .card-front, .card-back {
+      position: absolute; inset: 0;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+      padding: 1rem;
+    }
+    .card-front {
+      background: linear-gradient(145deg, #fff 0%, #fef9f9 100%);
+      border: 2px solid #fadadd;
+    }
+    .card-back {
+      background: linear-gradient(145deg, #c0392b 0%, #8e1a12 100%);
+      color: #fff;
+      transform: rotateY(180deg);
+    }
+
+    .card-no {
+      position: absolute;
+      top: .55rem; left: .7rem;
+      font-size: .72rem;
+      color: var(--sub);
+      font-weight: 600;
+    }
+    .card-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+    }
+    .card-pinyin {
+      margin-top: .4rem;
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: .5px;
+    }
+    .card-hint {
+      margin-top: .5rem;
+      font-size: .7rem;
+      color: var(--sub);
+    }
+    .card-back .card-arti {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .card-back .card-pinyin-back {
+      margin-top: .5rem;
+      font-size: .85rem;
+      opacity: .8;
+    }
+    .card-back .card-hanzi-back {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.8rem;
+      margin-top: .3rem;
+      opacity: .9;
+    }
+
+    /* ── TABLE VIEW ── */
+    .table-wrap {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+    }
+    thead {
+      background: linear-gradient(135deg, #c0392b, #8e1a12);
+      color: #fff;
+    }
+    thead th {
+      padding: .9rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: .82rem;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+    tbody tr {
+      border-bottom: 1px solid #f0f2f5;
+      transition: background .15s;
+    }
+    tbody tr:hover { background: #fef5f5; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td {
+      padding: .75rem 1rem;
+      vertical-align: middle;
+    }
+    .td-no { color: var(--sub); font-weight: 600; font-size: .8rem; }
+    .td-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.8rem;
+      color: var(--red);
+      font-weight: 700;
+    }
+    .td-pinyin { font-weight: 600; letter-spacing: .3px; }
+    .td-arti { color: var(--text); }
+
+    /* ── NO RESULT ── */
+    .no-result {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--sub);
+    }
+    .no-result .emoji { font-size: 3rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      font-size: .78rem;
+      color: var(--sub);
+      border-top: 1px solid #dfe6e9;
+    }
+    footer span { color: var(--red); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.6rem; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+      .card { height: 175px; }
+      .card-hanzi { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🈶 Kosakata Bahasa Mandarin</h1>
+  <p>Klik kartu untuk melihat artinya!</p>
+  <div class="badge">24 Kata &amp; Frasa</div>
+</header>
+
+<!-- Controls -->
+<div class="controls">
+  <div class="search-wrap">
+    <span class="icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Cari pinyin, hanzi, atau arti…" />
+  </div>
+  <div class="btn-group">
+    <button class="btn active" data-filter="all">Semua</button>
+    <button class="btn" data-filter="single">Kata Tunggal</button>
+    <button class="btn" data-filter="phrase">Frasa</button>
+  </div>
+</div>
+
+<div class="stats">
+  Menampilkan <span id="countDisplay">24</span> dari 24 kosakata
+</div>
+
+<div class="view-toggle">
+  <button class="view-btn active" id="btnGrid" title="Tampilan Kartu">⊞</button>
+  <button class="view-btn" id="btnTable" title="Tampilan Tabel">☰</button>
+  <span class="view-label">Ganti tampilan</span>
+</div>
+
+<div class="container">
+  <!-- Grid -->
+  <div class="grid" id="gridView"></div>
+  <!-- Table -->
+  <div class="table-wrap" id="tableView" style="display:none">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Hanzi</th>
+          <th>Pinyin</th>
+          <th>Arti</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+  <div class="no-result" id="noResult" style="display:none">
+    <div class="emoji">😶</div>
+    <p>Tidak ada kosakata yang cocok.</p>
+  </div>
+</div>
+
+<footer>
+  Dibuat dengan ❤ · Bahasa Mandarin · <span>加油！</span>
+</footer>
+
+<script>
+  const vocab = [
+    { no:1,  pinyin:"māo",      hanzi:"猫",  arti:"Kucing",                      type:"single" },
+    { no:2,  pinyin:"yú",       hanzi:"鱼",  arti:"Ikan",                        type:"single" },
+    { no:3,  pinyin:"jiě",      hanzi:"姐",  arti:"Kakak perempuan",             type:"single" },
+    { no:4,  pinyin:"yī",       hanzi:"衣",  arti:"Baju / Pakaian",              type:"single" },
+    { no:5,  pinyin:"ěr",       hanzi:"耳",  arti:"Telinga",                     type:"single" },
+    { no:6,  pinyin:"bǐ",       hanzi:"笔",  arti:"Pena / Pulpen / Alat tulis",  type:"single" },
+    { no:7,  pinyin:"dǎo",      hanzi:"岛",  arti:"Pulau",                       type:"single" },
+    { no:8,  pinyin:"huā",      hanzi:"花",  arti:"Bunga",                       type:"single" },
+    { no:9,  pinyin:"jī",       hanzi:"鸡",  arti:"Ayam",                        type:"single" },
+    { no:10, pinyin:"xié",      hanzi:"鞋",  arti:"Sepatu",                      type:"single" },
+    { no:11, pinyin:"xuě",      hanzi:"雪",  arti:"Salju",                       type:"single" },
+    { no:12, pinyin:"nǐ hǎo",   hanzi:"你好", arti:"Halo",                       type:"phrase"  },
+    { no:13, pinyin:"kěyǐ",     hanzi:"可以", arti:"Boleh / Bisa",               type:"phrase"  },
+    { no:14, pinyin:"dàjiā",    hanzi:"大家", arti:"Semua orang",                type:"phrase"  },
+    { no:15, pinyin:"xuésheng", hanzi:"学生", arti:"Siswa",                      type:"phrase"  },
+    { no:16, pinyin:"men",      hanzi:"们",  arti:"Akhiran penanda jamak",       type:"single" },
+    { no:17, pinyin:"lǎoshī",   hanzi:"老师", arti:"Guru",                       type:"phrase"  },
+    { no:18, pinyin:"nín",      hanzi:"您",  arti:"Anda (lebih sopan)",          type:"single" },
+    { no:19, pinyin:"nǐmen",    hanzi:"你们", arti:"Kalian semua",               type:"phrase"  },
+    { no:20, pinyin:"hǎo",      hanzi:"好",  arti:"Bagus",                       type:"single" },
+    { no:21, pinyin:"xièxie",   hanzi:"谢谢", arti:"Terima kasih",               type:"phrase"  },
+    { no:22, pinyin:"bú kèqi",  hanzi:"不客气", arti:"Sama-sama",               type:"phrase"  },
+    { no:23, pinyin:"tóngxué",  hanzi:"同学", arti:"Teman sekelas",              type:"phrase"  },
+    { no:24, pinyin:"zàijiàn",  hanzi:"再见", arti:"Sampai jumpa / Selamat tinggal", type:"phrase" },
+  ];
+
+  let currentFilter = 'all';
+  let currentView   = 'grid';
+  let searchQuery   = '';
+
+  function filtered() {
+    return vocab.filter(v => {
+      const matchFilter = currentFilter === 'all' || v.type === currentFilter;
+      const q = searchQuery.toLowerCase();
+      const matchSearch = !q ||
+        v.pinyin.toLowerCase().includes(q) ||
+        v.hanzi.includes(q) ||
+        v.arti.toLowerCase().includes(q);
+      return matchFilter && matchSearch;
+    });
+  }
+
+  function render() {
+    const data = filtered();
+    document.getElementById('countDisplay').textContent = data.length;
+
+    // Grid
+    const grid = document.getElementById('gridView');
+    grid.innerHTML = '';
+    data.forEach(v => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-inner">
+          <div class="card-front">
+            <span class="card-no">${v.no}</span>
+            <div class="card-hanzi">${v.hanzi}</div>
+            <div class="card-pinyin">${v.pinyin}</div>
+            <div class="card-hint">Klik untuk arti →</div>
+          </div>
+          <div class="card-back">
+            <div class="card-arti">${v.arti}</div>
+            <div class="card-pinyin-back">${v.pinyin}</div>
+            <div class="card-hanzi-back">${v.hanzi}</div>
+          </div>
+        </div>`;
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+      grid.appendChild(card);
+    });
+
+    // Table
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    data.forEach(v => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="td-no">${v.no}</td>
+        <td class="td-hanzi">${v.hanzi}</td>
+        <td class="td-pinyin">${v.pinyin}</td>
+        <td class="td-arti">${v.arti}</td>`;
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById('noResult').style.display  = data.length ? 'none' : 'block';
+    if (currentView === 'grid') {
+      document.getElementById('gridView').style.display  = data.length ? '' : 'none';
+    }
+  }
+
+  // Filter buttons
+  document.querySelectorAll('[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      render();
+    });
+  });
+
+  // Search
+  document.getElementById('searchInput').addEventListener('input', e => {
+    searchQuery = e.target.value;
+    render();
+  });
+
+  // View toggle
+  document.getElementById('btnGrid').addEventListener('click', () => {
+    currentView = 'grid';
+    document.getElementById('btnGrid').classList.add('active');
+    document.getElementById('btnTable').classList.remove('active');
+    document.getElementById('gridView').style.display = '';
+    document.getElementById('tableView').style.display = 'none';
+    render();
+  });
+  document.getElementById('btnTable').addEventListener('click', () => {
+    currentView = 'table';
+    document.getElementById('btnTable').classList.add('active');
+    document.getElementById('btnGrid').classList.remove('active');
+    document.getElementById('gridView').style.display = 'none';
+    document.getElementById('tableView').style.display = '';
+    render();
+  });
+
+  render();
+</script>
+</body>
+</html>
