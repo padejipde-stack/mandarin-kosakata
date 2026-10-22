@@ -223,6 +223,8 @@
     .av-chen   { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
     .av-bai    { background: linear-gradient(135deg, #16a085, #0e6655); }
     .av-li     { background: linear-gradient(135deg, #e67e22, #d35400); }
+    .av-anni   { background: linear-gradient(135deg, #e84393, #fd79a8); }
+    .av-xue    { background: linear-gradient(135deg, #27ae60, #1e8449); }
     .av-xiaoyu { background: linear-gradient(135deg, #f39c12, #d68910); }
 
     .bubble-wrap {
@@ -299,6 +301,12 @@
     }
     .dialog-line.li .bubble {
       background: linear-gradient(135deg, #e67e22, #d35400);
+    }
+    .dialog-line.chen .bubble {
+      background: linear-gradient(135deg, #8e44ad, #5b2c6f);
+    }
+    .dialog-line.anni .bubble {
+      background: linear-gradient(135deg, #e84393, #fd79a8);
     }
 
     .dialog-line.right .bubble .bubble-pinyin {
@@ -458,6 +466,36 @@
 
     .btn-text-mobile { display: none; }
 
+    /* ── TONGUE TWISTER ── */
+    .twister-box {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.6rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      color: #fff;
+    }
+    .twister-line {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .twister-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+    .twister-pinyin {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.03em;
+    }
+
     /* ── FOOTER ── */
     footer {
       text-align: center;
@@ -526,6 +564,9 @@
         font-size: 0.62rem;
         padding: 0.08rem 0.32rem;
       }
+      .twister-box { padding: 1.2rem; }
+      .twister-hanzi { font-size: 1.35rem; }
+      .twister-pinyin { font-size: 0.82rem; }
     }
   </style>
 </head>
@@ -545,9 +586,7 @@
       <span class="label">Menu Utama</span>
     </a>
     <div class="nav-tabs">
-      <a href="Bab1.html" class="nav-tab">Bab 1</a>
-      <a href="Bab2.html" class="nav-tab">Bab 2</a>
-      <a href="Bab3.html" class="nav-tab active">Bab 3</a>
+      <span class="nav-tab active">Bab 3</span>
     </div>
     <a href="Bab2.html" class="nav-pager-btn prev" title="Kembali ke Bab 2">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -651,6 +690,308 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ══ TEKS 2 ══ -->
+  <div>
+    <div class="section-title">💬 Teks 2</div>
+    <div class="dialog-box">
+
+      <!-- 安妮: 这是谁？ -->
+      <div class="dialog-line">
+        <div class="avatar av-anni">安</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">安妮</span><span class="speaker-pinyin"> (Ānnī)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">这是谁？</div>
+            <div class="bubble-pinyin">Zhè shì shéi?</div>
+            <div class="bubble-arti">Ini siapa?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 陈天中: 这是我女朋友。 -->
+      <div class="dialog-line right chen">
+        <div class="avatar av-chen">陈</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">陈天中</span><span class="speaker-pinyin"> (Chén Tiānzhōng)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">这是我女朋友。</div>
+            <div class="bubble-pinyin">Zhè shì wǒ nǚpéngyou.</div>
+            <div class="bubble-arti">Ini adalah pacar (perempuan) saya.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 安妮: 你女朋友是哪国人？ -->
+      <div class="dialog-line">
+        <div class="avatar av-anni">安</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">安妮</span><span class="speaker-pinyin"> (Ānnī)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">你女朋友是哪国人？</div>
+            <div class="bubble-pinyin">Nǐ nǚpéngyou shì nǎ guó rén?</div>
+            <div class="bubble-arti">Pacarmu orang negara mana?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 陈天中: 她也是泰国人。 -->
+      <div class="dialog-line right chen">
+        <div class="avatar av-chen">陈</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">陈天中</span><span class="speaker-pinyin"> (Chén Tiānzhōng)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">她也是泰国人。</div>
+            <div class="bubble-pinyin">Tā yě shì Tàiguórén.</div>
+            <div class="bubble-arti">Dia juga orang Thailand.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arti Per Kata Teks 2 -->
+      <div class="sub-breakdown">
+        <div class="sub-breakdown-title">📖 Arti Per Kata · Teks 2</div>
+        <div class="breakdown-grid">
+          <div class="word-card">
+            <div class="word-char">这</div>
+            <div class="word-pinyin">zhè</div>
+            <div class="word-arti">Ini</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">谁</div>
+            <div class="word-pinyin">shéi</div>
+            <div class="word-arti">Siapa</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">这是谁</div>
+            <div class="word-pinyin">zhè shì shéi</div>
+            <div class="word-arti">Ini siapa?</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">女</div>
+            <div class="word-pinyin">nǚ</div>
+            <div class="word-arti">Wanita / Perempuan</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">朋友</div>
+            <div class="word-pinyin">péngyou</div>
+            <div class="word-arti">Teman / Sahabat</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">女朋友</div>
+            <div class="word-pinyin">nǚpéngyou</div>
+            <div class="word-arti">Pacar (wanita)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">哪</div>
+            <div class="word-pinyin">nǎ</div>
+            <div class="word-arti">Mana / Yang mana</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">国</div>
+            <div class="word-pinyin">guó</div>
+            <div class="word-arti">Negara</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">哪国人</div>
+            <div class="word-pinyin">nǎ guó rén</div>
+            <div class="word-arti">Orang negara mana?</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">她</div>
+            <div class="word-pinyin">tā</div>
+            <div class="word-arti">Dia (perempuan)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">泰国</div>
+            <div class="word-pinyin">Tàiguó</div>
+            <div class="word-arti">Thailand</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">泰国人</div>
+            <div class="word-pinyin">Tàiguórén</div>
+            <div class="word-arti">Orang Thailand</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ TEKS 3 ══ -->
+  <div>
+    <div class="section-title">💬 Teks 3</div>
+    <div class="dialog-box">
+
+      <!-- 王一雪: 喂，一飞！ -->
+      <div class="dialog-line">
+        <div class="avatar av-xue">雪</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">王一雪</span><span class="speaker-pinyin"> (Wáng Yīxuě)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">喂，一飞！</div>
+            <div class="bubble-pinyin">Wèi, Yīfēi!</div>
+            <div class="bubble-arti">Halo, Yifei!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 王一飞: 姐姐！ -->
+      <div class="dialog-line right">
+        <div class="avatar av-wang">王</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">王一飞</span><span class="speaker-pinyin"> (Wáng Yīfēi)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">姐姐！</div>
+            <div class="bubble-pinyin">Jiějie!</div>
+            <div class="bubble-arti">Kakak!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 王一雪: 你工作还忙吗？ -->
+      <div class="dialog-line">
+        <div class="avatar av-xue">雪</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">王一雪</span><span class="speaker-pinyin"> (Wáng Yīxuě)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">你工作还忙吗？</div>
+            <div class="bubble-pinyin">Nǐ gōngzuò hái máng ma?</div>
+            <div class="bubble-arti">Apakah pekerjaanmu masih sibuk?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 王一飞: 对，还是很忙。你也很忙吗？ -->
+      <div class="dialog-line right">
+        <div class="avatar av-wang">王</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">王一飞</span><span class="speaker-pinyin"> (Wáng Yīfēi)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">对，还是很忙。你也很忙吗？</div>
+            <div class="bubble-pinyin">Duì, hái shì hěn máng. Nǐ yě hěn máng ma?</div>
+            <div class="bubble-arti">Iya, masih sangat sibuk. Apakah kamu juga sangat sibuk?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 王一雪: 我不太忙。我们很想你。 -->
+      <div class="dialog-line">
+        <div class="avatar av-xue">雪</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">王一雪</span><span class="speaker-pinyin"> (Wáng Yīxuě)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">我不太忙。我们很想你。</div>
+            <div class="bubble-pinyin">Wǒ bú tài máng. Wǒmen hěn xiǎng nǐ.</div>
+            <div class="bubble-arti">Aku tidak terlalu sibuk. Kami sangat merindukanmu.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 王一飞: 我也想你们。 -->
+      <div class="dialog-line right">
+        <div class="avatar av-wang">王</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">王一飞</span><span class="speaker-pinyin"> (Wáng Yīfēi)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">我也想你们。</div>
+            <div class="bubble-pinyin">Wǒ yě xiǎng nǐmen.</div>
+            <div class="bubble-arti">Aku juga merindukan kalian.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-Breakdown: Kosakata Teks 3 -->
+      <div class="sub-breakdown">
+        <div class="sub-breakdown-title">
+          <span>📖 Kosakata Teks 3</span>
+        </div>
+        <div class="breakdown-grid">
+          <div class="word-card">
+            <div class="word-char">喂</div>
+            <div class="word-pinyin">wèi</div>
+            <div class="word-arti">Halo (di telepon)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">姐姐</div>
+            <div class="word-pinyin">jiějie</div>
+            <div class="word-arti">Kakak perempuan</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">工作</div>
+            <div class="word-pinyin">gōngzuò</div>
+            <div class="word-arti">Bekerja / Pekerjaan</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">还</div>
+            <div class="word-pinyin">hái</div>
+            <div class="word-arti">Masih</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">忙</div>
+            <div class="word-pinyin">máng</div>
+            <div class="word-arti">Sibuk</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">吗</div>
+            <div class="word-pinyin">ma</div>
+            <div class="word-arti">Apakah (partikel tanya)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">对</div>
+            <div class="word-pinyin">duì</div>
+            <div class="word-arti">Benar / Ya / Betul</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">还是很忙</div>
+            <div class="word-pinyin">hái shì hěn máng</div>
+            <div class="word-arti">Masih sangat sibuk</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">也</div>
+            <div class="word-pinyin">yě</div>
+            <div class="word-arti">Juga / Pun</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">不太</div>
+            <div class="word-pinyin">bú tài</div>
+            <div class="word-arti">Tidak terlalu</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">我们</div>
+            <div class="word-pinyin">wǒmen</div>
+            <div class="word-arti">Kami / Kita</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">想</div>
+            <div class="word-pinyin">xiǎng</div>
+            <div class="word-arti">Rindu / Merindukan</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">你们</div>
+            <div class="word-pinyin">nǐmen</div>
+            <div class="word-arti">Kalian</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ TONGUE TWISTER ══ -->
+  <div>
+    <div class="section-title">👅 Tongue Twister · 绕口令</div>
+    <div class="twister-box">
+      <div class="twister-line">
+        <div class="twister-hanzi">四是四，十是十。</div>
+        <div class="twister-pinyin">Sì shì sì, shí shì shí.</div>
+      </div>
+      <div class="twister-line">
+        <div class="twister-hanzi">十四是十四，四十是四十。</div>
+        <div class="twister-pinyin">Shísì shì shísì, sìshí shì sìshí.</div>
+      </div>
     </div>
   </div>
 
