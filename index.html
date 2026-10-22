@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dialog Mandarin</title>
+  <title>Portal Belajar Bahasa Mandarin</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Poppins:wght@300;400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap');
 
     :root {
-      --red:    #c0392b;
-      --gold:   #f39c12;
-      --blue:   #2980b9;
-      --green:  #27ae60;
-      --bg:     #f0f2f5;
-      --text:   #2d3436;
-      --sub:    #636e72;
-      --radius: 14px;
-      --shadow: 0 4px 20px rgba(0,0,0,.10);
+      --primary: #c0392b;
+      --secondary: #8e44ad;
+      --gold: #f39c12;
+      --dark: #2c3e50;
+      --bg: #f4f6f9;
+      --card-bg: #ffffff;
+      --text: #2d3436;
+      --sub: #636e72;
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,491 +27,330 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* ── HEADER ── */
+    /* ── HEADER HERO ── */
     header {
-      background: linear-gradient(135deg, #c0392b 0%, #8e1a12 100%);
+      background: linear-gradient(135deg, #1e272e 0%, #2c3e50 100%);
       color: #fff;
       text-align: center;
-      padding: 2.5rem 1rem 2rem;
+      padding: 3.5rem 1.5rem 3rem;
       position: relative;
       overflow: hidden;
     }
     header::before {
-      content: '对话';
+      content: '汉语学习';
       position: absolute;
-      font-size: 12rem;
+      font-size: 9rem;
       font-family: 'Noto Sans SC', sans-serif;
       font-weight: 700;
-      color: rgba(255,255,255,.05);
-      top: 50%; left: 50%;
+      color: rgba(255, 255, 255, 0.04);
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
+      white-space: nowrap;
     }
-    header h1 { font-size: 2rem; font-weight: 700; position: relative; }
-    header p  { margin-top: .4rem; font-size: .9rem; opacity: .85; position: relative; }
+    .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+      color: #cbd5e1;
+      max-width: 580px;
+      margin: 0 auto;
+    }
 
-    /* ── WRAPPER ── */
-    .wrap {
-      max-width: 860px;
-      margin: 2rem auto 3rem;
-      padding: 0 1rem;
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 960px;
+      margin: 2.5rem auto 4rem;
+      padding: 0 1.5rem;
+      width: 100%;
+      flex: 1;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .section-header h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .section-header span {
+      font-size: 0.85rem;
+      color: var(--sub);
+    }
+
+    /* ── CHAPTER GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.8rem;
     }
 
-    /* ── SECTION TITLE ── */
-    .section-title {
-      font-size: .9rem;
-      font-weight: 700;
-      color: var(--red);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: .9rem;
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-    }
-
-    /* ── DIALOG BOX ── */
-    .dialog-box {
-      background: #fff;
+    .card {
+      background: var(--card-bg);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 1.5rem;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
     }
 
-    .dialog-line {
-      display: flex;
-      align-items: flex-start;
-      gap: .85rem;
-    }
-    .dialog-line.right { flex-direction: row-reverse; }
-
-    /* avatars */
-    .avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1rem; font-weight: 700;
-      color: #fff; flex-shrink: 0;
-    }
-    .av-wang  { background: linear-gradient(135deg,#c0392b,#8e1a12); }
-    .av-stu   { background: linear-gradient(135deg,#2980b9,#1a5276); }
-    .av-xiaoyu{ background: linear-gradient(135deg,#f39c12,#d68910); }
-
-    .bubble-wrap {
-      display: flex; flex-direction: column; gap: .2rem;
-      max-width: 80%;
-    }
-    .dialog-line.right .bubble-wrap { align-items: flex-end; }
-
-    .speaker-name {
-      font-size: .7rem; font-weight: 600;
-      color: var(--sub); padding: 0 .25rem;
-    }
-
-    .bubble {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.3rem;
-      padding: .6rem 1rem;
-      border-radius: 0 14px 14px 14px;
-      background: #f5f6fa;
-      border: 1.5px solid #e8eaf0;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .dialog-line.right .bubble {
-      border-radius: 14px 0 14px 14px;
-      background: linear-gradient(135deg,#c0392b,#8e1a12);
-      border-color: transparent;
+    .card-top {
+      padding: 1.8rem 1.6rem 1.2rem;
+      position: relative;
       color: #fff;
     }
-    .dialog-line.stu-right .bubble {
-      background: linear-gradient(135deg,#2980b9,#1a5276);
+    .card-top.bab1 {
+      background: linear-gradient(135deg, #c0392b 0%, #8e1a12 100%);
+    }
+    .card-top.bab2 {
+      background: linear-gradient(135deg, #8e44ad 0%, #5b2c6f 100%);
+    }
+    .card-top.coming-soon {
+      background: linear-gradient(135deg, #718093 0%, #2f3640 100%);
     }
 
-    /* divider between text 1 & 2 */
-    .dialog-divider {
-      display: flex; align-items: center; gap: .8rem;
-      margin: .3rem 0;
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.85;
+      margin-bottom: 0.3rem;
     }
-    .dialog-divider span {
-      font-size: .72rem; font-weight: 600;
-      color: var(--sub); white-space: nowrap;
-      background: #f0f2f5; padding: .2rem .6rem;
-      border-radius: 20px;
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
     }
-    .dialog-divider::before, .dialog-divider::after {
-      content: ''; flex: 1;
-      height: 1px; background: #e0e0e0;
-    }
-
-    /* ── WORD BREAKDOWN ── */
-    .breakdown-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
-      gap: .85rem;
-    }
-    .word-card {
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1rem .9rem;
-      text-align: center;
-      border-top: 4px solid var(--red);
-      transition: transform .2s;
-    }
-    .word-card:hover { transform: translateY(-3px); }
-    .word-char {
+    .card-subtitle {
+      font-size: 0.95rem;
+      opacity: 0.9;
       font-family: 'Noto Sans SC', sans-serif;
-      font-size: 2rem; font-weight: 700;
-      color: var(--red); line-height: 1;
     }
-    .word-pinyin {
-      font-size: .78rem; font-weight: 600;
-      color: var(--sub); margin-top: .3rem;
+
+    .card-body {
+      padding: 1.5rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      flex: 1;
     }
-    .word-arti {
-      font-size: .8rem; color: var(--text);
-      margin-top: .35rem; line-height: 1.35;
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.4;
+    }
+    .feature-list li span.icon {
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.75rem 1.2rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-bab1 {
+      background: #c0392b;
+      color: #fff;
+    }
+    .btn-bab1:hover {
+      background: #a93226;
+    }
+    .btn-bab2 {
+      background: #8e44ad;
+      color: #fff;
+    }
+    .btn-bab2:hover {
+      background: #763693;
+    }
+    .btn-disabled {
+      background: #e2e8f0;
+      color: #94a3b8;
+      cursor: not-allowed;
+      pointer-events: none;
     }
 
     /* ── FOOTER ── */
     footer {
-      text-align: center; padding: 1.2rem;
-      font-size: .78rem; color: var(--sub);
-      border-top: 1px solid #dfe6e9;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--sub);
+      border-top: 1px solid #e2e8f0;
+      background: #fff;
     }
-    footer span { color: var(--red); }
-
-    /* ── TONGUE TWISTER ── */
-    .twister-box {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.8rem 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-    .twister-line {
-      display: flex;
-      flex-direction: column;
-      gap: .3rem;
-    }
-    .twister-hanzi {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #f39c12;
-      letter-spacing: .1em;
-    }
-    .twister-pinyin {
-      font-size: .95rem;
-      font-weight: 500;
-      color: rgba(255,255,255,.65);
-      letter-spacing: .04em;
+    footer span {
+      color: var(--primary);
+      font-weight: 600;
     }
 
-    /* ── NAV ── */
-    .nav {
-      max-width: 860px; margin: 1.2rem auto 0;
-      padding: 0 1rem; display: flex; gap: .6rem;
-    }
-    .nav a {
-      text-decoration: none; font-size: .82rem; font-weight: 600;
-      padding: .45rem .9rem; border-radius: 8px;
-      border: 2px solid #dfe6e9; background: #fff; color: var(--sub);
-      transition: all .2s;
-    }
-    .nav a:hover, .nav a.active { background: var(--red); border-color: var(--red); color: #fff; }
-
-    @media (max-width: 480px) {
-      header h1 { font-size: 1.5rem; }
-      .bubble { font-size: 1.1rem; }
-      .breakdown-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
-      .twister-hanzi { font-size: 1.5rem; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8rem; }
+      header p { font-size: 0.9rem; }
+      .container { padding: 0 1rem; margin-top: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>🈶 Dialog Bahasa Mandarin</h1>
-  <p>Latihan percakapan · 对话练习</p>
-  <div style="display:inline-block; background:var(--gold); color:#fff; border-radius:20px; padding:.2rem .9rem; font-size:.8rem; font-weight:700; margin-top:.6rem; position:relative;">Bab 1 — Salam &amp; Sapaan</div>
+  <div class="badge">Buku Pembelajaran</div>
+  <h1>🈶 Mandarin Learning Hub</h1>
+  <p>Pilih materi bab di bawah ini untuk memulai latihan percakapan, membaca hanzi, dan menghafal kosakata.</p>
 </header>
 
-<!-- nav -->
-<div class="nav">
-  <a href="Kosakata.html" class="active">Bab 1</a>
-  <a href="Bab2.html">Bab 2 →</a>
+<div class="container">
+  <div class="section-header">
+    <h2>Daftar Bab Pembelajaran</h2>
+    <span>Total 2 Bab Tersedia</span>
+  </div>
+
+  <div class="grid">
+
+    <!-- ══ BAB 1 ══ -->
+    <div class="card">
+      <div class="card-top bab1">
+        <div class="card-tag">Pelajaran 1 · 第一课</div>
+        <div class="card-title">Bab 1</div>
+        <div class="card-subtitle">问候 (Salam &amp; Sapaan)</div>
+      </div>
+      <div class="card-body">
+        <ul class="feature-list">
+          <li>
+            <span class="icon">💬</span>
+            <div><strong>3 Dialog:</strong> Sapaan guru &amp; murid, terima kasih (谢谢), perpisahan (再见).</div>
+          </li>
+          <li>
+            <span class="icon">📖</span>
+            <div><strong>19 Kosakata:</strong> Arti per kata lengkap dengan Pinyin dan Hanzi.</div>
+          </li>
+          <li>
+            <span class="icon">👅</span>
+            <div><strong>Tongue Twister:</strong> 绕口令 (Latihan nada ma, má, mǎ, mà).</div>
+          </li>
+        </ul>
+        <div class="card-footer">
+          <a href="Bab1.html" class="btn btn-bab1">Mulai Belajar Bab 1 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ BAB 2 ══ -->
+    <div class="card">
+      <div class="card-top bab2">
+        <div class="card-tag">Pelajaran 2 · 第二课</div>
+        <div class="card-title">Bab 2</div>
+        <div class="card-subtitle">姓名与介绍 (Nama &amp; Perkenalan)</div>
+      </div>
+      <div class="card-body">
+        <ul class="feature-list">
+          <li>
+            <span class="icon">💬</span>
+            <div><strong>2 Dialog:</strong> Menanyakan nama (你叫什么名字？), salah orang, dan minta maaf (对不起 / 没关系).</div>
+          </li>
+          <li>
+            <span class="icon">📖</span>
+            <div><strong>17 Kosakata:</strong> Kata ganti, kata kerja 是 / 叫, dan kosakata perkenalan.</div>
+          </li>
+          <li>
+            <span class="icon">👥</span>
+            <div><strong>Karakter Baru:</strong> 陈天中 (Chén Tiānzhōng) &amp; 白家月 (Bái Jiāyuè).</div>
+          </li>
+          <li>
+            <span class="icon">🎓</span>
+            <div><strong>Xiaoyu's Classroom:</strong> Pola kalimat penting (你叫什么名字 / 我叫白家月 / 我是学生).</div>
+          </li>
+        </ul>
+        <div class="card-footer">
+          <a href="Bab2.html" class="btn btn-bab2">Mulai Belajar Bab 2 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ BAB 3 (Placeholder) ══ -->
+    <div class="card">
+      <div class="card-top coming-soon">
+        <div class="card-tag">Pelajaran 3 · 第三课</div>
+        <div class="card-title">Bab 3</div>
+        <div class="card-subtitle">即将推出 (Segera Hadir)</div>
+      </div>
+      <div class="card-body">
+        <ul class="feature-list">
+          <li>
+            <span class="icon">⏳</span>
+            <div>Materi bab selanjutnya sedang dipersiapkan.</div>
+          </li>
+          <li>
+            <span class="icon">✨</span>
+            <div>Topik baru, dialog latihan percakapan, dan kartu kosakata.</div>
+          </li>
+        </ul>
+        <div class="card-footer">
+          <a href="#" class="btn btn-disabled">Belum Tersedia</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<div class="wrap">
-
-  <!-- ══ TEXT 1 ══ -->
-  <div>
-    <div class="section-title">💬 Teks 1</div>
-    <div class="dialog-box">
-
-      <!-- 王一飞: AI小语，你好！ -->
-      <div class="dialog-line">
-        <div class="avatar av-wang">王</div>
-        <div class="bubble-wrap">
-          <span class="speaker-name">王一飞 (Wáng Yīfēi)</span>
-          <div class="bubble">AI小语，你好！</div>
-        </div>
-      </div>
-
-      <!-- 小语: 王老师，你好！ -->
-      <div class="dialog-line right">
-        <div class="avatar av-xiaoyu">语</div>
-        <div class="bubble-wrap">
-          <span class="speaker-name">小语 (Xiǎoyǔ)</span>
-          <div class="bubble">王老师，你好！</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ TEXT 2 ══ -->
-  <div>
-    <div class="section-title">💬 Teks 2</div>
-    <div class="dialog-box">
-
-      <!-- 王一飞: 大家好！ -->
-      <div class="dialog-line">
-        <div class="avatar av-wang">王</div>
-        <div class="bubble-wrap">
-          <span class="speaker-name">王一飞 (Wáng Yīfēi)</span>
-          <div class="bubble">大家好！</div>
-        </div>
-      </div>
-
-      <!-- 学生们: 老师，您好！ -->
-      <div class="dialog-line right stu-right">
-        <div class="avatar av-stu">学</div>
-        <div class="bubble-wrap">
-          <span class="speaker-name">学生们 (xuéshengmen)</span>
-          <div class="bubble">老师，您好！</div>
-        </div>
-      </div>
-
-      <!-- 小语: 你们好！ -->
-      <div class="dialog-line">
-        <div class="avatar av-xiaoyu">语</div>
-        <div class="bubble-wrap">
-          <span class="speaker-name">小语 (Xiǎoyǔ)</span>
-          <div class="bubble">你们好！</div>
-        </div>
-      </div>
-
-      <!-- 学生们: 你好，小语！ -->
-      <div class="dialog-line right stu-right">
-        <div class="avatar av-stu">学</div>
-        <div class="bubble-wrap">
-          <span class="speaker-name">学生们 (xuéshengmen)</span>
-          <div class="bubble">你好，小语！</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ TEXT 3 ══ -->
-  <div>
-    <div class="section-title">💬 Teks 3</div>
-    <div class="dialog-box">
-
-      <!-- 学生们: 谢谢！ -->
-      <div class="dialog-line right stu-right">
-        <div class="avatar av-stu">学</div>
-        <div class="bubble-wrap">
-          <span class="speaker-name">学生们 (xuéshengmen)</span>
-          <div class="bubble">谢谢！</div>
-        </div>
-      </div>
-
-      <!-- 小语: 不客气！ -->
-      <div class="dialog-line">
-        <div class="avatar av-xiaoyu">语</div>
-        <div class="bubble-wrap">
-          <span class="speaker-name">小语 (Xiǎoyǔ)</span>
-          <div class="bubble">不客气！</div>
-        </div>
-      </div>
-
-      <!-- 王一飞: 同学们，再见！ -->
-      <div class="dialog-line">
-        <div class="avatar av-wang">王</div>
-        <div class="bubble-wrap">
-          <span class="speaker-name">王一飞 (Wáng Yīfēi)</span>
-          <div class="bubble">同学们，再见！</div>
-        </div>
-      </div>
-
-      <!-- 学生们: 老师，再见！ -->
-      <div class="dialog-line right stu-right">
-        <div class="avatar av-stu">学</div>
-        <div class="bubble-wrap">
-          <span class="speaker-name">学生们 (xuéshengmen)</span>
-          <div class="bubble">老师，再见！</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ ARTI PER KATA ══ -->
-  <div>
-    <div class="section-title">📖 Arti Per Kata</div>
-    <div class="breakdown-grid">
-
-      <div class="word-card">
-        <div class="word-char">大家</div>
-        <div class="word-pinyin">dàjiā</div>
-        <div class="word-arti">Semua orang / Semuanya</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">好</div>
-        <div class="word-pinyin">hǎo</div>
-        <div class="word-arti">Baik / Bagus</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">大家好</div>
-        <div class="word-pinyin">dàjiā hǎo</div>
-        <div class="word-arti">Halo semua!</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">老师</div>
-        <div class="word-pinyin">lǎoshī</div>
-        <div class="word-arti">Guru / Pengajar</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">您</div>
-        <div class="word-pinyin">nín</div>
-        <div class="word-arti">Anda (lebih sopan dari 你)</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">您好</div>
-        <div class="word-pinyin">nín hǎo</div>
-        <div class="word-arti">Halo (kepada yang lebih tua/dihormati)</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">学生</div>
-        <div class="word-pinyin">xuésheng</div>
-        <div class="word-arti">Siswa / Murid</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">们</div>
-        <div class="word-pinyin">men</div>
-        <div class="word-arti">Akhiran penanda jamak</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">学生们</div>
-        <div class="word-pinyin">xuéshengmen</div>
-        <div class="word-arti">Para siswa (jamak)</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">你们</div>
-        <div class="word-pinyin">nǐmen</div>
-        <div class="word-arti">Kalian semua</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">你们好</div>
-        <div class="word-pinyin">nǐmen hǎo</div>
-        <div class="word-arti">Halo kalian semua!</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">你好</div>
-        <div class="word-pinyin">nǐ hǎo</div>
-        <div class="word-arti">Halo / Hai</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">小语</div>
-        <div class="word-pinyin">Xiǎoyǔ</div>
-        <div class="word-arti">Nama AI (小=kecil, 语=bahasa)</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">王一飞</div>
-        <div class="word-pinyin">Wáng Yīfēi</div>
-        <div class="word-arti">Nama orang (王=marga Wang)</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">谢谢</div>
-        <div class="word-pinyin">xièxie</div>
-        <div class="word-arti">Terima kasih</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">不客气</div>
-        <div class="word-pinyin">bú kèqi</div>
-        <div class="word-arti">Sama-sama / Tidak perlu sungkan</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">同学</div>
-        <div class="word-pinyin">tóngxué</div>
-        <div class="word-arti">Teman sekelas</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">同学们</div>
-        <div class="word-pinyin">tóngxuémen</div>
-        <div class="word-arti">Para teman sekelas (jamak)</div>
-      </div>
-
-      <div class="word-card">
-        <div class="word-char">再见</div>
-        <div class="word-pinyin">zàijiàn</div>
-        <div class="word-arti">Sampai jumpa / Selamat tinggal</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ TONGUE TWISTER ══ -->
-  <div>
-    <div class="section-title">👅 Tongue Twister · 绕口令</div>
-    <div class="twister-box">
-      <div class="twister-line">
-        <div class="twister-hanzi">妈种麻，我放马。</div>
-        <div class="twister-pinyin">Mā zhòng má, wǒ fàng mǎ.</div>
-      </div>
-      <div class="twister-line">
-        <div class="twister-hanzi">马吃麻，妈骂马。</div>
-        <div class="twister-pinyin">Mǎ chī má, mā mà mǎ.</div>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /wrap -->
-
 <footer>
-  Dibuat dengan ❤ · Bahasa Mandarin · <span>加油！</span>
+  Dibuat dengan ❤ untuk Belajar Bahasa Mandarin · <span>加油！天天向上！</span>
 </footer>
 
 </body>
