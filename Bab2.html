@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dialog Mandarin — Bab 2</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+      --red:    #c0392b;
+      --gold:   #f39c12;
+      --purple: #8e44ad;
+      --teal:   #16a085;
+      --bg:     #f0f2f5;
+      --text:   #2d3436;
+      --sub:    #636e72;
+      --radius: 14px;
+      --shadow: 0 4px 20px rgba(0,0,0,.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #8e44ad 0%, #5b2c6f 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '对话';
+      position: absolute;
+      font-size: 12rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: rgba(255,255,255,.05);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    header h1   { font-size: 2rem; font-weight: 700; position: relative; }
+    header p    { margin-top: .4rem; font-size: .9rem; opacity: .85; position: relative; }
+    header .bab { display: inline-block; background: var(--gold); color: #fff;
+                  border-radius: 20px; padding: .2rem .9rem; font-size: .8rem;
+                  font-weight: 700; margin-top: .6rem; position: relative; }
+
+    /* ── NAV ── */
+    .nav {
+      max-width: 860px; margin: 1.2rem auto 0;
+      padding: 0 1rem; display: flex; gap: .6rem;
+    }
+    .nav a {
+      text-decoration: none; font-size: .82rem; font-weight: 600;
+      padding: .45rem .9rem; border-radius: 8px;
+      border: 2px solid #dfe6e9; background: #fff; color: var(--sub);
+      transition: all .2s;
+    }
+    .nav a:hover { background: var(--purple); border-color: var(--purple); color: #fff; }
+    .nav a.active { background: var(--purple); border-color: var(--purple); color: #fff; }
+
+    /* ── WRAPPER ── */
+    .wrap {
+      max-width: 860px;
+      margin: 1.5rem auto 3rem;
+      padding: 0 1rem;
+      display: flex; flex-direction: column; gap: 1.8rem;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: .9rem; font-weight: 700;
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 1px; margin-bottom: .9rem;
+      display: flex; align-items: center; gap: .5rem;
+    }
+
+    /* ── DIALOG BOX ── */
+    .dialog-box {
+      background: #fff; border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 1.2rem;
+    }
+    .dialog-line {
+      display: flex; align-items: flex-start; gap: .85rem;
+    }
+    .dialog-line.right { flex-direction: row-reverse; }
+
+    /* avatars */
+    .avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: #fff; flex-shrink: 0;
+    }
+    .av-wang  { background: linear-gradient(135deg,#c0392b,#8e1a12); }
+    .av-chen  { background: linear-gradient(135deg,#8e44ad,#5b2c6f); }
+    .av-bai   { background: linear-gradient(135deg,#16a085,#0e6655); }
+
+    .bubble-wrap {
+      display: flex; flex-direction: column; gap: .2rem; max-width: 80%;
+    }
+    .dialog-line.right .bubble-wrap { align-items: flex-end; }
+
+    .speaker-name {
+      font-size: .7rem; font-weight: 600;
+      color: var(--sub); padding: 0 .25rem;
+    }
+    .bubble {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.2rem; padding: .65rem 1rem;
+      border-radius: 0 14px 14px 14px;
+      background: #f5f6fa; border: 1.5px solid #e8eaf0;
+      color: var(--text); line-height: 1.6;
+    }
+    /* right-side bubble colours per speaker */
+    .dialog-line.right.chen .bubble {
+      background: linear-gradient(135deg,#8e44ad,#5b2c6f);
+      border-color: transparent; color: #fff;
+      border-radius: 14px 0 14px 14px;
+    }
+    .dialog-line.right.bai .bubble {
+      background: linear-gradient(135deg,#16a085,#0e6655);
+      border-color: transparent; color: #fff;
+      border-radius: 14px 0 14px 14px;
+    }
+
+    /* ── WORD BREAKDOWN ── */
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: .85rem;
+    }
+    .word-card {
+      background: #fff; border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 1rem .9rem;
+      text-align: center; border-top: 4px solid var(--purple);
+      transition: transform .2s;
+    }
+    .word-card:hover { transform: translateY(-3px); }
+    .word-char {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.9rem; font-weight: 700;
+      color: var(--purple); line-height: 1;
+    }
+    .word-pinyin { font-size: .78rem; font-weight: 600; color: var(--sub); margin-top: .3rem; }
+    .word-arti   { font-size: .8rem; color: var(--text); margin-top: .35rem; line-height: 1.35; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 1.2rem;
+      font-size: .78rem; color: var(--sub);
+      border-top: 1px solid #dfe6e9;
+    }
+    footer span { color: var(--purple); }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.5rem; }
+      .bubble { font-size: 1rem; }
+      .breakdown-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🈶 Dialog Bahasa Mandarin</h1>
+  <p>Latihan percakapan · 对话练习</p>
+  <div class="bab">Bab 2 — Nama &amp; Perkenalan</div>
+</header>
+
+<!-- nav -->
+<div class="nav">
+  <a href="Kosakata.html">← Bab 1</a>
+  <a href="Bab2.html" class="active">Bab 2</a>
+</div>
+
+<div class="wrap">
+
+  <!-- ══ TEKS 1 ══ -->
+  <div>
+    <div class="section-title">💬 Teks 1</div>
+    <div class="dialog-box">
+
+      <!-- 王一飞: 请问，你叫什么名字？ -->
+      <div class="dialog-line">
+        <div class="avatar av-wang">王</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name">王一飞 (Wáng Yīfēi)</span>
+          <div class="bubble">请问，你叫什么名字？</div>
+        </div>
+      </div>
+
+      <!-- 陈天中: 我叫陈天中。 -->
+      <div class="dialog-line right chen">
+        <div class="avatar av-chen">陈</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name">陈天中 (Chén Tiānzhōng)</span>
+          <div class="bubble">我叫陈天中。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ TEKS 2 ══ -->
+  <div>
+    <div class="section-title">💬 Teks 2</div>
+    <div class="dialog-box">
+
+      <!-- 陈天中: 你好，安妮！ -->
+      <div class="dialog-line right chen">
+        <div class="avatar av-chen">陈</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name">陈天中 (Chén Tiānzhōng)</span>
+          <div class="bubble">你好，安妮！</div>
+        </div>
+      </div>
+
+      <!-- 白家月: 你好，陈天中！我不是安妮，我是白家月。 -->
+      <div class="dialog-line">
+        <div class="avatar av-bai">白</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name">白家月 (Bái Jiāyuè)</span>
+          <div class="bubble">你好，陈天中！我不是安妮，我是白家月。</div>
+        </div>
+      </div>
+
+      <!-- 陈天中: 对不起！ -->
+      <div class="dialog-line right chen">
+        <div class="avatar av-chen">陈</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name">陈天中 (Chén Tiānzhōng)</span>
+          <div class="bubble">对不起！</div>
+        </div>
+      </div>
+
+      <!-- 白家月: 没关系！ -->
+      <div class="dialog-line">
+        <div class="avatar av-bai">白</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name">白家月 (Bái Jiāyuè)</span>
+          <div class="bubble">没关系！</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ ARTI PER KATA ══ -->
+  <div>
+    <div class="section-title">📖 Arti Per Kata</div>
+    <div class="breakdown-grid">
+
+      <div class="word-card">
+        <div class="word-char">请问</div>
+        <div class="word-pinyin">qǐngwèn</div>
+        <div class="word-arti">Permisi / Boleh saya tanya</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">你叫</div>
+        <div class="word-pinyin">nǐ jiào</div>
+        <div class="word-arti">Kamu dipanggil / Namamu</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">什么</div>
+        <div class="word-pinyin">shénme</div>
+        <div class="word-arti">Apa</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">名字</div>
+        <div class="word-pinyin">míngzi</div>
+        <div class="word-arti">Nama</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">你叫什么名字</div>
+        <div class="word-pinyin">nǐ jiào shénme míngzi</div>
+        <div class="word-arti">Siapa namamu?</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">我</div>
+        <div class="word-pinyin">wǒ</div>
+        <div class="word-arti">Saya / Aku</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">叫</div>
+        <div class="word-pinyin">jiào</div>
+        <div class="word-arti">Dipanggil / Bernama</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">我叫</div>
+        <div class="word-pinyin">wǒ jiào</div>
+        <div class="word-arti">Nama saya adalah…</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">是</div>
+        <div class="word-pinyin">shì</div>
+        <div class="word-arti">Adalah / Iya (kata kerja "to be")</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">不是</div>
+        <div class="word-pinyin">bú shì</div>
+        <div class="word-arti">Bukan / Tidak adalah</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">我不是</div>
+        <div class="word-pinyin">wǒ bú shì</div>
+        <div class="word-arti">Saya bukan…</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">我是</div>
+        <div class="word-pinyin">wǒ shì</div>
+        <div class="word-arti">Saya adalah…</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">对不起</div>
+        <div class="word-pinyin">duìbuqǐ</div>
+        <div class="word-arti">Maaf / Minta maaf</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">没关系</div>
+        <div class="word-pinyin">méi guānxi</div>
+        <div class="word-arti">Tidak apa-apa / Tidak masalah</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">陈天中</div>
+        <div class="word-pinyin">Chén Tiānzhōng</div>
+        <div class="word-arti">Nama orang (陈=marga Chen)</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">安妮</div>
+        <div class="word-pinyin">Ānnī</div>
+        <div class="word-arti">Nama orang (Annie)</div>
+      </div>
+
+      <div class="word-card">
+        <div class="word-char">白家月</div>
+        <div class="word-pinyin">Bái Jiāyuè</div>
+        <div class="word-arti">Nama orang (白=marga Bai)</div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+
+<footer>
+  Dibuat dengan ❤ · Bahasa Mandarin · <span>加油！</span>
+</footer>
+
+</body>
+</html>
