@@ -476,6 +476,50 @@
       flex: 1;
     }
 
+    /* ── NUMBER CARDS (XIAOYU'S CLASSROOM) ── */
+    .number-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+      gap: 0.65rem;
+    }
+    .number-card {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.75rem 0.6rem;
+      text-align: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .number-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      background: #ffffff;
+    }
+    .number-card .bubble-hanzi {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.2;
+    }
+    .number-card .bubble-pinyin {
+      font-size: 0.78rem;
+      color: #64748b;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+    .number-card .bubble-arti {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 0.25rem;
+      padding-top: 0.25rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.12);
+    }
+
     /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
     .dialog-toolbar {
       position: fixed;
@@ -648,6 +692,11 @@
       .twister-pinyin { font-size: 0.82rem; }
       .classroom-box { padding: 1.1rem 0.9rem; }
       .classroom-item { padding: 0.75rem 0.85rem; gap: 0.65rem; }
+      .number-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+      .number-card { padding: 0.6rem 0.4rem; }
+      .number-card .bubble-hanzi { font-size: 1.25rem; }
+      .number-card .bubble-pinyin { font-size: 0.72rem; }
+      .number-card .bubble-arti { font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -807,19 +856,24 @@
     </div>
   </div>
 
-  <!-- ══ XIAOYU'S CLASSROOM ══ -->
+  <!-- ══ XIAOYU'S CLASSROOM (SESI 1) ══ -->
   <div>
     <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂</div>
     <div class="classroom-box">
       <div class="classroom-header">
         <div class="avatar av-xiaoyu">语</div>
         <div class="classroom-intro">
-          <div class="classroom-badge">Pola Kalimat 有 / 没(有) · 重点句型</div>
-          <div class="classroom-desc">Yuk latihan menyatakan kepemilikan dan ketiadaan bersama Xiaoyu!</div>
+          <div class="classroom-badge">Pola Kalimat &amp; Angka · 重点句型与数字</div>
+          <div class="classroom-desc">Yuk latihan menyatakan kepemilikan dan mengenal angka Mandarin bersama Xiaoyu!</div>
         </div>
       </div>
       
       <div class="classroom-list">
+        <!-- Bagian 1: Pola Kalimat 有 / 没(有) -->
+        <div class="classroom-group-title">
+          <span>📌 Pola Kalimat 有 / 没(有) · Menyatakan Kepemilikan &amp; Ketiadaan</span>
+        </div>
+
         <!-- Item 1: 她有二十个学生。 -->
         <div class="classroom-item">
           <div class="item-number">1</div>
@@ -847,6 +901,125 @@
             <div class="bubble-hanzi">我没/没有姐姐。</div>
             <div class="bubble-pinyin">Wǒ méi / méiyǒu jiějie.</div>
             <div class="bubble-arti">Saya tidak punya kakak perempuan.</div>
+          </div>
+        </div>
+
+        <!-- Bagian 2: Angka 0 – 9 (Baris Pertama) -->
+        <div class="classroom-group-title">
+          <span>🔢 Angka 0 – 9 (Baris Pertama) · 基础数字 0 – 9</span>
+        </div>
+        <div class="number-grid">
+          <div class="number-card">
+            <div class="bubble-hanzi">零</div>
+            <div class="bubble-pinyin">líng</div>
+            <div class="bubble-arti">0</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">一</div>
+            <div class="bubble-pinyin">yī</div>
+            <div class="bubble-arti">1</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">二</div>
+            <div class="bubble-pinyin">èr</div>
+            <div class="bubble-arti">2</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">三</div>
+            <div class="bubble-pinyin">sān</div>
+            <div class="bubble-arti">3</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">四</div>
+            <div class="bubble-pinyin">sì</div>
+            <div class="bubble-arti">4</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">五</div>
+            <div class="bubble-pinyin">wǔ</div>
+            <div class="bubble-arti">5</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">六</div>
+            <div class="bubble-pinyin">liù</div>
+            <div class="bubble-arti">6</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">七</div>
+            <div class="bubble-pinyin">qī</div>
+            <div class="bubble-arti">7</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">八</div>
+            <div class="bubble-pinyin">bā</div>
+            <div class="bubble-arti">8</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">九</div>
+            <div class="bubble-pinyin">jiǔ</div>
+            <div class="bubble-arti">9</div>
+          </div>
+        </div>
+
+        <!-- Bagian 3: Contoh Angka Belasan dan Puluhan -->
+        <div class="classroom-group-title">
+          <span>🔢 Contoh Angka Belasan dan Puluhan · 十位数与两位数</span>
+        </div>
+        <div class="number-grid">
+          <div class="number-card">
+            <div class="bubble-hanzi">十</div>
+            <div class="bubble-pinyin">shí</div>
+            <div class="bubble-arti">10</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">十一</div>
+            <div class="bubble-pinyin">shí yī</div>
+            <div class="bubble-arti">11</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">十九</div>
+            <div class="bubble-pinyin">shí jiǔ</div>
+            <div class="bubble-arti">19</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">二十二</div>
+            <div class="bubble-pinyin">èrshí èr</div>
+            <div class="bubble-arti">22</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">三十三</div>
+            <div class="bubble-pinyin">sānshí sān</div>
+            <div class="bubble-arti">33</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">四十四</div>
+            <div class="bubble-pinyin">sìshí sì</div>
+            <div class="bubble-arti">44</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">五十五</div>
+            <div class="bubble-pinyin">wǔshí wǔ</div>
+            <div class="bubble-arti">55</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">六十六</div>
+            <div class="bubble-pinyin">liùshí liù</div>
+            <div class="bubble-arti">66</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">七十七</div>
+            <div class="bubble-pinyin">qīshí qī</div>
+            <div class="bubble-arti">77</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">八十八</div>
+            <div class="bubble-pinyin">bāshí bā</div>
+            <div class="bubble-arti">88</div>
+          </div>
+          <div class="number-card">
+            <div class="bubble-hanzi">九十九</div>
+            <div class="bubble-pinyin">jiǔshí jiǔ</div>
+            <div class="bubble-arti">99</div>
           </div>
         </div>
       </div>
