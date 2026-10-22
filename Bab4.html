@@ -519,6 +519,12 @@
       padding-top: 0.25rem;
       border-top: 1px dashed rgba(0, 0, 0, 0.12);
     }
+    .number-grid.wide {
+      grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    }
+    .number-card.wide .bubble-hanzi {
+      font-size: 1.22rem;
+    }
 
     /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
     .dialog-toolbar {
@@ -697,6 +703,8 @@
       .number-card .bubble-hanzi { font-size: 1.25rem; }
       .number-card .bubble-pinyin { font-size: 0.72rem; }
       .number-card .bubble-arti { font-size: 0.75rem; }
+      .number-grid.wide { grid-template-columns: repeat(2, 1fr); }
+      .number-card.wide .bubble-hanzi { font-size: 1.12rem; }
     }
   </style>
 </head>
@@ -1020,6 +1028,80 @@
             <div class="bubble-hanzi">九十九</div>
             <div class="bubble-pinyin">jiǔshí jiǔ</div>
             <div class="bubble-arti">99</div>
+          </div>
+        </div>
+
+        <!-- Bagian 4: Angka Ratusan dan Ribuan (百 & 千) -->
+        <div class="classroom-group-title">
+          <span>🔢 Angka Ratusan dan Ribuan (百 &amp; 千) · 百位数与千位数</span>
+        </div>
+        <div class="number-grid wide">
+          <div class="number-card wide">
+            <div class="bubble-hanzi">一百</div>
+            <div class="bubble-pinyin">yìbǎi</div>
+            <div class="bubble-arti">100</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">二百零八</div>
+            <div class="bubble-pinyin">èrbǎi líng bā</div>
+            <div class="bubble-arti">208</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">九百九十九</div>
+            <div class="bubble-pinyin">jiǔbǎi jiǔshíjiǔ</div>
+            <div class="bubble-arti">999</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">一千</div>
+            <div class="bubble-pinyin">yìqiān</div>
+            <div class="bubble-arti">1.000</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">一千五百二十八</div>
+            <div class="bubble-pinyin">yìqiān wǔbǎi èrshíbā</div>
+            <div class="bubble-arti">1.528</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">九千九百九十九</div>
+            <div class="bubble-pinyin">jiǔqiān jiǔbǎi jiǔshíjiǔ</div>
+            <div class="bubble-arti">9.999</div>
+          </div>
+        </div>
+
+        <!-- Bagian 5: Perbedaan Penggunaan 二 (èr) & 两 (liǎng) dan Satuan -->
+        <div class="classroom-group-title">
+          <span>📌 Perbedaan Penggunaan 二 (èr) &amp; 两 (liǎng) · “二”与“两”的用法</span>
+        </div>
+        <div class="number-grid wide">
+          <div class="number-card wide">
+            <div class="bubble-hanzi">十二</div>
+            <div class="bubble-pinyin">shí'èr</div>
+            <div class="bubble-arti">12</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">二十二</div>
+            <div class="bubble-pinyin">èrshí'èr</div>
+            <div class="bubble-arti">22</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">一百二十二</div>
+            <div class="bubble-pinyin">yìbǎi èrshí'èr</div>
+            <div class="bubble-arti">122</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">两个人</div>
+            <div class="bubble-pinyin">liǎng gè rén</div>
+            <div class="bubble-arti">Dua orang</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">两口人</div>
+            <div class="bubble-pinyin">liǎng kǒu rén</div>
+            <div class="bubble-arti">Dua orang anggota keluarga</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">两本书</div>
+            <div class="bubble-pinyin">liǎng běn shū</div>
+            <div class="bubble-arti">Dua buah buku</div>
           </div>
         </div>
       </div>
