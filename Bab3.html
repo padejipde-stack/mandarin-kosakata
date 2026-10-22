@@ -150,6 +150,15 @@
       border-radius: 10px;
       transition: all 0.2s ease;
     }
+    .nav-pager-btn.next {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .nav-pager-btn.next:hover {
+      background: var(--primary-dark);
+      transform: translateX(2px);
+    }
     .nav-pager-btn.prev {
       background: #f1f5f9;
       color: #475569;
@@ -675,10 +684,16 @@
     <div class="nav-tabs">
       <span class="nav-tab active">Bab 3</span>
     </div>
-    <a href="Bab2.html" class="nav-pager-btn prev" title="Kembali ke Bab 2">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      <span>Bab 2</span>
-    </a>
+    <div style="display:inline-flex; gap:0.4rem;">
+      <a href="Bab2.html" class="nav-pager-btn prev" title="Kembali ke Bab 2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span>Bab 2</span>
+      </a>
+      <a href="Bab4.html" class="nav-pager-btn next" title="Lanjut ke Bab 4">
+        <span>Bab 4</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+    </div>
   </div>
 </nav>
 
