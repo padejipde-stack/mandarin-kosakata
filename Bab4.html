@@ -526,6 +526,71 @@
       font-size: 1.22rem;
     }
 
+    /* ── GRAMMAR COMPARE BOX ── */
+    .grammar-compare-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+      margin-top: 0.35rem;
+    }
+    .compare-card {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .compare-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      align-self: flex-start;
+    }
+    .compare-badge.ji {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .compare-badge.duoshao {
+      background: #fef3c7;
+      color: #b45309;
+    }
+    .compare-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: #334155;
+    }
+    .compare-points li {
+      position: relative;
+      padding-left: 1rem;
+    }
+    .compare-points li::before {
+      content: "•";
+      color: var(--primary);
+      position: absolute;
+      left: 0.1rem;
+      font-weight: bold;
+    }
+    .compare-eg {
+      font-size: 0.78rem;
+      background: #ffffff;
+      padding: 0.35rem 0.6rem;
+      border-radius: 8px;
+      border: 1px dashed var(--border);
+      margin-top: 0.25rem;
+      color: #475569;
+    }
+    .compare-eg strong {
+      color: var(--primary-dark);
+    }
+
     /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
     .dialog-toolbar {
       position: fixed;
@@ -705,6 +770,8 @@
       .number-card .bubble-arti { font-size: 0.75rem; }
       .number-grid.wide { grid-template-columns: repeat(2, 1fr); }
       .number-card.wide .bubble-hanzi { font-size: 1.12rem; }
+      .grammar-compare-box { grid-template-columns: 1fr; gap: 0.75rem; }
+      .compare-card { padding: 0.85rem 0.9rem; }
     }
   </style>
 </head>
@@ -842,7 +909,7 @@
           <div class="word-card">
             <div class="word-char">多少</div>
             <div class="word-pinyin">duōshao</div>
-            <div class="word-arti">Berapa banyak</div>
+            <div class="word-arti">Berapa banyak (&gt;10 / tak tentu, satuan opsional)</div>
           </div>
           <div class="word-card">
             <div class="word-char">个</div>
@@ -1110,6 +1177,38 @@
             <div class="bubble-arti">Dua buah buku</div>
           </div>
         </div>
+
+        <!-- Bagian 6: Penjelasan Kapan Menggunakan 几 (jǐ) vs 多少 (duōshao) -->
+        <div class="classroom-group-title">
+          <span>💡 Kapan Menggunakan 几 (jǐ) vs 多少 (duōshao)? · 疑问代词用法详解</span>
+        </div>
+        <div class="grammar-compare-box">
+          <div class="compare-card">
+            <div class="compare-badge ji">几 (jǐ) · Jumlah Sedikit (&lt; 10)</div>
+            <ul class="compare-points">
+              <li><strong>Kapan Digunakan:</strong> Untuk menanyakan jumlah perkiraan <strong>sedikit / di bawah 10 (&lt; 10)</strong>.</li>
+              <li><strong>Wajib Kata Satuan (量词):</strong> Harus diikuti kata satuan. Pola: <em>几 + Satuan + Benda</em>.
+                <div class="compare-eg">Contoh: <strong>几个学生？</strong> (Berapa murid?), <strong>几口人？</strong> (Berapa orang keluarga?)</div>
+              </li>
+              <li><strong>Kalender, Hari &amp; Usia Anak:</strong> Digunakan untuk tanggal, hari, bulan, dan usia anak (&lt; 10 thn).
+                <div class="compare-eg">Contoh: <strong>几月几号？</strong> (Bulan/tgl berapa?), <strong>星期几？</strong> (Hari apa?), <strong>几岁？</strong> (Berapa umur anak?)</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="compare-card">
+            <div class="compare-badge duoshao">多少 (duōshao) · Jumlah Banyak (&gt; 10) / Bebas</div>
+            <ul class="compare-points">
+              <li><strong>Kapan Digunakan:</strong> Untuk menanyakan jumlah perkiraan <strong>banyak (&gt; 10)</strong> atau jumlah yang <strong>belum diketahui sama sekali</strong>.</li>
+              <li><strong>Kata Satuan Bersifat Opsional:</strong> Boleh menggunakan satuan atau langsung ke kata benda.
+                <div class="compare-eg">Contoh: <strong>多少个学生？</strong> atau langsung <strong>多少人？</strong></div>
+              </li>
+              <li><strong>Harga, Nomor &amp; Jumlah Besar:</strong> Selalu memakai 多少 untuk menanyakan harga dan nomor kontak/identitas.
+                <div class="compare-eg">Contoh: <strong>多少钱？</strong> (Berapa harganya?), <strong>电话号码是多少？</strong> (Nomor teleponnya berapa?)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1210,7 +1309,7 @@
           <div class="word-card">
             <div class="word-char">几</div>
             <div class="word-pinyin">jǐ</div>
-            <div class="word-arti">Berapa (&lt; 10)</div>
+            <div class="word-arti">Berapa (&lt;10, wajib kata satuan / kalender)</div>
           </div>
           <div class="word-card">
             <div class="word-char">口</div>
