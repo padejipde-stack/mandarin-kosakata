@@ -464,6 +464,36 @@
       flex: 1;
     }
 
+    /* ── TONGUE TWISTER ── */
+    .twister-box {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.6rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      color: #fff;
+    }
+    .twister-line {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .twister-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+    .twister-pinyin {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.03em;
+    }
+
     /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
     .dialog-toolbar {
       position: fixed;
@@ -588,6 +618,10 @@
       .classroom-box { padding: 1.1rem 0.9rem; }
       .classroom-item { padding: 0.75rem 0.85rem; gap: 0.65rem; }
       .item-number { width: 24px; height: 24px; font-size: 0.75rem; }
+
+      .twister-box { padding: 1.2rem; }
+      .twister-hanzi { font-size: 1.35rem; }
+      .twister-pinyin { font-size: 0.82rem; }
 
       /* Mobile Navbar */
       .nav { padding: 0.5rem 0.75rem; }
@@ -986,6 +1020,21 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ══ TONGUE TWISTER ══ -->
+  <div>
+    <div class="section-title">👅 Tongue Twister · 绕口令</div>
+    <div class="twister-box">
+      <div class="twister-line">
+        <div class="twister-hanzi">七加一，再减一，加完减完等于几？</div>
+        <div class="twister-pinyin">Qī jiā yī, zài jiǎn yī, jiāwán jiǎnwán děngyú jǐ?</div>
+      </div>
+      <div class="twister-line">
+        <div class="twister-hanzi">加完减完还是七。</div>
+        <div class="twister-pinyin">Jiāwán jiǎnwán háishì qī.</div>
+      </div>
     </div>
   </div>
 
