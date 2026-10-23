@@ -1311,6 +1311,24 @@
         pyEl.innerHTML = res.pinyin;
       });
     });
+
+    // 5. Warnai Xiaoyu Classroom items (classroom-item & number-card)
+    //    Elemen ini pakai .bubble-hanzi/.bubble-pinyin tapi TIDAK di dalam .bubble
+    document.querySelectorAll('.classroom-box').forEach(box => {
+      const items = box.querySelectorAll('.item-content, .number-card');
+      items.forEach(item => {
+        const hzEl = item.querySelector('.bubble-hanzi');
+        const pyEl = item.querySelector('.bubble-pinyin');
+        if (!hzEl || !pyEl) return;
+
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      });
+    });
   }
 
   function removeColors() {
