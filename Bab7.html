@@ -1468,7 +1468,7 @@
   const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
 
   function isHanziChar(ch) {
-    return /[\u4e00-\u9fa5]/.test(ch);
+    return /[\u3007\u4e00-\u9fa5]/.test(ch);
   }
 
   // Mewarnai pasangan teks Hanzi dan Pinyin per-karakter / per-kata
