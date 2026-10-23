@@ -1530,6 +1530,77 @@
             <div class="bubble-arti">Dua orang murid</div>
           </div>
         </div>
+
+        <!-- Bagian 3: Latihan Percakapan Tanya Jawab · 问答与对话 -->
+        <div class="classroom-group-title">
+          <span>💬 Praktik Percakapan Jumlah Keluarga &amp; Saudara · 问答与对话</span>
+        </div>
+
+        <!-- Item 1: 你家有几口人？ -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">A: 你家有几口人？<br>B: 我家有三口人，你家呢？<br>A: 我家有四口人。</div>
+            <div class="bubble-pinyin">A: Nǐ jiā yǒu jǐ kǒu rén?<br>B: Wǒ jiā yǒu sān kǒu rén, nǐ jiā ne?<br>A: Wǒ jiā yǒu sì kǒu rén.</div>
+            <div class="bubble-arti">A: Ada berapa orang di keluargamu?<br>B: Keluargaku ada 3 orang, bagaimana dengan keluargamu?<br>A: Keluargaku ada 4 orang.</div>
+          </div>
+        </div>
+
+        <!-- Item 2: 你有姐姐吗？ -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">A: 你有姐姐吗？<br>B: 我有一个姐姐，你呢？<br>A: 我有两个姐姐。</div>
+            <div class="bubble-pinyin">A: Nǐ yǒu jiějie ma?<br>B: Wǒ yǒu yí gè jiějie, nǐ ne?<br>A: Wǒ yǒu liǎng gè jiějie.</div>
+            <div class="bubble-arti">A: Apakah kamu punya kakak perempuan?<br>B: Saya punya satu orang kakak perempuan, kalau kamu?<br>A: Saya punya dua orang kakak perempuan.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PERTANYAAN PEMAHAMAN (DI ATAS TEKS 3) ══ -->
+  <div>
+    <div class="section-title">❓ Pertanyaan Pemahaman · 课前预习与选择</div>
+    <div class="classroom-box">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">问</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge">Latihan Pilihan Ganda · 选择题</div>
+          <div class="classroom-desc">Perhatikan pertanyaan berikut untuk memahami isi percakapan Teks 3!</div>
+        </div>
+      </div>
+      
+      <div class="classroom-list">
+        <!-- Soal 1 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">王一雪有两个孩子。</div>
+            <div class="bubble-pinyin">Wáng Yīxuě yǒu liǎng gè háizi.</div>
+            <div class="bubble-arti">Wang Yixue memiliki dua orang anak.</div>
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.92rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 一个 <em>(yí gè)</em></span>
+              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 两个 <em>(liǎng gè)</em> ✓</span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 三个 <em>(sān gè)</em></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">王一雪女儿今年十二岁。</div>
+            <div class="bubble-pinyin">Wáng Yīxuě nǚ'ér jīnnián shí'èr suì.</div>
+            <div class="bubble-arti">Anak perempuan Wang Yixue tahun ini berusia dua belas tahun.</div>
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.92rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 五 <em>(wǔ)</em></span>
+              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 十二 <em>(shí'èr)</em> ✓</span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 二十 <em>(èrshí)</em></span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1937,11 +2008,11 @@
         const pyEl = item.querySelector('.bubble-pinyin');
         if (!hzEl || !pyEl) return;
 
-        // Simpan teks asli (gunakan textContent agar bersih dari span warna sebelumnya)
-        if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
-        if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
+        // Simpan HTML asli (gunakan origHtml agar format & tag <br> terjaga)
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
 
-        const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
         hzEl.innerHTML = res.hanzi;
         pyEl.innerHTML = res.pinyin;
       });
