@@ -456,6 +456,9 @@
       border-color: #cbd5e1;
       transform: translateX(3px);
     }
+    /* Pinyin di classroom selalu tampil (tidak ikut toggle show-pinyin) */
+    .classroom-box .bubble-pinyin { display: block; }
+    .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
     .item-number {
       width: 28px;
       height: 28px;
@@ -1909,7 +1912,7 @@
     });
 
     // 5. Warnai Xiaoyu Classroom items (classroom-item & number-card)
-    //    Elemen ini pakai .bubble-hanzi/.bubble-pinyin tapi TIDAK di dalam .bubble
+    //    Elemen ini pakai .bubble-hanzi/.bubble-pinyin, selalu visible di classroom
     document.querySelectorAll('.classroom-box').forEach(box => {
       const items = box.querySelectorAll('.item-content, .number-card');
       items.forEach(item => {
@@ -1917,10 +1920,11 @@
         const pyEl = item.querySelector('.bubble-pinyin');
         if (!hzEl || !pyEl) return;
 
-        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
-        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        // Simpan teks asli (gunakan textContent agar bersih dari span warna sebelumnya)
+        if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
+        if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
 
-        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+        const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
         hzEl.innerHTML = res.hanzi;
         pyEl.innerHTML = res.pinyin;
       });
@@ -1933,6 +1937,8 @@
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
+      } else if (el.dataset.origText) {
+        el.textContent = el.dataset.origText;
       }
       el.style.color = '';
       el.style.fontWeight = '';
