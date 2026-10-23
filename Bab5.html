@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dialog Bahasa Mandarin - Bab 5: Tanggal & Hari</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🈶</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>??</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
       padding-bottom: 3rem;
     }
 
-    /* ── HEADER ── */
+    /* -- HEADER -- */
     header {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: #fff;
@@ -46,7 +46,7 @@
       overflow: hidden;
     }
     header::before {
-      content: "五";
+      content: "?";
       font-family: 'Noto Sans SC', sans-serif;
       font-size: 13rem;
       font-weight: 900;
@@ -80,7 +80,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* ── NAVBAR ── */
+    /* -- NAVBAR -- */
     .nav-bar {
       background: #ffffff;
       border-bottom: 1px solid var(--border);
@@ -176,7 +176,7 @@
       transform: translateX(-2px);
     }
 
-    /* ── MAIN CONTENT ── */
+    /* -- MAIN CONTENT -- */
     .wrap {
       max-width: 760px;
       margin: 2rem auto 2.5rem;
@@ -188,7 +188,7 @@
       width: 100%;
     }
 
-    /* ── SECTION TITLE ── */
+    /* -- SECTION TITLE -- */
     .section-title {
       font-size: 1.15rem;
       font-weight: 700;
@@ -199,7 +199,7 @@
       gap: 0.45rem;
     }
 
-    /* ── DIALOG BOX ── */
+    /* -- DIALOG BOX -- */
     .dialog-box {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -211,7 +211,7 @@
       border: 1px solid rgba(0, 0, 0, 0.04);
     }
 
-    /* ── DIALOG LINE ── */
+    /* -- DIALOG LINE -- */
     .dialog-line {
       display: flex;
       align-items: flex-start;
@@ -221,7 +221,7 @@
       flex-direction: row-reverse;
     }
 
-    /* ── AVATARS ── */
+    /* -- AVATARS -- */
     .avatar {
       width: 44px;
       height: 44px;
@@ -274,7 +274,7 @@
       display: inline;
     }
 
-    /* ── BUBBLES ── */
+    /* -- BUBBLES -- */
     .bubble {
       padding: 0.75rem 1.05rem;
       border-radius: 0 16px 16px 16px;
@@ -335,7 +335,7 @@
     body.show-pinyin .bubble-pinyin { display: block; }
     body.show-arti .bubble-arti { display: block; }
 
-    /* ── SUB-BREAKDOWN (ARTI PER KATA) ── */
+    /* -- SUB-BREAKDOWN (ARTI PER KATA) -- */
     .sub-breakdown {
       margin-top: 1.2rem;
       padding-top: 1.2rem;
@@ -396,7 +396,7 @@
       line-height: 1.35;
     }
 
-    /* ── XIAOYU'S CLASSROOM ── */
+    /* -- XIAOYU'S CLASSROOM -- */
     .classroom-box {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -485,7 +485,7 @@
       flex: 1;
     }
 
-    /* ── NUMBER CARDS (XIAOYU'S CLASSROOM) ── */
+    /* -- NUMBER CARDS (XIAOYU'S CLASSROOM) -- */
     .number-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
@@ -532,7 +532,7 @@
       border-top: 1px dashed rgba(0, 0, 0, 0.12);
     }
 
-    /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
+    /* -- DIALOG TOOLBAR (FIXED FLOATING DOCK) -- */
     .dialog-toolbar {
       position: fixed;
       bottom: 1.2rem;
@@ -614,7 +614,7 @@
 
     .btn-text-mobile { display: none; }
 
-    /* ── RESPONSIVE MOBILE ── */
+    /* -- RESPONSIVE MOBILE -- */
     @media (max-width: 600px) {
       .btn-text-desktop { display: none; }
       .btn-text-mobile { display: inline; }
@@ -679,11 +679,11 @@
       .number-card .bubble-arti { font-size: 0.75rem; }
     }
 
-    /* â”€â”€ COLOR MODE â”€â”€ */
+    /* ── COLOR MODE ── */
     .toggle-switch-btn.color-btn.active { background:#fefce8; color:#b45309; border-color:#f59e0b; }
     .toggle-switch-btn.color-btn.active .status-badge { background:#f59e0b; color:#fff; }
 
-    /* â”€â”€ TOGGLE BUTTONS (SYMBOLS ONLY) â”€â”€ */
+    /* ── TOGGLE BUTTONS (SYMBOLS ONLY) ── */
     .toggle-switch-btn {
       display: inline-flex;
       align-items: center;
@@ -718,7 +718,7 @@
       box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
     }
 
-    /* â”€â”€ COLOR MODE HIGHLIGHTING â”€â”€ */
+    /* ── COLOR MODE HIGHLIGHTING ── */
     body.show-color .dialog-line.right .bubble {
       background: #ffffff !important;
       color: var(--text) !important;
@@ -763,9 +763,9 @@
 <body>
 
 <header>
-  <h1>🈶 Dialog Bahasa Mandarin</h1>
-  <p>Latihan percakapan · 对话练习</p>
-  <div class="bab">Bab 5 — Tanggal, Bulan &amp; Hari · 日期与星期</div>
+  <h1>?? Dialog Bahasa Mandarin</h1>
+  <p>Latihan percakapan � ????</p>
+  <div class="bab">Bab 5 � Tanggal, Bulan &amp; Hari � ?????</div>
 </header>
 
 <!-- nav bar -->
@@ -794,58 +794,58 @@
 
 <div class="wrap">
 
-  <!-- ══ TEKS 1 ══ -->
+  <!-- -- TEKS 1 -- -->
   <div>
-    <div class="section-title">💬 Teks 1</div>
+    <div class="section-title">?? Teks 1</div>
     <div class="dialog-box">
 
-      <!-- 王一雪: 今天几号？ -->
+      <!-- ???: ????? -->
       <div class="dialog-line">
-        <div class="avatar av-xue">雪</div>
+        <div class="avatar av-xue">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">王一雪</span><span class="speaker-pinyin"> (Wáng Yīxuě)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (W�ng Yixue)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">今天几号？</div>
-            <div class="bubble-pinyin">Jīntiān jǐ hào?</div>
+            <div class="bubble-hanzi">?????</div>
+            <div class="bubble-pinyin">Jintian ji h�o?</div>
             <div class="bubble-arti">Hari ini tanggal berapa?</div>
           </div>
         </div>
       </div>
 
-      <!-- 刘明: 今天 9 月 8 号。 -->
+      <!-- ??: ?? 9 ? 8 ?? -->
       <div class="dialog-line right liu">
-        <div class="avatar av-liu">刘</div>
+        <div class="avatar av-liu">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">刘明</span><span class="speaker-pinyin"> (Liú Míng)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">??</span><span class="speaker-pinyin"> (Li� M�ng)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">今天 9 月 8 号。</div>
-            <div class="bubble-pinyin">Jīntiān jiǔ yuè bā hào.</div>
+            <div class="bubble-hanzi">?? 9 ? 8 ??</div>
+            <div class="bubble-pinyin">Jintian jiu yu� ba h�o.</div>
             <div class="bubble-arti">Hari ini tanggal 8 September.</div>
           </div>
         </div>
       </div>
 
-      <!-- 王一雪: 星期几？ -->
+      <!-- ???: ???? -->
       <div class="dialog-line">
-        <div class="avatar av-xue">雪</div>
+        <div class="avatar av-xue">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">王一雪</span><span class="speaker-pinyin"> (Wáng Yīxuě)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (W�ng Yixue)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">星期几？</div>
-            <div class="bubble-pinyin">Xīngqī jǐ?</div>
+            <div class="bubble-hanzi">????</div>
+            <div class="bubble-pinyin">Xingqi ji?</div>
             <div class="bubble-arti">Hari apa?</div>
           </div>
         </div>
       </div>
 
-      <!-- 刘明: 星期日。今天我休息。 -->
+      <!-- ??: ?????????? -->
       <div class="dialog-line right liu">
-        <div class="avatar av-liu">刘</div>
+        <div class="avatar av-liu">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">刘明</span><span class="speaker-pinyin"> (Liú Míng)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">??</span><span class="speaker-pinyin"> (Li� M�ng)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">星期日。今天我休息。</div>
-            <div class="bubble-pinyin">Xīngqīrì. Jīntiān wǒ xiūxi.</div>
+            <div class="bubble-hanzi">??????????</div>
+            <div class="bubble-pinyin">Xingqir�. Jintian wo xiuxi.</div>
             <div class="bubble-arti">Hari Minggu. Hari ini saya istirahat / libur.</div>
           </div>
         </div>
@@ -854,62 +854,62 @@
       <!-- Sub-Breakdown: Kosakata Teks 1 -->
       <div class="sub-breakdown">
         <div class="sub-breakdown-title">
-          <span>📖 Kosakata Teks 1</span>
+          <span>?? Kosakata Teks 1</span>
         </div>
         <div class="breakdown-grid">
           <div class="word-card">
-            <div class="word-char">今天</div>
-            <div class="word-pinyin">jīntiān</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">jintian</div>
             <div class="word-arti">Hari ini</div>
           </div>
           <div class="word-card">
-            <div class="word-char">几</div>
-            <div class="word-pinyin">jǐ</div>
+            <div class="word-char">?</div>
+            <div class="word-pinyin">ji</div>
             <div class="word-arti">Berapa (&lt;10 / kalender &amp; hari)</div>
           </div>
           <div class="word-card">
-            <div class="word-char">号</div>
-            <div class="word-pinyin">hào</div>
+            <div class="word-char">?</div>
+            <div class="word-pinyin">h�o</div>
             <div class="word-arti">Tanggal / Nomor</div>
           </div>
           <div class="word-card">
-            <div class="word-char">几号</div>
-            <div class="word-pinyin">jǐ hào</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">ji h�o</div>
             <div class="word-arti">Tanggal berapa?</div>
           </div>
           <div class="word-card">
-            <div class="word-char">月</div>
-            <div class="word-pinyin">yuè</div>
+            <div class="word-char">?</div>
+            <div class="word-pinyin">yu�</div>
             <div class="word-arti">Bulan</div>
           </div>
           <div class="word-card">
-            <div class="word-char">9月8号</div>
-            <div class="word-pinyin">jiǔ yuè bā hào</div>
+            <div class="word-char">9?8?</div>
+            <div class="word-pinyin">jiu yu� ba h�o</div>
             <div class="word-arti">8 September</div>
           </div>
           <div class="word-card">
-            <div class="word-char">星期</div>
-            <div class="word-pinyin">xīngqī</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">xingqi</div>
             <div class="word-arti">Minggu / Pekan / Hari</div>
           </div>
           <div class="word-card">
-            <div class="word-char">星期几</div>
-            <div class="word-pinyin">xīngqī jǐ</div>
+            <div class="word-char">???</div>
+            <div class="word-pinyin">xingqi ji</div>
             <div class="word-arti">Hari apa?</div>
           </div>
           <div class="word-card">
-            <div class="word-char">星期日</div>
-            <div class="word-pinyin">xīngqīrì</div>
+            <div class="word-char">???</div>
+            <div class="word-pinyin">xingqir�</div>
             <div class="word-arti">Hari Minggu</div>
           </div>
           <div class="word-card">
-            <div class="word-char">我</div>
-            <div class="word-pinyin">wǒ</div>
+            <div class="word-char">?</div>
+            <div class="word-pinyin">wo</div>
             <div class="word-arti">Saya / Aku</div>
           </div>
           <div class="word-card">
-            <div class="word-char">休息</div>
-            <div class="word-pinyin">xiūxi</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">xiuxi</div>
             <div class="word-arti">Istirahat / Libur</div>
           </div>
         </div>
@@ -918,29 +918,29 @@
     </div>
   </div>
 
-  <!-- ══ XIAOYU'S CLASSROOM (SESI 1) ══ -->
+  <!-- -- XIAOYU'S CLASSROOM (SESI 1) -- -->
   <div>
-    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (Sesi 1)</div>
+    <div class="section-title">?? Xiaoyu's Classroom � ???? (Sesi 1)</div>
     <div class="classroom-box">
       <div class="classroom-header">
-        <div class="avatar av-xiaoyu">语</div>
+        <div class="avatar av-xiaoyu">?</div>
         <div class="classroom-intro">
-          <div class="classroom-badge">Format Tanggal, Bulan &amp; Hari · 日期、月份与星期</div>
-          <div class="classroom-desc">Yuk pelajari urutan penulisan tanggal Mandarin (Tahun → Bulan → Tanggal → Hari), nama-nama bulan, hari, serta contoh kalimatnya bersama Xiaoyu!</div>
+          <div class="classroom-badge">Format Tanggal, Bulan &amp; Hari � ????????</div>
+          <div class="classroom-desc">Yuk pelajari urutan penulisan tanggal Mandarin (Tahun ? Bulan ? Tanggal ? Hari), nama-nama bulan, hari, serta contoh kalimatnya bersama Xiaoyu!</div>
         </div>
       </div>
       
       <div class="classroom-list">
-        <!-- Bagian 1: 示例 (Contoh Format Penulisan Tanggal) -->
+        <!-- Bagian 1: ?? (Contoh Format Penulisan Tanggal) -->
         <div class="classroom-group-title">
-          <span>📅 1. 示例 · Format Penulisan Tanggal Mandarin (Tahun 年 → Bulan 月 → Tanggal 日/号 → Hari 星期)</span>
+          <span>?? 1. ?? � Format Penulisan Tanggal Mandarin (Tahun ? ? Bulan ? ? Tanggal ?/? ? Hari ??)</span>
         </div>
 
         <div class="classroom-item">
           <div class="item-number">1</div>
           <div class="item-content">
-            <div class="bubble-hanzi">1992年5月16日/号，星期六</div>
-            <div class="bubble-pinyin">Yī jiǔ jiǔ èr nián wǔ yuè shíliù rì / hào, xīngqīliù</div>
+            <div class="bubble-hanzi">1992?5?16?/?,???</div>
+            <div class="bubble-pinyin">Yi jiu jiu �r ni�n wu yu� sh�li� r� / h�o, xingqili�</div>
             <div class="bubble-arti">Sabtu, 16 Mei 1992 (Tahun 1992, Bulan 5, Tanggal 16, Hari Sabtu)</div>
           </div>
         </div>
@@ -948,133 +948,133 @@
         <div class="classroom-item">
           <div class="item-number">2</div>
           <div class="item-content">
-            <div class="bubble-hanzi">2024年10月22日/号，星期二</div>
-            <div class="bubble-pinyin">Èr líng èr sì nián shí yuè èrshí'èr rì / hào, xīngqī'èr</div>
+            <div class="bubble-hanzi">2024?10?22?/?,???</div>
+            <div class="bubble-pinyin">�r l�ng �r s� ni�n sh� yu� �rsh�'�r r� / h�o, xingqi'�r</div>
             <div class="bubble-arti">Selasa, 22 Oktober 2024 (Tahun 2024, Bulan 10, Tanggal 22, Hari Selasa)</div>
           </div>
         </div>
 
-        <!-- Bagian 2: 月份 (Nama-Nama Bulan) -->
+        <!-- Bagian 2: ?? (Nama-Nama Bulan) -->
         <div class="classroom-group-title">
-          <span>🌙 2. 月份 · Nama-Nama Bulan (Angka 1–12 + 月)</span>
+          <span>?? 2. ?? � Nama-Nama Bulan (Angka 1�12 + ?)</span>
         </div>
 
         <div class="number-grid">
           <div class="number-card">
-            <div class="bubble-hanzi">一月</div>
-            <div class="bubble-pinyin">yī yuè</div>
+            <div class="bubble-hanzi">??</div>
+            <div class="bubble-pinyin">yi yu�</div>
             <div class="bubble-arti">Januari</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">二月</div>
-            <div class="bubble-pinyin">èr yuè</div>
+            <div class="bubble-hanzi">??</div>
+            <div class="bubble-pinyin">�r yu�</div>
             <div class="bubble-arti">Februari</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">三月</div>
-            <div class="bubble-pinyin">sān yuè</div>
+            <div class="bubble-hanzi">??</div>
+            <div class="bubble-pinyin">san yu�</div>
             <div class="bubble-arti">Maret</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">四月</div>
-            <div class="bubble-pinyin">sì yuè</div>
+            <div class="bubble-hanzi">??</div>
+            <div class="bubble-pinyin">s� yu�</div>
             <div class="bubble-arti">April</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">五月</div>
-            <div class="bubble-pinyin">wǔ yuè</div>
+            <div class="bubble-hanzi">??</div>
+            <div class="bubble-pinyin">wu yu�</div>
             <div class="bubble-arti">Mei</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">六月</div>
-            <div class="bubble-pinyin">liù yuè</div>
+            <div class="bubble-hanzi">??</div>
+            <div class="bubble-pinyin">li� yu�</div>
             <div class="bubble-arti">Juni</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">七月</div>
-            <div class="bubble-pinyin">qī yuè</div>
+            <div class="bubble-hanzi">??</div>
+            <div class="bubble-pinyin">qi yu�</div>
             <div class="bubble-arti">Juli</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">八月</div>
-            <div class="bubble-pinyin">bā yuè</div>
+            <div class="bubble-hanzi">??</div>
+            <div class="bubble-pinyin">ba yu�</div>
             <div class="bubble-arti">Agustus</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">九月</div>
-            <div class="bubble-pinyin">jiǔ yuè</div>
+            <div class="bubble-hanzi">??</div>
+            <div class="bubble-pinyin">jiu yu�</div>
             <div class="bubble-arti">September</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">十月</div>
-            <div class="bubble-pinyin">shí yuè</div>
+            <div class="bubble-hanzi">??</div>
+            <div class="bubble-pinyin">sh� yu�</div>
             <div class="bubble-arti">Oktober</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">十一月</div>
-            <div class="bubble-pinyin">shíyī yuè</div>
+            <div class="bubble-hanzi">???</div>
+            <div class="bubble-pinyin">sh�yi yu�</div>
             <div class="bubble-arti">November</div>
           </div>
           <div class="number-card">
-            <div class="bubble-hanzi">十二月</div>
-            <div class="bubble-pinyin">shí'èr yuè</div>
+            <div class="bubble-hanzi">???</div>
+            <div class="bubble-pinyin">sh�'�r yu�</div>
             <div class="bubble-arti">Desember</div>
           </div>
         </div>
 
-        <!-- Bagian 3: 星期 (Nama-Nama Hari) -->
+        <!-- Bagian 3: ?? (Nama-Nama Hari) -->
         <div class="classroom-group-title">
-          <span>☀️ 3. 星期 · Nama-Nama Hari (星期 + Angka 1–6 / 日 atau 天)</span>
+          <span>?? 3. ?? � Nama-Nama Hari (?? + Angka 1�6 / ? atau ?)</span>
         </div>
 
         <div class="number-grid wide">
           <div class="number-card wide">
-            <div class="bubble-hanzi">星期一</div>
-            <div class="bubble-pinyin">xīngqīyī</div>
+            <div class="bubble-hanzi">???</div>
+            <div class="bubble-pinyin">xingqiyi</div>
             <div class="bubble-arti">Senin</div>
           </div>
           <div class="number-card wide">
-            <div class="bubble-hanzi">星期二</div>
-            <div class="bubble-pinyin">xīngqī'èr</div>
+            <div class="bubble-hanzi">???</div>
+            <div class="bubble-pinyin">xingqi'�r</div>
             <div class="bubble-arti">Selasa</div>
           </div>
           <div class="number-card wide">
-            <div class="bubble-hanzi">星期三</div>
-            <div class="bubble-pinyin">xīngqīsān</div>
+            <div class="bubble-hanzi">???</div>
+            <div class="bubble-pinyin">xingqisan</div>
             <div class="bubble-arti">Rabu</div>
           </div>
           <div class="number-card wide">
-            <div class="bubble-hanzi">星期四</div>
-            <div class="bubble-pinyin">xīngqīsì</div>
+            <div class="bubble-hanzi">???</div>
+            <div class="bubble-pinyin">xingqis�</div>
             <div class="bubble-arti">Kamis</div>
           </div>
           <div class="number-card wide">
-            <div class="bubble-hanzi">星期五</div>
-            <div class="bubble-pinyin">xīngqīwǔ</div>
+            <div class="bubble-hanzi">???</div>
+            <div class="bubble-pinyin">xingqiwu</div>
             <div class="bubble-arti">Jumat</div>
           </div>
           <div class="number-card wide">
-            <div class="bubble-hanzi">星期六</div>
-            <div class="bubble-pinyin">xīngqīliù</div>
+            <div class="bubble-hanzi">???</div>
+            <div class="bubble-pinyin">xingqili�</div>
             <div class="bubble-arti">Sabtu</div>
           </div>
           <div class="number-card wide" style="grid-column: span 2;">
-            <div class="bubble-hanzi">星期日 / 星期天</div>
-            <div class="bubble-pinyin">xīngqīrì / xīngqītiān</div>
+            <div class="bubble-hanzi">??? / ???</div>
+            <div class="bubble-pinyin">xingqir� / xingqitian</div>
             <div class="bubble-arti">Minggu (Formal / Lisan Sehari-hari)</div>
           </div>
         </div>
 
-        <!-- Bagian 4: 例句 (Contoh Kalimat & Tanya Jawab) -->
+        <!-- Bagian 4: ?? (Contoh Kalimat & Tanya Jawab) -->
         <div class="classroom-group-title">
-          <span>💬 4. 例句与问答 · Contoh Kalimat &amp; Tanya Jawab</span>
+          <span>?? 4. ????? � Contoh Kalimat &amp; Tanya Jawab</span>
         </div>
 
         <div class="classroom-item">
           <div class="item-number">1</div>
           <div class="item-content">
-            <div class="bubble-hanzi">今天9月8号。</div>
-            <div class="bubble-pinyin">Jīntiān jiǔ yuè bā hào.</div>
+            <div class="bubble-hanzi">??9?8??</div>
+            <div class="bubble-pinyin">Jintian jiu yu� ba h�o.</div>
             <div class="bubble-arti">Hari ini tanggal 8 September.</div>
           </div>
         </div>
@@ -1082,8 +1082,8 @@
         <div class="classroom-item">
           <div class="item-number">2</div>
           <div class="item-content">
-            <div class="bubble-hanzi">今天是2025年5月22号。</div>
-            <div class="bubble-pinyin">Jīntiān shì èr líng èr wǔ nián wǔ yuè èrshí'èr hào.</div>
+            <div class="bubble-hanzi">???2025?5?22??</div>
+            <div class="bubble-pinyin">Jintian sh� �r l�ng �r wu ni�n wu yu� �rsh�'�r h�o.</div>
             <div class="bubble-arti">Hari ini adalah tanggal 22 Mei 2025.</div>
           </div>
         </div>
@@ -1091,8 +1091,8 @@
         <div class="classroom-item">
           <div class="item-number">3</div>
           <div class="item-content">
-            <div class="bubble-hanzi">明天是2024年8月18号，星期天。</div>
-            <div class="bubble-pinyin">Míngtiān shì èr líng èr sì nián bā yuè shíbā hào, xīngqītiān.</div>
+            <div class="bubble-hanzi">???2024?8?18?,????</div>
+            <div class="bubble-pinyin">M�ngtian sh� �r l�ng �r s� ni�n ba yu� sh�ba h�o, xingqitian.</div>
             <div class="bubble-arti">Besok adalah hari Minggu, 18 Agustus 2024.</div>
           </div>
         </div>
@@ -1100,8 +1100,8 @@
         <div class="classroom-item">
           <div class="item-number">4</div>
           <div class="item-content">
-            <div class="bubble-hanzi">A: 今天几号？<br>B: 今天5月1号。</div>
-            <div class="bubble-pinyin">A: Jīntiān jǐ hào?<br>B: Jīntiān wǔ yuè yī hào.</div>
+            <div class="bubble-hanzi">A: ?????<br>B: ??5?1??</div>
+            <div class="bubble-pinyin">A: Jintian ji h�o?<br>B: Jintian wu yu� yi h�o.</div>
             <div class="bubble-arti">A: Hari ini tanggal berapa?<br>B: Hari ini tanggal 1 Mei.</div>
           </div>
         </div>
@@ -1109,8 +1109,8 @@
         <div class="classroom-item">
           <div class="item-number">5</div>
           <div class="item-content">
-            <div class="bubble-hanzi">我妹妹12岁。</div>
-            <div class="bubble-pinyin">Wǒ mèimei shí'èr suì.</div>
+            <div class="bubble-hanzi">???12??</div>
+            <div class="bubble-pinyin">Wo m�imei sh�'�r su�.</div>
             <div class="bubble-arti">Adik perempuan saya berusia 12 tahun.</div>
           </div>
         </div>
@@ -1119,58 +1119,58 @@
     </div>
   </div>
 
-  <!-- ══ TEKS 2 ══ -->
+  <!-- -- TEKS 2 -- -->
   <div>
-    <div class="section-title">💬 Teks 2</div>
+    <div class="section-title">?? Teks 2</div>
     <div class="dialog-box">
 
-      <!-- 王一雪: 你会做饭吗？ -->
+      <!-- ???: ?????? -->
       <div class="dialog-line">
-        <div class="avatar av-xue">雪</div>
+        <div class="avatar av-xue">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">王一雪</span><span class="speaker-pinyin"> (Wáng Yīxuě)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (W�ng Yixue)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">你会做饭吗？</div>
-            <div class="bubble-pinyin">Nǐ huì zuòfàn ma?</div>
+            <div class="bubble-hanzi">??????</div>
+            <div class="bubble-pinyin">Ni hu� zu�f�n ma?</div>
             <div class="bubble-arti">Apakah kamu bisa memasak?</div>
           </div>
         </div>
       </div>
 
-      <!-- 杨同乐: 我会做。 -->
+      <!-- ???: ???? -->
       <div class="dialog-line right yang">
-        <div class="avatar av-yang">乐</div>
+        <div class="avatar av-yang">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">杨同乐</span><span class="speaker-pinyin"> (Yáng Tónglè)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (Y�ng T�ngl�)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">我会做。</div>
-            <div class="bubble-pinyin">Wǒ huì zuò.</div>
+            <div class="bubble-hanzi">????</div>
+            <div class="bubble-pinyin">Wo hu� zu�.</div>
             <div class="bubble-arti">Saya bisa (memasak).</div>
           </div>
         </div>
       </div>
 
-      <!-- 王一雪: 你会做什么？ -->
+      <!-- ???: ?????? -->
       <div class="dialog-line">
-        <div class="avatar av-xue">雪</div>
+        <div class="avatar av-xue">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">王一雪</span><span class="speaker-pinyin"> (Wáng Yīxuě)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (W�ng Yixue)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">你会做什么？</div>
-            <div class="bubble-pinyin">Nǐ huì zuò shénme?</div>
+            <div class="bubble-hanzi">??????</div>
+            <div class="bubble-pinyin">Ni hu� zu� sh�nme?</div>
             <div class="bubble-arti">Kamu bisa memasak apa?</div>
           </div>
         </div>
       </div>
 
-      <!-- 杨同乐: 我会做面条儿、饺子，也会做一些菜。星期天我也做饭。 -->
+      <!-- ???: ?????????,??????????????? -->
       <div class="dialog-line right yang">
-        <div class="avatar av-yang">乐</div>
+        <div class="avatar av-yang">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">杨同乐</span><span class="speaker-pinyin"> (Yáng Tónglè)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (Y�ng T�ngl�)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">我会做面条儿、饺子，也会做一些菜。星期天我也做饭。</div>
-            <div class="bubble-pinyin">Wǒ huì zuò miàntiáor, jiǎozi, yě huì zuò yìxiē cài. Xīngqītiān wǒ yě zuòfàn.</div>
+            <div class="bubble-hanzi">?????????,???????????????</div>
+            <div class="bubble-pinyin">Wo hu� zu� mi�nti�or, jiaozi, ye hu� zu� y�xie c�i. Xingqitian wo ye zu�f�n.</div>
             <div class="bubble-arti">Saya bisa membuat mi, pangsit, dan juga bisa memasak beberapa masakan. Hari Minggu saya juga memasak.</div>
           </div>
         </div>
@@ -1179,47 +1179,47 @@
       <!-- Sub-breakdown Kosakata Teks 2 -->
       <div class="sub-breakdown">
         <div class="sub-breakdown-title">
-          <span>📚 Kosakata Baru · Teks 2</span>
+          <span>?? Kosakata Baru � Teks 2</span>
         </div>
         <div class="words-grid">
           <div class="word-card">
-            <div class="word-char">会</div>
-            <div class="word-pinyin">huì</div>
+            <div class="word-char">?</div>
+            <div class="word-pinyin">hu�</div>
             <div class="word-arti">Bisa / Mahir (belajar)</div>
           </div>
           <div class="word-card">
-            <div class="word-char">做</div>
-            <div class="word-pinyin">zuò</div>
+            <div class="word-char">?</div>
+            <div class="word-pinyin">zu�</div>
             <div class="word-arti">Membuat / Memasak</div>
           </div>
           <div class="word-card">
-            <div class="word-char">做饭</div>
-            <div class="word-pinyin">zuò fàn</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">zu� f�n</div>
             <div class="word-arti">Memasak (makanan)</div>
           </div>
           <div class="word-card">
-            <div class="word-char">面条儿</div>
-            <div class="word-pinyin">miàntiáor</div>
+            <div class="word-char">???</div>
+            <div class="word-pinyin">mi�nti�or</div>
             <div class="word-arti">Mi / Bakmi</div>
           </div>
           <div class="word-card">
-            <div class="word-char">饺子</div>
-            <div class="word-pinyin">jiǎozi</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">jiaozi</div>
             <div class="word-arti">Pangsit / Jiaozi</div>
           </div>
           <div class="word-card">
-            <div class="word-char">一些</div>
-            <div class="word-pinyin">yìxiē</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">y�xie</div>
             <div class="word-arti">Beberapa / Sedikit</div>
           </div>
           <div class="word-card">
-            <div class="word-char">菜</div>
-            <div class="word-pinyin">cài</div>
+            <div class="word-char">?</div>
+            <div class="word-pinyin">c�i</div>
             <div class="word-arti">Masakan / Sayur / Lauk</div>
           </div>
           <div class="word-card">
-            <div class="word-char">星期天</div>
-            <div class="word-pinyin">xīngqītiān</div>
+            <div class="word-char">???</div>
+            <div class="word-pinyin">xingqitian</div>
             <div class="word-arti">Hari Minggu</div>
           </div>
         </div>
@@ -1228,50 +1228,50 @@
     </div>
   </div>
 
-  <!-- ══ XIAOYU'S CLASSROOM (SESI 2) ══ -->
+  <!-- -- XIAOYU'S CLASSROOM (SESI 2) -- -->
   <div>
-    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (Sesi 2)</div>
+    <div class="section-title">?? Xiaoyu's Classroom � ???? (Sesi 2)</div>
     <div class="classroom-box">
       <div class="classroom-header">
-        <div class="avatar av-xiaoyu">语</div>
+        <div class="avatar av-xiaoyu">?</div>
         <div class="classroom-intro">
-          <div class="classroom-badge">Pola Kemampuan 会 &amp; 不会 · 重点句型</div>
-          <div class="classroom-desc">Yuk pelajari cara menyatakan kemampuan (会 = bisa karena dipelajari) dan bentuk negatifnya (不会 = tidak bisa) bersama Xiaoyu!</div>
+          <div class="classroom-badge">Pola Kemampuan ? &amp; ?? � ????</div>
+          <div class="classroom-desc">Yuk pelajari cara menyatakan kemampuan (? = bisa karena dipelajari) dan bentuk negatifnya (?? = tidak bisa) bersama Xiaoyu!</div>
         </div>
       </div>
       
       <div class="classroom-list">
-        <!-- Bagian 1: Latihan Pola Kalimat 会 / 不会 -->
+        <!-- Bagian 1: Latihan Pola Kalimat ? / ?? -->
         <div class="classroom-group-title">
-          <span>🍳 重点句型 · Latihan Pola Kalimat Kemampuan (会 / 不会 + Kata Kerja)</span>
+          <span>?? ???? � Latihan Pola Kalimat Kemampuan (? / ?? + Kata Kerja)</span>
         </div>
 
-        <!-- Item 1: 你会做饭吗？ -->
+        <!-- Item 1: ?????? -->
         <div class="classroom-item">
           <div class="item-number">1</div>
           <div class="item-content">
-            <div class="bubble-hanzi">你会做饭吗？</div>
-            <div class="bubble-pinyin">Nǐ huì zuòfàn ma?</div>
+            <div class="bubble-hanzi">??????</div>
+            <div class="bubble-pinyin">Ni hu� zu�f�n ma?</div>
             <div class="bubble-arti">Apakah kamu bisa memasak?</div>
           </div>
         </div>
 
-        <!-- Item 2: 我会做面条儿。 -->
+        <!-- Item 2: ??????? -->
         <div class="classroom-item">
           <div class="item-number">2</div>
           <div class="item-content">
-            <div class="bubble-hanzi">我会做面条儿。</div>
-            <div class="bubble-pinyin">Wǒ huì zuò miàntiáor.</div>
+            <div class="bubble-hanzi">???????</div>
+            <div class="bubble-pinyin">Wo hu� zu� mi�nti�or.</div>
             <div class="bubble-arti">Saya bisa membuat mi.</div>
           </div>
         </div>
 
-        <!-- Item 3: 我不会做菜。 -->
+        <!-- Item 3: ?????? -->
         <div class="classroom-item">
           <div class="item-number">3</div>
           <div class="item-content">
-            <div class="bubble-hanzi">我不会做菜。</div>
-            <div class="bubble-pinyin">Wǒ bú huì zuò cài.</div>
+            <div class="bubble-hanzi">??????</div>
+            <div class="bubble-pinyin">Wo b� hu� zu� c�i.</div>
             <div class="bubble-arti">Saya tidak bisa memasak lauk/sayur.</div>
           </div>
         </div>
@@ -1280,84 +1280,84 @@
     </div>
   </div>
 
-  <!-- ══ TEKS 3 ══ -->
+  <!-- -- TEKS 3 -- -->
   <div>
-    <div class="section-title">💬 Teks 3</div>
+    <div class="section-title">?? Teks 3</div>
     <div class="dialog-box">
 
-      <!-- 王一雪: 同乐，下班吗？ -->
+      <!-- ???: ??,???? -->
       <div class="dialog-line">
-        <div class="avatar av-xue">雪</div>
+        <div class="avatar av-xue">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">王一雪</span><span class="speaker-pinyin"> (Wáng Yīxuě)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (W�ng Yixue)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">同乐，下班吗？</div>
-            <div class="bubble-pinyin">Tónglè, xiàbān ma?</div>
+            <div class="bubble-hanzi">??,????</div>
+            <div class="bubble-pinyin">T�ngl�, xi�ban ma?</div>
             <div class="bubble-arti">Tongle, apakah kamu pulang kerja?</div>
           </div>
         </div>
       </div>
 
-      <!-- 杨同乐: 下班。 -->
+      <!-- ???: ??? -->
       <div class="dialog-line right yang">
-        <div class="avatar av-yang">乐</div>
+        <div class="avatar av-yang">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">杨同乐</span><span class="speaker-pinyin"> (Yáng Tónglè)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (Y�ng T�ngl�)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">下班。</div>
-            <div class="bubble-pinyin">Xiàbān.</div>
+            <div class="bubble-hanzi">???</div>
+            <div class="bubble-pinyin">Xi�ban.</div>
             <div class="bubble-arti">Pulang kerja / Selesai kerja.</div>
           </div>
         </div>
       </div>
 
-      <!-- 王一雪: 这是你的新电脑吗？ -->
+      <!-- ???: ????????? -->
       <div class="dialog-line">
-        <div class="avatar av-xue">雪</div>
+        <div class="avatar av-xue">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">王一雪</span><span class="speaker-pinyin"> (Wáng Yīxuě)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (W�ng Yixue)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">这是你的新电脑吗？</div>
-            <div class="bubble-pinyin">Zhè shì nǐ de xīn diànnǎo ma?</div>
+            <div class="bubble-hanzi">?????????</div>
+            <div class="bubble-pinyin">Zh� sh� ni de xin di�nnao ma?</div>
             <div class="bubble-arti">Apakah ini komputer barumu?</div>
           </div>
         </div>
       </div>
 
-      <!-- 杨同乐: 是的，是我的新电脑。 -->
+      <!-- ???: ??,??????? -->
       <div class="dialog-line right yang">
-        <div class="avatar av-yang">乐</div>
+        <div class="avatar av-yang">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">杨同乐</span><span class="speaker-pinyin"> (Yáng Tónglè)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (Y�ng T�ngl�)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">是的，是我的新电脑。</div>
-            <div class="bubble-pinyin">Shì de, shì wǒ de xīn diànnǎo.</div>
+            <div class="bubble-hanzi">??,???????</div>
+            <div class="bubble-pinyin">Sh� de, sh� wo de xin di�nnao.</div>
             <div class="bubble-arti">Ya, ini komputer baruku.</div>
           </div>
         </div>
       </div>
 
-      <!-- 王一雪: 真好看！ -->
+      <!-- ???: ???! -->
       <div class="dialog-line">
-        <div class="avatar av-xue">雪</div>
+        <div class="avatar av-xue">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">王一雪</span><span class="speaker-pinyin"> (Wáng Yīxuě)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (W�ng Yixue)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">真好看！</div>
-            <div class="bubble-pinyin">Zhēn hǎokàn!</div>
+            <div class="bubble-hanzi">???!</div>
+            <div class="bubble-pinyin">Zhen haok�n!</div>
             <div class="bubble-arti">Sungguh bagus / Sangat keren!</div>
           </div>
         </div>
       </div>
 
-      <!-- 杨同乐: 我也很喜欢它。 -->
+      <!-- ???: ??????? -->
       <div class="dialog-line right yang">
-        <div class="avatar av-yang">乐</div>
+        <div class="avatar av-yang">?</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">杨同乐</span><span class="speaker-pinyin"> (Yáng Tónglè)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">???</span><span class="speaker-pinyin"> (Y�ng T�ngl�)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">我也很喜欢它。</div>
-            <div class="bubble-pinyin">Wǒ yě hěn xǐhuan tā.</div>
+            <div class="bubble-hanzi">???????</div>
+            <div class="bubble-pinyin">Wo ye hen xihuan ta.</div>
             <div class="bubble-arti">Saya juga sangat menyukainya.</div>
           </div>
         </div>
@@ -1366,52 +1366,52 @@
       <!-- Sub-breakdown Kosakata Teks 3 -->
       <div class="sub-breakdown">
         <div class="sub-breakdown-title">
-          <span>📚 Kosakata Baru · Teks 3</span>
+          <span>?? Kosakata Baru � Teks 3</span>
         </div>
         <div class="words-grid">
           <div class="word-card">
-            <div class="word-char">同乐</div>
-            <div class="word-pinyin">Tónglè</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">T�ngl�</div>
             <div class="word-arti">Nama orang (Yang Tongle)</div>
           </div>
           <div class="word-card">
-            <div class="word-char">下班</div>
-            <div class="word-pinyin">xià bān</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">xi� ban</div>
             <div class="word-arti">Pulang kerja / Selesai jam kerja</div>
           </div>
           <div class="word-card">
-            <div class="word-char">新</div>
-            <div class="word-pinyin">xīn</div>
+            <div class="word-char">?</div>
+            <div class="word-pinyin">xin</div>
             <div class="word-arti">Baru</div>
           </div>
           <div class="word-card">
-            <div class="word-char">电脑</div>
-            <div class="word-pinyin">diànnǎo</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">di�nnao</div>
             <div class="word-arti">Komputer / Laptop</div>
           </div>
           <div class="word-card">
-            <div class="word-char">新电脑</div>
-            <div class="word-pinyin">xīn diànnǎo</div>
+            <div class="word-char">???</div>
+            <div class="word-pinyin">xin di�nnao</div>
             <div class="word-arti">Komputer baru</div>
           </div>
           <div class="word-card">
-            <div class="word-char">真</div>
-            <div class="word-pinyin">zhēn</div>
+            <div class="word-char">?</div>
+            <div class="word-pinyin">zhen</div>
             <div class="word-arti">Sungguh / Benar-benar</div>
           </div>
           <div class="word-card">
-            <div class="word-char">好看</div>
-            <div class="word-pinyin">hǎokàn</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">haok�n</div>
             <div class="word-arti">Bagus / Enak dipandang / Keren</div>
           </div>
           <div class="word-card">
-            <div class="word-char">喜欢</div>
-            <div class="word-pinyin">xǐhuan</div>
+            <div class="word-char">??</div>
+            <div class="word-pinyin">xihuan</div>
             <div class="word-arti">Suka / Menyukai</div>
           </div>
           <div class="word-card">
-            <div class="word-char">它</div>
-            <div class="word-pinyin">tā</div>
+            <div class="word-char">?</div>
+            <div class="word-pinyin">ta</div>
             <div class="word-arti">Dia / -nya (benda/hewan)</div>
           </div>
         </div>
@@ -1420,17 +1420,17 @@
     </div>
   </div>
 
-  <!-- ══ TOGGLE CONTROLS (DI PALING BAWAH) ══ -->
+  <!-- -- TOGGLE CONTROLS (DI PALING BAWAH) -- -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
-      <span class="icon">⚙️</span>
+      <span class="icon">??</span>
       <span>Bantuan:</span>
     </div>
     <div class="toolbar-buttons">
-      <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
-      <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti Kalimat">🇮🇩</button>
-      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Arti Per Kata">📖</button>
-      <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warna-warni Hanzi &amp; Pinyin">🎨</button>
+      <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">??</button>
+      <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti Kalimat">????</button>
+      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Arti Per Kata">??</button>
+      <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warna-warni Hanzi &amp; Pinyin">??</button>
     </div>
   </div>
 </div><!-- /wrap -->
@@ -1438,8 +1438,8 @@
 <script>
   // Palet warna kontras & cerah untuk karakter per kata
   const COLOR_PALETTE = [
-    '#e11d48', // Merah (seperti pada "你 / nǐ")
-    '#16a34a', // Hijau (seperti pada "好 / hǎo")
+    '#e11d48', // Merah (seperti pada "? / ni")
+    '#16a34a', // Hijau (seperti pada "? / hao")
     '#2563eb', // Biru royal
     '#ea580c', // Oranye
     '#7c3aed', // Ungu
@@ -1456,7 +1456,7 @@
   ];
 
   // Finals dan Regex Pinyin untuk mencocokkan suku kata (syllable) Mandarin
-  const _A = '[aāáǎà]', _O = '[oōóǒò]', _E = '[eēéěè]', _I = '[iīíǐì]', _U = '[uūúǔù]', _V = '[üǖǘǚǜv]';
+  const _A = '[aa�a�]', _O = '[oo�o�]', _E = '[ee�e�]', _I = '[ii�i�]', _U = '[uu�u�]', _V = '[�uuuuv]';
   const _finals = [
     _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
     _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
@@ -1466,7 +1466,7 @@
     _V+_E, 'er',
     _A, _O, _E, _I, _U, _V
   ].join('|');
-  const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsyw])?(?:' + _finals + ')r?', 'i');
+  const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
 
   function isHanziChar(ch) {
     return /[\u4e00-\u9fa5]/.test(ch);
@@ -1505,7 +1505,7 @@
 
     while (remaining.length > 0) {
       // Lewati akronim alfabetik kapital (seperti "AI")
-      const acronymMatch = remaining.match(/^[A-Z]{2,}(?=[^a-zāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜv]|$)/);
+      const acronymMatch = remaining.match(/^[A-Z]{2,}(?=[^a-za�a�o�o�e�e�i�i�u�u��uuuuv]|$)/);
       if (acronymMatch) {
         outPy += acronymMatch[0];
         remaining = remaining.substring(acronymMatch[0].length);
@@ -1513,7 +1513,7 @@
       }
 
       // Lewati spasi dan tanda baca
-      const nonLetterMatch = remaining.match(/^[^a-zA-Zāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜv]+/);
+      const nonLetterMatch = remaining.match(/^[^a-zA-Za�a�o�o�e�e�i�i�u�u��uuuuv]+/);
       if (nonLetterMatch) {
         outPy += nonLetterMatch[0];
         remaining = remaining.substring(nonLetterMatch[0].length);
@@ -1542,10 +1542,10 @@
   }
 
   function applyColors() {
-    // Inisialisasi peta warna dengan 你 (merah) dan 好 (hijau) sebagai acuan
+    // Inisialisasi peta warna dengan ? (merah) dan ? (hijau) sebagai acuan
     const charColorMap = {
-      '你': '#e11d48', // Merah
-      '好': '#16a34a'  // Hijau
+      '?': '#e11d48', // Merah
+      '?': '#16a34a'  // Hijau
     };
 
     // 1. Warnai dialog bubbles
