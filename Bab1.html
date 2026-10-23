@@ -521,6 +521,93 @@
     }
     body.show-arti .char-desc-arti { display: block; }
 
+    /* ── XIAOYU CLASSROOM (课堂用语) ── */
+    .classroom-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-left: 5px solid var(--gold);
+    }
+    .classroom-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .classroom-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #b7791f;
+      background: #fefcbf;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      margin-bottom: 0.25rem;
+    }
+    .classroom-desc {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .classroom-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .classroom-group-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 0.35rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .classroom-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 0.85rem 1.1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .classroom-item:hover {
+      border-color: #cbd5e1;
+      transform: translateX(3px);
+    }
+    .classroom-box .bubble-pinyin { display: block; }
+    .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
+    .item-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+    .item-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      flex: 1;
+    }
+
     /* ── TONGUE TWISTER ── */
     .twister-box {
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -682,6 +769,9 @@
       .char-desc-hanzi { font-size: 0.9rem; }
       .char-desc-pinyin { font-size: 0.76rem; }
       .char-desc-arti { font-size: 0.76rem; }
+
+      .classroom-box { padding: 1.1rem 0.9rem; }
+      .classroom-item { padding: 0.75rem 0.85rem; gap: 0.65rem; }
 
       /* Mobile Navbar */
       .nav { padding: 0.5rem 0.75rem; }
@@ -1317,6 +1407,172 @@
     </div>
   </div>
 
+  <!-- ══ CLASSROOM LANGUAGE (课堂用语) ══ -->
+  <div>
+    <div class="section-title">🏫 课堂用语 · Classroom Language</div>
+    <div class="classroom-box">
+      <div class="classroom-header">
+        <div>
+          <span class="classroom-badge">Ungkapan Kelas · 课堂常用表达</span>
+          <div class="classroom-desc">Ungkapan umum bahasa Mandarin yang sering digunakan guru dan siswa di dalam kelas:</div>
+        </div>
+      </div>
+
+      <!-- Bagian 1: Teacher Language -->
+      <div class="classroom-group-title">
+        <span>👩‍🏫 Bahasa Guru di Kelas · 教师课堂用语 (Classroom Language for Teacher)</span>
+      </div>
+      <div class="classroom-list">
+        <!-- Item 1: 现在上课。 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">现在上课。</div>
+            <div class="bubble-pinyin">Xiànzài shàngkè.</div>
+            <div class="bubble-arti">Sekarang kita mulai pelajaran / Kelas dimulai sekarang.</div>
+          </div>
+        </div>
+
+        <!-- Item 2: 请打开书，第×页。 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">请打开书，第×页。</div>
+            <div class="bubble-pinyin">Qǐng dǎkāi shū, dì × yè.</div>
+            <div class="bubble-arti">Silakan buka buku, halaman... (ke-x).</div>
+          </div>
+        </div>
+
+        <!-- Item 3: 今天学习第×课。 -->
+        <div class="classroom-item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">今天学习第×课。</div>
+            <div class="bubble-pinyin">Jīntiān xuéxí dì × kè.</div>
+            <div class="bubble-arti">Hari ini kita belajar pelajaran ke-... (ke-x).</div>
+          </div>
+        </div>
+
+        <!-- Item 4: 这是什么？ -->
+        <div class="classroom-item">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">这是什么？</div>
+            <div class="bubble-pinyin">Zhè shì shénme?</div>
+            <div class="bubble-arti">Ini apa?</div>
+          </div>
+        </div>
+
+        <!-- Item 5: 请跟我读。 -->
+        <div class="classroom-item">
+          <div class="item-number">5</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">请跟我读。</div>
+            <div class="bubble-pinyin">Qǐng gēn wǒ dú.</div>
+            <div class="bubble-arti">Silakan baca ikuti saya.</div>
+          </div>
+        </div>
+
+        <!-- Item 6: 请你读。 -->
+        <div class="classroom-item">
+          <div class="item-number">6</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">请你读。</div>
+            <div class="bubble-pinyin">Qǐng nǐ dú.</div>
+            <div class="bubble-arti">Silakan kamu baca.</div>
+          </div>
+        </div>
+
+        <!-- Item 7: 请再读一遍。 -->
+        <div class="classroom-item">
+          <div class="item-number">7</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">请再读一遍。</div>
+            <div class="bubble-pinyin">Qǐng zài dú yí biàn.</div>
+            <div class="bubble-arti">Silakan baca sekali lagi.</div>
+          </div>
+        </div>
+
+        <!-- Item 8: 请你问，他/她回答。 -->
+        <div class="classroom-item">
+          <div class="item-number">8</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">请你问，他/她回答。</div>
+            <div class="bubble-pinyin">Qǐng nǐ wèn, tā / tā huídá.</div>
+            <div class="bubble-arti">Silakan kamu bertanya, dia menjawab.</div>
+          </div>
+        </div>
+
+        <!-- Item 9: 请坐。 -->
+        <div class="classroom-item">
+          <div class="item-number">9</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">请坐。</div>
+            <div class="bubble-pinyin">Qǐng zuò.</div>
+            <div class="bubble-arti">Silakan duduk.</div>
+          </div>
+        </div>
+
+        <!-- Item 10: 下课。 -->
+        <div class="classroom-item">
+          <div class="item-number">10</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">下课。</div>
+            <div class="bubble-pinyin">Xiàkè.</div>
+            <div class="bubble-arti">Kelas selesai / Pelajaran berakhir.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bagian 2: Student Language -->
+      <div class="classroom-group-title">
+        <span>👨‍🎓 Bahasa Siswa di Kelas · 学生课堂用语 (Classroom Language for Student)</span>
+      </div>
+      <div class="classroom-list">
+        <!-- Item 1: 请再说一遍。 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">请再说一遍。</div>
+            <div class="bubble-pinyin">Qǐng zài shuō yí biàn.</div>
+            <div class="bubble-arti">Tolong ucapkan sekali lagi.</div>
+          </div>
+        </div>
+
+        <!-- Item 2: 请再读一遍。 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">请再读一遍。</div>
+            <div class="bubble-pinyin">Qǐng zài dú yí biàn.</div>
+            <div class="bubble-arti">Tolong baca sekali lagi.</div>
+          </div>
+        </div>
+
+        <!-- Item 3: 老师，请慢点儿说。 -->
+        <div class="classroom-item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">老师，请慢点儿说。</div>
+            <div class="bubble-pinyin">Lǎoshī, qǐng màn diǎn er shuō.</div>
+            <div class="bubble-arti">Guru, tolong bicara lebih pelan sedikit.</div>
+          </div>
+        </div>
+
+        <!-- Item 4: 这个是什么意思？ -->
+        <div class="classroom-item">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">这个是什么意思？</div>
+            <div class="bubble-pinyin">Zhè ge shì shénme yìsi?</div>
+            <div class="bubble-arti">Apa arti/maksud dari yang ini?</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ══ TONGUE TWISTER ══ -->
   <div>
     <div class="section-title">👅 Tongue Twister · 绕口令</div>
@@ -1542,6 +1798,22 @@
           descHz.innerHTML = resDesc.hanzi;
           descPy.innerHTML = resDesc.pinyin;
         }
+      });
+    });
+
+    // 6. Warnai Xiaoyu Classroom items (classroom-item)
+    document.querySelectorAll('.classroom-box').forEach(box => {
+      box.querySelectorAll('.item-content').forEach(item => {
+        const hzEl = item.querySelector('.bubble-hanzi');
+        const pyEl = item.querySelector('.bubble-pinyin');
+        if (!hzEl || !pyEl) return;
+
+        if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
+        if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
+
+        const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
       });
     });
   }
