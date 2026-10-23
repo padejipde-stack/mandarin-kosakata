@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dialog Bahasa Mandarin - Bab 5: Tanggal & Hari</title>
+  <title>Dialog Bahasa Mandarin - Bab 5: 今天我休息</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🈶</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -765,7 +765,7 @@
 <header>
   <h1>🈶 Dialog Bahasa Mandarin</h1>
   <p>Latihan percakapan · 对话练习</p>
-  <div class="bab">Bab 5 — Tanggal, Bulan &amp; Hari · 日期与星期</div>
+  <div class="bab">Bab 5 — 今天我休息 · Hari Ini Saya Istirahat</div>
 </header>
 
 <!-- nav bar -->
@@ -1504,6 +1504,22 @@
     let remaining = pinyinText;
 
     while (remaining.length > 0) {
+      // Lewati tag HTML (seperti <br>)
+      const tagMatch = remaining.match(/^<[^>]+>/);
+      if (tagMatch) {
+        outPy += tagMatch[0];
+        remaining = remaining.substring(tagMatch[0].length);
+        continue;
+      }
+
+      // Lewati label dialog berupa huruf latin tunggal (seperti "A:", "B:", "A：", "B：")
+      const labelMatch = remaining.match(/^[A-Z][：:]\s*/);
+      if (labelMatch) {
+        outPy += labelMatch[0];
+        remaining = remaining.substring(labelMatch[0].length);
+        continue;
+      }
+
       // Lewati akronim alfabetik kapital (seperti "AI")
       const acronymMatch = remaining.match(/^[A-Z]{2,}(?=[^a-zāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜv]|$)/);
       if (acronymMatch) {
@@ -1616,11 +1632,11 @@
         const pyEl = item.querySelector('.bubble-pinyin');
         if (!hzEl || !pyEl) return;
 
-        // Simpan teks asli (gunakan textContent agar bersih dari span warna sebelumnya)
-        if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
-        if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
+        // Simpan HTML asli (gunakan origHtml agar format & tag <br> terjaga)
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
 
-        const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
         hzEl.innerHTML = res.hanzi;
         pyEl.innerHTML = res.pinyin;
       });
