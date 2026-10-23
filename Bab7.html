@@ -442,6 +442,9 @@
     .classroom-box .bubble-pinyin { display: none; }
     body.show-pinyin .classroom-box .bubble-pinyin { display: block; }
     .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
+    /* Color mode: hapus override primary-dark agar span warna terlihat */
+    body.show-color .classroom-box .bubble-hanzi { color: var(--text); }
+    body.show-color .classroom-box .bubble-pinyin { color: var(--sub); }
     .item-number {
       width: 28px;
       height: 28px;
@@ -1468,7 +1471,7 @@
   const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
 
   function isHanziChar(ch) {
-    return /[\u3007\u4e00-\u9fa5]/.test(ch);
+    return /[\u3007\u4e00-\u9fa50-9]/.test(ch);
   }
 
   // Mewarnai pasangan teks Hanzi dan Pinyin per-karakter / per-kata

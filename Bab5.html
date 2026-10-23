@@ -464,6 +464,9 @@
     .classroom-box .bubble-pinyin { display: none; }
     body.show-pinyin .classroom-box .bubble-pinyin { display: block; }
     .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
+    /* Color mode: hapus override primary-dark agar span warna terlihat */
+    body.show-color .classroom-box .bubble-hanzi { color: var(--text); }
+    body.show-color .classroom-box .bubble-pinyin { color: var(--sub); }
     .item-number {
       width: 28px;
       height: 28px;
@@ -816,9 +819,9 @@
         <div class="classroom-item">
           <div class="item-number" style="background:#6d28d9;color:#fff;">A</div>
           <div class="item-content">
-            <div class="bubble-hanzi">二〇二五年五月</div>
+            <div class="bubble-hanzi">2025年5月</div>
             <div class="bubble-pinyin">èr líng èr wǔ nián wǔ yuè</div>
-            <div class="bubble-arti">二〇二五年五月 · Mei 2025 (bulan ke-5 tahun 2025)</div>
+            <div class="bubble-arti">Mei 2025 (bulan ke-5 tahun 2025)</div>
           </div>
         </div>
 
@@ -1200,6 +1203,52 @@
     </div>
   </div>
 
+  <!-- ══ PERTANYAAN PEMAHAMAN (DI ATAS TEKS 2) ══ -->
+  <div>
+    <div class="section-title">❓ Pertanyaan Pemahaman · 课前预习与选择</div>
+    <div class="classroom-box">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">问</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge">Latihan Pilihan Ganda · 选择题</div>
+          <div class="classroom-desc">Perhatikan pertanyaan berikut untuk memahami isi percakapan Teks 2!</div>
+        </div>
+      </div>
+      
+      <div class="classroom-list">
+        <!-- Soal 1 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">杨同乐会做饭。</div>
+            <div class="bubble-pinyin">Yáng Tónglè huì zuò fàn.</div>
+            <div class="bubble-arti">Yang Tongle bisa memasak.</div>
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.92rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">A. 会 <em>(huì)</em> ✓</span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">B. 不 <em>(bù)</em></span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 不会 <em>(bú huì)</em></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">杨同乐星期日也做饭。</div>
+            <div class="bubble-pinyin">Yáng Tónglè xīngqīrì yě zuò fàn.</div>
+            <div class="bubble-arti">Yang Tongle pada hari Minggu juga memasak.</div>
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.92rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 星期三 <em>(xīngqīsān)</em></span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">B. 星期六 <em>(xīngqīliù)</em></span>
+              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">C. 星期日 <em>(xīngqīrì)</em> ✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ TEKS 2 ══ -->
   <div>
     <div class="section-title">💬 Teks 2</div>
@@ -1361,6 +1410,52 @@
     </div>
   </div>
 
+  <!-- ══ PERTANYAAN PEMAHAMAN (DI ATAS TEKS 3) ══ -->
+  <div>
+    <div class="section-title">❓ Pertanyaan Pemahaman · 课前预习与选择</div>
+    <div class="classroom-box">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">问</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge">Latihan Pilihan Ganda · 选择题</div>
+          <div class="classroom-desc">Perhatikan pertanyaan berikut untuk memahami isi percakapan Teks 3!</div>
+        </div>
+      </div>
+      
+      <div class="classroom-list">
+        <!-- Soal 1 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">杨同乐也下班。</div>
+            <div class="bubble-pinyin">Yáng Tónglè yě xiàbān.</div>
+            <div class="bubble-arti">Yang Tongle juga pulang kerja.</div>
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.92rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 上班 <em>(shàngbān)</em></span>
+              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 下班 <em>(xiàbān)</em> ✓</span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 休息 <em>(xiūxi)</em></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">杨同乐有一个新电脑。</div>
+            <div class="bubble-pinyin">Yáng Tónglè yǒu yí gè xīn diànnǎo.</div>
+            <div class="bubble-arti">Yang Tongle memiliki sebuah komputer baru.</div>
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.92rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 名字 <em>(míngzi)</em></span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">B. 工作 <em>(gōngzuò)</em></span>
+              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">C. 电脑 <em>(diànnǎo)</em> ✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ TEKS 3 ══ -->
   <div>
     <div class="section-title">💬 Teks 3</div>
@@ -1501,6 +1596,137 @@
     </div>
   </div>
 
+  <!-- ══ XIAOYU'S CLASSROOM (SESI 3) ══ -->
+  <div>
+    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (Sesi 3)</div>
+    <div class="classroom-box">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">语</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge">Latihan Pemahaman, Kalimat &amp; Membaca Tanggal · 综合问答与表达</div>
+          <div class="classroom-desc">Yuk latihan tanya jawab teks 3, percakapan kemampuan &amp; komputer, serta membaca tanggal lengkap bersama Xiaoyu!</div>
+        </div>
+      </div>
+      
+      <div class="classroom-list">
+        <!-- Bagian 1: Tanya Jawab Isi Teks 3 · 课文问答 -->
+        <div class="classroom-group-title">
+          <span>📌 Tanya Jawab Pemahaman Teks 3 · 课文问答</span>
+        </div>
+
+        <!-- Item 1: 杨同乐的新电脑怎么样？ 真好看。 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">杨同乐的新电脑怎么样？ 真好看。</div>
+            <div class="bubble-pinyin">Yáng Tónglè de xīn diànnǎo zěnmeyàng? Zhēn hǎokàn.</div>
+            <div class="bubble-arti">Bagaimana komputer barunya Yang Tongle? Sungguh bagus / Sangat keren.</div>
+          </div>
+        </div>
+
+        <!-- Item 2: 杨同乐喜欢他的新电脑吗？ 他很喜欢。 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">杨同乐喜欢他的新电脑吗？ 他很喜欢。</div>
+            <div class="bubble-pinyin">Yáng Tónglè xǐhuan tā de xīn diànnǎo ma? Tā hěn xǐhuan.</div>
+            <div class="bubble-arti">Apakah Yang Tongle menyukai komputer barunya? Dia sangat menyukainya.</div>
+          </div>
+        </div>
+
+        <!-- Bagian 2: Latihan Kalimat & Percakapan · 句型与对话练习 -->
+        <div class="classroom-group-title">
+          <span>💬 Latihan Kalimat &amp; Percakapan Komprehensif · 句型与对话</span>
+        </div>
+
+        <!-- Item 1: 今天 6 月 22 号。 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">今天六月二十二号。</div>
+            <div class="bubble-pinyin">Jīntiān liù yuè èrshí'èr hào.</div>
+            <div class="bubble-arti">Hari ini tanggal 22 Juni (6月22号).</div>
+          </div>
+        </div>
+
+        <!-- Item 2: 杨同乐有一个新电脑。 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">杨同乐有一个新电脑。</div>
+            <div class="bubble-pinyin">Yáng Tónglè yǒu yí gè xīn diànnǎo.</div>
+            <div class="bubble-arti">Yang Tongle memiliki sebuah komputer baru.</div>
+          </div>
+        </div>
+
+        <!-- Item 3: 王一雪：你会做这两个菜吗？ / 杨同乐：我会做。 -->
+        <div class="classroom-item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">王一雪：你会做这两个菜吗？<br>杨同乐：我会做。</div>
+            <div class="bubble-pinyin">Wáng Yīxuě: Nǐ huì zuò zhè liǎng gè cài ma?<br>Yáng Tónglè: Wǒ huì zuò.</div>
+            <div class="bubble-arti">Wang Yixue: Apakah kamu bisa memasak dua masakan ini?<br>Yang Tongle: Saya bisa memasaknya.</div>
+          </div>
+        </div>
+
+        <!-- Item 4: 王一雪：你的电脑真好看！ / 杨同乐：我也很喜欢。 -->
+        <div class="classroom-item">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">王一雪：你的电脑真好看！<br>杨同乐：我也很喜欢。</div>
+            <div class="bubble-pinyin">Wáng Yīxuě: Nǐ de diànnǎo zhēn hǎokàn!<br>Yáng Tónglè: Wǒ yě hěn xǐhuan.</div>
+            <div class="bubble-arti">Wang Yixue: Komputermu sungguh keren!<br>Yang Tongle: Saya juga sangat menyukainya.</div>
+          </div>
+        </div>
+
+        <!-- Bagian 3: Latihan Membaca Tanggal & Deskripsi · 读一读 -->
+        <div class="classroom-group-title">
+          <span>📖 Latihan Membaca Tanggal &amp; Deskripsi · 读一读</span>
+        </div>
+
+        <!-- Item 1: 今天 2025年9月7号 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">今天 2025年9月7号</div>
+            <div class="bubble-pinyin">Jīntiān èr líng èr wǔ nián jiǔ yuè qī hào</div>
+            <div class="bubble-arti">Hari ini tanggal 7 September 2025</div>
+          </div>
+        </div>
+
+        <!-- Item 2: 杨同乐会做饭 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">杨同乐会做饭</div>
+            <div class="bubble-pinyin">Yáng Tónglè huì zuò fàn</div>
+            <div class="bubble-arti">Yang Tongle bisa memasak</div>
+          </div>
+        </div>
+
+        <!-- Item 3: 我做两个菜 -->
+        <div class="classroom-item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">我做两个菜</div>
+            <div class="bubble-pinyin">Wǒ zuò liǎng gè cài</div>
+            <div class="bubble-arti">Saya memasak dua jenis masakan/lauk</div>
+          </div>
+        </div>
+
+        <!-- Item 4: 今天是 2025 年 5 月 1 号，星期四 -->
+        <div class="classroom-item">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">今天是 2025 年 5 月 1 号，星期四</div>
+            <div class="bubble-pinyin">Jīntiān shì èr líng èr wǔ nián wǔ yuè yī hào, xīngqīsì</div>
+            <div class="bubble-arti">Hari ini adalah Kamis, 1 Mei 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ TOGGLE CONTROLS (DI PALING BAWAH) ══ -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
@@ -1550,7 +1776,7 @@
   const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
 
   function isHanziChar(ch) {
-    return /[\u3007\u4e00-\u9fa5]/.test(ch);
+    return /[\u3007\u4e00-\u9fa50-9]/.test(ch);
   }
 
   // Mewarnai pasangan teks Hanzi dan Pinyin per-karakter / per-kata
