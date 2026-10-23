@@ -578,9 +578,6 @@
       background: #10b981;
       color: #ffffff;
     }
-    .toggle-switch-btn.color-btn.active { background: #fefce8; color: #b45309; border-color: #f59e0b; }
-    .toggle-switch-btn.color-btn.active .status-badge { background: #f59e0b; color: #fff; }
-
     .btn-text-mobile { display: none; }
 
     /* ── RESPONSIVE MOBILE ── */
@@ -630,6 +627,60 @@
       .number-card .bubble-hanzi { font-size: 1.2rem; }
       .number-card .bubble-pinyin { font-size: 0.72rem; }
       .number-card .bubble-arti { font-size: 0.75rem; }
+    }
+
+    /* 🎨 COLOR MODE 🎨 */
+    .toggle-switch-btn.color-btn.active { background:#fefce8; color:#b45309; border-color:#f59e0b; }
+    .toggle-switch-btn.color-btn.active .status-badge { background:#f59e0b; color:#fff; }
+
+    /* 🔘 TOGGLE BUTTONS (SYMBOLS ONLY) 🔘 */
+    .toggle-switch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1.5px solid #cbd5e1;
+      padding: 0.45rem 0.75rem;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .toggle-switch-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .toggle-switch-btn.active {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #10b981;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+    }
+    .toggle-switch-btn#btnColor.active {
+      background: #fef3c7;
+      color: #b45309;
+      border-color: #f59e0b;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    }
+
+    /* 🎨 COLOR MODE HIGHLIGHTING 🎨 */
+    body.show-color .dialog-line.right .bubble {
+      background: #ffffff !important;
+      color: var(--text) !important;
+      border: 1.5px solid var(--border) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+    }
+    body.show-color .dialog-line.right .bubble .bubble-pinyin {
+      color: #64748b !important;
+    }
+    body.show-color .dialog-line.right .bubble .bubble-arti {
+      color: #475569 !important;
+      border-top-color: rgba(0, 0, 0, 0.12) !important;
     }
   
     .nav {
