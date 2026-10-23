@@ -653,6 +653,10 @@
         padding: 0.08rem 0.32rem;
       }
     }
+
+    /* â”€â”€ COLOR MODE â”€â”€ */
+    .toggle-switch-btn.color-btn.active { background:#fefce8; color:#b45309; border-color:#f59e0b; }
+    .toggle-switch-btn.color-btn.active .status-badge { background:#f59e0b; color:#fff; }
   </style>
 </head>
 <body>
@@ -1047,20 +1051,20 @@
     </div>
     <div class="toolbar-buttons">
       <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">
-        <span class="switch-icon">🔤</span>
-        <span>Pinyin</span>
+        <span class="switch-icon">&#x1F524;</span>
         <span class="status-badge">OFF</span>
       </button>
       <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti Kalimat">
-        <span class="switch-icon">🇮🇩</span>
-        <span>Arti</span>
+        <span class="switch-icon">&#x1F1EE;&#x1F1E9;</span>
         <span class="status-badge">OFF</span>
       </button>
       <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Arti Per Kata">
-        <span class="switch-icon">📖</span>
-        <span class="btn-text-desktop">Arti Per Kata</span>
-        <span class="btn-text-mobile">Kosakata</span>
+        <span class="switch-icon">&#x1F4D6;</span>
         <span class="status-badge">ON</span>
+      </button>
+      <button id="btnColor" class="toggle-switch-btn color-btn" onclick="toggleColor()" title="Warna Hanzi &amp; Pinyin">
+        <span class="switch-icon">&#x1F3A8;</span>
+        <span class="status-badge">OFF</span>
       </button>
     </div>
   </div>
@@ -1068,63 +1072,77 @@
 </div><!-- /wrap -->
 
 <script>
+  const COLOR_PALETTE = [
+    '#e53e3e','#d69e2e','#38a169','#3182ce','#805ad5',
+    '#dd6b20','#319795','#c53030','#2b6cb0','#276749',
+    '#6b46c1','#b7791f','#2c7a7b','#9b2c2c','#1a365d'
+  ];
+
+  function buildColorMap() {
+    const map = {};
+    let idx = 0;
+    document.querySelectorAll('.bubble').forEach(bubble => {
+      const hz = bubble.querySelector('.bubble-hanzi');
+      if (!hz) return;
+      const key = hz.textContent.trim();
+      if (!map[key]) { map[key] = COLOR_PALETTE[idx % COLOR_PALETTE.length]; idx++; }
+    });
+    return map;
+  }
+
+  function applyColors() {
+    const map = buildColorMap();
+    document.querySelectorAll('.bubble').forEach(bubble => {
+      const hz = bubble.querySelector('.bubble-hanzi');
+      const py = bubble.querySelector('.bubble-pinyin');
+      if (!hz) return;
+      const color = map[hz.textContent.trim()] || '#333';
+      hz.style.color = color;
+      if (py) py.style.color = color;
+    });
+    document.querySelectorAll('.word-card').forEach((card, i) => {
+      const color = COLOR_PALETTE[i % COLOR_PALETTE.length];
+      const wc = card.querySelector('.word-char');
+      const wp = card.querySelector('.word-pinyin');
+      if (wc) wc.style.color = color;
+      if (wp) wp.style.color = color;
+    });
+  }
+
+  function removeColors() {
+    document.querySelectorAll('.bubble-hanzi,.bubble-pinyin,.word-char,.word-pinyin').forEach(el => el.style.color = '');
+  }
+
   function updateToggleUI() {
-    const showPinyin = document.body.classList.contains('show-pinyin');
-    const showArti = document.body.classList.contains('show-arti');
-    const showVocab = document.body.classList.contains('show-vocab');
-    
-    const btnP = document.getElementById('btnPinyin');
-    if (btnP) {
-      btnP.classList.toggle('active', showPinyin);
-      btnP.querySelector('.status-badge').textContent = showPinyin ? 'ON' : 'OFF';
-    }
-
-    const btnA = document.getElementById('btnArti');
-    if (btnA) {
-      btnA.classList.toggle('active', showArti);
-      btnA.querySelector('.status-badge').textContent = showArti ? 'ON' : 'OFF';
-    }
-
-    const btnV = document.getElementById('btnVocab');
-    if (btnV) {
-      btnV.classList.toggle('active', showVocab);
-      btnV.querySelector('.status-badge').textContent = showVocab ? 'ON' : 'OFF';
-    }
+    const s = cl => document.body.classList.contains(cl);
+    const set = (id, cls) => {
+      const b = document.getElementById(id);
+      if (!b) return;
+      b.classList.toggle('active', s(cls));
+      b.querySelector('.status-badge').textContent = s(cls) ? 'ON' : 'OFF';
+    };
+    set('btnPinyin','show-pinyin');
+    set('btnArti','show-arti');
+    set('btnVocab','show-vocab');
+    set('btnColor','show-color');
   }
 
-  function togglePinyin() {
-    document.body.classList.toggle('show-pinyin');
-    const isShow = document.body.classList.contains('show-pinyin');
-    localStorage.setItem('mandarin_show_pinyin', isShow ? '1' : '0');
+  function togglePinyin() { document.body.classList.toggle('show-pinyin'); localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin')?'1':'0'); updateToggleUI(); }
+  function toggleArti()   { document.body.classList.toggle('show-arti');   localStorage.setItem('mandarin_show_arti',   document.body.classList.contains('show-arti')?'1':'0');   updateToggleUI(); }
+  function toggleVocab()  { document.body.classList.toggle('show-vocab');  localStorage.setItem('mandarin_show_vocab',  document.body.classList.contains('show-vocab')?'1':'0');  updateToggleUI(); }
+  function toggleColor()  {
+    document.body.classList.toggle('show-color');
+    const on = document.body.classList.contains('show-color');
+    localStorage.setItem('mandarin_show_color', on ? '1' : '0');
+    on ? applyColors() : removeColors();
     updateToggleUI();
   }
 
-  function toggleArti() {
-    document.body.classList.toggle('show-arti');
-    const isShow = document.body.classList.contains('show-arti');
-    localStorage.setItem('mandarin_show_arti', isShow ? '1' : '0');
-    updateToggleUI();
-  }
-
-  function toggleVocab() {
-    document.body.classList.toggle('show-vocab');
-    const isShow = document.body.classList.contains('show-vocab');
-    localStorage.setItem('mandarin_show_vocab', isShow ? '1' : '0');
-    updateToggleUI();
-  }
-
-  // Load saved preferences
   window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('mandarin_show_pinyin') === '1') {
-      document.body.classList.add('show-pinyin');
-    }
-    if (localStorage.getItem('mandarin_show_arti') === '1') {
-      document.body.classList.add('show-arti');
-    }
-    // Default show-vocab is ON unless explicitly set to '0'
-    if (localStorage.getItem('mandarin_show_vocab') !== '0') {
-      document.body.classList.add('show-vocab');
-    }
+    if (localStorage.getItem('mandarin_show_pinyin') === '1') document.body.classList.add('show-pinyin');
+    if (localStorage.getItem('mandarin_show_arti')   === '1') document.body.classList.add('show-arti');
+    if (localStorage.getItem('mandarin_show_vocab')  !== '0') document.body.classList.add('show-vocab');
+    if (localStorage.getItem('mandarin_show_color')  === '1') { document.body.classList.add('show-color'); applyColors(); }
     updateToggleUI();
   });
 </script>
