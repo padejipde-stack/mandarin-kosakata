@@ -953,6 +953,76 @@
             <div class="bubble-arti">Nama kamu / Namamu</div>
           </div>
         </div>
+
+        <!-- Bagian 3: Penghilangan Kata Kepemilikan 的 (省略“的”) -->
+        <div class="classroom-group-title">
+          <span>📌 Penghilangan "的" (Hubungan Dekat &amp; Keluarga · 省略“的”)</span>
+        </div>
+
+        <!-- Item 1: 我老师 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">我老师</div>
+            <div class="bubble-pinyin">Wǒ lǎoshī</div>
+            <div class="bubble-arti">Guru saya (singkatan dari 我的老师)</div>
+          </div>
+        </div>
+
+        <!-- Item 2: 我学生 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">我学生</div>
+            <div class="bubble-pinyin">Wǒ xuésheng</div>
+            <div class="bubble-arti">Murid saya (singkatan dari 我的学生)</div>
+          </div>
+        </div>
+
+        <!-- Item 3: 你同学 -->
+        <div class="classroom-item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">你同学</div>
+            <div class="bubble-pinyin">Nǐ tóngxué</div>
+            <div class="bubble-arti">Teman sekelasmu (singkatan dari 你的同学)</div>
+          </div>
+        </div>
+
+        <!-- Item 4: 我妈妈 -->
+        <div class="classroom-item">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">我妈妈</div>
+            <div class="bubble-pinyin">Wǒ māma</div>
+            <div class="bubble-arti">Ibu saya / Ibuku (singkatan dari 我的妈妈)</div>
+          </div>
+        </div>
+
+        <!-- Bagian 4: Selesaikan Percakapan · 完成对话 -->
+        <div class="classroom-group-title">
+          <span>💬 Selesaikan Percakapan · 完成对话 (Praktik Mengenalkan Guru)</span>
+        </div>
+
+        <!-- Item 1: 这是我老师。/ 老师，您好！ -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">A: 这是我老师。<br>B: 老师，您好！</div>
+            <div class="bubble-pinyin">A: Zhè shì wǒ lǎoshī.<br>B: Lǎoshī, nín hǎo!</div>
+            <div class="bubble-arti">A: Ini guru saya.<br>B: Halo, Guru!</div>
+          </div>
+        </div>
+
+        <!-- Item 2: 请问，你中文老师叫什么名字？/ 我中文老师叫王一飞。 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">李文：请问，你中文老师叫什么名字？<br>白家月：我中文老师叫王一飞。</div>
+            <div class="bubble-pinyin">Lǐ Wén: Qǐngwèn, nǐ Zhōngwén lǎoshī jiào shénme míngzi?<br>Bái Jiāyuè: Wǒ Zhōngwén lǎoshī jiào Wáng Yīfēi.</div>
+            <div class="bubble-arti">Li Wen: Permisi tanya, siapa nama guru bahasa Mandarin-mu?<br>Bai Jiayue: Guru bahasa Mandarin saya bernama Wang Yifei.</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1389,6 +1459,22 @@
     let remaining = pinyinText;
 
     while (remaining.length > 0) {
+      // Lewati tag HTML (seperti <br>)
+      const tagMatch = remaining.match(/^<[^>]+>/);
+      if (tagMatch) {
+        outPy += tagMatch[0];
+        remaining = remaining.substring(tagMatch[0].length);
+        continue;
+      }
+
+      // Lewati label dialog berupa huruf latin tunggal (seperti "A:", "B:", "A：", "B：")
+      const labelMatch = remaining.match(/^[A-Z][：:]\s*/);
+      if (labelMatch) {
+        outPy += labelMatch[0];
+        remaining = remaining.substring(labelMatch[0].length);
+        continue;
+      }
+
       // Lewati akronim alfabetik kapital (seperti "AI")
       const acronymMatch = remaining.match(/^[A-Z]{2,}(?=[^a-zāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜv]|$)/);
       if (acronymMatch) {
@@ -1501,11 +1587,11 @@
         const pyEl = item.querySelector('.bubble-pinyin');
         if (!hzEl || !pyEl) return;
 
-        // Simpan teks asli (gunakan textContent agar bersih dari span warna sebelumnya)
-        if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
-        if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
+        // Simpan HTML asli (gunakan origHtml agar format & tag <br> terjaga)
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
 
-        const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
         hzEl.innerHTML = res.hanzi;
         pyEl.innerHTML = res.pinyin;
       });
