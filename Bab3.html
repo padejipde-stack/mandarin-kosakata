@@ -1509,7 +1509,7 @@
   ];
 
   // Finals dan Regex Pinyin untuk mencocokkan suku kata (syllable) Mandarin
-  const _A = '[aāáǎà]', _O = '[oōóǒò]', _E = '[eēéěè]', _I = '[iīíǐì]', _U = '[uūúǔù]', _V = '[üǖǘǚǜv]';
+  const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
   const _finals = [
     _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
     _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
@@ -1522,7 +1522,7 @@
   const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
 
   function isHanziChar(ch) {
-    return /[\u3007\u4e00-\u9fa50-9]/.test(ch);
+    return /[\u3007\u4e00-\u9fa5]/.test(ch);
   }
 
   // Mewarnai pasangan teks Hanzi dan Pinyin per-karakter / per-kata
@@ -1582,7 +1582,7 @@
       }
 
       // Lewati spasi dan tanda baca (jangan masukkan '<' agar tag HTML seperti <br> tetap utuh)
-      const nonLetterMatch = remaining.match(/^[^a-zA-Zāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜv<]+/);
+      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
       if (nonLetterMatch) {
         outPy += nonLetterMatch[0];
         remaining = remaining.substring(nonLetterMatch[0].length);
