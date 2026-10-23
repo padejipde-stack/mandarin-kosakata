@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -585,7 +585,8 @@
       border-color: #cbd5e1;
       transform: translateX(3px);
     }
-    .classroom-box .bubble-pinyin { display: block; }
+    .classroom-box .bubble-pinyin { display: none; }
+    body.show-pinyin .classroom-box .bubble-pinyin { display: block; }
     .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
     .item-number {
       width: 28px;

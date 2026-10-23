@@ -461,7 +461,8 @@
       transform: translateX(3px);
     }
     /* Pinyin di classroom selalu tampil (tidak ikut toggle show-pinyin) */
-    .classroom-box .bubble-pinyin { display: block; }
+    .classroom-box .bubble-pinyin { display: none; }
+    body.show-pinyin .classroom-box .bubble-pinyin { display: block; }
     .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
     .item-number {
       width: 28px;
