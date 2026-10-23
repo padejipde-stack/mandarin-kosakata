@@ -1094,7 +1094,6 @@
   </div>
 
   <!-- ══ TOGGLE CONTROLS (DI PALING BAWAH) ══ -->
-    <!-- ══ TOGGLE CONTROLS (DI PALING BAWAH) ══ -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
       <span class="icon">⚙️</span>
@@ -1126,63 +1125,136 @@
   ];
 
   function escapeRegex(s) {
-    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\<script>
-  const COLOR_PALETTE = [
-    '#e11d48', // Merah mawar
-    '#2563eb', // Biru royal
-    '#059669', // Hijau zamrud
-    '#d97706', // Oranye / Amber
-    '#7c3aed', // Ungu / Violet
-    '#0891b2', // Teal / Cyan
-    '#c026d3', // Magenta / Fuchsia
-    '#ea580c', // Oranye tua
-    '#4f46e5', // Indigo
-    '#16a34a', // Hijau daun
-    '#ca8a04', // Kuning emas
-    '#9333ea'  // Ungu pekat
-  ];
+    return s.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+  }
 
-  function escapeRegex(s) {
-    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\<script>
-  const COLOR_PALETTE = [
-    '#e53e3e','#d69e2e','#38a169','#3182ce','#805ad5',
-    '#dd6b20','#319795','#c53030','#2b6cb0','#276749',
-    '#6b46c1','#b7791f','#2c7a7b','#9b2c2c','#1a365d'
-  ];
-
-  function buildColorMap() {
-    const map = {};
-    let idx = 0;
-    document.querySelectorAll('.bubble').forEach(bubble => {
-      const hz = bubble.querySelector('.bubble-hanzi');
-      if (!hz) return;
-      const key = hz.textContent.trim();
-      if (!map[key]) { map[key] = COLOR_PALETTE[idx % COLOR_PALETTE.length]; idx++; }
+  function highlightMatches(text, mapping) {
+    if (!text || !mapping.length) return text;
+    const sorted = [...mapping].sort((a, b) => b.word.length - a.word.length);
+    let result = text;
+    const placeholders = [];
+    sorted.forEach((item, idx) => {
+      const reg = new RegExp(escapeRegex(item.word), 'gi');
+      result = result.replace(reg, match => {
+        const ph = '___PH_' + idx + '_' + placeholders.length + '___';
+        placeholders.push({ ph, html: '<span style="color:' + item.color + ';font-weight:700;">' + match + '</span>' });
+        return ph;
+      });
     });
-    return map;
+    placeholders.forEach(p => {
+      result = result.replace(p.ph, p.html);
+    });
+    return result;
   }
 
   function applyColors() {
-    const map = buildColorMap();
-    document.querySelectorAll('.bubble').forEach(bubble => {
-      const hz = bubble.querySelector('.bubble-hanzi');
-      const py = bubble.querySelector('.bubble-pinyin');
-      if (!hz) return;
-      const color = map[hz.textContent.trim()] || '#333';
-      hz.style.color = color;
-      if (py) py.style.color = color;
+    // 1. Kumpulkan kosakata dari semua .word-card pada halaman
+    const vocabList = [];
+    document.querySelectorAll('.word-card').forEach(card => {
+      const charEl = card.querySelector('.word-char');
+      const pyEl = card.querySelector('.word-pinyin');
+      if (charEl && pyEl) {
+        const hanzi = charEl.textContent.trim();
+        const pinyin = pyEl.textContent.trim();
+        if (hanzi && pinyin) {
+          vocabList.push({ hanzi, pinyin });
+        }
+      }
     });
-    document.querySelectorAll('.word-card').forEach((card, i) => {
-      const color = COLOR_PALETTE[i % COLOR_PALETTE.length];
-      const wc = card.querySelector('.word-char');
-      const wp = card.querySelector('.word-pinyin');
-      if (wc) wc.style.color = color;
-      if (wp) wp.style.color = color;
+
+    // 2. Berikan warna unik konsisten untuk setiap kata
+    const hzMapping = [];
+    const pyMapping = [];
+    const assigned = {};
+    let colorIndex = 0;
+
+    vocabList.forEach(item => {
+      if (!assigned[item.hanzi]) {
+        const color = COLOR_PALETTE[colorIndex % COLOR_PALETTE.length];
+        colorIndex++;
+        assigned[item.hanzi] = color;
+        hzMapping.push({ word: item.hanzi, color });
+        pyMapping.push({ word: item.pinyin, color });
+      }
+    });
+
+    // 3. Warnai elemen .word-card: Hanzi & Pinyin memiliki warna persis sama
+    document.querySelectorAll('.word-card').forEach(card => {
+      const charEl = card.querySelector('.word-char');
+      const pyEl = card.querySelector('.word-pinyin');
+      if (charEl && pyEl) {
+        const hz = charEl.textContent.trim();
+        const color = assigned[hz];
+        if (color) {
+          charEl.style.color = color;
+          charEl.style.fontWeight = '700';
+          pyEl.style.color = color;
+          pyEl.style.fontWeight = '700';
+        }
+      }
+    });
+
+    // 4. Warnai dialog bubble: Hanzi dan Pinyin yang bersesuaian diberi warna yang sama
+    document.querySelectorAll('.bubble').forEach(bubble => {
+      const hzEl = bubble.querySelector('.bubble-hanzi');
+      const pyEl = bubble.querySelector('.bubble-pinyin');
+      if (!hzEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      hzEl.innerHTML = highlightMatches(hzEl.dataset.origHtml, hzMapping);
+
+      if (pyEl) {
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        pyEl.innerHTML = highlightMatches(pyEl.dataset.origHtml, pyMapping);
+      }
+    });
+
+    // 5. Warnai nama pembicara jika sesuai kosakata
+    document.querySelectorAll('.speaker-name').forEach(spk => {
+      const hzEl = spk.querySelector('.speaker-hanzi');
+      const pyEl = spk.querySelector('.speaker-pinyin');
+      if (hzEl) {
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        hzEl.innerHTML = highlightMatches(hzEl.dataset.origHtml, hzMapping);
+      }
+      if (pyEl) {
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        pyEl.innerHTML = highlightMatches(pyEl.dataset.origHtml, pyMapping);
+      }
+    });
+
+    // 6. Tongue Twister (jika ada)
+    document.querySelectorAll('.twister-box').forEach(box => {
+      const hzs = box.querySelectorAll('.twister-hanzi');
+      const pys = box.querySelectorAll('.twister-pinyin');
+      hzs.forEach((h, i) => {
+        const color = COLOR_PALETTE[i % COLOR_PALETTE.length];
+        h.style.color = color;
+        if (pys[i]) {
+          pys[i].style.color = color;
+          pys[i].style.fontWeight = '600';
+        }
+      });
     });
   }
 
   function removeColors() {
-    document.querySelectorAll('.bubble-hanzi,.bubble-pinyin,.word-char,.word-pinyin').forEach(el => el.style.color = '');
+    // Kembalikan isi asli dialog bubble
+    document.querySelectorAll('.bubble-hanzi, .bubble-pinyin, .speaker-hanzi, .speaker-pinyin').forEach(el => {
+      if (el.dataset.origHtml) el.innerHTML = el.dataset.origHtml;
+      el.style.color = '';
+      el.style.fontWeight = '';
+    });
+    // Kembalikan word cards
+    document.querySelectorAll('.word-char, .word-pinyin').forEach(el => {
+      el.style.color = '';
+      el.style.fontWeight = '';
+    });
+    // Kembalikan twisters
+    document.querySelectorAll('.twister-hanzi, .twister-pinyin').forEach(el => {
+      el.style.color = '';
+      el.style.fontWeight = '';
+    });
   }
 
   function updateToggleUI() {
@@ -1191,18 +1263,32 @@
       const b = document.getElementById(id);
       if (!b) return;
       b.classList.toggle('active', s(cls));
-      b.querySelector('.status-badge').textContent = s(cls) ? 'ON' : 'OFF';
     };
-    set('btnPinyin','show-pinyin');
-    set('btnArti','show-arti');
-    set('btnVocab','show-vocab');
-    set('btnColor','show-color');
+    set('btnPinyin', 'show-pinyin');
+    set('btnArti', 'show-arti');
+    set('btnVocab', 'show-vocab');
+    set('btnColor', 'show-color');
   }
 
-  function togglePinyin() { document.body.classList.toggle('show-pinyin'); localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin')?'1':'0'); updateToggleUI(); }
-  function toggleArti()   { document.body.classList.toggle('show-arti');   localStorage.setItem('mandarin_show_arti',   document.body.classList.contains('show-arti')?'1':'0');   updateToggleUI(); }
-  function toggleVocab()  { document.body.classList.toggle('show-vocab');  localStorage.setItem('mandarin_show_vocab',  document.body.classList.contains('show-vocab')?'1':'0');  updateToggleUI(); }
-  function toggleColor()  {
+  function togglePinyin() {
+    document.body.classList.toggle('show-pinyin');
+    localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleArti() {
+    document.body.classList.toggle('show-arti');
+    localStorage.setItem('mandarin_show_arti', document.body.classList.contains('show-arti') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleVocab() {
+    document.body.classList.toggle('show-vocab');
+    localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleColor() {
     document.body.classList.toggle('show-color');
     const on = document.body.classList.contains('show-color');
     localStorage.setItem('mandarin_show_color', on ? '1' : '0');
@@ -1212,9 +1298,193 @@
 
   window.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('mandarin_show_pinyin') === '1') document.body.classList.add('show-pinyin');
-    if (localStorage.getItem('mandarin_show_arti')   === '1') document.body.classList.add('show-arti');
-    if (localStorage.getItem('mandarin_show_vocab')  !== '0') document.body.classList.add('show-vocab');
-    if (localStorage.getItem('mandarin_show_color')  === '1') { document.body.classList.add('show-color'); applyColors(); }
+    if (localStorage.getItem('mandarin_show_arti') === '1') document.body.classList.add('show-arti');
+    if (localStorage.getItem('mandarin_show_vocab') !== '0') document.body.classList.add('show-vocab');
+    if (localStorage.getItem('mandarin_show_color') === '1') {
+      document.body.classList.add('show-color');
+      applyColors();
+    }
+    updateToggleUI();
+  });
+</script>');
+  }
+
+  function highlightMatches(text, mapping) {
+    if (!text || !mapping.length) return text;
+    const sorted = [...mapping].sort((a, b) => b.word.length - a.word.length);
+    let result = text;
+    const placeholders = [];
+    sorted.forEach((item, idx) => {
+      const reg = new RegExp(escapeRegex(item.word), 'gi');
+      result = result.replace(reg, match => {
+        const ph = '___PH_' + idx + '_' + placeholders.length + '___';
+        placeholders.push({ ph, html: '<span style="color:' + item.color + ';font-weight:700;">' + match + '</span>' });
+        return ph;
+      });
+    });
+    placeholders.forEach(p => {
+      result = result.replace(p.ph, p.html);
+    });
+    return result;
+  }
+
+  function applyColors() {
+    // 1. Kumpulkan kosakata dari semua .word-card pada halaman
+    const vocabList = [];
+    document.querySelectorAll('.word-card').forEach(card => {
+      const charEl = card.querySelector('.word-char');
+      const pyEl = card.querySelector('.word-pinyin');
+      if (charEl && pyEl) {
+        const hanzi = charEl.textContent.trim();
+        const pinyin = pyEl.textContent.trim();
+        if (hanzi && pinyin) {
+          vocabList.push({ hanzi, pinyin });
+        }
+      }
+    });
+
+    // 2. Berikan warna unik konsisten untuk setiap kata
+    const hzMapping = [];
+    const pyMapping = [];
+    const assigned = {};
+    let colorIndex = 0;
+
+    vocabList.forEach(item => {
+      if (!assigned[item.hanzi]) {
+        const color = COLOR_PALETTE[colorIndex % COLOR_PALETTE.length];
+        colorIndex++;
+        assigned[item.hanzi] = color;
+        hzMapping.push({ word: item.hanzi, color });
+        pyMapping.push({ word: item.pinyin, color });
+      }
+    });
+
+    // 3. Warnai elemen .word-card: Hanzi & Pinyin memiliki warna persis sama
+    document.querySelectorAll('.word-card').forEach(card => {
+      const charEl = card.querySelector('.word-char');
+      const pyEl = card.querySelector('.word-pinyin');
+      if (charEl && pyEl) {
+        const hz = charEl.textContent.trim();
+        const color = assigned[hz];
+        if (color) {
+          charEl.style.color = color;
+          charEl.style.fontWeight = '700';
+          pyEl.style.color = color;
+          pyEl.style.fontWeight = '700';
+        }
+      }
+    });
+
+    // 4. Warnai dialog bubble: Hanzi dan Pinyin yang bersesuaian diberi warna yang sama
+    document.querySelectorAll('.bubble').forEach(bubble => {
+      const hzEl = bubble.querySelector('.bubble-hanzi');
+      const pyEl = bubble.querySelector('.bubble-pinyin');
+      if (!hzEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      hzEl.innerHTML = highlightMatches(hzEl.dataset.origHtml, hzMapping);
+
+      if (pyEl) {
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        pyEl.innerHTML = highlightMatches(pyEl.dataset.origHtml, pyMapping);
+      }
+    });
+
+    // 5. Warnai nama pembicara jika sesuai kosakata
+    document.querySelectorAll('.speaker-name').forEach(spk => {
+      const hzEl = spk.querySelector('.speaker-hanzi');
+      const pyEl = spk.querySelector('.speaker-pinyin');
+      if (hzEl) {
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        hzEl.innerHTML = highlightMatches(hzEl.dataset.origHtml, hzMapping);
+      }
+      if (pyEl) {
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        pyEl.innerHTML = highlightMatches(pyEl.dataset.origHtml, pyMapping);
+      }
+    });
+
+    // 6. Tongue Twister (jika ada)
+    document.querySelectorAll('.twister-box').forEach(box => {
+      const hzs = box.querySelectorAll('.twister-hanzi');
+      const pys = box.querySelectorAll('.twister-pinyin');
+      hzs.forEach((h, i) => {
+        const color = COLOR_PALETTE[i % COLOR_PALETTE.length];
+        h.style.color = color;
+        if (pys[i]) {
+          pys[i].style.color = color;
+          pys[i].style.fontWeight = '600';
+        }
+      });
+    });
+  }
+
+  function removeColors() {
+    // Kembalikan isi asli dialog bubble
+    document.querySelectorAll('.bubble-hanzi, .bubble-pinyin, .speaker-hanzi, .speaker-pinyin').forEach(el => {
+      if (el.dataset.origHtml) el.innerHTML = el.dataset.origHtml;
+      el.style.color = '';
+      el.style.fontWeight = '';
+    });
+    // Kembalikan word cards
+    document.querySelectorAll('.word-char, .word-pinyin').forEach(el => {
+      el.style.color = '';
+      el.style.fontWeight = '';
+    });
+    // Kembalikan twisters
+    document.querySelectorAll('.twister-hanzi, .twister-pinyin').forEach(el => {
+      el.style.color = '';
+      el.style.fontWeight = '';
+    });
+  }
+
+  function updateToggleUI() {
+    const s = cl => document.body.classList.contains(cl);
+    const set = (id, cls) => {
+      const b = document.getElementById(id);
+      if (!b) return;
+      b.classList.toggle('active', s(cls));
+    };
+    set('btnPinyin', 'show-pinyin');
+    set('btnArti', 'show-arti');
+    set('btnVocab', 'show-vocab');
+    set('btnColor', 'show-color');
+  }
+
+  function togglePinyin() {
+    document.body.classList.toggle('show-pinyin');
+    localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleArti() {
+    document.body.classList.toggle('show-arti');
+    localStorage.setItem('mandarin_show_arti', document.body.classList.contains('show-arti') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleVocab() {
+    document.body.classList.toggle('show-vocab');
+    localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleColor() {
+    document.body.classList.toggle('show-color');
+    const on = document.body.classList.contains('show-color');
+    localStorage.setItem('mandarin_show_color', on ? '1' : '0');
+    on ? applyColors() : removeColors();
+    updateToggleUI();
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('mandarin_show_pinyin') === '1') document.body.classList.add('show-pinyin');
+    if (localStorage.getItem('mandarin_show_arti') === '1') document.body.classList.add('show-arti');
+    if (localStorage.getItem('mandarin_show_vocab') !== '0') document.body.classList.add('show-vocab');
+    if (localStorage.getItem('mandarin_show_color') === '1') {
+      document.body.classList.add('show-color');
+      applyColors();
+    }
     updateToggleUI();
   });
 </script>');
