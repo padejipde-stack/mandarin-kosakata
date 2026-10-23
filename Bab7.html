@@ -459,6 +459,53 @@
       flex: 1;
     }
 
+    /* ── NUMBER CARDS (XIAOYU'S CLASSROOM) ── */
+    .number-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+      gap: 0.65rem;
+    }
+    .number-grid.wide {
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+    .number-card {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.75rem 0.6rem;
+      text-align: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .number-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      background: #ffffff;
+    }
+    .number-card .bubble-hanzi {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.25;
+    }
+    .number-card .bubble-pinyin {
+      font-size: 0.78rem;
+      color: #64748b;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+    .number-card .bubble-arti {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 0.25rem;
+      padding-top: 0.25rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.12);
+    }
+
     /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
     .dialog-toolbar {
       position: fixed;
@@ -577,6 +624,12 @@
       .toggle-switch-btn .status-badge { font-size: 0.62rem; padding: 0.08rem 0.32rem; }
       .classroom-box { padding: 1.1rem 0.9rem; }
       .classroom-item { padding: 0.75rem 0.85rem; gap: 0.65rem; }
+      .number-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+      .number-grid.wide { grid-template-columns: repeat(2, 1fr); }
+      .number-card { padding: 0.6rem 0.4rem; }
+      .number-card .bubble-hanzi { font-size: 1.2rem; }
+      .number-card .bubble-pinyin { font-size: 0.72rem; }
+      .number-card .bubble-arti { font-size: 0.75rem; }
     }
   
     .nav {
@@ -769,6 +822,265 @@
             <div class="word-char">吧</div>
             <div class="word-pinyin">ba</div>
             <div class="word-arti">Partikel saran ("yuk/mari")</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ XIAOYU'S CLASSROOM (SESI 1) ══ -->
+  <div>
+    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂</div>
+    <div class="classroom-box">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">语</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge">Format Jam, Waktu &amp; Partikel Ajakan "吧" · 重点句型与时间</div>
+          <div class="classroom-desc">Yuk pelajari format membaca jam (sistem 24 jam &amp; menit), pembagian waktu sehari, serta contoh percakapan saran/ajakan bersama Xiaoyu!</div>
+        </div>
+      </div>
+      
+      <div class="classroom-list">
+        <!-- Bagian 1: Format Jam & 24 Jam -->
+        <div class="classroom-group-title">
+          <span>🕒 1. 时间表达 · Jam &amp; Format Waktu (点 = Jam, 分 = Menit)</span>
+        </div>
+
+        <div class="number-grid wide">
+          <div class="number-card wide">
+            <div class="bubble-hanzi">九点</div>
+            <div class="bubble-pinyin">jiǔ diǎn</div>
+            <div class="bubble-arti">Pukul 09.00 (Jam 9)</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">二十点</div>
+            <div class="bubble-pinyin">èrshí diǎn</div>
+            <div class="bubble-arti">Pukul 20.00 (Jam 8 malam)</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">十五点四十</div>
+            <div class="bubble-pinyin">shíwǔ diǎn sìshí</div>
+            <div class="bubble-arti">Pukul 15.40 (15:40)</div>
+          </div>
+          <div class="number-card wide">
+            <div class="bubble-hanzi">二十一点十分</div>
+            <div class="bubble-pinyin">èrshíyī diǎn shí fēn</div>
+            <div class="bubble-arti">Pukul 21.10 (21:10)</div>
+          </div>
+          <div class="number-card wide" style="grid-column: span 2;">
+            <div class="bubble-hanzi">二十二点零五</div>
+            <div class="bubble-pinyin">èrshí'èr diǎn líng wǔ</div>
+            <div class="bubble-arti">Pukul 22.05 (Jam 10 lewat lima malam)</div>
+          </div>
+        </div>
+
+        <!-- Bagian 2: Pembagian Waktu dalam Sehari -->
+        <div class="classroom-group-title">
+          <span>🌅 2. 一天的时段 · Pembagian Waktu dalam Sehari (Waktu + Jam)</span>
+        </div>
+
+        <!-- Item 1: 上午 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">上午</div>
+            <div class="bubble-pinyin">shàngwǔ</div>
+            <div class="bubble-arti">Pagi menjelang siang (morning / forenoon, ~08.00–12.00)</div>
+          </div>
+        </div>
+
+        <!-- Item 2: 中午十二点 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">中午十二点</div>
+            <div class="bubble-pinyin">zhōngwǔ shí'èr diǎn</div>
+            <div class="bubble-arti">Siang hari pukul 12.00 (tengah hari)</div>
+          </div>
+        </div>
+
+        <!-- Item 3: 下午两点半 -->
+        <div class="classroom-item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">下午两点半</div>
+            <div class="bubble-pinyin">xiàwǔ liǎng diǎn bàn</div>
+            <div class="bubble-arti">Sore hari pukul 14.30 (jam setengah tiga sore — 半 bàn = setengah/30 menit)</div>
+          </div>
+        </div>
+
+        <!-- Item 4: 晚上九点十分 -->
+        <div class="classroom-item">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">晚上九点十分</div>
+            <div class="bubble-pinyin">wǎnshang jiǔ diǎn shí fēn</div>
+            <div class="bubble-arti">Malam hari pukul 21.10 (jam sembilan lewat sepuluh malam)</div>
+          </div>
+        </div>
+
+        <!-- Bagian 3: Pola Kalimat Saran & Ajakan "吧" -->
+        <div class="classroom-group-title">
+          <span>💡 3. 语气词“吧” · Saran &amp; Ajakan Menggunakan Partikel "吧" (ba)</span>
+        </div>
+
+        <!-- Dialog 1 -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">A: 我们下午三点见吧。<br>B: 好的。</div>
+            <div class="bubble-pinyin">A: Wǒmen xiàwǔ sān diǎn jiàn ba.<br>B: Hǎo de.</div>
+            <div class="bubble-arti">A: Mari kita bertemu jam tiga sore.<br>B: Baiklah / Oke.</div>
+          </div>
+        </div>
+
+        <!-- Dialog 2 -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">A: 你去超市买吧。<br>B: 超市没有。</div>
+            <div class="bubble-pinyin">A: Nǐ qù chāoshì mǎi ba.<br>B: Chāoshì méiyǒu.</div>
+            <div class="bubble-arti">A: Kamu beli di supermarket saja.<br>B: Di supermarket tidak ada.</div>
+          </div>
+        </div>
+
+        <!-- Dialog 3 -->
+        <div class="classroom-item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">A: 我们去西安饭店吃晚饭吧。<br>B: 好的。</div>
+            <div class="bubble-pinyin">A: Wǒmen qù Xī'ān fàndiàn chī wǎnfàn ba.<br>B: Hǎo de.</div>
+            <div class="bubble-arti">A: Ayo kita makan malam di Restoran Xi'an.<br>B: Baiklah / Oke.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TEKS 2 ══ -->
+  <div>
+    <div class="section-title">💬 Teks 2</div>
+    <div class="dialog-box">
+
+      <!-- 李文: 下午我想去电影院看电影，你去吗？ -->
+      <div class="dialog-line">
+        <div class="avatar av-li">李</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">李文</span><span class="speaker-pinyin"> (Lǐ Wén)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">下午我想去电影院看电影，你去吗？</div>
+            <div class="bubble-pinyin">Xiàwǔ wǒ xiǎng qù diànyǐngyuàn kàn diànyǐng, nǐ qù ma?</div>
+            <div class="bubble-arti">Sore ini saya ingin pergi ke bioskop untuk menonton film, apakah kamu ikut pergi?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 白家月: 我不想去，下午还有事。 -->
+      <div class="dialog-line right bai">
+        <div class="avatar av-bai">月</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bái Jiāyuè)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">我不想去，下午还有事。</div>
+            <div class="bubble-pinyin">Wǒ bù xiǎng qù, xiàwǔ hái yǒu shì.</div>
+            <div class="bubble-arti">Saya tidak ingin pergi, sore ini masih ada urusan.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 李文: 好的。明天呢？ -->
+      <div class="dialog-line">
+        <div class="avatar av-li">李</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">李文</span><span class="speaker-pinyin"> (Lǐ Wén)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">好的。明天呢？</div>
+            <div class="bubble-pinyin">Hǎo de. Míngtiān ne?</div>
+            <div class="bubble-arti">Baiklah. Bagaimana dengan besok?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 白家月: 我明天下午两点还上课呢，四点半下课。 -->
+      <div class="dialog-line right bai">
+        <div class="avatar av-bai">月</div>
+        <div class="bubble-wrap">
+          <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bái Jiāyuè)</span></span>
+          <div class="bubble">
+            <div class="bubble-hanzi">我明天下午两点还上课呢，四点半下课。</div>
+            <div class="bubble-pinyin">Wǒ míngtiān xiàwǔ liǎng diǎn hái shàngkè ne, sì diǎn bàn xiàkè.</div>
+            <div class="bubble-arti">Besok jam dua siang saya masih masuk kelas, jam setengah lima baru selesai kelas.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-breakdown Kosakata Teks 2 -->
+      <div class="sub-breakdown">
+        <div class="sub-breakdown-title">
+          <span>📚 Kosakata Baru · Teks 2</span>
+        </div>
+        <div class="breakdown-grid">
+          <div class="word-card">
+            <div class="word-char">李文</div>
+            <div class="word-pinyin">Lǐ Wén</div>
+            <div class="word-arti">Nama orang (Li Wen)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">电影院</div>
+            <div class="word-pinyin">diànyǐngyuàn</div>
+            <div class="word-arti">Bioskop</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">看</div>
+            <div class="word-pinyin">kàn</div>
+            <div class="word-arti">Menonton / Melihat</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">电影</div>
+            <div class="word-pinyin">diànyǐng</div>
+            <div class="word-arti">Film / Movie</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">看电影</div>
+            <div class="word-pinyin">kàn diànyǐng</div>
+            <div class="word-arti">Menonton film</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">还有</div>
+            <div class="word-pinyin">hái yǒu</div>
+            <div class="word-arti">Masih ada</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">事</div>
+            <div class="word-pinyin">shì</div>
+            <div class="word-arti">Urusan / Hal / Kesibukan</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">呢</div>
+            <div class="word-pinyin">ne</div>
+            <div class="word-arti">Partikel tanya balik ("bagaimana...")</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">上课</div>
+            <div class="word-pinyin">shàng kè</div>
+            <div class="word-arti">Masuk kelas / Kuliah</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">四点半</div>
+            <div class="word-pinyin">sì diǎn bàn</div>
+            <div class="word-arti">Pukul 04.30 (setengah lima)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">半</div>
+            <div class="word-pinyin">bàn</div>
+            <div class="word-arti">Setengah / 30 menit</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">下课</div>
+            <div class="word-pinyin">xià kè</div>
+            <div class="word-arti">Selesai kelas / Keluar kelas</div>
           </div>
         </div>
       </div>
