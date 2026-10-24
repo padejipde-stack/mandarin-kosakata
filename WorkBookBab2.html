@@ -1074,10 +1074,174 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════════════
-       BAGIAN 4: LATIHAN SUKU KATA & NADA (SYLLABLES & TONES)
+       BAGIAN 4: ATURAN PENULISAN SUKU KATA MANDIRI (yi, wu, yu)
        ══════════════════════════════════════════════════════════ -->
   <div>
-    <div class="section-title">🎵 Bagian 4: Latihan Suku Kata &amp; 4 Nada Pinyin · 声调与音节练习</div>
+    <div class="section-title">✨ Bagian 4: Aturan Penulisan Suku Kata Mandiri (yi, wu, yu) · 零声母规则</div>
+    <div class="classroom-box" style="border-left: 5px solid #ec4899;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #ec4899, #be185d);">写</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #ec4899; color: #fff;">Aturan Penulisan (Spelling Rules) · 拼写规则</div>
+          <div class="classroom-desc">Ketika final <strong>"i"</strong>, <strong>"u"</strong>, dan <strong>"ü"</strong> berdiri sendiri menjadi sebuah suku kata (tanpa inisial), penulisannya diubah menjadi <strong>"yi"</strong>, <strong>"wu"</strong>, dan <strong>"yu"</strong> secara berturut-turut:</div>
+        </div>
+      </div>
+
+      <!-- Aturan Spelling Rules Box -->
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background: #fce7f3; color: #be185d;">Spelling Rules</span>
+          <span>Perubahan Vokal Berdiri Sendiri (Tanpa Inisial)</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 0.65rem;">
+          <div style="background: #fdf2f8; border: 1.5px solid #fbcfe8; border-radius: 10px; padding: 0.85rem; text-align: center;">
+            <div style="font-size: 0.85rem; color: #9d174d; font-weight: 600;">Final i mandiri</div>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #be185d; margin: 0.2rem 0;">i → <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('yī')">yi</button></div>
+            <div style="font-size: 0.75rem; color: #64748b;">Ditambah huruf "y" di depan</div>
+          </div>
+
+          <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 10px; padding: 0.85rem; text-align: center;">
+            <div style="font-size: 0.85rem; color: #166534; font-weight: 600;">Final u mandiri</div>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #15803d; margin: 0.2rem 0;">u → <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('wū')">wu</button></div>
+            <div style="font-size: 0.75rem; color: #64748b;">Ditambah huruf "w" di depan</div>
+          </div>
+
+          <div style="background: #ede9fe; border: 1.5px solid #ddd6fe; border-radius: 10px; padding: 0.85rem; text-align: center;">
+            <div style="font-size: 0.85rem; color: #5b21b6; font-weight: 600;">Final ü mandiri</div>
+            <div style="font-size: 1.5rem; font-weight: 700; color: #6d28d9; margin: 0.2rem 0;">ü → <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('yū')">yu</button></div>
+            <div style="font-size: 0.75rem; color: #64748b;">Huruf "y" + ü (titik dua hilang)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Latihan 4 Nada (yi, wu, yu) -->
+      <div style="font-weight: 700; font-size: 0.92rem; color: #334155; margin: 1.4rem 0 0.5rem; display: flex; align-items: center; justify-content: space-between;">
+        <span>Latihan Suku Kata dengan Nada (Tones)</span>
+        <span style="font-size: 0.78rem; color: #64748b; font-weight: normal;">Klik kotak untuk mendengar lafal 🔊</span>
+      </div>
+
+      <!-- Header Nada -->
+      <div class="phonetic-tone-headers">
+        <div class="phonetic-tone-header-item tone-h1">Nada 1 ( ˉ )<br><span style="font-size: 0.65rem; font-weight: normal;">Datar Tinggi</span></div>
+        <div class="phonetic-tone-header-item tone-h2">Nada 2 ( ˊ )<br><span style="font-size: 0.65rem; font-weight: normal;">Naik</span></div>
+        <div class="phonetic-tone-header-item tone-h3">Nada 3 ( ˇ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun-Naik</span></div>
+        <div class="phonetic-tone-header-item tone-h4">Nada 4 ( ˋ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun Tegas</span></div>
+      </div>
+
+      <!-- Row yi: yī, yí, yǐ, yì -->
+      <div style="font-size: 0.8rem; font-weight: 700; color: #be185d; margin: 0.4rem 0 0.25rem;">Suku kata "i" menjadi "yi":</div>
+      <div class="phonetic-row">
+        <button type="button" class="phonetic-cell t1" onclick="playPinyin('yī')" title="yī (Nada 1)">
+          <span class="phonetic-text">yī</span>
+          <span class="phonetic-tone-label">1 ˉ</span>
+        </button>
+        <button type="button" class="phonetic-cell t2" onclick="playPinyin('yí')" title="yí (Nada 2)">
+          <span class="phonetic-text">yí</span>
+          <span class="phonetic-tone-label">2 ˊ</span>
+        </button>
+        <button type="button" class="phonetic-cell t3" onclick="playPinyin('yǐ')" title="yǐ (Nada 3)">
+          <span class="phonetic-text">yǐ</span>
+          <span class="phonetic-tone-label">3 ˇ</span>
+        </button>
+        <button type="button" class="phonetic-cell t4" onclick="playPinyin('yì')" title="yì (Nada 4)">
+          <span class="phonetic-text">yì</span>
+          <span class="phonetic-tone-label">4 ˋ</span>
+        </button>
+      </div>
+
+      <!-- Row wu: wū, wú, wǔ, wù -->
+      <div style="font-size: 0.8rem; font-weight: 700; color: #15803d; margin: 0.65rem 0 0.25rem;">Suku kata "u" menjadi "wu":</div>
+      <div class="phonetic-row">
+        <button type="button" class="phonetic-cell t1" onclick="playPinyin('wū')" title="wū (Nada 1)">
+          <span class="phonetic-text">wū</span>
+          <span class="phonetic-tone-label">1 ˉ</span>
+        </button>
+        <button type="button" class="phonetic-cell t2" onclick="playPinyin('wú')" title="wú (Nada 2)">
+          <span class="phonetic-text">wú</span>
+          <span class="phonetic-tone-label">2 ˊ</span>
+        </button>
+        <button type="button" class="phonetic-cell t3" onclick="playPinyin('wǔ')" title="wǔ (Nada 3)">
+          <span class="phonetic-text">wǔ</span>
+          <span class="phonetic-tone-label">3 ˇ</span>
+        </button>
+        <button type="button" class="phonetic-cell t4" onclick="playPinyin('wù')" title="wù (Nada 4)">
+          <span class="phonetic-text">wù</span>
+          <span class="phonetic-tone-label">4 ˋ</span>
+        </button>
+      </div>
+
+      <!-- Row yu: yū, yú, yǔ, yù -->
+      <div style="font-size: 0.8rem; font-weight: 700; color: #6d28d9; margin: 0.65rem 0 0.25rem;">Suku kata "ü" menjadi "yu":</div>
+      <div class="phonetic-row">
+        <button type="button" class="phonetic-cell t1" onclick="playPinyin('yū')" title="yū (Nada 1)">
+          <span class="phonetic-text">yū</span>
+          <span class="phonetic-tone-label">1 ˉ (yü)</span>
+        </button>
+        <button type="button" class="phonetic-cell t2" onclick="playPinyin('yú')" title="yú (Nada 2)">
+          <span class="phonetic-text">yú</span>
+          <span class="phonetic-tone-label">2 ˊ (yü)</span>
+        </button>
+        <button type="button" class="phonetic-cell t3" onclick="playPinyin('yǔ')" title="yǔ (Nada 3)">
+          <span class="phonetic-text">yǔ</span>
+          <span class="phonetic-tone-label">3 ˇ (yü)</span>
+        </button>
+        <button type="button" class="phonetic-cell t4" onclick="playPinyin('yù')" title="yù (Nada 4)">
+          <span class="phonetic-text">yù</span>
+          <span class="phonetic-tone-label">4 ˋ (yü)</span>
+        </button>
+      </div>
+
+      <!-- Kosakata Praktik (yǔ, wǔ, yī, yǐzi) -->
+      <div style="font-weight: 700; font-size: 0.92rem; color: #334155; margin: 1.4rem 0 0.5rem;">
+        <span>Kosakata Contoh Terkait (Dari Kiri ke Kanan)</span>
+      </div>
+
+      <div class="breakdown-grid" style="grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));">
+        <!-- 1. 雨 / yǔ -->
+        <div class="word-card" onclick="playPinyin('yǔ')" title="Klik untuk mendengar suara">
+          <div class="word-char">雨</div>
+          <div class="word-pinyin">yǔ</div>
+          <div class="word-arti">Hujan</div>
+          <div class="initial-tag" style="background:#fce7f3;color:#be185d;">ü → yǔ (Nada 3)</div>
+          <div class="word-detail">Contoh: 下雨 (turun hujan)</div>
+        </div>
+
+        <!-- 2. 五 / wǔ -->
+        <div class="word-card" onclick="playPinyin('wǔ')" title="Klik untuk mendengar suara">
+          <div class="word-char">五</div>
+          <div class="word-pinyin">wǔ</div>
+          <div class="word-arti">Angka 5 / Lima</div>
+          <div class="initial-tag" style="background:#dcfce7;color:#15803d;">u → wǔ (Nada 3)</div>
+          <div class="word-detail">Contoh: 五个 (lima buah)</div>
+        </div>
+
+        <!-- 3. 一 / yī -->
+        <div class="word-card" onclick="playPinyin('yī')" title="Klik untuk mendengar suara">
+          <div class="word-char">一</div>
+          <div class="word-pinyin">yī</div>
+          <div class="word-arti">Angka 1 / Satu</div>
+          <div class="initial-tag" style="background:#e0f2fe;color:#0369a1;">i → yī (Nada 1)</div>
+          <div class="word-detail">Contoh: 第一 (nomor satu)</div>
+        </div>
+
+        <!-- 4. 椅子 / yǐzi -->
+        <div class="word-card" onclick="playPinyin('yǐzi')" title="Klik untuk mendengar suara">
+          <div class="word-char">椅子</div>
+          <div class="word-pinyin">yǐzi</div>
+          <div class="word-arti">Kursi</div>
+          <div class="initial-tag" style="background:#ede9fe;color:#6d28d9;">椅 (yǐ) + 子 (zi)</div>
+          <div class="word-detail">Contoh: 一把椅子 (sebuah kursi)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       BAGIAN 5: LATIHAN SUKU KATA & NADA (SYLLABLES & TONES)
+       ══════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">🎵 Bagian 5: Latihan Suku Kata &amp; 4 Nada Inisial j, q, x · 声调与音节练习</div>
     <div class="classroom-box" style="border-left: 5px solid #d97706;">
       <div class="classroom-header">
         <div class="avatar" style="background: linear-gradient(135deg, #d97706, #b45309);">声</div>
@@ -1216,7 +1380,7 @@
        BAGIAN 5: LATIHAN PERCAKAPAN RINGKAS (DIALOG PRAKTIK)
        ══════════════════════════════════════════════════════════ -->
   <div>
-    <div class="section-title">💬 Bagian 5: Latihan Percakapan Praktik · 对话实践</div>
+    <div class="section-title">💬 Bagian 6: Latihan Percakapan Praktik · 对话实践</div>
     <div class="classroom-box" style="border-left: 5px solid #059669;">
       <div class="classroom-header">
         <div class="avatar" style="background: linear-gradient(135deg, #059669, #047857);">话</div>
@@ -1409,6 +1573,11 @@
 
   function applyColors() {
     const charColorMap = {
+      '雨': '#0891b2',
+      '五': '#ea580c',
+      '一': '#2563eb',
+      '椅': '#7c3aed',
+      '子': '#64748b',
       '鸡': '#e11d48',
       '七': '#2563eb',
       '写': '#16a34a',
