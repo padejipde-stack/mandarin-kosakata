@@ -2698,19 +2698,18 @@
   }
 
   function toggleVocab() {
-    // Anchor scroll: save the position of the toolbar button relative to viewport
-    const toolbar = document.querySelector('.dialog-toolbar');
-    const anchorEl = toolbar || document.getElementById('btnVocab');
-    const anchorTop = anchorEl ? anchorEl.getBoundingClientRect().top + window.scrollY : window.scrollY;
+    // Cari elemen yang tampak di bagian atas viewport saat ini
+    const anchor = document.elementFromPoint(window.innerWidth / 2, 1);
+    const anchorRect = anchor ? anchor.getBoundingClientRect().top : 0;
 
     document.body.classList.toggle('show-vocab');
     localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
     updateToggleUI();
 
-    // Restore scroll so toolbar stays at same screen position
-    if (anchorEl) {
-      const newAnchorTop = anchorEl.getBoundingClientRect().top + window.scrollY;
-      window.scrollBy(0, newAnchorTop - anchorTop);
+    // Kompensasi scroll agar elemen tadi tetap di posisi yang sama di layar
+    if (anchor) {
+      const newRect = anchor.getBoundingClientRect().top;
+      window.scrollBy(0, newRect - anchorRect);
     }
   }
 
