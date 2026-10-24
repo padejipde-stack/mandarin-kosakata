@@ -1021,6 +1021,105 @@
       gap: 0.5rem;
     }
 
+  
+    /* ── TONGUE TWISTER SUB-BREAKDOWN (ARTI PER KATA) ── */
+    .twister-breakdown {
+      display: none;
+      margin-top: 1.25rem;
+      padding-top: 1.15rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.25);
+    }
+    body.show-vocab .twister-breakdown {
+      display: block;
+    }
+    body.show-color .twister-breakdown {
+      border-top-color: var(--border);
+    }
+    .twister-breakdown-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    body.show-color .twister-breakdown-title {
+      color: var(--primary);
+    }
+    .twister-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.65rem;
+    }
+    .twister-grid .word-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-top: 3px solid var(--gold);
+      border-radius: 10px;
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #ffffff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .twister-grid .word-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    body.show-color .twister-grid .word-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--primary);
+      color: var(--text);
+    }
+    .twister-grid .word-char {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+    body.show-color .twister-grid .word-char {
+      color: var(--primary);
+    }
+    .twister-grid .word-pinyin {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.75);
+      margin-top: 0.35rem;
+      display: none;
+    }
+    body.show-pinyin .twister-grid .word-pinyin {
+      display: block;
+    }
+    body.show-color .twister-grid .word-pinyin {
+      color: var(--sub);
+    }
+    .twister-grid .word-arti {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-top: 0.35rem;
+      line-height: 1.35;
+      display: none;
+    }
+    body.show-arti .twister-grid .word-arti {
+      display: block;
+    }
+    body.show-color .twister-grid .word-arti {
+      color: var(--text);
+    }
+    @media (max-width: 600px) {
+      .twister-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1655,6 +1754,66 @@
       </div>
       <div class="twister-line">
         <div class="twister-hanzi">加完减完还是七。</div>
+
+      <!-- Sub-Breakdown Kosakata Tongue Twister -->
+      <div class="twister-breakdown">
+        <div class="twister-breakdown-title">
+          <span>📖 Arti per Kata · 词汇拆解</span>
+        </div>
+        <div class="twister-grid">
+          <div class="word-card">
+            <div class="word-char">七</div>
+            <div class="word-pinyin">qī</div>
+            <div class="word-arti">tujuh (7)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">加</div>
+            <div class="word-pinyin">jiā</div>
+            <div class="word-arti">tambah, menambah</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">一</div>
+            <div class="word-pinyin">yī</div>
+            <div class="word-arti">satu (1)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">再</div>
+            <div class="word-pinyin">zài</div>
+            <div class="word-arti">lalu, kemudian</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">减</div>
+            <div class="word-pinyin">jiǎn</div>
+            <div class="word-arti">kurang, mengurangi</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">加完</div>
+            <div class="word-pinyin">jiāwán</div>
+            <div class="word-arti">selesai ditambah</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">减完</div>
+            <div class="word-pinyin">jiǎnwán</div>
+            <div class="word-arti">selesai dikurang</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">等于</div>
+            <div class="word-pinyin">děngyú</div>
+            <div class="word-arti">sama dengan</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">几</div>
+            <div class="word-pinyin">jǐ</div>
+            <div class="word-arti">berapa</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">还是</div>
+            <div class="word-pinyin">háishì</div>
+            <div class="word-arti">tetap, masih tetap</div>
+          </div>
+        </div>
+      </div>
+    
         <div class="twister-pinyin">Jiāwán jiǎnwán háishì qī.</div>
         <div class="twister-arti">Setelah ditambah dan dikurang hasilnya tetap tujuh.</div>
       </div>
