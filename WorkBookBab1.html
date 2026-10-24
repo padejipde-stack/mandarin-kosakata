@@ -1174,6 +1174,112 @@
       margin-top: 4px;
     }
 
+  
+    /* Aturan Pinyin Section */
+    .aturan-section {
+      margin-top: 2rem;
+      border-top: 2px dashed #cbd5e1;
+      padding-top: 1.5rem;
+    }
+    .aturan-block {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1.1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .aturan-block-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1e293b;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+    .aturan-block-badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 3px 11px;
+      border-radius: 6px;
+    }
+    .aturan-rule {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 0.65rem;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .aturan-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .aturan-text {
+      flex: 1;
+      color: #334155;
+    }
+    .aturan-text strong {
+      color: #0f172a;
+    }
+    .aturan-example {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.5rem;
+    }
+    .aturan-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      border: none;
+      font-family: inherit;
+    }
+    .aturan-pill:hover {
+      filter: brightness(0.9);
+      transform: translateY(-1px);
+    }
+    .aturan-ok  { background: #dcfce7; color: #15803d; }
+    .aturan-no  { background: #fee2e2; color: #b91c1c; text-decoration: line-through; }
+    .aturan-ex  { background: #e0f2fe; color: #0369a1; }
+    .aturan-sep {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 0.6rem;
+      color: #7c3aed;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .aturan-arrow {
+      font-size: 1rem;
+      color: #7c3aed;
+    }
+    .aturan-note {
+      background: #fef9c3;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 0.6rem 1rem;
+      font-size: 0.88rem;
+      color: #78350f;
+      line-height: 1.5;
+      margin-top: 0.6rem;
+    }
+    .rule-ok  { background: #f0fdf4; border-left: 4px solid #22c55e; }
+    .rule-no  { background: #fef2f2; border-left: 4px solid #ef4444; }
+    .rule-info{ background: #f0f9ff; border-left: 4px solid #38bdf8; }
+    .rule-tip { background: #fdf4ff; border-left: 4px solid #c084fc; }
+
   </style>
 </head>
 <body>
@@ -1806,6 +1912,171 @@
             </div>
             <div class="combine-tag">vokal: o</div>
           </button>
+        </div>
+      </div>
+
+
+      <!-- Penjelasan Aturan Pinyin -->
+      <div class="aturan-section">
+        <div class="classroom-header" style="margin-bottom: 1rem;">
+          <div class="avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706); font-size: 1.15rem; font-weight: 700; color: #fff;">律</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge" style="background: #f59e0b; color: #fff;">Penjelasan Aturan Pinyin Mandarin · 拼音规则说明</div>
+            <div class="classroom-desc">Aturan penggabungan konsonan dan vokal yang berlaku dalam sistem Pinyin Mandarin standar.</div>
+          </div>
+        </div>
+
+        <!-- ─── BLOK A: Konsonan Bibir b, p, m, f ─── -->
+        <div class="aturan-block">
+          <div class="aturan-block-title">
+            <span class="aturan-block-badge" style="background:#ffe4e6; color:#be123c;">Labial</span>
+            Konsonan Bibir · <span style="font-size:1.05rem; color:#be123c; font-family:monospace;">b, p, m, f</span>
+          </div>
+
+          <div class="aturan-rule rule-no">
+            <span class="aturan-icon">🚫</span>
+            <div class="aturan-text">
+              <strong>Tidak bisa</strong> bergabung dengan vokal majemuk <strong>-uo</strong>.
+              Kombinasi berikut <u>tidak ada</u> dalam Pinyin:
+              <div class="aturan-example">
+                <span class="aturan-pill aturan-no">buo</span>
+                <span class="aturan-pill aturan-no">puo</span>
+                <span class="aturan-pill aturan-no">muo</span>
+                <span class="aturan-pill aturan-no">fuo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="aturan-rule rule-ok">
+            <span class="aturan-icon">✅</span>
+            <div class="aturan-text">
+              <strong>Langsung bergabung</strong> dengan vokal tunggal <strong>-o</strong>:
+              <div class="aturan-example">
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('bō')">bo</button>
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('pō')">po</button>
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('mō')">mo</button>
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('fō')">fo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── BLOK B: Konsonan Lain d, t, n, l, g, k, h ─── -->
+        <div class="aturan-block">
+          <div class="aturan-block-title">
+            <span class="aturan-block-badge" style="background:#dcfce7; color:#15803d;">Dental / Velar</span>
+            Konsonan Lain · <span style="font-size:1.05rem; color:#15803d; font-family:monospace;">d, t, n, l, g, k, h</span>
+          </div>
+
+          <div class="aturan-rule rule-ok">
+            <span class="aturan-icon">✅</span>
+            <div class="aturan-text">
+              <strong>Bisa</strong> bergabung dengan vokal majemuk <strong>-uo</strong>:
+              <div class="aturan-example">
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('duō')">duo</button>
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('tuō')">tuo</button>
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('nuó')">nuo</button>
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('luò')">luo</button>
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('guó')">guo</button>
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('kuò')">kuo</button>
+                <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('huó')">huo</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="aturan-rule rule-no">
+            <span class="aturan-icon">🚫</span>
+            <div class="aturan-text">
+              <strong>Tidak bisa</strong> langsung bergabung dengan vokal tunggal <strong>-o</strong>.
+              Kombinasi berikut <u>tidak ada</u> dalam Pinyin:
+              <div class="aturan-example">
+                <span class="aturan-pill aturan-no">do</span>
+                <span class="aturan-pill aturan-no">to</span>
+                <span class="aturan-pill aturan-no">no</span>
+                <span class="aturan-pill aturan-no">lo</span>
+                <span class="aturan-pill aturan-no">go</span>
+                <span class="aturan-pill aturan-no">ko</span>
+                <span class="aturan-pill aturan-no">ho</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── BLOK C: Konsonan Palatal j, q, x ─── -->
+        <div class="aturan-block">
+          <div class="aturan-block-title">
+            <span class="aturan-block-badge" style="background:#ede9fe; color:#6d28d9;">Palatal</span>
+            Konsonan Langit-Langit Depan · <span style="font-size:1.05rem; color:#6d28d9; font-family:monospace;">j, q, x</span>
+          </div>
+
+          <div class="aturan-rule rule-info">
+            <span class="aturan-icon">ℹ️</span>
+            <div class="aturan-text">
+              Konsonan <strong>j, q, x</strong> hanya bisa diikuti oleh vokal yang diawali dengan <strong>i</strong> atau <strong>ü</strong>:
+              <div class="aturan-example">
+                <button type="button" class="aturan-pill aturan-ex" onclick="playPinyin('jī')">ji</button>
+                <button type="button" class="aturan-pill aturan-ex" onclick="playPinyin('qī')">qi</button>
+                <button type="button" class="aturan-pill aturan-ex" onclick="playPinyin('xī')">xi</button>
+                <button type="button" class="aturan-pill aturan-ex" onclick="playPinyin('jū')">ju (= jü)</button>
+                <button type="button" class="aturan-pill aturan-ex" onclick="playPinyin('qū')">qu (= qü)</button>
+                <button type="button" class="aturan-pill aturan-ex" onclick="playPinyin('xū')">xu (= xü)</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="aturan-rule rule-tip">
+            <span class="aturan-icon">📝</span>
+            <div class="aturan-text">
+              <strong>Aturan Khusus ü → u:</strong> Ketika <strong>j, q, x</strong> bertemu dengan vokal ü,
+              titik dua dihilangkan dan ditulis sebagai <strong>u</strong> — tetapi pengucapannya <em>tetap ü</em> (bukan u biasa).
+              <div class="aturan-note">
+                Contoh: <strong>ju, qu, xu</strong> → dibaca <em>jü, qü, xü</em> (pengucapan bibir maju seperti "ü")
+              </div>
+            </div>
+          </div>
+
+          <div class="aturan-rule rule-no">
+            <span class="aturan-icon">🚫</span>
+            <div class="aturan-text">
+              <strong>Tidak bisa</strong> langsung bergabung dengan vokal tunggal <strong>a, o, e</strong>.
+              Kombinasi berikut <u>tidak ada</u> dalam Pinyin:
+              <div class="aturan-example">
+                <span class="aturan-pill aturan-no">ja</span>
+                <span class="aturan-pill aturan-no">qa</span>
+                <span class="aturan-pill aturan-no">xa</span>
+                <span class="aturan-pill aturan-no">jo</span>
+                <span class="aturan-pill aturan-no">qo</span>
+                <span class="aturan-pill aturan-no">xo</span>
+                <span class="aturan-pill aturan-no">je</span>
+                <span class="aturan-pill aturan-no">qe</span>
+                <span class="aturan-pill aturan-no">xe</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="aturan-rule rule-ok">
+            <span class="aturan-icon">✅</span>
+            <div class="aturan-text">
+              Untuk vokal yang mengandung <strong>a, o, e</strong>, harus diperantai oleh <strong>i</strong> atau <strong>ü</strong> terlebih dahulu:
+              <div class="aturan-example" style="flex-direction: column; gap: 0.4rem; margin-top: 0.5rem;">
+                <div class="aturan-sep">
+                  <span style="background:#ede9fe; color:#6d28d9; padding:2px 8px; border-radius:5px; font-family:monospace;">j + i + ang</span>
+                  <span class="aturan-arrow">→</span>
+                  <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('jiāng')">jiang</button>
+                </div>
+                <div class="aturan-sep">
+                  <span style="background:#ede9fe; color:#6d28d9; padding:2px 8px; border-radius:5px; font-family:monospace;">j + i + ao</span>
+                  <span class="aturan-arrow">→</span>
+                  <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('jiāo')">jiao</button>
+                </div>
+                <div class="aturan-sep">
+                  <span style="background:#ede9fe; color:#6d28d9; padding:2px 8px; border-radius:5px; font-family:monospace;">x + i + ong</span>
+                  <span class="aturan-arrow">→</span>
+                  <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('xiōng')">xiong</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
