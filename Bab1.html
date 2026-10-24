@@ -383,12 +383,23 @@
       font-weight: 600;
       color: var(--sub);
       margin-top: 0.35rem;
+      display: none;
     }
+    body.show-pinyin .word-pinyin { display: block; }
     .word-arti {
       font-size: 0.8rem;
       color: var(--text);
       margin-top: 0.35rem;
       line-height: 1.35;
+      display: none;
+    }
+    body.show-arti .word-arti { display: block; }
+
+    .shenci-section {
+      display: none;
+    }
+    body.show-vocab .shenci-section {
+      display: block;
     }
 
     /* ── CHARACTER PROFILE BOX (主要人物) ── */
@@ -1165,7 +1176,7 @@
   </div>
 
   <!-- ══ KOSAKATA KUNCI (SEBELUM TEKS 1) ══ -->
-  <div>
+  <div class="shenci-section">
     <div class="section-title">📚 Kosakata Kunci · 生词 (Shēncí)</div>
     <div class="classroom-box">
       <div class="classroom-header">
@@ -1688,6 +1699,16 @@
             <div class="bubble-hanzi">有问题吗？</div>
             <div class="bubble-pinyin">Yǒu wèntí ma?</div>
             <div class="bubble-arti">Apakah ada pertanyaan? / Ada yang ingin ditanyakan?</div>
+          </div>
+        </div>
+
+        <!-- Item 12: 没有。 -->
+        <div class="classroom-item">
+          <div class="item-number">12</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">没有。</div>
+            <div class="bubble-pinyin">Méiyǒu.</div>
+            <div class="bubble-arti">Tidak ada (pertanyaan) / Tidak punya.</div>
           </div>
         </div>
       </div>
