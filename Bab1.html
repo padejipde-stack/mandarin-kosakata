@@ -640,7 +640,20 @@
       font-weight: 500;
       color: rgba(255, 255, 255, 0.7);
       letter-spacing: 0.03em;
+      display: none;
     }
+    body.show-pinyin .twister-pinyin { display: block; }
+    .twister-arti {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 0.25rem;
+      padding-top: 0.25rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.2);
+      display: none;
+    }
+    body.show-arti .twister-arti { display: block; }
 
     /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
     .dialog-toolbar {
@@ -847,6 +860,21 @@
     }
 
     /* â”€â”€ COLOR MODE HIGHLIGHTING â”€â”€ */
+    body.show-color .twister-box {
+      background: #ffffff !important;
+      border: 1.5px solid var(--border) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+    }
+    body.show-color .twister-hanzi {
+      color: var(--text) !important;
+    }
+    body.show-color .twister-pinyin {
+      color: #64748b !important;
+    }
+    body.show-color .twister-arti {
+      color: #475569 !important;
+      border-top-color: rgba(0, 0, 0, 0.12) !important;
+    }
     body.show-color .dialog-line.right .bubble {
       background: #ffffff !important;
       color: var(--text) !important;
@@ -1710,10 +1738,12 @@
       <div class="twister-line">
         <div class="twister-hanzi">妈种麻，我放马。</div>
         <div class="twister-pinyin">Mā zhòng má, wǒ fàng mǎ.</div>
+        <div class="twister-arti">Ibu menanam rami, saya menggembalakan kuda.</div>
       </div>
       <div class="twister-line">
         <div class="twister-hanzi">马吃麻，妈骂马。</div>
         <div class="twister-pinyin">Mǎ chī má, mā mà mǎ.</div>
+        <div class="twister-arti">Kuda memakan rami, ibu memarahi kuda.</div>
       </div>
     </div>
   </div>
