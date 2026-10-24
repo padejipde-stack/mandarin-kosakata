@@ -1104,6 +1104,76 @@
       font-weight: 600;
     }
 
+  
+    /* Latihan 3: Penggabungan Konsonan + Vokal */
+    .combine-section {
+      margin-top: 2rem;
+      border-top: 2px dashed #cbd5e1;
+      padding-top: 1.5rem;
+    }
+    .combine-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .combine-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 0.85rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      font-family: inherit;
+    }
+    .combine-card:hover {
+      transform: translateY(-2px);
+      border-color: #7c3aed;
+      background: #faf5ff;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+    }
+    .combine-pinyin {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.35rem;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+    .combine-parts {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      display: flex;
+      gap: 3px;
+      align-items: center;
+    }
+    .combine-initial-part {
+      color: #7c3aed;
+      font-weight: 700;
+    }
+    .combine-final-part {
+      color: #0369a1;
+      font-weight: 700;
+    }
+    .combine-plus {
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+    .combine-tag {
+      font-size: 0.72rem;
+      background: #ede9fe;
+      color: #6d28d9;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
   </style>
 </head>
 <body>
@@ -1266,7 +1336,7 @@
 
     <!-- ══ BAGIAN 3: LATIHAN FONETIK & 4 NADA PINYIN ══ -->
   <div>
-    <div class="section-title">🎵 Bagian 3: Latihan Fonetik, 4 Nada &amp; Pengisian Konsonan · 语音、四声与声母练习</div>
+    <div class="section-title">🎵 Bagian 3: Latihan Fonetik, 4 Nada, Konsonan &amp; Vokal · 语音四声与声韵母拼合练习</div>
     <div class="classroom-box" style="border-left: 5px solid #3b82f6;">
       <div class="classroom-header">
         <div class="avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); font-size: 1.15rem; font-weight: 700; color: #fff;">声</div>
@@ -1566,6 +1636,175 @@
           <button type="button" class="initials-card" onclick="playPinyin('máng')" title="máng (konsonan: m)">
             <div class="initials-pinyin"><span class="initial-char">m</span>áng</div>
             <div class="initials-tag">konsonan: m</div>
+          </button>
+        </div>
+      </div>
+      <!-- Latihan 3: Penggabungan Konsonan + Vokal -->
+      <div class="combine-section">
+        <div class="classroom-header" style="margin-bottom: 0.85rem;">
+          <div class="avatar" style="background: linear-gradient(135deg, #7c3aed, #5b21b6); font-size: 1.15rem; font-weight: 700; color: #fff;">韵</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge" style="background: #7c3aed; color: #fff;">Latihan 3: Penggabungan Konsonan + Vokal · 声母与韵母拼合</div>
+            <div class="classroom-desc">Berikut adalah penggabungan lengkap dari seluruh bagian (konsonan + vokal) sehingga menjadi Pinyin utuh untuk latihan nomor 3:</div>
+          </div>
+        </div>
+
+        <!-- Baris 1 -->
+        <div class="initials-row-title">
+          <span class="initials-row-badge">Baris 1</span>
+          <span style="font-size: 0.8rem; color: #64748b; font-weight: normal;">Ungu = konsonan · Biru = vokal 🔊</span>
+        </div>
+        <div class="combine-grid">
+          <button type="button" class="combine-card" onclick="playPinyin('tā')" title="tā = t + a">
+            <div class="combine-pinyin">tā</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">t</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">a</span>
+            </div>
+            <div class="combine-tag">vokal: a</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('hén')" title="hén = h + en">
+            <div class="combine-pinyin">hén</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">h</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">en</span>
+            </div>
+            <div class="combine-tag">vokal: en</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('māo')" title="māo = m + ao">
+            <div class="combine-pinyin">māo</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">m</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">ao</span>
+            </div>
+            <div class="combine-tag">vokal: ao</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('dì')" title="dì = d + i">
+            <div class="combine-pinyin">dì</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">d</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">i</span>
+            </div>
+            <div class="combine-tag">vokal: i</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('fāng')" title="fāng = f + ang">
+            <div class="combine-pinyin">fāng</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">f</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">ang</span>
+            </div>
+            <div class="combine-tag">vokal: ang</div>
+          </button>
+        </div>
+
+        <!-- Baris 2 -->
+        <div class="initials-row-title">
+          <span class="initials-row-badge">Baris 2</span>
+          <span style="font-size: 0.8rem; color: #64748b; font-weight: normal;">Ungu = konsonan · Biru = vokal 🔊</span>
+        </div>
+        <div class="combine-grid">
+          <button type="button" class="combine-card" onclick="playPinyin('dōng')" title="dōng = d + ong">
+            <div class="combine-pinyin">dōng</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">d</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">ong</span>
+            </div>
+            <div class="combine-tag">vokal: ong</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('hán')" title="hán = h + an">
+            <div class="combine-pinyin">hán</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">h</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">an</span>
+            </div>
+            <div class="combine-tag">vokal: an</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('gǒu')" title="gǒu = g + ou">
+            <div class="combine-pinyin">gǒu</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">g</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">ou</span>
+            </div>
+            <div class="combine-tag">vokal: ou</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('péng')" title="péng = p + eng">
+            <div class="combine-pinyin">péng</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">p</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">eng</span>
+            </div>
+            <div class="combine-tag">vokal: eng</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('gè')" title="gè = g + e">
+            <div class="combine-pinyin">gè</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">g</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">e</span>
+            </div>
+            <div class="combine-tag">vokal: e</div>
+          </button>
+        </div>
+
+        <!-- Baris 3 -->
+        <div class="initials-row-title">
+          <span class="initials-row-badge">Baris 3</span>
+          <span style="font-size: 0.8rem; color: #64748b; font-weight: normal;">Ungu = konsonan · Biru = vokal 🔊</span>
+        </div>
+        <div class="combine-grid">
+          <button type="button" class="combine-card" onclick="playPinyin('kāi')" title="kāi = k + ai">
+            <div class="combine-pinyin">kāi</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">k</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">ai</span>
+            </div>
+            <div class="combine-tag">vokal: ai</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('fēi')" title="fēi = f + ei">
+            <div class="combine-pinyin">fēi</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">f</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">ei</span>
+            </div>
+            <div class="combine-tag">vokal: ei</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('nǚ')" title="nǚ = n + ü">
+            <div class="combine-pinyin">nǚ</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">n</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">ü</span>
+            </div>
+            <div class="combine-tag">vokal: ü</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('lěng')" title="lěng = l + eng">
+            <div class="combine-pinyin">lěng</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">l</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">eng</span>
+            </div>
+            <div class="combine-tag">vokal: eng</div>
+          </button>
+          <button type="button" class="combine-card" onclick="playPinyin('bō')" title="bō = b + o">
+            <div class="combine-pinyin">bō</div>
+            <div class="combine-parts">
+              <span class="combine-initial-part">b</span>
+              <span class="combine-plus"> + </span>
+              <span class="combine-final-part">o</span>
+            </div>
+            <div class="combine-tag">vokal: o</div>
           </button>
         </div>
       </div>
