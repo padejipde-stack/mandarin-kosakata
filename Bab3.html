@@ -399,6 +399,49 @@
     }
     body.show-arti .word-arti { display: block; }
 
+    
+    /* ── XIAOYU'S CLASSROOM BREAKDOWN (ARTI PER KATA) ── */
+    .char-breakdown {
+      display: none;
+      margin-top: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+    }
+    body.show-vocab .char-breakdown {
+      display: block;
+    }
+    .char-breakdown-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.55rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .char-breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.55rem;
+    }
+    .char-breakdown-grid .word-card {
+      background: #ffffff;
+      padding: 0.65rem 0.5rem;
+      border-top: 3px solid var(--primary);
+      border-radius: 10px;
+    }
+    .char-breakdown-grid .word-char {
+      font-size: 1.35rem;
+    }
+    .char-breakdown-grid .word-pinyin {
+      font-size: 0.75rem;
+    }
+    .char-breakdown-grid .word-arti {
+      font-size: 0.75rem;
+    }
+
     /* ── XIAOYU'S CLASSROOM ── */
     .classroom-box {
       background: var(--card-bg);
@@ -688,6 +731,10 @@
       .twister-pinyin { font-size: 0.82rem; }
       .classroom-box { padding: 1.1rem 0.9rem; }
       .classroom-item { padding: 0.75rem 0.85rem; gap: 0.65rem; }
+      .char-breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
     }
 
     /* â”€â”€ COLOR MODE â”€â”€ */
@@ -948,6 +995,26 @@
             <div class="bubble-hanzi">我是法国人。</div>
             <div class="bubble-pinyin">Wǒ shì Fǎguórén.</div>
             <div class="bubble-arti">Saya adalah orang Prancis.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya, aku</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">是</div>
+                  <div class="word-pinyin">shì</div>
+                  <div class="word-arti">adalah</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">法国人</div>
+                  <div class="word-pinyin">Fǎguó rén</div>
+                  <div class="word-arti">orang Prancis</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -958,6 +1025,31 @@
             <div class="bubble-hanzi">她是中文老师。</div>
             <div class="bubble-pinyin">Tā shì Zhōngwén lǎoshī.</div>
             <div class="bubble-arti">Dia adalah guru bahasa Mandarin.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">她</div>
+                  <div class="word-pinyin">tā</div>
+                  <div class="word-arti">dia (perempuan)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">是</div>
+                  <div class="word-pinyin">shì</div>
+                  <div class="word-arti">adalah</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">中文</div>
+                  <div class="word-pinyin">zhōngwén</div>
+                  <div class="word-arti">bahasa Mandarin</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">老师</div>
+                  <div class="word-pinyin">lǎoshī</div>
+                  <div class="word-arti">guru, pengajar</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -968,6 +1060,31 @@
             <div class="bubble-hanzi">我老师不是法国人。</div>
             <div class="bubble-pinyin">Wǒ lǎoshī bú shì Fǎguórén.</div>
             <div class="bubble-arti">Guru saya bukan orang Prancis.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">老师</div>
+                  <div class="word-pinyin">lǎoshī</div>
+                  <div class="word-arti">guru, pengajar</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">不是</div>
+                  <div class="word-pinyin">bú shì</div>
+                  <div class="word-arti">bukan</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">法国人</div>
+                  <div class="word-pinyin">Fǎguó rén</div>
+                  <div class="word-arti">orang Prancis</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -983,6 +1100,31 @@
             <div class="bubble-hanzi">白家月的中文老师</div>
             <div class="bubble-pinyin">Bái Jiāyuè de Zhōngwén lǎoshī</div>
             <div class="bubble-arti">Guru bahasa Mandarin-nya Bai Jiayue</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">白家月</div>
+                  <div class="word-pinyin">Bái Jiāyuè</div>
+                  <div class="word-arti">(nama orang)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">的</div>
+                  <div class="word-pinyin">de</div>
+                  <div class="word-arti">kepemilikan (milik)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">中文</div>
+                  <div class="word-pinyin">zhōngwén</div>
+                  <div class="word-arti">bahasa Mandarin</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">老师</div>
+                  <div class="word-pinyin">lǎoshī</div>
+                  <div class="word-arti">guru, pengajar</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -993,6 +1135,26 @@
             <div class="bubble-hanzi">你的名字</div>
             <div class="bubble-pinyin">Nǐ de míngzi</div>
             <div class="bubble-arti">Nama kamu / Namamu</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">你</div>
+                  <div class="word-pinyin">nǐ</div>
+                  <div class="word-arti">kamu, Anda</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">的</div>
+                  <div class="word-pinyin">de</div>
+                  <div class="word-arti">kepemilikan (milik)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">名字</div>
+                  <div class="word-pinyin">míngzi</div>
+                  <div class="word-arti">nama</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1008,6 +1170,21 @@
             <div class="bubble-hanzi">我老师</div>
             <div class="bubble-pinyin">Wǒ lǎoshī</div>
             <div class="bubble-arti">Guru saya (singkatan dari 我的老师)</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">老师</div>
+                  <div class="word-pinyin">lǎoshī</div>
+                  <div class="word-arti">guru, pengajar</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1018,6 +1195,21 @@
             <div class="bubble-hanzi">我学生</div>
             <div class="bubble-pinyin">Wǒ xuésheng</div>
             <div class="bubble-arti">Murid saya (singkatan dari 我的学生)</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">学生</div>
+                  <div class="word-pinyin">xuésheng</div>
+                  <div class="word-arti">murid, pelajar</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1028,6 +1220,21 @@
             <div class="bubble-hanzi">你同学</div>
             <div class="bubble-pinyin">Nǐ tóngxué</div>
             <div class="bubble-arti">Teman sekelasmu (singkatan dari 你的同学)</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">你</div>
+                  <div class="word-pinyin">nǐ</div>
+                  <div class="word-arti">kamu</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">同学</div>
+                  <div class="word-pinyin">tóngxué</div>
+                  <div class="word-arti">teman sekelas</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1038,6 +1245,21 @@
             <div class="bubble-hanzi">我妈妈</div>
             <div class="bubble-pinyin">Wǒ māma</div>
             <div class="bubble-arti">Ibu saya / Ibuku (singkatan dari 我的妈妈)</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">妈妈</div>
+                  <div class="word-pinyin">māma</div>
+                  <div class="word-arti">ibu, mama</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1083,6 +1305,26 @@
             <div class="bubble-hanzi">这是谁？</div>
             <div class="bubble-pinyin">Zhè shì shéi?</div>
             <div class="bubble-arti">Ini siapa?</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">这</div>
+                  <div class="word-pinyin">zhè</div>
+                  <div class="word-arti">ini</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">是</div>
+                  <div class="word-pinyin">shì</div>
+                  <div class="word-arti">adalah</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">谁</div>
+                  <div class="word-pinyin">shuí</div>
+                  <div class="word-arti">siapa</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1397,6 +1639,36 @@
             <div class="bubble-hanzi">你也很忙吗？</div>
             <div class="bubble-pinyin">Nǐ yě hěn máng ma?</div>
             <div class="bubble-arti">Apakah kamu juga sangat sibuk?</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">你</div>
+                  <div class="word-pinyin">nǐ</div>
+                  <div class="word-arti">kamu</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">也</div>
+                  <div class="word-pinyin">yě</div>
+                  <div class="word-arti">juga</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">很</div>
+                  <div class="word-pinyin">hěn</div>
+                  <div class="word-arti">sangat</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">忙</div>
+                  <div class="word-pinyin">máng</div>
+                  <div class="word-arti">sibuk</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">吗</div>
+                  <div class="word-pinyin">ma</div>
+                  <div class="word-arti">? (tanya ya/tidak)</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1407,6 +1679,46 @@
             <div class="bubble-hanzi">你是他的中文老师吗？</div>
             <div class="bubble-pinyin">Nǐ shì tā de Zhōngwén lǎoshī ma?</div>
             <div class="bubble-arti">Apakah kamu adalah guru bahasa Mandarin-nya?</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">你</div>
+                  <div class="word-pinyin">nǐ</div>
+                  <div class="word-arti">kamu</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">是</div>
+                  <div class="word-pinyin">shì</div>
+                  <div class="word-arti">adalah</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">他</div>
+                  <div class="word-pinyin">tā</div>
+                  <div class="word-arti">dia (laki-laki)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">的</div>
+                  <div class="word-pinyin">de</div>
+                  <div class="word-arti">kepemilikan (milik)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">中文</div>
+                  <div class="word-pinyin">zhōngwén</div>
+                  <div class="word-arti">bahasa Mandarin</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">老师</div>
+                  <div class="word-pinyin">lǎoshī</div>
+                  <div class="word-arti">guru</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">吗</div>
+                  <div class="word-pinyin">ma</div>
+                  <div class="word-arti">? (tanya ya/tidak)</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1417,6 +1729,31 @@
             <div class="bubble-hanzi">你有姐姐吗？</div>
             <div class="bubble-pinyin">Nǐ yǒu jiějie ma?</div>
             <div class="bubble-arti">Apakah kamu punya kakak perempuan?</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">你</div>
+                  <div class="word-pinyin">nǐ</div>
+                  <div class="word-arti">kamu</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">有</div>
+                  <div class="word-pinyin">yǒu</div>
+                  <div class="word-arti">ada, memiliki</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">姐姐</div>
+                  <div class="word-pinyin">jiějie</div>
+                  <div class="word-arti">kakak perempuan</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">吗</div>
+                  <div class="word-pinyin">ma</div>
+                  <div class="word-arti">? (tanya ya/tidak)</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1432,6 +1769,31 @@
             <div class="bubble-hanzi">你工作忙吗？</div>
             <div class="bubble-pinyin">Nǐ gōngzuò máng ma?</div>
             <div class="bubble-arti">Apakah pekerjaanmu sibuk?</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">你</div>
+                  <div class="word-pinyin">nǐ</div>
+                  <div class="word-arti">kamu</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">工作</div>
+                  <div class="word-pinyin">gōngzuò</div>
+                  <div class="word-arti">kerja, pekerjaan</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">忙</div>
+                  <div class="word-pinyin">máng</div>
+                  <div class="word-arti">sibuk</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">吗</div>
+                  <div class="word-pinyin">ma</div>
+                  <div class="word-arti">? (tanya ya/tidak)</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1442,6 +1804,31 @@
             <div class="bubble-hanzi">我很想你们。</div>
             <div class="bubble-pinyin">Wǒ hěn xiǎng nǐmen.</div>
             <div class="bubble-arti">Saya sangat merindukan kalian.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">很</div>
+                  <div class="word-pinyin">hěn</div>
+                  <div class="word-arti">sangat</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">想</div>
+                  <div class="word-pinyin">xiǎng</div>
+                  <div class="word-arti">rindu, merindukan</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">你们</div>
+                  <div class="word-pinyin">nǐmen</div>
+                  <div class="word-arti">kalian</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1477,6 +1864,36 @@
             <div class="bubble-hanzi">他叫陈天中，是泰国人。</div>
             <div class="bubble-pinyin">Tā jiào Chén Tiānzhōng, shì Tàiguórén.</div>
             <div class="bubble-arti">Dia bernama Chen Tianzhong, adalah orang Thailand.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">他</div>
+                  <div class="word-pinyin">tā</div>
+                  <div class="word-arti">dia (laki-laki)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">叫</div>
+                  <div class="word-pinyin">jiào</div>
+                  <div class="word-arti">bernama</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">陈天中</div>
+                  <div class="word-pinyin">Chén Tiānzhōng</div>
+                  <div class="word-arti">(nama orang)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">是</div>
+                  <div class="word-pinyin">shì</div>
+                  <div class="word-arti">adalah</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">泰国人</div>
+                  <div class="word-pinyin">Tàiguó rén</div>
+                  <div class="word-arti">orang Thailand</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1487,6 +1904,36 @@
             <div class="bubble-hanzi">他爸爸也是泰国人。</div>
             <div class="bubble-pinyin">Tā bàba yě shì Tàiguórén.</div>
             <div class="bubble-arti">Ayahnya juga orang Thailand.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">他</div>
+                  <div class="word-pinyin">tā</div>
+                  <div class="word-arti">dia (laki-laki)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">爸爸</div>
+                  <div class="word-pinyin">bàba</div>
+                  <div class="word-arti">ayah, papa</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">也</div>
+                  <div class="word-pinyin">yě</div>
+                  <div class="word-arti">juga</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">是</div>
+                  <div class="word-pinyin">shì</div>
+                  <div class="word-arti">adalah</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">泰国人</div>
+                  <div class="word-pinyin">Tàiguó rén</div>
+                  <div class="word-arti">orang Thailand</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1497,6 +1944,41 @@
             <div class="bubble-hanzi">王一飞是我的中文老师。</div>
             <div class="bubble-pinyin">Wáng Yīfēi shì wǒ de Zhōngwén lǎoshī.</div>
             <div class="bubble-arti">Wang Yifei adalah guru bahasa Mandarin saya.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">王一飞</div>
+                  <div class="word-pinyin">Wáng Yīfēi</div>
+                  <div class="word-arti">(nama orang)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">是</div>
+                  <div class="word-pinyin">shì</div>
+                  <div class="word-arti">adalah</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">的</div>
+                  <div class="word-pinyin">de</div>
+                  <div class="word-arti">kepemilikan (milik)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">中文</div>
+                  <div class="word-pinyin">zhōngwén</div>
+                  <div class="word-arti">bahasa Mandarin</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">老师</div>
+                  <div class="word-pinyin">lǎoshī</div>
+                  <div class="word-arti">guru</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1507,6 +1989,31 @@
             <div class="bubble-hanzi">她工作很忙。</div>
             <div class="bubble-pinyin">Tā gōngzuò hěn máng.</div>
             <div class="bubble-arti">Pekerjaannya sangat sibuk.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">她</div>
+                  <div class="word-pinyin">tā</div>
+                  <div class="word-arti">dia (perempuan)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">工作</div>
+                  <div class="word-pinyin">gōngzuò</div>
+                  <div class="word-arti">kerja, pekerjaan</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">很</div>
+                  <div class="word-pinyin">hěn</div>
+                  <div class="word-arti">sangat</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">忙</div>
+                  <div class="word-pinyin">máng</div>
+                  <div class="word-arti">sibuk</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

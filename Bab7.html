@@ -378,6 +378,49 @@
     }
     body.show-arti .word-arti { display: block; }
 
+    
+    /* ── XIAOYU'S CLASSROOM BREAKDOWN (ARTI PER KATA) ── */
+    .char-breakdown {
+      display: none;
+      margin-top: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+    }
+    body.show-vocab .char-breakdown {
+      display: block;
+    }
+    .char-breakdown-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.55rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .char-breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.55rem;
+    }
+    .char-breakdown-grid .word-card {
+      background: #ffffff;
+      padding: 0.65rem 0.5rem;
+      border-top: 3px solid var(--primary);
+      border-radius: 10px;
+    }
+    .char-breakdown-grid .word-char {
+      font-size: 1.35rem;
+    }
+    .char-breakdown-grid .word-pinyin {
+      font-size: 0.75rem;
+    }
+    .char-breakdown-grid .word-arti {
+      font-size: 0.75rem;
+    }
+
     /* ── XIAOYU'S CLASSROOM ── */
     .classroom-box {
       background: var(--card-bg);
@@ -632,6 +675,10 @@
       .toggle-switch-btn .status-badge { font-size: 0.62rem; padding: 0.08rem 0.32rem; }
       .classroom-box { padding: 1.1rem 0.9rem; }
       .classroom-item { padding: 0.75rem 0.85rem; gap: 0.65rem; }
+      .char-breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
       .number-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
       .number-grid.wide { grid-template-columns: repeat(2, 1fr); }
       .number-card { padding: 0.6rem 0.4rem; }
@@ -964,6 +1011,21 @@
             <div class="bubble-hanzi">上午</div>
             <div class="bubble-pinyin">shàngwǔ</div>
             <div class="bubble-arti">Pagi menjelang siang (morning / forenoon, ~08.00–12.00)</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">上</div>
+                  <div class="word-pinyin">shàng</div>
+                  <div class="word-arti">atas, pagi</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">午</div>
+                  <div class="word-pinyin">wǔ</div>
+                  <div class="word-arti">siang</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -974,6 +1036,26 @@
             <div class="bubble-hanzi">中午十二点</div>
             <div class="bubble-pinyin">zhōngwǔ shí'èr diǎn</div>
             <div class="bubble-arti">Siang hari pukul 12.00 (tengah hari)</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">中午</div>
+                  <div class="word-pinyin">zhōngwǔ</div>
+                  <div class="word-arti">tengah hari</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">十二</div>
+                  <div class="word-pinyin">shí'èr</div>
+                  <div class="word-arti">dua belas</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">点</div>
+                  <div class="word-pinyin">diǎn</div>
+                  <div class="word-arti">jam, pukul</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -984,6 +1066,26 @@
             <div class="bubble-hanzi">下午两点半</div>
             <div class="bubble-pinyin">xiàwǔ liǎng diǎn bàn</div>
             <div class="bubble-arti">Sore hari pukul 14.30 (jam setengah tiga sore — 半 bàn = setengah/30 menit)</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">下午</div>
+                  <div class="word-pinyin">xiàwǔ</div>
+                  <div class="word-arti">sore hari</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">两点</div>
+                  <div class="word-pinyin">liǎng diǎn</div>
+                  <div class="word-arti">pukul dua</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">半</div>
+                  <div class="word-pinyin">bàn</div>
+                  <div class="word-arti">setengah (30 menit)</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -994,6 +1096,26 @@
             <div class="bubble-hanzi">晚上九点十分</div>
             <div class="bubble-pinyin">wǎnshang jiǔ diǎn shí fēn</div>
             <div class="bubble-arti">Malam hari pukul 21.10 (jam sembilan lewat sepuluh malam)</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">晚上</div>
+                  <div class="word-pinyin">wǎnshang</div>
+                  <div class="word-arti">malam hari</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">九点</div>
+                  <div class="word-pinyin">jiǔ diǎn</div>
+                  <div class="word-arti">pukul sembilan</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">十分</div>
+                  <div class="word-pinyin">shí fēn</div>
+                  <div class="word-arti">sepuluh menit</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1050,6 +1172,56 @@
             <div class="bubble-hanzi">下午我想去电影院看电影，你去吗？</div>
             <div class="bubble-pinyin">Xiàwǔ wǒ xiǎng qù diànyǐngyuàn kàn diànyǐng, nǐ qù ma?</div>
             <div class="bubble-arti">Sore ini saya ingin pergi ke bioskop untuk menonton film, apakah kamu ikut pergi?</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">下午</div>
+                  <div class="word-pinyin">xiàwǔ</div>
+                  <div class="word-arti">sore hari</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">想</div>
+                  <div class="word-pinyin">xiǎng</div>
+                  <div class="word-arti">ingin</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">去</div>
+                  <div class="word-pinyin">qù</div>
+                  <div class="word-arti">pergi</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">电影院</div>
+                  <div class="word-pinyin">diànyǐngyuàn</div>
+                  <div class="word-arti">bioskop</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">看</div>
+                  <div class="word-pinyin">kàn</div>
+                  <div class="word-arti">menonton</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">电影</div>
+                  <div class="word-pinyin">diànyǐng</div>
+                  <div class="word-arti">film</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">你</div>
+                  <div class="word-pinyin">nǐ</div>
+                  <div class="word-arti">kamu</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">去吗</div>
+                  <div class="word-pinyin">qù ma</div>
+                  <div class="word-arti">pergi tidak?</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1221,6 +1393,26 @@
             <div class="bubble-hanzi">我不想去。</div>
             <div class="bubble-pinyin">Wǒ bù xiǎng qù.</div>
             <div class="bubble-arti">Saya tidak ingin pergi.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">不想</div>
+                  <div class="word-pinyin">bù xiǎng</div>
+                  <div class="word-arti">tidak ingin</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">去</div>
+                  <div class="word-pinyin">qù</div>
+                  <div class="word-arti">pergi</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1231,6 +1423,26 @@
             <div class="bubble-hanzi">妹妹很高兴。</div>
             <div class="bubble-pinyin">Mèimei hěn gāoxìng.</div>
             <div class="bubble-arti">Adik perempuan sangat senang / gembira.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">妹妹</div>
+                  <div class="word-pinyin">mèimei</div>
+                  <div class="word-arti">adik perempuan</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">很</div>
+                  <div class="word-pinyin">hěn</div>
+                  <div class="word-arti">sangat</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">高兴</div>
+                  <div class="word-pinyin">gāoxìng</div>
+                  <div class="word-arti">senang</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1241,6 +1453,31 @@
             <div class="bubble-hanzi">她上午十点半上课。</div>
             <div class="bubble-pinyin">Tā shàngwǔ shí diǎn bàn shàngkè.</div>
             <div class="bubble-arti">Dia masuk kelas jam 10.30 pagi (sepuluh lewat tiga puluh).</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">她</div>
+                  <div class="word-pinyin">tā</div>
+                  <div class="word-arti">dia</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">上午</div>
+                  <div class="word-pinyin">shàngwǔ</div>
+                  <div class="word-arti">pagi hari</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">十点半</div>
+                  <div class="word-pinyin">shí diǎn bàn</div>
+                  <div class="word-arti">pukul 10.30</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">上课</div>
+                  <div class="word-pinyin">shàngkè</div>
+                  <div class="word-arti">masuk kelas</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1291,6 +1528,46 @@
             <div class="bubble-hanzi">我明天下午两点还上课呢。</div>
             <div class="bubble-pinyin">Wǒ míngtiān xiàwǔ liǎng diǎn hái shàngkè ne.</div>
             <div class="bubble-arti">Besok jam dua siang saya masih masuk kelas lho.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">明天</div>
+                  <div class="word-pinyin">míngtiān</div>
+                  <div class="word-arti">besok</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">下午</div>
+                  <div class="word-pinyin">xiàwǔ</div>
+                  <div class="word-arti">sore hari</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">两点</div>
+                  <div class="word-pinyin">liǎng diǎn</div>
+                  <div class="word-arti">pukul dua</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">还</div>
+                  <div class="word-pinyin">hái</div>
+                  <div class="word-arti">masih</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">上课</div>
+                  <div class="word-pinyin">shàngkè</div>
+                  <div class="word-arti">masuk kelas</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">呢</div>
+                  <div class="word-pinyin">ne</div>
+                  <div class="word-arti">lho (penegas)</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1301,6 +1578,41 @@
             <div class="bubble-hanzi">妹妹会做两个菜呢。</div>
             <div class="bubble-pinyin">Mèimei huì zuò liǎng gè cài ne.</div>
             <div class="bubble-arti">Adik perempuan bisa memasak dua macam lauk lho.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">妹妹</div>
+                  <div class="word-pinyin">mèimei</div>
+                  <div class="word-arti">adik perempuan</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">会</div>
+                  <div class="word-pinyin">huì</div>
+                  <div class="word-arti">bisa</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">做</div>
+                  <div class="word-pinyin">zuò</div>
+                  <div class="word-arti">membuat</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">两个</div>
+                  <div class="word-pinyin">liǎng gè</div>
+                  <div class="word-arti">dua</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">菜</div>
+                  <div class="word-pinyin">cài</div>
+                  <div class="word-arti">lauk</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">呢</div>
+                  <div class="word-pinyin">ne</div>
+                  <div class="word-arti">lho (penegas)</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1311,6 +1623,41 @@
             <div class="bubble-hanzi">李文晚上还有事呢。</div>
             <div class="bubble-pinyin">Lǐ Wén wǎnshang hái yǒu shì ne.</div>
             <div class="bubble-arti">Li Wen malam hari masih ada urusan lho.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">李文</div>
+                  <div class="word-pinyin">Lǐ Wén</div>
+                  <div class="word-arti">(nama orang)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">晚上</div>
+                  <div class="word-pinyin">wǎnshang</div>
+                  <div class="word-arti">malam hari</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">还</div>
+                  <div class="word-pinyin">hái</div>
+                  <div class="word-arti">masih</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">有</div>
+                  <div class="word-pinyin">yǒu</div>
+                  <div class="word-arti">ada</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">事</div>
+                  <div class="word-pinyin">shì</div>
+                  <div class="word-arti">urusan</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">呢</div>
+                  <div class="word-pinyin">ne</div>
+                  <div class="word-arti">lho (penegas)</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

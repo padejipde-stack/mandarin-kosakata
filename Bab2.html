@@ -395,6 +395,49 @@
     }
     body.show-arti .word-arti { display: block; }
 
+    
+    /* ── XIAOYU'S CLASSROOM BREAKDOWN (ARTI PER KATA) ── */
+    .char-breakdown {
+      display: none;
+      margin-top: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+    }
+    body.show-vocab .char-breakdown {
+      display: block;
+    }
+    .char-breakdown-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.55rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .char-breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.55rem;
+    }
+    .char-breakdown-grid .word-card {
+      background: #ffffff;
+      padding: 0.65rem 0.5rem;
+      border-top: 3px solid var(--primary);
+      border-radius: 10px;
+    }
+    .char-breakdown-grid .word-char {
+      font-size: 1.35rem;
+    }
+    .char-breakdown-grid .word-pinyin {
+      font-size: 0.75rem;
+    }
+    .char-breakdown-grid .word-arti {
+      font-size: 0.75rem;
+    }
+
     /* ── XIAOYU'S CLASSROOM ── */
     .classroom-box {
       background: var(--card-bg);
@@ -642,6 +685,10 @@
 
       .classroom-box { padding: 1.1rem 0.9rem; }
       .classroom-item { padding: 0.75rem 0.85rem; gap: 0.65rem; }
+      .char-breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
       .item-number { width: 24px; height: 24px; font-size: 0.75rem; }
 
       .twister-box { padding: 1.2rem; }
@@ -1038,6 +1085,31 @@
             <div class="bubble-hanzi">你叫什么名字？</div>
             <div class="bubble-pinyin">Nǐ jiào shénme míngzi?</div>
             <div class="bubble-arti">Siapa namamu?</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">你</div>
+                  <div class="word-pinyin">nǐ</div>
+                  <div class="word-arti">kamu, Anda</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">叫</div>
+                  <div class="word-pinyin">jiào</div>
+                  <div class="word-arti">bernama, dipanggil</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">什么</div>
+                  <div class="word-pinyin">shénme</div>
+                  <div class="word-arti">apa</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">名字</div>
+                  <div class="word-pinyin">míngzi</div>
+                  <div class="word-arti">nama</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1048,6 +1120,26 @@
             <div class="bubble-hanzi">我叫白家月。</div>
             <div class="bubble-pinyin">Wǒ jiào Bái Jiāyuè.</div>
             <div class="bubble-arti">Nama saya Bai Jiayue.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya, aku</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">叫</div>
+                  <div class="word-pinyin">jiào</div>
+                  <div class="word-arti">bernama, dipanggil</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">白家月</div>
+                  <div class="word-pinyin">Bái Jiāyuè</div>
+                  <div class="word-arti">(nama orang) Bai Jiayue</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1058,6 +1150,26 @@
             <div class="bubble-hanzi">我是学生。</div>
             <div class="bubble-pinyin">Wǒ shì xuésheng.</div>
             <div class="bubble-arti">Saya adalah murid.</div>
+            <div class="char-breakdown">
+              <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+              <div class="breakdown-grid char-breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">我</div>
+                  <div class="word-pinyin">wǒ</div>
+                  <div class="word-arti">saya, aku</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">是</div>
+                  <div class="word-pinyin">shì</div>
+                  <div class="word-arti">adalah</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">学生</div>
+                  <div class="word-pinyin">xuésheng</div>
+                  <div class="word-arti">murid, pelajar</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
