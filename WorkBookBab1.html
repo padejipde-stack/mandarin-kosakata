@@ -1031,6 +1031,79 @@
       margin-top: 2px;
     }
 
+  
+    /* Initials Exercise Styling */
+    .initials-section {
+      margin-top: 2rem;
+      border-top: 2px dashed #cbd5e1;
+      padding-top: 1.5rem;
+    }
+    .initials-row-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+      margin: 1.1rem 0 0.6rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .initials-row-badge {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid #e2e8f0;
+    }
+    .initials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .initials-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 0.85rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      font-family: inherit;
+    }
+    .initials-card:hover {
+      transform: translateY(-2px);
+      border-color: #f43f5e;
+      background: #fff1f2;
+      box-shadow: 0 4px 12px rgba(244, 63, 94, 0.15);
+    }
+    .initials-pinyin {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.35rem;
+      line-height: 1.2;
+    }
+    .initial-char {
+      color: #e11d48;
+      font-weight: 800;
+      border-bottom: 2.5px solid #e11d48;
+      padding-bottom: 1px;
+    }
+    .initials-tag {
+      font-size: 0.75rem;
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
   </style>
 </head>
 <body>
@@ -1193,7 +1266,7 @@
 
     <!-- ══ BAGIAN 3: LATIHAN FONETIK & 4 NADA PINYIN ══ -->
   <div>
-    <div class="section-title">🎵 Bagian 3: Latihan Fonetik &amp; 4 Nada Pinyin · 语音与四声练习</div>
+    <div class="section-title">🎵 Bagian 3: Latihan Fonetik, 4 Nada &amp; Pengisian Konsonan · 语音、四声与声母练习</div>
     <div class="classroom-box" style="border-left: 5px solid #3b82f6;">
       <div class="classroom-header">
         <div class="avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); font-size: 1.15rem; font-weight: 700; color: #fff;">声</div>
@@ -1402,6 +1475,101 @@
           </div>
         </div>
       </div>
+      <!-- Latihan 2: Pengisian Konsonan Awal (Initials) -->
+      <div class="initials-section">
+        <div class="classroom-header" style="margin-bottom: 0.85rem;">
+          <div class="avatar" style="background: linear-gradient(135deg, #e11d48, #be123c); font-size: 1.15rem; font-weight: 700; color: #fff;">母</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge" style="background: #e11d48; color: #fff;">Latihan 2: Pengisian Konsonan (Initials) · 声母填空</div>
+            <div class="classroom-desc">Berikut adalah hasil lengkap pinyin (konsonan/initial + vokal/final + nada) beserta konsonan (initials) yang diisikan pada garis horizontal untuk latihan nomor 2 tersebut:</div>
+          </div>
+        </div>
+
+        <!-- Baris 1 -->
+        <div class="initials-row-title">
+          <span class="initials-row-badge">Baris 1</span>
+          <span style="font-size: 0.8rem; color: #64748b; font-weight: normal;">Klik kartu untuk mendengarkan lafal 🔊</span>
+        </div>
+        <div class="initials-grid">
+          <button type="button" class="initials-card" onclick="playPinyin('dà')" title="dà (konsonan: d)">
+            <div class="initials-pinyin"><span class="initial-char">d</span>à</div>
+            <div class="initials-tag">konsonan: d</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('gěi')" title="gěi (konsonan: g)">
+            <div class="initials-pinyin"><span class="initial-char">g</span>ěi</div>
+            <div class="initials-tag">konsonan: g</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('pán')" title="pán (konsonan: p)">
+            <div class="initials-pinyin"><span class="initial-char">p</span>án</div>
+            <div class="initials-tag">konsonan: p</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('bù')" title="bù (konsonan: b)">
+            <div class="initials-pinyin"><span class="initial-char">b</span>ù</div>
+            <div class="initials-tag">konsonan: b</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('mǎi')" title="mǎi (konsonan: m)">
+            <div class="initials-pinyin"><span class="initial-char">m</span>ǎi</div>
+            <div class="initials-tag">konsonan: m</div>
+          </button>
+        </div>
+
+        <!-- Baris 2 -->
+        <div class="initials-row-title">
+          <span class="initials-row-badge">Baris 2</span>
+          <span style="font-size: 0.8rem; color: #64748b; font-weight: normal;">Klik kartu untuk mendengarkan lafal 🔊</span>
+        </div>
+        <div class="initials-grid">
+          <button type="button" class="initials-card" onclick="playPinyin('lěng')" title="lěng (konsonan: l)">
+            <div class="initials-pinyin"><span class="initial-char">l</span>ěng</div>
+            <div class="initials-tag">konsonan: l</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('fó')" title="fó (konsonan: f)">
+            <div class="initials-pinyin"><span class="initial-char">f</span>ó</div>
+            <div class="initials-tag">konsonan: f</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('hǎo')" title="hǎo (konsonan: h)">
+            <div class="initials-pinyin"><span class="initial-char">h</span>ǎo</div>
+            <div class="initials-tag">konsonan: h</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('tóng')" title="tóng (konsonan: t)">
+            <div class="initials-pinyin"><span class="initial-char">t</span>óng</div>
+            <div class="initials-tag">konsonan: t</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('hěn')" title="hěn (konsonan: h)">
+            <div class="initials-pinyin"><span class="initial-char">h</span>ěn</div>
+            <div class="initials-tag">konsonan: h</div>
+          </button>
+        </div>
+
+        <!-- Baris 3 -->
+        <div class="initials-row-title">
+          <span class="initials-row-badge">Baris 3</span>
+          <span style="font-size: 0.8rem; color: #64748b; font-weight: normal;">Klik kartu untuk mendengarkan lafal 🔊</span>
+        </div>
+        <div class="initials-grid">
+          <button type="button" class="initials-card" onclick="playPinyin('bān')" title="bān (konsonan: b)">
+            <div class="initials-pinyin"><span class="initial-char">b</span>ān</div>
+            <div class="initials-tag">konsonan: b</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('dōu')" title="dōu (konsonan: d)">
+            <div class="initials-pinyin"><span class="initial-char">d</span>ōu</div>
+            <div class="initials-tag">konsonan: d</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('kè')" title="kè (konsonan: k)">
+            <div class="initials-pinyin"><span class="initial-char">k</span>è</div>
+            <div class="initials-tag">konsonan: k</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('nǐ')" title="nǐ (konsonan: n)">
+            <div class="initials-pinyin"><span class="initial-char">n</span>ǐ</div>
+            <div class="initials-tag">konsonan: n</div>
+          </button>
+          <button type="button" class="initials-card" onclick="playPinyin('máng')" title="máng (konsonan: m)">
+            <div class="initials-pinyin"><span class="initial-char">m</span>áng</div>
+            <div class="initials-tag">konsonan: m</div>
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 
