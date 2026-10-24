@@ -926,6 +926,111 @@
       align-items: center;
     }
 
+  
+    /* Phonetics / Tones Section Styling */
+    .phonetic-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+    }
+    .phonetic-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .phonetic-group-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+    .phonetic-group-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .phonetic-group-badge {
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .phonetic-tone-headers {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+      text-align: center;
+    }
+    .phonetic-tone-header-item {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 2px;
+      border-radius: 6px;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .tone-h1 { color: #0284c7; background: #e0f2fe; }
+    .tone-h2 { color: #16a34a; background: #dcfce7; }
+    .tone-h3 { color: #d97706; background: #fef3c7; }
+    .tone-h4 { color: #dc2626; background: #fee2e2; }
+
+    .phonetic-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 0.55rem;
+    }
+    .phonetic-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 0.25rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      font-family: inherit;
+    }
+    .phonetic-cell:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .phonetic-cell.t1:hover { border-color: #38bdf8; background: #f0f9ff; }
+    .phonetic-cell.t2:hover { border-color: #4ade80; background: #f0fdf4; }
+    .phonetic-cell.t3:hover { border-color: #fbbf24; background: #fffbeb; }
+    .phonetic-cell.t4:hover { border-color: #f87171; background: #fef2f2; }
+
+    .phonetic-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+    .phonetic-cell.t1 .phonetic-text { color: #0369a1; }
+    .phonetic-cell.t2 .phonetic-text { color: #15803d; }
+    .phonetic-cell.t3 .phonetic-text { color: #b45309; }
+    .phonetic-cell.t4 .phonetic-text { color: #b91c1c; }
+
+    .phonetic-tone-label {
+      font-size: 0.65rem;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
   </style>
 </head>
 <body>
@@ -1086,70 +1191,214 @@
     </div>
   </div>
 
-  <!-- ══ BAGIAN 3: LATIHAN FRASA & CONTOH KALIMAT DARI KOSAKATA WORKBOOK ══ -->
+    <!-- ══ BAGIAN 3: LATIHAN FONETIK & 4 NADA PINYIN ══ -->
   <div>
-    <div class="section-title">💡 Bagian 3: Latihan Gabungan Frasa &amp; Kalimat · 词组与句子练习</div>
-    <div class="classroom-box" style="border-left: 5px solid #27ae60;">
+    <div class="section-title">🎵 Bagian 3: Latihan Fonetik &amp; 4 Nada Pinyin · 语音与四声练习</div>
+    <div class="classroom-box" style="border-left: 5px solid #3b82f6;">
       <div class="classroom-header">
-        <div class="avatar" style="background: linear-gradient(135deg, #27ae60, #1e8449); font-size: 1.15rem; font-weight: 700; color: #fff;">句</div>
+        <div class="avatar" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); font-size: 1.15rem; font-weight: 700; color: #fff;">声</div>
         <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #27ae60; color: #fff;">Contoh Penggunaan Kata · 常用搭配与例句</div>
-          <div class="classroom-desc">Pelajari bagaimana ke-20 kosakata workbook di atas dirangkai menjadi kalimat dan frasa percakapan nyata:</div>
+          <div class="classroom-badge" style="background: #3b82f6; color: #fff;">Transkripsi Fonetik Pinyin · 语音练习</div>
+          <div class="classroom-desc">Berikut adalah transkripsi Pinyin beserta 4 nada (tones) dari latihan fonetik pada gambar:</div>
         </div>
       </div>
 
-      <div class="classroom-list">
-        <div class="classroom-item">
-          <div class="item-number">1</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">喝茶，吃面包。</div>
-            <div class="bubble-pinyin">Hē chá, chī miànbāo.</div>
-            <div class="bubble-arti">Minum teh, makan roti.</div>
+      <div class="phonetic-container">
+        <!-- Kelompok Kiri -->
+        <div class="phonetic-card">
+          <div class="phonetic-group-header">
+            <div class="phonetic-group-title">
+              <span class="phonetic-group-badge">Kelompok Kiri</span>
+              <span style="font-size: 0.95rem; color: #64748b;">左组</span>
+            </div>
+            <span style="font-size: 0.78rem; color: #64748b; font-weight: 500;">Klik nada untuk audio 🔊</span>
+          </div>
+
+          <!-- Header 4 Nada -->
+          <div class="phonetic-tone-headers">
+            <div class="phonetic-tone-header-item tone-h1">Nada 1 ( ˉ )<br><span style="font-size: 0.65rem; font-weight: normal;">Datar Tinggi</span></div>
+            <div class="phonetic-tone-header-item tone-h2">Nada 2 ( ˊ )<br><span style="font-size: 0.65rem; font-weight: normal;">Naik</span></div>
+            <div class="phonetic-tone-header-item tone-h3">Nada 3 ( ˇ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun-Naik</span></div>
+            <div class="phonetic-tone-header-item tone-h4">Nada 4 ( ˋ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun Tegas</span></div>
+          </div>
+
+          <!-- Baris 1: mo -->
+          <div class="phonetic-row">
+            <button type="button" class="phonetic-cell t1" onclick="playPinyin('mō')" title="mō (Nada 1)">
+              <span class="phonetic-text">mō</span>
+              <span class="phonetic-tone-label">1 ˉ</span>
+            </button>
+            <button type="button" class="phonetic-cell t2" onclick="playPinyin('mó')" title="mó (Nada 2)">
+              <span class="phonetic-text">mó</span>
+              <span class="phonetic-tone-label">2 ˊ</span>
+            </button>
+            <button type="button" class="phonetic-cell t3" onclick="playPinyin('mǒ')" title="mǒ (Nada 3)">
+              <span class="phonetic-text">mǒ</span>
+              <span class="phonetic-tone-label">3 ˇ</span>
+            </button>
+            <button type="button" class="phonetic-cell t4" onclick="playPinyin('mò')" title="mò (Nada 4)">
+              <span class="phonetic-text">mò</span>
+              <span class="phonetic-tone-label">4 ˋ</span>
+            </button>
+          </div>
+
+          <!-- Baris 2: fu -->
+          <div class="phonetic-row">
+            <button type="button" class="phonetic-cell t1" onclick="playPinyin('fū')" title="fū (Nada 1)">
+              <span class="phonetic-text">fū</span>
+              <span class="phonetic-tone-label">1 ˉ</span>
+            </button>
+            <button type="button" class="phonetic-cell t2" onclick="playPinyin('fú')" title="fú (Nada 2)">
+              <span class="phonetic-text">fú</span>
+              <span class="phonetic-tone-label">2 ˊ</span>
+            </button>
+            <button type="button" class="phonetic-cell t3" onclick="playPinyin('fǔ')" title="fǔ (Nada 3)">
+              <span class="phonetic-text">fǔ</span>
+              <span class="phonetic-tone-label">3 ˇ</span>
+            </button>
+            <button type="button" class="phonetic-cell t4" onclick="playPinyin('fù')" title="fù (Nada 4)">
+              <span class="phonetic-text">fù</span>
+              <span class="phonetic-tone-label">4 ˋ</span>
+            </button>
+          </div>
+
+          <!-- Baris 3: di -->
+          <div class="phonetic-row">
+            <button type="button" class="phonetic-cell t1" onclick="playPinyin('dī')" title="dī (Nada 1)">
+              <span class="phonetic-text">dī</span>
+              <span class="phonetic-tone-label">1 ˉ</span>
+            </button>
+            <button type="button" class="phonetic-cell t2" onclick="playPinyin('dí')" title="dí (Nada 2)">
+              <span class="phonetic-text">dí</span>
+              <span class="phonetic-tone-label">2 ˊ</span>
+            </button>
+            <button type="button" class="phonetic-cell t3" onclick="playPinyin('dǐ')" title="dǐ (Nada 3)">
+              <span class="phonetic-text">dǐ</span>
+              <span class="phonetic-tone-label">3 ˇ</span>
+            </button>
+            <button type="button" class="phonetic-cell t4" onclick="playPinyin('dì')" title="dì (Nada 4)">
+              <span class="phonetic-text">dì</span>
+              <span class="phonetic-tone-label">4 ˋ</span>
+            </button>
+          </div>
+
+          <!-- Baris 4: tao -->
+          <div class="phonetic-row">
+            <button type="button" class="phonetic-cell t1" onclick="playPinyin('tāo')" title="tāo (Nada 1)">
+              <span class="phonetic-text">tāo</span>
+              <span class="phonetic-tone-label">1 ˉ</span>
+            </button>
+            <button type="button" class="phonetic-cell t2" onclick="playPinyin('táo')" title="táo (Nada 2)">
+              <span class="phonetic-text">táo</span>
+              <span class="phonetic-tone-label">2 ˊ</span>
+            </button>
+            <button type="button" class="phonetic-cell t3" onclick="playPinyin('tǎo')" title="tǎo (Nada 3)">
+              <span class="phonetic-text">tǎo</span>
+              <span class="phonetic-tone-label">3 ˇ</span>
+            </button>
+            <button type="button" class="phonetic-cell t4" onclick="playPinyin('tào')" title="tào (Nada 4)">
+              <span class="phonetic-text">tào</span>
+              <span class="phonetic-tone-label">4 ˋ</span>
+            </button>
           </div>
         </div>
 
-        <div class="classroom-item">
-          <div class="item-number">2</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">我家有一只猫和一只狗。</div>
-            <div class="bubble-pinyin">Wǒ jiā yǒu yì zhī māo hé yì zhī gǒu.</div>
-            <div class="bubble-arti">Di rumah saya ada seekor kucing dan seekor anjing.</div>
+        <!-- Kelompok Kanan -->
+        <div class="phonetic-card">
+          <div class="phonetic-group-header">
+            <div class="phonetic-group-title">
+              <span class="phonetic-group-badge">Kelompok Kanan</span>
+              <span style="font-size: 0.95rem; color: #64748b;">右组</span>
+            </div>
+            <span style="font-size: 0.78rem; color: #64748b; font-weight: 500;">Klik nada untuk audio 🔊</span>
           </div>
-        </div>
 
-        <div class="classroom-item">
-          <div class="item-number">3</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">老师和学生去饭店吃饭。</div>
-            <div class="bubble-pinyin">Lǎoshī hé xuésheng qù fàndiàn chīfàn.</div>
-            <div class="bubble-arti">Guru dan murid pergi ke restoran untuk makan.</div>
+          <!-- Header 4 Nada -->
+          <div class="phonetic-tone-headers">
+            <div class="phonetic-tone-header-item tone-h1">Nada 1 ( ˉ )<br><span style="font-size: 0.65rem; font-weight: normal;">Datar Tinggi</span></div>
+            <div class="phonetic-tone-header-item tone-h2">Nada 2 ( ˊ )<br><span style="font-size: 0.65rem; font-weight: normal;">Naik</span></div>
+            <div class="phonetic-tone-header-item tone-h3">Nada 3 ( ˇ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun-Naik</span></div>
+            <div class="phonetic-tone-header-item tone-h4">Nada 4 ( ˋ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun Tegas</span></div>
           </div>
-        </div>
 
-        <div class="classroom-item">
-          <div class="item-number">4</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">妹妹在房间看电脑。</div>
-            <div class="bubble-pinyin">Mèimei zài fángjiān kàn diànnǎo.</div>
-            <div class="bubble-arti">Adik perempuan sedang di kamar melihat komputer.</div>
+          <!-- Baris 1: lou -->
+          <div class="phonetic-row">
+            <button type="button" class="phonetic-cell t1" onclick="playPinyin('lōu')" title="lōu (Nada 1)">
+              <span class="phonetic-text">lōu</span>
+              <span class="phonetic-tone-label">1 ˉ</span>
+            </button>
+            <button type="button" class="phonetic-cell t2" onclick="playPinyin('lóu')" title="lóu (Nada 2)">
+              <span class="phonetic-text">lóu</span>
+              <span class="phonetic-tone-label">2 ˊ</span>
+            </button>
+            <button type="button" class="phonetic-cell t3" onclick="playPinyin('lǒu')" title="lǒu (Nada 3)">
+              <span class="phonetic-text">lǒu</span>
+              <span class="phonetic-tone-label">3 ˇ</span>
+            </button>
+            <button type="button" class="phonetic-cell t4" onclick="playPinyin('lòu')" title="lòu (Nada 4)">
+              <span class="phonetic-text">lòu</span>
+              <span class="phonetic-tone-label">4 ˋ</span>
+            </button>
           </div>
-        </div>
 
-        <div class="classroom-item">
-          <div class="item-number">5</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">杯子里有茶吗？</div>
-            <div class="bubble-pinyin">Bēizi li yǒu chá ma?</div>
-            <div class="bubble-arti">Apakah di dalam cangkir ada teh?</div>
+          <!-- Baris 2: han -->
+          <div class="phonetic-row">
+            <button type="button" class="phonetic-cell t1" onclick="playPinyin('hān')" title="hān (Nada 1)">
+              <span class="phonetic-text">hān</span>
+              <span class="phonetic-tone-label">1 ˉ</span>
+            </button>
+            <button type="button" class="phonetic-cell t2" onclick="playPinyin('hán')" title="hán (Nada 2)">
+              <span class="phonetic-text">hán</span>
+              <span class="phonetic-tone-label">2 ˊ</span>
+            </button>
+            <button type="button" class="phonetic-cell t3" onclick="playPinyin('hǎn')" title="hǎn (Nada 3)">
+              <span class="phonetic-text">hǎn</span>
+              <span class="phonetic-tone-label">3 ˇ</span>
+            </button>
+            <button type="button" class="phonetic-cell t4" onclick="playPinyin('hàn')" title="hàn (Nada 4)">
+              <span class="phonetic-text">hàn</span>
+              <span class="phonetic-tone-label">4 ˋ</span>
+            </button>
           </div>
-        </div>
 
-        <div class="classroom-item">
-          <div class="item-number">6</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">白天我和好朋友见面。</div>
-            <div class="bubble-pinyin">Báitiān wǒ hé hǎo péngyou jiànmiàn.</div>
-            <div class="bubble-arti">Siang hari saya bertemu dengan sahabat baik saya.</div>
+          <!-- Baris 3: pang -->
+          <div class="phonetic-row">
+            <button type="button" class="phonetic-cell t1" onclick="playPinyin('pāng')" title="pāng (Nada 1)">
+              <span class="phonetic-text">pāng</span>
+              <span class="phonetic-tone-label">1 ˉ</span>
+            </button>
+            <button type="button" class="phonetic-cell t2" onclick="playPinyin('páng')" title="páng (Nada 2)">
+              <span class="phonetic-text">páng</span>
+              <span class="phonetic-tone-label">2 ˊ</span>
+            </button>
+            <button type="button" class="phonetic-cell t3" onclick="playPinyin('pǎng')" title="pǎng (Nada 3)">
+              <span class="phonetic-text">pǎng</span>
+              <span class="phonetic-tone-label">3 ˇ</span>
+            </button>
+            <button type="button" class="phonetic-cell t4" onclick="playPinyin('pàng')" title="pàng (Nada 4)">
+              <span class="phonetic-text">pàng</span>
+              <span class="phonetic-tone-label">4 ˋ</span>
+            </button>
+          </div>
+
+          <!-- Baris 4: gen -->
+          <div class="phonetic-row">
+            <button type="button" class="phonetic-cell t1" onclick="playPinyin('gēn')" title="gēn (Nada 1)">
+              <span class="phonetic-text">gēn</span>
+              <span class="phonetic-tone-label">1 ˉ</span>
+            </button>
+            <button type="button" class="phonetic-cell t2" onclick="playPinyin('gén')" title="gén (Nada 2)">
+              <span class="phonetic-text">gén</span>
+              <span class="phonetic-tone-label">2 ˊ</span>
+            </button>
+            <button type="button" class="phonetic-cell t3" onclick="playPinyin('gěn')" title="gěn (Nada 3)">
+              <span class="phonetic-text">gěn</span>
+              <span class="phonetic-tone-label">3 ˇ</span>
+            </button>
+            <button type="button" class="phonetic-cell t4" onclick="playPinyin('gèn')" title="gèn (Nada 4)">
+              <span class="phonetic-text">gèn</span>
+              <span class="phonetic-tone-label">4 ˋ</span>
+            </button>
           </div>
         </div>
       </div>
@@ -1452,6 +1701,18 @@
     }
     updateToggleUI();
   });
+
+  // Fungsi Pengucapan Suara Pinyin Fonetik
+  function playPinyin(text) {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-CN';
+      u.rate = 0.8;
+      window.speechSynthesis.speak(u);
+    }
+  }
+
 </script>
 
 </body>
