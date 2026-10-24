@@ -1906,7 +1906,9 @@
     // Inisialisasi peta warna dengan 你 (merah) dan 好 (hijau) sebagai acuan
     const charColorMap = {
       '你': '#e11d48', // Merah
-      '好': '#16a34a'  // Hijau
+      '好': '#16a34a', // Hijau
+      '现': '#2563eb', // Biru Royal (Xiàn)
+      '在': '#ea580c'  // Oranye Terang (zài)
     };
 
     // 1. Warnai dialog bubbles
@@ -2018,6 +2020,28 @@
   function togglePinyin() {
     document.body.classList.toggle('show-pinyin');
     localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin') ? '1' : '0');
+
+    // 6. Warnai quiz-options (pilihan ganda)
+    document.querySelectorAll('.quiz-options span').forEach(opt => {
+      const em = opt.querySelector('em');
+      if (!em) return;
+      if (!opt.dataset.origHtml) opt.dataset.origHtml = opt.innerHTML;
+
+      // Ambil teks hanzi di antara huruf opsi (A./B./C.) dan <em>
+      const rawText = opt.dataset.origHtml;
+      const m = rawText.match(/^([A-Z]\.\s*)([^<]+)(<em[^>]*>\()([^<]+)(\)<\/em>)(\s*✓)?$/);
+      if (m) {
+        const prefix = m[1];
+        const hz = m[2].trim();
+        const emOpen = m[3];
+        const py = m[4].trim();
+        const emClose = m[5];
+        const check = m[6] || '';
+
+        const res = colorizePair(hz, py, charColorMap);
+        opt.innerHTML = prefix + res.hanzi + ' ' + emOpen + res.pinyin + emClose + check;
+      }
+    });
     updateToggleUI();
   }
 
