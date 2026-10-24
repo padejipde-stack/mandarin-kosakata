@@ -1739,18 +1739,22 @@
   }
 
   function toggleVocab() {
-    // Cari elemen yang tampak di bagian atas viewport saat ini
-    const anchor = document.elementFromPoint(window.innerWidth / 2, 1);
-    const anchorRect = anchor ? anchor.getBoundingClientRect().top : 0;
+    // Pilih elemen yang saat ini terlihat di tengah-atas viewport
+    const anchor = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 3);
+    // Simpan posisi viewport-nya (jarak dari atas layar)
+    const viewportOffset = anchor ? anchor.getBoundingClientRect().top : 0;
+    // Simpan posisi absolut dalam dokumen sebelum toggle
+    const docOffsetBefore = anchor ? anchor.getBoundingClientRect().top + window.scrollY : window.scrollY;
 
     document.body.classList.toggle('show-vocab');
     localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
     updateToggleUI();
 
-    // Kompensasi scroll agar elemen tadi tetap di posisi yang sama di layar
+    // Setelah DOM berubah, hitung posisi absolut baru elemen tersebut
+    // lalu scroll agar elemen kembali ke viewport offset yang sama
     if (anchor) {
-      const newRect = anchor.getBoundingClientRect().top;
-      window.scrollBy(0, newRect - anchorRect);
+      const docOffsetAfter = anchor.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: docOffsetAfter - viewportOffset, behavior: 'instant' });
     }
   }
 
