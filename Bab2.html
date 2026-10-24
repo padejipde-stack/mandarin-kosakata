@@ -819,6 +819,208 @@
       align-items: center;
     }
 
+  
+    /* ── SPOK GRAMMAR BOX ── */
+    .spok-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-left: 5px solid #2563eb;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .spok-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .spok-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #1d4ed8;
+      background: #dbeafe;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+    }
+    .spok-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .spok-desc {
+      font-size: 0.85rem;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+    .spok-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 680px) {
+      .spok-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .spok-card {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .spok-card-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .spok-formula {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 0.65rem 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .spok-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .chip-s { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+    .chip-w { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .chip-t { background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; }
+    .chip-p { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .chip-o { background: #ffe4e6; color: #9f1239; border: 1px solid #fecdd3; }
+    .chip-k { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+    .spok-plus {
+      color: #94a3b8;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .spok-notes {
+      font-size: 0.8rem;
+      color: #475569;
+      line-height: 1.55;
+    }
+    .spok-notes ul {
+      padding-left: 1.15rem;
+      margin-top: 0.35rem;
+    }
+    .spok-notes li {
+      margin-bottom: 0.3rem;
+    }
+    .spok-example-box {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.15rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .example-header {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .example-sentence {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #334155;
+      background: #f8fafc;
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--primary);
+    }
+    .example-compare {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .compare-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .compare-lang {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .compare-blocks {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .compare-block {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.3rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      line-height: 1.25;
+      min-width: 54px;
+      text-align: center;
+    }
+    .compare-block .block-text {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .compare-block .block-role {
+      font-size: 0.68rem;
+      font-weight: 600;
+      opacity: 0.85;
+      margin-top: 0.15rem;
+    }
+    .compare-pinyin {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--sub);
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+    .spok-tip-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: #1e40af;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
   </style>
 </head>
 <body>
@@ -854,6 +1056,149 @@
 </nav>
 
 <div class="wrap">
+
+    <!-- ══ POLA KALIMAT SPOK MANDARIN & INDONESIA ══ -->
+  <div>
+    <div class="section-title">📐 Pola Kalimat · 句子结构 (Struktur SPOK)</div>
+    <div class="spok-box">
+      <div class="spok-header">
+        <span class="spok-badge">💡 Tata Bahasa Dasar · 汉语基本句式</span>
+        <div class="spok-title">Perbandingan Pola Kalimat SPOK: Bahasa Indonesia vs Bahasa Mandarin</div>
+        <div class="spok-desc">Pahami perbedaan mendasar penempatan Subjek, Predikat, Objek, serta Keterangan Waktu &amp; Tempat agar tidak keliru saat menyusun kalimat bahasa Mandarin:</div>
+      </div>
+
+      <div class="spok-grid">
+        <!-- 1. Struktur Bahasa Indonesia -->
+        <div class="spok-card">
+          <div class="spok-card-title">
+            <span>🇮🇩 1. Struktur Bahasa Indonesia</span>
+          </div>
+          <div class="spok-formula">
+            <span class="spok-chip chip-s">Subjek (S)</span>
+            <span class="spok-plus">+</span>
+            <span class="spok-chip chip-p">Predikat (P)</span>
+            <span class="spok-plus">+</span>
+            <span class="spok-chip chip-o">Objek (O)</span>
+            <span class="spok-plus">+</span>
+            <span class="spok-chip chip-k">Keterangan (K)</span>
+          </div>
+          <div class="spok-notes">
+            <strong>Ciri khas:</strong>
+            <ul>
+              <li>Keterangan (seperti <em>waktu</em> dan <em>tempat</em>) biasanya diletakkan di <strong>akhir kalimat</strong> (atau sesekali di paling awal kalimat).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. Struktur Bahasa Mandarin -->
+        <div class="spok-card">
+          <div class="spok-card-title">
+            <span>🇨🇳 2. Struktur Bahasa Mandarin</span>
+          </div>
+          <div class="spok-formula">
+            <span class="spok-chip chip-s">Subjek (S)</span>
+            <span class="spok-plus">+</span>
+            <span class="spok-chip chip-w">Ket. Waktu</span>
+            <span class="spok-plus">+</span>
+            <span class="spok-chip chip-t">在 Tempat</span>
+            <span class="spok-plus">+</span>
+            <span class="spok-chip chip-p">Predikat (P)</span>
+            <span class="spok-plus">+</span>
+            <span class="spok-chip chip-o">Objek (O)</span>
+          </div>
+          <div class="spok-notes">
+            <strong>Ciri khas:</strong>
+            <ul>
+              <li><strong>Keterangan Waktu</strong> selalu diletakkan <strong>sebelum kata kerja (Predikat)</strong> — bisa di depan Subjek atau persis setelah Subjek.</li>
+              <li><strong>Keterangan Tempat</strong> biasanya dibentuk dengan struktur <code>在 (zài) + Tempat</code> dan diletakkan <strong>sebelum kata kerja utama</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contoh Perbandingan Kalimat -->
+      <div class="spok-example-box">
+        <div class="example-header">
+          <span>🔍 Contoh Studi Kasus Perbandingan Kalimat</span>
+        </div>
+        <div class="example-sentence">
+          Contoh Kalimat: <strong>"Saya makan nasi di rumah besok."</strong>
+        </div>
+
+        <div class="example-compare">
+          <!-- Versi Bahasa Indonesia -->
+          <div class="compare-item">
+            <div class="compare-lang">🇮🇩 Versi Bahasa Indonesia (S - P - O - K.Tempat - K.Waktu):</div>
+            <div class="compare-blocks">
+              <div class="compare-block chip-s">
+                <span class="block-text">Saya</span>
+                <span class="block-role">(S)</span>
+              </div>
+              <span class="spok-plus">+</span>
+              <div class="compare-block chip-p">
+                <span class="block-text">makan</span>
+                <span class="block-role">(P)</span>
+              </div>
+              <span class="spok-plus">+</span>
+              <div class="compare-block chip-o">
+                <span class="block-text">nasi</span>
+                <span class="block-role">(O)</span>
+              </div>
+              <span class="spok-plus">+</span>
+              <div class="compare-block chip-t">
+                <span class="block-text">di rumah</span>
+                <span class="block-role">(K. Tempat)</span>
+              </div>
+              <span class="spok-plus">+</span>
+              <div class="compare-block chip-w">
+                <span class="block-text">besok</span>
+                <span class="block-role">(K. Waktu)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Versi Bahasa Mandarin -->
+          <div class="compare-item">
+            <div class="compare-lang">🇨🇳 Versi Bahasa Mandarin (S - K.Waktu - K.Tempat - P - O):</div>
+            <div class="compare-blocks">
+              <div class="compare-block chip-s">
+                <span class="block-text">我</span>
+                <span class="block-role">(S)</span>
+              </div>
+              <span class="spok-plus">+</span>
+              <div class="compare-block chip-w">
+                <span class="block-text">明天</span>
+                <span class="block-role">(K. Waktu)</span>
+              </div>
+              <span class="spok-plus">+</span>
+              <div class="compare-block chip-t">
+                <span class="block-text">在家</span>
+                <span class="block-role">(K. Tempat)</span>
+              </div>
+              <span class="spok-plus">+</span>
+              <div class="compare-block chip-p">
+                <span class="block-text">吃</span>
+                <span class="block-role">(P)</span>
+              </div>
+              <span class="spok-plus">+</span>
+              <div class="compare-block chip-o">
+                <span class="block-text">饭</span>
+                <span class="block-role">(O)</span>
+              </div>
+            </div>
+            <div class="compare-pinyin">Pinyin: Wǒ míngtiān zài jiā chī fàn.</div>
+          </div>
+        </div>
+
+        <div class="spok-tip-box">
+          <span style="font-size:1.1rem;">💡</span>
+          <div>
+            <strong>Rumus Emas Mandarin:</strong> Kapanpun Anda ingin menyebutkan waktu atau lokasi suatu aktivitas dalam bahasa Mandarin, selalu sebutkan <strong>WAKTU dan TEMPAT TERLEBIH DAHULU</strong> sebelum menyebutkan kata kerjanya (aksi)!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ══ TEKS 1 ══ -->
   <div>
