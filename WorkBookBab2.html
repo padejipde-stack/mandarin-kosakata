@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buku Latihan (Workbook) Mandarin — Bab 2: 声母 j, q, x 与韵母 (Inisial j, q, x &amp; Final)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#x1F236;</text></svg>">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --primary:      #7c3aed;
+      --primary-dark: #5b21b6;
+      --primary-soft: rgba(124, 58, 237, 0.08);
+      --gold:         #f59e0b;
+      --bg:           #f4f6f9;
+      --card-bg:      #ffffff;
+      --text:         #2d3436;
+      --sub:          #636e72;
+      --border:       #e2e8f0;
+      --radius:       16px;
+      --shadow:       0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 3rem;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 100%);
+      color: #fff;
+      padding: 2.2rem 1rem 1.8rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(109, 40, 217, 0.25);
+    }
+    header h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    header p {
+      font-size: 0.88rem;
+      opacity: 0.85;
+      margin-top: 0.35rem;
+    }
+    header .bab {
+      display: inline-block;
+      margin-top: 0.85rem;
+      background: #8b5cf6;
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.35rem 1.2rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    /* ── 3-COLUMN CENTERED NAVBAR ── */
+    .nav {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.65rem 1rem;
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .nav-side-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-side-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      background: #ffffff;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .nav-home-btn:hover {
+      background: var(--primary-soft);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .nav-pager-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      background: #ffffff;
+      color: var(--sub);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .nav-pager-btn:hover {
+      background: var(--primary-soft);
+      color: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .nav-pager-btn.next { color: var(--primary); font-weight: 700; }
+
+    /* ── WRAPPER ── */
+    .wrap {
+      max-width: 900px;
+      margin: 1.2rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 1.8rem 0 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+    }
+
+    /* ── CLASSROOM BOX ── */
+    .classroom-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.35rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .classroom-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    }
+    .classroom-intro { flex: 1; }
+    .classroom-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.3px;
+    }
+    .classroom-desc {
+      font-size: 0.88rem;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+
+    /* ── KOSAKATA CARDS (BREAKDOWN GRID) ── */
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+      gap: 0.85rem;
+      margin-top: 0.75rem;
+    }
+    .word-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.95rem 0.85rem;
+      text-align: center;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .word-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(124, 58, 237, 0.12);
+    }
+    .word-char {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+    .word-pinyin {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.35rem;
+    }
+    .word-arti {
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.35;
+      font-weight: 500;
+    }
+    .word-detail {
+      margin-top: 0.45rem;
+      font-size: 0.72rem;
+      background: #f1f5f9;
+      color: #64748b;
+      padding: 2px 8px;
+      border-radius: 6px;
+      width: 100%;
+    }
+    .initial-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: #ede9fe;
+      color: #6d28d9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+
+    /* ── TOGGLE CONTROLS HIDING ── */
+    body:not(.show-pinyin) .word-pinyin,
+    body:not(.show-pinyin) .bubble-pinyin,
+    body:not(.show-pinyin) .dialog5-pinyin,
+    body:not(.show-pinyin) .phonetic-pinyin,
+    body:not(.show-pinyin) .char-desc-pinyin {
+      display: none !important;
+    }
+
+    body:not(.show-arti) .word-arti,
+    body:not(.show-arti) .bubble-arti,
+    body:not(.show-arti) .dialog5-arti,
+    body:not(.show-arti) .char-desc-arti {
+      display: none !important;
+    }
+
+    body:not(.show-vocab) .word-detail,
+    body:not(.show-vocab) .char-breakdown {
+      display: none !important;
+    }
+
+    /* ── RULES BLOCK ── */
+    .aturan-block {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.15rem 1.3rem;
+      margin-bottom: 1.1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .aturan-block-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1e293b;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+    .aturan-block-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .aturan-rule {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0.95rem;
+      border-radius: 8px;
+      margin-bottom: 0.65rem;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    .aturan-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .aturan-text {
+      flex: 1;
+      color: #334155;
+    }
+    .aturan-example {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.5rem;
+    }
+    .aturan-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      border: none;
+      font-family: inherit;
+    }
+    .aturan-pill:hover {
+      filter: brightness(0.92);
+      transform: translateY(-1px);
+    }
+    .aturan-ok  { background: #dcfce7; color: #15803d; }
+    .aturan-no  { background: #fee2e2; color: #b91c1c; text-decoration: line-through; }
+    .aturan-ex  { background: #ede9fe; color: #6d28d9; }
+    .aturan-warn{ background: #fef3c7; color: #b45309; }
+
+    .rule-ok  { background: #f0fdf4; border-left: 4px solid #22c55e; }
+    .rule-no  { background: #fef2f2; border-left: 4px solid #ef4444; }
+    .rule-info{ background: #faf5ff; border-left: 4px solid #8b5cf6; }
+    .rule-tip { background: #fffbeb; border-left: 4px solid #f59e0b; }
+
+    /* ── PHONETIC COMBINATION TABLE ── */
+    .pinyin-table-wrap {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .pinyin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: center;
+      background: #ffffff;
+      min-width: 580px;
+    }
+    .pinyin-table th, .pinyin-table td {
+      padding: 0.7rem 0.5rem;
+      border: 1px solid #e2e8f0;
+    }
+    .pinyin-table th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: #334155;
+    }
+    .pinyin-table td.initial-header {
+      background: #ede9fe;
+      color: #6d28d9;
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    .syllable-btn {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      background: #f1f5f9;
+      color: #0f172a;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .syllable-btn:hover {
+      background: #7c3aed;
+      color: #ffffff;
+      transform: scale(1.06);
+    }
+    .syllable-btn.u-spec {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+    .syllable-btn.u-spec:hover {
+      background: #d97706;
+      color: #ffffff;
+    }
+    .empty-cell {
+      color: #cbd5e1;
+      font-size: 0.85rem;
+    }
+
+    /* ── 4 TONES SECTION ── */
+    .phonetic-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .phonetic-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.15rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .phonetic-group-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.65rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid #f1f5f9;
+    }
+    .phonetic-group-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .phonetic-group-badge {
+      background: #ede9fe;
+      color: #6d28d9;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .phonetic-tone-headers {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.45rem;
+      margin-bottom: 0.55rem;
+      text-align: center;
+    }
+    .phonetic-tone-header-item {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 5px 2px;
+      border-radius: 6px;
+      text-align: center;
+      line-height: 1.25;
+    }
+    .tone-h1 { color: #0284c7; background: #e0f2fe; }
+    .tone-h2 { color: #16a34a; background: #dcfce7; }
+    .tone-h3 { color: #d97706; background: #fef3c7; }
+    .tone-h4 { color: #dc2626; background: #fee2e2; }
+
+    .phonetic-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.45rem;
+      margin-bottom: 0.55rem;
+    }
+    .phonetic-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 0.25rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      font-family: inherit;
+    }
+    .phonetic-cell:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .phonetic-cell.t1:hover { border-color: #38bdf8; background: #f0f9ff; }
+    .phonetic-cell.t2:hover { border-color: #4ade80; background: #f0fdf4; }
+    .phonetic-cell.t3:hover { border-color: #fbbf24; background: #fffbeb; }
+    .phonetic-cell.t4:hover { border-color: #f87171; background: #fef2f2; }
+
+    .phonetic-text {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+    .phonetic-cell.t1 .phonetic-text { color: #0369a1; }
+    .phonetic-cell.t2 .phonetic-text { color: #15803d; }
+    .phonetic-cell.t3 .phonetic-text { color: #b45309; }
+    .phonetic-cell.t4 .phonetic-text { color: #b91c1c; }
+
+    .phonetic-tone-label {
+      font-size: 0.65rem;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    /* ── COMPOUND SYLLABLES CARDS ── */
+    .syllable-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.85rem;
+    }
+    .syllable-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 0.85rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      font-family: inherit;
+    }
+    .syllable-card:hover {
+      transform: translateY(-2px);
+      border-color: #8b5cf6;
+      background: #faf5ff;
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+    }
+    .syllable-pinyin {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.35rem;
+      line-height: 1.2;
+    }
+    .syllable-parts {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      display: flex;
+      gap: 3px;
+      align-items: center;
+    }
+    .syllable-tag {
+      font-size: 0.72rem;
+      background: #ede9fe;
+      color: #6d28d9;
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* ── DIALOG SECTION ── */
+    .dialog5-pair {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .dialog5-pair-num {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #94a3b8;
+      margin-bottom: 0.65rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .dialog5-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px;
+      margin-bottom: 0.45rem;
+    }
+    .dialog5-line:last-child { margin-bottom: 0; }
+    .dialog5-line-a { background: #faf5ff; border-left: 3px solid #8b5cf6; }
+    .dialog5-line-b { background: #f0fdf4; border-left: 3px solid #22c55e; }
+    .dialog5-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .av5-a { background: #8b5cf6; color: #fff; }
+    .av5-b { background: #22c55e; color: #fff; }
+    .dialog5-content { flex: 1; }
+    .dialog5-hanzi {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.3;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .dialog5-hanzi:hover { opacity: 0.72; }
+    .dialog5-pinyin {
+      font-size: 0.88rem;
+      color: #7c3aed;
+      font-style: italic;
+      margin-top: 2px;
+    }
+    .dialog5-arti {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* ── FLOATING TOOLBAR ── */
+    .dialog-toolbar {
+      position: fixed;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      background: #ffffff;
+      border-radius: 30px;
+      padding: 0.45rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      border: 1px solid #e2e8f0;
+      z-index: 999;
+    }
+    .toolbar-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding-left: 0.25rem;
+    }
+    .toolbar-buttons {
+      display: flex;
+      gap: 0.35rem;
+    }
+    .toggle-switch-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .toggle-switch-btn:hover {
+      transform: scale(1.08);
+      border-color: var(--primary);
+    }
+    .toggle-switch-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+    }
+
+    @media (max-width: 600px) {
+      .breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .phonetic-container {
+        grid-template-columns: 1fr;
+      }
+      .nav {
+        padding: 0.5rem 0.6rem;
+      }
+      .nav-pager-btn span {
+        display: none;
+      }
+      .nav-home-btn .label {
+        font-size: 0.72rem;
+      }
+    }
+  </style>
+</head>
+<body class="show-pinyin show-arti show-vocab">
+
+<!-- ══ HEADER ══ -->
+<header>
+  <h1>📝 Buku Latihan Mandarin · 练习册</h1>
+  <p>HSK 1 练习册 · Workbook Pelajaran 2</p>
+  <div class="bab">Bab 2 — Inisial j, q, x &amp; Aturan Final (声母 j, q, x 与韵母)</div>
+</header>
+
+<!-- ══ 3-COLUMN NAVBAR ══ -->
+<div class="nav-bar">
+  <div class="nav">
+    <div class="nav-side-left">
+      <a href="WorkBookBab1.html" class="nav-pager-btn prev" title="Kembali ke Workbook Bab 1">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span>Workbook Bab 1</span>
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="nav-home-btn" title="Kembali ke Daftar Bab">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span class="label">Menu Utama</span>
+      </a>
+    </div>
+    <div class="nav-side-right">
+      <a href="Bab2.html" class="nav-pager-btn next" title="Buka Buku Utama Bab 2">
+        <span>Buku Utama Bab 2</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ══════════════════════════════════════════════════════════
+       BAGIAN 1: KOSAKATA POKOK INISIAL J, Q, X
+       ══════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">⭐ Bagian 1: Kosakata Pokok Inisial j, q, x · 基础生词 (8 Kosakata)</div>
+    <div class="classroom-box" style="border-left: 5px solid #7c3aed;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #7c3aed, #5b21b6);">字</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #7c3aed; color: #fff;">Kosakata Latihan · 重点词汇</div>
+          <div class="classroom-desc">Berikut adalah 8 kosakata penting pada latihan Bab 2 yang mempraktikkan inisial <strong>j</strong>, <strong>q</strong>, dan <strong>x</strong>. Klik kartu untuk mendengarkan lafalnya:</div>
+        </div>
+      </div>
+
+      <!-- KELOMPOK 1: KATA TUNGGAL (BARIS PERTAMA) -->
+      <div style="font-weight: 700; font-size: 0.92rem; color: #334155; margin: 0.85rem 0 0.5rem; display: flex; align-items: center; gap: 0.45rem;">
+        <span style="background: #ede9fe; color: #6d28d9; padding: 2px 8px; border-radius: 4px; font-size: 0.78rem;">Baris Pertama</span>
+        <span>Kosakata Mandiri (4 Kata)</span>
+      </div>
+
+      <div class="breakdown-grid">
+        <!-- 1. 鸡 / jī -->
+        <div class="word-card" onclick="playPinyin('jī')" title="Klik untuk mendengar suara">
+          <div class="word-char">鸡</div>
+          <div class="word-pinyin">jī</div>
+          <div class="word-arti">Ayam</div>
+          <div class="initial-tag">Inisial: j + i (Nada 1)</div>
+          <div class="word-detail">Contoh: 吃鸡肉 (makan daging ayam)</div>
+        </div>
+
+        <!-- 2. 七 / qī -->
+        <div class="word-card" onclick="playPinyin('qī')" title="Klik untuk mendengar suara">
+          <div class="word-char">七</div>
+          <div class="word-pinyin">qī</div>
+          <div class="word-arti">Angka 7 / Tujuh</div>
+          <div class="initial-tag">Inisial: q + i (Nada 1)</div>
+          <div class="word-detail">Contoh: 七个人 (tujuh orang)</div>
+        </div>
+
+        <!-- 3. 写 / xiě -->
+        <div class="word-card" onclick="playPinyin('xiě')" title="Klik untuk mendengar suara">
+          <div class="word-char">写</div>
+          <div class="word-pinyin">xiě</div>
+          <div class="word-arti">Menulis</div>
+          <div class="initial-tag">Inisial: x + ie (Nada 3)</div>
+          <div class="word-detail">Contoh: 写汉字 (menulis Hanzi)</div>
+        </div>
+
+        <!-- 4. 请 / qǐng -->
+        <div class="word-card" onclick="playPinyin('qǐng')" title="Klik untuk mendengar suara">
+          <div class="word-char">请</div>
+          <div class="word-pinyin">qǐng</div>
+          <div class="word-arti">Silakan / Meminta</div>
+          <div class="initial-tag">Inisial: q + ing (Nada 3)</div>
+          <div class="word-detail">Contoh: 请坐 (silakan duduk)</div>
+        </div>
+      </div>
+
+      <!-- KELOMPOK 2: KATA MAJEMUK (BARIS KEDUA) -->
+      <div style="font-weight: 700; font-size: 0.92rem; color: #334155; margin: 1.4rem 0 0.5rem; display: flex; align-items: center; gap: 0.45rem;">
+        <span style="background: #ede9fe; color: #6d28d9; padding: 2px 8px; border-radius: 4px; font-size: 0.78rem;">Baris Kedua</span>
+        <span>Kosakata Dua Suku Kata (4 Kata)</span>
+      </div>
+
+      <div class="breakdown-grid">
+        <!-- 5. 再见 / zàijiàn -->
+        <div class="word-card" onclick="playPinyin('zàijiàn')" title="Klik untuk mendengar suara">
+          <div class="word-char">再见</div>
+          <div class="word-pinyin">zàijiàn</div>
+          <div class="word-arti">Sampai jumpa / Selamat tinggal</div>
+          <div class="initial-tag">再 (zài) + 见 (jiàn: j+ian)</div>
+          <div class="word-detail">Salam perpisahan ramah</div>
+        </div>
+
+        <!-- 6. 谢谢 / xièxie -->
+        <div class="word-card" onclick="playPinyin('xièxie')" title="Klik untuk mendengar suara">
+          <div class="word-char">谢谢</div>
+          <div class="word-pinyin">xièxie</div>
+          <div class="word-arti">Terima kasih</div>
+          <div class="initial-tag">谢 (xiè: x+ie) + 谢 (xie)</div>
+          <div class="word-detail">Ungkapan rasa terima kasih</div>
+        </div>
+
+        <!-- 7. 星期 / xīngqī -->
+        <div class="word-card" onclick="playPinyin('xīngqī')" title="Klik untuk mendengar suara">
+          <div class="word-char">星期</div>
+          <div class="word-pinyin">xīngqī</div>
+          <div class="word-arti">Minggu / Hari dalam pekan</div>
+          <div class="initial-tag">星 (xīng: x+ing) + 期 (qī: q+i)</div>
+          <div class="word-detail">Contoh: 星期一 (hari Senin)</div>
+        </div>
+
+        <!-- 8. 高兴 / gāoxìng -->
+        <div class="word-card" onclick="playPinyin('gāoxìng')" title="Klik untuk mendengar suara">
+          <div class="word-char">高兴</div>
+          <div class="word-pinyin">gāoxìng</div>
+          <div class="word-arti">Senang / Gembira</div>
+          <div class="initial-tag">高 (gāo) + 兴 (xìng: x+ing)</div>
+          <div class="word-detail">Contoh: 很高兴 (sangat senang)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       BAGIAN 2: PENJELASAN ATURAN INISIAL J, Q, X
+       ══════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">💡 Bagian 2: Penjelasan &amp; Aturan Inisial j, q, x · 拼音规则说明</div>
+    <div class="classroom-box" style="border-left: 5px solid #0891b2;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0891b2, #0e7490);">律</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0891b2; color: #fff;">Aturan Pinyin · 语音规则</div>
+          <div class="classroom-desc">Inisial (Shengmu) <strong>j, q, x</strong> memiliki aturan kombinasi yang sangat khusus dalam tata bunyi bahasa Mandarin standar:</div>
+        </div>
+      </div>
+
+      <!-- Aturan 1 -->
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background: #dcfce7; color: #15803d;">Aturan 1</span>
+          <span>Kombinasi yang DIBOLEHKAN (Hanya dengan Vokal i dan ü)</span>
+        </div>
+
+        <div class="aturan-rule rule-ok">
+          <span class="aturan-icon">✅</span>
+          <div class="aturan-text">
+            Inisial <strong>j, q, dan x</strong> hanya dapat bergabung dengan final <strong>i [i]</strong>, <strong>ü</strong>, serta final yang diawali dengan huruf <strong>i [i]</strong> dan <strong>ü</strong>:
+            <div class="aturan-example">
+              <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('jī')">ji</button>
+              <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('qī')">qi</button>
+              <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('xī')">xi</button>
+              <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('jiā')">jia</button>
+              <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('qiè')">qie</button>
+              <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('xiǎo')">xiao</button>
+              <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('jū')">ju (= jü)</button>
+              <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('qū')">qu (= qü)</button>
+              <button type="button" class="aturan-pill aturan-ok" onclick="playPinyin('xū')">xu (= xü)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aturan 2 -->
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background: #fee2e2; color: #b91c1c;">Aturan 2</span>
+          <span>Larangan Bergabung dengan Final a, o, u</span>
+        </div>
+
+        <div class="aturan-rule rule-no">
+          <span class="aturan-icon">🚫</span>
+          <div class="aturan-text">
+            Ketiga inisial ini <strong>TIDAK DAPAT</strong> bergabung dengan final <strong>a, o, u</strong> atau final yang diawali dengan <strong>a</strong> dan <strong>u</strong>. Suku kata di bawah ini <u>tidak ada</u> dalam Pinyin:
+            <div class="aturan-example">
+              <span class="aturan-pill aturan-no">ja</span>
+              <span class="aturan-pill aturan-no">qa</span>
+              <span class="aturan-pill aturan-no">xa</span>
+              <span class="aturan-pill aturan-no">jo</span>
+              <span class="aturan-pill aturan-no">qo</span>
+              <span class="aturan-pill aturan-no">xo</span>
+              <span class="aturan-pill aturan-no">ju (u biasa)</span>
+              <span class="aturan-pill aturan-no">qu (u biasa)</span>
+              <span class="aturan-pill aturan-no">xu (u biasa)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aturan 3: Penulisan ü -->
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background: #fef3c7; color: #b45309;">Aturan Khusus</span>
+          <span>Penulisan Huruf "ü" (Titik Dua Dihilangkan)</span>
+        </div>
+
+        <div class="aturan-rule rule-tip">
+          <span class="aturan-icon">📝</span>
+          <div class="aturan-text">
+            Ketika inisial <strong>j, q, x</strong> bertemu dengan vokal <strong>ü</strong>, titik dua di atas huruf ü <strong>dihilangkan</strong> sehingga ditulis hanya sebagai huruf <strong>u</strong> biasa.
+            <div style="margin-top: 0.5rem; font-weight: 600; color: #78350f;">
+              Namun perlu diingat: <em>Pengucapannya tetap berbunyi ü [y]</em> (bibir membulat ke depan, bukan u biasa!).
+            </div>
+            <div class="aturan-example" style="margin-top: 0.6rem;">
+              <button type="button" class="aturan-pill aturan-warn" onclick="playPinyin('jū')">j + ü → ju (dibaca jü)</button>
+              <button type="button" class="aturan-pill aturan-warn" onclick="playPinyin('qū')">q + ü → qu (dibaca qü)</button>
+              <button type="button" class="aturan-pill aturan-warn" onclick="playPinyin('xū')">x + ü → xu (dibaca xü)</button>
+              <button type="button" class="aturan-pill aturan-warn" onclick="playPinyin('quán')">q + üan → quán</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       BAGIAN 3: TABEL INISIAL DAN FINAL
+       ══════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📊 Bagian 3: Tabel Inisial dan Final · 声母与韵母拼读表</div>
+    <div class="classroom-box" style="border-left: 5px solid #2563eb;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);">表</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #2563eb; color: #fff;">Matriks Kombinasi · 拼音表</div>
+          <div class="classroom-desc">Berikut adalah tabel penggabungan inisial <strong>j, q, x</strong> dengan seluruh kelompok final yang berlaku. Klik suku kata manapun untuk mendengarkan suaranya:</div>
+        </div>
+      </div>
+
+      <div style="font-size: 0.82rem; color: #64748b; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 12px; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 3px;"></span> Suku kata standar</span>
+        <span style="display: inline-flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 12px; background: #fef3c7; border: 1px solid #fde68a; border-radius: 3px;"></span> Huruf ü ditulis sebagai u (dibaca ü)</span>
+      </div>
+
+      <div class="pinyin-table-wrap">
+        <table class="pinyin-table">
+          <thead>
+            <tr>
+              <th style="width: 70px;">Inisial</th>
+              <th>i, ü</th>
+              <th>ia, ie, iao, iu</th>
+              <th>ian, in</th>
+              <th>iang, ing, iong</th>
+              <th>üe, üan, ün</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row j -->
+            <tr>
+              <td class="initial-header">j</td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('jī')">ji</button>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('jū')" title="j + ü = ju (dibaca jü)">ju</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('jiā')">jia</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('jiē')">jie</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('jiāo')">jiao</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('jiū')">jiu</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('jiān')">jian</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('jīn')">jin</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('jiāng')">jiang</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('jīng')">jing</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('jiōng')">jiong</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('juē')" title="j + üe = jue">jue</button>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('juān')" title="j + üan = juan">juan</button>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('jūn')" title="j + ün = jun">jun</button>
+              </td>
+            </tr>
+
+            <!-- Row q -->
+            <tr>
+              <td class="initial-header">q</td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('qī')">qi</button>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('qū')" title="q + ü = qu (dibaca qü)">qu</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('qiā')">qia</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('qiē')">qie</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('qiāo')">qiao</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('qiū')">qiu</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('qiān')">qian</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('qīn')">qin</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('qiāng')">qiang</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('qīng')">qing</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('qiōng')">qiong</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('quē')" title="q + üe = que">que</button>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('quān')" title="q + üan = quan">quan</button>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('qūn')" title="q + ün = qun">qun</button>
+              </td>
+            </tr>
+
+            <!-- Row x -->
+            <tr>
+              <td class="initial-header">x</td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('xī')">xi</button>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('xū')" title="x + ü = xu (dibaca xü)">xu</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('xiā')">xia</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('xiē')">xie</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('xiāo')">xiao</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('xiū')">xiu</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('xiān')">xian</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('xīn')">xin</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn" onclick="playPinyin('xiāng')">xiang</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('xīng')">xing</button>
+                <button type="button" class="syllable-btn" onclick="playPinyin('xiōng')">xiong</button>
+              </td>
+              <td>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('xuē')" title="x + üe = xue">xue</button>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('xuān')" title="x + üan = xuan">xuan</button>
+                <button type="button" class="syllable-btn u-spec" onclick="playPinyin('xūn')" title="x + ün = xun">xun</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       BAGIAN 4: LATIHAN SUKU KATA & NADA (SYLLABLES & TONES)
+       ══════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">🎵 Bagian 4: Latihan Suku Kata &amp; 4 Nada Pinyin · 声调与音节练习</div>
+    <div class="classroom-box" style="border-left: 5px solid #d97706;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #d97706, #b45309);">声</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #d97706; color: #fff;">Latihan Fonetik · 语音练习</div>
+          <div class="classroom-desc">Latihan membaca suku kata dengan 4 nada dan perhatikan penulisan <strong>ü</strong> yang ditulis sebagai <strong>u</strong> setelah <em>j, q, x</em>:</div>
+        </div>
+      </div>
+
+      <!-- 1. LATIHAN 4 NADA -->
+      <div style="font-weight: 700; font-size: 0.92rem; color: #334155; margin: 0.5rem 0 0.6rem; display: flex; align-items: center; justify-content: space-between;">
+        <span>Latihan 4 Nada (ji, qu, xu)</span>
+        <span style="font-size: 0.78rem; color: #64748b; font-weight: normal;">Klik kotak untuk audio 🔊</span>
+      </div>
+
+      <!-- Header Nada -->
+      <div class="phonetic-tone-headers">
+        <div class="phonetic-tone-header-item tone-h1">Nada 1 ( ˉ )<br><span style="font-size: 0.65rem; font-weight: normal;">Datar Tinggi</span></div>
+        <div class="phonetic-tone-header-item tone-h2">Nada 2 ( ˊ )<br><span style="font-size: 0.65rem; font-weight: normal;">Naik</span></div>
+        <div class="phonetic-tone-header-item tone-h3">Nada 3 ( ˇ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun-Naik</span></div>
+        <div class="phonetic-tone-header-item tone-h4">Nada 4 ( ˋ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun Tegas</span></div>
+      </div>
+
+      <!-- Row 1: jī, jí, jǐ, jì -->
+      <div class="phonetic-row">
+        <button type="button" class="phonetic-cell t1" onclick="playPinyin('jī')" title="jī (Nada 1)">
+          <span class="phonetic-text">jī</span>
+          <span class="phonetic-tone-label">1 ˉ</span>
+        </button>
+        <button type="button" class="phonetic-cell t2" onclick="playPinyin('jí')" title="jí (Nada 2)">
+          <span class="phonetic-text">jí</span>
+          <span class="phonetic-tone-label">2 ˊ</span>
+        </button>
+        <button type="button" class="phonetic-cell t3" onclick="playPinyin('jǐ')" title="jǐ (Nada 3)">
+          <span class="phonetic-text">jǐ</span>
+          <span class="phonetic-tone-label">3 ˇ</span>
+        </button>
+        <button type="button" class="phonetic-cell t4" onclick="playPinyin('jì')" title="jì (Nada 4)">
+          <span class="phonetic-text">jì</span>
+          <span class="phonetic-tone-label">4 ˋ</span>
+        </button>
+      </div>
+
+      <!-- Row 2: qū, qú, qǔ, qù -->
+      <div class="phonetic-row">
+        <button type="button" class="phonetic-cell t1" onclick="playPinyin('qū')" title="qū (dibaca qǖ - Nada 1)">
+          <span class="phonetic-text">qū</span>
+          <span class="phonetic-tone-label">1 ˉ (qü)</span>
+        </button>
+        <button type="button" class="phonetic-cell t2" onclick="playPinyin('qú')" title="qú (dibaca qǘ - Nada 2)">
+          <span class="phonetic-text">qú</span>
+          <span class="phonetic-tone-label">2 ˊ (qü)</span>
+        </button>
+        <button type="button" class="phonetic-cell t3" onclick="playPinyin('qǔ')" title="qǔ (dibaca qǚ - Nada 3)">
+          <span class="phonetic-text">qǔ</span>
+          <span class="phonetic-tone-label">3 ˇ (qü)</span>
+        </button>
+        <button type="button" class="phonetic-cell t4" onclick="playPinyin('qù')" title="qù (dibaca qǜ - Nada 4)">
+          <span class="phonetic-text">qù</span>
+          <span class="phonetic-tone-label">4 ˋ (qü)</span>
+        </button>
+      </div>
+
+      <!-- Row 3: xū, xú, xǔ, xù -->
+      <div class="phonetic-row">
+        <button type="button" class="phonetic-cell t1" onclick="playPinyin('xū')" title="xū (dibaca xǖ - Nada 1)">
+          <span class="phonetic-text">xū</span>
+          <span class="phonetic-tone-label">1 ˉ (xü)</span>
+        </button>
+        <button type="button" class="phonetic-cell t2" onclick="playPinyin('xú')" title="xú (dibaca xǘ - Nada 2)">
+          <span class="phonetic-text">xú</span>
+          <span class="phonetic-tone-label">2 ˊ (xü)</span>
+        </button>
+        <button type="button" class="phonetic-cell t3" onclick="playPinyin('xǔ')" title="xǔ (dibaca xǚ - Nada 3)">
+          <span class="phonetic-text">xǔ</span>
+          <span class="phonetic-tone-label">3 ˇ (xü)</span>
+        </button>
+        <button type="button" class="phonetic-cell t4" onclick="playPinyin('xù')" title="xù (dibaca xǜ - Nada 4)">
+          <span class="phonetic-text">xù</span>
+          <span class="phonetic-tone-label">4 ˋ (xü)</span>
+        </button>
+      </div>
+
+      <!-- 2. LATIHAN SUKU KATA MAJEMUK -->
+      <div style="font-weight: 700; font-size: 0.92rem; color: #334155; margin: 1.5rem 0 0.5rem;">
+        <span>Latihan Suku Kata Majemuk Pilihan (6 Suku Kata)</span>
+      </div>
+
+      <div class="syllable-card-grid">
+        <!-- jiā -->
+        <button type="button" class="syllable-card" onclick="playPinyin('jiā')" title="jiā = j + ia (Nada 1)">
+          <div class="syllable-pinyin" style="color: #0369a1;">jiā</div>
+          <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">j</span> + <span style="color:#0369a1;font-weight:700;">ia</span></div>
+          <div class="syllable-tag">Nada 1 ˉ</div>
+        </button>
+
+        <!-- jiàn -->
+        <button type="button" class="syllable-card" onclick="playPinyin('jiàn')" title="jiàn = j + ian (Nada 4)">
+          <div class="syllable-pinyin" style="color: #b91c1c;">jiàn</div>
+          <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">j</span> + <span style="color:#0369a1;font-weight:700;">ian</span></div>
+          <div class="syllable-tag">Nada 4 ˋ</div>
+        </button>
+
+        <!-- quán -->
+        <button type="button" class="syllable-card" onclick="playPinyin('quán')" title="quán = q + üan (Nada 2)">
+          <div class="syllable-pinyin" style="color: #15803d;">quán</div>
+          <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">q</span> + <span style="color:#d97706;font-weight:700;">üan</span></div>
+          <div class="syllable-tag" style="background:#fef3c7;color:#b45309;">Nada 2 ˊ (q+üan)</div>
+        </button>
+
+        <!-- qǐng -->
+        <button type="button" class="syllable-card" onclick="playPinyin('qǐng')" title="qǐng = q + ing (Nada 3)">
+          <div class="syllable-pinyin" style="color: #b45309;">qǐng</div>
+          <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">q</span> + <span style="color:#0369a1;font-weight:700;">ing</span></div>
+          <div class="syllable-tag">Nada 3 ˇ</div>
+        </button>
+
+        <!-- xiǎng -->
+        <button type="button" class="syllable-card" onclick="playPinyin('xiǎng')" title="xiǎng = x + iang (Nada 3)">
+          <div class="syllable-pinyin" style="color: #b45309;">xiǎng</div>
+          <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">x</span> + <span style="color:#0369a1;font-weight:700;">iang</span></div>
+          <div class="syllable-tag">Nada 3 ˇ</div>
+        </button>
+
+        <!-- xīn -->
+        <button type="button" class="syllable-card" onclick="playPinyin('xīn')" title="xīn = x + in (Nada 1)">
+          <div class="syllable-pinyin" style="color: #0369a1;">xīn</div>
+          <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">x</span> + <span style="color:#0369a1;font-weight:700;">in</span></div>
+          <div class="syllable-tag">Nada 1 ˉ</div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       BAGIAN 5: LATIHAN PERCAKAPAN RINGKAS (DIALOG PRAKTIK)
+       ══════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">💬 Bagian 5: Latihan Percakapan Praktik · 对话实践</div>
+    <div class="classroom-box" style="border-left: 5px solid #059669;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #059669, #047857);">话</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #059669; color: #fff;">Percakapan Harian · 对话练习</div>
+          <div class="classroom-desc">Menerapkan kosakata yang telah dipelajari dalam percakapan sopan sehari-hari. Klik teks Hanzi untuk mendengarkan:</div>
+        </div>
+      </div>
+
+      <!-- Dialog 1: Salam Perpisahan -->
+      <div class="dialog5-pair">
+        <div class="dialog5-pair-num">Dialog 1: Salam Perpisahan (再见)</div>
+        <div class="dialog5-line dialog5-line-a">
+          <div class="dialog5-avatar av5-a">A</div>
+          <div class="dialog5-content">
+            <div class="dialog5-hanzi" onclick="playPinyin('再见！')" title="Klik untuk mendengarkan">再见！</div>
+            <div class="dialog5-pinyin">Zàijiàn!</div>
+            <div class="dialog5-arti">Sampai jumpa!</div>
+          </div>
+        </div>
+        <div class="dialog5-line dialog5-line-b">
+          <div class="dialog5-avatar av5-b">B</div>
+          <div class="dialog5-content">
+            <div class="dialog5-hanzi" onclick="playPinyin('明天再见！')" title="Klik untuk mendengarkan">明天再见！</div>
+            <div class="dialog5-pinyin">Míngtiān zàijiàn!</div>
+            <div class="dialog5-arti">Sampai jumpa besok!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dialog 2: Terima Kasih -->
+      <div class="dialog5-pair">
+        <div class="dialog5-pair-num">Dialog 2: Terima Kasih (谢谢)</div>
+        <div class="dialog5-line dialog5-line-a">
+          <div class="dialog5-avatar av5-a">A</div>
+          <div class="dialog5-content">
+            <div class="dialog5-hanzi" onclick="playPinyin('谢谢你！')" title="Klik untuk mendengarkan">谢谢你！</div>
+            <div class="dialog5-pinyin">Xièxie nǐ!</div>
+            <div class="dialog5-arti">Terima kasih banyak!</div>
+          </div>
+        </div>
+        <div class="dialog5-line dialog5-line-b">
+          <div class="dialog5-avatar av5-b">B</div>
+          <div class="dialog5-content">
+            <div class="dialog5-hanzi" onclick="playPinyin('不客气！')" title="Klik untuk mendengarkan">不客气！</div>
+            <div class="dialog5-pinyin">Bú kèqi!</div>
+            <div class="dialog5-arti">Sama-sama / Jangan sungkan!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dialog 3: Menyambut Tamu -->
+      <div class="dialog5-pair">
+        <div class="dialog5-pair-num">Dialog 3: Kesopanan Menyambut Tamu (请)</div>
+        <div class="dialog5-line dialog5-line-a">
+          <div class="dialog5-avatar av5-a">A</div>
+          <div class="dialog5-content">
+            <div class="dialog5-hanzi" onclick="playPinyin('请进，请喝茶！')" title="Klik untuk mendengarkan">请进，请喝茶！</div>
+            <div class="dialog5-pinyin">Qǐng jìn, qǐng hē chá!</div>
+            <div class="dialog5-arti">Silakan masuk, silakan minum teh!</div>
+          </div>
+        </div>
+        <div class="dialog5-line dialog5-line-b">
+          <div class="dialog5-avatar av5-b">B</div>
+          <div class="dialog5-content">
+            <div class="dialog5-hanzi" onclick="playPinyin('谢谢！')" title="Klik untuk mendengarkan">谢谢！</div>
+            <div class="dialog5-pinyin">Xièxie!</div>
+            <div class="dialog5-arti">Terima kasih!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dialog 4: Rasa Senang -->
+      <div class="dialog5-pair">
+        <div class="dialog5-pair-num">Dialog 4: Berkenalan (高兴)</div>
+        <div class="dialog5-line dialog5-line-a">
+          <div class="dialog5-avatar av5-a">A</div>
+          <div class="dialog5-content">
+            <div class="dialog5-hanzi" onclick="playPinyin('认识你很高兴！')" title="Klik untuk mendengarkan">认识你很高兴！</div>
+            <div class="dialog5-pinyin">Rènshi nǐ hěn gāoxìng!</div>
+            <div class="dialog5-arti">Senang sekali bisa mengenalmu!</div>
+          </div>
+        </div>
+        <div class="dialog5-line dialog5-line-b">
+          <div class="dialog5-avatar av5-b">B</div>
+          <div class="dialog5-content">
+            <div class="dialog5-hanzi" onclick="playPinyin('我也很高兴！')" title="Klik untuk mendengarkan">我也很高兴！</div>
+            <div class="dialog5-pinyin">Wǒ yě hěn gāoxìng!</div>
+            <div class="dialog5-arti">Saya juga sangat senang!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TOGGLE CONTROLS (DI PALING BAWAH) ══ -->
+  <div class="dialog-toolbar">
+    <div class="toolbar-title">
+      <span class="icon">⚙️</span>
+      <span>Bantuan:</span>
+    </div>
+    <div class="toolbar-buttons">
+      <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+      <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti">🇮🇩</button>
+      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Detail Kosakata">📖</button>
+      <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warnai Karakter &amp; Pinyin Per Kata">🎨</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ SCRIPT PERSISTENCE, COLORING & AUDIO ══ -->
+<script>
+  // Palet warna kontras & cerah untuk karakter per kata
+  const COLOR_PALETTE = [
+    '#e11d48', // Merah
+    '#16a34a', // Hijau
+    '#2563eb', // Biru royal
+    '#ea580c', // Oranye
+    '#7c3aed', // Ungu
+    '#0891b2', // Cyan / Teal
+    '#c026d3', // Magenta
+    '#ca8a04', // Kuning emas
+    '#4f46e5', // Indigo
+    '#059669', // Zamrud
+    '#d97706', // Amber
+    '#db2777', // Pink cerah
+    '#0284c7', // Sky blue
+    '#9333ea', // Ungu violet
+    '#10b981', // Hijau toska
+    '#f97316'  // Oranye terang
+  ];
+
+  function isHanziChar(ch) {
+    return /[\u4e00-\u9fff]/.test(ch);
+  }
+
+  function colorizePair(hanziText, pinyinText, charColorMap) {
+    const rawTokens = pinyinText.split(/(\s+|[.,!?:;，。！？：；]+)/);
+    const pinyinWords = [];
+    rawTokens.forEach(token => {
+      if (/^[a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜüÜ]+$/i.test(token)) {
+        pinyinWords.push(token);
+      }
+    });
+
+    const hanziChars = [];
+    for (const ch of hanziText) {
+      if (isHanziChar(ch)) {
+        hanziChars.push(ch);
+      }
+    }
+
+    if (hanziChars.length === pinyinWords.length && hanziChars.length > 0) {
+      let colorIdx = Object.keys(charColorMap).length;
+      let newHanziHtml = '';
+      let hzIdx = 0;
+      for (const ch of hanziText) {
+        if (isHanziChar(ch)) {
+          if (!charColorMap[ch]) {
+            charColorMap[ch] = COLOR_PALETTE[colorIdx % COLOR_PALETTE.length];
+            colorIdx++;
+          }
+          const c = charColorMap[ch];
+          newHanziHtml += `<span style="color:${c};font-weight:700;">${ch}</span>`;
+          hzIdx++;
+        } else {
+          newHanziHtml += ch;
+        }
+      }
+
+      let pyWordIdx = 0;
+      let newPinyinHtml = '';
+      rawTokens.forEach(token => {
+        if (/^[a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜüÜ]+$/i.test(token)) {
+          const correspondingChar = hanziChars[pyWordIdx];
+          const c = charColorMap[correspondingChar] || '#2563eb';
+          newPinyinHtml += `<span style="color:${c};font-weight:700;">${token}</span>`;
+          pyWordIdx++;
+        } else {
+          newPinyinHtml += token;
+        }
+      });
+
+      return { hanzi: newHanziHtml, pinyin: newPinyinHtml };
+    }
+
+    return { hanzi: hanziText, pinyin: pinyinText };
+  }
+
+  function applyColors() {
+    const charColorMap = {
+      '鸡': '#e11d48',
+      '七': '#2563eb',
+      '写': '#16a34a',
+      '请': '#ea580c',
+      '再': '#7c3aed',
+      '见': '#0891b2',
+      '谢': '#c026d3',
+      '星': '#ca8a04',
+      '期': '#4f46e5',
+      '高': '#059669',
+      '兴': '#d97706'
+    };
+
+    // 1. Dialog dialog5
+    document.querySelectorAll('.dialog5-line').forEach(line => {
+      const hzEl = line.querySelector('.dialog5-hanzi');
+      const pyEl = line.querySelector('.dialog5-pinyin');
+      if (!hzEl || !pyEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 2. Word cards
+    document.querySelectorAll('.word-card').forEach(card => {
+      const charEl = card.querySelector('.word-char');
+      const pyEl = card.querySelector('.word-pinyin');
+      if (!charEl || !pyEl) return;
+
+      if (!charEl.dataset.origHtml) charEl.dataset.origHtml = charEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(charEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      charEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+  }
+
+  function removeColors() {
+    const selector = '.dialog5-hanzi, .dialog5-pinyin, .word-char, .word-pinyin';
+    document.querySelectorAll(selector).forEach(el => {
+      if (el.dataset.origHtml) {
+        el.innerHTML = el.dataset.origHtml;
+      }
+    });
+  }
+
+  function updateToggleUI() {
+    const btnPinyin = document.getElementById('btnPinyin');
+    const btnArti = document.getElementById('btnArti');
+    const btnVocab = document.getElementById('btnVocab');
+    const btnColor = document.getElementById('btnColor');
+
+    if (btnPinyin) btnPinyin.classList.toggle('active', document.body.classList.contains('show-pinyin'));
+    if (btnArti) btnArti.classList.toggle('active', document.body.classList.contains('show-arti'));
+    if (btnVocab) btnVocab.classList.toggle('active', document.body.classList.contains('show-vocab'));
+    if (btnColor) btnColor.classList.toggle('active', document.body.classList.contains('show-color'));
+  }
+
+  function togglePinyin() {
+    document.body.classList.toggle('show-pinyin');
+    localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleArti() {
+    document.body.classList.toggle('show-arti');
+    localStorage.setItem('mandarin_show_arti', document.body.classList.contains('show-arti') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleVocab() {
+    document.body.classList.toggle('show-vocab');
+    localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleColor() {
+    const isNowActive = document.body.classList.toggle('show-color');
+    localStorage.setItem('mandarin_show_color', isNowActive ? '1' : '0');
+    if (isNowActive) {
+      applyColors();
+    } else {
+      removeColors();
+    }
+    updateToggleUI();
+  }
+
+  // Pengucapan Suara Web Speech API
+  function playPinyin(text) {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-CN';
+      u.rate = 0.8;
+      window.speechSynthesis.speak(u);
+    }
+  }
+
+  // Load Preferences
+  window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('mandarin_show_pinyin') === '0') document.body.classList.remove('show-pinyin');
+    if (localStorage.getItem('mandarin_show_arti') === '0') document.body.classList.remove('show-arti');
+    if (localStorage.getItem('mandarin_show_vocab') === '0') document.body.classList.remove('show-vocab');
+    if (localStorage.getItem('mandarin_show_color') === '1') {
+      document.body.classList.add('show-color');
+      applyColors();
+    }
+    updateToggleUI();
+  });
+</script>
+
+</body>
+</html>
