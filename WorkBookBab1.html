@@ -1369,6 +1369,76 @@
     .lt-t4 .latihan4-tone-badge { background: #fecaca; color: #7f1d1d; }
     .lt-t4:hover { border-color: #f87171; background: #fef2f2; }
 
+  
+    /* Latihan 5: Dialog Percakapan */
+    .latihan5-section {
+      margin-top: 2rem;
+      border-top: 2px dashed #cbd5e1;
+      padding-top: 1.5rem;
+    }
+    .dialog5-pair {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .dialog5-pair-num {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #94a3b8;
+      margin-bottom: 0.65rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .dialog5-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px;
+      margin-bottom: 0.45rem;
+    }
+    .dialog5-line:last-child { margin-bottom: 0; }
+    .dialog5-line-a { background: #eff6ff; border-left: 3px solid #3b82f6; }
+    .dialog5-line-b { background: #f0fdf4; border-left: 3px solid #22c55e; }
+    .dialog5-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .av5-a { background: #3b82f6; color: #fff; }
+    .av5-b { background: #22c55e; color: #fff; }
+    .dialog5-content { flex: 1; }
+    .dialog5-hanzi {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.3;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .dialog5-hanzi:hover { opacity: 0.72; }
+    .dialog5-pinyin {
+      font-size: 0.88rem;
+      color: #3b82f6;
+      font-style: italic;
+      margin-top: 2px;
+    }
+    .dialog5-arti {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
   </style>
 </head>
 <body>
@@ -2262,6 +2332,76 @@
         </button>
       </div>
         </div>
+      </div>
+
+
+      <!-- Latihan 5: Dialog Percakapan -->
+      <div class="latihan5-section">
+        <div class="classroom-header" style="margin-bottom: 0.85rem;">
+          <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">话</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge" style="background: #0d9488; color: #fff;">Latihan 5: Dialog Percakapan · 对话练习</div>
+            <div class="classroom-desc">Latihan percakapan singkat antara dua penutur. Klik teks Hanzi untuk mendengarkan lafalnya.</div>
+          </div>
+        </div>
+
+    <div class="dialog5-pair">
+      <div class="dialog5-pair-num">Dialog 1</div>
+      <div class="dialog5-line dialog5-line-a">
+        <div class="dialog5-avatar av5-a">A</div>
+        <div class="dialog5-content">
+          <div class="dialog5-hanzi" onclick="playPinyin('你好！')" title="Klik untuk mendengarkan">你好！</div>
+          <div class="dialog5-pinyin">Nǐ hǎo!</div>
+          <div class="dialog5-arti">Halo!</div>
+        </div>
+      </div>
+      <div class="dialog5-line dialog5-line-b">
+        <div class="dialog5-avatar av5-b">B</div>
+        <div class="dialog5-content">
+          <div class="dialog5-hanzi" onclick="playPinyin('你好！')" title="Klik untuk mendengarkan">你好！</div>
+          <div class="dialog5-pinyin">Nǐ hǎo!</div>
+          <div class="dialog5-arti">Halo!</div>
+        </div>
+      </div>
+    </div>
+    <div class="dialog5-pair">
+      <div class="dialog5-pair-num">Dialog 2</div>
+      <div class="dialog5-line dialog5-line-a">
+        <div class="dialog5-avatar av5-a">A</div>
+        <div class="dialog5-content">
+          <div class="dialog5-hanzi" onclick="playPinyin('你好！')" title="Klik untuk mendengarkan">你好！</div>
+          <div class="dialog5-pinyin">Nǐ hǎo!</div>
+          <div class="dialog5-arti">Halo!</div>
+        </div>
+      </div>
+      <div class="dialog5-line dialog5-line-b">
+        <div class="dialog5-avatar av5-b">B</div>
+        <div class="dialog5-content">
+          <div class="dialog5-hanzi" onclick="playPinyin('你们好！')" title="Klik untuk mendengarkan">你们好！</div>
+          <div class="dialog5-pinyin">Nǐmen hǎo!</div>
+          <div class="dialog5-arti">Halo semuanya!</div>
+        </div>
+      </div>
+    </div>
+    <div class="dialog5-pair">
+      <div class="dialog5-pair-num">Dialog 3</div>
+      <div class="dialog5-line dialog5-line-a">
+        <div class="dialog5-avatar av5-a">A</div>
+        <div class="dialog5-content">
+          <div class="dialog5-hanzi" onclick="playPinyin('谢谢！')" title="Klik untuk mendengarkan">谢谢！</div>
+          <div class="dialog5-pinyin">Xièxie!</div>
+          <div class="dialog5-arti">Terima kasih!</div>
+        </div>
+      </div>
+      <div class="dialog5-line dialog5-line-b">
+        <div class="dialog5-avatar av5-b">B</div>
+        <div class="dialog5-content">
+          <div class="dialog5-hanzi" onclick="playPinyin('不客气！')" title="Klik untuk mendengarkan">不客气！</div>
+          <div class="dialog5-pinyin">Bù kèqi!</div>
+          <div class="dialog5-arti">Sama-sama / Jangan sungkan!</div>
+        </div>
+      </div>
+    </div>
       </div>
 
     </div>
