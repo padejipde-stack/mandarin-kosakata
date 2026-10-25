@@ -1939,11 +1939,173 @@
       <div class="classroom-header">
         <div class="avatar" style="background: linear-gradient(135deg, #ec4899, #be185d);">写</div>
         <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #ec4899; color: #fff;">Aturan Penulisan (Spelling Rules) · 拼写规则</div>
-          <div class="classroom-desc">Ketika final <strong>"i"</strong>, <strong>"u"</strong>, dan <strong>"ü"</strong> berdiri sendiri menjadi sebuah suku kata (tanpa inisial), penulisannya diubah menjadi <strong>"yi"</strong>, <strong>"wu"</strong>, dan <strong>"yu"</strong> secara berturut-turut:</div>
+          <div class="classroom-badge" style="background: #ec4899; color: #fff;">Aturan Penggabungan &amp; Ejaan · 拼音规则与练习</div>
+          <div class="classroom-desc">Aturan penggabungan inisial <strong>j, q, x</strong> dengan <strong>ü</strong>, latihan 4 nada suku kata, serta aturan penulisan ejaan mandiri (<strong>yi, wu, yu</strong>) dan variasi (<strong>you/iu</strong>):</div>
         </div>
       </div>
 
+      <!-- 1. ATURAN PENGGABUNGAN INISIAL j, q, x DENGAN FINAL ü & LATIHAN 4 NADA -->
+      <div class="aturan-block" style="margin-top: 1.5rem; border-color: #fde68a; background: #fffdf5;">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background: #fef3c7; color: #b45309;">Aturan Penggabungan &amp; 4 Nada</span>
+          <span>Aturan Penggabungan Inisial "j", "q", "x" dengan Final "ü" &amp; Latihan Nada</span>
+        </div>
+
+        <div class="aturan-rule rule-tip">
+          <span class="aturan-icon">💡</span>
+          <div class="aturan-text">
+            <strong>Aturan Penggabungan Inisial "j", "q", "x" dengan Final "ü":</strong><br>
+            Ketika inisial <strong>"j"</strong>, <strong>"q"</strong>, dan <strong>"x"</strong> bergabung dengan final <strong>"ü"</strong>, dua titik di atas huruf <strong>"ü"</strong> dihilangkan dan ditulis sebagai <strong>"u"</strong> (tetap dibaca sebagai bunyi ü).
+          </div>
+        </div>
+
+        <!-- 1. LATIHAN 4 NADA -->
+        <div style="font-weight: 700; font-size: 0.92rem; color: #334155; margin: 1.1rem 0 0.6rem; display: flex; align-items: center; justify-content: space-between;">
+          <span>Contoh Latihan Suku Kata dengan Nada (jū, qū, xū &amp; jī)</span>
+          <span style="font-size: 0.78rem; color: #64748b; font-weight: normal;">Klik kotak untuk audio 🔊</span>
+        </div>
+
+        <!-- Header Nada -->
+        <div class="phonetic-tone-headers">
+          <div class="phonetic-tone-header-item tone-h1">Nada 1 ( ˉ )<br><span style="font-size: 0.65rem; font-weight: normal;">Datar Tinggi</span></div>
+          <div class="phonetic-tone-header-item tone-h2">Nada 2 ( ˊ )<br><span style="font-size: 0.65rem; font-weight: normal;">Naik</span></div>
+          <div class="phonetic-tone-header-item tone-h3">Nada 3 ( ˇ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun-Naik</span></div>
+          <div class="phonetic-tone-header-item tone-h4">Nada 4 ( ˋ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun Tegas</span></div>
+        </div>
+
+        <!-- Suku Kata j + ü -> ju: jū, jú, jǔ, jù -->
+        <div style="font-size: 0.8rem; font-weight: 700; color: #92400e; margin: 0.5rem 0 0.25rem;">Inisial "j" + "ü" → ditulis "ju" (dibaca jü):</div>
+        <div class="phonetic-row">
+          <button type="button" class="phonetic-cell t1" onclick="playPinyin('jū')" title="jū (dibaca jǖ - Nada 1)">
+            <span class="phonetic-text">jū</span>
+            <span class="phonetic-tone-label">1 ˉ (jü)</span>
+          </button>
+          <button type="button" class="phonetic-cell t2" onclick="playPinyin('jú')" title="jú (dibaca jú - Nada 2)">
+            <span class="phonetic-text">jú</span>
+            <span class="phonetic-tone-label">2 ˊ (jü)</span>
+          </button>
+          <button type="button" class="phonetic-cell t3" onclick="playPinyin('jǔ')" title="jǔ (dibaca jǔ - Nada 3)">
+            <span class="phonetic-text">jǔ</span>
+            <span class="phonetic-tone-label">3 ˇ (jü)</span>
+          </button>
+          <button type="button" class="phonetic-cell t4" onclick="playPinyin('jù')" title="jù (dibaca jù - Nada 4)">
+            <span class="phonetic-text">jù</span>
+            <span class="phonetic-tone-label">4 ˋ (jü)</span>
+          </button>
+        </div>
+
+        <!-- Suku Kata j + i: jī, jí, jǐ, jì -->
+        <div style="font-size: 0.8rem; font-weight: 700; color: #0369a1; margin: 0.65rem 0 0.25rem;">Inisial "j" + "i":</div>
+        <div class="phonetic-row">
+          <button type="button" class="phonetic-cell t1" onclick="playPinyin('jī')" title="jī (Nada 1)">
+            <span class="phonetic-text">jī</span>
+            <span class="phonetic-tone-label">1 ˉ</span>
+          </button>
+          <button type="button" class="phonetic-cell t2" onclick="playPinyin('jí')" title="jí (Nada 2)">
+            <span class="phonetic-text">jí</span>
+            <span class="phonetic-tone-label">2 ˊ</span>
+          </button>
+          <button type="button" class="phonetic-cell t3" onclick="playPinyin('jǐ')" title="jǐ (Nada 3)">
+            <span class="phonetic-text">jǐ</span>
+            <span class="phonetic-tone-label">3 ˇ</span>
+          </button>
+          <button type="button" class="phonetic-cell t4" onclick="playPinyin('jì')" title="jì (Nada 4)">
+            <span class="phonetic-text">jì</span>
+            <span class="phonetic-tone-label">4 ˋ</span>
+          </button>
+        </div>
+
+        <div style="font-size: 0.8rem; font-weight: 700; color: #92400e; margin: 0.65rem 0 0.25rem;">Inisial "q" + "ü" → ditulis "qu" (dibaca qü):</div>
+        <div class="phonetic-row">
+          <button type="button" class="phonetic-cell t1" onclick="playPinyin('qū')" title="qū (dibaca qǖ - Nada 1)">
+            <span class="phonetic-text">qū</span>
+            <span class="phonetic-tone-label">1 ˉ (qü)</span>
+          </button>
+          <button type="button" class="phonetic-cell t2" onclick="playPinyin('qú')" title="qú (dibaca qǘ - Nada 2)">
+            <span class="phonetic-text">qú</span>
+            <span class="phonetic-tone-label">2 ˊ (qü)</span>
+          </button>
+          <button type="button" class="phonetic-cell t3" onclick="playPinyin('qǔ')" title="qǔ (dibaca qǚ - Nada 3)">
+            <span class="phonetic-text">qǔ</span>
+            <span class="phonetic-tone-label">3 ˇ (qü)</span>
+          </button>
+          <button type="button" class="phonetic-cell t4" onclick="playPinyin('qù')" title="qù (dibaca qǜ - Nada 4)">
+            <span class="phonetic-text">qù</span>
+            <span class="phonetic-tone-label">4 ˋ (qü)</span>
+          </button>
+        </div>
+
+        <div style="font-size: 0.8rem; font-weight: 700; color: #92400e; margin: 0.65rem 0 0.25rem;">Inisial "x" + "ü" → ditulis "xu" (dibaca xü):</div>
+        <div class="phonetic-row">
+          <button type="button" class="phonetic-cell t1" onclick="playPinyin('xū')" title="xū (dibaca xǖ - Nada 1)">
+            <span class="phonetic-text">xū</span>
+            <span class="phonetic-tone-label">1 ˉ (xü)</span>
+          </button>
+          <button type="button" class="phonetic-cell t2" onclick="playPinyin('xú')" title="xú (dibaca xǘ - Nada 2)">
+            <span class="phonetic-text">xú</span>
+            <span class="phonetic-tone-label">2 ˊ (xü)</span>
+          </button>
+          <button type="button" class="phonetic-cell t3" onclick="playPinyin('xǔ')" title="xǔ (dibaca xǚ - Nada 3)">
+            <span class="phonetic-text">xǔ</span>
+            <span class="phonetic-tone-label">3 ˇ (xü)</span>
+          </button>
+          <button type="button" class="phonetic-cell t4" onclick="playPinyin('xù')" title="xù (dibaca xǜ - Nada 4)">
+            <span class="phonetic-text">xù</span>
+            <span class="phonetic-tone-label">4 ˋ (xü)</span>
+          </button>
+        </div>
+
+        <!-- 2. LATIHAN SUKU KATA MAJEMUK -->
+        <div style="font-weight: 700; font-size: 0.92rem; color: #334155; margin: 1.5rem 0 0.5rem;">
+          <span>Latihan Suku Kata Majemuk Pilihan (6 Suku Kata)</span>
+        </div>
+
+        <div class="syllable-card-grid">
+          <!-- jiā -->
+          <button type="button" class="syllable-card" onclick="playPinyin('jiā')" title="jiā = j + ia (Nada 1)">
+            <div class="syllable-pinyin" style="color: #0369a1;">jiā</div>
+            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">j</span> + <span style="color:#0369a1;font-weight:700;">ia</span></div>
+            <div class="syllable-tag">Nada 1 ˉ</div>
+          </button>
+
+          <!-- jiàn -->
+          <button type="button" class="syllable-card" onclick="playPinyin('jiàn')" title="jiàn = j + ian (Nada 4)">
+            <div class="syllable-pinyin" style="color: #b91c1c;">jiàn</div>
+            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">j</span> + <span style="color:#0369a1;font-weight:700;">ian</span></div>
+            <div class="syllable-tag">Nada 4 ˋ</div>
+          </button>
+
+          <!-- quán -->
+          <button type="button" class="syllable-card" onclick="playPinyin('quán')" title="quán = q + üan (Nada 2)">
+            <div class="syllable-pinyin" style="color: #15803d;">quán</div>
+            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">q</span> + <span style="color:#d97706;font-weight:700;">üan</span></div>
+            <div class="syllable-tag" style="background:#fef3c7;color:#b45309;">Nada 2 ˊ (q+üan)</div>
+          </button>
+
+          <!-- qǐng -->
+          <button type="button" class="syllable-card" onclick="playPinyin('qǐng')" title="qǐng = q + ing (Nada 3)">
+            <div class="syllable-pinyin" style="color: #b45309;">qǐng</div>
+            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">q</span> + <span style="color:#0369a1;font-weight:700;">ing</span></div>
+            <div class="syllable-tag">Nada 3 ˇ</div>
+          </button>
+
+          <!-- xiǎng -->
+          <button type="button" class="syllable-card" onclick="playPinyin('xiǎng')" title="xiǎng = x + iang (Nada 3)">
+            <div class="syllable-pinyin" style="color: #b45309;">xiǎng</div>
+            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">x</span> + <span style="color:#0369a1;font-weight:700;">iang</span></div>
+            <div class="syllable-tag">Nada 3 ˇ</div>
+          </button>
+
+          <!-- xīn -->
+          <button type="button" class="syllable-card" onclick="playPinyin('xīn')" title="xīn = x + in (Nada 1)">
+            <div class="syllable-pinyin" style="color: #0369a1;">xīn</div>
+            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">x</span> + <span style="color:#0369a1;font-weight:700;">in</span></div>
+            <div class="syllable-tag">Nada 1 ˉ</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. ATURAN PENULISAN SUKU KATA MANDIRI (yi, wu, yu) -->
       <!-- Aturan Spelling Rules Box -->
       <div class="aturan-block">
         <div class="aturan-block-title">
@@ -2120,167 +2282,6 @@
           <div class="word-detail">Contoh: 一把椅子 (sebuah kursi)</div>
         </div>
       </div>
-      <!-- 2. ATURAN PENGGABUNGAN INISIAL j, q, x DENGAN FINAL ü & LATIHAN NADA -->
-      <div class="aturan-block" style="margin-top: 1.5rem; border-color: #fde68a; background: #fffdf5;">
-        <div class="aturan-block-title">
-          <span class="aturan-block-badge" style="background: #fef3c7; color: #b45309;">Aturan Penggabungan &amp; 4 Nada</span>
-          <span>Aturan Penggabungan Inisial "j", "q", "x" dengan Final "ü" &amp; Latihan Nada</span>
-        </div>
-
-        <div class="aturan-rule rule-tip">
-          <span class="aturan-icon">💡</span>
-          <div class="aturan-text">
-            <strong>Aturan Penggabungan Inisial "j", "q", "x" dengan Final "ü":</strong><br>
-            Ketika inisial <strong>"j"</strong>, <strong>"q"</strong>, dan <strong>"x"</strong> bergabung dengan final <strong>"ü"</strong>, dua titik di atas huruf <strong>"ü"</strong> dihilangkan dan ditulis sebagai <strong>"u"</strong> (tetap dibaca sebagai bunyi ü).
-          </div>
-        </div>
-
-        <!-- 1. LATIHAN 4 NADA -->
-        <div style="font-weight: 700; font-size: 0.92rem; color: #334155; margin: 1.1rem 0 0.6rem; display: flex; align-items: center; justify-content: space-between;">
-          <span>Contoh Latihan Suku Kata dengan Nada (jū, qū, xū &amp; jī)</span>
-          <span style="font-size: 0.78rem; color: #64748b; font-weight: normal;">Klik kotak untuk audio 🔊</span>
-        </div>
-
-        <!-- Header Nada -->
-        <div class="phonetic-tone-headers">
-          <div class="phonetic-tone-header-item tone-h1">Nada 1 ( ˉ )<br><span style="font-size: 0.65rem; font-weight: normal;">Datar Tinggi</span></div>
-          <div class="phonetic-tone-header-item tone-h2">Nada 2 ( ˊ )<br><span style="font-size: 0.65rem; font-weight: normal;">Naik</span></div>
-          <div class="phonetic-tone-header-item tone-h3">Nada 3 ( ˇ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun-Naik</span></div>
-          <div class="phonetic-tone-header-item tone-h4">Nada 4 ( ˋ )<br><span style="font-size: 0.65rem; font-weight: normal;">Turun Tegas</span></div>
-        </div>
-
-        <!-- Suku Kata j + ü -> ju: jū, jú, jǔ, jù -->
-        <div style="font-size: 0.8rem; font-weight: 700; color: #92400e; margin: 0.5rem 0 0.25rem;">Inisial "j" + "ü" → ditulis "ju" (dibaca jü):</div>
-        <div class="phonetic-row">
-          <button type="button" class="phonetic-cell t1" onclick="playPinyin('jū')" title="jū (dibaca jǖ - Nada 1)">
-            <span class="phonetic-text">jū</span>
-            <span class="phonetic-tone-label">1 ˉ (jü)</span>
-          </button>
-          <button type="button" class="phonetic-cell t2" onclick="playPinyin('jú')" title="jú (dibaca jú - Nada 2)">
-            <span class="phonetic-text">jú</span>
-            <span class="phonetic-tone-label">2 ˊ (jü)</span>
-          </button>
-          <button type="button" class="phonetic-cell t3" onclick="playPinyin('jǔ')" title="jǔ (dibaca jǔ - Nada 3)">
-            <span class="phonetic-text">jǔ</span>
-            <span class="phonetic-tone-label">3 ˇ (jü)</span>
-          </button>
-          <button type="button" class="phonetic-cell t4" onclick="playPinyin('jù')" title="jù (dibaca jù - Nada 4)">
-            <span class="phonetic-text">jù</span>
-            <span class="phonetic-tone-label">4 ˋ (jü)</span>
-          </button>
-        </div>
-
-        <!-- Suku Kata j + i: jī, jí, jǐ, jì -->
-        <div style="font-size: 0.8rem; font-weight: 700; color: #0369a1; margin: 0.65rem 0 0.25rem;">Inisial "j" + "i":</div>
-        <div class="phonetic-row">
-          <button type="button" class="phonetic-cell t1" onclick="playPinyin('jī')" title="jī (Nada 1)">
-            <span class="phonetic-text">jī</span>
-            <span class="phonetic-tone-label">1 ˉ</span>
-          </button>
-          <button type="button" class="phonetic-cell t2" onclick="playPinyin('jí')" title="jí (Nada 2)">
-            <span class="phonetic-text">jí</span>
-            <span class="phonetic-tone-label">2 ˊ</span>
-          </button>
-          <button type="button" class="phonetic-cell t3" onclick="playPinyin('jǐ')" title="jǐ (Nada 3)">
-            <span class="phonetic-text">jǐ</span>
-            <span class="phonetic-tone-label">3 ˇ</span>
-          </button>
-          <button type="button" class="phonetic-cell t4" onclick="playPinyin('jì')" title="jì (Nada 4)">
-            <span class="phonetic-text">jì</span>
-            <span class="phonetic-tone-label">4 ˋ</span>
-          </button>
-        </div>
-
-        <div style="font-size: 0.8rem; font-weight: 700; color: #92400e; margin: 0.65rem 0 0.25rem;">Inisial "q" + "ü" → ditulis "qu" (dibaca qü):</div>
-        <div class="phonetic-row">
-          <button type="button" class="phonetic-cell t1" onclick="playPinyin('qū')" title="qū (dibaca qǖ - Nada 1)">
-            <span class="phonetic-text">qū</span>
-            <span class="phonetic-tone-label">1 ˉ (qü)</span>
-          </button>
-          <button type="button" class="phonetic-cell t2" onclick="playPinyin('qú')" title="qú (dibaca qǘ - Nada 2)">
-            <span class="phonetic-text">qú</span>
-            <span class="phonetic-tone-label">2 ˊ (qü)</span>
-          </button>
-          <button type="button" class="phonetic-cell t3" onclick="playPinyin('qǔ')" title="qǔ (dibaca qǚ - Nada 3)">
-            <span class="phonetic-text">qǔ</span>
-            <span class="phonetic-tone-label">3 ˇ (qü)</span>
-          </button>
-          <button type="button" class="phonetic-cell t4" onclick="playPinyin('qù')" title="qù (dibaca qǜ - Nada 4)">
-            <span class="phonetic-text">qù</span>
-            <span class="phonetic-tone-label">4 ˋ (qü)</span>
-          </button>
-        </div>
-
-        <div style="font-size: 0.8rem; font-weight: 700; color: #92400e; margin: 0.65rem 0 0.25rem;">Inisial "x" + "ü" → ditulis "xu" (dibaca xü):</div>
-        <div class="phonetic-row">
-          <button type="button" class="phonetic-cell t1" onclick="playPinyin('xū')" title="xū (dibaca xǖ - Nada 1)">
-            <span class="phonetic-text">xū</span>
-            <span class="phonetic-tone-label">1 ˉ (xü)</span>
-          </button>
-          <button type="button" class="phonetic-cell t2" onclick="playPinyin('xú')" title="xú (dibaca xǘ - Nada 2)">
-            <span class="phonetic-text">xú</span>
-            <span class="phonetic-tone-label">2 ˊ (xü)</span>
-          </button>
-          <button type="button" class="phonetic-cell t3" onclick="playPinyin('xǔ')" title="xǔ (dibaca xǚ - Nada 3)">
-            <span class="phonetic-text">xǔ</span>
-            <span class="phonetic-tone-label">3 ˇ (xü)</span>
-          </button>
-          <button type="button" class="phonetic-cell t4" onclick="playPinyin('xù')" title="xù (dibaca xǜ - Nada 4)">
-            <span class="phonetic-text">xù</span>
-            <span class="phonetic-tone-label">4 ˋ (xü)</span>
-          </button>
-        </div>
-
-        <!-- 2. LATIHAN SUKU KATA MAJEMUK -->
-        <div style="font-weight: 700; font-size: 0.92rem; color: #334155; margin: 1.5rem 0 0.5rem;">
-          <span>Latihan Suku Kata Majemuk Pilihan (6 Suku Kata)</span>
-        </div>
-
-        <div class="syllable-card-grid">
-          <!-- jiā -->
-          <button type="button" class="syllable-card" onclick="playPinyin('jiā')" title="jiā = j + ia (Nada 1)">
-            <div class="syllable-pinyin" style="color: #0369a1;">jiā</div>
-            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">j</span> + <span style="color:#0369a1;font-weight:700;">ia</span></div>
-            <div class="syllable-tag">Nada 1 ˉ</div>
-          </button>
-
-          <!-- jiàn -->
-          <button type="button" class="syllable-card" onclick="playPinyin('jiàn')" title="jiàn = j + ian (Nada 4)">
-            <div class="syllable-pinyin" style="color: #b91c1c;">jiàn</div>
-            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">j</span> + <span style="color:#0369a1;font-weight:700;">ian</span></div>
-            <div class="syllable-tag">Nada 4 ˋ</div>
-          </button>
-
-          <!-- quán -->
-          <button type="button" class="syllable-card" onclick="playPinyin('quán')" title="quán = q + üan (Nada 2)">
-            <div class="syllable-pinyin" style="color: #15803d;">quán</div>
-            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">q</span> + <span style="color:#d97706;font-weight:700;">üan</span></div>
-            <div class="syllable-tag" style="background:#fef3c7;color:#b45309;">Nada 2 ˊ (q+üan)</div>
-          </button>
-
-          <!-- qǐng -->
-          <button type="button" class="syllable-card" onclick="playPinyin('qǐng')" title="qǐng = q + ing (Nada 3)">
-            <div class="syllable-pinyin" style="color: #b45309;">qǐng</div>
-            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">q</span> + <span style="color:#0369a1;font-weight:700;">ing</span></div>
-            <div class="syllable-tag">Nada 3 ˇ</div>
-          </button>
-
-          <!-- xiǎng -->
-          <button type="button" class="syllable-card" onclick="playPinyin('xiǎng')" title="xiǎng = x + iang (Nada 3)">
-            <div class="syllable-pinyin" style="color: #b45309;">xiǎng</div>
-            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">x</span> + <span style="color:#0369a1;font-weight:700;">iang</span></div>
-            <div class="syllable-tag">Nada 3 ˇ</div>
-          </button>
-
-          <!-- xīn -->
-          <button type="button" class="syllable-card" onclick="playPinyin('xīn')" title="xīn = x + in (Nada 1)">
-            <div class="syllable-pinyin" style="color: #0369a1;">xīn</div>
-            <div class="syllable-parts"><span style="color:#7c3aed;font-weight:700;">x</span> + <span style="color:#0369a1;font-weight:700;">in</span></div>
-            <div class="syllable-tag">Nada 1 ˉ</div>
-          </button>
-        </div>
-      </div>
-
       <!-- 3. ATURAN PENULISAN FINAL "iou" SEBAGAI SUKU KATA MANDIRI (you) & DALAM SUKU KATA (iu) -->
       <div class="aturan-block" style="margin-top: 1.5rem; border-top: 2px dashed #fbcfe8; padding-top: 1.25rem;">
         <div class="aturan-block-title">
@@ -2474,7 +2475,132 @@
     </div>
   </div>
 
-  <!-- ══ TOGGLE CONTROLS (DI PALING BAWAH) ══ -->
+    <!-- ══════════════════════════════════════════════════════════
+       BAGIAN 5: LATIHAN MENDENGARKAN, MEMBACA & PRAKTIK (LISTEN, READ, PRACTICE)
+       ══════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">🎧 Bagian 5: Latihan Mendengarkan, Membaca &amp; Praktik · 听力、朗读与练习</div>
+    <div class="classroom-box" style="border-left: 5px solid #0284c7;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0284c7, #0369a1); font-size: 1.15rem; font-weight: 700; color: #fff;">练</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0284c7; color: #fff;">Latihan Mandiri · 综合能力训练</div>
+          <div class="classroom-desc">Melatih kemampuan mendengarkan (Listen), membaca (Read), dan latihan praktik (Practice) untuk inisial <strong>j, q, x</strong> beserta pembedaan nada dan kosakata terkait.</div>
+        </div>
+      </div>
+
+      <!-- ── 1. LATIHAN MENDENGARKAN (LISTEN) ── -->
+      <div class="initials-section">
+        <div class="classroom-header" style="margin-bottom: 0.85rem;">
+          <div class="avatar" style="background: linear-gradient(135deg, #e11d48, #be123c); font-size: 1.05rem; font-weight: 700; color: #fff;">👂</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge" style="background: #e11d48; color: #fff;">1. Latihan Mendengarkan (Listen) · 听力 — Pengenalan Huruf Awal (Initials j, q, x)</div>
+            <div class="classroom-desc">
+              Latihan mengenali dan mengisi huruf awal (initials / 声母) untuk bunyi <strong>j</strong>, <strong>q</strong>, dan <strong>x</strong>. Klik setiap kartu untuk mendengarkan lafal audio dan memeriksa huruf awalnya:
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Columns Container -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          
+          <!-- KOLOM PERTAMA -->
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 0.9rem;">
+            <div class="initials-row-title" style="margin-bottom: 0.65rem;">
+              <span class="initials-row-badge" style="background: #e0e7ff; color: #4338ca;">Kolom Pertama</span>
+              <span style="font-size: 0.75rem; color: #64748b;">🔊 Klik kartu audio</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+              <!-- 1. qián -->
+              <button type="button" class="initials-card" onclick="playPinyin('qián')" title="qián (Huruf awal: q)">
+                <div class="initials-pinyin"><span class="initial-char" style="color: #0284c7;">q</span>ián</div>
+                <div class="initials-tag" style="background: #e0f2fe; color: #0369a1;">Huruf awal: q · Nada 2 ˊ</div>
+                <div class="word-arti" style="font-size: 0.8rem; color: #475569; margin-top: 0.35rem; font-weight: 500;">uang / depan</div>
+              </button>
+
+              <!-- 2. jiào -->
+              <button type="button" class="initials-card" onclick="playPinyin('jiào')" title="jiào (Huruf awal: j)">
+                <div class="initials-pinyin"><span class="initial-char" style="color: #7c3aed;">j</span>iào</div>
+                <div class="initials-tag" style="background: #ede9fe; color: #6d28d9;">Huruf awal: j · Nada 4 ˋ</div>
+                <div class="word-arti" style="font-size: 0.8rem; color: #475569; margin-top: 0.35rem; font-weight: 500;">memanggil / mengajar</div>
+              </button>
+
+              <!-- 3. jǐ -->
+              <button type="button" class="initials-card" onclick="playPinyin('jǐ')" title="jǐ (Huruf awal: j)">
+                <div class="initials-pinyin"><span class="initial-char" style="color: #7c3aed;">j</span>ǐ</div>
+                <div class="initials-tag" style="background: #ede9fe; color: #6d28d9;">Huruf awal: j · Nada 3 ˇ</div>
+                <div class="word-arti" style="font-size: 0.8rem; color: #475569; margin-top: 0.35rem; font-weight: 500;">beberapa / berapa</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- KOLOM KEDUA -->
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 0.9rem;">
+            <div class="initials-row-title" style="margin-bottom: 0.65rem;">
+              <span class="initials-row-badge" style="background: #fce7f3; color: #be185d;">Kolom Kedua</span>
+              <span style="font-size: 0.75rem; color: #64748b;">🔊 Klik kartu audio</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+              <!-- 4. jīn -->
+              <button type="button" class="initials-card" onclick="playPinyin('jīn')" title="jīn (Huruf awal: j)">
+                <div class="initials-pinyin"><span class="initial-char" style="color: #7c3aed;">j</span>īn</div>
+                <div class="initials-tag" style="background: #ede9fe; color: #6d28d9;">Huruf awal: j · Nada 1 ˉ</div>
+                <div class="word-arti" style="font-size: 0.8rem; color: #475569; margin-top: 0.35rem; font-weight: 500;">emas / sekarang</div>
+              </button>
+
+              <!-- 5. xiè -->
+              <button type="button" class="initials-card" onclick="playPinyin('xiè')" title="xiè (Huruf awal: x)">
+                <div class="initials-pinyin"><span class="initial-char" style="color: #e11d48;">x</span>iè</div>
+                <div class="initials-tag" style="background: #ffe4e6; color: #be123c;">Huruf awal: x · Nada 4 ˋ</div>
+                <div class="word-arti" style="font-size: 0.8rem; color: #475569; margin-top: 0.35rem; font-weight: 500;">terima (xièxie)</div>
+              </button>
+
+              <!-- 6. qù -->
+              <button type="button" class="initials-card" onclick="playPinyin('qù')" title="qù (Huruf awal: q)">
+                <div class="initials-pinyin"><span class="initial-char" style="color: #0284c7;">q</span>ù</div>
+                <div class="initials-tag" style="background: #e0f2fe; color: #0369a1;">Huruf awal: q · Nada 4 ˋ</div>
+                <div class="word-arti" style="font-size: 0.8rem; color: #475569; margin-top: 0.35rem; font-weight: 500;">pergi</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- KOLOM KETIGA -->
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 0.9rem;">
+            <div class="initials-row-title" style="margin-bottom: 0.65rem;">
+              <span class="initials-row-badge" style="background: #e0f2fe; color: #0369a1;">Kolom Ketiga</span>
+              <span style="font-size: 0.75rem; color: #64748b;">🔊 Klik kartu audio</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+              <!-- 7. xiǎng -->
+              <button type="button" class="initials-card" onclick="playPinyin('xiǎng')" title="xiǎng (Huruf awal: x)">
+                <div class="initials-pinyin"><span class="initial-char" style="color: #e11d48;">x</span>iǎng</div>
+                <div class="initials-tag" style="background: #ffe4e6; color: #be123c;">Huruf awal: x · Nada 3 ˇ</div>
+                <div class="word-arti" style="font-size: 0.8rem; color: #475569; margin-top: 0.35rem; font-weight: 500;">berpikir / ingin</div>
+              </button>
+
+              <!-- 8. qīng -->
+              <button type="button" class="initials-card" onclick="playPinyin('qīng')" title="qīng (Huruf awal: q)">
+                <div class="initials-pinyin"><span class="initial-char" style="color: #0284c7;">q</span>īng</div>
+                <div class="initials-tag" style="background: #e0f2fe; color: #0369a1;">Huruf awal: q · Nada 1 ˉ</div>
+                <div class="word-arti" style="font-size: 0.8rem; color: #475569; margin-top: 0.35rem; font-weight: 500;">hijau / ringan</div>
+              </button>
+
+              <!-- 9. xià -->
+              <button type="button" class="initials-card" onclick="playPinyin('xià')" title="xià (Huruf awal: x)">
+                <div class="initials-pinyin"><span class="initial-char" style="color: #e11d48;">x</span>ià</div>
+                <div class="initials-tag" style="background: #ffe4e6; color: #be123c;">Huruf awal: x · Nada 4 ˋ</div>
+                <div class="word-arti" style="font-size: 0.8rem; color: #475569; margin-top: 0.35rem; font-weight: 500;">bawah / turun</div>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!-- ══ TOGGLE CONTROLS (DI PALING BAWAH) ══ -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
       <span class="icon">⚙️</span>
