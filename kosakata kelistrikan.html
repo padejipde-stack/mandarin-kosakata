@@ -252,18 +252,22 @@
     .equip-img-wrapper {
       position: relative;
       width: 100%;
-      height: 180px;
-      background: #0f172a;
+      height: 190px;
+      background: #f8fafc;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .equip-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       transition: transform 0.3s ease;
     }
     .equip-card:hover .equip-img {
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     .equip-badge {
@@ -278,6 +282,7 @@
       padding: 0.25rem 0.65rem;
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      z-index: 2;
     }
 
     .google-img-link {
@@ -298,6 +303,7 @@
       border: 1px solid rgba(255, 255, 255, 0.6);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       transition: all 0.2s ease;
+      z-index: 2;
     }
     .google-img-link:hover {
       background: #ffffff;
@@ -578,8 +584,8 @@
 
 <header>
   <h1>⚡ Kosakata Bahasa Mandarin — Alat-Alat Kelistrikan</h1>
-  <p>电气工程与电工常用工具设备词汇大全 · Daftar Lengkap Peralatan, Alat Ukur & Perkakas Listrik</p>
-  <div class="bab">⚡ 电气设备词汇 · 55 Kosakata Alat Listrik Lengkap + Foto &amp; Audio</div>
+  <p>电气工程与电工常用工具设备词汇大全 · Daftar Lengkap Peralatan, Alat Ukur &amp; Perkakas Listrik</p>
+  <div class="bab">⚡ 电气设备词汇 · 55 Kosakata Alat Listrik Lengkap + Foto Asli &amp; Audio</div>
 </header>
 
 <!-- STICKY NAVBAR -->
@@ -607,8 +613,8 @@
   <button class="filter-chip" onclick="filterCategory('ukur', this)">📏 Alat Ukur (10)</button>
   <button class="filter-chip" onclick="filterCategory('proteksi', this)">🛡️ Proteksi / MCB (7)</button>
   <button class="filter-chip" onclick="filterCategory('perkakas', this)">🔧 Perkakas Tangan (11)</button>
-  <button class="filter-chip" onclick="filterCategory('panel', this)">🔌 Panel & Sakelar (12)</button>
-  <button class="filter-chip" onclick="filterCategory('mesin', this)">⚙️ Mesin & Trafo (8)</button>
+  <button class="filter-chip" onclick="filterCategory('panel', this)">🔌 Panel &amp; Sakelar (12)</button>
+  <button class="filter-chip" onclick="filterCategory('mesin', this)">⚙️ Mesin &amp; Trafo (8)</button>
   <button class="filter-chip" onclick="filterCategory('apd', this)">🦺 APD Listrik (7)</button>
 </div>
 
@@ -623,11 +629,11 @@
       <div class="equipment-grid">
     
         <!-- Card: 万用表 -->
-        <div class="dialog-box equip-card" data-category="ukur" data-search="万用表 wànyòngbiǎo multimeter / avo meter digital multimeter">
+        <div class="dialog-box equip-card" data-category="ukur" data-search="万用表 wànyòngbiǎo multimeter / avo meter digital multimeter (dmm)">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="万用表 - Multimeter / AVO Meter" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E4%B8%87%E7%94%A8%E8%A1%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Digital_Multimeter.jpg?width=600" alt="万用表 - Multimeter / AVO Meter" class="equip-img" loading="lazy" data-hz="万用表" data-icon="📏" onerror="handleImgError(this)" />
             <span class="equip-badge">📏 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E4%B8%87%E7%94%A8%E8%A1%A8%20multimeter%20digital" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E4%B8%87%E7%94%A8%E8%A1%A8%20digital%20multimeter" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -646,7 +652,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Digital Multimeter</span>
+              <span class="equip-en">Digital Multimeter (DMM)</span>
               <div class="bubble-arti">
                 <strong>Multimeter / AVO Meter</strong>
                 <p class="equip-desc-text">Alat ukur serbaguna utama teknisi listrik untuk mengukur tegangan listrik (Volt), kuat arus (Ampere), hambatan (Ohm), serta uji kontinuitas bel sirkit.</p>
@@ -687,7 +693,7 @@
         <!-- Card: 钳形表 -->
         <div class="dialog-box equip-card" data-category="ukur" data-search="钳形表 qiánxíngbiǎo tang ampere / clamp meter digital clamp meter">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="钳形表 - Tang Ampere / Clamp Meter" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E9%92%B3%E5%BD%A2%E8%A1%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Clampmeter.jpg?width=600" alt="钳形表 - Tang Ampere / Clamp Meter" class="equip-img" loading="lazy" data-hz="钳形表" data-icon="📏" onerror="handleImgError(this)" />
             <span class="equip-badge">📏 Alat</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E9%92%B3%E5%BD%A2%E8%A1%A8%20clamp%20meter" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -711,7 +717,7 @@
               <span class="equip-en">Digital Clamp Meter</span>
               <div class="bubble-arti">
                 <strong>Tang Ampere / Clamp Meter</strong>
-                <p class="equip-desc-text">Mengukur besaran kuat arus bolak-balik (AC) atau searah (DC) pada kawat bertegangan tinggi melalui induksi rahang penjepit tanpa memutus kabel.</p>
+                <p class="equip-desc-text">Mengukur besaran kuat arus bolak-balik (AC) atau searah (DC) pada kawat bertegangan tinggi melalui induksi rahang penjepit tanpa memotong kabel.</p>
               </div>
             </div>
 
@@ -749,9 +755,9 @@
         <!-- Card: 兆欧表 -->
         <div class="dialog-box equip-card" data-category="ukur" data-search="兆欧表 zhào'ōubiǎo megger / tester resistansi isolasi insulation resistance tester / megger">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="兆欧表 - Megger / Tester Resistansi Isolasi" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%85%86%E6%AC%A7%E8%A1%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Megohmmeter.jpg?width=600" alt="兆欧表 - Megger / Tester Resistansi Isolasi" class="equip-img" loading="lazy" data-hz="兆欧表" data-icon="📏" onerror="handleImgError(this)" />
             <span class="equip-badge">📏 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E5%85%86%E6%AC%A7%E8%A1%A8%20insulation%20resistance%20tester" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E5%85%86%E6%AC%A7%E8%A1%A8%20megohmmeter%20insulation%20tester" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -811,9 +817,9 @@
         <!-- Card: 测电笔 -->
         <div class="dialog-box equip-card" data-category="ukur" data-search="测电笔 cèdiànbǐ tespen listrik / test pen voltage detector pen / test pen">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80" alt="测电笔 - Tespen Listrik / Test Pen" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E6%B5%8B%E7%94%B5%E7%AC%94%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Phasenpruefer.JPG?width=600" alt="测电笔 - Tespen Listrik / Test Pen" class="equip-img" loading="lazy" data-hz="测电笔" data-icon="📏" onerror="handleImgError(this)" />
             <span class="equip-badge">📏 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E6%B5%8B%E7%94%B5%E7%AC%94%20test%20pen%20electrical" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E6%B5%8B%E7%94%B5%E7%AC%94%20voltage%20tester%20pen" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -873,9 +879,9 @@
         <!-- Card: 示波器 -->
         <div class="dialog-box equip-card" data-category="ukur" data-search="示波器 shìbōqì osiloskop digital oscilloscope">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" alt="示波器 - Osiloskop" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%A4%BA%E6%B3%A2%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Oscilloscope.jpg?width=600" alt="示波器 - Osiloskop" class="equip-img" loading="lazy" data-hz="示波器" data-icon="📏" onerror="handleImgError(this)" />
             <span class="equip-badge">📏 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%A4%BA%E6%B3%A2%E5%99%A8%20oscilloscope" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%A4%BA%E6%B3%A2%E5%99%A8%20digital%20oscilloscope" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -935,7 +941,7 @@
         <!-- Card: 接地电阻测试仪 -->
         <div class="dialog-box equip-card" data-category="ukur" data-search="接地电阻测试仪 jiēdì diànzǔ cèshìyí earth tester / tester pembumian earth ground resistance tester">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="接地电阻测试仪 - Earth Tester / Tester Pembumian" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E6%8E%A5%E5%9C%B0%E7%94%B5%E9%98%BB%E6%B5%8B%E8%AF%95%E4%BB%AA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Earth_tester.jpg?width=600" alt="接地电阻测试仪 - Earth Tester / Tester Pembumian" class="equip-img" loading="lazy" data-hz="接地电阻测试仪" data-icon="📏" onerror="handleImgError(this)" />
             <span class="equip-badge">📏 Alat</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E6%8E%A5%E5%9C%B0%E7%94%B5%E9%98%BB%E6%B5%8B%E8%AF%95%E4%BB%AA%20earth%20resistance%20tester" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -995,11 +1001,11 @@
         </div>
       
         <!-- Card: 相序表 -->
-        <div class="dialog-box equip-card" data-category="ukur" data-search="相序表 xiāngxùbiǎo indikator urutan fasa (phase sequence meter) phase rotation tester">
+        <div class="dialog-box equip-card" data-category="ukur" data-search="相序表 xiāngxùbiǎo indikator urutan fasa (phase rotation) phase sequence indicator">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="相序表 - Indikator Urutan Fasa (Phase Sequence Meter)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%9B%B8%E5%BA%8F%E8%A1%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Phase_rotation_meter.jpg?width=600" alt="相序表 - Indikator Urutan Fasa (Phase Rotation)" class="equip-img" loading="lazy" data-hz="相序表" data-icon="📏" onerror="handleImgError(this)" />
             <span class="equip-badge">📏 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%9B%B8%E5%BA%8F%E8%A1%A8%20phase%20sequence%20meter" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%9B%B8%E5%BA%8F%E8%A1%A8%20phase%20rotation%20indicator" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1018,9 +1024,9 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Phase Rotation Tester</span>
+              <span class="equip-en">Phase Sequence Indicator</span>
               <div class="bubble-arti">
-                <strong>Indikator Urutan Fasa (Phase Sequence Meter)</strong>
+                <strong>Indikator Urutan Fasa (Phase Rotation)</strong>
                 <p class="equip-desc-text">Menentukan urutan fasa sistem listrik 3 fasa (R-S-T) untuk mencegah motor induksi 3 fasa berputar terbalik arah yang berbahaya bagi mesin.</p>
               </div>
             </div>
@@ -1059,9 +1065,9 @@
         <!-- Card: 电能表 -->
         <div class="dialog-box equip-card" data-category="ukur" data-search="电能表 diànnéngbiǎo kwh meter listrik electricity energy meter / kwh meter">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80" alt="电能表 - kWh Meter Listrik" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%94%B5%E8%83%BD%E8%A1%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Electricity_meter.jpg?width=600" alt="电能表 - kWh Meter Listrik" class="equip-img" loading="lazy" data-hz="电能表" data-icon="📏" onerror="handleImgError(this)" />
             <span class="equip-badge">📏 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E8%83%BD%E8%A1%A8%20kwh%20meter%20electricity" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E8%83%BD%E8%A1%A8%20kwh%20meter" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1121,9 +1127,9 @@
         <!-- Card: 红外热像仪 -->
         <div class="dialog-box equip-card" data-category="ukur" data-search="红外热像仪 hóngwài rèxiàngyí kamera termal inframerah (detektor hotspot) infrared thermal imaging camera">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="红外热像仪 - Kamera Termal Inframerah (Detektor Hotspot)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%BA%A2%E5%A4%96%E7%83%AD%E5%83%8F%E4%BB%AA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Infrared_camera.jpg?width=600" alt="红外热像仪 - Kamera Termal Inframerah (Detektor Hotspot)" class="equip-img" loading="lazy" data-hz="红外热像仪" data-icon="📏" onerror="handleImgError(this)" />
             <span class="equip-badge">📏 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%BA%A2%E5%A4%96%E7%83%AD%E5%83%8F%E4%BB%AA%20thermal%20imaging%20electrical" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%BA%A2%E5%A4%96%E7%83%AD%E5%83%8F%E4%BB%AA%20thermal%20camera%20electrical" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1183,9 +1189,9 @@
         <!-- Card: 寻线仪 -->
         <div class="dialog-box equip-card" data-category="ukur" data-search="寻线仪 xúnxiànyí alat pelacak jalur kabel (wire tracker) wire tracer / cable toner & probe">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="寻线仪 - Alat Pelacak Jalur Kabel (Wire Tracker)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%AF%BB%E7%BA%BF%E4%BB%AA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tone_generator_and_probe.jpg?width=600" alt="寻线仪 - Alat Pelacak Jalur Kabel (Wire Tracker)" class="equip-img" loading="lazy" data-hz="寻线仪" data-icon="📏" onerror="handleImgError(this)" />
             <span class="equip-badge">📏 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E5%AF%BB%E7%BA%BF%E4%BB%AA%20wire%20tracer%20cable%20tracker" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E5%AF%BB%E7%BA%BF%E4%BB%AA%20wire%20tracer%20cable%20toner%20probe" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1256,9 +1262,9 @@
         <!-- Card: 微型断路器 -->
         <div class="dialog-box equip-card" data-category="proteksi" data-search="微型断路器 wēixíng duànlùqì mcb (miniature circuit breaker) miniature circuit breaker (mcb)">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="微型断路器 - MCB (Miniature Circuit Breaker)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%9B%A1%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%BE%AE%E5%9E%8B%E6%96%AD%E8%B7%AF%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Miniature_circuit_breaker.jpg?width=600" alt="微型断路器 - MCB (Miniature Circuit Breaker)" class="equip-img" loading="lazy" data-hz="微型断路器" data-icon="🛡️" onerror="handleImgError(this)" />
             <span class="equip-badge">🛡️ Proteksi</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E5%BE%AE%E5%9E%8B%E6%96%AD%E8%B7%AF%E5%99%A8%20mcb%20circuit%20breaker" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E5%BE%AE%E5%9E%8B%E6%96%AD%E8%B7%AF%E5%99%A8%20mcb%20miniature%20circuit%20breaker" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1318,7 +1324,7 @@
         <!-- Card: 塑壳断路器 -->
         <div class="dialog-box equip-card" data-category="proteksi" data-search="塑壳断路器 sùqiào duànlùqì mccb (molded case circuit breaker) molded case circuit breaker (mccb)">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600&q=80" alt="塑壳断路器 - MCCB (Molded Case Circuit Breaker)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%9B%A1%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%A1%91%E5%A3%B3%E6%96%AD%E8%B7%AF%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Moulded_case_circuit_breaker.jpg?width=600" alt="塑壳断路器 - MCCB (Molded Case Circuit Breaker)" class="equip-img" loading="lazy" data-hz="塑壳断路器" data-icon="🛡️" onerror="handleImgError(this)" />
             <span class="equip-badge">🛡️ Proteksi</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E5%A1%91%E5%A3%B3%E6%96%AD%E8%B7%AF%E5%99%A8%20mccb%20circuit%20breaker" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -1380,9 +1386,9 @@
         <!-- Card: 漏电保护器 -->
         <div class="dialog-box equip-card" data-category="proteksi" data-search="漏电保护器 lòudiàn bǎohùqì elcb / rccb (pengaman arus bocor) residual current circuit breaker (rccb / elcb)">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="漏电保护器 - ELCB / RCCB (Pengaman Arus Bocor)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%9B%A1%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E6%BC%8F%E7%94%B5%E4%BF%9D%E6%8A%A4%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/RCD_01.jpg?width=600" alt="漏电保护器 - ELCB / RCCB (Pengaman Arus Bocor)" class="equip-img" loading="lazy" data-hz="漏电保护器" data-icon="🛡️" onerror="handleImgError(this)" />
             <span class="equip-badge">🛡️ Proteksi</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E6%BC%8F%E7%94%B5%E4%BF%9D%E6%8A%A4%E5%99%A8%20elcb%20rccb%20breaker" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E6%BC%8F%E7%94%B5%E4%BF%9D%E6%8A%A4%E5%99%A8%20rccb%20elcb" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1440,11 +1446,11 @@
         </div>
       
         <!-- Card: 熔断器 -->
-        <div class="dialog-box equip-card" data-category="proteksi" data-search="熔断器 róngduànqì sekring listrik / fuse electric fuse">
+        <div class="dialog-box equip-card" data-category="proteksi" data-search="熔断器 róngduànqì sekring listrik / fuse electric cartridge fuse">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=600&q=80" alt="熔断器 - Sekring Listrik / Fuse" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%9B%A1%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%86%94%E6%96%AD%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fuses.jpg?width=600" alt="熔断器 - Sekring Listrik / Fuse" class="equip-img" loading="lazy" data-hz="熔断器" data-icon="🛡️" onerror="handleImgError(this)" />
             <span class="equip-badge">🛡️ Proteksi</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%86%94%E6%96%AD%E5%99%A8%20electrical%20fuse" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%86%94%E6%96%AD%E5%99%A8%20electrical%20fuses" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1463,7 +1469,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Electric Fuse</span>
+              <span class="equip-en">Electric Cartridge Fuse</span>
               <div class="bubble-arti">
                 <strong>Sekring Listrik / Fuse</strong>
                 <p class="equip-desc-text">Pengaman lebur berisi kawat perak/timah yang meleleh saat dilewati lonjakan arus berlebih ekstrem untuk menyelamatkan rangkaian peralatan.</p>
@@ -1504,9 +1510,9 @@
         <!-- Card: 浪涌保护器 -->
         <div class="dialog-box equip-card" data-category="proteksi" data-search="浪涌保护器 làngyǒng bǎohùqì surge arrester / penahan surja petir surge protective device (spd)">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1509390144018-eeaf65011409?auto=format&fit=crop&w=600&q=80" alt="浪涌保护器 - Surge Arrester / Penahan Surja Petir" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%9B%A1%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E6%B5%AA%E6%B6%8C%E4%BF%9D%E6%8A%A4%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Surge_protector_arrestor.jpg?width=600" alt="浪涌保护器 - Surge Arrester / Penahan Surja Petir" class="equip-img" loading="lazy" data-hz="浪涌保护器" data-icon="🛡️" onerror="handleImgError(this)" />
             <span class="equip-badge">🛡️ Proteksi</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E6%B5%AA%E6%B6%8C%E4%BF%9D%E6%8A%A4%E5%99%A8%20surge%20arrester%20spd" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E6%B5%AA%E6%B6%8C%E4%BF%9D%E6%8A%A4%E5%99%A8%20surge%20protective%20device%20spd" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1566,7 +1572,7 @@
         <!-- Card: 热过载继电器 -->
         <div class="dialog-box equip-card" data-category="proteksi" data-search="热过载继电器 rè guòzǎi jìdiànqì thermal overload relay (tor) thermal overload relay">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" alt="热过载继电器 - Thermal Overload Relay (TOR)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%9B%A1%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%83%AD%E8%BF%87%E8%BD%BD%E7%BB%A7%E7%94%B5%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Thermal_overload_relay.jpg?width=600" alt="热过载继电器 - Thermal Overload Relay (TOR)" class="equip-img" loading="lazy" data-hz="热过载继电器" data-icon="🛡️" onerror="handleImgError(this)" />
             <span class="equip-badge">🛡️ Proteksi</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E7%83%AD%E8%BF%87%E8%BD%BD%E7%BB%A7%E7%94%B5%E5%99%A8%20thermal%20overload%20relay" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -1628,9 +1634,9 @@
         <!-- Card: 接地棒 -->
         <div class="dialog-box equip-card" data-category="proteksi" data-search="接地棒 jiēdìbàng batang grounding (pancang tembaga pembumian) grounding earth rod">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1509390144018-eeaf65011409?auto=format&fit=crop&w=600&q=80" alt="接地棒 - Batang Grounding (Pancang Tembaga Pembumian)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%9B%A1%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E6%8E%A5%E5%9C%B0%E6%A3%92%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ground_rod.jpg?width=600" alt="接地棒 - Batang Grounding (Pancang Tembaga Pembumian)" class="equip-img" loading="lazy" data-hz="接地棒" data-icon="🛡️" onerror="handleImgError(this)" />
             <span class="equip-badge">🛡️ Proteksi</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E6%8E%A5%E5%9C%B0%E6%A3%92%20copper%20grounding%20rod" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E6%8E%A5%E5%9C%B0%E6%A3%92%20copper%20earth%20ground%20rod" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1701,7 +1707,7 @@
         <!-- Card: 钢丝钳 -->
         <div class="dialog-box equip-card" data-category="perkakas" data-search="钢丝钳 gāngsīqián tang kombinasi berisolasi vde insulated combination pliers">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=600&q=80" alt="钢丝钳 - Tang Kombinasi Berisolasi VDE" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E9%92%A2%E4%B8%9D%E9%92%B3%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Combination_pliers.jpg?width=600" alt="钢丝钳 - Tang Kombinasi Berisolasi VDE" class="equip-img" loading="lazy" data-hz="钢丝钳" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E9%92%A2%E4%B8%9D%E9%92%B3%20insulated%20combination%20pliers" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -1757,9 +1763,9 @@
         <!-- Card: 剥线钳 -->
         <div class="dialog-box equip-card" data-category="perkakas" data-search="剥线钳 bōxiànqián tang pengupas kabel (wire stripper) wire stripper">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80" alt="剥线钳 - Tang Pengupas Kabel (Wire Stripper)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%89%A5%E7%BA%BF%E9%92%B3%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wire_stripper.jpg?width=600" alt="剥线钳 - Tang Pengupas Kabel (Wire Stripper)" class="equip-img" loading="lazy" data-hz="剥线钳" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E5%89%A5%E7%BA%BF%E9%92%B3%20wire%20stripper" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E5%89%A5%E7%BA%BF%E9%92%B3%20wire%20strippers" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1819,9 +1825,9 @@
         <!-- Card: 压线钳 -->
         <div class="dialog-box equip-card" data-category="perkakas" data-search="压线钳 yàxiànqián tang crimping / tang skun crimping pliers / crimper tool">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="压线钳 - Tang Crimping / Tang Skun" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%8E%8B%E7%BA%BF%E9%92%B3%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Crimping_tool.jpg?width=600" alt="压线钳 - Tang Crimping / Tang Skun" class="equip-img" loading="lazy" data-hz="压线钳" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E5%8E%8B%E7%BA%BF%E9%92%B3%20crimping%20pliers" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E5%8E%8B%E7%BA%BF%E9%92%B3%20crimping%20tool%20pliers" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -1881,7 +1887,7 @@
         <!-- Card: 尖嘴钳 -->
         <div class="dialog-box equip-card" data-category="perkakas" data-search="尖嘴钳 jiānzuǐqián tang lancip / tang cucut needle nose pliers / long nose pliers">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=600&q=80" alt="尖嘴钳 - Tang Lancip / Tang Cucut" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%B0%96%E5%98%B4%E9%92%B3%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Needle-nose_pliers.jpg?width=600" alt="尖嘴钳 - Tang Lancip / Tang Cucut" class="equip-img" loading="lazy" data-hz="尖嘴钳" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E5%B0%96%E5%98%B4%E9%92%B3%20needle%20nose%20pliers" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -1943,7 +1949,7 @@
         <!-- Card: 斜口钳 -->
         <div class="dialog-box equip-card" data-category="perkakas" data-search="斜口钳 xiékǒuqián tang potong diagonal diagonal wire cutters">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=600&q=80" alt="斜口钳 - Tang Potong Diagonal" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E6%96%9C%E5%8F%A3%E9%92%B3%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Diagonal_pliers.jpg?width=600" alt="斜口钳 - Tang Potong Diagonal" class="equip-img" loading="lazy" data-hz="斜口钳" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E6%96%9C%E5%8F%A3%E9%92%B3%20diagonal%20cutting%20pliers" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -2003,11 +2009,11 @@
         </div>
       
         <!-- Card: 绝缘螺丝刀 -->
-        <div class="dialog-box equip-card" data-category="perkakas" data-search="绝缘螺丝刀 juéyuán luósīdāo obeng berisolasi vde (1000v) insulated screwdriver">
+        <div class="dialog-box equip-card" data-category="perkakas" data-search="绝缘螺丝刀 juéyuán luósīdāo obeng berisolasi vde (1000v) insulated screwdriver (1000v vde)">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80" alt="绝缘螺丝刀 - Obeng Berisolasi VDE (1000V)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%BB%9D%E7%BC%98%E8%9E%BA%E4%B8%9D%E5%88%80%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Insulated_screwdrivers.jpg?width=600" alt="绝缘螺丝刀 - Obeng Berisolasi VDE (1000V)" class="equip-img" loading="lazy" data-hz="绝缘螺丝刀" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E8%9E%BA%E4%B8%9D%E5%88%80%20insulated%20screwdriver%20vde" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E8%9E%BA%E4%B8%9D%E5%88%80%20vde%20insulated%20screwdrivers" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2026,7 +2032,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Insulated Screwdriver</span>
+              <span class="equip-en">Insulated Screwdriver (1000V VDE)</span>
               <div class="bubble-arti">
                 <strong>Obeng Berisolasi VDE (1000V)</strong>
                 <p class="equip-desc-text">Obeng plus/minus berlapisan isolator tebal standar keamanan VDE 1000V untuk membuka dan mengencangkan baut terminal panel yang aktif.</p>
@@ -2061,7 +2067,7 @@
         <!-- Card: 电烙铁 -->
         <div class="dialog-box equip-card" data-category="perkakas" data-search="电烙铁 diànlàotiě solder listrik electric soldering iron">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" alt="电烙铁 - Solder Listrik" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%94%B5%E7%83%99%E9%93%81%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Soldering_iron.jpg?width=600" alt="电烙铁 - Solder Listrik" class="equip-img" loading="lazy" data-hz="电烙铁" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E7%83%99%E9%93%81%20soldering%20iron" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -2123,9 +2129,9 @@
         <!-- Card: 热风枪 -->
         <div class="dialog-box equip-card" data-category="perkakas" data-search="热风枪 rèfēngqiāng heat gun listrik (pistol udara panas) heat gun / hot air tool">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=600&q=80" alt="热风枪 - Heat Gun Listrik (Pistol Udara Panas)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%83%AD%E9%A3%8E%E6%9E%AA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Heat_gun.jpg?width=600" alt="热风枪 - Heat Gun Listrik (Pistol Udara Panas)" class="equip-img" loading="lazy" data-hz="热风枪" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%83%AD%E9%A3%8E%E6%9E%AA%20heat%20gun%20hot%20air" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%83%AD%E9%A3%8E%E6%9E%AA%20heat%20gun" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2185,7 +2191,7 @@
         <!-- Card: 穿线器 -->
         <div class="dialog-box equip-card" data-category="perkakas" data-search="穿线器 chuānxiànqì kawat pancing tarik kabel (fish tape) fish tape / wire puller">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="穿线器 - Kawat Pancing Tarik Kabel (Fish Tape)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%A9%BF%E7%BA%BF%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fish_tape.jpg?width=600" alt="穿线器 - Kawat Pancing Tarik Kabel (Fish Tape)" class="equip-img" loading="lazy" data-hz="穿线器" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E7%A9%BF%E7%BA%BF%E5%99%A8%20fish%20tape%20wire%20puller" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -2245,11 +2251,11 @@
         </div>
       
         <!-- Card: 电工刀 -->
-        <div class="dialog-box equip-card" data-category="perkakas" data-search="电工刀 diàngōngdāo pisau teknisi listrik electrician knife">
+        <div class="dialog-box equip-card" data-category="perkakas" data-search="电工刀 diàngōngdāo pisau teknisi listrik electrician cable knife">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80" alt="电工刀 - Pisau Teknisi Listrik" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%94%B5%E5%B7%A5%E5%88%80%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cable_knife.jpg?width=600" alt="电工刀 - Pisau Teknisi Listrik" class="equip-img" loading="lazy" data-hz="电工刀" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E5%B7%A5%E5%88%80%20electrician%20knife" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E5%B7%A5%E5%88%80%20electrician%20cable%20knife" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2268,7 +2274,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Electrician Knife</span>
+              <span class="equip-en">Electrician Cable Knife</span>
               <div class="bubble-arti">
                 <strong>Pisau Teknisi Listrik</strong>
                 <p class="equip-desc-text">Pisau berbilah kokoh khusus untuk mengerat dan mengupas selubung isolasi tebal pada kabel instalasi berdiameter besar seperti NYY atau NYM.</p>
@@ -2303,9 +2309,9 @@
         <!-- Card: 液压压接钳 -->
         <div class="dialog-box equip-card" data-category="perkakas" data-search="液压压接钳 yèyà yājiēqián tang crimping hidrolik hydraulic cable crimping tool">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="液压压接钳 - Tang Crimping Hidrolik" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E6%B6%B2%E5%8E%8B%E5%8E%8B%E6%8E%A5%E9%92%B3%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hydraulic_crimper.jpg?width=600" alt="液压压接钳 - Tang Crimping Hidrolik" class="equip-img" loading="lazy" data-hz="液压压接钳" data-icon="🔧" onerror="handleImgError(this)" />
             <span class="equip-badge">🔧 Perkakas</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E6%B6%B2%E5%8E%8B%E5%8E%8B%E6%8E%A5%E9%92%B3%20hydraulic%20crimper%20tool" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E6%B6%B2%E5%8E%8B%E5%8E%8B%E6%8E%A5%E9%92%B3%20hydraulic%20crimper" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2374,11 +2380,11 @@
       <div class="equipment-grid">
     
         <!-- Card: 配电箱 -->
-        <div class="dialog-box equip-card" data-category="panel" data-search="配电箱 pèidiànxiāng kotak panel distribusi (panel box) distribution board panel">
+        <div class="dialog-box equip-card" data-category="panel" data-search="配电箱 pèidiànxiāng kotak panel distribusi (consumer unit) distribution board / panel box">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600&q=80" alt="配电箱 - Kotak Panel Distribusi (Panel Box)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E9%85%8D%E7%94%B5%E7%AE%B1%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Consumer_unit.jpg?width=600" alt="配电箱 - Kotak Panel Distribusi (Consumer Unit)" class="equip-img" loading="lazy" data-hz="配电箱" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E9%85%8D%E7%94%B5%E7%AE%B1%20electrical%20distribution%20board" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E9%85%8D%E7%94%B5%E7%AE%B1%20distribution%20board%20consumer%20unit" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2397,9 +2403,9 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Distribution Board Panel</span>
+              <span class="equip-en">Distribution Board / Panel Box</span>
               <div class="bubble-arti">
-                <strong>Kotak Panel Distribusi (Panel Box)</strong>
+                <strong>Kotak Panel Distribusi (Consumer Unit)</strong>
                 <p class="equip-desc-text">Kotak penutup pelindung tempat berkumpulnya MCB, busbar tembaga, dan kabel feeder yang mendistribusikan listrik ke seluruh ruangan.</p>
               </div>
             </div>
@@ -2430,11 +2436,11 @@
         </div>
       
         <!-- Card: 电源插座 -->
-        <div class="dialog-box equip-card" data-category="panel" data-search="电源插座 diànyuán chāzuò stopkontak dinding electrical wall socket outlet">
+        <div class="dialog-box equip-card" data-category="panel" data-search="电源插座 diànyuán chāzuò stopkontak dinding (socket outlet) electrical wall socket outlet">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="电源插座 - Stopkontak Dinding" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%94%B5%E6%BA%90%E6%8F%92%E5%BA%A7%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Schuko_socket.jpg?width=600" alt="电源插座 - Stopkontak Dinding (Socket Outlet)" class="equip-img" loading="lazy" data-hz="电源插座" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E6%BA%90%E6%8F%92%E5%BA%A7%20electrical%20wall%20socket" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E6%BA%90%E6%8F%92%E5%BA%A7%20wall%20socket%20outlet" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2455,7 +2461,7 @@
             <div class="equip-translation">
               <span class="equip-en">Electrical Wall Socket Outlet</span>
               <div class="bubble-arti">
-                <strong>Stopkontak Dinding</strong>
+                <strong>Stopkontak Dinding (Socket Outlet)</strong>
                 <p class="equip-desc-text">Titik keluaran catu daya listrik AC pada dinding tempat menghubungkan steker perangkat elektronik ke jaringan daya instalasi.</p>
               </div>
             </div>
@@ -2486,9 +2492,9 @@
         </div>
       
         <!-- Card: 电源插头 -->
-        <div class="dialog-box equip-card" data-category="panel" data-search="电源插头 diànyuán chātóu steker listrik (colokan jantan) electrical power plug">
+        <div class="dialog-box equip-card" data-category="panel" data-search="电源插头 diànyuán chātóu steker listrik (power plug) electrical power plug">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=600&q=80" alt="电源插头 - Steker Listrik (Colokan Jantan)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%94%B5%E6%BA%90%E6%8F%92%E5%A4%B4%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Schuko_plug.jpg?width=600" alt="电源插头 - Steker Listrik (Power Plug)" class="equip-img" loading="lazy" data-hz="电源插头" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E6%BA%90%E6%8F%92%E5%A4%B4%20power%20plug" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -2511,7 +2517,7 @@
             <div class="equip-translation">
               <span class="equip-en">Electrical Power Plug</span>
               <div class="bubble-arti">
-                <strong>Steker Listrik (Colokan Jantan)</strong>
+                <strong>Steker Listrik (Power Plug)</strong>
                 <p class="equip-desc-text">Konektor berkaki logam tembaga yang ditancapkan ke stopkontak untuk mengalirkan arus listrik ke perangkat elektronik.</p>
               </div>
             </div>
@@ -2544,9 +2550,9 @@
         <!-- Card: 墙壁开关 -->
         <div class="dialog-box equip-card" data-category="panel" data-search="墙壁开关 qiángbì kāiguān sakelar lampu dinding wall light switch">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="墙壁开关 - Sakelar Lampu Dinding" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%A2%99%E5%A3%81%E5%BC%80%E5%85%B3%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Light_switch.jpg?width=600" alt="墙壁开关 - Sakelar Lampu Dinding" class="equip-img" loading="lazy" data-hz="墙壁开关" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E5%A2%99%E5%A3%81%E5%BC%80%E5%85%B3%20wall%20light%20switch" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E5%A2%99%E5%A3%81%E5%BC%80%E5%85%B3%20light%20switch%20wall" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2600,7 +2606,7 @@
         <!-- Card: 交流接触器 -->
         <div class="dialog-box equip-card" data-category="panel" data-search="交流接触器 jiāoliú jiēchùqì kontaktor magnetik ac ac magnetic contactor">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600&q=80" alt="交流接触器 - Kontaktor Magnetik AC" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E4%BA%A4%E6%B5%81%E6%8E%A5%E8%A7%A6%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AC_contactor.jpg?width=600" alt="交流接触器 - Kontaktor Magnetik AC" class="equip-img" loading="lazy" data-hz="交流接触器" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E4%BA%A4%E6%B5%81%E6%8E%A5%E8%A7%A6%E5%99%A8%20ac%20magnetic%20contactor" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -2656,9 +2662,9 @@
         <!-- Card: 中间继电器 -->
         <div class="dialog-box equip-card" data-category="panel" data-search="中间继电器 zhōngjiān jìdiànqì relay kontrol (intermediate relay) control relay / intermediate relay">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" alt="中间继电器 - Relay Kontrol (Intermediate Relay)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E4%B8%AD%E9%97%B4%E7%BB%A7%E7%94%B5%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Relay.jpg?width=600" alt="中间继电器 - Relay Kontrol (Intermediate Relay)" class="equip-img" loading="lazy" data-hz="中间继电器" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E4%B8%AD%E9%97%B4%E7%BB%A7%E7%94%B5%E5%99%A8%20control%20relay%20din%20rail" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E4%B8%AD%E9%97%B4%E7%BB%A7%E7%94%B5%E5%99%A8%20control%20relay" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2710,11 +2716,11 @@
         </div>
       
         <!-- Card: 接线端子排 -->
-        <div class="dialog-box equip-card" data-category="panel" data-search="接线端子排 jiēxiàn duānzǐ pái terminal block / blok terminal kabel terminal block / din rail terminal strip">
+        <div class="dialog-box equip-card" data-category="panel" data-search="接线端子排 jiēxiàn duānzǐ pái terminal block / blok terminal kabel din rail terminal blocks">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600&q=80" alt="接线端子排 - Terminal Block / Blok Terminal Kabel" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E6%8E%A5%E7%BA%BF%E7%AB%AF%E5%AD%90%E6%8E%92%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Terminal_blocks.jpg?width=600" alt="接线端子排 - Terminal Block / Blok Terminal Kabel" class="equip-img" loading="lazy" data-hz="接线端子排" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E6%8E%A5%E7%BA%BF%E7%AB%AF%E5%AD%90%E6%8E%92%20din%20rail%20terminal%20block" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E6%8E%A5%E7%BA%BF%E7%AB%AF%E5%AD%90%E6%8E%92%20din%20rail%20terminal%20blocks" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2733,7 +2739,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Terminal Block / DIN Rail Terminal Strip</span>
+              <span class="equip-en">DIN Rail Terminal Blocks</span>
               <div class="bubble-arti">
                 <strong>Terminal Block / Blok Terminal Kabel</strong>
                 <p class="equip-desc-text">Blok konektor sambungan kawat terisolasi yang tersusun rapi pada rel DIN panel untuk memudahkan instalasi dan perbaikan kabel.</p>
@@ -2774,9 +2780,9 @@
         <!-- Card: 铜鼻子 -->
         <div class="dialog-box equip-card" data-category="panel" data-search="铜鼻子 tóngbízi skun kabel tembaga (cable lug) copper cable lug / crimp terminal">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="铜鼻子 - Skun Kabel Tembaga (Cable Lug)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E9%93%9C%E9%BC%BB%E5%AD%90%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cable_lug.jpg?width=600" alt="铜鼻子 - Skun Kabel Tembaga (Cable Lug)" class="equip-img" loading="lazy" data-hz="铜鼻子" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E9%93%9C%E9%BC%BB%E5%AD%90%20copper%20cable%20lug" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E9%93%9C%E9%BC%BB%E5%AD%90%20copper%20cable%20lugs" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2828,11 +2834,11 @@
         </div>
       
         <!-- Card: 绝缘胶带 -->
-        <div class="dialog-box equip-card" data-category="panel" data-search="绝缘胶带 juéyuán jiāodài isolasi listrik (pvc electrical tape) electrical insulation tape">
+        <div class="dialog-box equip-card" data-category="panel" data-search="绝缘胶带 juéyuán jiāodài isolasi listrik (pvc electrical tape) electrical pvc insulation tape">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=600&q=80" alt="绝缘胶带 - Isolasi Listrik (PVC Electrical Tape)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%BB%9D%E7%BC%98%E8%83%B6%E5%B8%A6%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Electrical_tape.jpg?width=600" alt="绝缘胶带 - Isolasi Listrik (PVC Electrical Tape)" class="equip-img" loading="lazy" data-hz="绝缘胶带" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E8%83%B6%E5%B8%A6%20electrical%20tape%20pvc" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E8%83%B6%E5%B8%A6%20electrical%20pvc%20tape" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2851,7 +2857,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Electrical Insulation Tape</span>
+              <span class="equip-en">Electrical PVC Insulation Tape</span>
               <div class="bubble-arti">
                 <strong>Isolasi Listrik (PVC Electrical Tape)</strong>
                 <p class="equip-desc-text">Pita perekat vinil lentur isolator tinggi untuk membungkus sambungan kawat dan kabel agar terhindar dari sengatan dan arus pendek.</p>
@@ -2886,7 +2892,7 @@
         <!-- Card: 热缩套管 -->
         <div class="dialog-box equip-card" data-category="panel" data-search="热缩套管 rèsuō tàoguǎn selongsong bakar (heat shrink) heat shrink tubing">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="热缩套管 - Selongsong Bakar (Heat Shrink)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%83%AD%E7%BC%A9%E5%A5%97%E7%AE%A1%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Heat_shrink_tubing.jpg?width=600" alt="热缩套管 - Selongsong Bakar (Heat Shrink)" class="equip-img" loading="lazy" data-hz="热缩套管" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E7%83%AD%E7%BC%A9%E5%A5%97%E7%AE%A1%20heat%20shrink%20tubing" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -2940,11 +2946,11 @@
         </div>
       
         <!-- Card: 穿线波纹管 -->
-        <div class="dialog-box equip-card" data-category="panel" data-search="穿线波纹管 chuānxiàn bōwénguǎn pipa konduit fleksibel listrik flexible conduit pipe">
+        <div class="dialog-box equip-card" data-category="panel" data-search="穿线波纹管 chuānxiàn bōwénguǎn pipa konduit fleksibel listrik flexible corrugated conduit pipe">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="穿线波纹管 - Pipa Konduit Fleksibel Listrik" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%A9%BF%E7%BA%BF%E6%B3%A2%E7%BA%B9%E7%AE%A1%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Corrugated_pipe.jpg?width=600" alt="穿线波纹管 - Pipa Konduit Fleksibel Listrik" class="equip-img" loading="lazy" data-hz="穿线波纹管" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%A9%BF%E7%BA%BF%E6%B3%A2%E7%BA%B9%E7%AE%A1%20flexible%20conduit" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%A9%BF%E7%BA%BF%E6%B3%A2%E7%BA%B9%E7%AE%A1%20flexible%20conduit%20pipe" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -2963,7 +2969,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Flexible Conduit Pipe</span>
+              <span class="equip-en">Flexible Corrugated Conduit Pipe</span>
               <div class="bubble-arti">
                 <strong>Pipa Konduit Fleksibel Listrik</strong>
                 <p class="equip-desc-text">Pipa gelombang lentur tahan api untuk melindungi kabel dari benturan fisik, gesekan sudut tajam, kelembapan, dan gigitan hewan.</p>
@@ -2998,9 +3004,9 @@
         <!-- Card: 尼龙扎带 -->
         <div class="dialog-box equip-card" data-category="panel" data-search="尼龙扎带 nílóng zhādài kabel ties (pengikat kabel nilon) nylon cable ties / zip ties">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="尼龙扎带 - Kabel Ties (Pengikat Kabel Nilon)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%94%8C%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%B0%BC%E9%BE%99%E6%89%8E%E5%B8%A6%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cable_ties.jpg?width=600" alt="尼龙扎带 - Kabel Ties (Pengikat Kabel Nilon)" class="equip-img" loading="lazy" data-hz="尼龙扎带" data-icon="🔌" onerror="handleImgError(this)" />
             <span class="equip-badge">🔌 Sakelar,</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E5%B0%BC%E9%BE%99%E6%89%8E%E5%B8%A6%20cable%20ties" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E5%B0%BC%E9%BE%99%E6%89%8E%E5%B8%A6%20nylon%20cable%20ties" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3065,9 +3071,9 @@
         <!-- Card: 变压器 -->
         <div class="dialog-box equip-card" data-category="mesin" data-search="变压器 biànyāqì transformator / trafo listrik power transformer">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80" alt="变压器 - Transformator / Trafo Listrik" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%E2%9A%99%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%8F%98%E5%8E%8B%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Electrical_transformer.jpg?width=600" alt="变压器 - Transformator / Trafo Listrik" class="equip-img" loading="lazy" data-hz="变压器" data-icon="⚙️" onerror="handleImgError(this)" />
             <span class="equip-badge">⚙️ Mesin</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E5%8F%98%E5%8E%8B%E5%99%A8%20electrical%20transformer" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E5%8F%98%E5%8E%8B%E5%99%A8%20power%20transformer" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3125,11 +3131,11 @@
         </div>
       
         <!-- Card: 发电机 -->
-        <div class="dialog-box equip-card" data-category="mesin" data-search="发电机 fādiànjī generator listrik / genset electric generator / genset">
+        <div class="dialog-box equip-card" data-category="mesin" data-search="发电机 fādiànjī generator listrik / genset electric generator / diesel genset">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="发电机 - Generator Listrik / Genset" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%E2%9A%99%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%8F%91%E7%94%B5%E6%9C%BA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Diesel_generator.jpg?width=600" alt="发电机 - Generator Listrik / Genset" class="equip-img" loading="lazy" data-hz="发电机" data-icon="⚙️" onerror="handleImgError(this)" />
             <span class="equip-badge">⚙️ Mesin</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E5%8F%91%E7%94%B5%E6%9C%BA%20electric%20generator%20genset" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E5%8F%91%E7%94%B5%E6%9C%BA%20diesel%20generator%20genset" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3148,7 +3154,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Electric Generator / Genset</span>
+              <span class="equip-en">Electric Generator / Diesel Genset</span>
               <div class="bubble-arti">
                 <strong>Generator Listrik / Genset</strong>
                 <p class="equip-desc-text">Mengubah energi mekanik rotasi dari mesin diesel atau turbin menjadi energi listrik untuk sumber listrik utama atau cadangan saat pemadaman.</p>
@@ -3181,9 +3187,9 @@
         </div>
       
         <!-- Card: 电动机 -->
-        <div class="dialog-box equip-card" data-category="mesin" data-search="电动机 diàndòngjī motor listrik / dinamo electric motor">
+        <div class="dialog-box equip-card" data-category="mesin" data-search="电动机 diàndòngjī motor listrik / dinamo three-phase induction motor">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" alt="电动机 - Motor Listrik / Dinamo" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%E2%9A%99%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%94%B5%E5%8A%A8%E6%9C%BA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Electric_motor_three_phase.jpg?width=600" alt="电动机 - Motor Listrik / Dinamo" class="equip-img" loading="lazy" data-hz="电动机" data-icon="⚙️" onerror="handleImgError(this)" />
             <span class="equip-badge">⚙️ Mesin</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E5%8A%A8%E6%9C%BA%20electric%20motor%20induction" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -3204,7 +3210,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Electric Motor</span>
+              <span class="equip-en">Three-Phase Induction Motor</span>
               <div class="bubble-arti">
                 <strong>Motor Listrik / Dinamo</strong>
                 <p class="equip-desc-text">Mengubah energi listrik menjadi energi mekanik putar untuk menggerakkan pompa air, kipas blower, kompresor, dan mesin pabrik.</p>
@@ -3239,7 +3245,7 @@
         <!-- Card: 逆变器 -->
         <div class="dialog-box equip-card" data-category="mesin" data-search="逆变器 nìbiànqì inverter daya (dc ke ac) power inverter">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600&q=80" alt="逆变器 - Inverter Daya (DC ke AC)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%E2%9A%99%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E9%80%86%E5%8F%98%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Power_inverter.jpg?width=600" alt="逆变器 - Inverter Daya (DC ke AC)" class="equip-img" loading="lazy" data-hz="逆变器" data-icon="⚙️" onerror="handleImgError(this)" />
             <span class="equip-badge">⚙️ Mesin</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E9%80%86%E5%8F%98%E5%99%A8%20power%20inverter%20dc%20to%20ac" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -3293,11 +3299,11 @@
         </div>
       
         <!-- Card: 整流器 -->
-        <div class="dialog-box equip-card" data-category="mesin" data-search="整流器 zhěngliúqì penyearah arus (rectifier) power rectifier">
+        <div class="dialog-box equip-card" data-category="mesin" data-search="整流器 zhěngliúqì penyearah arus (rectifier) bridge rectifier">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=600&q=80" alt="整流器 - Penyearah Arus (Rectifier)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%E2%9A%99%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E6%95%B4%E6%B5%81%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bridge_rectifier.jpg?width=600" alt="整流器 - Penyearah Arus (Rectifier)" class="equip-img" loading="lazy" data-hz="整流器" data-icon="⚙️" onerror="handleImgError(this)" />
             <span class="equip-badge">⚙️ Mesin</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E6%95%B4%E6%B5%81%E5%99%A8%20power%20rectifier" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E6%95%B4%E6%B5%81%E5%99%A8%20bridge%20rectifier" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3316,7 +3322,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Power Rectifier</span>
+              <span class="equip-en">Bridge Rectifier</span>
               <div class="bubble-arti">
                 <strong>Penyearah Arus (Rectifier)</strong>
                 <p class="equip-desc-text">Mengonversi arus bolak-balik AC dari jala-jala listrik menjadi arus searah DC murni untuk mengisi baterai atau menyuplai rangkaian kontrol.</p>
@@ -3351,9 +3357,9 @@
         <!-- Card: 不间断电源 -->
         <div class="dialog-box equip-card" data-category="mesin" data-search="不间断电源 bùjiànduàn diànyuán ups (uninterruptible power supply) uninterruptible power supply (ups)">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600&q=80" alt="不间断电源 - UPS (Uninterruptible Power Supply)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%E2%9A%99%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E4%B8%8D%E9%97%B4%E6%96%AD%E7%94%B5%E6%BA%90%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Uninterruptible_power_supply.jpg?width=600" alt="不间断电源 - UPS (Uninterruptible Power Supply)" class="equip-img" loading="lazy" data-hz="不间断电源" data-icon="⚙️" onerror="handleImgError(this)" />
             <span class="equip-badge">⚙️ Mesin</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E4%B8%8D%E9%97%B4%E6%96%AD%E7%94%B5%E6%BA%90%20ups%20power%20supply" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E4%B8%8D%E9%97%B4%E6%96%AD%E7%94%B5%E6%BA%90%20ups%20uninterruptible%20power%20supply" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3407,9 +3413,9 @@
         <!-- Card: 太阳能光伏板 -->
         <div class="dialog-box equip-card" data-category="mesin" data-search="太阳能光伏板 tàiyángnéng guāngfúbǎn panel surya fotovoltaik solar photovoltaic panel">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1509390144018-eeaf65011409?auto=format&fit=crop&w=600&q=80" alt="太阳能光伏板 - Panel Surya Fotovoltaik" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%E2%9A%99%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E5%A4%AA%E9%98%B3%E8%83%BD%E5%85%89%E4%BC%8F%E6%9D%BF%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Photovoltaic_panels.jpg?width=600" alt="太阳能光伏板 - Panel Surya Fotovoltaik" class="equip-img" loading="lazy" data-hz="太阳能光伏板" data-icon="⚙️" onerror="handleImgError(this)" />
             <span class="equip-badge">⚙️ Mesin</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E5%A4%AA%E9%98%B3%E8%83%BD%E5%85%89%E4%BC%8F%E6%9D%BF%20solar%20panel%20photovoltaic" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E5%A4%AA%E9%98%B3%E8%83%BD%E5%85%89%E4%BC%8F%E6%9D%BF%20solar%20photovoltaic%20panel" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3467,11 +3473,11 @@
         </div>
       
         <!-- Card: 蓄电池 -->
-        <div class="dialog-box equip-card" data-category="mesin" data-search="蓄电池 xùdiànchí aki / baterai penyimpanan energi storage battery">
+        <div class="dialog-box equip-card" data-category="mesin" data-search="蓄电池 xùdiànchí aki / baterai penyimpanan energi deep cycle storage battery">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1509390144018-eeaf65011409?auto=format&fit=crop&w=600&q=80" alt="蓄电池 - Aki / Baterai Penyimpanan Energi" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%E2%9A%99%EF%B8%8F%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E8%93%84%E7%94%B5%E6%B1%A0%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lead_acid_battery.jpg?width=600" alt="蓄电池 - Aki / Baterai Penyimpanan Energi" class="equip-img" loading="lazy" data-hz="蓄电池" data-icon="⚙️" onerror="handleImgError(this)" />
             <span class="equip-badge">⚙️ Mesin</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E8%93%84%E7%94%B5%E6%B1%A0%20storage%20battery" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E8%93%84%E7%94%B5%E6%B1%A0%20lead%20acid%20storage%20battery" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3490,7 +3496,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Storage Battery</span>
+              <span class="equip-en">Deep Cycle Storage Battery</span>
               <div class="bubble-arti">
                 <strong>Aki / Baterai Penyimpanan Energi</strong>
                 <p class="equip-desc-text">Menyimpan energi listrik dalam bentuk ikatan energi kimia untuk dikeluarkan kembali saat dibutuhkan pada genset, UPS, atau PLTS.</p>
@@ -3534,11 +3540,11 @@
       <div class="equipment-grid">
     
         <!-- Card: 绝缘手套 -->
-        <div class="dialog-box equip-card" data-category="apd" data-search="绝缘手套 juéyuán shǒutào sarung tangan isolasi listrik tegangan tinggi high voltage insulated rubber gloves">
+        <div class="dialog-box equip-card" data-category="apd" data-search="绝缘手套 juéyuán shǒutào sarung tangan isolasi listrik tegangan tinggi high voltage dielectric gloves">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=600&q=80" alt="绝缘手套 - Sarung Tangan Isolasi Listrik Tegangan Tinggi" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%A6%BA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%BB%9D%E7%BC%98%E6%89%8B%E5%A5%97%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dielectric_gloves.jpg?width=600" alt="绝缘手套 - Sarung Tangan Isolasi Listrik Tegangan Tinggi" class="equip-img" loading="lazy" data-hz="绝缘手套" data-icon="🦺" onerror="handleImgError(this)" />
             <span class="equip-badge">🦺 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E6%89%8B%E5%A5%97%20insulated%20electrical%20gloves" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E6%89%8B%E5%A5%97%20dielectric%20high%20voltage%20gloves" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3557,7 +3563,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">High Voltage Insulated Rubber Gloves</span>
+              <span class="equip-en">High Voltage Dielectric Gloves</span>
               <div class="bubble-arti">
                 <strong>Sarung Tangan Isolasi Listrik Tegangan Tinggi</strong>
                 <p class="equip-desc-text">Sarung tangan lateks dielektrik standar VDE yang diuji tahan tegangan tembus tinggi hingga puluhan ribu Volt untuk mencegah sengatan maut.</p>
@@ -3590,9 +3596,9 @@
         </div>
       
         <!-- Card: 绝缘安全鞋 -->
-        <div class="dialog-box equip-card" data-category="apd" data-search="绝缘安全鞋 juéyuán ānquánxié sepatu safety listrik (dielektrik) dielectric safety boots">
+        <div class="dialog-box equip-card" data-category="apd" data-search="绝缘安全鞋 juéyuán ānquánxié sepatu safety listrik (dielektrik) dielectric safety boots (eh rated)">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="绝缘安全鞋 - Sepatu Safety Listrik (Dielektrik)" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%A6%BA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%BB%9D%E7%BC%98%E5%AE%89%E5%85%A8%E9%9E%8B%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Safety_boot.jpg?width=600" alt="绝缘安全鞋 - Sepatu Safety Listrik (Dielektrik)" class="equip-img" loading="lazy" data-hz="绝缘安全鞋" data-icon="🦺" onerror="handleImgError(this)" />
             <span class="equip-badge">🦺 Alat</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E5%AE%89%E5%85%A8%E9%9E%8B%20dielectric%20safety%20boots" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -3613,7 +3619,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Dielectric Safety Boots</span>
+              <span class="equip-en">Dielectric Safety Boots (EH Rated)</span>
               <div class="bubble-arti">
                 <strong>Sepatu Safety Listrik (Dielektrik)</strong>
                 <p class="equip-desc-text">Sepatu keselamatan bersol karet padat tanpa logam berdaya tahan dielektrik tinggi mencegah arus listrik mengalir dari tubuh ke tanah.</p>
@@ -3646,11 +3652,11 @@
         </div>
       
         <!-- Card: 绝缘安全帽 -->
-        <div class="dialog-box equip-card" data-category="apd" data-search="绝缘安全帽 juéyuán ānquánmào helm safety listrik berisolasi insulated electrical hard hat">
+        <div class="dialog-box equip-card" data-category="apd" data-search="绝缘安全帽 juéyuán ānquánmào helm safety listrik berisolasi insulated electrical hard hat (class e)">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=600&q=80" alt="绝缘安全帽 - Helm Safety Listrik Berisolasi" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%A6%BA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%BB%9D%E7%BC%98%E5%AE%89%E5%85%A8%E5%B8%BD%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hard_hat.jpg?width=600" alt="绝缘安全帽 - Helm Safety Listrik Berisolasi" class="equip-img" loading="lazy" data-hz="绝缘安全帽" data-icon="🦺" onerror="handleImgError(this)" />
             <span class="equip-badge">🦺 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E5%AE%89%E5%85%A8%E5%B8%BD%20electrical%20safety%20hard%20hat" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E5%AE%89%E5%85%A8%E5%B8%BD%20electrical%20hard%20hat%20class%20e" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3669,7 +3675,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Insulated Electrical Hard Hat</span>
+              <span class="equip-en">Insulated Electrical Hard Hat (Class E)</span>
               <div class="bubble-arti">
                 <strong>Helm Safety Listrik Berisolasi</strong>
                 <p class="equip-desc-text">Helm plastik polietilen tanpa lubang ventilasi kelas E (tahan uji 20kV) untuk melindungi kepala dari benda jatuh dan sengatan busur api.</p>
@@ -3704,7 +3710,7 @@
         <!-- Card: 绝缘操作杆 -->
         <div class="dialog-box equip-card" data-category="apd" data-search="绝缘操作杆 juéyuán cāozuògān tongkat isolasi listrik / hot stick high voltage insulated hot stick">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1509390144018-eeaf65011409?auto=format&fit=crop&w=600&q=80" alt="绝缘操作杆 - Tongkat Isolasi Listrik / Hot Stick" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%A6%BA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%BB%9D%E7%BC%98%E6%93%8D%E4%BD%9C%E6%9D%86%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hot_stick.jpg?width=600" alt="绝缘操作杆 - Tongkat Isolasi Listrik / Hot Stick" class="equip-img" loading="lazy" data-hz="绝缘操作杆" data-icon="🦺" onerror="handleImgError(this)" />
             <span class="equip-badge">🦺 Alat</span>
             <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E6%93%8D%E4%BD%9C%E6%9D%86%20high%20voltage%20hot%20stick" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -3766,9 +3772,9 @@
         <!-- Card: 绝缘橡胶垫 -->
         <div class="dialog-box equip-card" data-category="apd" data-search="绝缘橡胶垫 juéyuán xiàngjiāodiàn karpet karet isolasi tegangan tinggi dielectric insulating rubber mat">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="绝缘橡胶垫 - Karpet Karet Isolasi Tegangan Tinggi" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%A6%BA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E7%BB%9D%E7%BC%98%E6%A9%A1%E8%83%B6%E5%9E%AB%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Insulating_mat.jpg?width=600" alt="绝缘橡胶垫 - Karpet Karet Isolasi Tegangan Tinggi" class="equip-img" loading="lazy" data-hz="绝缘橡胶垫" data-icon="🦺" onerror="handleImgError(this)" />
             <span class="equip-badge">🦺 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E6%A9%A1%E8%83%B6%E5%9E%AB%20dielectric%20rubber%20mat" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%BB%9D%E7%BC%98%E6%A9%A1%E8%83%B6%E5%9E%AB%20dielectric%20rubber%20mat%20electrical" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3828,9 +3834,9 @@
         <!-- Card: 高压验电器 -->
         <div class="dialog-box equip-card" data-category="apd" data-search="高压验电器 gāoyā yàndiànqì detektor tegangan tinggi high voltage proximity detector">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="高压验电器 - Detektor Tegangan Tinggi" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%A6%BA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E9%AB%98%E5%8E%8B%E9%AA%8C%E7%94%B5%E5%99%A8%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/High_voltage_detector.jpg?width=600" alt="高压验电器 - Detektor Tegangan Tinggi" class="equip-img" loading="lazy" data-hz="高压验电器" data-icon="🦺" onerror="handleImgError(this)" />
             <span class="equip-badge">🦺 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E9%AB%98%E5%8E%8B%E9%AA%8C%E7%94%B5%E5%99%A8%20high%20voltage%20detector" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E9%AB%98%E5%8E%8B%E9%AA%8C%E7%94%B5%E5%99%A8%20high%20voltage%20proximity%20detector" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3888,11 +3894,11 @@
         </div>
       
         <!-- Card: 便携式接地线 -->
-        <div class="dialog-box equip-card" data-category="apd" data-search="便携式接地线 biànxiéshì jiēdìxiàn kabel grounding portabel keselamatan portable earth grounding leads">
+        <div class="dialog-box equip-card" data-category="apd" data-search="便携式接地线 biànxiéshì jiēdìxiàn kabel grounding portabel keselamatan portable earth grounding cluster">
           <div class="equip-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="便携式接地线 - Kabel Grounding Portabel Keselamatan" class="equip-img" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20240%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%231e293b%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230f172a%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bg)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2255%22%20fill%3D%22rgba(192%2C%2057%2C%2043%2C%200.25)%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22108%22%20font-size%3D%2244%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%A6%BA%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22180%22%20font-family%3D%22'Noto%20Sans%20SC'%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2228%22%20fill%3D%22%23f8fafc%22%20text-anchor%3D%22middle%22%3E%E4%BE%BF%E6%90%BA%E5%BC%8F%E6%8E%A5%E5%9C%B0%E7%BA%BF%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22200%22%20y%3D%22210%22%20font-family%3D%22'Poppins'%2C%20sans-serif%22%20font-weight%3D%22600%22%20font-size%3D%2213%22%20fill%3D%22%23cbd5e1%22%20text-anchor%3D%22middle%22%3EPeralatan%20Kelistrikan%20%C2%B7%20%E7%94%B5%E6%B0%94%E8%AE%BE%E5%A4%87%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E';" />
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grounding_cluster.jpg?width=600" alt="便携式接地线 - Kabel Grounding Portabel Keselamatan" class="equip-img" loading="lazy" data-hz="便携式接地线" data-icon="🦺" onerror="handleImgError(this)" />
             <span class="equip-badge">🦺 Alat</span>
-            <a href="https://www.google.com/search?tbm=isch&q=%E4%BE%BF%E6%90%BA%E5%BC%8F%E6%8E%A5%E5%9C%B0%E7%BA%BF%20portable%20grounding%20wire" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
+            <a href="https://www.google.com/search?tbm=isch&q=%E4%BE%BF%E6%90%BA%E5%BC%8F%E6%8E%A5%E5%9C%B0%E7%BA%BF%20portable%20grounding%20cluster%20leads" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar Asli di Google">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
               <span>Foto Google</span>
             </a>
@@ -3911,7 +3917,7 @@
             </div>
 
             <div class="equip-translation">
-              <span class="equip-en">Portable Earth Grounding Leads</span>
+              <span class="equip-en">Portable Earth Grounding Cluster</span>
               <div class="bubble-arti">
                 <strong>Kabel Grounding Portabel Keselamatan</strong>
                 <p class="equip-desc-text">Kabel tembaga transparan fleksibel berdiameter tebal dengan penjepit tembaga kuat untuk meng-grounding kabel transmisi saat diservis teknisi.</p>
@@ -3974,6 +3980,21 @@
 </footer>
 
 <script>
+  // Robust Fallback Handler for Images (No quote syntax errors!)
+  function handleImgError(img) {
+    img.onerror = null;
+    const hz = img.getAttribute('data-hz') || '电气';
+    const icon = img.getAttribute('data-icon') || '⚡';
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">' +
+      '<rect width="100%" height="100%" fill="#1e293b"/>' +
+      '<circle cx="200" cy="90" r="46" fill="rgba(192, 57, 43, 0.25)"/>' +
+      '<text x="200" y="103" font-size="40" text-anchor="middle" dominant-baseline="middle">' + icon + '</text>' +
+      '<text x="200" y="170" font-family="sans-serif" font-weight="700" font-size="26" fill="#f8fafc" text-anchor="middle">' + hz + '</text>' +
+      '<text x="200" y="200" font-family="sans-serif" font-weight="600" font-size="13" fill="#cbd5e1" text-anchor="middle">Peralatan Kelistrikan · 电气设备</text>' +
+      '</svg>';
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+
   // Palet warna kontras & cerah untuk karakter per kata
   const COLOR_PALETTE = [
     '#e11d48', // Merah
@@ -4157,7 +4178,7 @@
     window.speechSynthesis.cancel();
     const utter = new SpeechSynthesisUtterance(text);
     utter.lang = 'zh-CN';
-    utter.rate = 0.85; // Sedikit lebih pelan agar jelas untuk belajar
+    utter.rate = 0.85;
     window.speechSynthesis.speak(utter);
   }
 
@@ -4196,12 +4217,11 @@
 
     const statsEl = document.getElementById('statsPill');
     if (statsEl) {
-      statsEl.textContent = `${visibleCount} Alat Ditemukan`;
+      statsEl.textContent = visibleCount + ' Alat Ditemukan';
     }
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    // Default aktifkan Pinyin dan Arti jika pertama kali dibuka agar informatif langsung
     if (localStorage.getItem('mandarin_show_pinyin') !== '0') document.body.classList.add('show-pinyin');
     if (localStorage.getItem('mandarin_show_arti') !== '0') document.body.classList.add('show-arti');
     if (localStorage.getItem('mandarin_show_vocab') !== '0') document.body.classList.add('show-vocab');
