@@ -1743,7 +1743,7 @@
        LATIHAN SOAL PILIHAN GANDA (Soal No. 4–10)
   ══════════════════════════════════════════════════ -->
   <div>
-    <div class="section-title">📝 Latihan Soal Pilihan Ganda (No. 4–10) · 选择题练习</div>
+    <div class="section-title">📝 Contoh &amp; Latihan Soal HSK (No. 4–10) · 模拟例题与综合练习</div>
     <div class="classroom-box" style="border-left: 5px solid var(--gold);">
 
       <div class="classroom-header">
@@ -1820,6 +1820,36 @@
             </div>
           </div>
           <div class="soal-answer-badge">✅ Jawaban: B — 12岁 (shí'èr suì)</div>
+        </div>
+
+        <!-- ── CONTOH PERCAKAPAN (Gambar 2: image_24be9e.png) ── -->
+        <div class="soal-item contoh" style="border-left: 4px solid #0284c7; background: #f0f9ff;">
+          <div class="soal-header">
+            <div class="soal-num" style="background:#0284c7;">例</div>
+            <div class="soal-pertanyaan">
+              <span class="soal-contoh-badge" style="background:#e0f2fe; color:#0369a1; font-weight:700; font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:12px; display:inline-block; margin-bottom:0.35rem;">📌 Contoh Percakapan · 例如 (Lìrú)</span>
+              <div class="soal-id" style="font-size:0.82rem;">Contoh sapaan dasar dan perkenalan sebelum mengerjakan soal 6–8:</div>
+            </div>
+          </div>
+          <div class="dialog-soal" style="background:#ffffff;">
+            <div class="dialog-soal-line">
+              <span class="dialog-soal-speaker">A</span>
+              <div class="dialog-soal-content">
+                <div class="dialog-soal-hz" onclick="playPinyin('Nǐ hǎo!')" title="Klik untuk mendengar">你好！</div>
+                <div class="dialog-soal-py">Nǐ hǎo!</div>
+                <div class="dialog-soal-id">Halo!</div>
+              </div>
+            </div>
+            <div class="dialog-soal-line">
+              <span class="dialog-soal-speaker b-speaker">B</span>
+              <div class="dialog-soal-content">
+                <div class="dialog-soal-hz" onclick="playPinyin('Nǐ hǎo! Hěn gāoxìng rènshi nǐ.')" title="Klik untuk mendengar">你好！很高兴认识你。</div>
+                <div class="dialog-soal-py">Nǐ hǎo! Hěn gāoxìng rènshi nǐ.</div>
+                <div class="dialog-soal-id">Halo! Senang berkenalan dengan Anda.</div>
+              </div>
+            </div>
+          </div>
+          <div class="soal-answer-badge" style="background:#e0f2fe; color:#0369a1;">💡 Pola Dasar: Sapaan Nǐ hǎo! (Halo!) &amp; Hěn gāoxìng rènshi nǐ (Senang berkenalan dengan Anda)</div>
         </div>
 
         <!-- ── SOAL 6 ── -->
@@ -1907,6 +1937,32 @@
             </div>
           </div>
           <div class="soal-answer-badge">✅ 我没有姐姐，我有一个妹妹。</div>
+        </div>
+
+        <!-- ── CONTOH PEMAHAMAN MENYIMAK (Gambar 3: image_24be81.png) ── -->
+        <div class="soal-item contoh" style="border-left: 4px solid #0284c7; background: #f0f9ff;">
+          <div class="soal-header">
+            <div class="soal-num" style="background:#0284c7;">例</div>
+            <div class="soal-pertanyaan">
+              <span class="soal-contoh-badge" style="background:#e0f2fe; color:#0369a1; font-weight:700; font-size:0.75rem; padding:0.2rem 0.6rem; border-radius:12px; display:inline-block; margin-bottom:0.35rem;">📌 Contoh Pemahaman Kalimat · 例如 (Lìrú)</span>
+              <div class="soal-id" style="font-size:0.82rem;">Dengarkan contoh kalimat berikut, lalu perhatikan pertanyaan dan jawabannya:</div>
+            </div>
+          </div>
+          <div class="latihan-intro" style="background:#ffffff; border-left: 3px solid #0284c7;">
+            <span class="hz" onclick="playPinyin('Xiàwǔ wǒ qù chāoshì, wǒ xiǎng mǎi yīxiē shuǐguǒ.')" style="cursor:pointer;" title="Klik untuk mendengar">🔊 下午我去超市，我想买一些水果。</span>
+            <span class="py">Xiàwǔ wǒ qù chāoshì, wǒ xiǎng mǎi yīxiē shuǐguǒ.</span>
+            <span class="id">Sore ini saya pergi ke supermarket, saya ingin membeli beberapa buah.</span>
+          </div>
+          <div class="tanya-label" style="color:#0369a1;">❓ 说话人下午去哪里？ <span style="font-weight:400; color:var(--sub);">(Kemana pembicara pergi sore ini?)</span></div>
+          <div class="soal-options">
+            <div class="soal-option correct" onclick="playPinyin('chāoshì')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">超市</span>
+              <span class="soal-option-py">(chāoshì)</span>
+              <span class="soal-option-id">— Supermarket</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge" style="background:#dcfce7; color:#166534;">✅ Jawaban Benar: A. 超市 (chāoshì - supermarket)</div>
         </div>
 
         <!-- ── SOAL 9 ── (Pemahaman Menyimak) -->
@@ -2132,7 +2188,6 @@
       const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
       hzEl.innerHTML = res.hanzi;
       pyEl.innerHTML = res.pinyin;
-      // Warnai juga pinyin asli (sebelum sandhi) dengan warna yang sama
       if (pyOrig) {
         const resOrig = colorizePair(hzEl.dataset.origHtml, pyOrig.dataset.origHtml, charColorMap);
         pyOrig.innerHTML = resOrig.pinyin;
@@ -2153,22 +2208,19 @@
       pyEl.innerHTML = res.pinyin;
     });
 
-    // 3. Warnai Semantic Pair Cards (.semantic-pair-card) — hanzi=judul 东西/买卖/孙子, pinyin=.sem-pinyin
+    // 3. Warnai Semantic Pair Cards (.semantic-pair-card)
     document.querySelectorAll('.semantic-pair-card').forEach(card => {
-      // Ambil teks hanzi dari judul pair
       const titleEl = card.querySelector('.semantic-pair-title > span:first-child');
       const semPinyins = card.querySelectorAll('.sem-pinyin');
       semPinyins.forEach(pyEl => {
         if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
         if (!titleEl) return;
-        const hzText = titleEl.textContent.replace(/^d+.s*/, '').trim();
+        const hzText = titleEl.textContent.replace(/^\d+\.\s*/, '').trim();
         const res = colorizePair(hzText, pyEl.dataset.origHtml, charColorMap);
-        // Warnai hanya pinyin (karena hanzi judul sudah dalam konteks berbeda)
         pyEl.innerHTML = res.pinyin;
       });
-      // Warnai teks hanzi judul pair itu sendiri
       if (titleEl) {
-        const hzText = titleEl.textContent.replace(/^d+.s*/, '').trim();
+        const hzText = titleEl.textContent.replace(/^\d+\.\s*/, '').trim();
         if (!titleEl.dataset.origHtml) titleEl.dataset.origHtml = titleEl.innerHTML;
         const pinyinRef = card.querySelector('.sem-pinyin');
         if (pinyinRef) {
@@ -2178,11 +2230,66 @@
         }
       }
     });
+
+    // 4. Warnai Soal Pilihan Ganda & Contoh (.soal-item)
+    // a. Pertanyaan soal langsung
+    document.querySelectorAll('.soal-pertanyaan').forEach(sp => {
+      const hzEl = sp.querySelector('.soal-hz');
+      const pyEl = sp.querySelector('.soal-py');
+      if (hzEl && pyEl) {
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      }
+    });
+
+    // b. Dialog dalam soal & contoh
+    document.querySelectorAll('.dialog-soal-line').forEach(dsl => {
+      const hzEl = dsl.querySelector('.dialog-soal-hz');
+      const pyEl = dsl.querySelector('.dialog-soal-py');
+      if (hzEl && pyEl) {
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      }
+    });
+
+    // c. Pilihan jawaban soal (options)
+    document.querySelectorAll('.soal-option').forEach(opt => {
+      const hzEl = opt.querySelector('.soal-option-hz');
+      const pyEl = opt.querySelector('.soal-option-py');
+      if (hzEl && pyEl) {
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        const cleanPy = pyEl.dataset.origHtml.replace(/^[()\s]+|[()\s]+$/g, '');
+        const res = colorizePair(hzEl.dataset.origHtml, cleanPy, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = '(' + res.pinyin + ')';
+      }
+    });
+
+    // d. Teks pendahuluan audio / listening (.latihan-intro)
+    document.querySelectorAll('.latihan-intro').forEach(intro => {
+      const hzEl = intro.querySelector('.hz');
+      const pyEl = intro.querySelector('.py');
+      if (hzEl && pyEl) {
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        const rawHz = hzEl.dataset.origHtml.replace(/^🔊\s*/, '');
+        const res = colorizePair(rawHz, pyEl.dataset.origHtml, charColorMap);
+        hzEl.innerHTML = '🔊 ' + res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      }
+    });
   }
 
   function removeColors() {
     // Kembalikan semua elemen yang sudah diwarnai ke kondisi asli
-    const selector = '.sandhi-hz, .py-read, .py-orig, .neutral-hz, .neutral-py, .sem-pinyin, .semantic-pair-title > span:first-child';
+    const selector = '.sandhi-hz, .py-read, .py-orig, .neutral-hz, .neutral-py, .sem-pinyin, .semantic-pair-title > span:first-child, .soal-hz, .soal-py, .dialog-soal-hz, .dialog-soal-py, .soal-option-hz, .soal-option-py, .latihan-intro .hz, .latihan-intro .py';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml !== undefined) {
         el.innerHTML = el.dataset.origHtml;

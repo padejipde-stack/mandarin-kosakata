@@ -569,8 +569,9 @@ Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 
    | **Bab 4** | Tone Sandhi cards | `.sandhi-hz` | `.py-read`, `.py-orig` |
    | **Bab 4** | Neutral Tone cards | `.neutral-hz` | `.neutral-py` |
    | **Bab 4** | Semantic pair | `.semantic-pair-title > span:first-child` | `.sem-pinyin` |
+   | **Bab 4** | Soal & Contoh Pilihan Ganda | `.soal-hz`, `.dialog-soal-hz`, `.soal-option-hz`, `.latihan-intro .hz` | `.soal-py`, `.dialog-soal-py`, `.soal-option-py`, `.latihan-intro .py` |
 
-   **Template `applyColors()` untuk WorkBookBab4** (Tone Sandhi & Nada Netral):
+   **Template `applyColors()` untuk WorkBookBab4** (Tone Sandhi, Nada Netral & Latihan Soal HSK):
    ```javascript
    function applyColors() {
      const charColorMap = { '你': '#e11d48', '好': '#16a34a' };
@@ -612,10 +613,50 @@ Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 
          pyEl.innerHTML = colorizePair(hzText, pyEl.dataset.origHtml, charColorMap).pinyin;
        });
      });
+
+     // 4. Soal Pilihan Ganda & Contoh (.soal-item)
+     document.querySelectorAll('.soal-pertanyaan').forEach(sp => {
+       const hzEl = sp.querySelector('.soal-hz'), pyEl = sp.querySelector('.soal-py');
+       if (hzEl && pyEl) {
+         if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+         if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+         const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+         hzEl.innerHTML = res.hanzi; pyEl.innerHTML = res.pinyin;
+       }
+     });
+     document.querySelectorAll('.dialog-soal-line').forEach(dsl => {
+       const hzEl = dsl.querySelector('.dialog-soal-hz'), pyEl = dsl.querySelector('.dialog-soal-py');
+       if (hzEl && pyEl) {
+         if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+         if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+         const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+         hzEl.innerHTML = res.hanzi; pyEl.innerHTML = res.pinyin;
+       }
+     });
+     document.querySelectorAll('.soal-option').forEach(opt => {
+       const hzEl = opt.querySelector('.soal-option-hz'), pyEl = opt.querySelector('.soal-option-py');
+       if (hzEl && pyEl) {
+         if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+         if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+         const cleanPy = pyEl.dataset.origHtml.replace(/^[()\s]+|[()\s]+$/g, '');
+         const res = colorizePair(hzEl.dataset.origHtml, cleanPy, charColorMap);
+         hzEl.innerHTML = res.hanzi; pyEl.innerHTML = '(' + res.pinyin + ')';
+       }
+     });
+     document.querySelectorAll('.latihan-intro').forEach(intro => {
+       const hzEl = intro.querySelector('.hz'), pyEl = intro.querySelector('.py');
+       if (hzEl && pyEl) {
+         if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+         if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+         const rawHz = hzEl.dataset.origHtml.replace(/^🔊\s*/, '');
+         const res = colorizePair(rawHz, pyEl.dataset.origHtml, charColorMap);
+         hzEl.innerHTML = '🔊 ' + res.hanzi; pyEl.innerHTML = res.pinyin;
+       }
+     });
    }
 
    function removeColors() {
-     const selector = '.sandhi-hz, .py-read, .py-orig, .neutral-hz, .neutral-py, .sem-pinyin, .semantic-pair-title > span:first-child';
+     const selector = '.sandhi-hz, .py-read, .py-orig, .neutral-hz, .neutral-py, .sem-pinyin, .semantic-pair-title > span:first-child, .soal-hz, .soal-py, .dialog-soal-hz, .dialog-soal-py, .soal-option-hz, .soal-option-py, .latihan-intro .hz, .latihan-intro .py';
      document.querySelectorAll(selector).forEach(el => {
        if (el.dataset.origHtml !== undefined) el.innerHTML = el.dataset.origHtml;
        el.style.color = '';
