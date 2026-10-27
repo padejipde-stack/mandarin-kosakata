@@ -1143,7 +1143,210 @@
     .sem-pinyin { font-size: 1rem; font-weight: 700; }
     .sem-arti { font-size: 0.85rem; color: #334155; line-height: 1.4; }
 
-  </style>
+  
+    /* ── LATIHAN SOAL PILIHAN GANDA (Multiple Choice) ── */
+    .latihan-box {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .latihan-intro {
+      font-size: 0.83rem;
+      color: var(--sub);
+      line-height: 1.6;
+      margin-bottom: 0.65rem;
+      padding: 0.55rem 0.8rem;
+      background: #f8fafc;
+      border-left: 3px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+    }
+    .latihan-intro .hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .latihan-intro .py {
+      font-size: 0.82rem;
+      color: #0369a1;
+      font-style: italic;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .latihan-intro .id {
+      font-size: 0.8rem;
+      color: var(--sub);
+      display: block;
+    }
+    .soal-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .soal-item {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+    }
+    .soal-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      margin-bottom: 0.65rem;
+    }
+    .soal-num {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.8rem;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .soal-pertanyaan {
+      flex: 1;
+    }
+    .soal-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+    }
+    .soal-py {
+      font-size: 0.82rem;
+      color: #0369a1;
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+    .soal-id {
+      font-size: 0.8rem;
+      color: var(--sub);
+      margin-top: 0.15rem;
+    }
+    .dialog-soal {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 0.6rem;
+      padding: 0.55rem 0.75rem;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .dialog-soal-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .dialog-soal-speaker {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--primary);
+      padding: 0.1rem 0.45rem;
+      border-radius: 10px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .dialog-soal-speaker.b-speaker { background: #0369a1; }
+    .dialog-soal-content { flex: 1; }
+    .dialog-soal-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #0f172a;
+      cursor: pointer;
+    }
+    .dialog-soal-hz:hover { opacity: 0.75; }
+    .dialog-soal-py {
+      font-size: 0.78rem;
+      color: #0369a1;
+      font-style: italic;
+      margin-top: 1px;
+    }
+    .dialog-soal-id {
+      font-size: 0.76rem;
+      color: var(--sub);
+      margin-top: 1px;
+    }
+    .tanya-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .soal-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .soal-option {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 0.75rem;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.88rem;
+    }
+    .soal-option:hover { border-color: var(--primary); background: var(--primary-soft); }
+    .soal-option.correct {
+      border-color: #16a34a;
+      background: #f0fdf4;
+    }
+    .soal-option-letter {
+      font-weight: 800;
+      font-size: 0.82rem;
+      color: var(--primary);
+      width: 20px;
+      flex-shrink: 0;
+    }
+    .soal-option.correct .soal-option-letter { color: #16a34a; }
+    .soal-option-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .soal-option-py {
+      font-size: 0.76rem;
+      color: #0369a1;
+      font-style: italic;
+    }
+    .soal-option-id {
+      font-size: 0.76rem;
+      color: var(--sub);
+    }
+    .soal-answer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #166534;
+      background: #dcfce7;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+    }
+
+</style>
 </head>
 <body class="show-pinyin show-arti show-vocab">
 
@@ -1534,6 +1737,256 @@
     </div>
   </div>
 
+
+
+  <!-- ══════════════════════════════════════════════════
+       LATIHAN SOAL PILIHAN GANDA (Soal No. 4–10)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📝 Latihan Soal Pilihan Ganda (No. 4–10) · 选择题练习</div>
+    <div class="classroom-box" style="border-left: 5px solid var(--gold);">
+
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">练</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fef9c3; color:#854d0e;">Uji Kemampuan · 能力测试</div>
+          <div class="classroom-desc">Pilih jawaban yang paling tepat untuk setiap soal di bawah ini.</div>
+        </div>
+      </div>
+
+      <div class="soal-grid" style="margin-top:0.85rem;">
+
+        <!-- ── SOAL 4 ── -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">4</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('Tā yǒu duōshǎo gè xuésheng?')" title="Klik untuk mendengar">他有多少个学生？</div>
+              <div class="soal-py">Tā yǒu duōshǎo gè xuésheng?</div>
+              <div class="soal-id">Berapa banyak siswa yang dia miliki?</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option" onclick="playPinyin('shí rén')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">十人</span>
+              <span class="soal-option-py">(shí rén)</span>
+              <span class="soal-option-id">— 10 orang</span>
+            </div>
+            <div class="soal-option correct" onclick="playPinyin('èrshí gè')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">20个</span>
+              <span class="soal-option-py">(èrshí gè)</span>
+              <span class="soal-option-id">— 20 orang</span>
+            </div>
+            <div class="soal-option" onclick="playPinyin('sān kǒu rén')">
+              <span class="soal-option-letter">C.</span>
+              <span class="soal-option-hz">三口人</span>
+              <span class="soal-option-py">(sān kǒu rén)</span>
+              <span class="soal-option-id">— 3 anggota keluarga</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Jawaban: B — 20个 (èrshí gè)</div>
+        </div>
+
+        <!-- ── SOAL 5 ── -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">5</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('Nín nǚér duō dà?')" title="Klik untuk mendengar">您女儿多大？</div>
+              <div class="soal-py">Nín nǚ'ér duōdà?</div>
+              <div class="soal-id">Berapa usia anak perempuan Anda?</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option" onclick="playPinyin('dà')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">大</span>
+              <span class="soal-option-py">(dà)</span>
+              <span class="soal-option-id">— besar</span>
+            </div>
+            <div class="soal-option correct" onclick="playPinyin('shí'èr suì')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">12岁</span>
+              <span class="soal-option-py">(shí'èr suì)</span>
+              <span class="soal-option-id">— 12 tahun</span>
+            </div>
+            <div class="soal-option" onclick="playPinyin('liǎng qiān')">
+              <span class="soal-option-letter">C.</span>
+              <span class="soal-option-hz">两千</span>
+              <span class="soal-option-py">(liǎngqiān)</span>
+              <span class="soal-option-id">— dua ribu</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Jawaban: B — 12岁 (shí'èr suì)</div>
+        </div>
+
+        <!-- ── SOAL 6 ── -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">6</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-id" style="font-size:0.82rem; margin-bottom:0.4rem;">Lengkapi jawaban B dalam percakapan berikut:</div>
+            </div>
+          </div>
+          <div class="dialog-soal">
+            <div class="dialog-soal-line">
+              <span class="dialog-soal-speaker">A</span>
+              <div class="dialog-soal-content">
+                <div class="dialog-soal-hz" onclick="playPinyin('Nǐ gēge zuò shénme gōngzuò?')" title="Klik untuk mendengar">你哥哥做什么工作？</div>
+                <div class="dialog-soal-py">Nǐ gēge zuò shénme gōngzuò?</div>
+                <div class="dialog-soal-id">Kakak laki-lakimu kerja apa?</div>
+              </div>
+            </div>
+            <div class="dialog-soal-line">
+              <span class="dialog-soal-speaker b-speaker">B</span>
+              <div class="dialog-soal-content">
+                <div class="dialog-soal-hz" onclick="playPinyin('Tā shì zhōngwén lǎoshī.')" title="Klik untuk mendengar">他是中文老师。</div>
+                <div class="dialog-soal-py">Tā shì zhōngwén lǎoshī.</div>
+                <div class="dialog-soal-id">Dia adalah guru bahasa Mandarin.</div>
+              </div>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ 他是中文老师。 — Dia adalah guru bahasa Mandarin.</div>
+        </div>
+
+        <!-- ── SOAL 7 ── -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">7</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-id" style="font-size:0.82rem; margin-bottom:0.4rem;">Lengkapi jawaban B dalam percakapan berikut:</div>
+            </div>
+          </div>
+          <div class="dialog-soal">
+            <div class="dialog-soal-line">
+              <span class="dialog-soal-speaker">A</span>
+              <div class="dialog-soal-content">
+                <div class="dialog-soal-hz" onclick="playPinyin('Qǐngwèn zhè shì shuí?')" title="Klik untuk mendengar">请问这是谁？</div>
+                <div class="dialog-soal-py">Qǐngwèn zhè shì shuí?</div>
+                <div class="dialog-soal-id">Permisi, ini siapa?</div>
+              </div>
+            </div>
+            <div class="dialog-soal-line">
+              <span class="dialog-soal-speaker b-speaker">B</span>
+              <div class="dialog-soal-content">
+                <div class="dialog-soal-hz" onclick="playPinyin('Zhè shì wǒ nǚpéngyǒu.')" title="Klik untuk mendengar">这是我女朋友。</div>
+                <div class="dialog-soal-py">Zhè shì wǒ nǚpéngyǒu.</div>
+                <div class="dialog-soal-id">Ini pacar perempuan saya.</div>
+              </div>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ 这是我女朋友。 — Ini pacar perempuan saya.</div>
+        </div>
+
+        <!-- ── SOAL 8 ── -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">8</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-id" style="font-size:0.82rem; margin-bottom:0.4rem;">Lengkapi jawaban B dalam percakapan berikut:</div>
+            </div>
+          </div>
+          <div class="dialog-soal">
+            <div class="dialog-soal-line">
+              <span class="dialog-soal-speaker">A</span>
+              <div class="dialog-soal-content">
+                <div class="dialog-soal-hz" onclick="playPinyin('Wǒ yǒu liǎng gè jiějie, nǐ ne?')" title="Klik untuk mendengar">我有两个姐姐，你呢？</div>
+                <div class="dialog-soal-py">Wǒ yǒu liǎng gè jiějie, nǐ ne?</div>
+                <div class="dialog-soal-id">Saya punya dua kakak perempuan, bagaimana denganmu?</div>
+              </div>
+            </div>
+            <div class="dialog-soal-line">
+              <span class="dialog-soal-speaker b-speaker">B</span>
+              <div class="dialog-soal-content">
+                <div class="dialog-soal-hz" onclick="playPinyin('Wǒ méiyǒu jiějie, wǒ yǒu yīgè mèimei.')" title="Klik untuk mendengar">我没有姐姐，我有一个妹妹。</div>
+                <div class="dialog-soal-py">Wǒ méiyǒu jiějie, wǒ yǒu yīgè mèimei.</div>
+                <div class="dialog-soal-id">Saya tidak punya kakak perempuan, saya punya satu adik perempuan.</div>
+              </div>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ 我没有姐姐，我有一个妹妹。</div>
+        </div>
+
+        <!-- ── SOAL 9 ── (Pemahaman Menyimak) -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">9</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-id" style="font-size:0.82rem; margin-bottom:0.4rem;">Dengarkan kalimat berikut, lalu pilih jawaban yang tepat:</div>
+            </div>
+          </div>
+          <div class="latihan-intro">
+            <span class="hz" onclick="playPinyin('Wǒ jiào Lǐ Wén, wǒ shì Zhōngguó rén.')" style="cursor:pointer;" title="Klik untuk mendengar">🔊 我叫李文，我是中国人。</span>
+            <span class="py">Wǒ jiào Lǐ Wén, wǒ shì Zhōngguó rén.</span>
+            <span class="id">Nama saya Li Wen, saya orang Tiongkok.</span>
+          </div>
+          <div class="tanya-label">❓ 说话人是哪国人？ <span style="font-weight:400; color:var(--sub);">(Orang dari negara mana pembicara tersebut?)</span></div>
+          <div class="soal-options">
+            <div class="soal-option correct" onclick="playPinyin('Zhōngguó rén')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">中国人</span>
+              <span class="soal-option-py">(Zhōngguó rén)</span>
+              <span class="soal-option-id">— Orang Tiongkok</span>
+            </div>
+            <div class="soal-option" onclick="playPinyin('Tàiguó rén')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">泰国人</span>
+              <span class="soal-option-py">(Tàiguó rén)</span>
+              <span class="soal-option-id">— Orang Thailand</span>
+            </div>
+            <div class="soal-option" onclick="playPinyin('Fǎguó rén')">
+              <span class="soal-option-letter">C.</span>
+              <span class="soal-option-hz">法国人</span>
+              <span class="soal-option-py">(Fǎguó rén)</span>
+              <span class="soal-option-id">— Orang Prancis</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Jawaban: A — 中国人 (Zhōngguó rén)</div>
+        </div>
+
+        <!-- ── SOAL 10 ── (Pemahaman Menyimak) -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">10</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-id" style="font-size:0.82rem; margin-bottom:0.4rem;">Dengarkan kalimat berikut, lalu pilih jawaban yang tepat:</div>
+            </div>
+          </div>
+          <div class="latihan-intro">
+            <span class="hz" onclick="playPinyin('Wǒ bù jiào Ānnī, wǒ jiào Bái Jiāyuè.')" style="cursor:pointer;" title="Klik untuk mendengar">🔊 我不叫安妮，我叫白家月。</span>
+            <span class="py">Wǒ bù jiào Ānnī, wǒ jiào Bái Jiāyuè.</span>
+            <span class="id">Nama saya bukan Anni, nama saya Bai Jiayue.</span>
+          </div>
+          <div class="tanya-label">❓ 说话人叫什么名字？ <span style="font-weight:400; color:var(--sub);">(Siapa nama pembicara tersebut?)</span></div>
+          <div class="soal-options">
+            <div class="soal-option" onclick="playPinyin('Ānnī')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">安妮</span>
+              <span class="soal-option-py">(Ānnī)</span>
+              <span class="soal-option-id">— Anni</span>
+            </div>
+            <div class="soal-option" onclick="playPinyin('Wáng Yīfēi')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">王一飞</span>
+              <span class="soal-option-py">(Wáng Yīfēi)</span>
+              <span class="soal-option-id">— Wang Yifei</span>
+            </div>
+            <div class="soal-option correct" onclick="playPinyin('Bái Jiāyuè')">
+              <span class="soal-option-letter">C.</span>
+              <span class="soal-option-hz">白家月</span>
+              <span class="soal-option-py">(Bái Jiāyuè)</span>
+              <span class="soal-option-id">— Bai Jiayue</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Jawaban: C — 白家月 (Bái Jiāyuè)</div>
+        </div>
+
+      </div><!-- /soal-grid -->
+
+    </div>
+  </div>
 
   <!-- FLOATING TOOLBAR DOCK -->
   <div class="dialog-toolbar">
