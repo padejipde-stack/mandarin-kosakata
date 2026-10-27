@@ -1588,6 +1588,24 @@
     /* ── WB2 SPECIFIC: Aturan Warn Pill ── */
     .aturan-warn{ background: #fef3c7; color: #b45309; }
 
+    /* ── 4-Column Grid untuk Aturan Singkatan uei/uen ── */
+    .aturan-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.65rem;
+      margin-top: 0.75rem;
+    }
+    @media (max-width: 680px) {
+      .aturan-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 380px) {
+      .aturan-grid-4 {
+        grid-template-columns: 1fr;
+      }
+    }
+
   
   </style>
 </head>
@@ -2279,27 +2297,27 @@
           </div>
         </div>
 
-        <!-- 4 Contoh Kombinasi -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 0.75rem;">
-          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem; text-align: center;">
+        <!-- 4 Contoh Kombinasi (4 Kolom Sejajar) -->
+        <div class="aturan-grid-4">
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem 0.45rem; text-align: center; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="playPinyin('shuǐ')" title="Klik untuk mendengar suara shuǐ">
             <div style="font-size: 0.8rem; color: #15803d; font-weight: 700;">sh + uei ➔ shui</div>
             <div style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin: 3px 0;">shuǐ / shuì</div>
             <div style="font-size: 0.74rem; color: #475569;">Bukan *shuei (contoh: 水 air, 睡 tidur)</div>
           </div>
 
-          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem; text-align: center;">
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem 0.45rem; text-align: center; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="playPinyin('chūn')" title="Klik untuk mendengar suara chūn">
             <div style="font-size: 0.8rem; color: #15803d; font-weight: 700;">ch + uen ➔ chun</div>
             <div style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin: 3px 0;">chūn / chǔn</div>
             <div style="font-size: 0.74rem; color: #475569;">Bukan *chuen (contoh: 春 musim semi)</div>
           </div>
 
-          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem; text-align: center;">
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem 0.45rem; text-align: center; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="playPinyin('suì')" title="Klik untuk mendengar suara suì">
             <div style="font-size: 0.8rem; color: #15803d; font-weight: 700;">s + uei ➔ sui</div>
             <div style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin: 3px 0;">suì</div>
             <div style="font-size: 0.74rem; color: #475569;">Bukan *suei (contoh: 岁 tahun usia)</div>
           </div>
 
-          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem; text-align: center;">
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem 0.45rem; text-align: center; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="playPinyin('cūn')" title="Klik untuk mendengar suara cūn">
             <div style="font-size: 0.8rem; color: #15803d; font-weight: 700;">c + uen ➔ cun</div>
             <div style="font-size: 1.3rem; font-weight: 700; color: #0f172a; margin: 3px 0;">cūn</div>
             <div style="font-size: 0.74rem; color: #475569;">Bukan *cuen (contoh: 村 desa)</div>
