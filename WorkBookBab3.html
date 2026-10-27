@@ -2928,30 +2928,7 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════════════
-       BAGIAN 7: TONGUE TWISTER KHAS zh, ch, sh & z, c, s (绕口令)
-       ══════════════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">👅 Bagian 7: Tongue Twister · 绕口令 (Latihan Artikulasi Lidah)</div>
-    <div class="twister-box" onclick="playPinyin('四是四，十是十，十四是十四，四十是四十。')" style="cursor: pointer;" title="Klik untuk mendengarkan lafal lengkap">
-      <div style="font-size: 0.82rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1px;">
-        Latihan Artikulasi s (平舌) &amp; sh (翘舌) · 四和十
-      </div>
-      <div class="twister-line">
-        <div class="twister-hanzi">四是四，十是十，</div>
-        <div class="twister-pinyin">Sì shì sì, shí shì shí,</div>
-        <div class="twister-arti">Empat adalah empat, sepuluh adalah sepuluh,</div>
-      </div>
-      <div class="twister-line">
-        <div class="twister-hanzi">十四是十四，四十是四十。</div>
-        <div class="twister-pinyin">shísì shì shísì, sìshí shì sìshí.</div>
-        <div class="twister-arti">empat belas adalah empat belas, empat puluh adalah empat puluh.</div>
-      </div>
-      <div style="font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 0.35rem;">
-        💡 <em>Fokus latihan: Bedakan suara desis gigi mendatar <strong>sì [s]</strong> dengan desis lidah terangkat ke langit-langit <strong>shí / shì [ʂ]</strong>!</em>
-      </div>
-    </div>
-  </div>
+
 
 </div>
 
@@ -3195,24 +3172,10 @@
       charEl.innerHTML = res.hanzi;
       pyEl.innerHTML = res.pinyin;
     });
-
-    // 4. Tongue Twister
-    document.querySelectorAll('.twister-line').forEach(line => {
-      const hzEl = line.querySelector('.twister-hanzi');
-      const pyEl = line.querySelector('.twister-pinyin');
-      if (!hzEl || !pyEl) return;
-
-      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
-      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
-
-      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
-      hzEl.innerHTML = res.hanzi;
-      pyEl.innerHTML = res.pinyin;
-    });
   }
 
   function removeColors() {
-    const selector = '.dialog5-hanzi, .dialog5-pinyin, .bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .twister-hanzi, .twister-pinyin';
+    const selector = '.dialog5-hanzi, .dialog5-pinyin, .bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
