@@ -1202,6 +1202,118 @@
       }
     }
 
+    /* ── NEUTRAL TONE (轻声) SECTION ── */
+    .neutral-tone-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.6rem 1.8rem;
+      border: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+    .neutral-tone-intro {
+      font-size: 0.9rem;
+      color: var(--sub);
+      line-height: 1.7;
+      padding: 0.9rem 1.1rem;
+      background: rgba(192,57,43,0.05);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+    }
+    .neutral-tone-rule {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      color: #fff;
+    }
+    .neutral-tone-rule h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--gold);
+      margin-bottom: 0.85rem;
+    }
+    .neutral-tone-rule p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+    }
+    .neutral-tone-rule p strong {
+      color: var(--gold);
+    }
+    .neutral-tone-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 600px) {
+      .neutral-tone-grid { grid-template-columns: 1fr; }
+    }
+    .neutral-tone-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .neutral-tone-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+    .nt-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--sub);
+    }
+    .nt-tone-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+      width: fit-content;
+      margin-bottom: 0.2rem;
+    }
+    .nt-tone-1 { background: rgba(37,99,235,0.12); color: #1d4ed8; }
+    .nt-tone-2 { background: rgba(22,163,74,0.12); color: #15803d; }
+    .nt-tone-3 { background: rgba(124,58,237,0.12); color: #6d28d9; }
+    .nt-tone-4 { background: rgba(220,38,38,0.12); color: #b91c1c; }
+    .nt-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .nt-pinyin {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    .nt-arti {
+      font-size: 0.8rem;
+      color: var(--sub);
+    }
+    .nt-pitch-note {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      font-weight: 600;
+      width: fit-content;
+      margin-top: 0.2rem;
+    }
+    .nt-pitch-low  { background: rgba(220,38,38,0.1);  color: #b91c1c; }
+    .nt-pitch-high { background: rgba(22,163,74,0.1); color: #15803d; }
+
   </style>
 </head>
 <body>
@@ -2454,6 +2566,73 @@
     </div>
   </div>
 
+  <!-- ══ TONGUE TWISTER ══ -->
+  <div>
+    <div class="section-title">👅 Tongue Twister · 绕口令</div>
+    <div class="twister-box">
+      <div class="twister-line">
+        <div class="twister-hanzi">妈种麻，我放马。</div>
+        <div class="twister-pinyin">Mā zhòng má, wǒ fàng mǎ.</div>
+        <div class="twister-arti">Ibu menanam rami, saya menggembalakan kuda.</div>
+      </div>
+      <div class="twister-line">
+        <div class="twister-hanzi">马吃麻，妈骂马。</div>
+
+      <div class="twister-pinyin">Mǎ chī má, mā mà mǎ.</div>
+        <div class="twister-arti">Kuda memakan rami, ibu memarahi kuda.</div>
+      </div>
+
+      <!-- Sub-Breakdown Kosakata Tongue Twister -->
+      <div class="twister-breakdown">
+        <div class="twister-breakdown-title">
+          <span>📖 Arti per Kata · 词汇拆解</span>
+        </div>
+        <div class="twister-grid">
+          <div class="word-card">
+            <div class="word-char">妈</div>
+            <div class="word-pinyin">mā</div>
+            <div class="word-arti">ibu, mama</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">种</div>
+            <div class="word-pinyin">zhòng</div>
+            <div class="word-arti">menanam</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">麻</div>
+            <div class="word-pinyin">má</div>
+            <div class="word-arti">rami (tanaman serat)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">我</div>
+            <div class="word-pinyin">wǒ</div>
+            <div class="word-arti">saya, aku</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">放</div>
+            <div class="word-pinyin">fàng</div>
+            <div class="word-arti">menggembala, melepas</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">马</div>
+            <div class="word-pinyin">mǎ</div>
+            <div class="word-arti">kuda</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">吃</div>
+            <div class="word-pinyin">chī</div>
+            <div class="word-arti">memakan, makan</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">骂</div>
+            <div class="word-pinyin">mà</div>
+            <div class="word-arti">memarahi, mengomeli</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ XIAOYU'S CLASSROOM (课堂用语) ══ -->
   <div>
     <div class="section-title">🎓 Xiaoyu's Classroom · 课堂用语</div>
@@ -2744,9 +2923,14 @@
                   <div class="word-arti">bertanya</div>
                 </div>
                 <div class="word-card">
-                  <div class="word-char">他/她</div>
+                  <div class="word-char">他</div>
                   <div class="word-pinyin">tā</div>
-                  <div class="word-arti">dia (laki-laki / perempuan)</div>
+                  <div class="word-arti">dia (laki-laki)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">她</div>
+                  <div class="word-pinyin">tā</div>
+                  <div class="word-arti">dia (perempuan)</div>
                 </div>
                 <div class="word-card">
                   <div class="word-char">回答</div>
@@ -3264,68 +3448,66 @@
     </div>
   </div>
 
-  <!-- ══ TONGUE TWISTER ══ -->
+  <!-- ══ PINYIN: NADA NETRAL (轻声) ══ -->
   <div>
-    <div class="section-title">👅 Tongue Twister · 绕口令</div>
-    <div class="twister-box">
-      <div class="twister-line">
-        <div class="twister-hanzi">妈种麻，我放马。</div>
-        <div class="twister-pinyin">Mā zhòng má, wǒ fàng mǎ.</div>
-        <div class="twister-arti">Ibu menanam rami, saya menggembalakan kuda.</div>
-      </div>
-      <div class="twister-line">
-        <div class="twister-hanzi">马吃麻，妈骂马。</div>
+    <div class="section-title">🔉 Pinyin: Nada Netral · 轻声音节</div>
+    <div class="neutral-tone-box">
 
-      <div class="twister-pinyin">Mǎ chī má, mā mà mǎ.</div>
-        <div class="twister-arti">Kuda memakan rami, ibu memarahi kuda.</div>
+      <!-- Intro -->
+      <p class="neutral-tone-intro">
+        Suku kata bernada <strong>netral (轻声 / qīngshēng)</strong> adalah suku kata yang diucapkan dengan <strong>ringan dan pendek</strong>, tanpa nada yang jelas. Cara pengucapannya bergantung pada <strong>nada suku kata yang ada di depannya</strong>.
+      </p>
+
+      <!-- Aturan -->
+      <div class="neutral-tone-rule">
+        <h4>📐 Aturan Pengucapan</h4>
+        <p>
+          • Setelah <strong>Nada 1, 2, atau 4</strong> → suku kata netral dibaca dengan pitch yang <strong>lebih rendah</strong> dari suku kata sebelumnya.<br>
+          • Setelah <strong>Nada 3</strong> → suku kata netral dibaca dengan pitch yang <strong>lebih tinggi</strong> dari suku kata sebelumnya.
+        </p>
       </div>
 
-      <!-- Sub-Breakdown Kosakata Tongue Twister -->
-      <div class="twister-breakdown">
-        <div class="twister-breakdown-title">
-          <span>📖 Arti per Kata · 词汇拆解</span>
-        </div>
-        <div class="twister-grid">
-          <div class="word-card">
-            <div class="word-char">妈</div>
-            <div class="word-pinyin">mā</div>
-            <div class="word-arti">ibu, mama</div>
+      <!-- Contoh Grid -->
+      <div>
+        <div class="nt-label" style="margin-bottom:0.75rem;">🧪 Contoh Berdasarkan Kombinasi Nada</div>
+        <div class="neutral-tone-grid">
+
+          <!-- Nada 1 + Netral -->
+          <div class="neutral-tone-card">
+            <div class="nt-tone-badge nt-tone-1">Nada 1 + Nada Netral · 一声 + 轻声</div>
+            <div class="nt-hanzi">桌子</div>
+            <div class="nt-pinyin">zhuō<span style="opacity:0.6;font-size:0.78rem;">zi</span></div>
+            <div class="nt-arti">🪑 Meja</div>
+            <div class="nt-pitch-note nt-pitch-low">↘ Pitch netral lebih rendah</div>
           </div>
-          <div class="word-card">
-            <div class="word-char">种</div>
-            <div class="word-pinyin">zhòng</div>
-            <div class="word-arti">menanam</div>
+
+          <!-- Nada 2 + Netral -->
+          <div class="neutral-tone-card">
+            <div class="nt-tone-badge nt-tone-2">Nada 2 + Nada Netral · 二声 + 轻声</div>
+            <div class="nt-hanzi">盘子</div>
+            <div class="nt-pinyin">pán<span style="opacity:0.6;font-size:0.78rem;">zi</span></div>
+            <div class="nt-arti">🍽️ Piring</div>
+            <div class="nt-pitch-note nt-pitch-low">↘ Pitch netral lebih rendah</div>
           </div>
-          <div class="word-card">
-            <div class="word-char">麻</div>
-            <div class="word-pinyin">má</div>
-            <div class="word-arti">rami (tanaman serat)</div>
+
+          <!-- Nada 3 + Netral -->
+          <div class="neutral-tone-card">
+            <div class="nt-tone-badge nt-tone-3">Nada 3 + Nada Netral · 三声 + 轻声</div>
+            <div class="nt-hanzi">椅子</div>
+            <div class="nt-pinyin">yǐ<span style="opacity:0.6;font-size:0.78rem;">zi</span></div>
+            <div class="nt-arti">🪑 Kursi</div>
+            <div class="nt-pitch-note nt-pitch-high">↗ Pitch netral lebih tinggi</div>
           </div>
-          <div class="word-card">
-            <div class="word-char">我</div>
-            <div class="word-pinyin">wǒ</div>
-            <div class="word-arti">saya, aku</div>
+
+          <!-- Nada 4 + Netral -->
+          <div class="neutral-tone-card">
+            <div class="nt-tone-badge nt-tone-4">Nada 4 + Nada Netral · 四声 + 轻声</div>
+            <div class="nt-hanzi">裤子</div>
+            <div class="nt-pinyin">kù<span style="opacity:0.6;font-size:0.78rem;">zi</span></div>
+            <div class="nt-arti">👖 Celana</div>
+            <div class="nt-pitch-note nt-pitch-low">↘ Pitch netral lebih rendah</div>
           </div>
-          <div class="word-card">
-            <div class="word-char">放</div>
-            <div class="word-pinyin">fàng</div>
-            <div class="word-arti">menggembala, melepas</div>
-          </div>
-          <div class="word-card">
-            <div class="word-char">马</div>
-            <div class="word-pinyin">mǎ</div>
-            <div class="word-arti">kuda</div>
-          </div>
-          <div class="word-card">
-            <div class="word-char">吃</div>
-            <div class="word-pinyin">chī</div>
-            <div class="word-arti">memakan, makan</div>
-          </div>
-          <div class="word-card">
-            <div class="word-char">骂</div>
-            <div class="word-pinyin">mà</div>
-            <div class="word-arti">memarahi, mengomeli</div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -3367,7 +3549,9 @@
   ];
 
   // Finals dan Regex Pinyin untuk mencocokkan suku kata (syllable) Mandarin
-  const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜvÜǕǗǙǛ]';
+  // ⚡ ERHUA (儿化) AWARE: suku kata berakhiran -r yang BUKAN "er/ér/ěr/èr" dianggap
+  //    sebagai fusion dengan karakter 儿 berikutnya. Contoh: nǎr = 哪+儿, tiáor = 条+儿
+  const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
   const _finals = [
     _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
     _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
@@ -3384,6 +3568,8 @@
   }
 
   // Mewarnai pasangan teks Hanzi dan Pinyin per-karakter / per-kata
+  // ✅ ERHUA AWARE: suku kata berakhir -r (bukan "er/ér/ěr/èr") + Hanzi berikutnya = 儿
+  //    → root silabel dipasangkan ke Hanzi sebelum 儿, huruf 'r' dipasangkan ke 儿
   function colorizePair(hanziText, pinyinText, charColorMap) {
     if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
@@ -3415,8 +3601,24 @@
     let remaining = pinyinText;
 
     while (remaining.length > 0) {
+      // Lewati tag HTML (seperti <br>)
+      const tagMatch = remaining.match(/^<[^>]+>/);
+      if (tagMatch) {
+        outPy += tagMatch[0];
+        remaining = remaining.substring(tagMatch[0].length);
+        continue;
+      }
+
+      // Lewati label dialog berupa huruf latin tunggal (seperti "A:", "B:", "A：", "B：")
+      const labelMatch = remaining.match(/^[A-Z][：:]\s*/);
+      if (labelMatch) {
+        outPy += labelMatch[0];
+        remaining = remaining.substring(labelMatch[0].length);
+        continue;
+      }
+
       // Lewati akronim alfabetik kapital (seperti "AI")
-      const acronymMatch = remaining.match(/^[A-Z]{2,}(?=[^a-zāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜvĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙÜǕǗǙǛ]|$)/);
+      const acronymMatch = remaining.match(/^[A-Z]{2,}(?=[^a-zāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜv]|$)/);
       if (acronymMatch) {
         outPy += acronymMatch[0];
         remaining = remaining.substring(acronymMatch[0].length);
@@ -3424,7 +3626,7 @@
       }
 
       // Lewati spasi dan tanda baca
-      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜvĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙÜǕǗǙǛ]+/);
+      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
       if (nonLetterMatch) {
         outPy += nonLetterMatch[0];
         remaining = remaining.substring(nonLetterMatch[0].length);
@@ -3435,12 +3637,27 @@
       const match = remaining.match(PINYIN_SYLL_RE);
       if (match) {
         const syll = match[0];
-        const pairedHz = hzList[hzIdx];
-        if (pairedHz && charColorMap[pairedHz]) {
-          outPy += '<span style="color:' + charColorMap[pairedHz] + ';font-weight:700;">' + syll + '</span>';
-          hzIdx++;
+        // ✅ Erhua detection: suku kata berakhir -r (bukan standalone "er/ér/ěr/èr")
+        //    DAN Hanzi berikutnya adalah 儿 → split r ke 儿
+        const isErhua = /r$/i.test(syll) &&
+                        !/^[eēéěè]r$/i.test(syll) &&
+                        hzIdx + 1 < hzList.length &&
+                        hzList[hzIdx + 1] === '儿';
+        if (isErhua) {
+          const rootSyll = syll.slice(0, -1);
+          const rootHz = hzList[hzIdx];
+          const erHz = hzList[hzIdx + 1];
+          outPy += '<span style="color:' + charColorMap[rootHz] + ';font-weight:700;">' + rootSyll + '</span>' +
+                   '<span style="color:' + (charColorMap[erHz] || charColorMap[rootHz]) + ';font-weight:700;">r</span>';
+          hzIdx += 2;
         } else {
-          outPy += syll;
+          const pairedHz = hzList[hzIdx];
+          if (pairedHz && charColorMap[pairedHz]) {
+            outPy += '<span style="color:' + charColorMap[pairedHz] + ';font-weight:700;">' + syll + '</span>';
+            hzIdx++;
+          } else {
+            outPy += syll;
+          }
         }
         remaining = remaining.substring(syll.length);
       } else {
@@ -3451,6 +3668,7 @@
 
     return { hanzi: outHz, pinyin: outPy };
   }
+
 
   function applyColors() {
     // Inisialisasi peta warna dengan 你 (merah) dan 好 (hijau) sebagai acuan

@@ -384,11 +384,10 @@ Setiap bab buku teks menyertakan JavaScript engine standar di akhir file sebelum
 ```javascript
 // 1. Deteksi Karakter Hanzi
 function isHanziChar(ch) {
-  const code = ch.charCodeAt(0);
-  return (code >= 0x4e00 && code <= 0x9fa5) || (code >= 0x3400 && code <= 0x4dbf);
+  return /[\u3007\u4e00-\u9fa5]/.test(ch);
 }
 
-// 2. Regex Silabel Pinyin dengan Nada
+// 2. Regex Silabel Pinyin dengan Nada (WAJIB: regex r? di akhir untuk Erhua support)
 const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
 const _finals = [
   _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
@@ -399,12 +398,16 @@ const _finals = [
   _V+_E, 'er',
   _A, _O, _E, _I, _U, _V
 ].join('|');
+// ⚡ r? di akhir regex = support Erhua (suku kata berakhiran -r seperti nǎr, tiáor)
 const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
 
-// 3. Mesin Pemetaan & Pewarnaan Karakter
+// 3. Mesin Pemetaan & Pewarnaan Karakter (Erhua-aware)
+// ✅ WAJIB: engine HARUS mendeteksi Erhua sebelum memetakan suku kata ke Hanzi
 function colorizePair(hanziStr, pinyinStr, charColorMap) {
   // Melakukan segmentasi Hanzi dan pemetaan pinyin per kata/suku kata via PINYIN_SYLL_RE
   // Menghasilkan tag <span style="color: ..."> yang seragam antara hanzi dan pinyin
+  // Mengandung logika Erhua: jika suku kata berakhir -r (bukan "er/ér/ěr/èr")
+  //   DAN Hanzi berikutnya = 儿, maka root silabel → Hanzi sebelum 儿, 'r' → 儿
 }
 ```
 
@@ -412,6 +415,57 @@ function colorizePair(hanziStr, pinyinStr, charColorMap) {
 > **Kewajiban Penggunaan Syllabic Regex Engine (Pencegahan Bug Kata Majemuk)**:
 > Mesin `colorizePair()` **DILARANG KERAS** menggunakan metode pemecahan spasi sederhana (`pinyin.split(/\s+/)` dengan syarat `hanziChars.length === pinyinWords.length`). Metode naif tersebut menyebabkan **bug fatal** di mana kata majemuk (2 atau 3 karakter Hanzi seperti `手机` shǒujī, `医生` yīshēng, `桌子` zhuōzi, `出租车` chūzūchē) **TIDAK TERWARNAI** saat tombol 🎨 ditekan karena jumlah kata tanpa spasi tidak sama dengan jumlah karakter Hanzi!
 > **WAJIB** gunakan tokenizer berbasis `PINYIN_SYLL_RE` yang memotong suku kata Pinyin secara modular dan memasangkannya 1-to-1 ke karakter Hanzi, serta berikan spasi antar-suku kata pada teks `.word-pinyin` (misalnya: `shǒu jī`, `yī shēng`, `zhuō zi`, `chū zū chē`).
+
+> [!CAUTION]
+> **Aturan Erhua (儿化) — Pencegahan Bug Pergeseran Warna Berantai**:
+> Erhua adalah fenomena fonetik di mana karakter `儿` melebur ke dalam suku kata sebelumnya membentuk sufiks `-r`. Ini menyebabkan **2 Hanzi** dipasangkan ke **1 suku kata Pinyin** berakhiran `-r`.
+>
+> | Kata | Hanzi | Pinyin | Hanzi units | Pinyin syllables |
+> |:---:|:---:|:---:|:---:|:---:|
+> | *nǎr* | 哪儿 | nǎr | 1 | 1 ✅ |
+> | *miàntiáor* | 面条儿 | miàntiáor | 2 | 2 ✅ |
+>
+> **Perbedaan Erhua vs. 儿 Mandiri:**
+> - `儿` sebagai **Erhua sufiks** (di akhir kata): `哪儿` nǎr, `面条儿` tiáor, `点儿` diǎnr — Pinyin berakhir `-r`, karakter `儿` tidak berbunyi sendiri.
+> - `儿` sebagai **morfem mandiri**: `儿子` érzi (anak lelaki), `女儿` nǚ'ér (anak perempuan), `幼儿园` yòuéryuán — Pinyin-nya tetap `ér`, karakter `儿` dihitung sebagai unit sendiri.
+>
+> **Aturan Implementasi di `colorizePair()`:**
+> Saat memproses suku kata Pinyin berakhiran `-r` yang **bukan** `er/ér/ěr/èr`, periksa apakah Hanzi berikutnya adalah `儿`.
+> - Jika YA → ini Erhua: split suku kata, root → Hanzi sebelum 儿, 'r' → karakter 儿. Konsumsi 2 Hanzi.
+> - Jika TIDAK → ini `-r` biasa: pasangkan suku kata penuh ke 1 Hanzi.
+> ```javascript
+> const isErhua = /r$/i.test(syll) &&
+>                 !/^[eēéěè]r$/i.test(syll) &&
+>                 hzIdx + 1 < hzList.length &&
+>                 hzList[hzIdx + 1] === '儿';
+> if (isErhua) {
+>   const rootSyll = syll.slice(0, -1);  // tanpa 'r'
+>   // rootSyll → Hanzi[hzIdx] (warna sama)
+>   // 'r'      → Hanzi[hzIdx+1] yaitu 儿 (warna sendiri)
+>   hzIdx += 2;
+> }
+> ```
+
+> [!CAUTION]
+> **Aturan Penulisan Angka dalam Hanzi — Pencegahan Bug Offset Warna**:
+> Angka **DILARANG** ditulis dalam format ASCII Latin (`1`, `2`, `5`, dll.) di dalam elemen `.bubble-hanzi` atau `.word-char` yang akan diproses `colorizePair()`.
+> Karena `isHanziChar()` mengabaikan digit ASCII, penulisan `今天5月1号` menyebabkan offset perhitungan Hanzi vs Pinyin sehingga suku kata `wǔ` dan `yī` salah terpasang ke Hanzi yang bukan miliknya.
+>
+> | ❌ Salah | ✅ Benar |
+> |:---:|:---:|
+> | `今天5月1号` | `今天五月一号` |
+> | `2025年5月1号` | `二〇二五年五月一号` |
+>
+> **Gunakan karakter Hanzi** untuk angka: `〇一二三四五六七八九十百千万`.
+
+> [!CAUTION]
+> **Aturan Kartu Kata dengan Garis Miring (Pencegahan Bug Hanzi-Pinyin Mismatch)**:
+> Jangan pernah menulis dua karakter Hanzi berbeda dalam satu `.word-char` yang dibungkus dengan `/` (garis miring), seperti `他/她`, lalu memasangkannya hanya dengan satu suku kata Pinyin (`tā`).
+> Hal ini menyebabkan `colorizePair()` mendeteksi 2 Hanzi vs 1 suku kata → warna tidak sinkron.
+>
+> | ❌ Salah | ✅ Benar |
+> |:---:|:---:|
+> | `<div class="word-char">他/她</div>` + `<div class="word-pinyin">tā</div>` | Buat **dua kartu terpisah**: kartu `他` (tā, laki-laki) dan kartu `她` (tā, perempuan) |
 
 // 4. State & Handler Toggle
 let colorActive = false;
@@ -527,6 +581,14 @@ Sebelum menyerahkan pekerjaan atau melakukan `git push`, lakukan langkah verifik
   Periksa setiap baris 4 nada agar suku kata nada 1 hingga 4 menggunakan inisial dan final yang sama persis (contoh: *zhā, zhá, zhǎ, zhà* — tidak boleh tertukar dengan *zhū*).
 - [ ] **Verifikasi Pewarnaan Kata Majemuk (Mode 🎨)**:
   Uji mode warna per karakter untuk memastikan kata 2 atau 3 karakter Hanzi (seperti `手机`, `医生`, `桌子`, `出租车`) terwarnai per karakter dan per silabel pinyin secara presisi menggunakan regex `PINYIN_SYLL_RE`.
+- [ ] **Verifikasi Erhua (儿化)**:
+  Pastikan setiap kata berakhiran 儿 (seperti `哪儿`, `面条儿`, `点儿`) diuji menggunakan `deep_audit_v3.js` di scratch folder. Suku kata Pinyin berakhir `-r` (bukan `er/ér/ěr/èr`) harus dipasangkan ke 2 Hanzi: root → Hanzi sebelum 儿, 'r' → karakter 儿.
+- [ ] **Verifikasi Angka dalam Hanzi**:
+  Semua angka dalam `.bubble-hanzi` dan `.word-char` **WAJIB** menggunakan karakter Hanzi (`〇一二三四五六七八九十百千万`), bukan digit ASCII Latin (`0123456789`).
+- [ ] **Verifikasi Kartu Kata Garis Miring**:
+  Dilarang menyimpan dua Hanzi berbeda dalam satu `.word-char` yang dipisahkan `/` (seperti `他/她`). Setiap varian Hanzi yang berbeda harus menjadi kartu terpisah.
+- [ ] **Jalankan Audit Simulasi colorizePair**:
+  Setelah menambahkan konten baru, jalankan skrip `deep_audit_v3.js` di folder scratch dan pastikan semua file menunjukkan "0 bug – colorizePair engine sinkron 100%".
 - [ ] **Tampilan Tidak Rusak**: Pastikan `.dialog-box` dan `.classroom-box` berada di dalam `.wrap` (tidak meluber ke tepi layar selebar 100vw).
 - [ ] **Penyalinan Ganda (Dual-Path Sync)**:
   Salin file ke `C:\laragon\www\Power\Mandarin\mandarin-kosakata\`.

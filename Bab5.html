@@ -1380,7 +1380,7 @@
         <div class="classroom-item">
           <div class="item-number">4</div>
           <div class="item-content">
-            <div class="bubble-hanzi">A: 今天几号？<br>B: 今天5月1号。</div>
+            <div class="bubble-hanzi">A: 今天几号？<br>B: 今天五月一号。</div>
             <div class="bubble-pinyin">A: Jīntiān jǐ hào?<br>B: Jīntiān wǔ yuè yī hào.</div>
             <div class="bubble-arti">A: Hari ini tanggal berapa?<br>B: Hari ini tanggal 1 Mei.</div>
           </div>
@@ -2427,6 +2427,8 @@
   ];
 
   // Finals dan Regex Pinyin untuk mencocokkan suku kata (syllable) Mandarin
+  // ⚡ ERHUA (儿化) AWARE: suku kata berakhiran -r yang BUKAN "er/ér/ěr/èr" dianggap
+  //    sebagai fusion dengan karakter 儿 berikutnya. Contoh: nǎr = 哪+儿, tiáor = 条+儿
   const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
   const _finals = [
     _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
@@ -2444,6 +2446,8 @@
   }
 
   // Mewarnai pasangan teks Hanzi dan Pinyin per-karakter / per-kata
+  // ✅ ERHUA AWARE: suku kata berakhir -r (bukan "er/ér/ěr/èr") + Hanzi berikutnya = 儿
+  //    → root silabel dipasangkan ke Hanzi sebelum 儿, huruf 'r' dipasangkan ke 儿
   function colorizePair(hanziText, pinyinText, charColorMap) {
     if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
@@ -2511,12 +2515,27 @@
       const match = remaining.match(PINYIN_SYLL_RE);
       if (match) {
         const syll = match[0];
-        const pairedHz = hzList[hzIdx];
-        if (pairedHz && charColorMap[pairedHz]) {
-          outPy += '<span style="color:' + charColorMap[pairedHz] + ';font-weight:700;">' + syll + '</span>';
-          hzIdx++;
+        // ✅ Erhua detection: suku kata berakhir -r (bukan standalone "er/ér/ěr/èr")
+        //    DAN Hanzi berikutnya adalah 儿 → split r ke 儿
+        const isErhua = /r$/i.test(syll) &&
+                        !/^[eēéěè]r$/i.test(syll) &&
+                        hzIdx + 1 < hzList.length &&
+                        hzList[hzIdx + 1] === '儿';
+        if (isErhua) {
+          const rootSyll = syll.slice(0, -1);
+          const rootHz = hzList[hzIdx];
+          const erHz = hzList[hzIdx + 1];
+          outPy += '<span style="color:' + charColorMap[rootHz] + ';font-weight:700;">' + rootSyll + '</span>' +
+                   '<span style="color:' + (charColorMap[erHz] || charColorMap[rootHz]) + ';font-weight:700;">r</span>';
+          hzIdx += 2;
         } else {
-          outPy += syll;
+          const pairedHz = hzList[hzIdx];
+          if (pairedHz && charColorMap[pairedHz]) {
+            outPy += '<span style="color:' + charColorMap[pairedHz] + ';font-weight:700;">' + syll + '</span>';
+            hzIdx++;
+          } else {
+            outPy += syll;
+          }
         }
         remaining = remaining.substring(syll.length);
       } else {
@@ -2527,6 +2546,7 @@
 
     return { hanzi: outHz, pinyin: outPy };
   }
+
 
   function applyColors() {
     // Inisialisasi peta warna dengan 你 (merah) dan 好 (hijau) sebagai acuan
