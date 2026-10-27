@@ -389,13 +389,29 @@ function isHanziChar(ch) {
 }
 
 // 2. Regex Silabel Pinyin dengan Nada
-const PINYIN_SYLL_RE = /^[b-df-hj-np-z]*(?:[aāáǎàeēéěèoōóǒò]i?|[uūúǔù]o?|[iīíǐì]a?|[üǖǘǚǜ])[a-z0-9]*/i;
+const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
+const _finals = [
+  _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
+  _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
+  _A+'ng', _E+'ng', _O+'ng',
+  _A+'i', _E+'i', _A+_O, _O+_U, _A+'n', _E+'n',
+  _I+_A, _I+_E, _I+'n', _I+_U, _U+_A, _U+_O, _U+_E, _U+_I, _U+'n',
+  _V+_E, 'er',
+  _A, _O, _E, _I, _U, _V
+].join('|');
+const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
 
 // 3. Mesin Pemetaan & Pewarnaan Karakter
 function colorizePair(hanziStr, pinyinStr, charColorMap) {
-  // Melakukan segmentasi Hanzi dan pemetaan pinyin per kata/suku kata
+  // Melakukan segmentasi Hanzi dan pemetaan pinyin per kata/suku kata via PINYIN_SYLL_RE
   // Menghasilkan tag <span style="color: ..."> yang seragam antara hanzi dan pinyin
 }
+```
+
+> [!CAUTION]
+> **Kewajiban Penggunaan Syllabic Regex Engine (Pencegahan Bug Kata Majemuk)**:
+> Mesin `colorizePair()` **DILARANG KERAS** menggunakan metode pemecahan spasi sederhana (`pinyin.split(/\s+/)` dengan syarat `hanziChars.length === pinyinWords.length`). Metode naif tersebut menyebabkan **bug fatal** di mana kata majemuk (2 atau 3 karakter Hanzi seperti `手机` shǒujī, `医生` yīshēng, `桌子` zhuōzi, `出租车` chūzūchē) **TIDAK TERWARNAI** saat tombol 🎨 ditekan karena jumlah kata tanpa spasi tidak sama dengan jumlah karakter Hanzi!
+> **WAJIB** gunakan tokenizer berbasis `PINYIN_SYLL_RE` yang memotong suku kata Pinyin secara modular dan memasangkannya 1-to-1 ke karakter Hanzi, serta berikan spasi antar-suku kata pada teks `.word-pinyin` (misalnya: `shǒu jī`, `yī shēng`, `zhuō zi`, `chū zū chē`).
 
 // 4. State & Handler Toggle
 let colorActive = false;
@@ -449,6 +465,13 @@ Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 
    </div>
    ```
 
+   > [!IMPORTANT]
+   > **Konsistensi Inisial & Final pada Baris Latihan 4 Nada**:
+   > Setiap baris latihan 4 nada (`.phonetic-row`) **WAJIB** melatih kombinasi inisial dan final yang **IDENTIK** di keempat sel nada (Nada 1, 2, 3, dan 4).
+   > - ✅ **Benar**: `zhā` (t1), `zhá` (t2), `zhǎ` (t3), `zhà` (t4) — seluruhnya konsisten menggunakan inisial `zh` + final `a`.
+   > - 🚫 **Dilarang**: Mencampur final berbeda dalam satu baris, misalnya nada 1 menggunakan `zhū` (final u) sementara nada 2, 3, 4 menggunakan `zhá, zhǎ, zhà` (final a).
+   > - Selalu pastikan label deskripsi suku kata (misal: "Suku kata zh-a:") selaras 100% dengan suku kata pada tombol nada 1 hingga 4.
+
 2. **Kotak Aturan Penulisan Pinyin (`.aturan-block`)**:
    Menjelaskan kaidah penggabungan konsonan/vokal (seperti $j, q, x$ dengan $\ddot{u}$).
    ```html
@@ -500,6 +523,10 @@ Sebelum menyerahkan pekerjaan atau melakukan `git push`, lakukan langkah verifik
   const closes = (html.match(/<\/div>/gi) || []).length;
   console.log(`Open: ${opens}, Close: ${closes}, Diff: ${opens - closes}`); // Wajib 0
   ```
+- [ ] **Validasi Konsistensi 4 Nada (`.phonetic-row`)**:
+  Periksa setiap baris 4 nada agar suku kata nada 1 hingga 4 menggunakan inisial dan final yang sama persis (contoh: *zhā, zhá, zhǎ, zhà* — tidak boleh tertukar dengan *zhū*).
+- [ ] **Verifikasi Pewarnaan Kata Majemuk (Mode 🎨)**:
+  Uji mode warna per karakter untuk memastikan kata 2 atau 3 karakter Hanzi (seperti `手机`, `医生`, `桌子`, `出租车`) terwarnai per karakter dan per silabel pinyin secara presisi menggunakan regex `PINYIN_SYLL_RE`.
 - [ ] **Tampilan Tidak Rusak**: Pastikan `.dialog-box` dan `.classroom-box` berada di dalam `.wrap` (tidak meluber ke tepi layar selebar 100vw).
 - [ ] **Penyalinan Ganda (Dual-Path Sync)**:
   Salin file ke `C:\laragon\www\Power\Mandarin\mandarin-kosakata\`.

@@ -228,7 +228,11 @@ Script di `<script>` tag harus memiliki fungsi-fungsi berikut:
 | `playPinyin(text)` | Mainkan audio lafal via Web Speech API |
 
 > [!TIP]
-> Copy seluruh `<script>...</script>` dari WorkBookBab1.html, lalu hanya ubah `charColorMap` di dalam `applyColors()` sesuai kosakata bab baru.
+> Copy seluruh `<script>...</script>` dari template mesin terbaru (menggunakan regex silabel `PINYIN_SYLL_RE`), lalu sesuaikan `charColorMap` di dalam `applyColors()`.
+
+> [!CAUTION]
+> **Pewarnaan Kata Majemuk:**
+> Mesin `colorizePair()` WAJIB menggunakan regex silabel `PINYIN_SYLL_RE`, BUKAN `split(' ')` sederhana. Hal ini mencegah bug di mana kata 2 atau 3 karakter (seperti `手机` shǒujī, `医生` yīshēng, `桌子` zhuōzi, `出租车` chūzūchē) tidak terwarnai karena ketiadaan spasi!
 
 ---
 
@@ -238,6 +242,8 @@ Script di `<script>` tag harus memiliki fungsi-fungsi berikut:
 - [ ] Header gradient & badge warna sesuai tabel skema warna
 - [ ] Navigasi 3-kolom simetris: Prev ← Home → Next
 - [ ] Link ke workbook sebelumnya & selanjutnya sudah benar
+- [ ] Konsistensi 4 Nada: Pastikan semua 4 nada di `.phonetic-row` memiliki inisial dan final yang sama (contoh: *zhā, zhá, zhǎ, zhà*, bukan *zhū*)
+- [ ] Mesin Pewarnaan: Menggunakan regex silabel `PINYIN_SYLL_RE` dan berhasil mewarnai kata majemuk (2/3 karakter) saat tombol 🎨 aktif
 - [ ] Floating toolbar dengan 4 tombol (🔤 🇮🇩 📖 🎨)
 - [ ] Script `playPinyin()` dan semua toggle berfungsi
 - [ ] `charColorMap` di `applyColors()` sudah diisi kosakata bab baru
