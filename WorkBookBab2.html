@@ -1526,6 +1526,20 @@
       gap: 0.75rem;
       margin-top: 0.85rem;
     }
+    /* 5-column grid for Baris Pertama on desktop */
+    .syllable-card-grid.cols-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @media (max-width: 600px) {
+      .syllable-card-grid.cols-5 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 380px) {
+      .syllable-card-grid.cols-5 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
     .syllable-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
@@ -1600,8 +1614,8 @@
       </a>
     </div>
     <div class="nav-side-right">
-      <a href="Bab2.html" class="nav-pager-btn next" title="Buka Buku Utama Bab 2">
-        <span>Buku Utama Bab 2</span>
+      <a href="WorkBookBab3.html" class="nav-pager-btn next" title="Lanjut ke Workbook Bab 3">
+        <span>Workbook Bab 3</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </a>
     </div>
@@ -2672,7 +2686,7 @@
 
         <!-- Baris Pertama -->
         <div style="font-size: 0.8rem; font-weight: 700; color: #7c3aed; margin: 0.65rem 0 0.35rem;">Baris Pertama:</div>
-        <div class="syllable-card-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+        <div class="syllable-card-grid cols-5">
           <!-- 1. jiān -->
           <button type="button" class="initials-card" onclick="playPinyin('jiān')" title="j + ian → jiān">
             <div class="initials-pinyin">j<span class="initial-char" style="color: #0284c7; border-bottom-color: #0284c7;">iān</span></div>
@@ -2706,7 +2720,7 @@
 
         <!-- Baris Kedua -->
         <div style="font-size: 0.8rem; font-weight: 700; color: #7c3aed; margin: 0.95rem 0 0.35rem;">Baris Kedua:</div>
-        <div class="syllable-card-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+        <div class="syllable-card-grid cols-5">
           <!-- 6. xuě -->
           <button type="button" class="initials-card" onclick="playPinyin('xuě')" title="x + ue (üe) → xuě">
             <div class="initials-pinyin">x<span class="initial-char" style="color: #0284c7; border-bottom-color: #0284c7;">uě</span></div>
@@ -2740,7 +2754,7 @@
 
         <!-- Baris Ketiga -->
         <div style="font-size: 0.8rem; font-weight: 700; color: #7c3aed; margin: 0.95rem 0 0.35rem;">Baris Ketiga:</div>
-        <div class="syllable-card-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+        <div class="syllable-card-grid cols-5">
           <!-- 11. xiān -->
           <button type="button" class="initials-card" onclick="playPinyin('xiān')" title="x + ian → xiān">
             <div class="initials-pinyin">x<span class="initial-char" style="color: #0284c7; border-bottom-color: #0284c7;">iān</span></div>
