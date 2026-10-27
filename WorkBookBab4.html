@@ -1659,18 +1659,37 @@
   }
 
   function applyColors() {
-    // Inisialisasi peta warna dengan 你 (merah) dan 好 (hijau) sebagai acuan
+    // Inisialisasi peta warna dengan karakter penting sebagai acuan
     const charColorMap = {
       '你': '#e11d48', // Merah
       '好': '#16a34a', // Hijau
-      '现': '#2563eb', // Biru Royal (Xiàn)
-      '在': '#ea580c'  // Oranye Terang (zài)
     };
 
-    // 1. Warnai dialog bubbles
-    document.querySelectorAll('.bubble').forEach(bubble => {
-      const hzEl = bubble.querySelector('.bubble-hanzi');
-      const pyEl = bubble.querySelector('.bubble-pinyin');
+    // 1. Warnai Sandhi Cards (.sandhi-card) — hanzi=.sandhi-hz, pinyin=.py-read
+    document.querySelectorAll('.sandhi-card').forEach(card => {
+      const hzEl = card.querySelector('.sandhi-hz');
+      const pyEl = card.querySelector('.py-read');
+      const pyOrig = card.querySelector('.py-orig');
+      if (!hzEl || !pyEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+      if (pyOrig && !pyOrig.dataset.origHtml) pyOrig.dataset.origHtml = pyOrig.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+      // Warnai juga pinyin asli (sebelum sandhi) dengan warna yang sama
+      if (pyOrig) {
+        const resOrig = colorizePair(hzEl.dataset.origHtml, pyOrig.dataset.origHtml, charColorMap);
+        pyOrig.innerHTML = resOrig.pinyin;
+      }
+    });
+
+    // 2. Warnai Neutral Cards (.neutral-card) — hanzi=.neutral-hz, pinyin=.neutral-py
+    document.querySelectorAll('.neutral-card').forEach(card => {
+      const hzEl = card.querySelector('.neutral-hz');
+      const pyEl = card.querySelector('.neutral-py');
       if (!hzEl || !pyEl) return;
 
       if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
@@ -1681,102 +1700,39 @@
       pyEl.innerHTML = res.pinyin;
     });
 
-    // 2. Warnai word cards (arti per kata)
-    document.querySelectorAll('.word-card').forEach(card => {
-      const charEl = card.querySelector('.word-char');
-      const pyEl = card.querySelector('.word-pinyin');
-      if (!charEl || !pyEl) return;
-
-      if (!charEl.dataset.origHtml) charEl.dataset.origHtml = charEl.innerHTML;
-      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
-
-      const res = colorizePair(charEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
-      charEl.innerHTML = res.hanzi;
-      pyEl.innerHTML = res.pinyin;
-    });
-
-    // 3. Warnai nama pembicara (speaker name)
-    document.querySelectorAll('.speaker-name').forEach(spk => {
-      const hzEl = spk.querySelector('.speaker-hanzi');
-      const pyEl = spk.querySelector('.speaker-pinyin');
-      if (!hzEl || !pyEl) return;
-
-      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
-      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
-
-      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
-      hzEl.innerHTML = res.hanzi;
-      pyEl.innerHTML = res.pinyin;
-    });
-
-    // 4. Tongue Twister (jika ada)
-    document.querySelectorAll('.twister-box').forEach(box => {
-      const hzs = box.querySelectorAll('.twister-hanzi');
-      const pys = box.querySelectorAll('.twister-pinyin');
-      hzs.forEach((hzEl, i) => {
-        const pyEl = pys[i];
-        if (!hzEl || !pyEl) return;
-
-        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+    // 3. Warnai Semantic Pair Cards (.semantic-pair-card) — hanzi=judul 东西/买卖/孙子, pinyin=.sem-pinyin
+    document.querySelectorAll('.semantic-pair-card').forEach(card => {
+      // Ambil teks hanzi dari judul pair
+      const titleEl = card.querySelector('.semantic-pair-title > span:first-child');
+      const semPinyins = card.querySelectorAll('.sem-pinyin');
+      semPinyins.forEach(pyEl => {
         if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
-
-        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
-        hzEl.innerHTML = res.hanzi;
+        if (!titleEl) return;
+        const hzText = titleEl.textContent.replace(/^d+.s*/, '').trim();
+        const res = colorizePair(hzText, pyEl.dataset.origHtml, charColorMap);
+        // Warnai hanya pinyin (karena hanzi judul sudah dalam konteks berbeda)
         pyEl.innerHTML = res.pinyin;
       });
-    });
-
-    // 5. Warnai Character cards (主要人物)
-    document.querySelectorAll('.character-box').forEach(box => {
-      box.querySelectorAll('.char-card').forEach(card => {
-        // a. Nama Karakter
-        const nameHz = card.querySelector('.char-name-hanzi');
-        const namePy = card.querySelector('.char-name-pinyin');
-        if (nameHz && namePy) {
-          if (!nameHz.dataset.origText) nameHz.dataset.origText = nameHz.textContent;
-          if (!namePy.dataset.origText) namePy.dataset.origText = namePy.textContent;
-          const resName = colorizePair(nameHz.dataset.origText, namePy.dataset.origText, charColorMap);
-          nameHz.innerHTML = resName.hanzi;
-          namePy.innerHTML = resName.pinyin;
+      // Warnai teks hanzi judul pair itu sendiri
+      if (titleEl) {
+        const hzText = titleEl.textContent.replace(/^d+.s*/, '').trim();
+        if (!titleEl.dataset.origHtml) titleEl.dataset.origHtml = titleEl.innerHTML;
+        const pinyinRef = card.querySelector('.sem-pinyin');
+        if (pinyinRef) {
+          const pyText = pinyinRef.dataset.origHtml || pinyinRef.innerHTML;
+          const res = colorizePair(hzText, pyText, charColorMap);
+          titleEl.innerHTML = titleEl.dataset.origHtml.replace(hzText, res.hanzi);
         }
-        // b. Deskripsi Karakter
-        const descHz = card.querySelector('.char-desc-hanzi');
-        const descPy = card.querySelector('.char-desc-pinyin');
-        if (descHz && descPy) {
-          if (!descHz.dataset.origText) descHz.dataset.origText = descHz.textContent;
-          if (!descPy.dataset.origText) descPy.dataset.origText = descPy.textContent;
-          const resDesc = colorizePair(descHz.dataset.origText, descPy.dataset.origText, charColorMap);
-          descHz.innerHTML = resDesc.hanzi;
-          descPy.innerHTML = resDesc.pinyin;
-        }
-      });
-    });
-
-    // 6. Warnai Xiaoyu Classroom items (classroom-item)
-    document.querySelectorAll('.classroom-box').forEach(box => {
-      box.querySelectorAll('.item-content').forEach(item => {
-        const hzEl = item.querySelector('.bubble-hanzi');
-        const pyEl = item.querySelector('.bubble-pinyin');
-        if (!hzEl || !pyEl) return;
-
-        if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
-        if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
-
-        const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
-        hzEl.innerHTML = res.hanzi;
-        pyEl.innerHTML = res.pinyin;
-      });
+      }
     });
   }
 
   function removeColors() {
-    // Kembalikan semua teks ke kondisi asli tanpa span warna
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin';
+    // Kembalikan semua elemen yang sudah diwarnai ke kondisi asli
+    const selector = '.sandhi-hz, .py-read, .py-orig, .neutral-hz, .neutral-py, .sem-pinyin, .semantic-pair-title > span:first-child';
     document.querySelectorAll(selector).forEach(el => {
-      if (el.dataset.origHtml) {
+      if (el.dataset.origHtml !== undefined) {
         el.innerHTML = el.dataset.origHtml;
-      } else if (el.dataset.origText) {
-        el.textContent = el.dataset.origText;
       }
       el.style.color = '';
       el.style.fontWeight = '';
