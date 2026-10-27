@@ -30,7 +30,7 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      padding-bottom: 3rem;
+      padding-bottom: 5.5rem;
     }
 
     /* ── HEADER ── */
@@ -765,10 +765,25 @@
     @media (max-width: 600px) {
       .btn-text-desktop { display: none; }
       .btn-text-mobile { display: inline; }
-      header { padding: 2rem 1rem 1.6rem; }
-      header h1 { font-size: 1.55rem; }
-      header::before { font-size: 8rem; }
-      .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.4rem; }
+      header {
+        padding: 1.8rem 0.8rem 1.4rem;
+      }
+      header h1 {
+        font-size: 1.4rem;
+      }
+      header p {
+        font-size: 0.8rem;
+      }
+      header .bab {
+        max-width: 95%;
+        font-size: 0.74rem;
+        padding: 0.25rem 0.75rem;
+        line-height: 1.4;
+        white-space: normal;
+        word-break: break-word;
+      }
+      header::before { font-size: 7.5rem; }
+      .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.25rem; }
       .dialog-box { padding: 1.1rem 0.9rem; }
       .dialog-line { gap: 0.65rem; }
       .avatar { width: 38px; height: 38px; font-size: 0.9rem; }
@@ -784,9 +799,9 @@
         gap: 0.65rem;
       }
       .word-card { padding: 0.75rem 0.5rem; }
-      .word-char { font-size: 1.5rem; }
-      .word-pinyin { font-size: 0.72rem; }
-      .word-arti { font-size: 0.74rem; }
+      .word-char { font-size: 1.45rem; }
+      .word-pinyin { font-size: 0.75rem; }
+      .word-arti { font-size: 0.72rem; }
 
       .twister-box { padding: 1.2rem; }
       .twister-hanzi { font-size: 1.35rem; }
@@ -799,14 +814,24 @@
       .char-desc-pinyin { font-size: 0.76rem; }
       .char-desc-arti { font-size: 0.76rem; }
 
-      .classroom-box { padding: 1.1rem 0.9rem; }
-      .classroom-item { padding: 0.75rem 0.85rem; gap: 0.65rem; }
+      .classroom-box { padding: 0.9rem 0.75rem; }
+      .classroom-item { padding: 0.75rem 0.75rem; gap: 0.65rem; }
 
       /* Mobile Navbar */
-      .nav { padding: 0.5rem 0.75rem; }
+      .nav {
+        padding: 0.45rem 0.6rem !important;
+        gap: 0.35rem !important;
+      }
+      .nav-home-btn {
+        padding: 0.38rem 0.65rem;
+        font-size: 0.75rem;
+      }
       .nav-home-btn span.label { display: none; }
-      .nav-tab { padding: 0.35rem 0.7rem; font-size: 0.78rem; }
-      .nav-pager-btn { padding: 0.38rem 0.75rem; font-size: 0.78rem; }
+      .nav-pager-btn {
+        padding: 0.38rem 0.65rem;
+        font-size: 0.75rem;
+        gap: 0.25rem;
+      }
 
       /* Mobile Toolbar: clean floating pill at bottom */
       .dialog-toolbar {
@@ -829,6 +854,81 @@
       .toggle-switch-btn .status-badge {
         font-size: 0.62rem;
         padding: 0.08rem 0.32rem;
+      }
+
+      /* Phonetic Container on Mobile */
+      .phonetic-container {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+      }
+      .phonetic-card {
+        padding: 0.85rem 0.65rem;
+      }
+      .phonetic-group-header {
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.65rem;
+      }
+      .phonetic-group-title {
+        font-size: 0.98rem;
+      }
+      .phonetic-group-badge {
+        font-size: 0.78rem;
+        padding: 2px 7px;
+      }
+      .phonetic-tone-headers {
+        gap: 0.35rem;
+        margin-bottom: 0.45rem;
+      }
+      .phonetic-tone-header-item {
+        font-size: 0.68rem;
+        padding: 4px 1px;
+        line-height: 1.25;
+      }
+      .phonetic-row {
+        gap: 0.35rem;
+        margin-bottom: 0.45rem;
+      }
+      .phonetic-cell {
+        padding: 0.5rem 0.2rem;
+      }
+      .phonetic-text {
+        font-size: 1.1rem;
+      }
+      .phonetic-tone-label {
+        font-size: 0.62rem;
+      }
+
+      /* Latihan 5 Dialog on Mobile */
+      .dialog5-pair {
+        padding: 0.75rem 0.65rem;
+        gap: 0.5rem;
+      }
+      .dialog5-line {
+        padding: 0.45rem 0.6rem;
+        gap: 0.5rem;
+      }
+      .dialog5-avatar {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+      }
+      .dialog5-hanzi {
+        font-size: 1.15rem;
+      }
+      .dialog5-pinyin {
+        font-size: 0.82rem;
+      }
+      .dialog5-arti {
+        font-size: 0.76rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .breakdown-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .latihan4-grid {
+        grid-template-columns: 1fr !important;
       }
     }
 
@@ -1455,7 +1555,8 @@
     <div class="nav-side-left">
       <a href="Bab1.html" class="nav-pager-btn prev" title="Kembali ke Buku Teks Bab 1">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        <span>Buku Utama Bab 1</span>
+        <span class="btn-text-desktop">Buku Teks Bab 1</span>
+        <span class="btn-text-mobile">Bab 1</span>
       </a>
     </div>
     <div class="nav-center">
@@ -1466,7 +1567,8 @@
     </div>
     <div class="nav-side-right">
       <a href="WorkBookBab2.html" class="nav-pager-btn next" title="Lanjut ke Workbook Bab 2">
-        <span>Workbook Bab 2</span>
+        <span class="btn-text-desktop">Workbook Bab 2</span>
+        <span class="btn-text-mobile">Bab 2</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </a>
     </div>
