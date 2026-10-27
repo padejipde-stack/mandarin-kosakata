@@ -227,11 +227,37 @@ Setiap dialog bab (umumnya Teks 1, Teks 2, Teks 3) dibungkus dalam `.dialog-box`
 ```
 
 > [!CAUTION]
-> **Pencegahan Bug DOM Overflow**:
-> Perhatikan dengan teliti penutupan tag di dalam `.bubble-wrap`!
-> Format yang benar adalah:
-> `<div class="bubble-wrap"><div class="bubble"><div class="bubble-hanzi">...</div><div class="bubble-pinyin">...</div><div class="bubble-arti">...</div></div></div></div>`
-> Jangan pernah menutup tag `</div>` ekstra setelah `.bubble-arti` yang menyebabkan `.dialog-box` tertutup sebelum waktunya dan merusak lebar kontainer `.wrap`!
+> **Pencegahan Bug DOM Overflow & Penutupan Prematur `.dialog-box`**:
+> Perhatikan dengan teliti hierarki penutupan tag di setiap baris dialog (`.dialog-line`):
+> ```html
+> <div class="dialog-line">                         <!-- 1. Buka dialog-line -->
+>   <div class="avatar av-xxx">...</div>             <!-- 2. Avatar (langsung tutup) -->
+>   <div class="bubble-wrap">                       <!-- 3. Buka bubble-wrap -->
+>     <span class="speaker-name">...</span>
+>     <div class="bubble">                          <!-- 4. Buka bubble -->
+>       <div class="bubble-hanzi">...</div>         <!-- 5. Hanzi (langsung tutup) -->
+>       <div class="bubble-pinyin">...</div>       <!-- 6. Pinyin (langsung tutup) -->
+>       <div class="bubble-arti">...</div>          <!-- 7. Arti (HANYA SATU </div> !) -->
+>     </div>                                        <!-- 8. Tutup bubble -->
+>   </div>                                          <!-- 9. Tutup bubble-wrap -->
+> </div>                                            <!-- 10. Tutup dialog-line -->
+> ```
+> 
+> 🚫 **ANTI-PATTERN FATAL (DILARANG KERAS)**:
+> Menulis penutup ganda pada baris `.bubble-arti`:
+> ```html
+> <!-- SALAH BESAR (FATAL BUG): -->
+> <div class="bubble-arti">...</div></div>
+> ```
+> **Dampak Kerusakan Berantai (Domino Effect)**:
+> 1. Tag `</div>` ekstra tersebut langsung **menutup `.dialog-box` secara prematur**.
+> 2. Semua dialog berikutnya serta kotak kosakata `.sub-breakdown` terlempar keluar dari `.dialog-box`.
+> 3. Tag penutup `</div>` di akhir teks dialog akan menutup kontainer induk `.wrap`.
+> 4. Seluruh konten setelah teks tersebut (Xiaoyu's Classroom, latihan, dll.) meluber keluar ke tepi layar selebar **100vw (DOM Overflow Bug)**.
+> 
+> ✅ **ATURAN WAJIB**:
+> - Baris `.bubble-arti` **HANYA BOLEH MEMILIKI SATU `</div>`**.
+> - Selalu pastikan jumlah tag `<div>` yang dibuka dan ditutup dalam `.dialog-line` seimbang (3 buka : 3 tutup).
 
 ### 4.3 Rincian Arti Per Kata (`.sub-breakdown`)
 Diletakkan tepat di bawah `.dialog-box` untuk membedah kosakata baru di teks tersebut:
@@ -575,7 +601,15 @@ Sebelum menyerahkan pekerjaan atau melakukan `git push`, lakukan langkah verifik
   const html = fs.readFileSync('BabN.html', 'utf8');
   const opens = (html.match(/<div[\s>]/gi) || []).length;
   const closes = (html.match(/<\/div>/gi) || []).length;
-  console.log(`Open: ${opens}, Close: ${closes}, Diff: ${opens - closes}`); // Wajib 0
+  console.log(`Open: ${opens}, Close: ${closes}, Diff: ${opens - closes}`); // Wajib 0 mutlak!
+  ```
+- [ ] **Audit Deteksi Penutup Tag Ganda pada Dialog**:
+  Pastikan tidak ada kesalahan ketik penutup ganda `</div></div>` pada baris `.bubble-arti` yang dapat menutup `.dialog-box` secara prematur:
+  ```javascript
+  const badClosers = html.match(/class=["'][^"']*bubble-arti[^"']*["'][^>]*>[^<]*<\/div>\s*<\/div>/gi);
+  if (badClosers) {
+    console.error("FATAL ERROR: Ditemukan penutup </div> ganda pada .bubble-arti:", badClosers);
+  }
   ```
 - [ ] **Validasi Konsistensi 4 Nada (`.phonetic-row`)**:
   Periksa setiap baris 4 nada agar suku kata nada 1 hingga 4 menggunakan inisial dan final yang sama persis (contoh: *zhā, zhá, zhǎ, zhà* — tidak boleh tertukar dengan *zhū*).
