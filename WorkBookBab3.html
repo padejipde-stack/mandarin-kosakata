@@ -1946,12 +1946,12 @@
         <div class="phonetic-tone-header-item tone-h4">Nada 4 ( ˋ ) · Turun Cepat</div>
       </div>
 
-      <!-- Baris 1: zhū, zhá, zhǎ, zhà -->
-      <div style="font-size: 0.82rem; font-weight: 700; color: #0369a1; margin: 0.5rem 0 0.25rem;">1. Suku kata zh-u / zh-a:</div>
+      <!-- Baris 1: zhā, zhá, zhǎ, zhà -->
+      <div style="font-size: 0.82rem; font-weight: 700; color: #0369a1; margin: 0.5rem 0 0.25rem;">1. Suku kata zh-a:</div>
       <div class="phonetic-row">
-        <button type="button" class="phonetic-cell t1" onclick="playPinyin('zhū')" title="zhū (Nada 1)">
-          <div class="phonetic-text">zhū</div>
-          <div class="phonetic-tone-label">Nada 1 ˉ (babi / tinggal)</div>
+        <button type="button" class="phonetic-cell t1" onclick="playPinyin('zhā')" title="zhā (Nada 1)">
+          <div class="phonetic-text">zhā</div>
+          <div class="phonetic-tone-label">Nada 1 ˉ (menusuk / 扎)</div>
         </button>
         <button type="button" class="phonetic-cell t2" onclick="playPinyin('zhá')" title="zhá (Nada 2)">
           <div class="phonetic-text">zhá</div>
@@ -2083,7 +2083,7 @@
         <!-- 5. shǒujī (手机) -->
         <div class="word-card" onclick="playPinyin('shǒujī')" title="Klik untuk mendengar suara">
           <div class="word-char">手机</div>
-          <div class="word-pinyin">shǒujī</div>
+          <div class="word-pinyin">shǒu jī</div>
           <div class="word-arti">Telepon genggam / Handphone</div>
           <div class="word-detail">shǒu (sh+ou) + jī (j+i)</div>
         </div>
@@ -2091,7 +2091,7 @@
         <!-- 6. yīshēng (医生) -->
         <div class="word-card" onclick="playPinyin('yīshēng')" title="Klik untuk mendengar suara">
           <div class="word-char">医生</div>
-          <div class="word-pinyin">yīshēng</div>
+          <div class="word-pinyin">yī shēng</div>
           <div class="word-arti">Dokter</div>
           <div class="word-detail">yī + shēng (sh+eng)</div>
         </div>
@@ -2099,7 +2099,7 @@
         <!-- 7. zhuōzi (桌子) -->
         <div class="word-card" onclick="playPinyin('zhuōzi')" title="Klik untuk mendengar suara">
           <div class="word-char">桌子</div>
-          <div class="word-pinyin">zhuōzi</div>
+          <div class="word-pinyin">zhuō zi</div>
           <div class="word-arti">Meja</div>
           <div class="word-detail">zhuō (zh+uo) + zi (z+i)</div>
         </div>
@@ -2107,7 +2107,7 @@
         <!-- 8. chūzūchē (出租车) -->
         <div class="word-card" onclick="playPinyin('chūzūchē')" title="Klik untuk mendengar suara">
           <div class="word-char">出租车</div>
-          <div class="word-pinyin">chūzūchē</div>
+          <div class="word-pinyin">chū zū chē</div>
           <div class="word-arti">Taksi</div>
           <div class="word-detail">chū (ch+u) + zū (z+u) + chē (ch+e)</div>
         </div>
@@ -2973,61 +2973,106 @@
     '#f97316'  // Oranye terang
   ];
 
+  // Finals dan Regex Pinyin untuk mencocokkan suku kata (syllable) Mandarin
+  const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
+  const _finals = [
+    _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
+    _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
+    _A+'ng', _E+'ng', _O+'ng',
+    _A+'i', _E+'i', _A+_O, _O+_U, _A+'n', _E+'n',
+    _I+_A, _I+_E, _I+'n', _I+_U, _U+_A, _U+_O, _U+_E, _U+_I, _U+'n',
+    _V+_E, 'er',
+    _A, _O, _E, _I, _U, _V
+  ].join('|');
+  const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
+
   function isHanziChar(ch) {
-    return /[\u4e00-\u9fff]/.test(ch);
+    return /[\u3007\u4e00-\u9fa5]/.test(ch);
   }
 
+  // Mewarnai pasangan teks Hanzi dan Pinyin per-karakter / per-suku kata
   function colorizePair(hanziText, pinyinText, charColorMap) {
-    const rawTokens = pinyinText.split(/(\s+|[.,!?:;，。！？：；]+)/);
-    const pinyinWords = [];
-    rawTokens.forEach(token => {
-      if (/^[a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜüÜ]+$/i.test(token)) {
-        pinyinWords.push(token);
-      }
-    });
+    if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
-    const hanziChars = [];
+    // 1. Ekstrak semua karakter Hanzi dan pastikan punya warna
+    const hzList = [];
     for (const ch of hanziText) {
       if (isHanziChar(ch)) {
-        hanziChars.push(ch);
+        hzList.push(ch);
+        if (!charColorMap[ch]) {
+          const nextColor = COLOR_PALETTE[Object.keys(charColorMap).length % COLOR_PALETTE.length];
+          charColorMap[ch] = nextColor;
+        }
       }
     }
 
-    if (hanziChars.length === pinyinWords.length && hanziChars.length > 0) {
-      let colorIdx = Object.keys(charColorMap).length;
-      let newHanziHtml = '';
-      let hzIdx = 0;
-      for (const ch of hanziText) {
-        if (isHanziChar(ch)) {
-          if (!charColorMap[ch]) {
-            charColorMap[ch] = COLOR_PALETTE[colorIdx % COLOR_PALETTE.length];
-            colorIdx++;
-          }
-          const c = charColorMap[ch];
-          newHanziHtml += `<span style="color:${c};font-weight:700;">${ch}</span>`;
+    // 2. Beri warna pada tiap karakter Hanzi
+    let outHz = '';
+    for (const ch of hanziText) {
+      if (isHanziChar(ch)) {
+        outHz += '<span style="color:' + charColorMap[ch] + ';font-weight:700;">' + ch + '</span>';
+      } else {
+        outHz += ch;
+      }
+    }
+
+    // 3. Beri warna pada tiap suku kata Pinyin yang bersesuaian
+    let outPy = '';
+    let hzIdx = 0;
+    let remaining = pinyinText;
+
+    while (remaining.length > 0) {
+      // Lewati tag HTML (seperti <br>)
+      const tagMatch = remaining.match(/^<[^>]+>/);
+      if (tagMatch) {
+        outPy += tagMatch[0];
+        remaining = remaining.substring(tagMatch[0].length);
+        continue;
+      }
+
+      // Lewati label dialog berupa huruf latin tunggal (seperti "A:", "B:")
+      const labelMatch = remaining.match(/^[A-Z][：:]\s*/);
+      if (labelMatch) {
+        outPy += labelMatch[0];
+        remaining = remaining.substring(labelMatch[0].length);
+        continue;
+      }
+
+      // Lewati akronim alfabetik kapital
+      const acronymMatch = remaining.match(/^[A-Z]{2,}(?=[^a-zāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜv]|$)/);
+      if (acronymMatch) {
+        outPy += acronymMatch[0];
+        remaining = remaining.substring(acronymMatch[0].length);
+        continue;
+      }
+
+      // Lewati spasi dan tanda baca
+      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
+      if (nonLetterMatch) {
+        outPy += nonLetterMatch[0];
+        remaining = remaining.substring(nonLetterMatch[0].length);
+        continue;
+      }
+
+      // Cocokkan suku kata pinyin
+      const match = remaining.match(PINYIN_SYLL_RE);
+      if (match) {
+        const syll = match[0];
+        const pairedHz = hzList[hzIdx];
+        if (pairedHz && charColorMap[pairedHz]) {
+          outPy += '<span style="color:' + charColorMap[pairedHz] + ';font-weight:700;">' + syll + '</span>';
           hzIdx++;
         } else {
-          newHanziHtml += ch;
+          outPy += syll;
         }
+        remaining = remaining.substring(syll.length);
+      } else {
+        outPy += remaining[0];
+        remaining = remaining.substring(1);
       }
-
-      let pyWordIdx = 0;
-      let newPinyinHtml = '';
-      rawTokens.forEach(token => {
-        if (/^[a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜüÜ]+$/i.test(token)) {
-          const correspondingChar = hanziChars[pyWordIdx];
-          const c = charColorMap[correspondingChar] || '#0284c7';
-          newPinyinHtml += `<span style="color:${c};font-weight:700;">${token}</span>`;
-          pyWordIdx++;
-        } else {
-          newPinyinHtml += token;
-        }
-      });
-
-      return { hanzi: newHanziHtml, pinyin: newPinyinHtml };
     }
 
-    return { hanzi: hanziText, pinyin: pinyinText };
+    return { hanzi: outHz, pinyin: outPy };
   }
 
   function applyColors() {
@@ -3132,10 +3177,24 @@
       charEl.innerHTML = res.hanzi;
       pyEl.innerHTML = res.pinyin;
     });
+
+    // 4. Tongue Twister
+    document.querySelectorAll('.twister-line').forEach(line => {
+      const hzEl = line.querySelector('.twister-hanzi');
+      const pyEl = line.querySelector('.twister-pinyin');
+      if (!hzEl || !pyEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
   }
 
   function removeColors() {
-    const selector = '.dialog5-hanzi, .dialog5-pinyin, .bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin';
+    const selector = '.dialog5-hanzi, .dialog5-pinyin, .bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .twister-hanzi, .twister-pinyin';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
