@@ -538,14 +538,15 @@ Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 
 > - Di **Workbook (`WorkBookBabN.html`)**, bagian `.nav-center` **HANYA BERISI** tombol "Menu Utama" (`.nav-home-btn`).
 > - 🚫 **DILARANG** menyisipkan `<div class="nav-tabs">` (tab Buku Teks / Workbook) di dalam navbar Workbook. Tab tersebut hanya milik Buku Teks (`BabN.html`).
 > - Menambahkan tab ke `.nav-center` pada Workbook akan merusak grid 3-kolom simetris (`1fr auto 1fr`) dan membuat navbar terlihat berbeda dari `WorkBookBab1.html` s.d. `WorkBookBab3.html`.
-> - Format baku navbar Workbook:
+> - Format baku navbar Workbook (Wajib menggunakan `.btn-text-desktop` dan `.btn-text-mobile` agar tidak pecah/rusak di layar smartphone):
 > ```html
 > <div class="nav-bar">
 >   <div class="nav">
 >     <div class="nav-side-left">
 >       <a href="WorkBookBab[N-1].html" class="nav-pager-btn prev" title="Kembali ke Workbook Bab [N-1]">
 >         <svg ...></svg>
->         <span>Workbook Bab [N-1]</span>
+>         <span class="btn-text-desktop">Workbook Bab [N-1]</span>
+>         <span class="btn-text-mobile">Bab [N-1]</span>
 >       </a>
 >     </div>
 >     <div class="nav-center">
@@ -556,7 +557,8 @@ Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 
 >     </div>
 >     <div class="nav-side-right">
 >       <a href="WorkBookBab[N+1].html" class="nav-pager-btn next" title="Lanjut ke Workbook Bab [N+1]">
->         <span>Workbook Bab [N+1]</span>
+>         <span class="btn-text-desktop">Workbook Bab [N+1]</span>
+>         <span class="btn-text-mobile">Bab [N+1]</span>
 >         <svg ...></svg>
 >       </a>
 >     </div>

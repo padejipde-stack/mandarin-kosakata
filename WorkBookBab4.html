@@ -30,7 +30,7 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      padding-bottom: 3rem;
+      padding-bottom: 5.5rem;
     }
 
     /* ── HEADER ── */
@@ -1346,6 +1346,217 @@
       border-radius: 20px;
     }
 
+
+    /* ── MOBILE OPTIMIZATIONS KHUSUS WORKBOOK BAB 4 ── */
+    @media (max-width: 600px) {
+      header {
+        padding: 1.8rem 0.8rem 1.4rem;
+      }
+      header h1 {
+        font-size: 1.4rem;
+      }
+      header p {
+        font-size: 0.8rem;
+      }
+      header .bab {
+        max-width: 95%;
+        font-size: 0.74rem;
+        padding: 0.25rem 0.75rem;
+        line-height: 1.4;
+        white-space: normal;
+        word-break: break-word;
+      }
+
+      /* Navbar mobile */
+      .nav {
+        padding: 0.45rem 0.6rem !important;
+        gap: 0.35rem !important;
+      }
+      .nav-home-btn {
+        padding: 0.38rem 0.65rem;
+        font-size: 0.75rem;
+      }
+      .nav-pager-btn {
+        padding: 0.38rem 0.65rem;
+        font-size: 0.75rem;
+        gap: 0.25rem;
+      }
+
+      /* Formula Sandhi Mobile */
+      .sandhi-formula-card {
+        padding: 0.8rem 0.85rem;
+      }
+      .sandhi-formula-display {
+        padding: 0.6rem 0.5rem;
+        gap: 0.35rem;
+        font-size: 0.88rem;
+      }
+      .sandhi-chip {
+        padding: 0.25rem 0.45rem;
+        font-size: 0.76rem;
+      }
+      .sandhi-chip strong {
+        font-size: 0.8rem;
+      }
+      .sandhi-arrow {
+        font-size: 1.05rem;
+      }
+
+      /* Grid Sandhi 2 Kolom Rapi */
+      .sandhi-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.55rem;
+      }
+      .sandhi-card {
+        padding: 0.7rem 0.65rem;
+        gap: 0.35rem;
+      }
+      .sandhi-hz {
+        font-size: 1.25rem;
+      }
+      .sandhi-tag {
+        font-size: 0.62rem;
+        padding: 0.1rem 0.35rem;
+      }
+      .sandhi-py-row {
+        font-size: 0.78rem;
+        gap: 0.25rem;
+      }
+      .py-read {
+        font-size: 0.85rem;
+      }
+      .sandhi-arti {
+        font-size: 0.72rem;
+      }
+
+      /* Grid Nada Netral 2 Kolom Rapi */
+      .neutral-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.55rem;
+      }
+      .neutral-card {
+        padding: 0.7rem 0.5rem;
+        gap: 0.25rem;
+      }
+      .neutral-hz {
+        font-size: 1.35rem;
+      }
+      .neutral-py {
+        font-size: 0.82rem;
+      }
+      .neutral-arti {
+        font-size: 0.72rem;
+      }
+
+      /* Semantic Contrast */
+      .semantic-pair-card {
+        padding: 0.75rem 0.85rem;
+      }
+      .semantic-pair-title {
+        font-size: 1.15rem;
+      }
+      .semantic-col {
+        padding: 0.55rem 0.75rem;
+      }
+      .sem-pinyin {
+        font-size: 0.92rem;
+      }
+      .sem-arti {
+        font-size: 0.78rem;
+      }
+
+      /* Latihan Soal Cards Mobile */
+      .classroom-box {
+        padding: 0.9rem 0.75rem;
+      }
+      .soal-grid {
+        gap: 0.85rem;
+      }
+      .soal-item {
+        padding: 0.75rem 0.75rem;
+      }
+      .soal-header {
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .soal-num {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+      }
+      .soal-hz {
+        font-size: 1.02rem;
+      }
+      .soal-py {
+        font-size: 0.78rem;
+      }
+      .soal-id {
+        font-size: 0.75rem;
+      }
+      .dialog-soal {
+        padding: 0.45rem 0.6rem;
+        gap: 0.35rem;
+      }
+      .dialog-soal-speaker {
+        font-size: 0.7rem;
+        padding: 0.08rem 0.4rem;
+      }
+      .dialog-soal-hz {
+        font-size: 0.92rem;
+      }
+      .dialog-soal-py {
+        font-size: 0.75rem;
+      }
+      .dialog-soal-id {
+        font-size: 0.74rem;
+      }
+      .soal-option {
+        padding: 0.45rem 0.65rem;
+        font-size: 0.82rem;
+        gap: 0.45rem;
+        align-items: flex-start;
+      }
+      .soal-option-letter {
+        font-size: 0.78rem;
+        width: 16px;
+        margin-top: 2px;
+      }
+      .soal-option-hz {
+        font-size: 0.95rem;
+      }
+      .soal-option-py {
+        font-size: 0.74rem;
+      }
+      .soal-option-id {
+        font-size: 0.75rem;
+      }
+      .soal-answer-badge {
+        font-size: 0.74rem;
+        padding: 0.2rem 0.55rem;
+        word-break: break-word;
+      }
+      .latihan-intro {
+        padding: 0.45rem 0.65rem;
+      }
+      .latihan-intro .hz {
+        font-size: 0.94rem;
+      }
+      .latihan-intro .py {
+        font-size: 0.78rem;
+      }
+      .latihan-intro .id {
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .sandhi-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .neutral-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
 </style>
 </head>
 <body class="show-pinyin show-arti show-vocab">
@@ -1364,7 +1575,8 @@
     <div class="nav-side-left">
       <a href="WorkBookBab3.html" class="nav-pager-btn prev" title="Kembali ke Workbook Bab 3">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        <span>Workbook Bab 3</span>
+        <span class="btn-text-desktop">Workbook Bab 3</span>
+        <span class="btn-text-mobile">Bab 3</span>
       </a>
     </div>
     <div class="nav-center">
@@ -1375,7 +1587,8 @@
     </div>
     <div class="nav-side-right">
       <a href="Bab4.html" class="nav-pager-btn next" title="Buka Buku Teks Bab 4">
-        <span>Buku Teks Bab 4</span>
+        <span class="btn-text-desktop">Buku Teks Bab 4</span>
+        <span class="btn-text-mobile">Buku Teks</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </a>
     </div>
