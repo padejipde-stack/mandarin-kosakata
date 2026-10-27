@@ -1068,6 +1068,109 @@
       border-radius: 0 8px 8px 0;
     }
     .catatan-item strong { color: #7c2d12; }
+
+    /* ── MATCHING EXERCISE (GAMBAR & KOSAKATA) ── */
+    .match-vocab-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+    .match-vocab-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.85rem;
+    }
+    .match-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .label-a { background: #0369a1; }
+    .label-b { background: #7c3aed; }
+    .label-c { background: #059669; }
+    .label-d { background: #c0392b; }
+    .label-e { background: #db2777; }
+    .label-f { background: #d97706; }
+    .match-hz { font-family: 'Noto Sans SC', sans-serif; font-size: 1rem; font-weight: 700; color: var(--primary-dark); }
+    .match-py { font-size: 0.75rem; color: #64748b; }
+    .match-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .match-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 0.85rem 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .match-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+    .match-img-placeholder {
+      font-size: 2.6rem;
+      line-height: 1;
+    }
+    .match-img-desc {
+      font-size: 0.74rem;
+      color: var(--sub);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .match-img-desc small {
+      font-weight: 400;
+      display: block;
+    }
+    .match-answer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      background: var(--primary-soft);
+      border-radius: 10px;
+      padding: 0.55rem 0.7rem;
+      width: 100%;
+    }
+    .match-hz-big {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.2;
+    }
+    .match-py-text {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #475569;
+    }
+    .match-id-text {
+      font-size: 0.75rem;
+      color: var(--sub);
+    }
+    @media (max-width: 600px) {
+      .match-grid { grid-template-columns: repeat(2, 1fr); }
+      .match-vocab-bank { gap: 0.4rem; }
+      .match-vocab-item { padding: 0.35rem 0.65rem; font-size: 0.78rem; }
+    }
   </style>
 </head>
 <body>
@@ -1268,6 +1371,155 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ LATIHAN MENCOCOKKAN: GAMBAR & KOSAKATA ══ -->
+  <div>
+    <div class="section-title">🖼️ Latihan Mencocokkan · 配对练习</div>
+    <div class="classroom-box" style="border-left: 5px solid #8e44ad;">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">语</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="color:#5b21b6; background:#ede9fe;">Latihan Gambar · 图片配对</div>
+          <div class="classroom-desc">Cocokkan kata/frasa Mandarin berikut dengan gambar yang sesuai! Lihat jawaban benar di bawah.</div>
+        </div>
+      </div>
+
+      <!-- Bank Kosakata A–F -->
+      <div class="classroom-group-title">
+        <span>📋 Bank Kosakata (Vocabulary Bank) · 词汇表</span>
+      </div>
+      <div class="match-vocab-bank">
+        <div class="match-vocab-item">
+          <span class="match-label label-a">A</span>
+          <span class="match-hz">五</span>
+          <span class="match-py">wǔ</span>
+        </div>
+        <div class="match-vocab-item">
+          <span class="match-label label-b">B</span>
+          <span class="match-hz">哥哥</span>
+          <span class="match-py">gēge</span>
+        </div>
+        <div class="match-vocab-item">
+          <span class="match-label label-c">C</span>
+          <span class="match-hz">学生</span>
+          <span class="match-py">xuésheng</span>
+        </div>
+        <div class="match-vocab-item">
+          <span class="match-label label-d">D</span>
+          <span class="match-hz">六十岁</span>
+          <span class="match-py">liùshí suì</span>
+        </div>
+        <div class="match-vocab-item">
+          <span class="match-label label-e">E</span>
+          <span class="match-hz">妈妈</span>
+          <span class="match-py">māma</span>
+        </div>
+        <div class="match-vocab-item">
+          <span class="match-label label-f">F</span>
+          <span class="match-hz">老师</span>
+          <span class="match-py">lǎoshī</span>
+        </div>
+      </div>
+
+      <!-- Jawaban Benar Gambar 1–6 -->
+      <div class="classroom-group-title">
+        <span>✅ Jawaban Benar · 正确答案</span>
+      </div>
+      <div class="match-grid">
+
+        <!-- Gambar 1: Pria lanjut usia -->
+        <div class="match-card">
+          <div class="match-img-placeholder">👴</div>
+          <div class="match-img-desc">
+            Gambar 1
+            <small>Pria lanjut usia</small>
+          </div>
+          <div class="match-answer">
+            <span class="match-label label-d">D</span>
+            <div class="match-hz-big">六十岁</div>
+            <div class="match-py-text">liùshí suì</div>
+            <div class="match-id-text">60 tahun</div>
+          </div>
+        </div>
+
+        <!-- Gambar 2: Angka 5 -->
+        <div class="match-card">
+          <div class="match-img-placeholder">5️⃣</div>
+          <div class="match-img-desc">
+            Gambar 2
+            <small>Angka 5</small>
+          </div>
+          <div class="match-answer">
+            <span class="match-label label-a">A</span>
+            <div class="match-hz-big">五</div>
+            <div class="match-py-text">wǔ</div>
+            <div class="match-id-text">Lima / 5</div>
+          </div>
+        </div>
+
+        <!-- Gambar 3: Siswa-siswi di kelas -->
+        <div class="match-card">
+          <div class="match-img-placeholder">👩‍🎓</div>
+          <div class="match-img-desc">
+            Gambar 3
+            <small>Siswa-siswi di kelas</small>
+          </div>
+          <div class="match-answer">
+            <span class="match-label label-c">C</span>
+            <div class="match-hz-big">学生</div>
+            <div class="match-py-text">xuésheng</div>
+            <div class="match-id-text">Pelajar / Siswa</div>
+          </div>
+        </div>
+
+        <!-- Gambar 4: Guru di depan papan tulis -->
+        <div class="match-card">
+          <div class="match-img-placeholder">👩‍🏫</div>
+          <div class="match-img-desc">
+            Gambar 4
+            <small>Guru di depan papan tulis</small>
+          </div>
+          <div class="match-answer">
+            <span class="match-label label-f">F</span>
+            <div class="match-hz-big">老师</div>
+            <div class="match-py-text">lǎoshī</div>
+            <div class="match-id-text">Guru</div>
+          </div>
+        </div>
+
+        <!-- Gambar 5: Ibu dengan bayi -->
+        <div class="match-card">
+          <div class="match-img-placeholder">👩‍👧</div>
+          <div class="match-img-desc">
+            Gambar 5
+            <small>Ibu dengan bayi</small>
+          </div>
+          <div class="match-answer">
+            <span class="match-label label-e">E</span>
+            <div class="match-hz-big">妈妈</div>
+            <div class="match-py-text">māma</div>
+            <div class="match-id-text">Ibu</div>
+          </div>
+        </div>
+
+        <!-- Gambar 6: Anak laki-laki (kakak) -->
+        <div class="match-card">
+          <div class="match-img-placeholder">👦</div>
+          <div class="match-img-desc">
+            Gambar 6
+            <small>Anak laki-laki menggendong</small>
+          </div>
+          <div class="match-answer">
+            <span class="match-label label-b">B</span>
+            <div class="match-hz-big">哥哥</div>
+            <div class="match-py-text">gēge</div>
+            <div class="match-id-text">Kakak laki-laki</div>
           </div>
         </div>
 
