@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workbook Bab 7 — Materi 1: Pembedaan Inisial Berembus dan Tidak Berembus</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    :root {
+      --primary:      #be123c;
+      --primary-dark: #881337;
+      --bg:           #f4f6f9;
+      --card-bg:      #ffffff;
+      --text:         #2d3436;
+      --border:       #e2e8f0;
+      --radius:       16px;
+      --shadow:       0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 3rem;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.2rem 1rem 1.8rem;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    header p {
+      margin-top: 0.3rem;
+      font-size: 0.88rem;
+      opacity: 0.9;
+    }
+    header .bab {
+      display: inline-block;
+      background: #f43f5e;
+      color: #fff;
+      border-radius: 20px;
+      padding: 0.25rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 0.65rem;
+    }
+
+    /* ── NAVBAR ── */
+    .nav-bar {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+    .nav-home-btn, .nav-pager-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+    .nav-home-btn, .nav-pager-btn.prev {
+      color: #475569;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+    }
+    .nav-home-btn:hover, .nav-pager-btn.prev:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .nav-pager-btn.next {
+      background: var(--primary);
+      color: #fff;
+    }
+    .nav-pager-btn.next:hover {
+      background: var(--primary-dark);
+    }
+
+    /* ── WRAPPER ── */
+    .wrap {
+      max-width: 860px;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--primary);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.85rem;
+    }
+    .card-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    /* ── 6 KELOMPOK INISIAL GRID ── */
+    .init-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .init-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .init-pair-left, .init-pair-right {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+    .init-bubble {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+    }
+    .init-bubble.unasp {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+    .init-bubble.asp {
+      background: #ffe4e6;
+      color: #be123c;
+      border: 1px solid #fecdd3;
+    }
+
+    /* ── GRUP KOSAKATA ── */
+    .group-header {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 1.15rem 0 0.6rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .group-header:first-of-type {
+      margin-top: 0.4rem;
+    }
+    .words-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.65rem;
+    }
+    .word-pair-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .word-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 0.2rem 0.4rem;
+    }
+    .word-text.left {
+      color: #0369a1;
+    }
+    .word-text.right {
+      color: #be123c;
+    }
+    .word-divider {
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    /* ── TIPS BOX ── */
+    .tips-card {
+      background: #fff7ed;
+      border-left: 5px solid #ea580c;
+    }
+    .tips-card .card-title {
+      color: #c2410c;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <h1>📝 Buku Latihan Mandarin · 练习册</h1>
+  <p>HSK 1 练习册 · Pelajaran 7</p>
+  <div class="bab">Materi 1: Pembedaan Antara Inisial Berembus dan Tidak Berembus</div>
+</header>
+
+<!-- ══ NAVBAR ══ -->
+<div class="nav-bar">
+  <div class="nav">
+    <a href="WorkBookBab4.html" class="nav-pager-btn prev" title="Kembali ke Workbook Bab 4">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      <span>Workbook Bab 4</span>
+    </a>
+    <a href="index.html" class="nav-home-btn" title="Kembali ke Daftar Bab &amp; Workbook">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <span>Menu Utama</span>
+    </a>
+    <a href="Bab7.html" class="nav-pager-btn next" title="Buka Buku Teks Bab 7">
+      <span>Buku Teks Bab 7</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ══ WRAPPER ══ -->
+<div class="wrap">
+
+  <!-- ══ 1. KONSEP DASAR ══ -->
+  <div class="card">
+    <div class="card-title">
+      1. Konsep Dasar
+    </div>
+    <div class="card-text">
+      Salah satu ciri khas utama dalam pelafalan bahasa Mandarin adalah adanya perbedaan antara huruf konsonan awal (initials) yang diucapkan dengan embusan napas yang kuat (送气 / berembus) dan yang diucapkan tanpa embusan napas yang kuat (不送气 / tidak berembus).
+    </div>
+
+    <div style="margin-top: 0.9rem; font-weight: 600; font-size: 0.88rem; color: #1e293b;">
+      Inisial-inisial ini berpasangan menjadi 6 kelompok, yaitu:
+    </div>
+
+    <div class="init-grid">
+      <div class="init-item">
+        <div class="init-pair-left">
+          <span class="init-bubble unasp">b</span>
+          <span>(tidak berembus)</span>
+        </div>
+        <span style="color:#94a3b8; font-weight:600;">dan</span>
+        <div class="init-pair-right">
+          <span class="init-bubble asp">p</span>
+          <span>(berembus)</span>
+        </div>
+      </div>
+
+      <div class="init-item">
+        <div class="init-pair-left">
+          <span class="init-bubble unasp">d</span>
+          <span>(tidak berembus)</span>
+        </div>
+        <span style="color:#94a3b8; font-weight:600;">dan</span>
+        <div class="init-pair-right">
+          <span class="init-bubble asp">t</span>
+          <span>(berembus)</span>
+        </div>
+      </div>
+
+      <div class="init-item">
+        <div class="init-pair-left">
+          <span class="init-bubble unasp">g</span>
+          <span>(tidak berembus)</span>
+        </div>
+        <span style="color:#94a3b8; font-weight:600;">dan</span>
+        <div class="init-pair-right">
+          <span class="init-bubble asp">k</span>
+          <span>(berembus)</span>
+        </div>
+      </div>
+
+      <div class="init-item">
+        <div class="init-pair-left">
+          <span class="init-bubble unasp">j</span>
+          <span>(tidak berembus)</span>
+        </div>
+        <span style="color:#94a3b8; font-weight:600;">dan</span>
+        <div class="init-pair-right">
+          <span class="init-bubble asp">q</span>
+          <span>(berembus)</span>
+        </div>
+      </div>
+
+      <div class="init-item">
+        <div class="init-pair-left">
+          <span class="init-bubble unasp">zh</span>
+          <span>(tidak berembus)</span>
+        </div>
+        <span style="color:#94a3b8; font-weight:600;">dan</span>
+        <div class="init-pair-right">
+          <span class="init-bubble asp">ch</span>
+          <span>(berembus)</span>
+        </div>
+      </div>
+
+      <div class="init-item">
+        <div class="init-pair-left">
+          <span class="init-bubble unasp">z</span>
+          <span>(tidak berembus)</span>
+        </div>
+        <span style="color:#94a3b8; font-weight:600;">dan</span>
+        <div class="init-pair-right">
+          <span class="init-bubble asp">c</span>
+          <span>(berembus)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 2. LATIHAN PERBANDINGAN KATA (DAFTAR KOSAKATA) ══ -->
+  <div class="card">
+    <div class="card-title">
+      2. Latihan Perbandingan Kata (Daftar Kosakata)
+    </div>
+    <div class="card-text">
+      Bagian bawah gambar menyajikan latihan untuk mendengarkan dan mempraktikkan perbedaan pengucapan berpasangan:
+    </div>
+
+    <!-- Kelompok G / K, D / T, J / Q -->
+    <div class="group-header">Kelompok G / K, D / T, J / Q:</div>
+    <div class="words-grid">
+      <div class="word-pair-card">
+        <span class="word-text left">gǔ</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">kǔ</span>
+      </div>
+      <div class="word-pair-card">
+        <span class="word-text left">dīan</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">tiān</span>
+      </div>
+      <div class="word-pair-card">
+        <span class="word-text left">dòng</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">tòng</span>
+      </div>
+      <div class="word-pair-card">
+        <span class="word-text left">jiǔ</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">qiǔ</span>
+      </div>
+    </div>
+
+    <!-- Kelompok Z / C, ZH / CH -->
+    <div class="group-header">Kelompok Z / C, ZH / CH:</div>
+    <div class="words-grid">
+      <div class="word-pair-card">
+        <span class="word-text left">zēng</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">cēng</span>
+      </div>
+      <div class="word-pair-card">
+        <span class="word-text left">zhǔn</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">chǔn</span>
+      </div>
+      <div class="word-pair-card">
+        <span class="word-text left">zhí</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">chí</span>
+      </div>
+      <div class="word-pair-card">
+        <span class="word-text left">zì</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">cì</span>
+      </div>
+    </div>
+
+    <!-- Kelompok B / P, J / Q, G / K -->
+    <div class="group-header">Kelompok B / P, J / Q, G / K:</div>
+    <div class="words-grid">
+      <div class="word-pair-card">
+        <span class="word-text left">bái</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">pái</span>
+      </div>
+      <div class="word-pair-card">
+        <span class="word-text left">bēn</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">pēn</span>
+      </div>
+      <div class="word-pair-card">
+        <span class="word-text left">jù</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">qǔ</span>
+      </div>
+      <div class="word-pair-card">
+        <span class="word-text left">guā</span>
+        <span class="word-divider">—</span>
+        <span class="word-text right">kuā</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TIPS MELATIHNYA ══ -->
+  <div class="card tips-card">
+    <div class="card-title">
+      Tips melatihnya:
+    </div>
+    <div class="card-text">
+      Anda bisa mendekatkan selembar kertas tipis atau tangan ke depan mulut saat mengucapkan huruf-huruf berembus seperti p, t, k, q, ch, c (kertas/tangan akan merasakan embusan angin yang kuat), sedangkan pada huruf b, d, g, j, zh, z, embusan anginnya sangat sedikit atau hampir tidak ada.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

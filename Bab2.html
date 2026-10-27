@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -490,6 +490,17 @@
     .classroom-item:hover {
       border-color: #cbd5e1;
       transform: translateX(3px);
+    }
+    .classroom-group-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 0.35rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
     /* Pinyin di classroom selalu tampil (tidak ikut toggle show-pinyin) */
     .classroom-box .bubble-pinyin { display: none; }
@@ -1517,11 +1528,66 @@
       <div class="classroom-header">
         <div class="avatar av-xiaoyu">语</div>
         <div class="classroom-intro">
-          <div class="classroom-badge">Pola Kalimat Penting · 重点句型</div>
-          <div class="classroom-desc">Yuk latihan membaca kalimat penting bersama Xiaoyu!</div>
+          <div class="classroom-badge">Tata Bahasa · 基本语法</div>
+          <div class="classroom-desc">Susunan Kalimat Dasar &amp; Latihan Membaca bersama Xiaoyu!</div>
         </div>
       </div>
-      
+
+      <!-- Bagian 1: Susunan Kalimat Dasar S-P-O -->
+      <div class="classroom-group-title" style="font-size:0.86rem;font-weight:700;color:var(--primary);margin-top:0.2rem;padding-bottom:0.35rem;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:0.4rem;">
+        <span>📐 Susunan Kalimat Dasar · 基本语序 (Basic Word Order)</span>
+      </div>
+
+      <!-- Panel S-P-O -->
+      <div style="background:#f0f9ff;border:1.5px solid #bae6fd;border-radius:12px;padding:1rem 1.15rem;display:flex;flex-direction:column;gap:0.75rem;">
+        <div style="font-size:0.88rem;font-weight:700;color:#0c4a6e;">
+          Pola: <span style="font-family:'Noto Sans SC',sans-serif;">主语 (Subjek) + 谓语 (Predikat) + 宾语 (Objek)</span>
+        </div>
+        <div style="font-size:0.82rem;color:#0369a1;line-height:1.55;">
+          Sama seperti Bahasa Indonesia, Bahasa Mandarin menggunakan pola dasar <strong>S – P – O</strong>.
+          Namun ada perbedaan penting pada posisi keterangan waktu dan tempat (lihat bagian Pola Kalimat SPOK di atas).
+        </div>
+
+        <!-- Formula Visual -->
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.45rem;background:#fff;border:1px solid #bae6fd;border-radius:10px;padding:0.65rem 0.85rem;">
+          <span class="spok-chip chip-s">主语 Subjek (S)</span>
+          <span class="spok-plus">+</span>
+          <span class="spok-chip chip-p">谓语 Predikat (P)</span>
+          <span class="spok-plus">+</span>
+          <span class="spok-chip chip-o">宾语 Objek (O)</span>
+        </div>
+
+        <!-- Contoh Kalimat -->
+        <div style="background:#fff;border:1px solid #bae6fd;border-radius:10px;padding:0.75rem 1rem;">
+          <div style="font-size:0.75rem;font-weight:700;color:#0369a1;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.55rem;">📝 Contoh · 例句</div>
+          <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:0.5rem;">
+            <div style="display:flex;flex-direction:column;align-items:center;background:#dbeafe;border:1px solid #bfdbfe;border-radius:8px;padding:0.45rem 0.65rem;text-align:center;min-width:60px;">
+              <span style="font-family:'Noto Sans SC',sans-serif;font-size:1.25rem;font-weight:700;color:#1e40af;">我</span>
+              <span style="font-size:0.7rem;color:#3b82f6;margin-top:0.1rem;">wǒ</span>
+              <span style="font-size:0.65rem;font-weight:700;color:#1d4ed8;margin-top:0.15rem;">主语 (S)</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;background:#dcfce7;border:1px solid #bbf7d0;border-radius:8px;padding:0.45rem 0.65rem;text-align:center;min-width:60px;">
+              <span style="font-family:'Noto Sans SC',sans-serif;font-size:1.25rem;font-weight:700;color:#166534;">叫</span>
+              <span style="font-size:0.7rem;color:#16a34a;margin-top:0.1rem;">jiào</span>
+              <span style="font-size:0.65rem;font-weight:700;color:#166534;margin-top:0.15rem;">谓语 (P)</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;background:#ffe4e6;border:1px solid #fecdd3;border-radius:8px;padding:0.45rem 0.65rem;text-align:center;min-width:60px;">
+              <span style="font-family:'Noto Sans SC',sans-serif;font-size:1.25rem;font-weight:700;color:#9f1239;">陈天中</span>
+              <span style="font-size:0.7rem;color:#e11d48;margin-top:0.1rem;">Chén Tiānzhōng</span>
+              <span style="font-size:0.65rem;font-weight:700;color:#9f1239;margin-top:0.15rem;">宾语 (O)</span>
+            </div>
+          </div>
+          <div style="margin-top:0.55rem;font-size:0.8rem;color:#475569;">
+            🇮🇩 Terjemahan: <strong>Saya</strong> (Subjek) <strong>bernama</strong> (Predikat) <strong>Chen Tianzhong</strong> (Objek).
+          </div>
+        </div>
+      </div>
+
+      <!-- Bagian 2: Latihan Membaca Nyaring -->
+      <div class="classroom-group-title" style="font-size:0.86rem;font-weight:700;color:var(--primary);margin-top:0.5rem;padding-bottom:0.35rem;border-bottom:1px dashed var(--border);display:flex;align-items:center;gap:0.4rem;">
+        <span>🔊 Latihan Membaca Nyaring · 大声朗读</span>
+      </div>
+
       <div class="classroom-list">
         <!-- Item 1: 你叫什么名字？ -->
         <div class="classroom-item">
@@ -1529,7 +1595,7 @@
           <div class="item-content">
             <div class="bubble-hanzi">你叫什么名字？</div>
             <div class="bubble-pinyin">Nǐ jiào shénme míngzi?</div>
-            <div class="bubble-arti">Siapa namamu?</div>
+            <div class="bubble-arti">Siapa nama kamu?</div>
             <div class="char-breakdown">
               <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
               <div class="breakdown-grid char-breakdown-grid">
@@ -1594,7 +1660,7 @@
           <div class="item-content">
             <div class="bubble-hanzi">我是学生。</div>
             <div class="bubble-pinyin">Wǒ shì xuésheng.</div>
-            <div class="bubble-arti">Saya adalah murid.</div>
+            <div class="bubble-arti">Saya adalah seorang pelajar/mahasiswa.</div>
             <div class="char-breakdown">
               <div class="char-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
               <div class="breakdown-grid char-breakdown-grid">
@@ -1611,7 +1677,7 @@
                 <div class="word-card">
                   <div class="word-char">学生</div>
                   <div class="word-pinyin">xuésheng</div>
-                  <div class="word-arti">murid, pelajar</div>
+                  <div class="word-arti">murid, pelajar, mahasiswa</div>
                 </div>
               </div>
             </div>
