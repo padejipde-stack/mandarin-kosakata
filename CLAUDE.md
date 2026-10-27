@@ -552,7 +552,82 @@ Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 
    > - 🚫 **Dilarang**: Mencampur final berbeda dalam satu baris, misalnya nada 1 menggunakan `zhū` (final u) sementara nada 2, 3, 4 menggunakan `zhá, zhǎ, zhà` (final a).
    > - Selalu pastikan label deskripsi suku kata (misal: "Suku kata zh-a:") selaras 100% dengan suku kata pada tombol nada 1 hingga 4.
 
-2. **Kotak Aturan Penulisan Pinyin (`.aturan-block`)**:
+3. **Peta CSS Class Konten Workbook per Bab (Wajib untuk `applyColors()`)**:
+
+   > [!CAUTION]
+   > **BUG FATAL: `applyColors()` Copas dari Buku Teks Tidak Akan Berfungsi di Workbook**
+   >
+   > Workbook (`WorkBookBabN.html`) menggunakan **class HTML yang berbeda** dari Buku Teks (`BabN.html`). Jika `applyColors()` dan `removeColors()` di-copas mentah dari Bab teks tanpa disesuaikan, tombol 🎨 tidak akan mewarnai apapun karena selector CSS-nya tidak menemukan elemen yang ada di workbook.
+   >
+   > **Root Cause**: Buku teks memakai `.bubble-hanzi`, `.word-char`, dll. Workbook tiap bab memakai class tersendiri sesuai tipe konten fonetiknya.
+   >
+   > **WAJIB**: Setiap workbook HARUS memiliki versi `applyColors()` dan `removeColors()` yang disesuaikan dengan class konten fonetik bab tersebut. Lihat tabel pemetaan di bawah:
+
+   | Bab Workbook | Konten | Class Hanzi | Class Pinyin |
+   |:---:|---|---|---|
+   | **Bab 1–3** | Dialog & word card standar | `.bubble-hanzi` | `.bubble-pinyin` |
+   | **Bab 4** | Tone Sandhi cards | `.sandhi-hz` | `.py-read`, `.py-orig` |
+   | **Bab 4** | Neutral Tone cards | `.neutral-hz` | `.neutral-py` |
+   | **Bab 4** | Semantic pair | `.semantic-pair-title > span:first-child` | `.sem-pinyin` |
+
+   **Template `applyColors()` untuk WorkBookBab4** (Tone Sandhi & Nada Netral):
+   ```javascript
+   function applyColors() {
+     const charColorMap = { '你': '#e11d48', '好': '#16a34a' };
+
+     // 1. Tone Sandhi cards
+     document.querySelectorAll('.sandhi-card').forEach(card => {
+       const hzEl = card.querySelector('.sandhi-hz');
+       const pyRead = card.querySelector('.py-read');
+       const pyOrig = card.querySelector('.py-orig');
+       if (!hzEl || !pyRead) return;
+       if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+       if (!pyRead.dataset.origHtml) pyRead.dataset.origHtml = pyRead.innerHTML;
+       if (pyOrig && !pyOrig.dataset.origHtml) pyOrig.dataset.origHtml = pyOrig.innerHTML;
+       const res = colorizePair(hzEl.dataset.origHtml, pyRead.dataset.origHtml, charColorMap);
+       hzEl.innerHTML = res.hanzi;
+       pyRead.innerHTML = res.pinyin;
+       if (pyOrig) pyOrig.innerHTML = colorizePair(hzEl.dataset.origHtml, pyOrig.dataset.origHtml, charColorMap).pinyin;
+     });
+
+     // 2. Neutral Tone cards
+     document.querySelectorAll('.neutral-card').forEach(card => {
+       const hzEl = card.querySelector('.neutral-hz');
+       const pyEl = card.querySelector('.neutral-py');
+       if (!hzEl || !pyEl) return;
+       if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+       if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+       const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+       hzEl.innerHTML = res.hanzi;
+       pyEl.innerHTML = res.pinyin;
+     });
+
+     // 3. Semantic pair cards
+     document.querySelectorAll('.semantic-pair-card').forEach(card => {
+       const titleEl = card.querySelector('.semantic-pair-title > span:first-child');
+       card.querySelectorAll('.sem-pinyin').forEach(pyEl => {
+         if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+         if (!titleEl) return;
+         const hzText = titleEl.textContent.replace(/^\d+\.\s*/, '').trim();
+         pyEl.innerHTML = colorizePair(hzText, pyEl.dataset.origHtml, charColorMap).pinyin;
+       });
+     });
+   }
+
+   function removeColors() {
+     const selector = '.sandhi-hz, .py-read, .py-orig, .neutral-hz, .neutral-py, .sem-pinyin, .semantic-pair-title > span:first-child';
+     document.querySelectorAll(selector).forEach(el => {
+       if (el.dataset.origHtml !== undefined) el.innerHTML = el.dataset.origHtml;
+       el.style.color = '';
+       el.style.fontWeight = '';
+     });
+   }
+   ```
+
+   > [!IMPORTANT]
+   > Saat membuat WorkBookBab baru dengan tipe konten fonetik berbeda (misalnya konten Bab 5 dengan grid nada baru), **WAJIB** mengidentifikasi class yang benar dari HTML konten baru tersebut dan menuliskan `applyColors()` yang menarget class-class itu. Jangan pernah copas fungsi ini dari buku teks tanpa verifikasi class.
+
+4. **Kotak Aturan Penulisan Pinyin (`.aturan-block`)**:
    Menjelaskan kaidah penggabungan konsonan/vokal (seperti $j, q, x$ dengan $\ddot{u}$).
    ```html
    <div class="aturan-block">
@@ -615,6 +690,16 @@ Sebelum menyerahkan pekerjaan atau melakukan `git push`, lakukan langkah verifik
   Periksa setiap baris 4 nada agar suku kata nada 1 hingga 4 menggunakan inisial dan final yang sama persis (contoh: *zhā, zhá, zhǎ, zhà* — tidak boleh tertukar dengan *zhū*).
 - [ ] **Verifikasi Pewarnaan Kata Majemuk (Mode 🎨)**:
   Uji mode warna per karakter untuk memastikan kata 2 atau 3 karakter Hanzi (seperti `手机`, `医生`, `桌子`, `出租车`) terwarnai per karakter dan per silabel pinyin secara presisi menggunakan regex `PINYIN_SYLL_RE`.
+- [ ] **Verifikasi `applyColors()` Workbook — Class Selector Sesuai Konten**:
+  Setiap `WorkBookBabN.html` yang memiliki konten fonetik khusus (misal Tone Sandhi, Nada Netral, semantic pair, dll.) **WAJIB** memiliki `applyColors()` dan `removeColors()` yang menarget class HTML konten tersebut secara tepat.
+  Lakukan verifikasi dengan cara:
+  ```javascript
+  // Di browser Console saat halaman workbook terbuka, klik 🎨 lalu cek:
+  document.querySelectorAll('.sandhi-hz').length  // Harus > 0 untuk WorkBookBab4
+  document.querySelectorAll('.neutral-hz').length // Harus > 0 untuk WorkBookBab4
+  // Pastikan elemen yang diberi warna jumlahnya tidak 0!
+  ```
+  🚫 **DILARANG**: Copas `applyColors()` mentah dari Buku Teks (`BabN.html`) ke Workbook tanpa menyesuaikan selectornya — kode tersebut menarget `.bubble-hanzi`, `.word-char`, dll. yang **tidak ada** di workbook.
 - [ ] **Verifikasi Erhua (儿化)**:
   Pastikan setiap kata berakhiran 儿 (seperti `哪儿`, `面条儿`, `点儿`) diuji menggunakan `deep_audit_v3.js` di scratch folder. Suku kata Pinyin berakhir `-r` (bukan `er/ér/ěr/èr`) harus dipasangkan ke 2 Hanzi: root → Hanzi sebelum 儿, 'r' → karakter 儿.
 - [ ] **Verifikasi Angka dalam Hanzi**:
