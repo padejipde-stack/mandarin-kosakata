@@ -606,7 +606,7 @@ Sebelum menyerahkan pekerjaan atau melakukan `git push`, lakukan langkah verifik
 - [ ] **Audit Deteksi Penutup Tag Ganda pada Dialog**:
   Pastikan tidak ada kesalahan ketik penutup ganda `</div></div>` pada baris `.bubble-arti` yang dapat menutup `.dialog-box` secara prematur:
   ```javascript
-  const badClosers = html.match(/class=["'][^"']*bubble-arti[^"']*["'][^>]*>[^<]*<\/div>\s*<\/div>/gi);
+  const badClosers = html.match(/class=["'][^"']*bubble-arti[^"']*["'][^>]*>[^<]*<\/div><\/div>/gi);
   if (badClosers) {
     console.error("FATAL ERROR: Ditemukan penutup </div> ganda pada .bubble-arti:", badClosers);
   }
