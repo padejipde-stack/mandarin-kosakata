@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buku Latihan (Workbook) Mandarin — Bab 5: "不" 的变调 (Tone Sandhi "不" bù)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --primary:      #b45309;
+      --primary-dark: #78350f;
+      --primary-soft: rgba(180, 83, 9, 0.08);
+      --gold:         #f39c12;
+      --bg:           #f4f6f9;
+      --card-bg:      #ffffff;
+      --text:         #2d3436;
+      --sub:          #636e72;
+      --border:       #e2e8f0;
+      --radius:       16px;
+      --shadow:       0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 5.5rem;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #d97706 0%, #92400e 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '不';
+      position: absolute;
+      font-size: 11rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.06);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    header h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      position: relative;
+    }
+    header p {
+      margin-top: 0.35rem;
+      font-size: 0.88rem;
+      opacity: 0.9;
+      position: relative;
+    }
+    header .bab {
+      display: inline-block;
+      background: #fbbf24;
+      color: #78350f;
+      border-radius: 20px;
+      padding: 0.25rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 0.65rem;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    /* ── MODERN STICKY NAVBAR ── */
+    .nav-bar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .nav {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+    .nav-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    .nav-home-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .nav-pager-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 0.95rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+    .nav-pager-btn.next {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(180, 83, 9, 0.25);
+    }
+    .nav-pager-btn.next:hover {
+      background: var(--primary-dark);
+      transform: translateX(2px);
+    }
+    .nav-pager-btn.prev {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid var(--border);
+    }
+    .nav-pager-btn.prev:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      transform: translateX(-2px);
+    }
+
+    /* ── WRAPPER ── */
+    .wrap {
+      max-width: 860px;
+      margin: 1.5rem auto 2.5rem;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ── CLASSROOM BOX ── */
+    .classroom-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-left: 5px solid var(--primary);
+    }
+    .classroom-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    }
+    .av-tone { background: linear-gradient(135deg, #d97706, #92400e); }
+    .classroom-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #78350f;
+      background: #fef3c7;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      margin-bottom: 0.25rem;
+    }
+    .classroom-desc {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ── ATURAN BLOCKS ── */
+    .aturan-block {
+      background: #fafaf9;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem;
+    }
+    .aturan-block-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.75rem;
+    }
+    .aturan-block-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.18rem 0.55rem;
+      border-radius: 8px;
+    }
+    .aturan-rule {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      padding: 0.75rem 0.95rem;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+    .rule-ok   { background: #fefce8; border-left: 4px solid #f59e0b; color: #78350f; }
+    .rule-warn { background: #fef2f2; border-left: 4px solid #ef4444; color: #991b1b; }
+    .rule-note { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e3a8a; }
+    .aturan-icon { font-size: 1.15rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── FORMULA CHIP ── */
+    .sandhi-formula-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1.1rem;
+      margin: 0.75rem 0;
+    }
+    .sandhi-formula-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+    .sandhi-formula-display {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+    .sandhi-chip {
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.25;
+      font-size: 0.8rem;
+    }
+    .sandhi-chip span { font-size: 0.68rem; opacity: 0.85; margin-bottom: 2px; }
+    .sandhi-chip.orig { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+    .sandhi-chip.change { background: #fee2e2; color: #991b1b; border: 1.5px solid #f87171; font-weight: 700; }
+    .sandhi-chip.stay { background: #fef3c7; color: #78350f; border: 1.5px solid #f59e0b; font-weight: 700; }
+    .sandhi-arrow { font-size: 1.25rem; font-weight: 800; color: #94a3b8; }
+
+    /* ── 4 TONES DEMO BARIS (PHONETIC ROW) ── */
+    .phonetic-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin: 0.65rem 0;
+    }
+    .phonetic-cell {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem 0.35rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .phonetic-cell:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    }
+    .phonetic-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .phonetic-tone-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .phonetic-cell.t1 .phonetic-text { color: #2563eb; }
+    .phonetic-cell.t2 .phonetic-text { color: #16a34a; }
+    .phonetic-cell.t3 .phonetic-text { color: #7c3aed; }
+    .phonetic-cell.t4 .phonetic-text { color: #dc2626; }
+
+    /* ── TONE SANDHI CARDS GRID ── */
+    .sandhi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+    .sandhi-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .sandhi-card:hover {
+      border-color: #f59e0b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(180, 83, 9, 0.1);
+    }
+    .sandhi-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sandhi-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.38rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .sandhi-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 10px;
+    }
+    .tag-stay { background: #fef3c7; color: #78350f; border: 1px solid #fde68a; }
+    .tag-change { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; font-weight: 800; }
+    .sandhi-py-row {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+    }
+    .py-orig { color: #94a3b8; text-decoration: line-through; }
+    .py-read { color: #b45309; font-weight: 700; font-size: 0.98rem; }
+    .py-read.read-change { color: #dc2626; font-size: 1.02rem; font-weight: 800; }
+    .sandhi-arti {
+      font-size: 0.8rem;
+      color: var(--sub);
+      border-top: 1px dashed var(--border);
+      padding-top: 0.35rem;
+      margin-top: 0.2rem;
+      line-height: 1.4;
+    }
+
+    /* ── SUMMARY COMPARISON TABLE ── */
+    .compare-table-box {
+      overflow-x: auto;
+      margin-top: 0.75rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      text-align: left;
+      background: #ffffff;
+    }
+    .compare-table th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 700;
+      padding: 0.75rem 0.9rem;
+      border-bottom: 1.5px solid var(--border);
+      white-space: nowrap;
+    }
+    .compare-table td {
+      padding: 0.75rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover { background: #fffbeb; }
+
+    /* ── LATIHAN SOAL PILIHAN GANDA (QUIZ) ── */
+    .soal-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .soal-item {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+    }
+    .soal-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .soal-num {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.82rem;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .soal-pertanyaan { flex: 1; }
+    .soal-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.4;
+      cursor: pointer;
+    }
+    .soal-hz:hover { color: var(--primary); }
+    .soal-py {
+      font-size: 0.86rem;
+      color: #b45309;
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+    .soal-id {
+      font-size: 0.82rem;
+      color: var(--sub);
+      margin-top: 0.15rem;
+    }
+    .soal-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+    .soal-option {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.55rem 0.9rem;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.88rem;
+    }
+    .soal-option:hover {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+    }
+    .soal-option.correct {
+      border-color: #10b981;
+      background: #ecfdf5;
+    }
+    .soal-option-letter {
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--primary);
+      width: 22px;
+      flex-shrink: 0;
+    }
+    .soal-option.correct .soal-option-letter { color: #047857; }
+    .soal-option-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .soal-option-py {
+      font-size: 0.8rem;
+      color: #b45309;
+      font-style: italic;
+    }
+    .soal-option-id {
+      font-size: 0.8rem;
+      color: var(--sub);
+    }
+    .soal-answer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #065f46;
+      background: #d1fae5;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+    }
+    .soal-pembahasan {
+      font-size: 0.82rem;
+      color: #475569;
+      background: #ffffff;
+      border-left: 3.5px solid #10b981;
+      border-radius: 0 10px 10px 0;
+      padding: 0.6rem 0.9rem;
+      margin-top: 0.6rem;
+      line-height: 1.55;
+    }
+
+    /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK — CLAUDE.md MASTER) ── */
+    .dialog-toolbar {
+      position: fixed;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 2rem);
+      max-width: 720px;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.04);
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+    }
+    .toolbar-title {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .toolbar-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+      justify-content: flex-end;
+    }
+    .toggle-switch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1.5px solid #cbd5e1;
+      padding: 0.42rem 0.8rem;
+      border-radius: 20px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .toggle-switch-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      border-color: #94a3b8;
+    }
+    .toggle-switch-btn .status-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.12rem 0.42rem;
+      border-radius: 12px;
+      background: #cbd5e1;
+      color: #475569;
+      transition: all 0.2s ease;
+    }
+    .toggle-switch-btn.active {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #10b981;
+    }
+    .toggle-switch-btn.active .status-badge {
+      background: #10b981;
+      color: #ffffff;
+    }
+    .toggle-switch-btn.color-btn.active {
+      background: #fefce8;
+      color: #b45309;
+      border-color: #f59e0b;
+    }
+    .toggle-switch-btn.color-btn.active .status-badge {
+      background: #f59e0b;
+      color: #ffffff;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.8rem;
+      color: var(--sub);
+      border-top: 1px solid var(--border);
+    }
+    footer span {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .btn-text-mobile { display: none; }
+
+    /* ── VISIBILITY TOGGLES (CSS CONTROLLED) ── */
+    body:not(.show-pinyin) .soal-py,
+    body:not(.show-pinyin) .soal-option-py,
+    body:not(.show-pinyin) .sandhi-py-row { display: none !important; }
+
+    body:not(.show-arti) .soal-id,
+    body:not(.show-arti) .soal-option-id,
+    body:not(.show-arti) .sandhi-arti,
+    body:not(.show-arti) .soal-pembahasan { display: none !important; }
+
+    body:not(.show-vocab) .soal-answer-badge { display: none !important; }
+
+    /* ── RESPONSIVE MOBILE ── */
+    @media (max-width: 600px) {
+      .btn-text-desktop { display: none; }
+      .btn-text-mobile { display: inline; }
+      header { padding: 1.8rem 0.8rem 1.4rem; }
+      header h1 { font-size: 1.45rem; }
+      header p { font-size: 0.82rem; }
+      header .bab {
+        max-width: 95%;
+        font-size: 0.74rem;
+        padding: 0.25rem 0.75rem;
+        line-height: 1.4;
+      }
+      header::before { font-size: 7.5rem; }
+      .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.4rem; }
+      .classroom-box { padding: 1.1rem 0.9rem; }
+      .sandhi-grid { grid-template-columns: 1fr 1fr; gap: 0.55rem; }
+      .phonetic-row { gap: 0.35rem; }
+      .phonetic-cell { padding: 0.5rem 0.2rem; }
+      .phonetic-text { font-size: 1.1rem; }
+      .phonetic-tone-label { font-size: 0.62rem; }
+      .nav { padding: 0.45rem 0.6rem !important; gap: 0.35rem !important; }
+      .nav-home-btn { padding: 0.38rem 0.65rem; font-size: 0.75rem; }
+      .nav-home-btn span.label { display: none; }
+      .nav-pager-btn { padding: 0.38rem 0.65rem; font-size: 0.75rem; gap: 0.25rem; }
+      
+      .dialog-toolbar {
+        bottom: 0.8rem;
+        width: calc(100% - 1.2rem);
+        padding: 0.5rem 0.6rem;
+      }
+      .toolbar-title { display: none; }
+      .toolbar-buttons { width: 100%; justify-content: space-between; gap: 0.35rem; }
+      .toggle-switch-btn {
+        flex: 1;
+        padding: 0.42rem 0.35rem;
+        font-size: 0.74rem;
+        gap: 0.25rem;
+      }
+      .toggle-switch-btn .status-badge {
+        font-size: 0.62rem;
+        padding: 0.08rem 0.32rem;
+      }
+    }
+  </style>
+</head>
+<body class="show-pinyin show-arti show-vocab">
+
+<!-- ══ HEADER ══ -->
+<header>
+  <h1>📝 Buku Latihan Mandarin · 练习册</h1>
+  <p>HSK 1 练习册 · Workbook Pelajaran 5</p>
+  <div class="bab">Bab 5 — "不" 的变调 · Tone Sandhi Karakter "不" (bù)</div>
+</header>
+
+<!-- ══ 3-KOLOM STICKY NAVBAR (CLAUDE.md MASTER) ══ -->
+<div class="nav-bar">
+  <div class="nav">
+    <div class="nav-side-left">
+      <a href="WorkBookBab4.html" class="nav-pager-btn prev" title="Kembali ke Workbook Bab 4">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span class="btn-text-desktop">Workbook Bab 4</span>
+        <span class="btn-text-mobile">Bab 4</span>
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="nav-home-btn" title="Kembali ke Daftar Bab">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span class="label">Menu Utama</span>
+      </a>
+    </div>
+    <div class="nav-side-right">
+      <a href="Bab5.html" class="nav-pager-btn next" title="Buka Buku Teks Bab 5">
+        <span class="btn-text-desktop">Buku Teks Bab 5</span>
+        <span class="btn-text-mobile">Buku Teks</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ WRAP UTAMA ══ -->
+<div class="wrap">
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 1: ATURAN DASAR TONE SANDHI "不" (bù)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 1. Aturan Dasar Tone Sandhi untuk "不" (bù)</div>
+    <div class="classroom-box">
+      
+      <div class="classroom-header">
+        <div class="avatar av-tone">不</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge">Kaidah Dasar Nada Asli · 原调规则</div>
+          <div class="classroom-desc">Memahami nada dasar karakter negasi <strong>"不"</strong> serta kondisi di mana nada aslinya tetap dipertahankan.</div>
+        </div>
+      </div>
+
+      <!-- Aturan Nada Asli & Posisi Tetap -->
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#fef3c7; color:#78350f;">Kaidah 1</span>
+          <span>Nada Asli &amp; Posisi Tetap Tidak Berubah (Tetap Nada 4: bù)</span>
+        </div>
+
+        <div class="aturan-rule rule-ok">
+          <span class="aturan-icon">📖</span>
+          <div class="aturan-text">
+            <strong>Nada Asli:</strong> Karakter <strong>“不”</strong> secara alamiah memiliki <strong>nada keempat (四声)</strong>, yaitu <strong>bù</strong> (nada turun tajam / ↘ / kontur nada 51).<br><br>
+            <strong>Posisi Tetap (Tidak Berubah):</strong> Karakter “不” <strong>tetap dibaca dengan nada aslinya (bù)</strong> apabila:
+            <ul style="margin: 0.35rem 0 0.35rem 1.25rem; line-height: 1.6;">
+              <li><strong>Digunakan secara mandiri / berdiri sendiri</strong> (misalnya saat menjawab singkat: <em>“不！” bù!</em>).</li>
+              <li><strong>Ditempatkan di depan suku kata ber-nada pertama</strong> (一声, contoh: ō, ā).</li>
+              <li><strong>Ditempatkan di depan suku kata ber-nada kedua</strong> (二声, contoh: í, á).</li>
+              <li><strong>Ditempatkan di depan suku kata ber-nada ketiga</strong> (三声, contoh: ǐ, ǎ).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4 Tones Reference Cells -->
+        <div style="font-size:0.78rem; font-weight:700; color:#64748b; text-transform:uppercase; margin-top:0.85rem; letter-spacing:0.5px;">
+          🔊 Referensi 4 Nada Mandarin (Klik untuk mendengarkan kontur nada):
+        </div>
+        <div class="phonetic-row">
+          <div class="phonetic-cell t1" onclick="playPinyin('ā')" title="Klik nada 1">
+            <span class="phonetic-text">ā / ō</span>
+            <span class="phonetic-tone-label">Nada 1 (Datar 55)</span>
+          </div>
+          <div class="phonetic-cell t2" onclick="playPinyin('á')" title="Klik nada 2">
+            <span class="phonetic-text">á / í</span>
+            <span class="phonetic-tone-label">Nada 2 (Naik 35)</span>
+          </div>
+          <div class="phonetic-cell t3" onclick="playPinyin('ǎ')" title="Klik nada 3">
+            <span class="phonetic-text">ǎ / ǐ</span>
+            <span class="phonetic-tone-label">Nada 3 (Turun-Naik 214)</span>
+          </div>
+          <div class="phonetic-cell t4" onclick="playPinyin('à')" title="Klik nada 4">
+            <span class="phonetic-text">à / ò</span>
+            <span class="phonetic-tone-label">Nada 4 (Turun 51)</span>
+          </div>
+        </div>
+
+        <!-- Rumus Visual Posisi Tetap -->
+        <div class="sandhi-formula-card">
+          <div class="sandhi-formula-title">📐 Rumus Posisi Tetap (Tidak Mengalami Tone Sandhi):</div>
+          <div class="sandhi-formula-display">
+            <div class="sandhi-chip orig">
+              <span>Karakter Negasi</span>
+              <strong>bù (Nada 4 ↘)</strong>
+            </div>
+            <span style="color:#94a3b8; font-weight:800;">+</span>
+            <div class="sandhi-chip orig">
+              <span>Suku Kata Berikutnya</span>
+              <strong>Nada 1 / 2 / 3 (ā / á / ǎ)</strong>
+            </div>
+            <span class="sandhi-arrow">➔</span>
+            <div class="sandhi-chip stay">
+              <span>Tetap Nada Asli</span>
+              <strong>bù (Nada 4 ↘)</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contoh Penerapan Posisi Tetap (bù + nada 1, 2, 3) -->
+      <div>
+        <div style="font-size:0.86rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">
+          🗣️ Contoh Penerapan Posisi Tetap (Klik kartu untuk mendengarkan lafal bù):
+        </div>
+        <div style="font-size:0.8rem; color:var(--sub); margin-bottom:0.6rem;">
+          Pada seluruh kata di bawah ini, karakter <strong>“不”</strong> tetap dilafalkan dengan nada ke-4 (<strong>bù</strong>):
+        </div>
+
+        <div class="sandhi-grid">
+          <!-- 1. 不吃 (di depan nada 1) -->
+          <div class="sandhi-card" onclick="playPinyin('bù chī')" title="Klik untuk mendengar bù chī">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不吃</span>
+              <span class="sandhi-tag tag-stay">bù + Nada 1</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-read">bù chī</span>
+            </div>
+            <div class="sandhi-arti">Tidak makan (chī = nada 1)</div>
+          </div>
+
+          <!-- 2. 不喝 (di depan nada 1) -->
+          <div class="sandhi-card" onclick="playPinyin('bù hē')" title="Klik untuk mendengar bù hē">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不喝</span>
+              <span class="sandhi-tag tag-stay">bù + Nada 1</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-read">bù hē</span>
+            </div>
+            <div class="sandhi-arti">Tidak minum (hē = nada 1)</div>
+          </div>
+
+          <!-- 3. 不能 (di depan nada 2) -->
+          <div class="sandhi-card" onclick="playPinyin('bù néng')" title="Klik untuk mendengar bù néng">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不能</span>
+              <span class="sandhi-tag tag-stay">bù + Nada 2</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-read">bù néng</span>
+            </div>
+            <div class="sandhi-arti">Tidak bisa / Tidak boleh (néng = nada 2)</div>
+          </div>
+
+          <!-- 4. 不来 (di depan nada 2) -->
+          <div class="sandhi-card" onclick="playPinyin('bù lái')" title="Klik untuk mendengar bù lái">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不来</span>
+              <span class="sandhi-tag tag-stay">bù + Nada 2</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-read">bù lái</span>
+            </div>
+            <div class="sandhi-arti">Tidak datang (lái = nada 2)</div>
+          </div>
+
+          <!-- 5. 不好 (di depan nada 3) -->
+          <div class="sandhi-card" onclick="playPinyin('bù hǎo')" title="Klik untuk mendengar bù hǎo">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不好</span>
+              <span class="sandhi-tag tag-stay">bù + Nada 3</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-read">bù hǎo</span>
+            </div>
+            <div class="sandhi-arti">Tidak baik / Jelek (hǎo = nada 3)</div>
+          </div>
+
+          <!-- 6. 不买 (di depan nada 3) -->
+          <div class="sandhi-card" onclick="playPinyin('bù mǎi')" title="Klik untuk mendengar bù mǎi">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不买</span>
+              <span class="sandhi-tag tag-stay">bù + Nada 3</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-read">bù mǎi</span>
+            </div>
+            <div class="sandhi-arti">Tidak membeli (mǎi = nada 3)</div>
+          </div>
+        </div>
+
+        <!-- Catatan Penting Mengenai 不能 (bù néng) -->
+        <div class="aturan-rule rule-note" style="margin-top:0.85rem;">
+          <span class="aturan-icon">💡</span>
+          <div class="aturan-text">
+            <strong>Catatan Khusus untuk “不能” (bù néng):</strong><br>
+            Sering terjadi kekeliruan menganggap semua kata penolakan kemampuan berubah menjadi nada 2 (*bú*). Perhatikan bahwa kata <strong>能 (néng)</strong> bernada <strong>kedua (二声 / á)</strong>, sehingga kata <strong>不能</strong> tetap diucapkan <strong>bù néng</strong> (nada 4 + nada 2), BUKAN *bú néng*.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 2: ATURAN PERUBAHAN NADA (MENJADI NADA 2: bú)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">⚡ 2. Aturan Perubahan Nada (Berubah Menjadi Nada Kedua: bú)</div>
+    <div class="classroom-box" style="border-left: 5px solid #dc2626;">
+      
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #dc2626, #991b1b);">变</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:#991b1b;">Kaidah Sandhi Utama · 核心变调法则</div>
+          <div class="classroom-desc">Aturan fonetik eufoni: Perubahan nada ketika dua suku kata bernada 4 bertemu berurutan.</div>
+        </div>
+      </div>
+
+      <!-- Aturan Utama Perubahan Nada -->
+      <div class="aturan-block" style="border-color:#fca5a5; background:#fffaf0;">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#fee2e2; color:#991b1b;">Aturan Utama</span>
+          <span>Bertemu dengan Nada Keempat (bù + Nada 4 ➔ bú + Nada 4)</span>
+        </div>
+
+        <div class="aturan-rule rule-warn">
+          <span class="aturan-icon">🔄</span>
+          <div class="aturan-text">
+            <strong>Aturan Utama:</strong> Ketika karakter <strong>“不”</strong> yang bernada keempat (<strong>bù</strong>) ditempatkan di depan suku kata lain yang <strong>juga ber-nada keempat (四声 / à)</strong>, maka “不” <strong>berubah diucapkan menjadi nada kedua (bú / nada naik ↗)</strong>.
+          </div>
+        </div>
+
+        <!-- Rumus Visual Tone Sandhi 4 + 4 -> 2 + 4 -->
+        <div class="sandhi-formula-card">
+          <div class="sandhi-formula-title">📐 Rumus Tone Sandhi (Perubahan Nada Lisan):</div>
+          <div class="sandhi-formula-display">
+            <div class="sandhi-chip orig">
+              <span>Karakter Negasi</span>
+              <strong>bù (Nada 4 ↘)</strong>
+            </div>
+            <span style="color:#94a3b8; font-weight:800;">+</span>
+            <div class="sandhi-chip orig">
+              <span>Suku Kata Berikutnya</span>
+              <strong>Nada 4 (四声 / à)</strong>
+            </div>
+            <span class="sandhi-arrow">➔</span>
+            <div class="sandhi-chip change">
+              <span>Berubah Lisan</span>
+              <strong>bú (Nada 2 ↗)</strong>
+            </div>
+            <span style="color:#94a3b8; font-weight:800;">+</span>
+            <div class="sandhi-chip stay">
+              <span>Tetap Asli</span>
+              <strong>Nada 4 (四声 ↘)</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="aturan-rule rule-ok" style="margin-top:0.6rem;">
+          <span class="aturan-icon">🧠</span>
+          <div class="aturan-text">
+            <strong>Alasan Fonetik:</strong> Dua nada ke-4 berurutan (dua nada turun tajam 51 + 51 berturut-turut) sangat berat dan kaku diucapkan dalam aliran percakapan alami. Oleh karena itu, bahasa Mandarin melunakkan suku kata pertama meluncur naik menjadi <strong>nada kedua (35 / bú)</strong> agar ritme bicara terdengar harmonis dan lancar.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contoh Penerapan (Contoh Kata Materi) -->
+      <div>
+        <div style="font-size:0.86rem; font-weight:700; color:#b91c1c; margin-bottom:0.25rem;">
+          🗣️ Contoh Penerapan Materi (Klik kartu untuk mendengarkan lafal perubahan bú):
+        </div>
+        <div style="font-size:0.8rem; color:var(--sub); margin-bottom:0.6rem;">
+          Perhatikan pelafalan lisan yang berubah menjadi nada ke-2 (<strong>bú</strong>):
+        </div>
+
+        <div class="sandhi-grid">
+          <!-- 1. 不是 -->
+          <div class="sandhi-card" onclick="playPinyin('bú shì')" title="Klik untuk mendengar bú shì">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不是</span>
+              <span class="sandhi-tag tag-change">bù + 4 → bú</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-orig">bù shì</span>
+              <span style="color:#94a3b8;">➔</span>
+              <span class="py-read read-change">bú shì</span>
+            </div>
+            <div class="sandhi-arti">Bukan / Tidak benar (shì = nada 4)</div>
+          </div>
+
+          <!-- 2. 不会 -->
+          <div class="sandhi-card" onclick="playPinyin('bú huì')" title="Klik untuk mendengar bú huì">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不会</span>
+              <span class="sandhi-tag tag-change">bù + 4 → bú</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-orig">bù huì</span>
+              <span style="color:#94a3b8;">➔</span>
+              <span class="py-read read-change">bú huì</span>
+            </div>
+            <div class="sandhi-arti">Tidak bisa / Tidak akan (huì = nada 4)</div>
+          </div>
+
+          <!-- 3. 不大 -->
+          <div class="sandhi-card" onclick="playPinyin('bú dà')" title="Klik untuk mendengar bú dà">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不大</span>
+              <span class="sandhi-tag tag-change">bù + 4 → bú</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-orig">bù dà</span>
+              <span style="color:#94a3b8;">➔</span>
+              <span class="py-read read-change">bú dà</span>
+            </div>
+            <div class="sandhi-arti">Tidak besar (dà = nada 4)</div>
+          </div>
+
+          <!-- 4. 不对 -->
+          <div class="sandhi-card" onclick="playPinyin('bú duì')" title="Klik untuk mendengar bú duì">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不对</span>
+              <span class="sandhi-tag tag-change">bù + 4 → bú</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-orig">bù duì</span>
+              <span style="color:#94a3b8;">➔</span>
+              <span class="py-read read-change">bú duì</span>
+            </div>
+            <div class="sandhi-arti">Salah / Tidak benar (duì = nada 4)</div>
+          </div>
+
+          <!-- 5. 不去 -->
+          <div class="sandhi-card" onclick="playPinyin('bú qù')" title="Klik untuk mendengar bú qù">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不去</span>
+              <span class="sandhi-tag tag-change">bù + 4 → bú</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-orig">bù qù</span>
+              <span style="color:#94a3b8;">➔</span>
+              <span class="py-read read-change">bú qù</span>
+            </div>
+            <div class="sandhi-arti">Tidak pergi (qù = nada 4)</div>
+          </div>
+
+          <!-- 6. 不看 -->
+          <div class="sandhi-card" onclick="playPinyin('bú kàn')" title="Klik untuk mendengar bú kàn">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">不看</span>
+              <span class="sandhi-tag tag-change">bù + 4 → bú</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-orig">bù kàn</span>
+              <span style="color:#94a3b8;">➔</span>
+              <span class="py-read read-change">bú kàn</span>
+            </div>
+            <div class="sandhi-arti">Tidak melihat / menonton (kàn = nada 4)</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 3: TABEL RANGKUMAN KOMPARASI NADA "不"
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📊 3. Tabel Rangkuman Komparasi Tone Sandhi "不"</div>
+    <div class="classroom-box" style="border-left: 5px solid #f59e0b;">
+      
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #f59e0b, #b45309);">总</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge">Tabel Pintar Perbandingan · 规则总结表</div>
+          <div class="classroom-desc">Rangkuman praktis untuk membedakan secara instan kapan “不” dibaca <strong>bù</strong> atau <strong>bú</strong>.</div>
+        </div>
+      </div>
+
+      <div class="compare-table-box">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Kondisi Lingkungan</th>
+              <th>Nada Kata Kedua</th>
+              <th>Pelafalan "不"</th>
+              <th>Contoh Kata (Pinyin &amp; Arti)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Berdiri Sendiri / Akhir</strong></td>
+              <td>—</td>
+              <td><strong style="color:#b45309;">bù (Nada 4 ↘)</strong></td>
+              <td><strong>不！</strong> (Bù! — Tidak!)</td>
+            </tr>
+            <tr>
+              <td><strong>Diikuti Nada 1</strong></td>
+              <td>一声 (ō, ā, chī, hē)</td>
+              <td><strong style="color:#b45309;">bù (Nada 4 ↘)</strong></td>
+              <td><strong>不吃</strong> (bù chī), <strong>不喝</strong> (bù hē), <strong>不说</strong> (bù shuō)</td>
+            </tr>
+            <tr>
+              <td><strong>Diikuti Nada 2</strong></td>
+              <td>二声 (í, á, néng, lái)</td>
+              <td><strong style="color:#b45309;">bù (Nada 4 ↘)</strong></td>
+              <td><strong>不能</strong> (bù néng), <strong>不来</strong> (bù lái), <strong>不学</strong> (bù xué)</td>
+            </tr>
+            <tr>
+              <td><strong>Diikuti Nada 3</strong></td>
+              <td>三声 (ǐ, ǎ, hǎo, mǎi)</td>
+              <td><strong style="color:#b45309;">bù (Nada 4 ↘)</strong></td>
+              <td><strong>不好</strong> (bù hǎo), <strong>不买</strong> (bù mǎi), <strong>不懂</strong> (bù dǒng)</td>
+            </tr>
+            <tr style="background:#fef2f2;">
+              <td><strong style="color:#dc2626;">Diikuti Nada 4 ⭐</strong></td>
+              <td><strong style="color:#dc2626;">四声 (shì, huì, dà, duì)</strong></td>
+              <td><strong style="color:#dc2626; font-size:1rem;">bú (Nada 2 ↗)</strong></td>
+              <td><strong>不是</strong> (bú shì), <strong>不会</strong> (bú huì), <strong>不大</strong> (bú dà), <strong>不对</strong> (bú duì)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="aturan-rule rule-note" style="margin-top:0.85rem;">
+        <span class="aturan-icon">📝</span>
+        <div class="aturan-text">
+          <strong>Kaidah Penulisan Ejaan Pinyin Baku (Orthography Note):</strong><br>
+          Dalam buku pelajaran sekolah dan kamus standar modern, tanda nada pada kata <em>“不”</em> sering kali <strong>sudah langsung dicetak dengan nada perubahannya (bú)</strong> untuk mempermudah pelajar pemula (contoh: <em>bú shì, bú huì</em>). Namun pada sebagian teks sastra/lanjutan, tanda nadanya tetap ditulis nada aslinya (<em>bù shì</em>), tetapi secara <strong>lisan wajib dilafalkan bú shì</strong>.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 4: LATIHAN INTERAKTIF EVALUASI TONE SANDHI "不"
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">✍️ 4. Latihan Interaktif: Identifikasi Nada "不" (Quiz)</div>
+    <div class="classroom-box" style="border-left: 5px solid #10b981;">
+      
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #10b981, #047857);">测</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#d1fae5; color:#065f46;">Uji Pemahaman Mandiri · 变调自我检测</div>
+          <div class="classroom-desc">Pilihlah pelafalan Pinyin yang benar untuk karakter “不” pada setiap kosakata di bawah ini!</div>
+        </div>
+      </div>
+
+      <div class="soal-grid">
+        <!-- SOAL 1 -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">1</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('bú shì')" title="Klik untuk mendengar">不是 (bù + shì)</div>
+              <div class="soal-py">Kata "是" (shì) bernada ke-4. Bagaimanakah pelafalan kata "不"?</div>
+              <div class="soal-id">Artinya: Bukan / Tidak benar</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option" onclick="playPinyin('bù shì')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">bù shì</span>
+              <span class="soal-option-id">— Tetap nada ke-4</span>
+            </div>
+            <div class="soal-option correct" onclick="playPinyin('bú shì')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">bú shì</span>
+              <span class="soal-option-id">— Berubah menjadi nada ke-2 (bú)</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Kunci Jawaban: B — bú shì</div>
+          <div class="soal-pembahasan">
+            <strong>Pembahasan:</strong> Karena kata 是 (shì) bernada ke-4, maka 不 (bù) wajib berubah menjadi nada ke-2 yaitu <strong>bú shì</strong>.
+          </div>
+        </div>
+
+        <!-- SOAL 2 -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">2</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('bù hǎo')" title="Klik untuk mendengar">不好 (bù + hǎo)</div>
+              <div class="soal-py">Kata "好" (hǎo) bernada ke-3. Bagaimanakah pelafalan kata "不"?</div>
+              <div class="soal-id">Artinya: Tidak baik / Jelek</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option correct" onclick="playPinyin('bù hǎo')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">bù hǎo</span>
+              <span class="soal-option-id">— Tetap nada ke-4 (bù)</span>
+            </div>
+            <div class="soal-option" onclick="playPinyin('bú hǎo')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">bú hǎo</span>
+              <span class="soal-option-id">— Berubah nada ke-2</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Kunci Jawaban: A — bù hǎo</div>
+          <div class="soal-pembahasan">
+            <strong>Pembahasan:</strong> Kata 好 (hǎo) bernada ke-3. "不" hanya berubah bila bertemu nada ke-4, sehingga di sini tetap dibaca <strong>bù hǎo</strong>.
+          </div>
+        </div>
+
+        <!-- SOAL 3 -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">3</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('bú huì')" title="Klik untuk mendengar">不会 (bù + huì)</div>
+              <div class="soal-py">Kata "会" (huì) bernada ke-4. Bagaimanakah pelafalan kata "不"?</div>
+              <div class="soal-id">Artinya: Tidak bisa / Tidak akan</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option" onclick="playPinyin('bù huì')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">bù huì</span>
+              <span class="soal-option-id">— Tetap nada ke-4</span>
+            </div>
+            <div class="soal-option correct" onclick="playPinyin('bú huì')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">bú huì</span>
+              <span class="soal-option-id">— Berubah menjadi nada ke-2 (bú)</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Kunci Jawaban: B — bú huì</div>
+          <div class="soal-pembahasan">
+            <strong>Pembahasan:</strong> Kata 会 (huì) bernada ke-4. Dua nada ke-4 bertemu membuat 不 dibaca nada 2: <strong>bú huì</strong>.
+          </div>
+        </div>
+
+        <!-- SOAL 4 -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">4</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('bù néng')" title="Klik untuk mendengar">不能 (bù + néng)</div>
+              <div class="soal-py">Kata "能" (néng) bernada ke-2. Bagaimanakah pelafalan kata "不"?</div>
+              <div class="soal-id">Artinya: Tidak bisa / Tidak boleh</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option correct" onclick="playPinyin('bù néng')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">bù néng</span>
+              <span class="soal-option-id">— Tetap nada ke-4 (bù)</span>
+            </div>
+            <div class="soal-option" onclick="playPinyin('bú néng')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">bú néng</span>
+              <span class="soal-option-id">— Berubah nada ke-2</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Kunci Jawaban: A — bù néng</div>
+          <div class="soal-pembahasan">
+            <strong>Pembahasan:</strong> Ingat bahwa 能 (néng) adalah nada ke-2 (二声). Maka kata "不" tetap mempertahankan nada aslinya yaitu <strong>bù néng</strong>.
+          </div>
+        </div>
+
+        <!-- SOAL 5 -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">5</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('bú dà')" title="Klik untuk mendengar">不大 (bù + dà)</div>
+              <div class="soal-py">Kata "大" (dà) bernada ke-4. Bagaimanakah pelafalan kata "不"?</div>
+              <div class="soal-id">Artinya: Tidak besar</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option" onclick="playPinyin('bù dà')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">bù dà</span>
+              <span class="soal-option-id">— Tetap nada ke-4</span>
+            </div>
+            <div class="soal-option correct" onclick="playPinyin('bú dà')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">bú dà</span>
+              <span class="soal-option-id">— Berubah menjadi nada ke-2 (bú)</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Kunci Jawaban: B — bú dà</div>
+          <div class="soal-pembahasan">
+            <strong>Pembahasan:</strong> Karena 大 (dà) bernada ke-4, maka "不" mengalami tone sandhi menjadi nada ke-2: <strong>bú dà</strong>.
+          </div>
+        </div>
+
+        <!-- SOAL 6 -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">6</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('bù chī')" title="Klik untuk mendengar">不吃 (bù + chī)</div>
+              <div class="soal-py">Kata "吃" (chī) bernada ke-1. Bagaimanakah pelafalan kata "不"?</div>
+              <div class="soal-id">Artinya: Tidak makan</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option correct" onclick="playPinyin('bù chī')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">bù chī</span>
+              <span class="soal-option-id">— Tetap nada ke-4 (bù)</span>
+            </div>
+            <div class="soal-option" onclick="playPinyin('bú chī')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">bú chī</span>
+              <span class="soal-option-id">— Berubah nada ke-2</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Kunci Jawaban: A — bù chī</div>
+          <div class="soal-pembahasan">
+            <strong>Pembahasan:</strong> Di depan nada ke-1 (chī), kata "不" tetap berada pada posisi aslinya yaitu <strong>bù chī</strong>.
+          </div>
+        </div>
+
+        <!-- SOAL 7 -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">7</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('bú duì')" title="Klik untuk mendengar">不对 (bù + duì)</div>
+              <div class="soal-py">Kata "对" (duì) bernada ke-4. Bagaimanakah pelafalan kata "不"?</div>
+              <div class="soal-id">Artinya: Salah / Tidak benar</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option" onclick="playPinyin('bù duì')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">bù duì</span>
+              <span class="soal-option-id">— Tetap nada ke-4</span>
+            </div>
+            <div class="soal-option correct" onclick="playPinyin('bú duì')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">bú duì</span>
+              <span class="soal-option-id">— Berubah menjadi nada ke-2 (bú)</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Kunci Jawaban: B — bú duì</div>
+          <div class="soal-pembahasan">
+            <strong>Pembahasan:</strong> 对 (duì) adalah suku kata bernada ke-4. Oleh karena itu, 不 berubah menjadi nada ke-2: <strong>bú duì</strong>.
+          </div>
+        </div>
+
+        <!-- SOAL 8 -->
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">8</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('bú qù')" title="Klik untuk mendengar">不去 (bù + qù)</div>
+              <div class="soal-py">Kata "去" (qù) bernada ke-4. Bagaimanakah pelafalan kata "不"?</div>
+              <div class="soal-id">Artinya: Tidak pergi</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option" onclick="playPinyin('bù qù')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">bù qù</span>
+              <span class="soal-option-id">— Tetap nada ke-4</span>
+            </div>
+            <div class="soal-option correct" onclick="playPinyin('bú qù')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">bú qù</span>
+              <span class="soal-option-id">— Berubah menjadi nada ke-2 (bú)</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Kunci Jawaban: B — bú qù</div>
+          <div class="soal-pembahasan">
+            <strong>Pembahasan:</strong> 去 (qù) bernada ke-4, sehingga nada kata 不 dilafalkan naik menjadi nada 2: <strong>bú qù</strong>.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK — CLAUDE.md MASTER) ── -->
+  <div class="dialog-toolbar">
+    <div class="toolbar-title">
+      <span class="icon">⚙️</span>
+      <span>Bantuan:</span>
+    </div>
+    <div class="toolbar-buttons">
+      <button id="btnPinyin" class="toggle-switch-btn active" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">
+        <span>🔤 Pinyin</span>
+        <span class="status-badge">ON</span>
+      </button>
+      <button id="btnArti" class="toggle-switch-btn active" onclick="toggleArti()" title="Tampilkan / Sembunyikan Terjemahan">
+        <span>🇮🇩 Arti</span>
+        <span class="status-badge">ON</span>
+      </button>
+      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Kunci Jawaban">
+        <span>📖 Detail</span>
+        <span class="status-badge">ON</span>
+      </button>
+      <button id="btnColor" class="toggle-switch-btn color-btn" onclick="toggleColor()" title="Pewarnaan Karakter Per Kata">
+        <span>🎨 Warna</span>
+        <span class="status-badge">OFF</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    Modul Pembelajaran Mandiri · HSK 1 Workbook Bab 5: <span>"不" 的变调 (Tone Sandhi bù)</span>
+  </footer>
+
+</div><!-- /wrap -->
+
+<script>
+  // Palet warna kontras & cerah untuk karakter per kata
+  const COLOR_PALETTE = [
+    '#e11d48', // Merah
+    '#16a34a', // Hijau
+    '#2563eb', // Biru royal
+    '#ea580c', // Oranye
+    '#7c3aed', // Ungu
+    '#0891b2', // Cyan / Teal
+    '#c026d3', // Magenta / Pink fuchsia
+    '#ca8a04', // Kuning emas
+    '#4f46e5', // Indigo
+    '#059669', // Zamrud
+    '#d97706', // Amber
+    '#db2777', // Pink cerah
+    '#0284c7', // Sky blue
+    '#9333ea', // Deep violet
+    '#65a30d'  // Lime green
+  ];
+
+  const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜvÜǕǗǙǛ]';
+  const _finals = [
+    _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
+    _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
+    _A+'ng', _E+'ng', _O+'ng',
+    _A+'i', _E+'i', _A+_O, _O+_U, _A+'n', _E+'n',
+    _I+_A, _I+_E, _I+'n', _I+_U, _U+_A, _U+_O, _U+_E, _U+_I, _U+'n',
+    _V+_E, 'er',
+    _A, _O, _E, _I, _U, _V
+  ].join('|');
+  const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
+
+  function isHanziChar(ch) {
+    return /[\u3007\u4e00-\u9fa5]/.test(ch);
+  }
+
+  // Mewarnai pasangan teks Hanzi dan Pinyin per-karakter / per-kata
+  function colorizePair(hanziText, pinyinText, charColorMap) {
+    if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
+
+    const hzList = [];
+    for (const ch of hanziText) {
+      if (isHanziChar(ch)) {
+        hzList.push(ch);
+        if (!charColorMap[ch]) {
+          const nextColor = COLOR_PALETTE[Object.keys(charColorMap).length % COLOR_PALETTE.length];
+          charColorMap[ch] = nextColor;
+        }
+      }
+    }
+
+    let outHz = '';
+    for (const ch of hanziText) {
+      if (isHanziChar(ch)) {
+        outHz += '<span style="color:' + charColorMap[ch] + ';font-weight:700;">' + ch + '</span>';
+      } else {
+        outHz += ch;
+      }
+    }
+
+    let outPy = '';
+    let hzIdx = 0;
+    let remaining = pinyinText;
+
+    while (remaining.length > 0) {
+      const acronymMatch = remaining.match(/^[A-Z]{2,}(?=[^a-zāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜvĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙÜǕǗǙǛ]|$)/);
+      if (acronymMatch) {
+        outPy += acronymMatch[0];
+        remaining = remaining.substring(acronymMatch[0].length);
+        continue;
+      }
+
+      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜvĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙÜǕǗǙǛ]+/);
+      if (nonLetterMatch) {
+        outPy += nonLetterMatch[0];
+        remaining = remaining.substring(nonLetterMatch[0].length);
+        continue;
+      }
+
+      const match = remaining.match(PINYIN_SYLL_RE);
+      if (match) {
+        const syll = match[0];
+        const pairedHz = hzList[hzIdx];
+        if (pairedHz && charColorMap[pairedHz]) {
+          outPy += '<span style="color:' + charColorMap[pairedHz] + ';font-weight:700;">' + syll + '</span>';
+          hzIdx++;
+        } else {
+          outPy += syll;
+        }
+        remaining = remaining.substring(syll.length);
+      } else {
+        outPy += remaining[0];
+        remaining = remaining.substring(1);
+      }
+    }
+
+    return { hanzi: outHz, pinyin: outPy };
+  }
+
+  // Khusus Workbook Bab 5: menarget kartu Tone Sandhi & Soal Quiz (CLAUDE.md Seksi 6.2)
+  function applyColors() {
+    const charColorMap = {
+      '不': '#e11d48', // Merah (karakter negasi utama)
+      '是': '#2563eb', // Biru
+      '会': '#ea580c', // Oranye
+      '大': '#7c3aed', // Ungu
+      '对': '#16a34a', // Hijau
+      '能': '#0891b2', // Teal
+      '好': '#16a34a', // Hijau
+      '吃': '#ca8a04'  // Emas
+    };
+
+    // 1. Kartu Tone Sandhi (.sandhi-card)
+    document.querySelectorAll('.sandhi-card').forEach(card => {
+      const hzEl = card.querySelector('.sandhi-hz');
+      const pyRead = card.querySelector('.py-read');
+      const pyOrig = card.querySelector('.py-orig');
+      if (!hzEl || !pyRead) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyRead.dataset.origHtml) pyRead.dataset.origHtml = pyRead.innerHTML;
+      if (pyOrig && !pyOrig.dataset.origHtml) pyOrig.dataset.origHtml = pyOrig.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyRead.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyRead.innerHTML = res.pinyin;
+      if (pyOrig) {
+        const resOrig = colorizePair(hzEl.dataset.origHtml, pyOrig.dataset.origHtml, charColorMap);
+        pyOrig.innerHTML = resOrig.pinyin;
+      }
+    });
+
+    // 2. Pertanyaan Soal (.soal-pertanyaan)
+    document.querySelectorAll('.soal-pertanyaan').forEach(sp => {
+      const hzEl = sp.querySelector('.soal-hz');
+      const pyEl = sp.querySelector('.soal-py');
+      if (hzEl && pyEl) {
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        const rawHz = hzEl.dataset.origHtml.split(' ')[0];
+        const res = colorizePair(rawHz, pyEl.dataset.origHtml, charColorMap);
+        hzEl.innerHTML = hzEl.dataset.origHtml.replace(rawHz, res.hanzi);
+      }
+    });
+
+    // 3. Pilihan Jawaban Soal (.soal-option)
+    document.querySelectorAll('.soal-option').forEach(opt => {
+      const hzEl = opt.querySelector('.soal-option-hz');
+      if (hzEl) {
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        const res = colorizePair(hzEl.dataset.origHtml, hzEl.dataset.origHtml, charColorMap);
+        hzEl.innerHTML = res.pinyin;
+      }
+    });
+  }
+
+  function removeColors() {
+    const selector = '.sandhi-hz, .py-read, .py-orig, .soal-hz, .soal-option-hz';
+    document.querySelectorAll(selector).forEach(el => {
+      if (el.dataset.origHtml !== undefined) {
+        el.innerHTML = el.dataset.origHtml;
+      }
+      el.style.color = '';
+      el.style.fontWeight = '';
+    });
+  }
+
+  function updateToggleUI() {
+    const s = cl => document.body.classList.contains(cl);
+    const set = (id, cls) => {
+      const b = document.getElementById(id);
+      if (!b) return;
+      const on = s(cls);
+      b.classList.toggle('active', on);
+      const badge = b.querySelector('.status-badge');
+      if (badge) badge.textContent = on ? 'ON' : 'OFF';
+    };
+    set('btnPinyin', 'show-pinyin');
+    set('btnArti', 'show-arti');
+    set('btnVocab', 'show-vocab');
+    set('btnColor', 'show-color');
+  }
+
+  function togglePinyin() {
+    document.body.classList.toggle('show-pinyin');
+    localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleArti() {
+    document.body.classList.toggle('show-arti');
+    localStorage.setItem('mandarin_show_arti', document.body.classList.contains('show-arti') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleVocab() {
+    document.body.classList.toggle('show-vocab');
+    localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleColor() {
+    document.body.classList.toggle('show-color');
+    const on = document.body.classList.contains('show-color');
+    localStorage.setItem('mandarin_show_color', on ? '1' : '0');
+    on ? applyColors() : removeColors();
+    updateToggleUI();
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('mandarin_show_pinyin') === '0') document.body.classList.remove('show-pinyin');
+    if (localStorage.getItem('mandarin_show_arti') === '0') document.body.classList.remove('show-arti');
+    if (localStorage.getItem('mandarin_show_vocab') === '0') document.body.classList.remove('show-vocab');
+    if (localStorage.getItem('mandarin_show_color') === '1') {
+      document.body.classList.add('show-color');
+      applyColors();
+    }
+    updateToggleUI();
+  });
+
+  // Audio Text-To-Speech (Web Speech API)
+  function playPinyin(text) {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-CN';
+      u.rate = 0.85;
+      window.speechSynthesis.speak(u);
+    }
+  }
+</script>
+
+</body>
+</html>
