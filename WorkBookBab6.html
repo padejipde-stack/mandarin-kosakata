@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buku Latihan (Workbook) Mandarin — Bab 6: 你的手机号是多少？ (Nomor Telepon &amp; Pelafalan yāo)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --primary:      #2980b9;
+      --primary-dark: #1a5276;
+      --primary-soft: rgba(41, 128, 185, 0.08);
+      --gold:         #f39c12;
+      --bg:           #f4f6f9;
+      --card-bg:      #ffffff;
+      --text:         #2d3436;
+      --sub:          #636e72;
+      --border:       #e2e8f0;
+      --radius:       16px;
+      --shadow:       0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 5.5rem;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #2980b9 0%, #1a5276 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '六';
+      position: absolute;
+      font-size: 11rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.05);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    header h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      position: relative;
+    }
+    header p {
+      margin-top: 0.35rem;
+      font-size: 0.88rem;
+      opacity: 0.88;
+      position: relative;
+    }
+    header .bab {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 20px;
+      padding: 0.2rem 0.95rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 0.65rem;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    /* ── MODERN STICKY NAVBAR ── */
+    .nav-bar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .nav {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0.65rem 1rem;
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .nav-side-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-side-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .nav-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    .nav-home-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .nav-pager-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 0.95rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+    .nav-pager-btn.next {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(41, 128, 185, 0.25);
+    }
+    .nav-pager-btn.next:hover {
+      background: var(--primary-dark);
+      transform: translateX(2px);
+    }
+    .nav-pager-btn.prev {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid var(--border);
+    }
+    .nav-pager-btn.prev:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      transform: translateX(-2px);
+    }
+
+    /* ── WRAPPER ── */
+    .wrap {
+      max-width: 860px;
+      margin: 1.5rem auto 2.5rem;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ── CLASSROOM BOX ── */
+    .classroom-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-left: 5px solid var(--primary);
+    }
+    .classroom-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    }
+    .av-blue { background: linear-gradient(135deg, #2980b9, #1a5276); }
+    .classroom-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #1a5276;
+      background: #e0f2fe;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      margin-bottom: 0.25rem;
+    }
+    .classroom-desc {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ── ATURAN BLOCKS ── */
+    .aturan-block {
+      background: #fafaf9;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .aturan-block-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.75rem;
+    }
+    .aturan-block-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.18rem 0.55rem;
+      border-radius: 8px;
+    }
+    .aturan-rule {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      padding: 0.75rem 0.95rem;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+    .rule-ok   { background: #f0fdf4; border-left: 4px solid #22c55e; color: #14532d; }
+    .rule-note { background: #eff6ff; border-left: 4px solid #0284c7; color: #0369a1; }
+    .aturan-icon { font-size: 1.15rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── FORMULA CHIP ── */
+    .sandhi-formula-card {
+      background: #f0f9ff;
+      border: 1.5px solid #bae6fd;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .sandhi-formula-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0369a1;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .sandhi-formula-display {
+      background: #ffffff;
+      border: 1px solid #7dd3fc;
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .sandhi-chip {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      line-height: 1.25;
+    }
+    .sandhi-chip.orig { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+    .sandhi-chip.change { background: #e0f2fe; color: #0369a1; border: 1.5px solid #38bdf8; font-weight: 700; }
+    .sandhi-arrow { font-size: 1.3rem; color: #0284c7; font-weight: 800; }
+
+    /* ── CARDS GRID ── */
+    .sandhi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+    .sandhi-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .sandhi-card:hover {
+      border-color: #7dd3fc;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(41, 128, 185, 0.12);
+    }
+    .sandhi-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sandhi-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #1a5276;
+    }
+    .sandhi-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 12px;
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .sandhi-py-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+    }
+    .py-read {
+      color: #2980b9;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .sandhi-arti {
+      font-size: 0.82rem;
+      color: var(--text);
+      border-top: 1px dashed var(--border);
+      padding-top: 0.35rem;
+      margin-top: 0.15rem;
+    }
+
+    /* ── SOAL PILIHAN GANDA (QUIZ) ── */
+    .soal-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .soal-item {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+    }
+    .soal-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .soal-num {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.82rem;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .soal-pertanyaan { flex: 1; }
+    .soal-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.4;
+      cursor: pointer;
+    }
+    .soal-hz:hover { color: var(--primary); }
+    .soal-py {
+      font-size: 0.86rem;
+      color: #0369a1;
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+    .soal-id {
+      font-size: 0.82rem;
+      color: var(--sub);
+      margin-top: 0.15rem;
+    }
+    .soal-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+    .soal-option {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.55rem 0.9rem;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.88rem;
+    }
+    .soal-option:hover {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+    }
+    .soal-option.correct {
+      border-color: #10b981;
+      background: #ecfdf5;
+    }
+    .soal-option-letter {
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--primary);
+      width: 22px;
+      flex-shrink: 0;
+    }
+    .soal-option.correct .soal-option-letter { color: #047857; }
+    .soal-option-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .soal-answer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #065f46;
+      background: #d1fae5;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+    }
+    .soal-pembahasan {
+      font-size: 0.82rem;
+      color: #475569;
+      background: #ffffff;
+      border-left: 3.5px solid #10b981;
+      border-radius: 0 10px 10px 0;
+      padding: 0.6rem 0.9rem;
+      margin-top: 0.6rem;
+      line-height: 1.55;
+    }
+
+    /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
+    .dialog-toolbar {
+      position: fixed;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 2rem);
+      max-width: 720px;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.04);
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+    }
+    .toolbar-title {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .toolbar-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+      justify-content: flex-end;
+    }
+    .toggle-switch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1.5px solid #cbd5e1;
+      padding: 0.45rem 0.75rem;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .toggle-switch-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .toggle-switch-btn.active {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #10b981;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+    }
+    .toggle-switch-btn#btnColor.active {
+      background: #fef3c7;
+      color: #b45309;
+      border-color: #f59e0b;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.8rem;
+      color: var(--sub);
+      border-top: 1px solid var(--border);
+    }
+    footer span {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .btn-text-mobile { display: none; }
+
+    /* ── VISIBILITY TOGGLES (CSS CONTROLLED) ── */
+    body:not(.show-pinyin) .soal-py,
+    body:not(.show-pinyin) .sandhi-py-row { display: none !important; }
+
+    body:not(.show-arti) .soal-id,
+    body:not(.show-arti) .sandhi-arti,
+    body:not(.show-arti) .soal-pembahasan { display: none !important; }
+
+    body:not(.show-vocab) .soal-answer-badge { display: none !important; }
+
+    /* ── RESPONSIVE MOBILE ── */
+    @media (max-width: 600px) {
+      .btn-text-desktop { display: none; }
+      .btn-text-mobile { display: inline; }
+      header { padding: 1.8rem 0.8rem 1.4rem; }
+      header h1 { font-size: 1.45rem; }
+      header p { font-size: 0.82rem; }
+      header .bab {
+        max-width: 95%;
+        font-size: 0.74rem;
+        padding: 0.25rem 0.75rem;
+        line-height: 1.4;
+      }
+      header::before { font-size: 7.5rem; }
+      .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.4rem; }
+      .classroom-box { padding: 1.1rem 0.9rem; }
+      .sandhi-grid { grid-template-columns: 1fr 1fr !important; gap: 0.55rem; }
+      .nav { padding: 0.45rem 0.6rem !important; gap: 0.35rem !important; }
+      .nav-home-btn { padding: 0.38rem 0.65rem; font-size: 0.75rem; }
+      .nav-home-btn span.label { display: none; }
+      .nav-pager-btn { padding: 0.38rem 0.65rem; font-size: 0.75rem; gap: 0.25rem; }
+      
+      .dialog-toolbar {
+        bottom: 0.8rem;
+        width: calc(100% - 1.2rem);
+        padding: 0.5rem 0.6rem;
+      }
+      .toolbar-title { display: none; }
+      .toolbar-buttons { width: 100%; justify-content: space-between; gap: 0.35rem; }
+      .toggle-switch-btn {
+        flex: 1;
+        padding: 0.42rem 0.35rem;
+        font-size: 0.74rem;
+      }
+    }
+  </style>
+</head>
+<body class="show-pinyin show-arti show-vocab">
+
+<!-- ══ HEADER ══ -->
+<header>
+  <h1>📝 Buku Latihan Mandarin · 练习册</h1>
+  <p>HSK 1 练习册 · Workbook Pelajaran 6</p>
+  <div class="bab">Bab 6 — 你的手机号是多少？ · Nomor Telepon &amp; Pelafalan yāo (幺)</div>
+</header>
+
+<!-- ══ 3-KOLOM STICKY NAVBAR ══ -->
+<div class="nav-bar">
+  <div class="nav">
+    <div class="nav-side-left">
+      <a href="WorkBookBab5.html" class="nav-pager-btn prev" title="Kembali ke Workbook Bab 5">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span class="btn-text-desktop">Workbook Bab 5</span>
+        <span class="btn-text-mobile">Bab 5</span>
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="nav-home-btn" title="Kembali ke Daftar Bab">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span class="label">Menu Utama</span>
+      </a>
+    </div>
+    <div class="nav-side-right">
+      <a href="WorkBookBab7.html" class="nav-pager-btn next" title="Lanjut ke Workbook Bab 7">
+        <span class="btn-text-desktop">Workbook Bab 7</span>
+        <span class="btn-text-mobile">Bab 7</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ WRAP UTAMA ══ -->
+<div class="wrap">
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 1: ATURAN PELAFALAN ANGKA "1" (yāo)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 1. Aturan Khusus Pelafalan Angka "1" (yāo / 幺)</div>
+    <div class="classroom-box">
+      
+      <div class="classroom-header">
+        <div class="avatar av-blue">幺</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge">Kaidah Komunikasi Digital · 实用数字规则</div>
+          <div class="classroom-desc">Mengapa angka "1" (一) sering dilafalkan sebagai <strong>yāo (幺)</strong> saat menyebutkan nomor seri, kamar, dan telepon?</div>
+        </div>
+      </div>
+
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#e0f2fe; color:#0369a1;">Kaidah 1</span>
+          <span>Menghindari Kerancuan Pendengaran antara "一" (yī) dan "七" (qī)</span>
+        </div>
+
+        <div class="aturan-rule rule-note">
+          <span class="aturan-icon">💡</span>
+          <div class="aturan-text">
+            Dalam percakapan telepon atau sinyal radio yang bising, pelafalan <strong>yī (1)</strong> dan <strong>qī (7)</strong> memiliki kemiripan bunyi vokal yang tinggi sehingga rawan salah dengar. Oleh karena itu, masyarakat Tiongkok secara luas mengganti pengucapan angka <strong>"1"</strong> menjadi <strong>yāo (幺)</strong> saat membaca deretan nomor (nomor HP, nomor kamar hotel, pelat nomor, nomor penerbangan).
+          </div>
+        </div>
+
+        <div class="sandhi-formula-card" style="margin-top:0.75rem;">
+          <div class="sandhi-formula-title">📐 Rumus Pelafalan Deretan Nomor:</div>
+          <div class="sandhi-formula-display">
+            <div class="sandhi-chip orig">
+              <span>Angka 1 dalam Nomor</span>
+              <strong>一 (1)</strong>
+            </div>
+            <span class="sandhi-arrow">➔</span>
+            <div class="sandhi-chip change">
+              <span>Dilafalkan Lisan</span>
+              <strong>yāo (幺 - Nada 1)</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contoh Penerapan -->
+      <div>
+        <div style="font-size:0.86rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">
+          🗣️ Contoh Pembacaan Nomor Telepon &amp; Kamar (Klik kartu untuk audio):
+        </div>
+        <div class="sandhi-grid">
+          <div class="sandhi-card" onclick="playPinyin('yāo sān bā')" title="Klik dengar">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">138</span>
+              <span class="sandhi-tag">Awalan HP</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-read">yāo sān bā</span>
+            </div>
+            <div class="sandhi-arti">Bukan dibaca yī sān bā</div>
+          </div>
+
+          <div class="sandhi-card" onclick="playPinyin('yāo yāo líng')" title="Klik dengar">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">110</span>
+              <span class="sandhi-tag">Nomor Darurat Polisi</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-read">yāo yāo líng</span>
+            </div>
+            <div class="sandhi-arti">Layanan Kepolisian Tiongkok</div>
+          </div>
+
+          <div class="sandhi-card" onclick="playPinyin('yāo líng èr')" title="Klik dengar">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">102房</span>
+              <span class="sandhi-tag">Nomor Kamar</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-read">yāo líng èr fáng</span>
+            </div>
+            <div class="sandhi-arti">Kamar nomor 102</div>
+          </div>
+
+          <div class="sandhi-card" onclick="playPinyin('yāo èr líng')" title="Klik dengar">
+            <div class="sandhi-card-top">
+              <span class="sandhi-hz">120</span>
+              <span class="sandhi-tag">Ambulans Darurat</span>
+            </div>
+            <div class="sandhi-py-row">
+              <span class="py-read">yāo èr líng</span>
+            </div>
+            <div class="sandhi-arti">Layanan Medis Darurat</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 2: LATIHAN SOAL INTERAKTIF
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">✍️ 2. Latihan Pemahaman Mandiri (Quiz)</div>
+    <div class="classroom-box" style="border-left: 5px solid #10b981;">
+      
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #10b981, #047857);">测</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#d1fae5; color:#065f46;">Latihan Praktis · 自我测评</div>
+          <div class="classroom-desc">Pilihlah jawaban yang paling tepat mengenai pembacaan nomor telepon dan nomor seri!</div>
+        </div>
+      </div>
+
+      <div class="soal-grid">
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">1</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('yāo sān jiǔ')">Saat menyebutkan nomor ponsel "139...", angka "1" diucapkan:</div>
+              <div class="soal-py">Dài biǎoshì shǒujī hào de "1" zěnme dú?</div>
+              <div class="soal-id">Pertanyaan seputar kaidah pelafalan angka nomor telepon.</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option correct" onclick="playPinyin('yāo')">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">yāo (幺)</span>
+            </div>
+            <div class="soal-option" onclick="playPinyin('yī')">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">yī (一)</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Kunci Jawaban: A — yāo (幺)</div>
+          <div class="soal-pembahasan">
+            <strong>Pembahasan:</strong> Dalam penyebutan nomor telepon, angka 1 diucapkan sebagai <strong>yāo</strong> agar tidak tertukar dengan angka 7 (qī).
+          </div>
+        </div>
+
+        <div class="soal-item">
+          <div class="soal-header">
+            <div class="soal-num">2</div>
+            <div class="soal-pertanyaan">
+              <div class="soal-hz" onclick="playPinyin('Nǐ de shǒujī hào shì duōshao?')">你的手机号是多少？</div>
+              <div class="soal-py">Nǐ de shǒujī hào shì duōshao?</div>
+              <div class="soal-id">Artinya: Berapa nomor ponselmu?</div>
+            </div>
+          </div>
+          <div class="soal-options">
+            <div class="soal-option correct">
+              <span class="soal-option-letter">A.</span>
+              <span class="soal-option-hz">Kalimat tanya untuk menanyakan nomor telepon seluler</span>
+            </div>
+            <div class="soal-option">
+              <span class="soal-option-letter">B.</span>
+              <span class="soal-option-hz">Kalimat tanya untuk menanyakan harga barang</span>
+            </div>
+          </div>
+          <div class="soal-answer-badge">✅ Kunci Jawaban: A</div>
+          <div class="soal-pembahasan">
+            <strong>Pembahasan:</strong> Kata <strong>手机号 (shǒujī hào)</strong> berarti nomor ponsel, dan <strong>是多少 (shì duōshao)</strong> digunakan untuk menanyakan berapa nomornya.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
+  <div class="dialog-toolbar">
+    <div class="toolbar-title">
+      <span class="icon">⚙️</span>
+      <span>Bantuan:</span>
+    </div>
+    <div class="toolbar-buttons">
+      <button id="btnPinyin" class="toggle-switch-btn active" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+      <button id="btnArti" class="toggle-switch-btn active" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti">🇮🇩</button>
+      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Detail">📖</button>
+      <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warna-warni Karakter Per Kata">🎨</button>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    Modul Pembelajaran Mandiri · HSK 1 Workbook Bab 6: <span>你的手机号是多少？ (Nomor Telepon &amp; yāo)</span>
+  </footer>
+
+</div><!-- /wrap -->
+
+<script>
+  function updateToggleUI() {
+    const s = cl => document.body.classList.contains(cl);
+    const set = (id, cls) => {
+      const b = document.getElementById(id);
+      if (!b) return;
+      b.classList.toggle('active', s(cls));
+    };
+    set('btnPinyin', 'show-pinyin');
+    set('btnArti', 'show-arti');
+    set('btnVocab', 'show-vocab');
+    set('btnColor', 'show-color');
+  }
+
+  function togglePinyin() {
+    document.body.classList.toggle('show-pinyin');
+    localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleArti() {
+    document.body.classList.toggle('show-arti');
+    localStorage.setItem('mandarin_show_arti', document.body.classList.contains('show-arti') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleVocab() {
+    document.body.classList.toggle('show-vocab');
+    localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleColor() {
+    document.body.classList.toggle('show-color');
+    const on = document.body.classList.contains('show-color');
+    localStorage.setItem('mandarin_show_color', on ? '1' : '0');
+    updateToggleUI();
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('mandarin_show_pinyin') === '1' || localStorage.getItem('mandarin_show_pinyin') === null) {
+      document.body.classList.add('show-pinyin');
+    }
+    if (localStorage.getItem('mandarin_show_arti') === '1' || localStorage.getItem('mandarin_show_arti') === null) {
+      document.body.classList.add('show-arti');
+    }
+    if (localStorage.getItem('mandarin_show_vocab') !== '0') {
+      document.body.classList.add('show-vocab');
+    }
+    updateToggleUI();
+  });
+
+  // Audio Text-To-Speech (Web Speech API)
+  function playPinyin(text) {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-CN';
+      u.rate = 0.85;
+      window.speechSynthesis.speak(u);
+    }
+  }
+</script>
+
+</body>
+</html>
