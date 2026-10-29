@@ -11,9 +11,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
     :root {
-      --primary:      #15803d;
-      --primary-dark: #14532d;
-      --primary-soft: rgba(21, 128, 61, 0.08);
+      --primary:      #d35400;
+      --primary-dark: #a04000;
+      --primary-soft: rgba(211, 84, 0, 0.08);
       --gold:         #f39c12;
       --bg:           #f4f6f9;
       --card-bg:      #ffffff;
@@ -36,7 +36,7 @@
 
     /* ── HEADER ── */
     header {
-      background: linear-gradient(135deg, #16a34a 0%, #166534 100%);
+      background: linear-gradient(135deg, #d35400 0%, #a04000 100%);
       color: #fff;
       text-align: center;
       padding: 2.5rem 1rem 2rem;
@@ -76,7 +76,7 @@
       font-weight: 700;
       margin-top: 0.65rem;
       position: relative;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 8px rgba(211, 84, 0, 0.25);
     }
 
     /* ── MODERN STICKY NAVBAR ── */
@@ -852,276 +852,8 @@
 
       /* Formula Sandhi Mobile */
       .sandhi-formula-card {
-        padding: 0.8rem 0.85rem;
-      }
-      .sandhi-formula-display {
-        padding: 0.6rem 0.5rem;
-        gap: 0.35rem;
-        font-size: 0.88rem;
-      }
-      .sandhi-chip {
-        padding: 0.25rem 0.45rem;
-        font-size: 0.76rem;
-      }
-      .sandhi-chip strong {
-        font-size: 0.8rem;
-      }
-      .sandhi-arrow {
-        font-size: 1.05rem;
-      }
-
-      /* Grid Sandhi 2 Kolom Rapi */
-      .sandhi-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.55rem;
-      }
-      .sandhi-card {
-        padding: 0.7rem 0.65rem;
-        gap: 0.35rem;
-      }
-      .sandhi-hz {
-        font-size: 1.25rem;
-      }
-      .sandhi-tag {
-        font-size: 0.62rem;
-        padding: 0.1rem 0.35rem;
-      }
-      .sandhi-py-row {
-        font-size: 0.78rem;
-        gap: 0.25rem;
-      }
-      .py-read {
-        font-size: 0.85rem;
-      }
-      .sandhi-arti {
-        font-size: 0.72rem;
-      }
-
-      /* Grid Nada Netral 2 Kolom Rapi */
-      .neutral-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.55rem;
-      }
-      .neutral-card {
-        padding: 0.7rem 0.5rem;
-        gap: 0.25rem;
-      }
-      .neutral-hz {
-        font-size: 1.35rem;
-      }
-      .neutral-py {
-        font-size: 0.82rem;
-      }
-      .neutral-arti {
-        font-size: 0.72rem;
-      }
-
-      /* Semantic Contrast */
-      .semantic-pair-card {
-        padding: 0.75rem 0.85rem;
-      }
-      .semantic-pair-title {
-        font-size: 1.15rem;
-      }
-      .semantic-col {
-        padding: 0.55rem 0.75rem;
-      }
-      .sem-pinyin {
-        font-size: 0.92rem;
-      }
-      .sem-arti {
-        font-size: 0.78rem;
-      }
-
-      /* Latihan Soal Cards Mobile */
-      .soal-grid {
-        gap: 0.85rem;
-      }
-      .soal-item {
-        padding: 0.75rem 0.75rem;
-      }
-      .soal-header {
-        gap: 0.5rem;
-        margin-bottom: 0.5rem;
-      }
-      .soal-num {
-        width: 24px;
-        height: 24px;
-        font-size: 0.75rem;
-      }
-      .soal-hz {
-        font-size: 1.02rem;
-      }
-      .soal-py {
-        font-size: 0.78rem;
-      }
-      .soal-id {
-        font-size: 0.75rem;
-      }
-      .dialog-soal {
-        padding: 0.45rem 0.6rem;
-        gap: 0.35rem;
-      }
-      .dialog-soal-speaker {
-        font-size: 0.7rem;
-        padding: 0.08rem 0.4rem;
-      }
-      .dialog-soal-hz {
-        font-size: 0.92rem;
-      }
-      .dialog-soal-py {
-        font-size: 0.75rem;
-      }
-      .dialog-soal-id {
-        font-size: 0.74rem;
-      }
-      .soal-option {
-        padding: 0.45rem 0.65rem;
-        font-size: 0.82rem;
-        gap: 0.45rem;
-        align-items: flex-start;
-      }
-      .soal-option-letter {
-        font-size: 0.78rem;
-        width: 16px;
-        margin-top: 2px;
-      }
-      .soal-option-hz {
-        font-size: 0.95rem;
-      }
-      .soal-option-py {
-        font-size: 0.74rem;
-      }
-      .soal-option-id {
-        font-size: 0.75rem;
-      }
-      .soal-answer-badge {
-        font-size: 0.74rem;
-        padding: 0.2rem 0.55rem;
-        word-break: break-word;
-      }
-      .latihan-intro {
-        padding: 0.45rem 0.65rem;
-      }
-      .latihan-intro .hz {
-        font-size: 0.94rem;
-      }
-      .latihan-intro .py {
-        font-size: 0.78rem;
-      }
-      .latihan-intro .id {
-        font-size: 0.75rem;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .sandhi-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .neutral-grid {
-        grid-template-columns: 1fr !important;
-      }
-    }
-
-    /* â”€â”€ COLOR MODE â”€â”€ */
-    .toggle-switch-btn.color-btn.active { background:#fefce8; color:#b45309; border-color:#f59e0b; }
-    .toggle-switch-btn.color-btn.active .status-badge { background:#f59e0b; color:#fff; }
-
-    /* â”€â”€ TOGGLE BUTTONS (SYMBOLS ONLY) â”€â”€ */
-    .toggle-switch-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #f1f5f9;
-      color: #475569;
-      border: 1.5px solid #cbd5e1;
-      padding: 0.45rem 0.75rem;
-      border-radius: 12px;
-      font-size: 1.15rem;
-      line-height: 1;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      user-select: none;
-    }
-    .toggle-switch-btn:hover {
-      background: #e2e8f0;
-      color: #0f172a;
-      border-color: #94a3b8;
-      transform: translateY(-1px);
-    }
-    .toggle-switch-btn.active {
-      background: #ecfdf5;
-      color: #047857;
-      border-color: #10b981;
-      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
-    }
-    .toggle-switch-btn#btnColor.active {
-      background: #fef3c7;
-      color: #b45309;
-      border-color: #f59e0b;
-      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
-    }
-
-    /* â”€â”€ COLOR MODE HIGHLIGHTING â”€â”€ */
-    body.show-color .twister-box {
-      background: #ffffff !important;
-      border: 1.5px solid var(--border) !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
-    }
-    body.show-color .twister-hanzi {
-      color: var(--text) !important;
-    }
-    body.show-color .twister-pinyin {
-      color: #64748b !important;
-    }
-    body.show-color .twister-arti {
-      color: #475569 !important;
-      border-top-color: rgba(0, 0, 0, 0.12) !important;
-    }
-    body.show-color .dialog-line.right .bubble {
-      background: #ffffff !important;
-      color: var(--text) !important;
-      border: 1.5px solid var(--border) !important;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
-    }
-    body.show-color .dialog-line.right .bubble .bubble-pinyin {
-      color: #64748b !important;
-    }
-    body.show-color .dialog-line.right .bubble .bubble-arti {
-      color: #475569 !important;
-      border-top-color: rgba(0, 0, 0, 0.12) !important;
-    }
-  
-    .nav {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0.65rem 1rem;
-      display: grid !important;
-      grid-template-columns: 1fr auto 1fr !important;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .nav-side-left {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-    .nav-center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .nav-side-right {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-  
-    /* ── TONE SANDHI & NEUTRAL TONE SPECIFIC STYLES ── */
-    .sandhi-formula-card {
-      background: #f0fdf4;
-      border: 1.5px solid #bbf7d0;
+      background: #fffaf5;
+      border: 1.5px solid #fed7aa;
       border-radius: 12px;
       padding: 1rem 1.2rem;
       display: flex;
@@ -1131,14 +863,14 @@
     .sandhi-formula-title {
       font-size: 0.9rem;
       font-weight: 700;
-      color: #14532d;
+      color: #a04000;
       display: flex;
       align-items: center;
       gap: 0.45rem;
     }
     .sandhi-formula-display {
       background: #ffffff;
-      border: 1px solid #86efac;
+      border: 1px solid #fdba74;
       border-radius: 10px;
       padding: 0.75rem 1rem;
       display: flex;
@@ -1161,7 +893,7 @@
     .sandhi-chip.orig { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
     .sandhi-chip.change { background: #dcfce7; color: #166534; border: 1.5px solid #22c55e; }
     .sandhi-chip.stay { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
-    .sandhi-arrow { font-size: 1.3rem; color: #15803d; font-weight: 800; }
+    .sandhi-arrow { font-size: 1.3rem; color: #d35400; font-weight: 800; }
     
     .sandhi-grid {
       display: grid;
@@ -1181,9 +913,9 @@
       cursor: pointer;
     }
     .sandhi-card:hover {
-      border-color: #86efac;
+      border-color: #fdba74;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.12);
+      box-shadow: 0 4px 12px rgba(211, 84, 0, 0.12);
     }
     .sandhi-card-top {
       display: flex;
@@ -1194,7 +926,7 @@
       font-family: 'Noto Sans SC', sans-serif;
       font-size: 1.5rem;
       font-weight: 700;
-      color: #14532d;
+      color: #a04000;
     }
     .sandhi-tag {
       font-size: 0.72rem;
@@ -1215,7 +947,7 @@
       text-decoration: line-through;
     }
     .py-read {
-      color: #15803d;
+      color: #d35400;
       font-weight: 700;
       font-size: 0.95rem;
     }
@@ -1541,7 +1273,7 @@
 
 
     /* ── BAB 5 SPECIFIC STYLES (HARMONIZED WITH MASTER GREEN THEME) ── */
-    .av-tone { background: linear-gradient(135deg, #15803d, #14532d); }
+    .av-tone { background: linear-gradient(135deg, #d35400, #a04000); }
     
     .aturan-block {
       background: #fafaf9;
@@ -1634,11 +1366,11 @@
       background: #ffffff;
     }
     .compare-table th {
-      background: #f0fdf4;
-      color: #14532d;
+      background: #fff7ed;
+      color: #a04000;
       font-weight: 700;
       padding: 0.75rem 0.9rem;
-      border-bottom: 2px solid #86efac;
+      border-bottom: 2px solid #fed7aa;
       white-space: nowrap;
     }
     .compare-table td {
@@ -1671,7 +1403,7 @@
 <header>
   <h1>📝 Buku Latihan Mandarin · 练习册</h1>
   <p>HSK 1 练习册 · Workbook Pelajaran 5</p>
-  <div class="bab" style="background: #4ade80; color: #14532d; font-weight: 700;">Bab 5 — "不" 的变调 · Tone Sandhi Karakter "不" (bù)</div>
+  <div class="bab">Bab 5 — "不" 的变调 · Tone Sandhi Karakter "不" (bù)</div>
 </header>
 
 <!-- ══ 3-KOLOM STICKY NAVBAR (CLAUDE.md MASTER) ══ -->
