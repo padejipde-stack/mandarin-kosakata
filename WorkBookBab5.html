@@ -6,12 +6,14 @@
   <title>Buku Latihan (Workbook) Mandarin — Bab 5: "不" 的变调 (Tone Sandhi "不" bù)</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
   <style>
+
+
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
     :root {
-      --primary:      #b45309;
-      --primary-dark: #78350f;
-      --primary-soft: rgba(180, 83, 9, 0.08);
+      --primary:      #15803d;
+      --primary-dark: #14532d;
+      --primary-soft: rgba(21, 128, 61, 0.08);
       --gold:         #f39c12;
       --bg:           #f4f6f9;
       --card-bg:      #ffffff;
@@ -34,7 +36,7 @@
 
     /* ── HEADER ── */
     header {
-      background: linear-gradient(135deg, #d97706 0%, #92400e 100%);
+      background: linear-gradient(135deg, #16a34a 0%, #166534 100%);
       color: #fff;
       text-align: center;
       padding: 2.5rem 1rem 2rem;
@@ -42,12 +44,12 @@
       overflow: hidden;
     }
     header::before {
-      content: '不';
+      content: '五';
       position: absolute;
       font-size: 11rem;
       font-family: 'Noto Sans SC', sans-serif;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.05);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
@@ -61,16 +63,16 @@
     header p {
       margin-top: 0.35rem;
       font-size: 0.88rem;
-      opacity: 0.9;
+      opacity: 0.88;
       position: relative;
     }
     header .bab {
       display: inline-block;
-      background: #fbbf24;
-      color: #78350f;
+      background: var(--gold);
+      color: #fff;
       border-radius: 20px;
-      padding: 0.25rem 1rem;
-      font-size: 0.82rem;
+      padding: 0.2rem 0.95rem;
+      font-size: 0.8rem;
       font-weight: 700;
       margin-top: 0.65rem;
       position: relative;
@@ -115,6 +117,31 @@
       background: #e2e8f0;
       color: #0f172a;
     }
+    .nav-tabs {
+      display: inline-flex;
+      background: #f1f5f9;
+      padding: 0.25rem;
+      border-radius: 10px;
+      gap: 0.25rem;
+      border: 1px solid var(--border);
+    }
+    .nav-tab {
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.38rem 0.9rem;
+      border-radius: 8px;
+      color: #64748b;
+      transition: all 0.2s ease;
+    }
+    .nav-tab:hover {
+      color: #1e293b;
+    }
+    .nav-tab.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    }
     .nav-pager-btn {
       display: inline-flex;
       align-items: center;
@@ -129,7 +156,7 @@
     .nav-pager-btn.next {
       background: var(--primary);
       color: #ffffff;
-      box-shadow: 0 2px 8px rgba(180, 83, 9, 0.25);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
     .nav-pager-btn.next:hover {
       background: var(--primary-dark);
@@ -158,7 +185,7 @@
 
     /* ── SECTION TITLE ── */
     .section-title {
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       font-weight: 700;
       color: var(--primary);
       text-transform: uppercase;
@@ -169,8 +196,8 @@
       gap: 0.5rem;
     }
 
-    /* ── CLASSROOM BOX ── */
-    .classroom-box {
+    /* ── DIALOG BOX ── */
+    .dialog-box {
       background: var(--card-bg);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -179,15 +206,17 @@
       flex-direction: column;
       gap: 1.25rem;
       border: 1px solid rgba(0, 0, 0, 0.04);
-      border-left: 5px solid var(--primary);
     }
-    .classroom-header {
+    .dialog-line {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.85rem;
-      padding-bottom: 0.85rem;
-      border-bottom: 1.5px dashed var(--border);
     }
+    .dialog-line.right {
+      flex-direction: row-reverse;
+    }
+
+    /* avatars */
     .avatar {
       width: 44px;
       height: 44px;
@@ -202,13 +231,334 @@
       flex-shrink: 0;
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
     }
-    .av-tone { background: linear-gradient(135deg, #d97706, #92400e); }
+    .av-wang   { background: linear-gradient(135deg, #c0392b, #8e1a12); }
+    .av-stu    { background: linear-gradient(135deg, #2980b9, #1a5276); }
+    .av-xiaoyu { background: linear-gradient(135deg, #f39c12, #d68910); }
+    .av-chen   { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
+    .av-bai    { background: linear-gradient(135deg, #16a085, #0e6655); }
+    .av-anni     { background: linear-gradient(135deg, #e84393, #fd79a8); }
+    .av-li       { background: linear-gradient(135deg, #e67e22, #d35400); }
+    .av-xue      { background: linear-gradient(135deg, #27ae60, #1e8449); }
+    .av-liu      { background: linear-gradient(135deg, #1e3799, #0c2461); }
+    .av-xiaoxue  { background: linear-gradient(135deg, #fd79a8, #e84393); }
+    .av-xiaoming { background: linear-gradient(135deg, #0984e3, #74b9ff); }
+    .av-yang     { background: linear-gradient(135deg, #6c5ce7, #4834d4); }
+
+    .bubble-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      max-width: 82%;
+    }
+    .dialog-line.right .bubble-wrap {
+      align-items: flex-end;
+    }
+
+    .speaker-name {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--sub);
+      padding: 0 0.3rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .speaker-pinyin {
+      display: none;
+      font-weight: 500;
+      color: #64748b;
+    }
+    body.show-pinyin .speaker-pinyin {
+      display: inline;
+    }
+
+    .bubble {
+      padding: 0.75rem 1.1rem;
+      border-radius: 0 16px 16px 16px;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      color: var(--text);
+      line-height: 1.5;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+    .bubble-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+    .bubble-pinyin {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #64748b;
+      margin-top: 0.3rem;
+      display: none;
+    }
+    .bubble-arti {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: #475569;
+      margin-top: 0.35rem;
+      padding-top: 0.35rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.12);
+      display: none;
+    }
+
+    /* Right bubble colors */
+    .dialog-line.right .bubble {
+      border-radius: 16px 0 16px 16px;
+      border-color: transparent;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    }
+    .dialog-line.stu-right .bubble {
+      background: linear-gradient(135deg, #2980b9, #1a5276);
+    }
+
+    .dialog-line.right .bubble .bubble-pinyin {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .dialog-line.right .bubble .bubble-arti {
+      color: rgba(255, 255, 255, 0.95);
+      border-top-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Active visibility state */
+    body.show-pinyin .bubble-pinyin { display: block; }
+    body.show-arti .bubble-arti { display: block; }
+
+    /* ── SUB-BREAKDOWN (ARTI PER KATA PER TEKS) ── */
+    .sub-breakdown {
+      display: none;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1.5px dashed var(--border);
+    }
+    body.show-vocab .sub-breakdown {
+      display: block;
+    }
+    .sub-breakdown-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ── WORD BREAKDOWN GRID ── */
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+      gap: 0.85rem;
+    }
+    .word-card {
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 0.95rem 0.75rem;
+      text-align: center;
+      border-top: 4px solid var(--primary);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .word-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+    .word-char {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+    .word-pinyin {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--sub);
+      margin-top: 0.35rem;
+      display: none;
+    }
+    body.show-pinyin .word-pinyin { display: block; }
+    .word-arti {
+      font-size: 0.8rem;
+      color: var(--text);
+      margin-top: 0.35rem;
+      line-height: 1.35;
+      display: none;
+    }
+    body.show-arti .word-arti { display: block; }
+
+    .shenci-section {
+      display: none;
+    }
+    body.show-vocab .shenci-section {
+      display: block;
+    }
+
+    /* ── CHARACTER PROFILE BOX (主要人物) ── */
+    .character-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-left: 5px solid var(--primary);
+    }
+    .char-intro-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .char-intro-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #b7791f;
+      background: #fefcbf;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+    }
+    .char-intro-desc {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .char-group-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 0.25rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .char-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .char-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 0.85rem 1.1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .char-card:hover {
+      border-color: #cbd5e1;
+      transform: translateX(3px);
+    }
+    .char-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      flex: 1;
+    }
+    .char-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.15rem;
+    }
+    .char-name-group {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+    .char-name-hanzi {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .char-name-pinyin {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--sub);
+      display: none;
+    }
+    body.show-pinyin .char-name-pinyin { display: inline; }
+    .char-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.18rem 0.55rem;
+      border-radius: 12px;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid var(--border);
+    }
+    .char-desc-hanzi {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .char-desc-pinyin {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #64748b;
+      margin-top: 0.2rem;
+      line-height: 1.45;
+      display: none;
+    }
+    body.show-pinyin .char-desc-pinyin { display: block; }
+    .char-desc-arti {
+      font-size: 0.82rem;
+      color: #475569;
+      margin-top: 0.35rem;
+      padding-top: 0.35rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.08);
+      line-height: 1.45;
+      display: none;
+    }
+    body.show-arti .char-desc-arti { display: block; }
+
+    /* ── XIAOYU CLASSROOM (课堂用语) ── */
+    .classroom-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-left: 5px solid var(--gold);
+    }
+    .classroom-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
     .classroom-badge {
       display: inline-block;
       font-size: 0.72rem;
       font-weight: 700;
-      color: #78350f;
-      background: #fef3c7;
+      color: #b7791f;
+      background: #fefcbf;
       padding: 0.2rem 0.65rem;
       border-radius: 12px;
       margin-bottom: 0.25rem;
@@ -218,335 +568,107 @@
       font-weight: 600;
       color: var(--text);
     }
-
-    /* ── ATURAN BLOCKS ── */
-    .aturan-block {
-      background: #fafaf9;
-      border: 1.5px solid var(--border);
-      border-radius: 14px;
-      padding: 1.1rem 1.2rem;
-    }
-    .aturan-block-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #0f172a;
+    .classroom-list {
       display: flex;
-      align-items: center;
-      gap: 0.55rem;
-      margin-bottom: 0.75rem;
+      flex-direction: column;
+      gap: 0.85rem;
     }
-    .aturan-block-badge {
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.18rem 0.55rem;
-      border-radius: 8px;
-    }
-    .aturan-rule {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.65rem;
-      padding: 0.75rem 0.95rem;
-      border-radius: 10px;
+    .classroom-group-title {
       font-size: 0.86rem;
-      line-height: 1.55;
-    }
-    .rule-ok   { background: #fefce8; border-left: 4px solid #f59e0b; color: #78350f; }
-    .rule-warn { background: #fef2f2; border-left: 4px solid #ef4444; color: #991b1b; }
-    .rule-note { background: #eff6ff; border-left: 4px solid #3b82f6; color: #1e3a8a; }
-    .aturan-icon { font-size: 1.15rem; flex-shrink: 0; margin-top: 1px; }
-
-    /* ── FORMULA CHIP ── */
-    .sandhi-formula-card {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.85rem 1.1rem;
-      margin: 0.75rem 0;
-    }
-    .sandhi-formula-title {
-      font-size: 0.76rem;
       font-weight: 700;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.5rem;
-    }
-    .sandhi-formula-display {
+      color: var(--primary);
+      margin-top: 0.35rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px dashed var(--border);
       display: flex;
       align-items: center;
-      gap: 0.65rem;
-      flex-wrap: wrap;
+      gap: 0.4rem;
     }
-    .sandhi-chip {
-      padding: 0.4rem 0.75rem;
-      border-radius: 8px;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 1.25;
-      font-size: 0.8rem;
-    }
-    .sandhi-chip span { font-size: 0.68rem; opacity: 0.85; margin-bottom: 2px; }
-    .sandhi-chip.orig { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
-    .sandhi-chip.change { background: #fee2e2; color: #991b1b; border: 1.5px solid #f87171; font-weight: 700; }
-    .sandhi-chip.stay { background: #fef3c7; color: #78350f; border: 1.5px solid #f59e0b; font-weight: 700; }
-    .sandhi-arrow { font-size: 1.25rem; font-weight: 800; color: #94a3b8; }
-
-    /* ── 4 TONES DEMO BARIS (PHONETIC ROW) ── */
-    .phonetic-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.5rem;
-      margin: 0.65rem 0;
-    }
-    .phonetic-cell {
-      background: #ffffff;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      padding: 0.65rem 0.35rem;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
+    .classroom-item {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.2rem;
-    }
-    .phonetic-cell:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-    }
-    .phonetic-text {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #0f172a;
-    }
-    .phonetic-tone-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #64748b;
-    }
-    .phonetic-cell.t1 .phonetic-text { color: #2563eb; }
-    .phonetic-cell.t2 .phonetic-text { color: #16a34a; }
-    .phonetic-cell.t3 .phonetic-text { color: #7c3aed; }
-    .phonetic-cell.t4 .phonetic-text { color: #dc2626; }
-
-    /* ── TONE SANDHI CARDS GRID ── */
-    .sandhi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-      gap: 0.75rem;
-      margin-top: 0.75rem;
-    }
-    .sandhi-card {
-      background: #ffffff;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 0.85rem 0.95rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .sandhi-card:hover {
-      border-color: #f59e0b;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(180, 83, 9, 0.1);
-    }
-    .sandhi-card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .sandhi-hz {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.38rem;
-      font-weight: 700;
-      color: #0f172a;
-    }
-    .sandhi-tag {
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 0.15rem 0.5rem;
-      border-radius: 10px;
-    }
-    .tag-stay { background: #fef3c7; color: #78350f; border: 1px solid #fde68a; }
-    .tag-change { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; font-weight: 800; }
-    .sandhi-py-row {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.88rem;
-    }
-    .py-orig { color: #94a3b8; text-decoration: line-through; }
-    .py-read { color: #b45309; font-weight: 700; font-size: 0.98rem; }
-    .py-read.read-change { color: #dc2626; font-size: 1.02rem; font-weight: 800; }
-    .sandhi-arti {
-      font-size: 0.8rem;
-      color: var(--sub);
-      border-top: 1px dashed var(--border);
-      padding-top: 0.35rem;
-      margin-top: 0.2rem;
-      line-height: 1.4;
-    }
-
-    /* ── SUMMARY COMPARISON TABLE ── */
-    .compare-table-box {
-      overflow-x: auto;
-      margin-top: 0.75rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-    }
-    .compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.84rem;
-      text-align: left;
-      background: #ffffff;
-    }
-    .compare-table th {
-      background: #f8fafc;
-      color: #334155;
-      font-weight: 700;
-      padding: 0.75rem 0.9rem;
-      border-bottom: 1.5px solid var(--border);
-      white-space: nowrap;
-    }
-    .compare-table td {
-      padding: 0.75rem 0.9rem;
-      border-bottom: 1px solid var(--border);
-      vertical-align: middle;
-    }
-    .compare-table tr:last-child td { border-bottom: none; }
-    .compare-table tr:hover { background: #fffbeb; }
-
-    /* ── LATIHAN SOAL PILIHAN GANDA (QUIZ) ── */
-    .soal-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-    .soal-item {
+      align-items: flex-start;
+      gap: 0.85rem;
       background: #f8fafc;
       border: 1.5px solid var(--border);
       border-radius: 14px;
-      padding: 1.1rem 1.25rem;
+      padding: 0.85rem 1.1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
-    .soal-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
+    .classroom-item:hover {
+      border-color: #cbd5e1;
+      transform: translateX(3px);
     }
-    .soal-num {
-      background: var(--primary);
-      color: #fff;
-      font-weight: 800;
-      font-size: 0.82rem;
+    .classroom-box .bubble-pinyin { display: none; }
+    body.show-pinyin .classroom-box .bubble-pinyin { display: block; }
+    .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
+    /* Color mode: hapus override primary-dark agar span warna terlihat */
+    body.show-color .classroom-box .bubble-hanzi { color: var(--text); }
+    body.show-color .classroom-box .bubble-pinyin { color: var(--sub); }
+    .item-number {
       width: 28px;
       height: 28px;
       border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .soal-pertanyaan { flex: 1; }
-    .soal-hz {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #0f172a;
-      line-height: 1.4;
-      cursor: pointer;
-    }
-    .soal-hz:hover { color: var(--primary); }
-    .soal-py {
-      font-size: 0.86rem;
-      color: #b45309;
-      font-style: italic;
-      margin-top: 0.2rem;
-    }
-    .soal-id {
-      font-size: 0.82rem;
-      color: var(--sub);
       margin-top: 0.15rem;
     }
-    .soal-options {
+    .item-content {
       display: flex;
       flex-direction: column;
-      gap: 0.45rem;
-      margin-top: 0.75rem;
-    }
-    .soal-option {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      padding: 0.55rem 0.9rem;
-      background: #fff;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-size: 0.88rem;
-    }
-    .soal-option:hover {
-      border-color: var(--primary);
-      background: var(--primary-soft);
-    }
-    .soal-option.correct {
-      border-color: #10b981;
-      background: #ecfdf5;
-    }
-    .soal-option-letter {
-      font-weight: 800;
-      font-size: 0.85rem;
-      color: var(--primary);
-      width: 22px;
-      flex-shrink: 0;
-    }
-    .soal-option.correct .soal-option-letter { color: #047857; }
-    .soal-option-hz {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-weight: 700;
-      color: #0f172a;
-    }
-    .soal-option-py {
-      font-size: 0.8rem;
-      color: #b45309;
-      font-style: italic;
-    }
-    .soal-option-id {
-      font-size: 0.8rem;
-      color: var(--sub);
-    }
-    .soal-answer-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      margin-top: 0.7rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #065f46;
-      background: #d1fae5;
-      padding: 0.3rem 0.75rem;
-      border-radius: 20px;
-    }
-    .soal-pembahasan {
-      font-size: 0.82rem;
-      color: #475569;
-      background: #ffffff;
-      border-left: 3.5px solid #10b981;
-      border-radius: 0 10px 10px 0;
-      padding: 0.6rem 0.9rem;
-      margin-top: 0.6rem;
-      line-height: 1.55;
+      gap: 0.15rem;
+      flex: 1;
     }
 
-    /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK — CLAUDE.md MASTER) ── */
+    /* ── TONGUE TWISTER ── */
+    .twister-box {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.6rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      color: #fff;
+    }
+    .twister-line {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .twister-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+    .twister-pinyin {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 0.03em;
+      display: none;
+    }
+    body.show-pinyin .twister-pinyin { display: block; }
+    .twister-arti {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 0.25rem;
+      padding-top: 0.25rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.2);
+      display: none;
+    }
+    body.show-arti .twister-arti { display: block; }
+
+    /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
     .dialog-toolbar {
       position: fixed;
       bottom: 1.2rem;
@@ -624,15 +746,8 @@
       background: #10b981;
       color: #ffffff;
     }
-    .toggle-switch-btn.color-btn.active {
-      background: #fefce8;
-      color: #b45309;
-      border-color: #f59e0b;
-    }
-    .toggle-switch-btn.color-btn.active .status-badge {
-      background: #f59e0b;
-      color: #ffffff;
-    }
+
+    .btn-text-mobile { display: none; }
 
     /* ── FOOTER ── */
     footer {
@@ -647,53 +762,83 @@
       font-weight: 600;
     }
 
-    .btn-text-mobile { display: none; }
-
-    /* ── VISIBILITY TOGGLES (CSS CONTROLLED) ── */
-    body:not(.show-pinyin) .soal-py,
-    body:not(.show-pinyin) .soal-option-py,
-    body:not(.show-pinyin) .sandhi-py-row { display: none !important; }
-
-    body:not(.show-arti) .soal-id,
-    body:not(.show-arti) .soal-option-id,
-    body:not(.show-arti) .sandhi-arti,
-    body:not(.show-arti) .soal-pembahasan { display: none !important; }
-
-    body:not(.show-vocab) .soal-answer-badge { display: none !important; }
-
     /* ── RESPONSIVE MOBILE ── */
     @media (max-width: 600px) {
       .btn-text-desktop { display: none; }
       .btn-text-mobile { display: inline; }
-      header { padding: 1.8rem 0.8rem 1.4rem; }
-      header h1 { font-size: 1.45rem; }
-      header p { font-size: 0.82rem; }
+
+      /* Header Mobile */
+      header {
+        padding: 1.8rem 0.8rem 1.4rem;
+      }
+      header h1 {
+        font-size: 1.4rem;
+      }
+      header p {
+        font-size: 0.8rem;
+      }
       header .bab {
         max-width: 95%;
         font-size: 0.74rem;
         padding: 0.25rem 0.75rem;
         line-height: 1.4;
+        white-space: normal;
+        word-break: break-word;
       }
       header::before { font-size: 7.5rem; }
-      .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.4rem; }
-      .classroom-box { padding: 1.1rem 0.9rem; }
-      .sandhi-grid { grid-template-columns: 1fr 1fr; gap: 0.55rem; }
-      .phonetic-row { gap: 0.35rem; }
-      .phonetic-cell { padding: 0.5rem 0.2rem; }
-      .phonetic-text { font-size: 1.1rem; }
-      .phonetic-tone-label { font-size: 0.62rem; }
-      .nav { padding: 0.45rem 0.6rem !important; gap: 0.35rem !important; }
-      .nav-home-btn { padding: 0.38rem 0.65rem; font-size: 0.75rem; }
+
+      /* Wrap & Cards */
+      .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.25rem; }
+      .dialog-box { padding: 1.1rem 0.9rem; }
+      .dialog-line { gap: 0.65rem; }
+      .avatar { width: 38px; height: 38px; font-size: 0.9rem; }
+      .bubble-wrap { max-width: 86%; }
+      .bubble { padding: 0.6rem 0.85rem; }
+      .bubble-hanzi { font-size: 1.12rem; }
+      .bubble-pinyin { font-size: 0.8rem; }
+      .bubble-arti { font-size: 0.78rem; }
+
+      /* Breakdown 2 symmetrical columns on mobile */
+      .breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.65rem;
+      }
+      .word-card { padding: 0.75rem 0.5rem; }
+      .word-char { font-size: 1.45rem; }
+      .word-pinyin { font-size: 0.75rem; }
+      .word-arti { font-size: 0.72rem; }
+
+      .classroom-box { padding: 0.9rem 0.75rem; }
+      .classroom-item { padding: 0.75rem 0.75rem; gap: 0.65rem; }
+
+      /* Mobile Navbar */
+      .nav {
+        padding: 0.45rem 0.6rem !important;
+        gap: 0.35rem !important;
+      }
+      .nav-home-btn {
+        padding: 0.38rem 0.65rem;
+        font-size: 0.75rem;
+      }
       .nav-home-btn span.label { display: none; }
-      .nav-pager-btn { padding: 0.38rem 0.65rem; font-size: 0.75rem; gap: 0.25rem; }
-      
+      .nav-pager-btn {
+        padding: 0.38rem 0.65rem;
+        font-size: 0.75rem;
+        gap: 0.25rem;
+      }
+
+      /* Mobile Toolbar */
       .dialog-toolbar {
         bottom: 0.8rem;
         width: calc(100% - 1.2rem);
         padding: 0.5rem 0.6rem;
       }
       .toolbar-title { display: none; }
-      .toolbar-buttons { width: 100%; justify-content: space-between; gap: 0.35rem; }
+      .toolbar-buttons {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.35rem;
+      }
       .toggle-switch-btn {
         flex: 1;
         padding: 0.42rem 0.35rem;
@@ -704,7 +849,820 @@
         font-size: 0.62rem;
         padding: 0.08rem 0.32rem;
       }
+
+      /* Formula Sandhi Mobile */
+      .sandhi-formula-card {
+        padding: 0.8rem 0.85rem;
+      }
+      .sandhi-formula-display {
+        padding: 0.6rem 0.5rem;
+        gap: 0.35rem;
+        font-size: 0.88rem;
+      }
+      .sandhi-chip {
+        padding: 0.25rem 0.45rem;
+        font-size: 0.76rem;
+      }
+      .sandhi-chip strong {
+        font-size: 0.8rem;
+      }
+      .sandhi-arrow {
+        font-size: 1.05rem;
+      }
+
+      /* Grid Sandhi 2 Kolom Rapi */
+      .sandhi-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.55rem;
+      }
+      .sandhi-card {
+        padding: 0.7rem 0.65rem;
+        gap: 0.35rem;
+      }
+      .sandhi-hz {
+        font-size: 1.25rem;
+      }
+      .sandhi-tag {
+        font-size: 0.62rem;
+        padding: 0.1rem 0.35rem;
+      }
+      .sandhi-py-row {
+        font-size: 0.78rem;
+        gap: 0.25rem;
+      }
+      .py-read {
+        font-size: 0.85rem;
+      }
+      .sandhi-arti {
+        font-size: 0.72rem;
+      }
+
+      /* Grid Nada Netral 2 Kolom Rapi */
+      .neutral-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.55rem;
+      }
+      .neutral-card {
+        padding: 0.7rem 0.5rem;
+        gap: 0.25rem;
+      }
+      .neutral-hz {
+        font-size: 1.35rem;
+      }
+      .neutral-py {
+        font-size: 0.82rem;
+      }
+      .neutral-arti {
+        font-size: 0.72rem;
+      }
+
+      /* Semantic Contrast */
+      .semantic-pair-card {
+        padding: 0.75rem 0.85rem;
+      }
+      .semantic-pair-title {
+        font-size: 1.15rem;
+      }
+      .semantic-col {
+        padding: 0.55rem 0.75rem;
+      }
+      .sem-pinyin {
+        font-size: 0.92rem;
+      }
+      .sem-arti {
+        font-size: 0.78rem;
+      }
+
+      /* Latihan Soal Cards Mobile */
+      .soal-grid {
+        gap: 0.85rem;
+      }
+      .soal-item {
+        padding: 0.75rem 0.75rem;
+      }
+      .soal-header {
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .soal-num {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+      }
+      .soal-hz {
+        font-size: 1.02rem;
+      }
+      .soal-py {
+        font-size: 0.78rem;
+      }
+      .soal-id {
+        font-size: 0.75rem;
+      }
+      .dialog-soal {
+        padding: 0.45rem 0.6rem;
+        gap: 0.35rem;
+      }
+      .dialog-soal-speaker {
+        font-size: 0.7rem;
+        padding: 0.08rem 0.4rem;
+      }
+      .dialog-soal-hz {
+        font-size: 0.92rem;
+      }
+      .dialog-soal-py {
+        font-size: 0.75rem;
+      }
+      .dialog-soal-id {
+        font-size: 0.74rem;
+      }
+      .soal-option {
+        padding: 0.45rem 0.65rem;
+        font-size: 0.82rem;
+        gap: 0.45rem;
+        align-items: flex-start;
+      }
+      .soal-option-letter {
+        font-size: 0.78rem;
+        width: 16px;
+        margin-top: 2px;
+      }
+      .soal-option-hz {
+        font-size: 0.95rem;
+      }
+      .soal-option-py {
+        font-size: 0.74rem;
+      }
+      .soal-option-id {
+        font-size: 0.75rem;
+      }
+      .soal-answer-badge {
+        font-size: 0.74rem;
+        padding: 0.2rem 0.55rem;
+        word-break: break-word;
+      }
+      .latihan-intro {
+        padding: 0.45rem 0.65rem;
+      }
+      .latihan-intro .hz {
+        font-size: 0.94rem;
+      }
+      .latihan-intro .py {
+        font-size: 0.78rem;
+      }
+      .latihan-intro .id {
+        font-size: 0.75rem;
+      }
     }
+
+    @media (max-width: 360px) {
+      .sandhi-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .neutral-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* â”€â”€ COLOR MODE â”€â”€ */
+    .toggle-switch-btn.color-btn.active { background:#fefce8; color:#b45309; border-color:#f59e0b; }
+    .toggle-switch-btn.color-btn.active .status-badge { background:#f59e0b; color:#fff; }
+
+    /* â”€â”€ TOGGLE BUTTONS (SYMBOLS ONLY) â”€â”€ */
+    .toggle-switch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1.5px solid #cbd5e1;
+      padding: 0.45rem 0.75rem;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .toggle-switch-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .toggle-switch-btn.active {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #10b981;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+    }
+    .toggle-switch-btn#btnColor.active {
+      background: #fef3c7;
+      color: #b45309;
+      border-color: #f59e0b;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    }
+
+    /* â”€â”€ COLOR MODE HIGHLIGHTING â”€â”€ */
+    body.show-color .twister-box {
+      background: #ffffff !important;
+      border: 1.5px solid var(--border) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+    }
+    body.show-color .twister-hanzi {
+      color: var(--text) !important;
+    }
+    body.show-color .twister-pinyin {
+      color: #64748b !important;
+    }
+    body.show-color .twister-arti {
+      color: #475569 !important;
+      border-top-color: rgba(0, 0, 0, 0.12) !important;
+    }
+    body.show-color .dialog-line.right .bubble {
+      background: #ffffff !important;
+      color: var(--text) !important;
+      border: 1.5px solid var(--border) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+    }
+    body.show-color .dialog-line.right .bubble .bubble-pinyin {
+      color: #64748b !important;
+    }
+    body.show-color .dialog-line.right .bubble .bubble-arti {
+      color: #475569 !important;
+      border-top-color: rgba(0, 0, 0, 0.12) !important;
+    }
+  
+    .nav {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0.65rem 1rem;
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .nav-side-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-side-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+  
+    /* ── TONE SANDHI & NEUTRAL TONE SPECIFIC STYLES ── */
+    .sandhi-formula-card {
+      background: #f0fdf4;
+      border: 1.5px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .sandhi-formula-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #14532d;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .sandhi-formula-display {
+      background: #ffffff;
+      border: 1px solid #86efac;
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .sandhi-chip {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      line-height: 1.25;
+    }
+    .sandhi-chip.orig { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .sandhi-chip.change { background: #dcfce7; color: #166534; border: 1.5px solid #22c55e; }
+    .sandhi-chip.stay { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .sandhi-arrow { font-size: 1.3rem; color: #15803d; font-weight: 800; }
+    
+    .sandhi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .sandhi-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .sandhi-card:hover {
+      border-color: #86efac;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.12);
+    }
+    .sandhi-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sandhi-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #14532d;
+    }
+    .sandhi-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 12px;
+      background: #dcfce7;
+      color: #166534;
+    }
+    .sandhi-py-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+    .py-orig {
+      color: #64748b;
+      text-decoration: line-through;
+    }
+    .py-read {
+      color: #15803d;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .sandhi-arti {
+      font-size: 0.82rem;
+      color: var(--text);
+      border-top: 1px dashed var(--border);
+      padding-top: 0.35rem;
+      margin-top: 0.15rem;
+    }
+
+    /* Neutral Tone Grid */
+    .neutral-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .neutral-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 0.65rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .neutral-card:hover {
+      border-color: #86efac;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+    .neutral-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.2;
+    }
+    .neutral-py {
+      font-size: 0.88rem;
+      color: #0369a1;
+      font-weight: 600;
+    }
+    .neutral-arti {
+      font-size: 0.8rem;
+      color: var(--sub);
+      border-top: 1px dashed var(--border);
+      padding-top: 0.3rem;
+      width: 100%;
+    }
+
+    /* Semantic Distinction (Makna Berbeda) */
+    .semantic-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .semantic-pair-card {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.95rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .semantic-pair-title {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .semantic-contrast-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    @media (max-width: 600px) {
+      .semantic-contrast-row { grid-template-columns: 1fr; }
+    }
+    .semantic-col {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .semantic-col:hover {
+      border-color: #94a3b8;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .semantic-col.full-tone { border-left: 3px solid #0284c7; }
+    .semantic-col.neutral-tone { border-left: 3px solid #16a34a; }
+    .sem-tone-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 6px;
+      align-self: flex-start;
+    }
+    .tag-full { background: #e0f2fe; color: #0369a1; }
+    .tag-neutral { background: #dcfce7; color: #166534; }
+    .sem-pinyin { font-size: 1rem; font-weight: 700; }
+    .sem-arti { font-size: 0.85rem; color: #334155; line-height: 1.4; }
+
+  
+    /* ── LATIHAN SOAL PILIHAN GANDA (Multiple Choice) ── */
+    .latihan-box {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .latihan-intro {
+      font-size: 0.83rem;
+      color: var(--sub);
+      line-height: 1.6;
+      margin-bottom: 0.65rem;
+      padding: 0.55rem 0.8rem;
+      background: #f8fafc;
+      border-left: 3px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+    }
+    .latihan-intro .hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .latihan-intro .py {
+      font-size: 0.82rem;
+      color: #0369a1;
+      font-style: italic;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .latihan-intro .id {
+      font-size: 0.8rem;
+      color: var(--sub);
+      display: block;
+    }
+    .soal-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .soal-item {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+    }
+    .soal-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      margin-bottom: 0.65rem;
+    }
+    .soal-num {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.8rem;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .soal-pertanyaan {
+      flex: 1;
+    }
+    .soal-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+    }
+    .soal-py {
+      font-size: 0.82rem;
+      color: #0369a1;
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+    .soal-id {
+      font-size: 0.8rem;
+      color: var(--sub);
+      margin-top: 0.15rem;
+    }
+    .dialog-soal {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 0.6rem;
+      padding: 0.55rem 0.75rem;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .dialog-soal-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .dialog-soal-speaker {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--primary);
+      padding: 0.1rem 0.45rem;
+      border-radius: 10px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .dialog-soal-speaker.b-speaker { background: #0369a1; }
+    .dialog-soal-content { flex: 1; }
+    .dialog-soal-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #0f172a;
+      cursor: pointer;
+    }
+    .dialog-soal-hz:hover { opacity: 0.75; }
+    .dialog-soal-py {
+      font-size: 0.78rem;
+      color: #0369a1;
+      font-style: italic;
+      margin-top: 1px;
+    }
+    .dialog-soal-id {
+      font-size: 0.76rem;
+      color: var(--sub);
+      margin-top: 1px;
+    }
+    .tanya-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .soal-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .soal-option {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 0.75rem;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.88rem;
+    }
+    .soal-option:hover { border-color: var(--primary); background: var(--primary-soft); }
+    .soal-option.correct {
+      border-color: #16a34a;
+      background: #f0fdf4;
+    }
+    .soal-option-letter {
+      font-weight: 800;
+      font-size: 0.82rem;
+      color: var(--primary);
+      width: 20px;
+      flex-shrink: 0;
+    }
+    .soal-option.correct .soal-option-letter { color: #16a34a; }
+    .soal-option-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .soal-option-py {
+      font-size: 0.76rem;
+      color: #0369a1;
+      font-style: italic;
+    }
+    .soal-option-id {
+      font-size: 0.76rem;
+      color: var(--sub);
+    }
+    .soal-answer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #166534;
+      background: #dcfce7;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+    }
+
+
+
+
+    /* ── BAB 5 SPECIFIC STYLES (HARMONIZED WITH MASTER GREEN THEME) ── */
+    .av-tone { background: linear-gradient(135deg, #15803d, #14532d); }
+    
+    .aturan-block {
+      background: #fafaf9;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .aturan-block-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.75rem;
+    }
+    .aturan-block-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.18rem 0.55rem;
+      border-radius: 8px;
+    }
+    .aturan-rule {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      padding: 0.75rem 0.95rem;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+    .rule-ok   { background: #f0fdf4; border-left: 4px solid #22c55e; color: #14532d; }
+    .rule-warn { background: #fef2f2; border-left: 4px solid #ef4444; color: #991b1b; }
+    .rule-note { background: #eff6ff; border-left: 4px solid #0284c7; color: #0369a1; }
+    .aturan-icon { font-size: 1.15rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* 4 Tones Phonetic Row */
+    .phonetic-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin: 0.65rem 0;
+    }
+    .phonetic-cell {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem 0.35rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .phonetic-cell:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    }
+    .phonetic-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .phonetic-tone-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .phonetic-cell.t1 .phonetic-text { color: #2563eb; }
+    .phonetic-cell.t2 .phonetic-text { color: #16a34a; }
+    .phonetic-cell.t3 .phonetic-text { color: #7c3aed; }
+    .phonetic-cell.t4 .phonetic-text { color: #dc2626; }
+
+    /* Comparison Table Box */
+    .compare-table-box {
+      overflow-x: auto;
+      margin-top: 0.75rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      text-align: left;
+      background: #ffffff;
+    }
+    .compare-table th {
+      background: #f0fdf4;
+      color: #14532d;
+      font-weight: 700;
+      padding: 0.75rem 0.9rem;
+      border-bottom: 2px solid #86efac;
+      white-space: nowrap;
+    }
+    .compare-table td {
+      padding: 0.75rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover { background: #f8fafc; }
+
+    .tag-change { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; font-weight: 800; }
+    .tag-stay { background: #dcfce7; color: #166534; border: 1px solid #86efac; font-weight: 700; }
+    .py-read.read-change { color: #dc2626; font-size: 1.02rem; font-weight: 800; }
+    .soal-pembahasan {
+      font-size: 0.82rem;
+      color: #475569;
+      background: #ffffff;
+      border-left: 3.5px solid #10b981;
+      border-radius: 0 10px 10px 0;
+      padding: 0.6rem 0.9rem;
+      margin-top: 0.6rem;
+      line-height: 1.55;
+    }
+
   </style>
 </head>
 <body class="show-pinyin show-arti show-vocab">
@@ -713,7 +1671,7 @@
 <header>
   <h1>📝 Buku Latihan Mandarin · 练习册</h1>
   <p>HSK 1 练习册 · Workbook Pelajaran 5</p>
-  <div class="bab">Bab 5 — "不" 的变调 · Tone Sandhi Karakter "不" (bù)</div>
+  <div class="bab" style="background: #4ade80; color: #14532d; font-weight: 700;">Bab 5 — "不" 的变调 · Tone Sandhi Karakter "不" (bù)</div>
 </header>
 
 <!-- ══ 3-KOLOM STICKY NAVBAR (CLAUDE.md MASTER) ══ -->
@@ -1410,22 +2368,10 @@
       <span>Bantuan:</span>
     </div>
     <div class="toolbar-buttons">
-      <button id="btnPinyin" class="toggle-switch-btn active" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">
-        <span>🔤 Pinyin</span>
-        <span class="status-badge">ON</span>
-      </button>
-      <button id="btnArti" class="toggle-switch-btn active" onclick="toggleArti()" title="Tampilkan / Sembunyikan Terjemahan">
-        <span>🇮🇩 Arti</span>
-        <span class="status-badge">ON</span>
-      </button>
-      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Kunci Jawaban">
-        <span>📖 Detail</span>
-        <span class="status-badge">ON</span>
-      </button>
-      <button id="btnColor" class="toggle-switch-btn color-btn" onclick="toggleColor()" title="Pewarnaan Karakter Per Kata">
-        <span>🎨 Warna</span>
-        <span class="status-badge">OFF</span>
-      </button>
+      <button id="btnPinyin" class="toggle-switch-btn active" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+      <button id="btnArti" class="toggle-switch-btn active" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti">🇮🇩</button>
+      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Detail">📖</button>
+      <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warna-warni Karakter Per Kata">🎨</button>
     </div>
   </div>
 
@@ -1535,7 +2481,6 @@
     return { hanzi: outHz, pinyin: outPy };
   }
 
-  // Khusus Workbook Bab 5: menarget kartu Tone Sandhi & Soal Quiz (CLAUDE.md Seksi 6.2)
   function applyColors() {
     const charColorMap = {
       '不': '#e11d48', // Merah (karakter negasi utama)
@@ -1608,10 +2553,7 @@
     const set = (id, cls) => {
       const b = document.getElementById(id);
       if (!b) return;
-      const on = s(cls);
-      b.classList.toggle('active', on);
-      const badge = b.querySelector('.status-badge');
-      if (badge) badge.textContent = on ? 'ON' : 'OFF';
+      b.classList.toggle('active', s(cls));
     };
     set('btnPinyin', 'show-pinyin');
     set('btnArti', 'show-arti');
@@ -1646,9 +2588,15 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('mandarin_show_pinyin') === '0') document.body.classList.remove('show-pinyin');
-    if (localStorage.getItem('mandarin_show_arti') === '0') document.body.classList.remove('show-arti');
-    if (localStorage.getItem('mandarin_show_vocab') === '0') document.body.classList.remove('show-vocab');
+    if (localStorage.getItem('mandarin_show_pinyin') === '1' || localStorage.getItem('mandarin_show_pinyin') === null) {
+      document.body.classList.add('show-pinyin');
+    }
+    if (localStorage.getItem('mandarin_show_arti') === '1' || localStorage.getItem('mandarin_show_arti') === null) {
+      document.body.classList.add('show-arti');
+    }
+    if (localStorage.getItem('mandarin_show_vocab') !== '0') {
+      document.body.classList.add('show-vocab');
+    }
     if (localStorage.getItem('mandarin_show_color') === '1') {
       document.body.classList.add('show-color');
       applyColors();
