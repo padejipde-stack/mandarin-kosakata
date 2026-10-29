@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buku Latihan (Workbook) Mandarin — Bab 4: 三声音变与轻声 (Tone Sandhi Nada 3 &amp; Nada Netral)</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#x1F236;</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
 
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -54,28 +57,26 @@
       pointer-events: none;
     }
     header h1 {
-      font-size: 1.9rem;
+      font-size: 2.1rem;
       font-weight: 700;
-      letter-spacing: -0.3px;
-      position: relative;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.35rem;
     }
     header p {
-      margin-top: 0.35rem;
-      font-size: 0.88rem;
-      opacity: 0.88;
-      position: relative;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      font-weight: 400;
     }
     header .bab {
       display: inline-block;
-      background: var(--gold);
-      color: #fff;
+      margin-top: 0.85rem;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.3rem 1rem;
       border-radius: 20px;
-      padding: 0.2rem 0.95rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-top: 0.65rem;
-      position: relative;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     /* ── MODERN STICKY NAVBAR ── */
@@ -184,15 +185,13 @@
 
     /* ── SECTION TITLE ── */
     .section-title {
-      font-size: 0.92rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      margin-bottom: 0.85rem;
+      color: var(--text);
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.45rem;
     }
 
     /* ── DIALOG BOX ── */
@@ -288,7 +287,7 @@
     }
     .bubble-pinyin {
       font-family: 'Poppins', sans-serif;
-      font-size: 0.85rem;
+      font-size:0.88rem;
       font-weight: 500;
       color: #64748b;
       margin-top: 0.3rem;
@@ -438,7 +437,7 @@
       color: var(--text);
     }
     .char-group-title {
-      font-size: 0.86rem;
+      font-size:0.88rem;
       font-weight: 700;
       color: var(--primary);
       margin-top: 0.25rem;
@@ -563,7 +562,7 @@
       margin-bottom: 0.25rem;
     }
     .classroom-desc {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 600;
       color: var(--text);
     }
@@ -573,7 +572,7 @@
       gap: 0.85rem;
     }
     .classroom-group-title {
-      font-size: 0.86rem;
+      font-size:0.88rem;
       font-weight: 700;
       color: var(--primary);
       margin-top: 0.35rem;
@@ -657,7 +656,7 @@
     body.show-pinyin .twister-pinyin { display: block; }
     .twister-arti {
       font-family: 'Poppins', sans-serif;
-      font-size: 0.85rem;
+      font-size:0.88rem;
       font-weight: 400;
       color: rgba(255, 255, 255, 0.85);
       margin-top: 0.25rem;
@@ -692,7 +691,7 @@
       display: flex;
       align-items: center;
       gap: 0.45rem;
-      font-size: 0.85rem;
+      font-size:0.88rem;
       font-weight: 600;
       color: var(--text);
       white-space: nowrap;
@@ -770,20 +769,9 @@
       header {
         padding: 1.8rem 0.8rem 1.4rem;
       }
-      header h1 {
-        font-size: 1.4rem;
-      }
-      header p {
-        font-size: 0.8rem;
-      }
-      header .bab {
-        max-width: 95%;
-        font-size: 0.74rem;
-        padding: 0.25rem 0.75rem;
-        line-height: 1.4;
-        white-space: normal;
-        word-break: break-word;
-      }
+      header h1 { font-size: 1.55rem; }
+      header p { font-size: 0.90rem; }
+      header .bab { font-size: 0.78rem; }
       header::before { font-size: 7.5rem; }
 
       /* Wrap & Cards */
@@ -817,12 +805,12 @@
       }
       .nav-home-btn {
         padding: 0.38rem 0.65rem;
-        font-size: 0.75rem;
+        font-size: 0.78rem;
       }
       .nav-home-btn span.label { display: none; }
       .nav-pager-btn {
         padding: 0.38rem 0.65rem;
-        font-size: 0.75rem;
+        font-size: 0.78rem;
         gap: 0.25rem;
       }
 
@@ -879,8 +867,12 @@
         gap: 0.35rem;
       }
       .sandhi-hz {
-        font-size: 1.25rem;
-      }
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #14532d;
+      line-height: 1.2;
+    }
       .sandhi-tag {
         font-size: 0.62rem;
         padding: 0.1rem 0.35rem;
@@ -890,11 +882,20 @@
         gap: 0.25rem;
       }
       .py-read {
-        font-size: 0.85rem;
-      }
+      font-family: 'Poppins', sans-serif;
+      color: #15803d;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
       .sandhi-arti {
-        font-size: 0.72rem;
-      }
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      color: var(--sub);
+      border-top: 1px dashed var(--border);
+      padding-top: 0.35rem;
+      margin-top: 0.15rem;
+      line-height: 1.35;
+    }
 
       /* Grid Nada Netral 2 Kolom Rapi */
       .neutral-grid {
@@ -905,9 +906,7 @@
         padding: 0.7rem 0.5rem;
         gap: 0.25rem;
       }
-      .neutral-hz {
-        font-size: 1.35rem;
-      }
+      .neutral-hz { font-size: 1.5rem; }
       .neutral-py {
         font-size: 0.82rem;
       }
@@ -1207,7 +1206,7 @@
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      font-size: 0.85rem;
+      font-size:0.88rem;
     }
     .py-orig {
       color: #64748b;
@@ -1331,7 +1330,7 @@
     .tag-full { background: #e0f2fe; color: #0369a1; }
     .tag-neutral { background: #dcfce7; color: #166534; }
     .sem-pinyin { font-size: 1rem; font-weight: 700; }
-    .sem-arti { font-size: 0.85rem; color: #334155; line-height: 1.4; }
+    .sem-arti { font-size:0.88rem; color: #334155; line-height: 1.4; }
 
   
     /* ── LATIHAN SOAL PILIHAN GANDA (Multiple Choice) ── */
@@ -1658,7 +1657,7 @@
       </div>
 
       <!-- Kartu Contoh Tone Sandhi dari Materi -->
-      <div style="font-size:0.85rem; font-weight:700; color:var(--primary); margin-top:0.65rem;">
+      <div style="font-size:0.88rem; font-weight:700; color:var(--primary); margin-top:0.65rem;">
         🗣️ Contoh Kosakata Tone Sandhi (Klik kartu untuk mendengarkan lafal lisan yang benar):
       </div>
 
@@ -1778,7 +1777,7 @@
       </div>
 
       <!-- 8 Kosakata Nada Netral dari Gambar Materi -->
-      <div style="font-size:0.85rem; font-weight:700; color:#0284c7; margin-top:0.65rem;">
+      <div style="font-size:0.88rem; font-weight:700; color:#0284c7; margin-top:0.65rem;">
         📚 8 Contoh Kosakata Bernada Netral (Klik untuk mendengar lafal pendek &amp; ringannya):
       </div>
 
@@ -1859,7 +1858,7 @@
         </div>
       </div>
 
-      <p style="font-size:0.84rem; color:var(--sub); line-height:1.55; margin-top:0.4rem;">
+      <p style="font-size:0.88rem; color:var(--sub); line-height:1.55; margin-top:0.4rem;">
         Dalam beberapa kasus khusus, apakah suku kata kedua dibaca dengan <strong>nada penuh aslinya</strong> atau dibaca dengan <strong>nada netral</strong> dapat <strong>mengubah arti kosakata tersebut secara total</strong>. Perhatikan 3 pasangan kontras berikut:
       </p>
 
