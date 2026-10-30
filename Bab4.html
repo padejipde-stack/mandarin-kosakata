@@ -3523,21 +3523,33 @@
     });
 
     // 5. Warnai Xiaoyu Classroom items (classroom-item & number-card)
-    //    Elemen ini pakai .bubble-hanzi/.bubble-pinyin, selalu visible di classroom
+    //    Cakup SEMUA pasangan .bubble-hanzi & .bubble-pinyin yang ada di dalam item
     document.querySelectorAll('.classroom-box').forEach(box => {
-      const items = box.querySelectorAll('.item-content, .number-card');
-      items.forEach(item => {
+      // 5a. Number cards
+      box.querySelectorAll('.number-card').forEach(item => {
         const hzEl = item.querySelector('.bubble-hanzi');
         const pyEl = item.querySelector('.bubble-pinyin');
         if (!hzEl || !pyEl) return;
-
-        // Simpan HTML asli (gunakan origHtml agar format & tag <br> terjaga)
         if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
         if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
-
         const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
         hzEl.innerHTML = res.hanzi;
         pyEl.innerHTML = res.pinyin;
+      });
+
+      // 5b. Classroom items (termasuk percakapan multi-baris A/B)
+      box.querySelectorAll('.item-content').forEach(item => {
+        const hzEls = item.querySelectorAll('.bubble-hanzi');
+        const pyEls = item.querySelectorAll('.bubble-pinyin');
+        hzEls.forEach((hzEl, idx) => {
+          const pyEl = pyEls[idx];
+          if (!hzEl || !pyEl) return;
+          if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+          if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+          const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+          hzEl.innerHTML = res.hanzi;
+          pyEl.innerHTML = res.pinyin;
+        });
       });
     });
   }
