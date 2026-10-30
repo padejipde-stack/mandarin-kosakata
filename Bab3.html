@@ -1144,8 +1144,8 @@
           </div>
           <div class="de-example">
             <div class="de-ex-label">✏️ Contoh</div>
-            <div class="de-ex-hanzi">我的妈妈</div>
-            <div class="de-ex-pinyin">Wǒ de māmā</div>
+            <div class="de-ex-hanzi"><span style="color:#0891b2;font-weight:700;">我</span><span style="color:#7c3aed;font-weight:700;">的</span><span style="color:#e11d48;font-weight:700;">妈</span><span style="color:#e11d48;font-weight:700;">妈</span></div>
+            <div class="de-ex-pinyin"><span style="color:#0891b2;font-weight:700;">Wǒ</span> <span style="color:#7c3aed;font-weight:700;">de</span> <span style="color:#e11d48;font-weight:700;">mā</span><span style="color:#e11d48;font-weight:700;">mā</span></div>
             <div class="de-ex-arti">= ibu saya / my mother</div>
           </div>
         </div>
@@ -1162,8 +1162,8 @@
           </div>
           <div class="de-example">
             <div class="de-ex-label">✏️ Contoh</div>
-            <div class="de-ex-hanzi">印尼的学生</div>
-            <div class="de-ex-pinyin">Yìnní de xuésheng</div>
+            <div class="de-ex-hanzi"><span style="color:#ea580c;font-weight:700;">印</span><span style="color:#2563eb;font-weight:700;">尼</span><span style="color:#7c3aed;font-weight:700;">的</span><span style="color:#2563eb;font-weight:700;">学</span><span style="color:#16a34a;font-weight:700;">生</span></div>
+            <div class="de-ex-pinyin"><span style="color:#ea580c;font-weight:700;">Yìn</span><span style="color:#2563eb;font-weight:700;">ní</span> <span style="color:#7c3aed;font-weight:700;">de</span> <span style="color:#2563eb;font-weight:700;">xué</span><span style="color:#16a34a;font-weight:700;">sheng</span></div>
             <div class="de-ex-arti">= murid / pelajar Indonesia</div>
           </div>
         </div>
@@ -2961,6 +2961,23 @@
       });
     });
 
+    // 4b. Warnai Contoh Tata Bahasa 的 (.de-ex-hanzi & .de-ex-pinyin)
+    document.querySelectorAll('.de-example').forEach(ex => {
+      const hzEl = ex.querySelector('.de-ex-hanzi');
+      const pyEl = ex.querySelector('.de-ex-pinyin');
+      if (!hzEl || !pyEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const rawHz = hzEl.dataset.origHtml.replace(/<[^>]+>/g, '').trim();
+      const rawPy = pyEl.dataset.origHtml.replace(/<[^>]+>/g, '').trim();
+
+      const res = colorizePair(rawHz, rawPy, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
     // 5. Warnai Xiaoyu Classroom items (classroom-item & number-card)
     //    Elemen ini pakai .bubble-hanzi/.bubble-pinyin, selalu visible di classroom
     document.querySelectorAll('.classroom-box').forEach(box => {
@@ -2983,7 +3000,7 @@
 
   function removeColors() {
     // Kembalikan semua teks ke kondisi asli tanpa span warna
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .de-ex-hanzi, .de-ex-pinyin';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
