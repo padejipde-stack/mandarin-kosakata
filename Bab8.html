@@ -602,6 +602,123 @@
     .ex-py { font-size: 0.76rem; color: #0284c7; }
     .ex-id { font-size: 0.76rem; color: #475569; }
 
+    
+    /* ── KOTAK MERAH TATA BAHASA (RED GRAMMAR COMPARISON BOX) ── */
+    .red-grammar-box {
+      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+      border: 2px solid #f43f5e;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(244, 63, 94, 0.12);
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      position: relative;
+      overflow: hidden;
+      margin-top: 1.5rem;
+    }
+    .red-grammar-box::before {
+      content: "对比";
+      font-family: 'Noto Sans SC', sans-serif;
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(225, 29, 72, 0.07);
+      pointer-events: none;
+    }
+    .red-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      align-self: flex-start;
+      background: #e11d48;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+    }
+    .red-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #9f1239;
+    }
+    .red-desc {
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.1rem;
+    }
+    .compare-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 1.5px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    .compare-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+    .compare-card.type-location {
+      border-left: 5px solid #0284c7;
+    }
+    .compare-card.type-progressive {
+      border-left: 5px solid #e11d48;
+    }
+    .compare-tag {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.22rem 0.65rem;
+      border-radius: 6px;
+      display: inline-block;
+      align-self: flex-start;
+    }
+    .type-location .compare-tag { background: #e0f2fe; color: #0369a1; }
+    .type-progressive .compare-tag { background: #ffe4e6; color: #be123c; }
+    .compare-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .compare-py {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .compare-id {
+      font-size: 0.92rem;
+      color: #1e293b;
+      font-weight: 600;
+    }
+    .compare-note {
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.45;
+      background: #f8fafc;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      border: 1px dashed var(--border);
+    }
+
     /* ── XIAOYU'S CLASSROOM ── */
     .classroom-box {
       background: var(--card-bg);
@@ -1023,6 +1140,96 @@
         </div>
       </div>
     </div>
+
+
+    <!-- ══ KOTAK MERAH: CATATAN TAMBAHAN TATA BAHASA & PERBANDINGAN "在" ══ -->
+    <div class="red-grammar-box">
+      <div class="blue-box-header">
+        <div class="red-badge">Grammar Note · 补充语法</div>
+        <div class="red-title">2. Catatan Tambahan: Perbandingan Dua Fungsi Kata "在" (zài)</div>
+        <div class="red-desc">
+          Kata <strong>在 (zài)</strong> memiliki dua fungsi penting yang sering digunakan dalam percakapan sehari-hari. Perhatikan perbedaannya saat diikuti oleh <em>keterangan tempat</em> vs langsung diikuti oleh <em>kata kerja</em>:
+        </div>
+      </div>
+
+      <!-- Kotak Formula Ringkas -->
+      <div style="background:#fff;border:1.5px solid #fecdd3;border-radius:12px;padding:0.9rem 1.1rem;display:flex;flex-direction:column;gap:0.45rem;">
+        <div style="font-size:0.86rem;color:#9f1239;font-weight:700;">
+          💡 Rumus Dasar:
+        </div>
+        <div style="font-size:0.85rem;color:#334155;line-height:1.5;">
+          • <strong>在 + Keterangan Tempat + Kata Kerja</strong> $\rightarrow$ Menyatakan <em>tempat berlangsungnya aktivitas</em> (di...).<br>
+          • <strong>在 + Kata Kerja</strong> $\rightarrow$ Menyatakan <em>aktivitas yang sedang berlangsung</em> (<strong>sedang...</strong> / aspek progresif).
+        </div>
+      </div>
+
+      <!-- Kartu Perbandingan (Kotak Merah Sesuai Gambar) -->
+      <div class="comparison-grid">
+        <!-- Kartu 1: Lokasi Aktivitas -->
+        <div class="compare-card type-location">
+          <span class="compare-tag">1. Lokasi Aktivitas (Di Mana)</span>
+          <div class="compare-hz">
+            <span>爸爸在医院工作</span>
+            <button class="audio-btn" onclick="speakChinese('爸爸在医院工作')" title="Dengarkan">🔊</button>
+          </div>
+          <div class="compare-py">bàba zài yīyuàn gōngzuò</div>
+          <div class="compare-id">Arti: "Papa kerja di rumah sakit"</div>
+          <div class="compare-note">
+            <strong>Penjelasan:</strong><br>
+            Menunjukkan <strong>lokasi aktivitas</strong>:<br>
+            <span style="color:#0369a1;font-weight:600;">Subjek (爸爸) + berada di tempat (在医院) + kerja (工作)</span>
+          </div>
+        </div>
+
+        <!-- Kartu 2: Aktivitas Sedang Berlangsung -->
+        <div class="compare-card type-progressive">
+          <span class="compare-tag">2. Aktivitas Sedang Berlangsung (Sedang Apa)</span>
+          <div class="compare-hz">
+            <span>爸爸在工作</span>
+            <button class="audio-btn" onclick="speakChinese('爸爸在工作')" title="Dengarkan">🔊</button>
+          </div>
+          <div class="compare-py">bàba zài gōngzuò</div>
+          <div class="compare-id">Arti: "Ayah sedang kerja"</div>
+          <div class="compare-note">
+            <strong>Penjelasan:</strong><br>
+            Menunjukkan <strong>aktivitas yang sedang berlangsung</strong>:<br>
+            <span style="color:#be123c;font-weight:600;">Subjek (爸爸) + sedang (在) + kata kerja (工作)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pasangan Contoh Perbandingan Tambahan -->
+      <div style="background:#ffffff;border:1.5px solid #fecdd3;border-radius:14px;padding:1.1rem;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+        <div style="font-size:0.82rem;font-weight:700;color:#9f1239;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.6rem;">
+          🔍 Contoh Perbandingan Berpasangan Lainnya:
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;background:#f8fafc;padding:0.65rem 0.85rem;border-radius:10px;border-left:3px solid #0284c7;">
+            <div>
+              <div style="font-family:'Noto Sans SC';font-weight:700;color:#0f172a;font-size:1.05rem;">我在学校吃午饭。 <span style="font-size:0.82rem;font-weight:500;color:#64748b;">(Wǒ zài xuéxiào chī wǔfàn.)</span></div>
+              <div style="font-size:0.8rem;color:#475569;">Arti: Saya makan siang <strong>di sekolah</strong> (menunjukkan tempat).</div>
+            </div>
+            <button class="audio-btn" onclick="speakChinese('我在学校吃午饭。')" title="Dengar">🔊</button>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;background:#f8fafc;padding:0.65rem 0.85rem;border-radius:10px;border-left:3px solid #e11d48;">
+            <div>
+              <div style="font-family:'Noto Sans SC';font-weight:700;color:#0f172a;font-size:1.05rem;">我在吃午饭。 <span style="font-size:0.82rem;font-weight:500;color:#64748b;">(Wǒ zài chī wǔfàn.)</span></div>
+              <div style="font-size:0.8rem;color:#475569;">Arti: Saya <strong>sedang</strong> makan siang (aktivitas sedang berlangsung).</div>
+            </div>
+            <button class="audio-btn" onclick="speakChinese('我在吃午饭。')" title="Dengar">🔊</button>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;background:#f8fafc;padding:0.65rem 0.85rem;border-radius:10px;border-left:3px solid #e11d48;">
+            <div>
+              <div style="font-family:'Noto Sans SC';font-weight:700;color:#0f172a;font-size:1.05rem;">他在看书呢。 <span style="font-size:0.82rem;font-weight:500;color:#64748b;">(Tā zài kànshū ne.)</span></div>
+              <div style="font-size:0.8rem;color:#475569;">Arti: Dia <strong>sedang</strong> membaca buku nih (sering ditambah partikel 呢 di akhir kalimat).</div>
+            </div>
+            <button class="audio-btn" onclick="speakChinese('他在看书呢。')" title="Dengar">🔊</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
   <!-- ══ TEKS 1 ══ -->
@@ -1749,6 +1956,35 @@
             <li><strong>医生非常忙。</strong> (Yīshēng fēicháng máng. = Dokter luar biasa sibuk.)</li>
             <li><strong>这只小猫非常漂亮。</strong> (Zhè zhī xiǎomāo fēicháng piàoliang. = Anak kucing ini sangat cantik sekali.)</li>
           </ul>
+        </div>
+        <div class="classroom-group-title" style="margin-top:0.6rem;">
+          <span>⏳ 3. Ringkasan Praktis: "在" Sebagai Penunjuk Tempat vs "Sedang"</span>
+        </div>
+        <div style="background:#f8fafc;border:1.5px solid var(--border);border-radius:12px;padding:0.85rem 1rem;font-size:0.84rem;line-height:1.55;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom:1.5px solid #cbd5e1;text-align:left;color:var(--primary-dark);">
+                <th style="padding:0.35rem 0.5rem;">Pola Kalimat</th>
+                <th style="padding:0.35rem 0.5rem;">Fungsi "在"</th>
+                <th style="padding:0.35rem 0.5rem;">Contoh Kalimat</th>
+                <th style="padding:0.35rem 0.5rem;">Arti</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px dashed #e2e8f0;">
+                <td style="padding:0.45rem 0.5rem;font-weight:600;color:#0369a1;">S + 在 + Tempat + Verb</td>
+                <td style="padding:0.45rem 0.5rem;">Di (Lokasi)</td>
+                <td style="padding:0.45rem 0.5rem;font-family:'Noto Sans SC';font-weight:600;">爸爸在医院工作</td>
+                <td style="padding:0.45rem 0.5rem;">Papa kerja di rumah sakit</td>
+              </tr>
+              <tr>
+                <td style="padding:0.45rem 0.5rem;font-weight:600;color:#be123c;">S + 在 + Verb</td>
+                <td style="padding:0.45rem 0.5rem;">Sedang (Aksi Berlangsung)</td>
+                <td style="padding:0.45rem 0.5rem;font-family:'Noto Sans SC';font-weight:600;">爸爸在工作</td>
+                <td style="padding:0.45rem 0.5rem;">Ayah sedang kerja</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
