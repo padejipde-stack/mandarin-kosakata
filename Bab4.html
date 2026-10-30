@@ -3552,6 +3552,32 @@
         });
       });
     });
+
+    // 6. Warnai quiz-options (pilihan ganda soal latihan)
+    document.querySelectorAll('.quiz-options').forEach(quiz => {
+      quiz.querySelectorAll('span').forEach(opt => {
+        const em = opt.querySelector('em');
+        if (!em) return;
+        // Jika ada anak span yang memuat em, proses anak span-nya saja
+        if (opt.querySelector('span em')) return;
+
+        if (!opt.dataset.origHtml) opt.dataset.origHtml = opt.innerHTML;
+
+        const raw = opt.dataset.origHtml;
+        const m = raw.match(/^(\s*[A-Z][\.\:]\s*)([^<]+?)(<em[^>]*>\()([^<]+)(\)<\/em>)([\s\S]*)$/);
+        if (m) {
+          const prefix = m[1];
+          const hz = m[2].trim();
+          const emOpen = m[3];
+          const py = m[4].trim();
+          const emClose = m[5];
+          const suffix = m[6];
+
+          const res = colorizePair(hz, py, charColorMap);
+          opt.innerHTML = prefix + res.hanzi + ' ' + emOpen + res.pinyin + emClose + suffix;
+        }
+      });
+    });
   }
 
   function removeColors() {
@@ -3565,6 +3591,13 @@
       }
       el.style.color = '';
       el.style.fontWeight = '';
+    });
+
+    // Kembalikan quiz-options ke kondisi asli
+    document.querySelectorAll('.quiz-options span').forEach(opt => {
+      if (opt.dataset.origHtml) {
+        opt.innerHTML = opt.dataset.origHtml;
+      }
     });
   }
 
