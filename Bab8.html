@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dialog Bahasa Mandarin - Bab 8: 我爸爸也在医院工作 (Wǒ bàba yě zài yīyuàn gōngzuò)</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🈶</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#x1F236;</text></svg>" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
     :root {
       --primary:      #4f46e5;
       --primary-dark: #3730a3;
@@ -31,9 +30,7 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding-bottom: 5rem;
+      padding-bottom: 3rem;
     }
 
     /* ── HEADER ── */
@@ -41,81 +38,83 @@
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: #fff;
       text-align: center;
-      padding: 3rem 1.5rem 2.2rem;
+      padding: 2.5rem 1rem 2rem;
       position: relative;
       overflow: hidden;
     }
     header::before {
-      content: "八";
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 13rem;
-      font-weight: 900;
-      color: rgba(255, 255, 255, 0.06);
+      content: '对话';
       position: absolute;
-      top: -3.5rem;
-      right: 2rem;
+      font-size: 11rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.05);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
       pointer-events: none;
-      line-height: 1;
     }
     header h1 {
-      font-size: 2.1rem;
+      font-size: 1.9rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 0.35rem;
+      letter-spacing: -0.3px;
+      position: relative;
     }
     header p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-      font-weight: 400;
+      margin-top: 0.35rem;
+      font-size: 0.88rem;
+      opacity: 0.88;
+      position: relative;
     }
     header .bab {
       display: inline-block;
-      margin-top: 0.85rem;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 0.3rem 1rem;
+      background: var(--gold);
+      color: #fff;
       border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      padding: 0.2rem 0.95rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 0.65rem;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
-    /* ── NAVBAR ── */
+    /* ── MODERN STICKY NAVBAR ── */
     .nav-bar {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
     .nav {
-      max-width: 760px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 0.65rem 1.2rem;
+      padding: 0.65rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
     .nav-home-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
       text-decoration: none;
-      color: #334155;
       font-size: 0.82rem;
       font-weight: 600;
-      padding: 0.42rem 0.85rem;
-      border-radius: 10px;
+      color: #475569;
       background: #f1f5f9;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
       border: 1px solid var(--border);
       transition: all 0.2s ease;
     }
     .nav-home-btn:hover {
       background: #e2e8f0;
       color: #0f172a;
-      transform: translateX(-2px);
     }
     .nav-home-btn svg { color: var(--primary); }
     .nav-pager-btn {
@@ -149,27 +148,27 @@
       transform: translateX(-2px);
     }
 
-    /* ── MAIN CONTENT ── */
+    /* ── WRAPPER ── */
     .wrap {
-      max-width: 760px;
-      margin: 2rem auto 2.5rem;
-      padding: 0 1.2rem;
+      max-width: 860px;
+      margin: 1.5rem auto 2.5rem;
+      padding: 0 1rem;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      flex: 1;
-      width: 100%;
+      gap: 1.8rem;
     }
 
     /* ── SECTION TITLE ── */
     .section-title {
-      font-size: 1.15rem;
+      font-size: 0.92rem;
       font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.8rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 0.85rem;
       display: flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.5rem;
     }
 
     /* ── DIALOG BOX ── */
@@ -177,151 +176,22 @@
       background: var(--card-bg);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 1.8rem;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1.4rem;
+      gap: 1.25rem;
       border: 1px solid rgba(0, 0, 0, 0.04);
     }
-
-    
-    /* ── PENGANTAR KONTEKS DIALOG ── */
-    .dialog-context-box {
-      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-      border: 1.5px solid #86efac;
-      border-radius: 12px;
-      padding: 0.95rem 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      margin-bottom: 0.4rem;
-    }
-    .context-tag {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #15803d;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .context-hz {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #14532d;
-      line-height: 1.35;
-    }
-    .context-py {
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: #16a34a;
-    }
-    .context-en {
-      font-size: 0.78rem;
-      color: #4b5563;
-      font-style: italic;
-    }
-    .context-id {
-      font-size: 0.84rem;
-      color: #1f2937;
-    }
-
-    /* ── CATATAN KECIL (小语助力 / XIAOYU'S TIP) ── */
-    .xiaoyu-tip-box {
-      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-      border: 1.5px solid #fcd34d;
-      border-radius: 14px;
-      padding: 1.1rem 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.08);
-      margin-top: 1.1rem;
-    }
-    .tip-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .tip-badge {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #b45309;
-      background: #fde68a;
-      padding: 0.2rem 0.65rem;
-      border-radius: 8px;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .tip-hz {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.18rem;
-      font-weight: 700;
-      color: #78350f;
-    }
-    .tip-py {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #b45309;
-    }
-    .tip-en {
-      font-size: 0.78rem;
-      color: #6b7280;
-      font-style: italic;
-    }
-    .tip-id {
-      font-size: 0.84rem;
-      color: #451a03;
-    }
-    .tip-examples-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.65rem;
-      margin-top: 0.4rem;
-    }
-    .tip-ex-item {
-      background: #ffffff;
-      border: 1px solid #fde68a;
-      border-radius: 10px;
-      padding: 0.65rem 0.85rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.18rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .tip-ex-item:hover {
-      background: #fffdf5;
-      border-color: #f59e0b;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(245, 158, 11, 0.1);
-    }
-    .ex-comb {
-      font-size: 0.84rem;
-      color: #92400e;
-    }
-    .ex-comb strong {
-      color: #b45309;
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 0.95rem;
-    }
-    .ex-desc {
-      font-size: 0.76rem;
-      color: #4b5563;
-    }
-
-    /* ── DIALOG LINE ── */
     .dialog-line {
       display: flex;
       align-items: flex-start;
-      gap: 0.9rem;
+      gap: 0.85rem;
     }
-    .dialog-line.right { flex-direction: row-reverse; }
+    .dialog-line.right {
+      flex-direction: row-reverse;
+    }
 
-    /* ── AVATARS ── */
+    /* avatars */
     .avatar {
       width: 44px;
       height: 44px;
@@ -335,16 +205,17 @@
       color: #fff;
       flex-shrink: 0;
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-      cursor: pointer;
-      user-select: none;
     }
-    .av-hu     { background: linear-gradient(135deg, #0284c7, #0369a1); }
-    .av-liu    { background: linear-gradient(135deg, #1e3799, #0c2461); }
-    .av-bai    { background: linear-gradient(135deg, #16a085, #0e6655); }
-    .av-chen   { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
-    .av-li     { background: linear-gradient(135deg, #e67e22, #d35400); }
-    .av-xue    { background: linear-gradient(135deg, #27ae60, #1e8449); }
-    .av-xiaoyu { background: linear-gradient(135deg, #f39c12, #d68910); }
+    .av-wang     { background: linear-gradient(135deg, #c0392b, #8e1a12); }
+    .av-stu      { background: linear-gradient(135deg, #2980b9, #1a5276); }
+    .av-xiaoyu   { background: linear-gradient(135deg, #f39c12, #d68910); }
+    .av-chen     { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
+    .av-bai      { background: linear-gradient(135deg, #16a085, #0e6655); }
+    .av-anni     { background: linear-gradient(135deg, #e84393, #fd79a8); }
+    .av-li       { background: linear-gradient(135deg, #e67e22, #d35400); }
+    .av-xue      { background: linear-gradient(135deg, #27ae60, #1e8449); }
+    .av-liu      { background: linear-gradient(135deg, #1e3799, #0c2461); }
+    .av-hu       { background: linear-gradient(135deg, #0284c7, #0369a1); }
 
     .bubble-wrap {
       display: flex;
@@ -352,7 +223,9 @@
       gap: 0.25rem;
       max-width: 82%;
     }
-    .dialog-line.right .bubble-wrap { align-items: flex-end; }
+    .dialog-line.right .bubble-wrap {
+      align-items: flex-end;
+    }
 
     .speaker-name {
       font-size: 0.76rem;
@@ -368,65 +241,25 @@
       font-weight: 500;
       color: #64748b;
     }
-    body.show-pinyin .speaker-pinyin { display: inline; }
+    body.show-pinyin .speaker-pinyin {
+      display: inline;
+    }
 
-    /* ── BUBBLES ── */
     .bubble {
-      padding: 0.75rem 1.05rem;
+      padding: 0.75rem 1.1rem;
       border-radius: 0 16px 16px 16px;
-      position: relative;
-      background: #f1f5f9;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: all 0.2s ease;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      color: var(--text);
+      line-height: 1.5;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
     }
-    .bubble:hover {
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      transform: translateY(-1px);
-    }
-    .dialog-line.right .bubble {
-      border-radius: 16px 0 16px 16px;
-      border-color: transparent;
-      color: #fff;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    }
-    .dialog-line.chen .bubble { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
-    .dialog-line.li .bubble   { background: linear-gradient(135deg, #e67e22, #d35400); }
-    .dialog-line.hu .bubble   { background: linear-gradient(135deg, #0284c7, #0369a1); }
-    .dialog-line.bai .bubble  { background: linear-gradient(135deg, #16a085, #0e6655); }
-
     .bubble-hanzi {
       font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.28rem;
-      font-weight: 600;
+      font-size: 1.25rem;
+      font-weight: 500;
       line-height: 1.45;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
     }
-    .audio-btn {
-      background: rgba(0, 0, 0, 0.05);
-      border: none;
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      font-size: 0.75rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: inherit;
-      opacity: 0.75;
-      transition: all 0.2s ease;
-      flex-shrink: 0;
-    }
-    .bubble:hover .audio-btn { opacity: 1; transform: scale(1.1); }
-    .dialog-line.right .bubble .audio-btn {
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-    }
-
     .bubble-pinyin {
       font-family: 'Poppins', sans-serif;
       font-size: 0.85rem;
@@ -445,47 +278,54 @@
       border-top: 1px dashed rgba(0, 0, 0, 0.12);
       display: none;
     }
-    .dialog-line.right .bubble .bubble-pinyin { color: rgba(255, 255, 255, 0.85); }
+
+    /* Right bubble colors */
+    .dialog-line.right .bubble {
+      border-radius: 16px 0 16px 16px;
+      border-color: transparent;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    }
+    .dialog-line.chen .bubble { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
+    .dialog-line.li .bubble   { background: linear-gradient(135deg, #e67e22, #d35400); }
+    .dialog-line.hu .bubble   { background: linear-gradient(135deg, #0284c7, #0369a1); }
+    .dialog-line.bai .bubble  { background: linear-gradient(135deg, #16a085, #0e6655); }
+
+    .dialog-line.right .bubble .bubble-pinyin {
+      color: rgba(255, 255, 255, 0.85);
+    }
     .dialog-line.right .bubble .bubble-arti {
       color: rgba(255, 255, 255, 0.95);
       border-top-color: rgba(255, 255, 255, 0.25);
     }
 
+    /* Active visibility state */
     body.show-pinyin .bubble-pinyin { display: block; }
-    body.show-arti   .bubble-arti   { display: block; }
+    body.show-arti .bubble-arti { display: block; }
 
-    
-    .pos-badge {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: #4f46e5;
-      background: #eef2ff;
-      border: 1px solid #c7d2fe;
-      padding: 0.05rem 0.35rem;
-      border-radius: 4px;
-      margin-right: 0.25rem;
-      vertical-align: middle;
-      font-style: italic;
-    }
-  
-    /* ── SUB-BREAKDOWN ── */
+    /* ── SUB-BREAKDOWN (ARTI PER KATA PER TEKS) ── */
     .sub-breakdown {
-      margin-top: 1.2rem;
-      padding-top: 1.2rem;
-      border-top: 1.5px dashed var(--border);
       display: none;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1.5px dashed var(--border);
     }
-    body.show-vocab .sub-breakdown { display: block; }
+    body.show-vocab .sub-breakdown {
+      display: block;
+    }
     .sub-breakdown-title {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 0.95rem;
       display: flex;
       align-items: center;
       gap: 0.4rem;
     }
+
+    /* ── WORD CARDS ── */
     .breakdown-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -502,7 +342,6 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      cursor: pointer;
     }
     .word-card:hover {
       transform: translateY(-2px);
@@ -533,334 +372,190 @@
     }
     body.show-arti .word-arti { display: block; }
 
-    /* ── KOTAK BIRU TATA BAHASA UTAMA (BLUE GRAMMAR BOX) ── */
-    .blue-grammar-box {
-      background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
-      border: 2px solid #38bdf8;
+    /* ── CHARACTER BOX (TOKOH UTAMA) ── */
+    .character-box {
+      background: var(--card-bg);
       border-radius: var(--radius);
-      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.12);
-      padding: 1.8rem;
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
       display: flex;
       flex-direction: column;
-      gap: 1.3rem;
-      position: relative;
-      overflow: hidden;
+      gap: 1.25rem;
     }
-    .blue-grammar-box::before {
-      content: "语法";
-      font-family: 'Noto Sans SC', sans-serif;
-      position: absolute;
-      top: -10px;
-      right: 15px;
-      font-size: 5rem;
-      font-weight: 900;
-      color: rgba(2, 132, 199, 0.07);
-      pointer-events: none;
+    .char-intro-header {
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed var(--border);
     }
-    .blue-box-header {
+    .char-intro-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-soft);
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      margin-bottom: 0.35rem;
+    }
+    .char-intro-desc {
+      font-size: 0.84rem;
+      color: var(--sub);
+      line-height: 1.45;
+    }
+    .char-group-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .char-list {
       display: flex;
       flex-direction: column;
+      gap: 0.85rem;
+    }
+    .char-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .char-card:hover {
+      border-color: #cbd5e1;
+      transform: translateX(3px);
+    }
+    .char-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      flex: 1;
+    }
+    .char-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.15rem;
+    }
+    .char-name-group {
+      display: flex;
+      align-items: baseline;
       gap: 0.4rem;
     }
-    .blue-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      align-self: flex-start;
-      background: #0284c7;
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-    }
-    .blue-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #0369a1;
-    }
-    .blue-desc {
-      font-size: 0.88rem;
-      color: #334155;
-      line-height: 1.5;
-    }
-
-    /* Kalimat Utama Banner */
-    .main-sentence-card {
-      background: #ffffff;
-      border: 1.5px solid #bae6fd;
-      border-radius: 14px;
-      padding: 1.2rem;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-    .main-sentence-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .main-sentence-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #0284c7;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .main-sentence-hz {
+    .char-name-hanzi {
       font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.55rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      color: #0f172a;
-      line-height: 1.3;
+      color: var(--text);
     }
-    .main-sentence-py {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #0284c7;
-    }
-    .main-sentence-id {
-      font-size: 0.92rem;
+    .char-name-pinyin {
+      font-size: 0.8rem;
       font-weight: 500;
-      color: #334155;
+      color: var(--sub);
+      display: none;
     }
-
-    /* Breakdown Chip Grid */
-    .word-chip-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.4rem;
-    }
-    .word-chip {
-      background: #f0f9ff;
-      border: 1px solid #7dd3fc;
-      border-radius: 10px;
-      padding: 0.45rem 0.75rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.15rem;
-      transition: all 0.2s ease;
-    }
-    .word-chip:hover {
-      background: #e0f2fe;
-      transform: translateY(-2px);
-    }
-    .word-chip .wc-hz {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #0369a1;
-    }
-    .word-chip .wc-py {
+    body.show-pinyin .char-name-pinyin { display: inline; }
+    .char-badge {
       font-size: 0.72rem;
       font-weight: 600;
-      color: #0284c7;
-    }
-    .word-chip .wc-id {
-      font-size: 0.72rem;
-      color: #475569;
-    }
-
-    /* Rumus Formula Cards */
-    .formula-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .formula-card {
-      background: #ffffff;
-      border: 1.5px solid #93c5fd;
-      border-radius: 14px;
-      padding: 1.1rem 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-    .formula-badge-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .formula-badge {
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: #1d4ed8;
-      background: #dbeafe;
-      padding: 0.2rem 0.65rem;
+      color: #0369a1;
+      background: #e0f2fe;
+      padding: 0.15rem 0.55rem;
       border-radius: 8px;
     }
-    .formula-visual {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #1e293b;
-      padding: 0.5rem 0;
-    }
-    .f-chip {
-      padding: 0.35rem 0.7rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-    .f-chip.subj  { background: #ede9fe; color: #6d28d9; border: 1px solid #c4b5fd; }
-    .f-chip.verb  { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
-    .f-chip.prep  { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
-    .f-chip.place { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
-    .f-chip.act   { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
-    .f-plus { color: #94a3b8; font-weight: 800; }
-    .formula-expl {
-      font-size: 0.82rem;
-      color: #475569;
-      line-height: 1.45;
-    }
-    .formula-examples {
-      background: #f8fafc;
-      border-left: 3px solid #38bdf8;
-      padding: 0.65rem 0.9rem;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.82rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .ex-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
-    }
-    .ex-hz { font-family: 'Noto Sans SC', sans-serif; font-weight: 600; color: #0f172a; }
-    .ex-py { font-size: 0.76rem; color: #0284c7; }
-    .ex-id { font-size: 0.76rem; color: #475569; }
-
-    
-    /* ── KOTAK MERAH TATA BAHASA (RED GRAMMAR COMPARISON BOX) ── */
-    .red-grammar-box {
-      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
-      border: 2px solid #f43f5e;
-      border-radius: var(--radius);
-      box-shadow: 0 8px 24px rgba(244, 63, 94, 0.12);
-      padding: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.3rem;
-      position: relative;
-      overflow: hidden;
-      margin-top: 1.5rem;
-    }
-    .red-grammar-box::before {
-      content: "对比";
+    .char-desc-hanzi {
       font-family: 'Noto Sans SC', sans-serif;
-      position: absolute;
-      top: -10px;
-      right: 15px;
-      font-size: 5rem;
-      font-weight: 900;
-      color: rgba(225, 29, 72, 0.07);
-      pointer-events: none;
-    }
-    .red-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      align-self: flex-start;
-      background: #e11d48;
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-    }
-    .red-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #9f1239;
-    }
-    .red-desc {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       color: #334155;
-      line-height: 1.5;
+      line-height: 1.4;
     }
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    .char-desc-pinyin {
+      font-size: 0.8rem;
+      color: #64748b;
+      display: none;
+    }
+    body.show-pinyin .char-desc-pinyin { display: block; }
+    .char-desc-arti {
+      font-size: 0.8rem;
+      color: var(--sub);
+      margin-top: 0.15rem;
+      padding-top: 0.25rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.08);
+      display: none;
+    }
+    body.show-arti .char-desc-arti { display: block; }
+
+    /* ── TONGUE TWISTER ── */
+    .twister-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
       gap: 1.1rem;
     }
-    .compare-card {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 1.2rem;
+    .twister-line {
       display: flex;
       flex-direction: column;
-      gap: 0.65rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      border: 1.5px solid var(--border);
-      transition: all 0.2s ease;
+      gap: 0.2rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed var(--border);
     }
-    .compare-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    .twister-line:last-child {
+      border-bottom: none;
     }
-    .compare-card.type-location {
-      border-left: 5px solid #0284c7;
-    }
-    .compare-card.type-progressive {
-      border-left: 5px solid #e11d48;
-    }
-    .compare-tag {
-      font-size: 0.74rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 0.22rem 0.65rem;
-      border-radius: 6px;
-      display: inline-block;
-      align-self: flex-start;
-    }
-    .type-location .compare-tag { background: #e0f2fe; color: #0369a1; }
-    .type-progressive .compare-tag { background: #ffe4e6; color: #be123c; }
-    .compare-hz {
+    .twister-hanzi {
       font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      color: #0f172a;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
+      color: var(--primary-dark);
+      line-height: 1.35;
     }
-    .compare-py {
-      font-size: 0.86rem;
-      font-weight: 600;
+    .twister-pinyin {
+      font-size: 0.85rem;
+      font-weight: 500;
       color: #64748b;
+      display: none;
     }
-    .compare-id {
-      font-size: 0.92rem;
-      color: #1e293b;
-      font-weight: 600;
-    }
-    .compare-note {
+    body.show-pinyin .twister-pinyin { display: block; }
+    .twister-arti {
       font-size: 0.82rem;
-      color: #475569;
-      line-height: 1.45;
-      background: #f8fafc;
-      padding: 0.6rem 0.85rem;
-      border-radius: 8px;
-      border: 1px dashed var(--border);
+      color: var(--sub);
+      display: none;
+    }
+    body.show-arti .twister-arti { display: block; }
+    .twister-breakdown {
+      margin-top: 0.5rem;
+      padding-top: 0.85rem;
+      border-top: 1.5px dashed var(--border);
+      display: none;
+    }
+    body.show-vocab .twister-breakdown { display: block; }
+    .twister-breakdown-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+    }
+    .twister-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+      gap: 0.65rem;
     }
 
     /* ── XIAOYU'S CLASSROOM ── */
@@ -903,7 +598,7 @@
       gap: 0.85rem;
     }
     .classroom-group-title {
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--primary);
       margin-top: 0.35rem;
@@ -929,7 +624,7 @@
     }
     .classroom-box .bubble-pinyin { display: none; }
     body.show-pinyin .classroom-box .bubble-pinyin { display: block; }
-    .classroom-box .bubble-hanzi  { color: var(--primary-dark); font-size: 1.1rem; }
+    .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
     body.show-color .classroom-box .bubble-hanzi { color: var(--text); }
     body.show-color .classroom-box .bubble-pinyin { color: var(--sub); }
     .item-number {
@@ -949,82 +644,9 @@
     .item-content {
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 0.25rem;
       flex: 1;
     }
-
-    /* Position Direction Grid */
-    .direction-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-      gap: 0.65rem;
-      margin: 0.4rem 0;
-    }
-    .dir-card {
-      background: #ffffff;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      padding: 0.65rem 0.5rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .dir-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-2px);
-    }
-    .dir-hz { font-family: 'Noto Sans SC', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--primary-dark); }
-    .dir-py { font-size: 0.74rem; font-weight: 600; color: #64748b; }
-    .dir-id { font-size: 0.75rem; color: #334155; }
-
-    /* ── TONGUE TWISTER ── */
-    .twister-box {
-      background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
-      border: 1.5px solid #e879f9;
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-    .twister-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #86198f;
-      margin-bottom: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-    .twister-line {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-      padding: 0.55rem 0;
-      border-bottom: 1px dashed #f0abfc;
-    }
-    .twister-line:last-child { border-bottom: none; }
-    .twister-hanzi {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #701a75;
-      line-height: 1.35;
-    }
-    .twister-pinyin {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #a21caf;
-      display: none;
-    }
-    .twister-arti {
-      font-size: 0.8rem;
-      color: #4a044e;
-      display: none;
-    }
-    body.show-pinyin .twister-pinyin { display: block; }
-    body.show-arti   .twister-arti   { display: block; }
 
     /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
     .dialog-toolbar {
@@ -1107,9 +729,6 @@
       .word-arti { font-size: 0.74rem; }
       .nav { padding: 0.5rem 0.75rem; }
       .nav-home-btn span.label { display: none; }
-      .main-sentence-hz { font-size: 1.3rem; }
-      .formula-visual { font-size: 0.85rem; gap: 0.35rem; }
-      .f-chip { font-size: 0.78rem; padding: 0.28rem 0.55rem; }
     }
   </style>
 </head>
@@ -1122,7 +741,7 @@
   <div class="bab">Bab 8 — 我爸爸也在医院工作 (Wǒ bàba yě zài yīyuàn gōngzuò) · Papa Saya Juga Bekerja di Rumah Sakit</div>
 </header>
 
-<!-- NAVBAR 3-KOLOM -->
+<!-- NAVBAR 3-KOLOM SIMETRIS -->
 <nav class="nav-bar">
   <div class="nav">
     <div class="nav-side-left">
@@ -1148,294 +767,336 @@
 
 <div class="wrap">
 
-  <!-- ══ FOKUS TATA BAHASA UTAMA & KOTAK BIRU (CORE GRAMMAR) ══ -->
+  <!-- ══ 1. PROFIL TOKOH UTAMA (SESUAI STANDAR BAB 1) ══ -->
   <div>
-    <div class="section-title">📘 Fokus Materi Tata Bahasa · 核心语法</div>
-    <div class="blue-grammar-box">
-      <div class="blue-box-header">
-        <div class="blue-badge">Grammar Focus · 语法要点</div>
-        <div class="blue-title">1. Kalimat Utama &amp; Struktur Aktivitas di Tempat</div>
-        <div class="blue-desc">
-          Pelajaran ini mengajarkan cara menyatakan lokasi terjadinya suatu aktivitas serta pergerakan ke tempat tujuan dengan menggunakan preposisi <strong>在 (zài)</strong> dan kata kerja <strong>去 (qù)</strong>.
-        </div>
+    <div class="section-title">👥 主要人物 · Tokoh &amp; Karakter Utama</div>
+    <div class="character-box">
+      <div class="char-intro-header">
+        <span class="char-intro-badge">💡 Pengantar Tokoh · 教程角色导览</span>
+        <div class="char-intro-desc">Kenali tokoh-tokoh utama dalam Bab 8 ini beserta latar belakang dan perannya:</div>
       </div>
 
-      <!-- Kartu Kalimat Utama (Title/Header) -->
-      <div class="main-sentence-card">
-        <div class="main-sentence-top">
-          <span class="main-sentence-label">📌 Kalimat Utama (Title / Header)</span>
-          <button class="audio-btn" onclick="speakChinese('我爸爸也在医院工作')" title="Dengarkan pelafalan">🔊</button>
-        </div>
-        <div class="main-sentence-hz">我爸爸也在医院工作。</div>
-        <div class="main-sentence-py">Wǒ bàba yě zài yīyuàn gōngzuò.</div>
-        <div class="main-sentence-id"><strong>Arti:</strong> "Papa saya juga bekerja di rumah sakit."</div>
-
-        <div style="font-size:0.8rem;font-weight:700;color:#0284c7;margin-top:0.4rem;">
-          Bedah Kosakata Kalimat Utama (Arti per kata):
-        </div>
-        <div class="word-chip-grid">
-          <div class="word-chip" onclick="speakChinese('我')">
-            <span class="wc-hz">我</span>
-            <span class="wc-py">wǒ</span>
-            <span class="wc-id">saya</span>
-          </div>
-          <div class="word-chip" onclick="speakChinese('爸爸')">
-            <span class="wc-hz">爸爸</span>
-            <span class="wc-py">bàba</span>
-            <span class="wc-id">papa / ayah</span>
-          </div>
-          <div class="word-chip" onclick="speakChinese('也')">
-            <span class="wc-hz">也</span>
-            <span class="wc-py">yě</span>
-            <span class="wc-id">juga</span>
-          </div>
-          <div class="word-chip" onclick="speakChinese('在')">
-            <span class="wc-hz">在</span>
-            <span class="wc-py">zài</span>
-            <span class="wc-id">di / berada</span>
-          </div>
-          <div class="word-chip" onclick="speakChinese('医院')">
-            <span class="wc-hz">医院</span>
-            <span class="wc-py">yīyuàn</span>
-            <span class="wc-id">rumah sakit</span>
-          </div>
-          <div class="word-chip" onclick="speakChinese('工作')">
-            <span class="wc-hz">工作</span>
-            <span class="wc-py">gōngzuò</span>
-            <span class="wc-id">kerja / bekerja</span>
+      <!-- Grup 1: Asisten AI -->
+      <div class="char-group-title">
+        <span>🤖 Asisten Cerdas · 智慧导学助教</span>
+      </div>
+      <div class="char-list">
+        <div class="char-card">
+          <div class="avatar av-xiaoyu">语</div>
+          <div class="char-content">
+            <div class="char-header">
+              <div class="char-name-group">
+                <span class="char-name-hanzi">AI小语</span>
+                <span class="char-name-pinyin">(AI Xiǎoyǔ)</span>
+              </div>
+              <span class="char-badge">智慧助教 · Asisten Pemandu</span>
+            </div>
+            <div class="char-desc-hanzi">新教程智慧导学助教。</div>
+            <div class="char-desc-pinyin">Xīn jiàochéng zhìhuì dǎoxué zhùjiào.</div>
+            <div class="char-desc-arti">Asisten pemandu belajar pintar untuk buku ajar baru.</div>
           </div>
         </div>
       </div>
 
-      <!-- Rumus Tata Bahasa (Grammar Structure) -->
-      <div class="formula-container">
-        <!-- Rumus 1: S + 去 + Tempat + Aktivitas -->
-        <div class="formula-card">
-          <div class="formula-badge-row">
-            <span class="formula-badge">Rumus 1: Pergi ke Tempat untuk Aktivitas</span>
-            <button class="audio-btn" onclick="speakChinese('我去医院看病。他去学校上课。')" title="Dengarkan contoh">🔊</button>
-          </div>
-          <div class="formula-visual">
-            <span class="f-chip subj">S (Subjek)</span>
-            <span class="f-plus">+</span>
-            <span class="f-chip verb">去 (qù)</span>
-            <span class="f-plus">+</span>
-            <span class="f-chip place">Ket. Tempat</span>
-            <span class="f-plus">+</span>
-            <span class="f-chip act">Aktivitas / Kata Kerja</span>
-          </div>
-          <div class="formula-expl">
-            <strong>Fungsi:</strong> Menyatakan subjek pergi ke suatu lokasi tempat tujuan untuk melakukan aktivitas tertentu (pergerakan berarah).
-          </div>
-          <div class="formula-examples">
-            <div class="ex-item">
-              <span class="ex-hz">1. 我去医院看病。</span>
-              <span class="ex-py">Wǒ qù yīyuàn kàn bìng.</span>
-              <span class="ex-id">Saya pergi ke rumah sakit untuk periksa / berobat.</span>
+      <!-- Grup 2: Tokoh Pembelajaran Bab Ini -->
+      <div class="char-group-title">
+        <span>👥 Tokoh Percakapan Bab 8 · 本课对话人物</span>
+      </div>
+      <div class="char-list">
+        <!-- 白家月 -->
+        <div class="char-card">
+          <div class="avatar av-bai">月</div>
+          <div class="char-content">
+            <div class="char-header">
+              <div class="char-name-group">
+                <span class="char-name-hanzi">白家月</span>
+                <span class="char-name-pinyin">(Bái Jiāyuè)</span>
+              </div>
+              <span class="char-badge">留学生 · Mahasiswi</span>
             </div>
-            <div class="ex-item">
-              <span class="ex-hz">2. 他去学校上课。</span>
-              <span class="ex-py">Tā qù xuéxiào shàngkè.</span>
-              <span class="ex-id">Dia pergi ke sekolah untuk masuk kelas / belajar.</span>
-            </div>
-            <div class="ex-item">
-              <span class="ex-hz">3. 我们去超市买东西。</span>
-              <span class="ex-py">Wǒmen qù chāoshì mǎi dōngxi.</span>
-              <span class="ex-id">Kita pergi ke supermarket untuk belanja barang.</span>
-            </div>
+            <div class="char-desc-hanzi">在王一飞家做客，并与李文相约在学校见面。</div>
+            <div class="char-desc-pinyin">Zài Wáng Yīfēi jiā zuòkè, bìng yǔ Lǐ Wén xiāngyuē zài xuéxiào jiànmiàn.</div>
+            <div class="char-desc-arti">Bertamu di rumah Wang Yifei dan membuat janji bertemu dengan Li Wen di sekolah.</div>
           </div>
         </div>
 
-        <!-- Rumus 2: S + 在 + Tempat + Kata Kerja -->
-        <div class="formula-card">
-          <div class="formula-badge-row">
-            <span class="formula-badge">Rumus 2: Berada di Tempat Melakukan Aktivitas</span>
-            <button class="audio-btn" onclick="speakChinese('我爸爸在医院工作。我在学校吃午饭。')" title="Dengarkan contoh">🔊</button>
-          </div>
-          <div class="formula-visual">
-            <span class="f-chip subj">S (Subjek)</span>
-            <span class="f-plus">+</span>
-            <span class="f-chip prep">在 (zài)</span>
-            <span class="f-plus">+</span>
-            <span class="f-chip place">Ket. Tempat</span>
-            <span class="f-plus">+</span>
-            <span class="f-chip verb">Kata Kerja</span>
-          </div>
-          <div class="formula-expl">
-            <strong>Fungsi:</strong> Menunjukkan lokasi tempat di mana suatu kegiatan/aktivitas berlangsung. Dalam bahasa Mandarin, keterangan tempat <strong>(在 + Tempat)</strong> diletakkan <em>sebelum</em> kata kerja utama.
-          </div>
-          <div class="formula-examples">
-            <div class="ex-item">
-              <span class="ex-hz">1. 我爸爸<strong>在医院工作</strong>。 <span style="color:#0284c7;font-weight:700;">(Contoh Kalimat Utama)</span></span>
-              <span class="ex-py">Wǒ bàba zài yīyuàn gōngzuò.</span>
-              <span class="ex-id">Papa saya (S) + di (zài) + rumah sakit (tempat) + bekerja (kata kerja).</span>
+        <!-- 陈天中 -->
+        <div class="char-card">
+          <div class="avatar av-chen">陈</div>
+          <div class="char-content">
+            <div class="char-header">
+              <div class="char-name-group">
+                <span class="char-name-hanzi">陈天中</span>
+                <span class="char-name-pinyin">(Chén Tiānzhōng)</span>
+              </div>
+              <span class="char-badge">学生 · Mahasiswa</span>
             </div>
-            <div class="ex-item">
-              <span class="ex-hz">2. 我<strong>在学校吃午饭</strong>。</span>
-              <span class="ex-py">Wǒ zài xuéxiào chī wǔfàn.</span>
-              <span class="ex-id">Saya makan siang di sekolah.</span>
+            <div class="char-desc-hanzi">与白家月一起来做客，赞叹桌子下的小猫真漂亮。</div>
+            <div class="char-desc-pinyin">Yǔ Bái Jiāyuè yìqǐ lái zuòkè, zàntàn zhuōzi xià de xiǎomāo zhēn piàoliang.</div>
+            <div class="char-desc-arti">Bersama Bai Jiayue berkunjung dan memuji kucing kecil di bawah meja sangat manis.</div>
+          </div>
+        </div>
+
+        <!-- 李文 -->
+        <div class="char-card">
+          <div class="avatar av-li">李</div>
+          <div class="char-content">
+            <div class="char-header">
+              <div class="char-name-group">
+                <span class="char-name-hanzi">李文</span>
+                <span class="char-name-pinyin">(Lǐ Wén)</span>
+              </div>
+              <span class="char-badge">学生 · Teman Kuliah</span>
             </div>
-            <div class="ex-item">
-              <span class="ex-hz">3. 它<strong>在桌子下玩儿</strong>。</span>
-              <span class="ex-py">Tā zài zhuōzi xià wánr.</span>
-              <span class="ex-id">Dia (kucing kecil) bermain di bawah meja.</span>
+            <div class="char-desc-hanzi">在学校吃午饭，相约在学校书店前见面。</div>
+            <div class="char-desc-pinyin">Zài xuéxiào chī wǔfàn, xiāngyuē zài xuéxiào shūdiàn qián jiànmiàn.</div>
+            <div class="char-desc-arti">Makan siang di sekolah dan membuat janji bertemu di depan toko buku sekolah.</div>
+          </div>
+        </div>
+
+        <!-- 刘明 -->
+        <div class="char-card">
+          <div class="avatar av-liu">刘</div>
+          <div class="char-content">
+            <div class="char-header">
+              <div class="char-name-group">
+                <span class="char-name-hanzi">刘明</span>
+                <span class="char-name-pinyin">(Liú Míng)</span>
+              </div>
+              <span class="char-badge">职员 · Mahasiswa / Pegawai</span>
             </div>
+            <div class="char-desc-hanzi">在医院遇到胡医生并亲切问候关心。</div>
+            <div class="char-desc-pinyin">Zài yīyuàn yùdào Hú yīshēng bìng qīnqiè wènhòu guānxīn.</div>
+            <div class="char-desc-arti">Di rumah sakit bertemu dengan Dokter Hu dan menyapa dengan ramah.</div>
+          </div>
+        </div>
+
+        <!-- 胡医生 -->
+        <div class="char-card">
+          <div class="avatar av-hu">胡</div>
+          <div class="char-content">
+            <div class="char-header">
+              <div class="char-name-group">
+                <span class="char-name-hanzi">胡医生</span>
+                <span class="char-name-pinyin">(Hú Yīshēng / Xiǎo Hú)</span>
+              </div>
+              <span class="char-badge">医生 · Dokter</span>
+            </div>
+            <div class="char-desc-hanzi">在医院工作，其父亲也是一位非常忙碌的医生。</div>
+            <div class="char-desc-pinyin">Zài yīyuàn gōngzuò, qí fùqīn yě shì yí wèi fēicháng mánglù de yīshēng.</div>
+            <div class="char-desc-arti">Bekerja di rumah sakit; ayahnya juga seorang dokter yang amat sibuk.</div>
           </div>
         </div>
       </div>
     </div>
-
-
-    <!-- ══ KOTAK MERAH: CATATAN TAMBAHAN TATA BAHASA & PERBANDINGAN "在" ══ -->
-    <div class="red-grammar-box">
-      <div class="blue-box-header">
-        <div class="red-badge">Grammar Note · 补充语法</div>
-        <div class="red-title">2. Catatan Tambahan: Perbandingan Dua Fungsi Kata "在" (zài)</div>
-        <div class="red-desc">
-          Kata <strong>在 (zài)</strong> memiliki dua fungsi penting yang sering digunakan dalam percakapan sehari-hari. Perhatikan perbedaannya saat diikuti oleh <em>keterangan tempat</em> vs langsung diikuti oleh <em>kata kerja</em>:
-        </div>
-      </div>
-
-      <!-- Kotak Formula Ringkas -->
-      <div style="background:#fff;border:1.5px solid #fecdd3;border-radius:12px;padding:0.9rem 1.1rem;display:flex;flex-direction:column;gap:0.45rem;">
-        <div style="font-size:0.86rem;color:#9f1239;font-weight:700;">
-          💡 Rumus Dasar:
-        </div>
-        <div style="font-size:0.85rem;color:#334155;line-height:1.5;">
-          • <strong>在 + Keterangan Tempat + Kata Kerja</strong> → Menyatakan <em>tempat berlangsungnya aktivitas</em> (di...).<br>
-          • <strong>在 + Kata Kerja</strong> → Menyatakan <em>aktivitas yang sedang berlangsung</em> (<strong>sedang...</strong> / aspek progresif).
-        </div>
-      </div>
-
-      <!-- Kartu Perbandingan (Kotak Merah Sesuai Gambar) -->
-      <div class="comparison-grid">
-        <!-- Kartu 1: Lokasi Aktivitas -->
-        <div class="compare-card type-location">
-          <span class="compare-tag">1. Lokasi Aktivitas (Di Mana)</span>
-          <div class="compare-hz">
-            <span>爸爸在医院工作</span>
-            <button class="audio-btn" onclick="speakChinese('爸爸在医院工作')" title="Dengarkan">🔊</button>
-          </div>
-          <div class="compare-py">bàba zài yīyuàn gōngzuò</div>
-          <div class="compare-id">Arti: "Papa kerja di rumah sakit"</div>
-          <div class="compare-note">
-            <strong>Penjelasan:</strong><br>
-            Menunjukkan <strong>lokasi aktivitas</strong>:<br>
-            <span style="color:#0369a1;font-weight:600;">Subjek (爸爸) + berada di tempat (在医院) + kerja (工作)</span>
-          </div>
-        </div>
-
-        <!-- Kartu 2: Aktivitas Sedang Berlangsung -->
-        <div class="compare-card type-progressive">
-          <span class="compare-tag">2. Aktivitas Sedang Berlangsung (Sedang Apa)</span>
-          <div class="compare-hz">
-            <span>爸爸在工作</span>
-            <button class="audio-btn" onclick="speakChinese('爸爸在工作')" title="Dengarkan">🔊</button>
-          </div>
-          <div class="compare-py">bàba zài gōngzuò</div>
-          <div class="compare-id">Arti: "Ayah sedang kerja"</div>
-          <div class="compare-note">
-            <strong>Penjelasan:</strong><br>
-            Menunjukkan <strong>aktivitas yang sedang berlangsung</strong>:<br>
-            <span style="color:#be123c;font-weight:600;">Subjek (爸爸) + sedang (在) + kata kerja (工作)</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pasangan Contoh Perbandingan Tambahan -->
-      <div style="background:#ffffff;border:1.5px solid #fecdd3;border-radius:14px;padding:1.1rem;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
-        <div style="font-size:0.82rem;font-weight:700;color:#9f1239;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.6rem;">
-          🔍 Contoh Perbandingan Berpasangan Lainnya:
-        </div>
-        <div style="display:flex;flex-direction:column;gap:0.75rem;">
-          <div style="display:flex;justify-content:space-between;align-items:center;background:#f8fafc;padding:0.65rem 0.85rem;border-radius:10px;border-left:3px solid #0284c7;">
-            <div>
-              <div style="font-family:'Noto Sans SC';font-weight:700;color:#0f172a;font-size:1.05rem;">我在学校吃午饭。 <span style="font-size:0.82rem;font-weight:500;color:#64748b;">(Wǒ zài xuéxiào chī wǔfàn.)</span></div>
-              <div style="font-size:0.8rem;color:#475569;">Arti: Saya makan siang <strong>di sekolah</strong> (menunjukkan tempat).</div>
-            </div>
-            <button class="audio-btn" onclick="speakChinese('我在学校吃午饭。')" title="Dengar">🔊</button>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;background:#f8fafc;padding:0.65rem 0.85rem;border-radius:10px;border-left:3px solid #e11d48;">
-            <div>
-              <div style="font-family:'Noto Sans SC';font-weight:700;color:#0f172a;font-size:1.05rem;">我在吃午饭。 <span style="font-size:0.82rem;font-weight:500;color:#64748b;">(Wǒ zài chī wǔfàn.)</span></div>
-              <div style="font-size:0.8rem;color:#475569;">Arti: Saya <strong>sedang</strong> makan siang (aktivitas sedang berlangsung).</div>
-            </div>
-            <button class="audio-btn" onclick="speakChinese('我在吃午饭。')" title="Dengar">🔊</button>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;background:#f8fafc;padding:0.65rem 0.85rem;border-radius:10px;border-left:3px solid #e11d48;">
-            <div>
-              <div style="font-family:'Noto Sans SC';font-weight:700;color:#0f172a;font-size:1.05rem;">他在看书呢。 <span style="font-size:0.82rem;font-weight:500;color:#64748b;">(Tā zài kànshū ne.)</span></div>
-              <div style="font-size:0.8rem;color:#475569;">Arti: Dia <strong>sedang</strong> membaca buku nih (sering ditambah partikel 呢 di akhir kalimat).</div>
-            </div>
-            <button class="audio-btn" onclick="speakChinese('他在看书呢。')" title="Dengar">🔊</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
   </div>
 
-  <!-- ══ TEKS 1 ══ -->
-  <div>
-    <div class="section-title">💬 Teks 1: 朗读对话 · Read the Dialogue Aloud</div>
-    <div class="dialog-box">
-
-      <!-- 1. Pengantar Konteks Dialog -->
-      <div class="dialog-context-box">
-        <div class="context-tag">
-          <span>📌 1. Pengantar Konteks Dialog · 背景介绍</span>
-          <button class="audio-btn" onclick="speakChinese('在王一飞家，白家月和陈天中来做客。')" title="Dengarkan pengantar">🔊</button>
+  <!-- ══ 2. KOSAKATA KUNCI (SESUAI STANDAR BAB 1) ══ -->
+  <div class="shenci-section">
+    <div class="section-title">📚 Kosakata Kunci · 生词 (Shēncí)</div>
+    <div class="classroom-box">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">词</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge">Kosakata Inti Bab 8 · 重点词汇分类</div>
+          <div class="classroom-desc">Pelajari kelompok kata tempat, posisi, profesi, serta kata kerja penting ini sebelum membaca percakapan:</div>
         </div>
-        <div class="context-hz">在王一飞家，白家月和陈天中来做客。</div>
-        <div class="context-py">Zài Wáng Yīfēi jiā, Bái Jiāyuè hé Chén Tiānzhōng lái zuòkè.</div>
-        <div class="context-en">(At Wang Yifei's home, Bai Jiayue and Chen Tianzhong came over for a visit.)</div>
-        <div class="context-id"><strong>Arti:</strong> Di rumah Wang Yifei, Bai Jiayue dan Chen Tianzhong datang berkunjung.</div>
       </div>
 
-      <!-- 2. Percakapan (朗读对话 / Read the dialogue aloud) -->
-      <!-- 白家月: 房间外有一只小猫. -->
-      <div class="dialog-line" onclick="speakChinese('房间外有一只小猫。')">
-        <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">月</div>
+      <div class="classroom-list">
+        <!-- Grup 1: Tempat & Arah Posisi -->
+        <div class="classroom-group-title">
+          <span>📍 1. Tempat &amp; Arah Posisi · 场所与方位词</span>
+        </div>
+        <div class="breakdown-grid" style="margin-bottom:0.75rem;">
+          <div class="word-card">
+            <div class="word-char">医院</div>
+            <div class="word-pinyin">yīyuàn</div>
+            <div class="word-arti">Rumah sakit</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">房间</div>
+            <div class="word-pinyin">fángjiān</div>
+            <div class="word-arti">Kamar / Ruangan</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">桌子</div>
+            <div class="word-pinyin">zhuōzi</div>
+            <div class="word-arti">Meja</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">书店</div>
+            <div class="word-pinyin">shūdiàn</div>
+            <div class="word-arti">Toko buku</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">学校</div>
+            <div class="word-pinyin">xuéxiào</div>
+            <div class="word-arti">Sekolah / Kampus</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">外</div>
+            <div class="word-pinyin">wài</div>
+            <div class="word-arti">Luar (↔ 里 lǐ)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">下</div>
+            <div class="word-pinyin">xià</div>
+            <div class="word-arti">Bawah (↔ 上 shàng)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">前</div>
+            <div class="word-pinyin">qián</div>
+            <div class="word-arti">Depan (↔ 后 hòu)</div>
+          </div>
+        </div>
+
+        <!-- Grup 2: Orang, Keluarga & Profesi -->
+        <div class="classroom-group-title">
+          <span>👨‍⚕️ 2. Orang, Keluarga &amp; Profesi · 人物与职业</span>
+        </div>
+        <div class="breakdown-grid" style="margin-bottom:0.75rem;">
+          <div class="word-card">
+            <div class="word-char">爸爸</div>
+            <div class="word-pinyin">bàba</div>
+            <div class="word-arti">Papa / Ayah</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">医生</div>
+            <div class="word-pinyin">yīshēng</div>
+            <div class="word-arti">Dokter</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">病人</div>
+            <div class="word-pinyin">bìngrén</div>
+            <div class="word-arti">Pasien / Orang sakit</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">它</div>
+            <div class="word-pinyin">tā</div>
+            <div class="word-arti">Dia / Ia (hewan/benda)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">我们</div>
+            <div class="word-pinyin">wǒmen</div>
+            <div class="word-arti">Kami / Kita</div>
+          </div>
+        </div>
+
+        <!-- Grup 3: Kata Kerja, Sifat & Satuan -->
+        <div class="classroom-group-title">
+          <span>✨ 3. Kata Kerja, Sifat &amp; Satuan · 动词、形容词与量词</span>
+        </div>
+        <div class="breakdown-grid">
+          <div class="word-card">
+            <div class="word-char">工作</div>
+            <div class="word-pinyin">gōngzuò</div>
+            <div class="word-arti">Bekerja / Pekerjaan</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">看见</div>
+            <div class="word-pinyin">kànjiàn</div>
+            <div class="word-arti">Melihat / Menengok</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">见</div>
+            <div class="word-pinyin">jiàn</div>
+            <div class="word-arti">Bertemu / Berjumpa</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">能</div>
+            <div class="word-pinyin">néng</div>
+            <div class="word-arti">Bisa / Mampu</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">到</div>
+            <div class="word-pinyin">dào</div>
+            <div class="word-arti">Tiba / Sampai</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">吃午饭</div>
+            <div class="word-pinyin">chī wǔfàn</div>
+            <div class="word-arti">Makan siang</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">只</div>
+            <div class="word-pinyin">zhī</div>
+            <div class="word-arti">Ekor (satuan hewan kecil)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">猫</div>
+            <div class="word-pinyin">māo</div>
+            <div class="word-arti">Kucing</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">小</div>
+            <div class="word-pinyin">xiǎo</div>
+            <div class="word-arti">Kecil / Mungil</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">漂亮</div>
+            <div class="word-pinyin">piàoliang</div>
+            <div class="word-arti">Cantik / Indah</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">非常</div>
+            <div class="word-pinyin">fēicháng</div>
+            <div class="word-arti">Sangat / Luar biasa</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">忙</div>
+            <div class="word-pinyin">máng</div>
+            <div class="word-arti">Sibuk</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TEKS 1 (SESUAI STANDAR BAB 1) ══ -->
+  <div>
+    <div class="section-title">💬 Teks 1</div>
+    <div class="dialog-box">
+
+      <!-- Konteks Dialog -->
+      <div style="font-size:0.84rem;color:#475569;background:#f8fafc;padding:0.6rem 0.95rem;border-radius:10px;border-left:3px solid var(--primary);line-height:1.45;">
+        <strong>Pengantar Konteks:</strong> 在王一飞家，白家月和陈天中来做客。<br>
+        <span style="font-size:0.78rem;color:#64748b;">(Zài Wáng Yīfēi jiā, Bái Jiāyuè hé Chén Tiānzhōng lái zuòkè. · Di rumah Wang Yifei, Bai Jiayue dan Chen Tianzhong datang berkunjung.)</span>
+      </div>
+
+      <!-- 白家月: 房间外有一只小猫。 -->
+      <div class="dialog-line">
+        <div class="avatar av-bai">月</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bai Jiayue)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bái Jiāyuè)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>房间外有一只小猫.</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
-            <div class="bubble-pinyin">Fángjiān wài yǒu yì zhī xiǎo māo.</div>
-            <div class="bubble-arti">Di luar kamar/ruangan ada seekor anak kucing.</div>
+            <div class="bubble-hanzi">房间外有一只小猫。</div>
+            <div class="bubble-pinyin">Fángjiān wài yǒu yì zhī xiǎomāo.</div>
+            <div class="bubble-arti">Di luar kamar ada seekor anak kucing.</div>
           </div>
         </div>
       </div>
 
       <!-- 陈天中: 我没看见，它在哪儿呢？ -->
-      <div class="dialog-line right chen" onclick="speakChinese('我没看见，它在哪儿呢？')">
-        <div class="avatar av-chen" title="陈天中 (Chén Tiānzhōng)">陈</div>
+      <div class="dialog-line right chen">
+        <div class="avatar av-chen">陈</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">陈天中</span><span class="speaker-pinyin"> (Chen Tianzhong)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">陈天中</span><span class="speaker-pinyin"> (Chén Tiānzhōng)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>我没看见，它在哪儿呢？</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">我没看见，它在哪儿呢？</div>
             <div class="bubble-pinyin">Wǒ méi kànjiàn, tā zài nǎr ne?</div>
             <div class="bubble-arti">Saya tidak melihatnya, dia ada di mana?</div>
           </div>
         </div>
       </div>
 
-      <!-- 白家月: 它在桌子下呢. -->
-      <div class="dialog-line" onclick="speakChinese('它在桌子下呢。')">
-        <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">月</div>
+      <!-- 白家月: 它在桌子下呢。 -->
+      <div class="dialog-line">
+        <div class="avatar av-bai">月</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bai Jiayue)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bái Jiāyuè)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>它在桌子下呢.</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">它在桌子下呢。</div>
             <div class="bubble-pinyin">Tā zài zhuōzi xià ne.</div>
             <div class="bubble-arti">Dia ada di bawah meja.</div>
           </div>
@@ -1443,399 +1104,110 @@
       </div>
 
       <!-- 陈天中: 这只小猫真漂亮！ -->
-      <div class="dialog-line right chen" onclick="speakChinese('这只小猫真漂亮！')">
-        <div class="avatar av-chen" title="陈天中 (Chén Tiānzhōng)">陈</div>
+      <div class="dialog-line right chen">
+        <div class="avatar av-chen">陈</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">陈天中</span><span class="speaker-pinyin"> (Chen Tianzhong)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">陈天中</span><span class="speaker-pinyin"> (Chén Tiānzhōng)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>这只小猫真漂亮！</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
-            <div class="bubble-pinyin">Zhè zhī xiǎo māo zhēn piàoliang!</div>
+            <div class="bubble-hanzi">这只小猫真漂亮！</div>
+            <div class="bubble-pinyin">Zhè zhī xiǎomāo zhēn piàoliang!</div>
             <div class="bubble-arti">Anak kucing ini benar-benar cantik!</div>
           </div>
         </div>
       </div>
 
-      <!-- 3. Catatan Kecil (小语助力 / Xiaoyu's Tip) -->
-      <div class="xiaoyu-tip-box">
-        <div class="tip-header">
-          <div class="tip-badge">💡 3. Catatan Kecil (小语助力 / Xiaoyu's Tip)</div>
-          <button class="audio-btn" onclick="speakChinese('量词可以和指示代词直接组合。比如这只，那只，这个，那个。')" title="Dengarkan penjelasan">🔊</button>
-        </div>
-        <div class="tip-hz">量词可以和指示代词直接组合。</div>
-        <div class="tip-py">Liàngcí kěyǐ hé zhǐshì dàicí zhíjiē zǔhé.</div>
-        <div class="tip-en">(Measure words can directly combine with demonstrative pronouns.)</div>
-        <div class="tip-id"><strong>Arti:</strong> Kata satuan (measure word) dapat langsung digabungkan dengan kata ganti penunjuk (demonstrative pronouns).</div>
-
-        <div class="tip-examples-grid">
-          <div class="tip-ex-item" onclick="speakChinese('这只小猫')">
-            <span class="ex-comb">这 (zhè) + 只 (zhī) → <strong>这只</strong> (zhè zhī)</span>
-            <span class="ex-desc">yang seekor ini (misal: <em>这只小猫</em> = anak kucing ini)</span>
-          </div>
-          <div class="tip-ex-item" onclick="speakChinese('那只小狗')">
-            <span class="ex-comb">那 (nà) + 只 (zhī) → <strong>那只</strong> (nà zhī)</span>
-            <span class="ex-desc">yang seekor itu (misal: <em>那只小狗</em> = anjing itu)</span>
-          </div>
-          <div class="tip-ex-item" onclick="speakChinese('这个人')">
-            <span class="ex-comb">这 (zhè) + 个 (gè) → <strong>这个</strong> (zhè ge)</span>
-            <span class="ex-desc">yang ini (misal: <em>这个人</em> = orang ini)</span>
-          </div>
-          <div class="tip-ex-item" onclick="speakChinese('那本书')">
-            <span class="ex-comb">那 (nà) + 本 (běn) → <strong>那本</strong> (nà běn)</span>
-            <span class="ex-desc">yang itu (misal: <em>那本书</em> = buku itu)</span>
-          </div>
-        </div>
-      </div>
-
-            <!-- Sub-breakdown Kosakata Teks 1 -->
+      <!-- Sub-breakdown Kosakata Teks 1 -->
       <div class="sub-breakdown">
-        <div class="sub-breakdown-title">
-          <span>📚 Kosakata Baru · Teks 1 (生词 / New Words)</span>
-        </div>
+        <div class="sub-breakdown-title">📖 Arti Per Kata · Teks 1</div>
         <div class="breakdown-grid">
-          <div class="word-card" onclick="speakChinese('房间')">
+          <div class="word-card">
             <div class="word-char">房间</div>
             <div class="word-pinyin">fángjiān</div>
-            <div class="word-arti"><span class="pos-badge">n.</span> kamar (room)</div>
+            <div class="word-arti">kamar (room)</div>
           </div>
-          <div class="word-card" onclick="speakChinese('外')">
+          <div class="word-card">
             <div class="word-char">外</div>
             <div class="word-pinyin">wài</div>
-            <div class="word-arti"><span class="pos-badge">n.</span> luar (outside)<br><small style="color:#64748b;">↔ 里 (lǐ - dalam)</small></div>
+            <div class="word-arti">luar (outside)<br><small style="color:#64748b;">↔ 里 (lǐ - dalam)</small></div>
           </div>
-          <div class="word-card" onclick="speakChinese('只')">
+          <div class="word-card">
             <div class="word-char">只</div>
             <div class="word-pinyin">zhī</div>
-            <div class="word-arti"><span class="pos-badge">m.</span> satuan hewan kecil<br><small style="color:#64748b;">hewan besar: 头 (tóu)</small></div>
+            <div class="word-arti">satuan hewan kecil<br><small style="color:#64748b;">hewan besar: 头 (tóu)</small></div>
           </div>
-          <div class="word-card" onclick="speakChinese('小')">
+          <div class="word-card">
             <div class="word-char">小</div>
             <div class="word-pinyin">xiǎo</div>
-            <div class="word-arti"><span class="pos-badge">adj.</span> kecil (small; little)</div>
+            <div class="word-arti">kecil (small, little)</div>
           </div>
-          <div class="word-card" onclick="speakChinese('猫')">
+          <div class="word-card">
             <div class="word-char">猫</div>
             <div class="word-pinyin">māo</div>
-            <div class="word-arti"><span class="pos-badge">n.</span> kucing (cat)</div>
+            <div class="word-arti">kucing (cat)</div>
           </div>
-          <div class="word-card" onclick="speakChinese('小猫')">
+          <div class="word-card">
             <div class="word-char">小猫</div>
             <div class="word-pinyin">xiǎomāo</div>
-            <div class="word-arti"><span class="pos-badge">n.</span> anak kucing</div>
+            <div class="word-arti">anak kucing</div>
           </div>
-          <div class="word-card" onclick="speakChinese('没')">
+          <div class="word-card">
             <div class="word-char">没</div>
             <div class="word-pinyin">méi</div>
-            <div class="word-arti"><span class="pos-badge">adv.</span> tidak (no; not; not yet)</div>
+            <div class="word-arti">tidak, belum</div>
           </div>
-          <div class="word-card" onclick="speakChinese('看见')">
+          <div class="word-card">
             <div class="word-char">看见</div>
             <div class="word-pinyin">kànjiàn</div>
-            <div class="word-arti"><span class="pos-badge">v.</span> melihat (catch sight of)</div>
+            <div class="word-arti">melihat (catch sight of)</div>
           </div>
-          <div class="word-card" onclick="speakChinese('它')">
+          <div class="word-card">
             <div class="word-char">它</div>
             <div class="word-pinyin">tā</div>
-            <div class="word-arti"><span class="pos-badge">pron.</span> ia / dia (hewan/benda)</div>
+            <div class="word-arti">dia, ia (hewan/benda)</div>
           </div>
-          <div class="word-card" onclick="speakChinese('在')">
-            <div class="word-char">在</div>
-            <div class="word-pinyin">zài</div>
-            <div class="word-arti"><span class="pos-badge">prep.</span> di / berada di</div>
-          </div>
-          <div class="word-card" onclick="speakChinese('哪儿')">
-            <div class="word-char">哪儿</div>
-            <div class="word-pinyin">nǎr</div>
-            <div class="word-arti"><span class="pos-badge">pron.</span> mana / di mana</div>
-          </div>
-          <div class="word-card" onclick="speakChinese('桌子')">
+          <div class="word-card">
             <div class="word-char">桌子</div>
             <div class="word-pinyin">zhuōzi</div>
-            <div class="word-arti"><span class="pos-badge">n.</span> meja (table; desk)</div>
+            <div class="word-arti">meja (table, desk)</div>
           </div>
-          <div class="word-card" onclick="speakChinese('下')">
+          <div class="word-card">
             <div class="word-char">下</div>
             <div class="word-pinyin">xià</div>
-            <div class="word-arti"><span class="pos-badge">n.</span> bawah (low position)<br><small style="color:#64748b;">↔ 上 (shàng - atas)</small></div>
+            <div class="word-arti">bawah (low position)<br><small style="color:#64748b;">↔ 上 (shàng - atas)</small></div>
           </div>
-          <div class="word-card" onclick="speakChinese('这')">
-            <div class="word-char">这</div>
-            <div class="word-pinyin">zhè</div>
-            <div class="word-arti"><span class="pos-badge">pron.</span> ini (this)</div>
+          <div class="word-card">
+            <div class="word-char">这只</div>
+            <div class="word-pinyin">zhè zhī</div>
+            <div class="word-arti">yang seekor ini</div>
           </div>
-          <div class="word-card" onclick="speakChinese('真')">
+          <div class="word-card">
             <div class="word-char">真</div>
             <div class="word-pinyin">zhēn</div>
-            <div class="word-arti"><span class="pos-badge">adv.</span> sungguh (really; truly)</div>
+            <div class="word-arti">sungguh, benar-benar</div>
           </div>
-          <div class="word-card" onclick="speakChinese('漂亮')">
+          <div class="word-card">
             <div class="word-char">漂亮</div>
             <div class="word-pinyin">piàoliang</div>
-            <div class="word-arti"><span class="pos-badge">adj.</span> cantik (pretty; beautiful)</div>
-          </div>
-        </div>
-
-        <!-- Tabel Lengkap Kosakata Baru & Catatan Khusus -->
-        <div style="margin-top:1.2rem;background:#ffffff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
-          <div style="background:#f8fafc;padding:0.65rem 1rem;border-bottom:1px solid var(--border);font-size:0.82rem;font-weight:700;color:var(--primary);display:flex;align-items:center;justify-content:space-between;">
-            <span>📋 Tabel Rincian Kosakata Baru Teks 1 (生词表)</span>
-            <span style="font-size:0.75rem;color:#64748b;font-weight:500;">Klik 🔊 untuk pelafalan</span>
-          </div>
-          <div style="overflow-x:auto;">
-            <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
-              <thead>
-                <tr style="background:#f1f5f9;color:#475569;text-align:left;border-bottom:1px solid #e2e8f0;">
-                  <th style="padding:0.5rem 0.75rem;">No.</th>
-                  <th style="padding:0.5rem 0.75rem;">Hanzi</th>
-                  <th style="padding:0.5rem 0.75rem;">Pinyin</th>
-                  <th style="padding:0.5rem 0.75rem;">Jenis Kata</th>
-                  <th style="padding:0.5rem 0.75rem;">Bahasa Inggris</th>
-                  <th style="padding:0.5rem 0.75rem;">Bahasa Indonesia &amp; Catatan Khusus</th>
-                  <th style="padding:0.5rem 0.75rem;text-align:center;">Audio</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="border-bottom:1px dashed #e2e8f0;">
-                  <td style="padding:0.5rem 0.75rem;color:#64748b;">1</td>
-                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">房间</td>
-                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">fángjiān</td>
-                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">n.</span> noun</td>
-                  <td style="padding:0.5rem 0.75rem;">room</td>
-                  <td style="padding:0.5rem 0.75rem;">kamar / ruangan</td>
-                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('房间')" title="Dengar">🔊</button></td>
-                </tr>
-                <tr style="border-bottom:1px dashed #e2e8f0;background:#fafafa;">
-                  <td style="padding:0.5rem 0.75rem;color:#64748b;">2</td>
-                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">外</td>
-                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">wài</td>
-                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">n.</span> noun</td>
-                  <td style="padding:0.5rem 0.75rem;">outside</td>
-                  <td style="padding:0.5rem 0.75rem;">luar · <em>berlawanan dengan <strong>里 (lǐ)</strong> (dalam)</em></td>
-                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('外')" title="Dengar">🔊</button></td>
-                </tr>
-                <tr style="border-bottom:1px dashed #e2e8f0;">
-                  <td style="padding:0.5rem 0.75rem;color:#64748b;">3</td>
-                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">只</td>
-                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">zhī</td>
-                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">m.</span> measure word</td>
-                  <td style="padding:0.5rem 0.75rem;">for certain animals</td>
-                  <td style="padding:0.5rem 0.75rem;">satuan untuk hewan kecil (kucing, burung); untuk hewan besar gunakan <strong>头 (tóu)</strong> (contoh: gajah 一头大象)</td>
-                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('只')" title="Dengar">🔊</button></td>
-                </tr>
-                <tr style="border-bottom:1px dashed #e2e8f0;background:#fafafa;">
-                  <td style="padding:0.5rem 0.75rem;color:#64748b;">4</td>
-                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">小</td>
-                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">xiǎo</td>
-                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">adj.</span> adjective</td>
-                  <td style="padding:0.5rem 0.75rem;">small; little</td>
-                  <td style="padding:0.5rem 0.75rem;">kecil / mungil · <em>berlawanan dengan <strong>大 (dà)</strong> (besar)</em></td>
-                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('小')" title="Dengar">🔊</button></td>
-                </tr>
-                <tr style="border-bottom:1px dashed #e2e8f0;">
-                  <td style="padding:0.5rem 0.75rem;color:#64748b;">5</td>
-                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">猫</td>
-                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">māo</td>
-                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">n.</span> noun</td>
-                  <td style="padding:0.5rem 0.75rem;">cat</td>
-                  <td style="padding:0.5rem 0.75rem;">kucing</td>
-                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('猫')" title="Dengar">🔊</button></td>
-                </tr>
-                <tr style="border-bottom:1px dashed #e2e8f0;background:#fafafa;">
-                  <td style="padding:0.5rem 0.75rem;color:#64748b;">6</td>
-                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">没</td>
-                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">méi</td>
-                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">adv.</span> adverb</td>
-                  <td style="padding:0.5rem 0.75rem;">no; not; not yet</td>
-                  <td style="padding:0.5rem 0.75rem;">tidak / belum</td>
-                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('没')" title="Dengar">🔊</button></td>
-                </tr>
-                <tr style="border-bottom:1px dashed #e2e8f0;">
-                  <td style="padding:0.5rem 0.75rem;color:#64748b;">7</td>
-                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">看见</td>
-                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">kànjiàn</td>
-                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">v.</span> verb</td>
-                  <td style="padding:0.5rem 0.75rem;">see; catch sight of</td>
-                  <td style="padding:0.5rem 0.75rem;">melihat / sekilas menengok</td>
-                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('看见')" title="Dengar">🔊</button></td>
-                </tr>
-                <tr style="border-bottom:1px dashed #e2e8f0;background:#fafafa;">
-                  <td style="padding:0.5rem 0.75rem;color:#64748b;">8</td>
-                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">桌子</td>
-                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">zhuōzi</td>
-                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">n.</span> noun</td>
-                  <td style="padding:0.5rem 0.75rem;">table; desk</td>
-                  <td style="padding:0.5rem 0.75rem;">meja</td>
-                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('桌子')" title="Dengar">🔊</button></td>
-                </tr>
-                <tr style="border-bottom:1px dashed #e2e8f0;">
-                  <td style="padding:0.5rem 0.75rem;color:#64748b;">9</td>
-                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">下</td>
-                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">xià</td>
-                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">n.</span> noun (position)</td>
-                  <td style="padding:0.5rem 0.75rem;">low position or rank</td>
-                  <td style="padding:0.5rem 0.75rem;">di bawah · <em>berlawanan dengan <strong>上 (shàng)</strong> (atas)</em></td>
-                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('下')" title="Dengar">🔊</button></td>
-                </tr>
-                <tr style="background:#fafafa;">
-                  <td style="padding:0.5rem 0.75rem;color:#64748b;">10</td>
-                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">漂亮</td>
-                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">piàoliang</td>
-                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">adj.</span> adjective</td>
-                  <td style="padding:0.5rem 0.75rem;">pretty; beautiful</td>
-                  <td style="padding:0.5rem 0.75rem;">cantik / indah</td>
-                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('漂亮')" title="Dengar">🔊</button></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="word-arti">cantik, indah</div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 
-  <!-- ══ XIAOYU'S CLASSROOM SESI 1: ARAH & LOKASI (方位词) ══ -->
+  <!-- ══ TEKS 2 (SESUAI STANDAR BAB 1) ══ -->
   <div>
-    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (Sesi 1)</div>
-    <div class="classroom-box">
-      <div class="classroom-header">
-        <div class="avatar av-xiaoyu">语</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge">Xiaoyu's Classroom · 小语讲堂</div>
-          <div class="classroom-desc">Penggunaan Kata Arah dan Lokasi Tempat (方位词)</div>
-        </div>
-      </div>
-
-      <div class="classroom-list">
-        <div class="classroom-group-title">
-          <span>🧭 1. Kata Penunjuk Arah &amp; Posisi (方位词)</span>
-        </div>
-        <p style="font-size:0.85rem;color:#475569;line-height:1.5;">
-          Dalam bahasa Mandarin, untuk menunjukkan posisi spesifik suatu tempat atau benda, letakkan <strong>kata benda</strong> terlebih dahulu, lalu ikuti dengan <strong>kata arah/posisi (方位词)</strong>:
-          <br>
-          <span style="display:inline-block;margin-top:0.35rem;background:#f1f5f9;padding:0.25rem 0.65rem;border-radius:6px;font-weight:600;color:var(--primary);">
-            Rumus: Kata Benda (Tempat / Objek) + 方位词 (上 / 下 / 前 / 后 / 里 / 外)
-          </span>
-        </p>
-
-        <div class="direction-grid">
-          <div class="dir-card" onclick="speakChinese('上，桌子上')">
-            <span class="dir-hz">上</span>
-            <span class="dir-py">shàng</span>
-            <span class="dir-id">Atas (桌子上 = di atas meja)</span>
-          </div>
-          <div class="dir-card" onclick="speakChinese('下，桌子下')">
-            <span class="dir-hz">下</span>
-            <span class="dir-py">xià</span>
-            <span class="dir-id">Bawah (桌子下 = di bawah meja)</span>
-          </div>
-          <div class="dir-card" onclick="speakChinese('前，书店前')">
-            <span class="dir-hz">前</span>
-            <span class="dir-py">qián</span>
-            <span class="dir-id">Depan (书店前 = di depan toko buku)</span>
-          </div>
-          <div class="dir-card" onclick="speakChinese('后，学校后')">
-            <span class="dir-hz">后</span>
-            <span class="dir-py">hòu</span>
-            <span class="dir-id">Belakang (学校后 = di belakang sekolah)</span>
-          </div>
-          <div class="dir-card" onclick="speakChinese('里，医院里')">
-            <span class="dir-hz">里</span>
-            <span class="dir-py">lǐ</span>
-            <span class="dir-id">Dalam (医院里 = di dalam RS)</span>
-          </div>
-          <div class="dir-card" onclick="speakChinese('外，房间外')">
-            <span class="dir-hz">外</span>
-            <span class="dir-py">wài</span>
-            <span class="dir-id">Luar (房间外 = di luar kamar)</span>
-          </div>
-        </div>
-
-        <div class="classroom-group-title" style="margin-top:0.6rem;">
-          <span>🗣️ 2. Contoh Kalimat Membaca Nyaring (Read Aloud)</span>
-        </div>
-
-        <div class="classroom-item">
-          <div class="item-number">1</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">小猫在桌子下。</div>
-            <div class="bubble-pinyin">Xiǎomāo zài zhuōzi xià.</div>
-            <div class="bubble-arti">Anak kucing berada di bawah meja.</div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('小猫在桌子下。')" title="Dengar">🔊</button>
-        </div>
-
-        <div class="classroom-item">
-          <div class="item-number">2</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">房间外有人吗？</div>
-            <div class="bubble-pinyin">Fángjiān wài yǒu rén ma?</div>
-            <div class="bubble-arti">Apakah di luar kamar ada orang?</div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('房间外有人吗？')" title="Dengar">🔊</button>
-        </div>
-
-        <div class="classroom-item">
-          <div class="item-number">3</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">这只小狗真漂亮！</div>
-            <div class="bubble-pinyin">Zhè zhī xiǎogǒu zhēn piàoliang!</div>
-            <div class="bubble-arti">Anak anjing ini benar-benar lucu / cantik!</div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('这只小狗真漂亮！')" title="Dengar">🔊</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ PERTANYAAN PEMAHAMAN TEKS 1 ══ -->
-  <div>
-    <div class="section-title">❓ Pertanyaan Pemahaman Teks 1 · 课文理解</div>
-    <div class="classroom-box" style="border-left: 5px solid #06b6d4;">
-      <div class="classroom-list">
-        <div class="classroom-item" style="border-left:4px solid #06b6d4;">
-          <div class="item-number" style="background:#06b6d4;">1</div>
-          <div class="item-content">
-            <div class="bubble-hanzi" style="font-size:1.05rem;font-weight:700;">小猫在哪儿呢？</div>
-            <div class="bubble-pinyin">Xiǎomāo zài nǎr ne?</div>
-            <div class="bubble-arti">
-              <strong>Jawaban:</strong> 小猫在桌子下。(Xiǎomāo zài zhuōzi xià. / Anak kucing ada di bawah meja.)
-            </div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('小猫在桌子下。')" title="Dengar">🔊</button>
-        </div>
-        <div class="classroom-item" style="border-left:4px solid #06b6d4;">
-          <div class="item-number" style="background:#06b6d4;">2</div>
-          <div class="item-content">
-            <div class="bubble-hanzi" style="font-size:1.05rem;font-weight:700;">陈天中觉得这只小猫怎么样？</div>
-            <div class="bubble-pinyin">Chén Tiānzhōng juéde zhè zhī xiǎomāo zěnmeyàng?</div>
-            <div class="bubble-arti">
-              <strong>Jawaban:</strong> 他觉得这只小猫真漂亮。(Tā juéde zhè zhī xiǎomāo zhēn piàoliang. / Dia merasa kucing ini sangat cantik/lucu.)
-            </div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('他觉得这只小猫真漂亮。')" title="Dengar">🔊</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ TEKS 2 ══ -->
-  <div>
-    <div class="section-title">💬 Teks 2: 约时间见面 · Janji Bertemu di Kampus</div>
+    <div class="section-title">💬 Teks 2</div>
     <div class="dialog-box">
 
       <!-- 白家月: 我们在哪儿见呢？ -->
-      <div class="dialog-line" onclick="speakChinese('我们在哪儿见呢？')">
-        <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">月</div>
+      <div class="dialog-line">
+        <div class="avatar av-bai">月</div>
         <div class="bubble-wrap">
           <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bái Jiāyuè)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>我们在哪儿见呢？</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">我们在哪儿见呢？</div>
             <div class="bubble-pinyin">Wǒmen zài nǎr jiàn ne?</div>
             <div class="bubble-arti">Kita bertemu di mana ya?</div>
           </div>
@@ -1843,15 +1215,12 @@
       </div>
 
       <!-- 李文: 在学校书店前见吧。 -->
-      <div class="dialog-line right li" onclick="speakChinese('在学校书店前见吧。')">
-        <div class="avatar av-li" title="李文 (Lǐ Wén)">李</div>
+      <div class="dialog-line right li">
+        <div class="avatar av-li">李</div>
         <div class="bubble-wrap">
           <span class="speaker-name"><span class="speaker-hanzi">李文</span><span class="speaker-pinyin"> (Lǐ Wén)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>在学校书店前见吧。</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">在学校书店前见吧。</div>
             <div class="bubble-pinyin">Zài xuéxiào shūdiàn qián jiàn ba.</div>
             <div class="bubble-arti">Bertemu di depan toko buku sekolah saja ya.</div>
           </div>
@@ -1859,31 +1228,25 @@
       </div>
 
       <!-- 白家月: 好的。下午两点你能到吗？ -->
-      <div class="dialog-line" onclick="speakChinese('好的。下午两点你能到吗？')">
-        <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">月</div>
+      <div class="dialog-line">
+        <div class="avatar av-bai">月</div>
         <div class="bubble-wrap">
           <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bái Jiāyuè)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>好的。下午两点你能到吗？</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">好的。下午两点你能到吗？</div>
             <div class="bubble-pinyin">Hǎo de. Xiàwǔ liǎng diǎn nǐ néng dào ma?</div>
-            <div class="bubble-arti">Baiklah. Jam 2 siang apakah kamu bisa tiba/sampai?</div>
+            <div class="bubble-arti">Baiklah. Jam 2 siang apakah kamu bisa sampai?</div>
           </div>
         </div>
       </div>
 
       <!-- 李文: 我能到。我在学校吃午饭。 -->
-      <div class="dialog-line right li" onclick="speakChinese('我能到。我在学校吃午饭。')">
-        <div class="avatar av-li" title="李文 (Lǐ Wén)">李</div>
+      <div class="dialog-line right li">
+        <div class="avatar av-li">李</div>
         <div class="bubble-wrap">
           <span class="speaker-name"><span class="speaker-hanzi">李文</span><span class="speaker-pinyin"> (Lǐ Wén)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>我能到。我在学校吃午饭。</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">我能到。我在学校吃午饭。</div>
             <div class="bubble-pinyin">Wǒ néng dào. Wǒ zài xuéxiào chī wǔfàn.</div>
             <div class="bubble-arti">Saya bisa sampai. Saya makan siang di sekolah.</div>
           </div>
@@ -1892,68 +1255,66 @@
 
       <!-- Sub-breakdown Kosakata Teks 2 -->
       <div class="sub-breakdown">
-        <div class="sub-breakdown-title">
-          <span>📚 Kosakata Baru · Teks 2</span>
-        </div>
+        <div class="sub-breakdown-title">📖 Arti Per Kata · Teks 2</div>
         <div class="breakdown-grid">
-          <div class="word-card" onclick="speakChinese('我们')">
+          <div class="word-card">
             <div class="word-char">我们</div>
             <div class="word-pinyin">wǒmen</div>
             <div class="word-arti">Kami / Kita</div>
           </div>
-          <div class="word-card" onclick="speakChinese('见')">
+          <div class="word-card">
             <div class="word-char">见</div>
             <div class="word-pinyin">jiàn</div>
             <div class="word-arti">Bertemu / Berjumpa</div>
           </div>
-          <div class="word-card" onclick="speakChinese('学校')">
+          <div class="word-card">
             <div class="word-char">学校</div>
             <div class="word-pinyin">xuéxiào</div>
             <div class="word-arti">Sekolah / Kampus</div>
           </div>
-          <div class="word-card" onclick="speakChinese('书店')">
+          <div class="word-card">
             <div class="word-char">书店</div>
             <div class="word-pinyin">shūdiàn</div>
             <div class="word-arti">Toko buku</div>
           </div>
-          <div class="word-card" onclick="speakChinese('前')">
+          <div class="word-card">
             <div class="word-char">前</div>
             <div class="word-pinyin">qián</div>
             <div class="word-arti">Depan / Bagian depan</div>
           </div>
-          <div class="word-card" onclick="speakChinese('吧')">
+          <div class="word-card">
             <div class="word-char">吧</div>
             <div class="word-pinyin">ba</div>
             <div class="word-arti">Partikel saran ("yuk / mari")</div>
           </div>
-          <div class="word-card" onclick="speakChinese('下午')">
+          <div class="word-card">
+            <div class="word-char">好的</div>
+            <div class="word-pinyin">hǎo de</div>
+            <div class="word-arti">Baiklah / Oke</div>
+          </div>
+          <div class="word-card">
             <div class="word-char">下午</div>
             <div class="word-pinyin">xiàwǔ</div>
-            <div class="word-arti">Sore / Siang menjelang sore</div>
+            <div class="word-arti">Sore / Siang sore</div>
           </div>
-          <div class="word-card" onclick="speakChinese('两点')">
+          <div class="word-card">
             <div class="word-char">两点</div>
             <div class="word-pinyin">liǎng diǎn</div>
             <div class="word-arti">Pukul 2 (jam dua)</div>
           </div>
-          <div class="word-card" onclick="speakChinese('能')">
+          <div class="word-card">
             <div class="word-char">能</div>
             <div class="word-pinyin">néng</div>
             <div class="word-arti">Bisa / Dapat / Mampu</div>
           </div>
-          <div class="word-card" onclick="speakChinese('到')">
+          <div class="word-card">
             <div class="word-char">到</div>
             <div class="word-pinyin">dào</div>
             <div class="word-arti">Tiba / Sampai</div>
           </div>
-          <div class="word-card" onclick="speakChinese('吃')">
-            <div class="word-char">吃</div>
-            <div class="word-pinyin">chī</div>
-            <div class="word-arti">Makan</div>
-          </div>
-          <div class="word-card" onclick="speakChinese('午饭')">
-            <div class="word-char">午饭</div>
-            <div class="word-pinyin">wǔfàn</div>
+          <div class="word-card">
+            <div class="word-char">吃午饭</div>
+            <div class="word-pinyin">chī wǔfàn</div>
             <div class="word-arti">Makan siang</div>
           </div>
         </div>
@@ -1962,85 +1323,18 @@
     </div>
   </div>
 
-  <!-- ══ XIAOYU'S CLASSROOM SESI 2: KATA MODAL 能 (NÉNG) ══ -->
+  <!-- ══ TEKS 3 (SESUAI STANDAR BAB 1) ══ -->
   <div>
-    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (Sesi 2)</div>
-    <div class="classroom-box">
-      <div class="classroom-header">
-        <div class="avatar av-xiaoyu">语</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge">Xiaoyu's Classroom · 小语讲堂</div>
-          <div class="classroom-desc">Penggunaan Kata Bantu Modal 能 (néng - bisa / mampu)</div>
-        </div>
-      </div>
-
-      <div class="classroom-list">
-        <div class="classroom-group-title">
-          <span>⚡ 1. Pola Penggunaan 能 (néng)</span>
-        </div>
-        <p style="font-size:0.85rem;color:#475569;line-height:1.5;">
-          Kata bantu modal <strong>能 (néng)</strong> digunakan di depan kata kerja untuk menyatakan kemungkinan, kemampuan fisik, atau waktu yang mengizinkan seseorang melakukan suatu hal.
-        </p>
-
-        <div style="background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:0.8rem 1rem;font-size:0.85rem;">
-          <div style="margin-bottom:0.4rem;"><strong>Bentuk Positif:</strong> <span style="color:#059669;font-weight:700;">Subjek + 能 + Kata Kerja</span> (Contoh: 我能到 = Saya bisa sampai)</div>
-          <div style="margin-bottom:0.4rem;"><strong>Bentuk Negatif:</strong> <span style="color:#dc2626;font-weight:700;">Subjek + 不能 + Kata Kerja</span> (Contoh: 我不能去 = Saya tidak bisa pergi)</div>
-          <div><strong>Bentuk Tanya:</strong> <span style="color:#2563eb;font-weight:700;">Subjek + 能 + Kata Kerja + 吗？</span> (Contoh: 你能来吗？ = Apakah kamu bisa datang?)</div>
-        </div>
-
-        <div class="classroom-group-title" style="margin-top:0.6rem;">
-          <span>🗣️ 2. Contoh Kalimat untuk Dibaca Nyaring</span>
-        </div>
-
-        <div class="classroom-item">
-          <div class="item-number">1</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">下午两点你能到吗？</div>
-            <div class="bubble-pinyin">Xiàwǔ liǎng diǎn nǐ néng dào ma?</div>
-            <div class="bubble-arti">Jam dua siang apakah kamu bisa sampai?</div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('下午两点你能到吗？')" title="Dengar">🔊</button>
-        </div>
-
-        <div class="classroom-item">
-          <div class="item-number">2</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">我能在学校吃午饭。</div>
-            <div class="bubble-pinyin">Wǒ néng zài xuéxiào chī wǔfàn.</div>
-            <div class="bubble-arti">Saya bisa makan siang di sekolah.</div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('我能在学校吃午饭。')" title="Dengar">🔊</button>
-        </div>
-
-        <div class="classroom-item">
-          <div class="item-number">3</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">我们在书店前见吧。</div>
-            <div class="bubble-pinyin">Wǒmen zài shūdiàn qián jiàn ba.</div>
-            <div class="bubble-arti">Mari kita bertemu di depan toko buku.</div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('我们在书店前见吧。')" title="Dengar">🔊</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ TEKS 3 ══ -->
-  <div>
-    <div class="section-title">💬 Teks 3: 在医院 · Di Rumah Sakit (Kalimat Utama Pembelajaran)</div>
+    <div class="section-title">💬 Teks 3</div>
     <div class="dialog-box">
 
       <!-- 刘明: 小胡，还没吃饭呢？ -->
-      <div class="dialog-line" onclick="speakChinese('小胡，还没吃饭呢？')">
-        <div class="avatar av-liu" title="刘明 (Liú Míng)">刘</div>
+      <div class="dialog-line">
+        <div class="avatar av-liu">刘</div>
         <div class="bubble-wrap">
           <span class="speaker-name"><span class="speaker-hanzi">刘明</span><span class="speaker-pinyin"> (Liú Míng)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>小胡，还没吃饭呢？</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">小胡，还没吃饭呢？</div>
             <div class="bubble-pinyin">Xiǎo Hú, hái méi chīfàn ne?</div>
             <div class="bubble-arti">Xiao Hu, masih belum makan nih?</div>
           </div>
@@ -2048,15 +1342,12 @@
       </div>
 
       <!-- 胡医生: 没吃呢。 -->
-      <div class="dialog-line right hu" onclick="speakChinese('没吃呢。')">
-        <div class="avatar av-hu" title="胡医生 (Hú Yīshēng)">胡</div>
+      <div class="dialog-line right hu">
+        <div class="avatar av-hu">胡</div>
         <div class="bubble-wrap">
           <span class="speaker-name"><span class="speaker-hanzi">胡医生</span><span class="speaker-pinyin"> (Hú Yīshēng)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>没吃呢。</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">没吃呢。</div>
             <div class="bubble-pinyin">Méi chī ne.</div>
             <div class="bubble-arti">Belum makan nih.</div>
           </div>
@@ -2064,15 +1355,12 @@
       </div>
 
       <!-- 刘明: 大医院病人多，医生非常忙。 -->
-      <div class="dialog-line" onclick="speakChinese('大医院病人多，医生非常忙。')">
-        <div class="avatar av-liu" title="刘明 (Liú Míng)">刘</div>
+      <div class="dialog-line">
+        <div class="avatar av-liu">刘</div>
         <div class="bubble-wrap">
           <span class="speaker-name"><span class="speaker-hanzi">刘明</span><span class="speaker-pinyin"> (Liú Míng)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>大医院病人多，医生非常忙。</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">大医院病人多，医生非常忙。</div>
             <div class="bubble-pinyin">Dà yīyuàn bìngrén duō, yīshēng fēicháng máng.</div>
             <div class="bubble-arti">Rumah sakit besar pasiennya banyak, dokternya sangat sibuk.</div>
           </div>
@@ -2080,15 +1368,12 @@
       </div>
 
       <!-- 胡医生: 是的。我爸爸也在医院工作，他也非常忙。 -->
-      <div class="dialog-line right hu" onclick="speakChinese('是的。我爸爸也在医院工作，他也非常忙。')">
-        <div class="avatar av-hu" title="胡医生 (Hú Yīshēng)">胡</div>
+      <div class="dialog-line right hu">
+        <div class="avatar av-hu">胡</div>
         <div class="bubble-wrap">
           <span class="speaker-name"><span class="speaker-hanzi">胡医生</span><span class="speaker-pinyin"> (Hú Yīshēng)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>是的。我爸爸也在医院工作，他也非常忙。</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">是的。我爸爸也在医院工作，他也非常忙。</div>
             <div class="bubble-pinyin">Shì de. Wǒ bàba yě zài yīyuàn gōngzuò, tā yě fēicháng máng.</div>
             <div class="bubble-arti">Benar. Papa saya juga bekerja di rumah sakit, dia juga sangat sibuk.</div>
           </div>
@@ -2096,15 +1381,12 @@
       </div>
 
       <!-- 刘明: 你家有两个医生？ -->
-      <div class="dialog-line" onclick="speakChinese('你家有两个医生？')">
-        <div class="avatar av-liu" title="刘明 (Liú Míng)">刘</div>
+      <div class="dialog-line">
+        <div class="avatar av-liu">刘</div>
         <div class="bubble-wrap">
           <span class="speaker-name"><span class="speaker-hanzi">刘明</span><span class="speaker-pinyin"> (Liú Míng)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>你家有两个医生？</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">你家有两个医生？</div>
             <div class="bubble-pinyin">Nǐ jiā yǒu liǎng gè yīshēng?</div>
             <div class="bubble-arti">Di keluargamu ada dua orang dokter?</div>
           </div>
@@ -2112,15 +1394,12 @@
       </div>
 
       <!-- 胡医生: 对。 -->
-      <div class="dialog-line right hu" onclick="speakChinese('对。')">
-        <div class="avatar av-hu" title="胡医生 (Hú Yīshēng)">胡</div>
+      <div class="dialog-line right hu">
+        <div class="avatar av-hu">胡</div>
         <div class="bubble-wrap">
           <span class="speaker-name"><span class="speaker-hanzi">胡医生</span><span class="speaker-pinyin"> (Hú Yīshēng)</span></span>
           <div class="bubble">
-            <div class="bubble-hanzi">
-              <span>对。</span>
-              <button class="audio-btn" title="Dengar suara">🔊</button>
-            </div>
+            <div class="bubble-hanzi">对。</div>
             <div class="bubble-pinyin">Duì.</div>
             <div class="bubble-arti">Benar / Betul sekali.</div>
           </div>
@@ -2129,89 +1408,82 @@
 
       <!-- Sub-breakdown Kosakata Teks 3 -->
       <div class="sub-breakdown">
-        <div class="sub-breakdown-title">
-          <span>📚 Kosakata Baru · Teks 3</span>
-        </div>
+        <div class="sub-breakdown-title">📖 Arti Per Kata · Teks 3</div>
         <div class="breakdown-grid">
-          <div class="word-card" onclick="speakChinese('小胡')">
+          <div class="word-card">
             <div class="word-char">小胡</div>
             <div class="word-pinyin">Xiǎo Hú</div>
-            <div class="word-arti">Xiao Hu (panggilan akrab Dokter Hu)</div>
+            <div class="word-arti">Xiao Hu (Dokter Hu)</div>
           </div>
-          <div class="word-card" onclick="speakChinese('还')">
+          <div class="word-card">
             <div class="word-char">还</div>
             <div class="word-pinyin">hái</div>
             <div class="word-arti">Masih / Belum</div>
           </div>
-          <div class="word-card" onclick="speakChinese('吃饭')">
+          <div class="word-card">
             <div class="word-char">吃饭</div>
             <div class="word-pinyin">chīfàn</div>
-            <div class="word-arti">Makan / Menyantap nasi</div>
+            <div class="word-arti">Makan</div>
           </div>
-          <div class="word-card" onclick="speakChinese('大')">
-            <div class="word-char">大</div>
-            <div class="word-pinyin">dà</div>
-            <div class="word-arti">Besar</div>
-          </div>
-          <div class="word-card" onclick="speakChinese('医院')">
+          <div class="word-card">
             <div class="word-char">医院</div>
             <div class="word-pinyin">yīyuàn</div>
             <div class="word-arti">Rumah sakit</div>
           </div>
-          <div class="word-card" onclick="speakChinese('病人')">
+          <div class="word-card">
             <div class="word-char">病人</div>
             <div class="word-pinyin">bìngrén</div>
-            <div class="word-arti">Pasien / Orang sakit</div>
+            <div class="word-arti">Pasien</div>
           </div>
-          <div class="word-card" onclick="speakChinese('多')">
+          <div class="word-card">
             <div class="word-char">多</div>
             <div class="word-pinyin">duō</div>
             <div class="word-arti">Banyak</div>
           </div>
-          <div class="word-card" onclick="speakChinese('医生')">
+          <div class="word-card">
             <div class="word-char">医生</div>
             <div class="word-pinyin">yīshēng</div>
             <div class="word-arti">Dokter</div>
           </div>
-          <div class="word-card" onclick="speakChinese('非常')">
+          <div class="word-card">
             <div class="word-char">非常</div>
             <div class="word-pinyin">fēicháng</div>
-            <div class="word-arti">Sangat / Amat luar biasa</div>
+            <div class="word-arti">Sangat / Luar biasa</div>
           </div>
-          <div class="word-card" onclick="speakChinese('忙')">
+          <div class="word-card">
             <div class="word-char">忙</div>
             <div class="word-pinyin">máng</div>
             <div class="word-arti">Sibuk</div>
           </div>
-          <div class="word-card" onclick="speakChinese('是的')">
+          <div class="word-card">
             <div class="word-char">是的</div>
             <div class="word-pinyin">shì de</div>
             <div class="word-arti">Ya / Benar</div>
           </div>
-          <div class="word-card" onclick="speakChinese('爸爸')">
+          <div class="word-card">
             <div class="word-char">爸爸</div>
             <div class="word-pinyin">bàba</div>
-            <div class="word-arti">Ayah / Papa</div>
+            <div class="word-arti">Papa / Ayah</div>
           </div>
-          <div class="word-card" onclick="speakChinese('也')">
+          <div class="word-card">
             <div class="word-char">也</div>
             <div class="word-pinyin">yě</div>
-            <div class="word-arti">Juga / Pun</div>
+            <div class="word-arti">Juga</div>
           </div>
-          <div class="word-card" onclick="speakChinese('工作')">
+          <div class="word-card">
             <div class="word-char">工作</div>
             <div class="word-pinyin">gōngzuò</div>
-            <div class="word-arti">Bekerja / Pekerjaan</div>
+            <div class="word-arti">Bekerja</div>
           </div>
-          <div class="word-card" onclick="speakChinese('两个')">
+          <div class="word-card">
             <div class="word-char">两个</div>
             <div class="word-pinyin">liǎng gè</div>
-            <div class="word-arti">Dua orang / buah</div>
+            <div class="word-arti">Dua orang</div>
           </div>
-          <div class="word-card" onclick="speakChinese('对')">
+          <div class="word-card">
             <div class="word-char">对</div>
             <div class="word-pinyin">duì</div>
-            <div class="word-arti">Betul / Tepat</div>
+            <div class="word-arti">Betul</div>
           </div>
         </div>
       </div>
@@ -2219,297 +1491,250 @@
     </div>
   </div>
 
-  <!-- ══ XIAOYU'S CLASSROOM SESI 3: BEDAH KALIMAT UTAMA ══ -->
-  <div>
-    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (Sesi 3)</div>
-    <div class="classroom-box">
-      <div class="classroom-header">
-        <div class="avatar av-xiaoyu">语</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge">Xiaoyu's Classroom · 小语讲堂</div>
-          <div class="classroom-desc">Analisis Mendalam: 我爸爸也在医院工作 与 “非常”</div>
-        </div>
-      </div>
-
-      <div class="classroom-list">
-        <div class="classroom-group-title">
-          <span>💡 1. Penempatan Adverbia 也 (yě) dan Preposisi 在 (zài)</span>
-        </div>
-        <p style="font-size:0.85rem;color:#475569;line-height:1.5;">
-          Perhatikan urutan kata dalam kalimat:
-          <br>
-          <strong style="color:var(--primary);font-size:1.05rem;">我爸爸 也 在 医院 工作。</strong>
-          <br>
-          Aturan urutan tata bahasa Mandarin:
-          <br>
-          1. <strong>Subjek</strong>: 我爸爸 (Wǒ bàba - Papa saya)<br>
-          2. <strong>Adverbia (Kata Keterangan Tambahan)</strong>: 也 (yě - juga) diletakkan <em>sebelum frasa preposisi</em>.<br>
-          3. <strong>Frasa Preposisi Tempat</strong>: 在医院 (zài yīyuàn - di rumah sakit).<br>
-          4. <strong>Kata Kerja Utama</strong>: 工作 (gōngzuò - bekerja).<br>
-          ⚠️ <em>Jangan terbalik mengatakan: "我爸爸在医院也工作" (kurang alami) atau "我爸爸工作在医院" (salah dalam tata bahasa standar).</em>
-        </p>
-
-        <div class="classroom-group-title" style="margin-top:0.6rem;">
-          <span>🌟 2. Kata Keterangan Tingkat: 非常 (fēicháng) vs 很 (hěn)</span>
-        </div>
-        <div style="background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:0.8rem 1rem;font-size:0.85rem;line-height:1.5;">
-          <strong>非常 (fēicháng)</strong> memiliki intensitas penekanan yang lebih tinggi daripada <strong>很 (hěn)</strong>, sepadan dengan <em>"amat sangat / luar biasa"</em>:
-          <ul style="margin-left:1.2rem;margin-top:0.3rem;">
-            <li><strong>医生非常忙。</strong> (Yīshēng fēicháng máng. = Dokter luar biasa sibuk.)</li>
-            <li><strong>这只小猫非常漂亮。</strong> (Zhè zhī xiǎomāo fēicháng piàoliang. = Anak kucing ini sangat cantik sekali.)</li>
-          </ul>
-        </div>
-        <div class="classroom-group-title" style="margin-top:0.6rem;">
-          <span>⏳ 3. Ringkasan Praktis: "在" Sebagai Penunjuk Tempat vs "Sedang"</span>
-        </div>
-        <div style="background:#f8fafc;border:1.5px solid var(--border);border-radius:12px;padding:0.85rem 1rem;font-size:0.84rem;line-height:1.55;">
-          <table style="width:100%;border-collapse:collapse;">
-            <thead>
-              <tr style="border-bottom:1.5px solid #cbd5e1;text-align:left;color:var(--primary-dark);">
-                <th style="padding:0.35rem 0.5rem;">Pola Kalimat</th>
-                <th style="padding:0.35rem 0.5rem;">Fungsi "在"</th>
-                <th style="padding:0.35rem 0.5rem;">Contoh Kalimat</th>
-                <th style="padding:0.35rem 0.5rem;">Arti</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom:1px dashed #e2e8f0;">
-                <td style="padding:0.45rem 0.5rem;font-weight:600;color:#0369a1;">S + 在 + Tempat + Verb</td>
-                <td style="padding:0.45rem 0.5rem;">Di (Lokasi)</td>
-                <td style="padding:0.45rem 0.5rem;font-family:'Noto Sans SC';font-weight:600;">爸爸在医院工作</td>
-                <td style="padding:0.45rem 0.5rem;">Papa kerja di rumah sakit</td>
-              </tr>
-              <tr>
-                <td style="padding:0.45rem 0.5rem;font-weight:600;color:#be123c;">S + 在 + Verb</td>
-                <td style="padding:0.45rem 0.5rem;">Sedang (Aksi Berlangsung)</td>
-                <td style="padding:0.45rem 0.5rem;font-family:'Noto Sans SC';font-weight:600;">爸爸在工作</td>
-                <td style="padding:0.45rem 0.5rem;">Ayah sedang kerja</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ PERTANYAAN PEMAHAMAN TEKS 3 ══ -->
-  <div>
-    <div class="section-title">❓ Pertanyaan Pemahaman Teks 3 · 课文理解</div>
-    <div class="classroom-box" style="border-left: 5px solid #6366f1;">
-      <div class="classroom-list">
-        <div class="classroom-item" style="border-left:4px solid #6366f1;">
-          <div class="item-number" style="background:#6366f1;">1</div>
-          <div class="item-content">
-            <div class="bubble-hanzi" style="font-size:1.05rem;font-weight:700;">胡医生为什么非常忙？</div>
-            <div class="bubble-pinyin">Hú yīshēng wèishénme fēicháng máng?</div>
-            <div class="bubble-arti">
-              <strong>Jawaban:</strong> 因为大医院病人多。(Yīnwèi dà yīyuàn bìngrén duō. / Karena rumah sakit besar pasiennya banyak.)
-            </div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('因为大医院病人多。')" title="Dengar">🔊</button>
-        </div>
-        <div class="classroom-item" style="border-left:4px solid #6366f1;">
-          <div class="item-number" style="background:#6366f1;">2</div>
-          <div class="item-content">
-            <div class="bubble-hanzi" style="font-size:1.05rem;font-weight:700;">胡医生的爸爸在哪儿工作？</div>
-            <div class="bubble-pinyin">Hú yīshēng de bàba zài nǎr gōngzuò?</div>
-            <div class="bubble-arti">
-              <strong>Jawaban:</strong> 他爸爸也在医院工作。(Tā bàba yě zài yīyuàn gōngzuò. / Papanya juga bekerja di rumah sakit.)
-            </div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('他爸爸也在医院工作。')" title="Dengar">🔊</button>
-        </div>
-        <div class="classroom-item" style="border-left:4px solid #6366f1;">
-          <div class="item-number" style="background:#6366f1;">3</div>
-          <div class="item-content">
-            <div class="bubble-hanzi" style="font-size:1.05rem;font-weight:700;">胡医生家有几个医生？</div>
-            <div class="bubble-pinyin">Hú yīshēng jiā yǒu jǐ gè yīshēng?</div>
-            <div class="bubble-arti">
-              <strong>Jawaban:</strong> 他家有两个医生。(Tā jiā yǒu liǎng gè yīshēng. / Keluarganya punya 2 orang dokter.)
-            </div>
-          </div>
-          <button class="audio-btn" onclick="speakChinese('他家有两个医生。')" title="Dengar">🔊</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ LATIHAN KOMPREHENSIF (COMPREHENSIVE EXERCISES) ══ -->
-  <div>
-    <div class="section-title">📝 Latihan Komprehensif · 综合练习</div>
-    <div class="classroom-box" style="border-left: 5px solid #8b5cf6;">
-      <div class="classroom-header">
-        <div class="avatar av-xiaoyu" style="background:#8b5cf6;color:#fff;">练</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background:#ede9fe;color:#6d28d9;">Comprehensive Exercises · 综合练习</div>
-          <div class="classroom-desc">Uji pemahaman Anda dengan melengkapi kalimat (选词填空) dan menyusun pola kalimat (连词成句)!</div>
-        </div>
-      </div>
-
-      <div class="classroom-list">
-        <!-- ══ BAGIAN 1: 选词填空 ══ -->
-        <div class="classroom-group-title">
-          <span>✏️ 1. 选词填空 · Melengkapi Bagian Rumpang (Choose the Proper Words)</span>
-        </div>
-
-        <!-- Bank Kosakata Pilihan (A - E) -->
-        <div style="background:#faf5ff;border:1.5px dashed #c084fc;border-radius:12px;padding:0.85rem 1rem;">
-          <div style="font-size:0.78rem;font-weight:700;color:#6b21a8;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.45rem;">
-            Pilihan Kata · 选项 (A–E):
-          </div>
-          <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
-            <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>A. 医院</strong> <em>(yīyuàn / rumah sakit)</em>
-            </span>
-            <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>B. 漂亮</strong> <em>(piàoliang / cantik)</em>
-            </span>
-            <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>C. 在</strong> <em>(zài / di, berada)</em>
-            </span>
-            <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>D. 能</strong> <em>(néng / bisa, mampu)</em>
-            </span>
-            <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>E. 房间外</strong> <em>(fángjiān wài / di luar kamar)</em>
-            </span>
-          </div>
-        </div>
-
-        <!-- Soal 1 -->
-        <div class="classroom-item" style="border-left:4px solid #8b5cf6;">
-          <div class="item-number" style="background:#8b5cf6;color:#fff;">1</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">（ <span style="color:#059669;font-weight:700;text-decoration:underline;">E 房间外</span> ）有一只小猫。</div>
-            <div class="bubble-pinyin">Fángjiān wài yǒu yì zhī xiǎomāo.</div>
-            <div class="bubble-arti"><strong>Terjemahan:</strong> Di luar kamar ada seekor anak kucing.</div>
-          </div>
-        </div>
-
-        <!-- Soal 2 -->
-        <div class="classroom-item" style="border-left:4px solid #8b5cf6;">
-          <div class="item-number" style="background:#8b5cf6;color:#fff;">2</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">下午两点你（ <span style="color:#059669;font-weight:700;text-decoration:underline;">D 能</span> ）到吗？</div>
-            <div class="bubble-pinyin">Xiàwǔ liǎng diǎn nǐ néng dào ma?</div>
-            <div class="bubble-arti"><strong>Terjemahan:</strong> Jam dua siang apakah kamu bisa tiba?</div>
-          </div>
-        </div>
-
-        <!-- Soal 3 -->
-        <div class="classroom-item" style="border-left:4px solid #8b5cf6;">
-          <div class="item-number" style="background:#8b5cf6;color:#fff;">3</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">我爸爸也（ <span style="color:#059669;font-weight:700;text-decoration:underline;">C 在</span> ）（ <span style="color:#059669;font-weight:700;text-decoration:underline;">A 医院</span> ）工作。</div>
-            <div class="bubble-pinyin">Wǒ bàba yě zài yīyuàn gōngzuò.</div>
-            <div class="bubble-arti"><strong>Terjemahan:</strong> Papa saya juga bekerja di rumah sakit.</div>
-          </div>
-        </div>
-
-        <!-- Soal 4 -->
-        <div class="classroom-item" style="border-left:4px solid #8b5cf6;">
-          <div class="item-number" style="background:#8b5cf6;color:#fff;">4</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">这只小猫真（ <span style="color:#059669;font-weight:700;text-decoration:underline;">B 漂亮</span> ）！</div>
-            <div class="bubble-pinyin">Zhè zhī xiǎomāo zhēn piàoliang!</div>
-            <div class="bubble-arti"><strong>Terjemahan:</strong> Anak kucing ini sungguh cantik!</div>
-          </div>
-        </div>
-
-        <!-- ══ BAGIAN 2: 连词成句 ══ -->
-        <div class="classroom-group-title" style="margin-top:1rem;">
-          <span>🧩 2. 连词成句 · Menyusun Kata Menjadi Kalimat (Reorder Words)</span>
-        </div>
-
-        <div class="classroom-item" style="border-left:4px solid #0891b2;">
-          <div class="item-number" style="background:#0891b2;color:#fff;">1</div>
-          <div class="item-content">
-            <div style="font-size:0.85rem;color:#0891b2;font-weight:700;">
-              Soal: 医院 / 在 / 爸爸 / 工作 / 我 / 也
-            </div>
-            <div class="bubble-hanzi" style="margin-top:0.2rem;">
-              👉 <strong>我爸爸也在医院工作。</strong>
-            </div>
-            <div class="bubble-pinyin">Wǒ bàba yě zài yīyuàn gōngzuò.</div>
-            <div class="bubble-arti">Pola: Subjek (我爸爸) + 也 + 在 + Tempat (医院) + Verb (工作).</div>
-          </div>
-        </div>
-
-        <div class="classroom-item" style="border-left:4px solid #0891b2;">
-          <div class="item-number" style="background:#0891b2;color:#fff;">2</div>
-          <div class="item-content">
-            <div style="font-size:0.85rem;color:#0891b2;font-weight:700;">
-              Soal: 吃午饭 / 学校 / 在 / 我
-            </div>
-            <div class="bubble-hanzi" style="margin-top:0.2rem;">
-              👉 <strong>我在学校吃午饭。</strong>
-            </div>
-            <div class="bubble-pinyin">Wǒ zài xuéxiào chī wǔfàn.</div>
-            <div class="bubble-arti">Pola: Subjek (我) + 在 + Tempat (学校) + Verb/Aktivitas (吃午饭).</div>
-          </div>
-        </div>
-
-        <div class="classroom-item" style="border-left:4px solid #0891b2;">
-          <div class="item-number" style="background:#0891b2;color:#fff;">3</div>
-          <div class="item-content">
-            <div style="font-size:0.85rem;color:#0891b2;font-weight:700;">
-              Soal: 看病 / 医院 / 去 / 我
-            </div>
-            <div class="bubble-hanzi" style="margin-top:0.2rem;">
-              👉 <strong>我去医院看病。</strong>
-            </div>
-            <div class="bubble-pinyin">Wǒ qù yīyuàn kàn bìng.</div>
-            <div class="bubble-arti">Pola: Subjek (我) + 去 + Tempat (医院) + Aktivitas (看病).</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ TONGUE TWISTER ══ -->
+  <!-- ══ 6. TONGUE TWISTER (SESUAI STANDAR BAB 1) ══ -->
   <div>
     <div class="section-title">👅 Tongue Twister · 绕口令</div>
     <div class="twister-box">
-      <div class="twister-title">
-        <span>🐱 白猫与黑猫 · Kucing Putih &amp; Kucing Hitam</span>
-        <button class="audio-btn" onclick="speakChinese('白猫一只，黑猫一只。白猫抓老鼠，黑猫也抓老鼠。两只小猫，真厉害！')" title="Dengar">🔊</button>
+      <div class="twister-line">
+        <div class="twister-hanzi">白猫一只，黑猫一只。</div>
+        <div class="twister-pinyin">Bái māo yì zhī, hēi māo yì zhī.</div>
+        <div class="twister-arti">Seekor kucing putih, seekor kucing hitam.</div>
       </div>
-      <div class="twister-lines">
-        <div class="twister-line">
-          <span class="twister-hanzi">白猫一只，黑猫一只。</span>
-          <span class="twister-pinyin">Bái māo yì zhī, hēi māo yì zhī.</span>
-          <span class="twister-arti">Seekor kucing putih, seekor kucing hitam.</span>
-        </div>
-        <div class="twister-line">
-          <span class="twister-hanzi">白猫抓老鼠，黑猫也抓老鼠。</span>
-          <span class="twister-pinyin">Bái māo zhuā lǎoshǔ, hēi māo yě zhuā lǎoshǔ.</span>
-          <span class="twister-arti">Kucing putih menangkap tikus, kucing hitam juga menangkap tikus.</span>
-        </div>
-        <div class="twister-line">
-          <span class="twister-hanzi">两只小猫，真厉害！</span>
-          <span class="twister-pinyin">Liǎng zhī xiǎomāo, zhēn lìhai!</span>
-          <span class="twister-arti">Dua ekor anak kucing, sungguh hebat!</span>
+      <div class="twister-line">
+        <div class="twister-hanzi">白猫抓老鼠，黑猫也抓老鼠。</div>
+        <div class="twister-pinyin">Bái māo zhuā lǎoshǔ, hēi māo yě zhuā lǎoshǔ.</div>
+        <div class="twister-arti">Kucing putih menangkap tikus, kucing hitam juga menangkap tikus.</div>
+      </div>
+      <div class="twister-line">
+        <div class="twister-hanzi">两只小猫，真厉害！</div>
+        <div class="twister-pinyin">Liǎng zhī xiǎomāo, zhēn lìhai!</div>
+        <div class="twister-arti">Dua ekor anak kucing, sungguh hebat!</div>
+      </div>
+
+      <!-- Sub-breakdown Twister -->
+      <div class="twister-breakdown">
+        <div class="twister-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
+        <div class="twister-grid">
+          <div class="word-card">
+            <div class="word-char">白</div>
+            <div class="word-pinyin">bái</div>
+            <div class="word-arti">putih</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">黑</div>
+            <div class="word-pinyin">hēi</div>
+            <div class="word-arti">hitam</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">猫</div>
+            <div class="word-pinyin">māo</div>
+            <div class="word-arti">kucing</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">抓</div>
+            <div class="word-pinyin">zhuā</div>
+            <div class="word-arti">menangkap</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">老鼠</div>
+            <div class="word-pinyin">lǎoshǔ</div>
+            <div class="word-arti">tikus</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">厉害</div>
+            <div class="word-pinyin">lìhai</div>
+            <div class="word-arti">hebat / jago</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ══ FLOATING TOOLBAR DOCK ══ -->
-  <div class="dialog-toolbar">
-    <div class="toolbar-title">
-      <span class="icon">⚙️</span>
-      <span>Bantuan:</span>
+  <!-- ══ 7. XIAOYU'S CLASSROOM: TATA BAHASA & RUMUS LENGKAP (SESUAI STANDAR BAB 1) ══ -->
+  <div>
+    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂</div>
+    <div class="classroom-box">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">语</div>
+        <div>
+          <span class="classroom-badge">Xiaoyu's Classroom · 语法解析与核心句型</span>
+          <div class="classroom-desc">Panduan komprehensif tata bahasa Bab 8: Rumus aktivitas di tempat, perbandingan fungsi "在", catatan penggabungan kata satuan, dan modal "能":</div>
+        </div>
+      </div>
+
+      <div class="classroom-list">
+        <!-- Item 1: Rumus Tata Bahasa Utama (Kotak Biru) -->
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">Rumus Tata Bahasa: Aktivitas di Suatu Tempat</div>
+            <div class="bubble-pinyin">Grammar Structure: S + 去/在 + Tempat + Aktivitas</div>
+            <div class="bubble-arti">
+              <strong>1. Rumus Pergerakan Berarah:</strong><br>
+              <code style="background:#e0f2fe;color:#0369a1;padding:2px 6px;border-radius:4px;font-weight:700;">Subjek + 去 (qù) + Keterangan Tempat + Aktivitas / Kata Kerja</code><br>
+              (Subjek + pergi ke + keterangan tempat + aktivitas/kata kerja)<br>
+              • 我去医院看病。(Wǒ qù yīyuàn kàn bìng. = Saya pergi ke rumah sakit untuk periksa/berobat.)<br>
+              • 他去学校上课。(Tā qù xuéxiào shàngkè. = Dia pergi ke sekolah untuk masuk kelas.)<br><br>
+              <strong>2. Rumus Tempat Terjadinya Aksi:</strong><br>
+              <code style="background:#e0f2fe;color:#0369a1;padding:2px 6px;border-radius:4px;font-weight:700;">Subjek + 在 (zài) + Keterangan Tempat + Kata Kerja</code><br>
+              (Subjek + berada/di + keterangan tempat + kata kerja)<br>
+              • <strong>我爸爸也在医院工作。</strong> (Wǒ bàba yě zài yīyuàn gōngzuò. = Papa saya juga bekerja di rumah sakit.)<br>
+              • 我在学校吃午饭。(Wǒ zài xuéxiào chī wǔfàn. = Saya makan siang di sekolah.)
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Catatan Tambahan - Perbandingan Dua Fungsi "在" (Kotak Merah) -->
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">Catatan Tambahan: Perbandingan Penggunaan Kata "在" (zài)</div>
+            <div class="bubble-pinyin">Grammar Note: 在 + Tempat + Verb vs 在 + Verb</div>
+            <div class="bubble-arti">
+              <strong>Pola A: Menunjukkan Lokasi Aktivitas (Subjek + berada di tempat + kerja)</strong><br>
+              👉 <strong>爸爸在医院工作</strong> (bàba zài yīyuàn gōngzuò)<br>
+              Arti: <em>Papa kerja di rumah sakit</em>.<br><br>
+              <strong>Pola B: Menunjukkan Aktivitas Sedang Berlangsung (Subjek + sedang + kata kerja)</strong><br>
+              👉 <strong>爸爸在工作</strong> (bàba zài gōngzuò)<br>
+              Arti: <em>Ayah sedang kerja</em>.<br><br>
+              <em>Contoh Berpasangan:</em><br>
+              • 我在学校吃午饭 (Saya makan siang di sekolah) ↔ 我在吃午饭 (Saya sedang makan siang).<br>
+              • 她在图书馆看书 (Dia membaca buku di perpustakaan) ↔ 她在看书呢 (Dia sedang membaca buku).
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Catatan Kecil (小语助力 / Xiaoyu's Tip) -->
+        <div class="classroom-item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">小语助力：量词可以和指示代词直接组合</div>
+            <div class="bubble-pinyin">Liàngcí kěyǐ hé zhǐshì dàicí zhíjiē zǔhé.</div>
+            <div class="bubble-arti">
+              <strong>Aturan Satuan:</strong> Kata satuan <em>(measure word)</em> dapat langsung digabungkan dengan kata ganti penunjuk <em>(demonstrative pronouns)</em>.<br>
+              • <strong>这 (zhè) + 只 (zhī) → 这只 (zhè zhī)</strong> = yang seekor ini (contoh: <em>这只小猫</em> = anak kucing ini).<br>
+              • <strong>那 (nà) + 只 (zhī) → 那只 (nà zhī)</strong> = yang seekor itu (contoh: <em>那只小狗</em> = anjing itu).<br>
+              • <strong>这 (zhè) + 个 (gè) → 这个 (zhè ge)</strong> = yang ini (contoh: <em>这个人</em> = orang ini).<br>
+              • <strong>那 (nà) + 本 (běn) → 那本 (nà běn)</strong> = yang itu (contoh: <em>那本书</em> = buku itu).
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Kata Penunjuk Arah & Posisi (方位词) -->
+        <div class="classroom-item">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">方位词：Kata Penunjuk Arah dan Posisi</div>
+            <div class="bubble-pinyin">Fāngwèicí: Kata Benda + 方位词</div>
+            <div class="bubble-arti">
+              Letakkan kata benda di depan, lalu diikuti kata posisi:<br>
+              • <strong>房间外</strong> (fángjiān wài) = di luar kamar.<br>
+              • <strong>桌子下</strong> (zhuōzi xià) = di bawah meja.<br>
+              • <strong>书店前</strong> (shūdiàn qián) = di depan toko buku.<br>
+              • <strong>医院里</strong> (yīyuàn lǐ) = di dalam rumah sakit.<br>
+              • <em>Catatan Satuan:</em> Hewan kecil menggunakan <strong>只 (zhī)</strong>, sedangkan hewan besar menggunakan <strong>头 (tóu)</strong> (misal: 一头大象 = seekor gajah).
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Kata Bantu Modal 能 (néng) -->
+        <div class="classroom-item">
+          <div class="item-number">5</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">助动词“能”：Menyatakan Kemampuan atau Kesempatan</div>
+            <div class="bubble-pinyin">Modal Verb "néng": S + 能 + Verb</div>
+            <div class="bubble-arti">
+              • <strong>Positif:</strong> 下午两点我能到。(Jam dua siang saya bisa sampai.)<br>
+              • <strong>Negatif:</strong> 对不起，我不能去。(Maaf, saya tidak bisa pergi.)<br>
+              • <strong>Tanya:</strong> 下午两点你能到吗？(Jam dua siang apakah kamu bisa sampai?)
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="toolbar-buttons">
-      <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤 Pinyin</button>
-      <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti Kalimat">🇮🇩 Arti</button>
-      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Arti Per Kata">📖 Kata</button>
-      <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warna-warni Hanzi &amp; Pinyin">🎨 Warna</button>
+  </div>
+
+  <!-- ══ 8. LATIHAN KOMPREHENSIF (SESUAI STANDAR BAB 1) ══ -->
+  <div>
+    <div class="section-title">📝 Comprehensive Exercises · 综合练习</div>
+    <div class="classroom-box" style="border-left: 5px solid #8e44ad;">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu" style="background:#8e44ad;">练</div>
+        <div>
+          <span class="classroom-badge" style="background:#f3e8ff;color:#7e22ce;">Comprehensive Exercises · 综合练习</span>
+          <div class="classroom-desc">Evaluasi pemahaman Anda dengan melengkapi kalimat dan menyusun pola kalimat:</div>
+        </div>
+      </div>
+
+      <!-- Bank Kosakata Pilihan A - E -->
+      <div style="background:#fdf4ff;border:1.5px dashed #d8b4fe;border-radius:12px;padding:0.85rem 1rem;">
+        <div style="font-size:0.78rem;font-weight:700;color:#7e22ce;text-transform:uppercase;margin-bottom:0.45rem;">
+          Pilihan Kata · 选项 (A–E):
+        </div>
+        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;font-size:0.86rem;">
+          <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.3rem 0.65rem;border-radius:8px;"><strong>A.</strong> 医院 (yīyuàn / rumah sakit)</span>
+          <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.3rem 0.65rem;border-radius:8px;"><strong>B.</strong> 漂亮 (piàoliang / cantik)</span>
+          <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.3rem 0.65rem;border-radius:8px;"><strong>C.</strong> 在 (zài / di, berada)</span>
+          <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.3rem 0.65rem;border-radius:8px;"><strong>D.</strong> 能 (néng / bisa, mampu)</span>
+          <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.3rem 0.65rem;border-radius:8px;"><strong>E.</strong> 房间外 (fángjiān wài / di luar kamar)</span>
+        </div>
+      </div>
+
+      <div class="classroom-list" style="margin-top:0.85rem;">
+        <div class="classroom-item">
+          <div class="item-number" style="background:#8e44ad;">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">（ <strong>E 房间外</strong> ）有一只小猫。</div>
+            <div class="bubble-pinyin">Fángjiān wài yǒu yì zhī xiǎomāo.</div>
+            <div class="bubble-arti"><strong>Jawaban:</strong> E. 房间外 (Di luar kamar ada seekor anak kucing.)</div>
+          </div>
+        </div>
+
+        <div class="classroom-item">
+          <div class="item-number" style="background:#8e44ad;">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">下午两点你（ <strong>D 能</strong> ）到吗？</div>
+            <div class="bubble-pinyin">Xiàwǔ liǎng diǎn nǐ néng dào ma?</div>
+            <div class="bubble-arti"><strong>Jawaban:</strong> D. 能 (Jam dua siang apakah kamu bisa sampai?)</div>
+          </div>
+        </div>
+
+        <div class="classroom-item">
+          <div class="item-number" style="background:#8e44ad;">3</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">我爸爸也（ <strong>C 在</strong> ）（ <strong>A 医院</strong> ）工作。</div>
+            <div class="bubble-pinyin">Wǒ bàba yě zài yīyuàn gōngzuò.</div>
+            <div class="bubble-arti"><strong>Jawaban:</strong> C. 在 &amp; A. 医院 (Papa saya juga bekerja di rumah sakit.)</div>
+          </div>
+        </div>
+
+        <div class="classroom-item">
+          <div class="item-number" style="background:#8e44ad;">4</div>
+          <div class="item-content">
+            <div class="bubble-hanzi">这只小猫真（ <strong>B 漂亮</strong> ）！</div>
+            <div class="bubble-pinyin">Zhè zhī xiǎomāo zhēn piàoliang!</div>
+            <div class="bubble-arti"><strong>Jawaban:</strong> B. 漂亮 (Anak kucing ini sungguh cantik!)</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
 </div><!-- /wrap -->
+
+<!-- ══ FLOATING TOOLBAR DOCK (SESUAI STANDAR BAB 1) ══ -->
+<div class="dialog-toolbar">
+  <div class="toolbar-title">
+    <span class="icon">⚙️</span>
+    <span>Bantuan:</span>
+  </div>
+  <div class="toolbar-buttons">
+    <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+    <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti">🇮🇩</button>
+    <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Detail">📖</button>
+    <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warnai Karakter Per Kata">🎨</button>
+  </div>
+</div>
 
 <script>
   // Palet warna kontras & cerah untuk karakter per kata
@@ -2546,19 +1771,6 @@
 
   function isHanziChar(ch) {
     return /[\u3007\u4e00-\u9fa5]/.test(ch);
-  }
-
-  // Web Speech API Native Mandarin Audio
-  function speakChinese(text) {
-    if (!('speechSynthesis' in window)) {
-      return;
-    }
-    window.speechSynthesis.cancel();
-    const cleanText = text.replace(/<[^>]+>/g, '').replace(/[（）()👉📌0-9–A-E.]/g, '').trim();
-    const utter = new SpeechSynthesisUtterance(cleanText);
-    utter.lang = 'zh-CN';
-    utter.rate = 0.85;
-    window.speechSynthesis.speak(utter);
   }
 
   function colorizePair(hanziText, pinyinText, charColorMap) {
@@ -2638,11 +1850,11 @@
 
   function applyColors() {
     const charColorMap = {
+      '你': '#e11d48',
+      '好': '#16a34a',
       '我': '#e11d48',
-      '爸': '#2563eb',
-      '也': '#7c3aed',
       '在': '#ea580c',
-      '医': '#0284c7',
+      '医': '#2563eb',
       '院': '#059669',
       '工': '#ca8a04',
       '作': '#d97706'
@@ -2650,7 +1862,7 @@
 
     // 1. Warnai dialog bubbles
     document.querySelectorAll('.bubble').forEach(bubble => {
-      const hzEl = bubble.querySelector('.bubble-hanzi span') || bubble.querySelector('.bubble-hanzi');
+      const hzEl = bubble.querySelector('.bubble-hanzi');
       const pyEl = bubble.querySelector('.bubble-pinyin');
       if (!hzEl || !pyEl) return;
 
@@ -2662,7 +1874,7 @@
       pyEl.innerHTML = res.pinyin;
     });
 
-    // 2. Warnai word cards
+    // 2. Warnai word cards (arti per kata)
     document.querySelectorAll('.word-card').forEach(card => {
       const charEl = card.querySelector('.word-char');
       const pyEl = card.querySelector('.word-pinyin');
@@ -2676,7 +1888,7 @@
       pyEl.innerHTML = res.pinyin;
     });
 
-    // 3. Warnai nama pembicara
+    // 3. Warnai nama pembicara (speaker name)
     document.querySelectorAll('.speaker-name').forEach(spk => {
       const hzEl = spk.querySelector('.speaker-hanzi');
       const pyEl = spk.querySelector('.speaker-pinyin');
@@ -2706,13 +1918,55 @@
         pyEl.innerHTML = res.pinyin;
       });
     });
+
+    // 5. Warnai Character cards (主要人物)
+    document.querySelectorAll('.character-box').forEach(box => {
+      box.querySelectorAll('.char-card').forEach(card => {
+        const nameHz = card.querySelector('.char-name-hanzi');
+        const namePy = card.querySelector('.char-name-pinyin');
+        if (nameHz && namePy) {
+          if (!nameHz.dataset.origText) nameHz.dataset.origText = nameHz.textContent;
+          if (!namePy.dataset.origText) namePy.dataset.origText = namePy.textContent;
+          const resName = colorizePair(nameHz.dataset.origText, namePy.dataset.origText, charColorMap);
+          nameHz.innerHTML = resName.hanzi;
+          namePy.innerHTML = resName.pinyin;
+        }
+        const descHz = card.querySelector('.char-desc-hanzi');
+        const descPy = card.querySelector('.char-desc-pinyin');
+        if (descHz && descPy) {
+          if (!descHz.dataset.origText) descHz.dataset.origText = descHz.textContent;
+          if (!descPy.dataset.origText) descPy.dataset.origText = descPy.textContent;
+          const resDesc = colorizePair(descHz.dataset.origText, descPy.dataset.origText, charColorMap);
+          descHz.innerHTML = resDesc.hanzi;
+          descPy.innerHTML = resDesc.pinyin;
+        }
+      });
+    });
+
+    // 6. Warnai Xiaoyu Classroom items
+    document.querySelectorAll('.classroom-box').forEach(box => {
+      box.querySelectorAll('.item-content').forEach(item => {
+        const hzEl = item.querySelector('.bubble-hanzi');
+        const pyEl = item.querySelector('.bubble-pinyin');
+        if (!hzEl || !pyEl) return;
+
+        if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
+        if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
+
+        const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      });
+    });
   }
 
   function removeColors() {
-    const selector = '.bubble-hanzi span, .bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
+      } else if (el.dataset.origText) {
+        el.textContent = el.dataset.origText;
       }
       el.style.color = '';
       el.style.fontWeight = '';
@@ -2745,9 +1999,15 @@
   }
 
   function toggleVocab() {
+    const anchor = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 3);
+    const viewportOffset = anchor ? anchor.getBoundingClientRect().top : 0;
     document.body.classList.toggle('show-vocab');
     localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
     updateToggleUI();
+    if (anchor) {
+      const docOffsetAfter = anchor.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: docOffsetAfter - viewportOffset, behavior: 'instant' });
+    }
   }
 
   function toggleColor() {
