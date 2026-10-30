@@ -934,6 +934,267 @@
     }
 
   
+  
+
+/* ── ANGKA TABLE ── */
+    .angka-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .angka-table th {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      padding: 0.65rem 0.85rem;
+      text-align: center;
+      font-size: 0.82rem;
+    }
+    .angka-table th:first-child { border-radius: 8px 0 0 0; }
+    .angka-table th:last-child  { border-radius: 0 8px 0 0; }
+    .angka-table td {
+      padding: 0.6rem 0.85rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .angka-table tr:last-child td { border-bottom: none; }
+    .angka-table tr:nth-child(even) td { background: #f0fdf4; }
+    .angka-table .td-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .angka-table .td-pinyin {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #475569;
+    }
+    .angka-table .td-arti {
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    /* ── DE-BOX (GRAMMAR BOX) BAB 4 ── */
+    .de-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: none;
+      padding: 1.5rem;
+      border: 1.5px solid var(--border);
+      border-left: 5px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .de-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .de-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #047857;
+      background: #d1fae5;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+    }
+    .de-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .de-desc {
+      font-size: 0.85rem;
+      color: var(--sub);
+      line-height: 1.55;
+    }
+    .de-rules {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .de-rule-card {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .de-rule-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .de-formula {
+      background: #ffffff;
+      border: 1px solid #a7f3d0;
+      border-radius: 10px;
+      padding: 0.65rem 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .de-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .chip-subj { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+    .chip-verb { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+    .chip-num  { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .chip-cls  { background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; }
+    .chip-obj  { background: #ffe4e6; color: #9f1239; border: 1px solid #fecdd3; }
+    .de-plus   { color: #94a3b8; font-weight: 700; font-size: 0.9rem; }
+
+    /* ── CATATAN BOX ── */
+    .catatan-box {
+      background: #fefce8;
+      border: 1.5px solid #fde68a;
+      border-left: 5px solid #f59e0b;
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .catatan-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #92400e;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .catatan-item {
+      font-size: 0.84rem;
+      color: #44403c;
+      line-height: 1.6;
+      padding: 0.35rem 0 0.35rem 0.75rem;
+      border-left: 3px solid #fbbf24;
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 0 8px 8px 0;
+    }
+    .catatan-item strong { color: #7c2d12; }
+
+    /* ── MATCHING EXERCISE (GAMBAR & KOSAKATA) ── */
+    .match-vocab-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+    .match-vocab-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.85rem;
+    }
+    .match-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .label-a { background: #0369a1; }
+    .label-b { background: #7c3aed; }
+    .label-c { background: #059669; }
+    .label-d { background: #c0392b; }
+    .label-e { background: #db2777; }
+    .label-f { background: #d97706; }
+    .match-hz { font-family: 'Noto Sans SC', sans-serif; font-size: 1rem; font-weight: 700; color: var(--primary-dark); }
+    .match-py { font-size: 0.75rem; color: #64748b; }
+    .match-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .match-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 0.85rem 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .match-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+    .match-img-placeholder {
+      font-size: 2.6rem;
+      line-height: 1;
+    }
+    .match-img-desc {
+      font-size: 0.74rem;
+      color: var(--sub);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .match-img-desc small {
+      font-weight: 400;
+      display: block;
+    }
+    .match-answer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      background: var(--primary-soft);
+      border-radius: 10px;
+      padding: 0.55rem 0.7rem;
+      width: 100%;
+    }
+    .match-hz-big {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.2;
+    }
+    .match-py-text {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #475569;
+    }
+    .match-id-text {
+      font-size: 0.75rem;
+      color: var(--sub);
+    }
+    @media (max-width: 600px) {
+      .match-grid { grid-template-columns: repeat(2, 1fr); }
+      .match-vocab-bank { gap: 0.4rem; }
+      .match-vocab-item { padding: 0.35rem 0.65rem; font-size: 0.78rem; }
+    }
+  
   </style>
 </head>
 <body>
