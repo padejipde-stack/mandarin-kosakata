@@ -1198,6 +1198,136 @@
       .match-vocab-item { padding: 0.35rem 0.65rem; font-size: 0.78rem; }
     }
   
+  
+
+    
+    /* ?? ENHANCED NUMBER & GRAMMAR COMPARE CARDS ?? */
+    .number-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.45rem;
+    }
+    .number-grid.wide {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .number-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-top: 3.5px solid var(--primary);
+      border-radius: 12px;
+      padding: 0.85rem 0.65rem;
+      text-align: center;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+    .number-card:hover {
+      border-color: #cbd5e1;
+      border-top-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      background: #f8fafc;
+    }
+    .number-card .bubble-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.25;
+    }
+    .number-card .bubble-pinyin {
+      font-size: 0.82rem;
+      color: #047857;
+      font-weight: 600;
+      margin-top: 0.3rem;
+      letter-spacing: 0.2px;
+    }
+    .number-card .bubble-arti {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #475569;
+      margin-top: 0.35rem;
+      padding-top: 0.35rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.1);
+      width: 100%;
+      line-height: 1.35;
+    }
+
+    /* Grammar Compare Cards (Er vs Liang) */
+    .grammar-compare-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .compare-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.15rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .compare-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+    .compare-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      align-self: flex-start;
+      letter-spacing: 0.2px;
+    }
+    .compare-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: #334155;
+      padding: 0;
+      margin: 0;
+    }
+    .compare-points li {
+      position: relative;
+      padding-left: 1.1rem;
+    }
+    .compare-points li::before {
+      content: '?';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 0.75rem;
+      top: 0.15rem;
+    }
+    .compare-card:first-child .compare-points li::before {
+      color: #d97706;
+    }
+    @media (max-width: 600px) {
+      .grammar-compare-box { grid-template-columns: 1fr; }
+      .number-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+      .number-grid.wide { grid-template-columns: repeat(2, 1fr); }
+      .number-card { padding: 0.75rem 0.5rem; }
+      .number-card .bubble-hanzi { font-size: 1.35rem; }
+      .number-card .bubble-pinyin { font-size: 0.76rem; }
+      .number-card .bubble-arti { font-size: 0.75rem; }
+    }
+
   </style>
 </head>
 <body>
