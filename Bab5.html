@@ -2586,21 +2586,21 @@
           <div style="font-size:0.78rem;font-weight:700;color:#6b21a8;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.45rem;">
             Pilihan Kata · 选项 (A–E):
           </div>
-          <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+                    <div class="selection-options" style="display:flex;gap:0.6rem;flex-wrap:wrap;">
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>A. 菜</strong> <em>(cài): Sayuran / hidangan / masakan</em>
+              <strong>A. <span style="color:#059669;font-weight:700;">菜</span></strong> <em>(<span style="color:#059669;font-weight:700;">cài</span>): Sayuran / hidangan / masakan</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>B. 喜欢</strong> <em>(xǐhuan): Suka</em>
+              <strong>B. <span style="color:#d97706;font-weight:700;">喜</span><span style="color:#db2777;font-weight:700;">欢</span></strong> <em>(<span style="color:#d97706;font-weight:700;">xǐ</span><span style="color:#db2777;font-weight:700;">huan</span>): Suka</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>C. 6月22号</strong> <em>(liù yuè èrshí'èr hào): Tanggal 22 Juni</em>
+              <strong>C. <span style="color:#7c3aed;font-weight:700;">6</span><span style="color:#0891b2;font-weight:700;">月</span><span style="color:#2563eb;font-weight:700;">22</span><span style="color:#ea580c;font-weight:700;">号</span></strong> <em>(<span style="color:#7c3aed;font-weight:700;">liù</span> <span style="color:#0891b2;font-weight:700;">yuè</span> <span style="color:#2563eb;font-weight:700;">èr</span><span style="color:#059669;font-weight:700;">shí</span>'<span style="color:#2563eb;font-weight:700;">èr</span> <span style="color:#ea580c;font-weight:700;">hào</span>): Tanggal 22 Juni</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>D. 新</strong> <em>(xīn): Baru</em>
+              <strong>D. <span style="color:#0284c7;font-weight:700;">新</span></strong> <em>(<span style="color:#0284c7;font-weight:700;">xīn</span>): Baru</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>E. 真</strong> <em>(zhēn / zhēn de): Benar / sungguh / sungguh-sungguh</em>
+              <strong>E. <span style="color:#9333ea;font-weight:700;">真</span></strong> <em>(<span style="color:#9333ea;font-weight:700;">zhēn</span> / zhēn de): Benar / sungguh / sungguh-sungguh</em>
             </span>
           </div>
         </div>
@@ -3094,6 +3094,46 @@
       });
     });
 
+    // 5b. Warnai Pilihan Kata (A-E) pada .selection-options
+    document.querySelectorAll('.selection-options').forEach(box => {
+      Array.from(box.children).forEach(opt => {
+        const strong = opt.querySelector('strong');
+        const em = opt.querySelector('em');
+        if (!strong || !em) return;
+
+        if (!strong.dataset.origHtml) strong.dataset.origHtml = strong.innerHTML;
+        if (!em.dataset.origHtml) em.dataset.origHtml = em.innerHTML;
+
+        const rawStrong = strong.dataset.origHtml;
+        const rawEm = em.dataset.origHtml;
+
+        // Parse: "A. 菜" or "A. <span...>菜</span>"
+        const mStrong = rawStrong.match(/^(s*[A-Z][.:]s*)([sS]+)$/);
+        // Parse: "(cài): ..." or "(<span...>cài</span>): ..."
+        const mEm = rawEm.match(/^s*(([sS]+?))([sS]*)$/);
+
+        if (mStrong && mEm) {
+          const prefix = mStrong[1];
+          const hzClean = mStrong[2].replace(/<[^>]+>/g, '').trim();
+          const pyClean = mEm[1].replace(/<[^>]+>/g, '').trim().split('/')[0].trim();
+          const suffix = mEm[2];
+
+          // Jika ada digit 6 atau 22, petakan ke 六 / 二十二 untuk colorizePair
+          let hzForColor = hzClean.replace(/6/g, '六').replace(/22/g, '二十二');
+          let res = colorizePair(hzForColor, pyClean, charColorMap);
+
+          // Kembalikan digit asli jika ada digit
+          if (hzClean.includes('6') || hzClean.includes('22')) {
+            let hzFinal = res.hanzi.replace(/六/g, '6').replace(/二十二/g, '22');
+            strong.innerHTML = prefix + hzFinal;
+          } else {
+            strong.innerHTML = prefix + res.hanzi;
+          }
+          em.innerHTML = '(' + res.pinyin + ')' + suffix;
+        }
+      });
+    });
+
     // 6. Warnai quiz-options (pilihan ganda soal latihan)
     document.querySelectorAll('.quiz-options').forEach(quiz => {
       Array.from(quiz.children).forEach(opt => {
@@ -3131,6 +3171,14 @@
       }
       el.style.color = '';
       el.style.fontWeight = '';
+    });
+
+    // Kembalikan Pilihan Kata (A-E) ke kondisi asli
+    document.querySelectorAll('.selection-options span').forEach(opt => {
+      const strong = opt.querySelector('strong');
+      const em = opt.querySelector('em');
+      if (strong && strong.dataset.origHtml) strong.innerHTML = strong.dataset.origHtml;
+      if (em && em.dataset.origHtml) em.innerHTML = em.dataset.origHtml;
     });
 
     // Kembalikan quiz-options ke kondisi asli
