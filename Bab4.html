@@ -3455,12 +3455,29 @@
   }
 
   function applyColors() {
-    // Inisialisasi peta warna dengan 你 (merah) dan 好 (hijau) sebagai acuan
+    // Inisialisasi peta warna karakter acuan dan angka agar kombinasi selalu kontras
     const charColorMap = {
       '你': '#e11d48', // Merah
       '好': '#16a34a', // Hijau
       '现': '#2563eb', // Biru Royal (Xiàn)
-      '在': '#ea580c'  // Oranye Terang (zài)
+      '在': '#ea580c', // Oranye Terang (zài)
+      // Pemetaan warna angka Mandarin agar tiap karakter dalam kombinasi (十九, 一百, 二十八, dll.) memiliki warna berbeda
+      '零': '#64748b', // Abu-abu slate
+      '一': '#e11d48', // Merah
+      '二': '#2563eb', // Biru royal
+      '两': '#0284c7', // Sky blue
+      '三': '#16a34a', // Hijau
+      '四': '#ea580c', // Oranye
+      '五': '#ca8a04', // Kuning emas
+      '六': '#7c3aed', // Ungu
+      '七': '#0891b2', // Teal
+      '八': '#db2777', // Pink cerah
+      '九': '#4f46e5', // Indigo
+      '十': '#059669', // Zamrud
+      '百': '#d97706', // Amber (sangat kontras dengan 一 merah)
+      '千': '#9333ea', // Deep violet
+      '万': '#c026d3', // Magenta
+      '亿': '#e11d48'  // Merah
     };
 
     // 1. Warnai dialog bubbles
