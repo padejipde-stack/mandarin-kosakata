@@ -454,6 +454,21 @@
     body.show-pinyin .bubble-pinyin { display: block; }
     body.show-arti   .bubble-arti   { display: block; }
 
+    
+    .pos-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #4f46e5;
+      background: #eef2ff;
+      border: 1px solid #c7d2fe;
+      padding: 0.05rem 0.35rem;
+      border-radius: 4px;
+      margin-right: 0.25rem;
+      vertical-align: middle;
+      font-style: italic;
+    }
+  
     /* ── SUB-BREAKDOWN ── */
     .sub-breakdown {
       margin-top: 1.2rem;
@@ -1474,95 +1489,209 @@
         </div>
       </div>
 
-      <!-- Sub-breakdown Kosakata Teks 1 -->
+            <!-- Sub-breakdown Kosakata Teks 1 -->
       <div class="sub-breakdown">
         <div class="sub-breakdown-title">
-          <span>📚 Kosakata Baru · Teks 1</span>
+          <span>📚 Kosakata Baru · Teks 1 (生词 / New Words)</span>
         </div>
         <div class="breakdown-grid">
           <div class="word-card" onclick="speakChinese('房间')">
             <div class="word-char">房间</div>
             <div class="word-pinyin">fángjiān</div>
-            <div class="word-arti">Kamar / Ruangan</div>
+            <div class="word-arti"><span class="pos-badge">n.</span> kamar (room)</div>
           </div>
           <div class="word-card" onclick="speakChinese('外')">
             <div class="word-char">外</div>
             <div class="word-pinyin">wài</div>
-            <div class="word-arti">Luar / Bagian luar</div>
+            <div class="word-arti"><span class="pos-badge">n.</span> luar (outside)<br><small style="color:#64748b;">↔ 里 (lǐ - dalam)</small></div>
           </div>
           <div class="word-card" onclick="speakChinese('只')">
             <div class="word-char">只</div>
             <div class="word-pinyin">zhī</div>
-            <div class="word-arti">Ekor (kata bantu bilangan hewan)</div>
+            <div class="word-arti"><span class="pos-badge">m.</span> satuan hewan kecil<br><small style="color:#64748b;">hewan besar: 头 (tóu)</small></div>
           </div>
           <div class="word-card" onclick="speakChinese('小')">
             <div class="word-char">小</div>
             <div class="word-pinyin">xiǎo</div>
-            <div class="word-arti">Kecil / Mungil</div>
+            <div class="word-arti"><span class="pos-badge">adj.</span> kecil (small; little)</div>
           </div>
           <div class="word-card" onclick="speakChinese('猫')">
             <div class="word-char">猫</div>
             <div class="word-pinyin">māo</div>
-            <div class="word-arti">Kucing</div>
+            <div class="word-arti"><span class="pos-badge">n.</span> kucing (cat)</div>
           </div>
           <div class="word-card" onclick="speakChinese('小猫')">
             <div class="word-char">小猫</div>
             <div class="word-pinyin">xiǎomāo</div>
-            <div class="word-arti">Anak kucing / Kucing kecil</div>
+            <div class="word-arti"><span class="pos-badge">n.</span> anak kucing</div>
           </div>
           <div class="word-card" onclick="speakChinese('没')">
             <div class="word-char">没</div>
             <div class="word-pinyin">méi</div>
-            <div class="word-arti">Tidak / Belum</div>
+            <div class="word-arti"><span class="pos-badge">adv.</span> tidak (no; not; not yet)</div>
           </div>
           <div class="word-card" onclick="speakChinese('看见')">
             <div class="word-char">看见</div>
             <div class="word-pinyin">kànjiàn</div>
-            <div class="word-arti">Melihat / Menengok</div>
+            <div class="word-arti"><span class="pos-badge">v.</span> melihat (catch sight of)</div>
           </div>
           <div class="word-card" onclick="speakChinese('它')">
             <div class="word-char">它</div>
             <div class="word-pinyin">tā</div>
-            <div class="word-arti">Dia / Ia (benda/hewan)</div>
+            <div class="word-arti"><span class="pos-badge">pron.</span> ia / dia (hewan/benda)</div>
           </div>
           <div class="word-card" onclick="speakChinese('在')">
             <div class="word-char">在</div>
             <div class="word-pinyin">zài</div>
-            <div class="word-arti">Di / Berada di</div>
+            <div class="word-arti"><span class="pos-badge">prep.</span> di / berada di</div>
           </div>
           <div class="word-card" onclick="speakChinese('哪儿')">
             <div class="word-char">哪儿</div>
             <div class="word-pinyin">nǎr</div>
-            <div class="word-arti">Mana / Di mana?</div>
+            <div class="word-arti"><span class="pos-badge">pron.</span> mana / di mana</div>
           </div>
           <div class="word-card" onclick="speakChinese('桌子')">
             <div class="word-char">桌子</div>
             <div class="word-pinyin">zhuōzi</div>
-            <div class="word-arti">Meja</div>
+            <div class="word-arti"><span class="pos-badge">n.</span> meja (table; desk)</div>
           </div>
           <div class="word-card" onclick="speakChinese('下')">
             <div class="word-char">下</div>
             <div class="word-pinyin">xià</div>
-            <div class="word-arti">Bawah / Bagian bawah</div>
+            <div class="word-arti"><span class="pos-badge">n.</span> bawah (low position)<br><small style="color:#64748b;">↔ 上 (shàng - atas)</small></div>
           </div>
           <div class="word-card" onclick="speakChinese('这')">
             <div class="word-char">这</div>
             <div class="word-pinyin">zhè</div>
-            <div class="word-arti">Ini</div>
+            <div class="word-arti"><span class="pos-badge">pron.</span> ini (this)</div>
           </div>
           <div class="word-card" onclick="speakChinese('真')">
             <div class="word-char">真</div>
             <div class="word-pinyin">zhēn</div>
-            <div class="word-arti">Sungguh / Benar-benar</div>
+            <div class="word-arti"><span class="pos-badge">adv.</span> sungguh (really; truly)</div>
           </div>
           <div class="word-card" onclick="speakChinese('漂亮')">
             <div class="word-char">漂亮</div>
             <div class="word-pinyin">piàoliang</div>
-            <div class="word-arti">Cantik / Indah</div>
+            <div class="word-arti"><span class="pos-badge">adj.</span> cantik (pretty; beautiful)</div>
+          </div>
+        </div>
+
+        <!-- Tabel Lengkap Kosakata Baru & Catatan Khusus -->
+        <div style="margin-top:1.2rem;background:#ffffff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+          <div style="background:#f8fafc;padding:0.65rem 1rem;border-bottom:1px solid var(--border);font-size:0.82rem;font-weight:700;color:var(--primary);display:flex;align-items:center;justify-content:space-between;">
+            <span>📋 Tabel Rincian Kosakata Baru Teks 1 (生词表)</span>
+            <span style="font-size:0.75rem;color:#64748b;font-weight:500;">Klik 🔊 untuk pelafalan</span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+              <thead>
+                <tr style="background:#f1f5f9;color:#475569;text-align:left;border-bottom:1px solid #e2e8f0;">
+                  <th style="padding:0.5rem 0.75rem;">No.</th>
+                  <th style="padding:0.5rem 0.75rem;">Hanzi</th>
+                  <th style="padding:0.5rem 0.75rem;">Pinyin</th>
+                  <th style="padding:0.5rem 0.75rem;">Jenis Kata</th>
+                  <th style="padding:0.5rem 0.75rem;">Bahasa Inggris</th>
+                  <th style="padding:0.5rem 0.75rem;">Bahasa Indonesia &amp; Catatan Khusus</th>
+                  <th style="padding:0.5rem 0.75rem;text-align:center;">Audio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px dashed #e2e8f0;">
+                  <td style="padding:0.5rem 0.75rem;color:#64748b;">1</td>
+                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">房间</td>
+                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">fángjiān</td>
+                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">n.</span> noun</td>
+                  <td style="padding:0.5rem 0.75rem;">room</td>
+                  <td style="padding:0.5rem 0.75rem;">kamar / ruangan</td>
+                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('房间')" title="Dengar">🔊</button></td>
+                </tr>
+                <tr style="border-bottom:1px dashed #e2e8f0;background:#fafafa;">
+                  <td style="padding:0.5rem 0.75rem;color:#64748b;">2</td>
+                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">外</td>
+                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">wài</td>
+                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">n.</span> noun</td>
+                  <td style="padding:0.5rem 0.75rem;">outside</td>
+                  <td style="padding:0.5rem 0.75rem;">luar · <em>berlawanan dengan <strong>里 (lǐ)</strong> (dalam)</em></td>
+                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('外')" title="Dengar">🔊</button></td>
+                </tr>
+                <tr style="border-bottom:1px dashed #e2e8f0;">
+                  <td style="padding:0.5rem 0.75rem;color:#64748b;">3</td>
+                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">只</td>
+                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">zhī</td>
+                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">m.</span> measure word</td>
+                  <td style="padding:0.5rem 0.75rem;">for certain animals</td>
+                  <td style="padding:0.5rem 0.75rem;">satuan untuk hewan kecil (kucing, burung); untuk hewan besar gunakan <strong>头 (tóu)</strong> (contoh: gajah 一头大象)</td>
+                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('只')" title="Dengar">🔊</button></td>
+                </tr>
+                <tr style="border-bottom:1px dashed #e2e8f0;background:#fafafa;">
+                  <td style="padding:0.5rem 0.75rem;color:#64748b;">4</td>
+                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">小</td>
+                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">xiǎo</td>
+                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">adj.</span> adjective</td>
+                  <td style="padding:0.5rem 0.75rem;">small; little</td>
+                  <td style="padding:0.5rem 0.75rem;">kecil / mungil · <em>berlawanan dengan <strong>大 (dà)</strong> (besar)</em></td>
+                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('小')" title="Dengar">🔊</button></td>
+                </tr>
+                <tr style="border-bottom:1px dashed #e2e8f0;">
+                  <td style="padding:0.5rem 0.75rem;color:#64748b;">5</td>
+                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">猫</td>
+                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">māo</td>
+                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">n.</span> noun</td>
+                  <td style="padding:0.5rem 0.75rem;">cat</td>
+                  <td style="padding:0.5rem 0.75rem;">kucing</td>
+                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('猫')" title="Dengar">🔊</button></td>
+                </tr>
+                <tr style="border-bottom:1px dashed #e2e8f0;background:#fafafa;">
+                  <td style="padding:0.5rem 0.75rem;color:#64748b;">6</td>
+                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">没</td>
+                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">méi</td>
+                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">adv.</span> adverb</td>
+                  <td style="padding:0.5rem 0.75rem;">no; not; not yet</td>
+                  <td style="padding:0.5rem 0.75rem;">tidak / belum</td>
+                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('没')" title="Dengar">🔊</button></td>
+                </tr>
+                <tr style="border-bottom:1px dashed #e2e8f0;">
+                  <td style="padding:0.5rem 0.75rem;color:#64748b;">7</td>
+                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">看见</td>
+                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">kànjiàn</td>
+                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">v.</span> verb</td>
+                  <td style="padding:0.5rem 0.75rem;">see; catch sight of</td>
+                  <td style="padding:0.5rem 0.75rem;">melihat / sekilas menengok</td>
+                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('看见')" title="Dengar">🔊</button></td>
+                </tr>
+                <tr style="border-bottom:1px dashed #e2e8f0;background:#fafafa;">
+                  <td style="padding:0.5rem 0.75rem;color:#64748b;">8</td>
+                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">桌子</td>
+                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">zhuōzi</td>
+                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">n.</span> noun</td>
+                  <td style="padding:0.5rem 0.75rem;">table; desk</td>
+                  <td style="padding:0.5rem 0.75rem;">meja</td>
+                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('桌子')" title="Dengar">🔊</button></td>
+                </tr>
+                <tr style="border-bottom:1px dashed #e2e8f0;">
+                  <td style="padding:0.5rem 0.75rem;color:#64748b;">9</td>
+                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">下</td>
+                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">xià</td>
+                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">n.</span> noun (position)</td>
+                  <td style="padding:0.5rem 0.75rem;">low position or rank</td>
+                  <td style="padding:0.5rem 0.75rem;">di bawah · <em>berlawanan dengan <strong>上 (shàng)</strong> (atas)</em></td>
+                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('下')" title="Dengar">🔊</button></td>
+                </tr>
+                <tr style="background:#fafafa;">
+                  <td style="padding:0.5rem 0.75rem;color:#64748b;">10</td>
+                  <td style="padding:0.5rem 0.75rem;font-family:'Noto Sans SC';font-size:1.05rem;font-weight:700;color:var(--primary-dark);">漂亮</td>
+                  <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--primary);">piàoliang</td>
+                  <td style="padding:0.5rem 0.75rem;"><span class="pos-badge">adj.</span> adjective</td>
+                  <td style="padding:0.5rem 0.75rem;">pretty; beautiful</td>
+                  <td style="padding:0.5rem 0.75rem;">cantik / indah</td>
+                  <td style="padding:0.5rem 0.75rem;text-align:center;"><button class="audio-btn" onclick="speakChinese('漂亮')" title="Dengar">🔊</button></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
