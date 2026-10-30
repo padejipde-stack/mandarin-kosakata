@@ -1328,6 +1328,26 @@
       .number-card .bubble-arti { font-size: 0.75rem; }
     }
 
+  
+    .compare-eg {
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 0.55rem 0.75rem;
+      margin-top: 0.35rem;
+      border-left: 3px solid var(--primary);
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: #1e293b;
+    }
+    .compare-card:last-child .compare-eg {
+      border-left-color: #d97706;
+      background: #fffbeb;
+    }
+    .compare-card:first-child .compare-eg {
+      border-left-color: #059669;
+      background: #ecfdf5;
+    }
+
   </style>
 </head>
 <body>
@@ -2638,50 +2658,50 @@
           </p>
         </div>
 
-        <!-- Penjelasan Kata Satuan 个 vs 口 -->
-        <div class="grammar-compare-box" style="margin-top:0.4rem;">
-          <div class="compare-card" style="border-top:3px solid #059669;">
-            <div class="compare-badge" style="background:#ecfdf5; color:#047857;">个 (gè) · Kata Satuan Umum</div>
+        <!-- Penjelasan Kata Satuan ? vs ? -->
+        <div class="grammar-compare-box" style="margin-top:0.5rem;">
+          <div class="compare-card" style="border-top:3.5px solid #059669;">
+            <div class="compare-badge" style="background:#ecfdf5; color:#047857;">? (g?) ? Kata Satuan Umum</div>
             <ul class="compare-points">
               <li><strong>Fungsi:</strong> Kata satuan umum yang <strong>paling sering digunakan</strong> dalam percakapan sehari-hari.</li>
               <li><strong>Konteks:</strong> Digunakan untuk orang, murid, teman, buah, atau benda yang belum memiliki kata satuan spesifik.</li>
-              <li class="compare-eg">Contoh: <strong>一个学生</strong> (yí gè xuésheng = seorang murid), <strong>两个苹果</strong> (dua buah apel).</li>
+              <li class="compare-eg">?? <strong>Contoh:</strong> <strong>????</strong> (y? g? xu?sheng = seorang murid), <strong>????</strong> (dua buah apel).</li>
             </ul>
           </div>
 
-          <div class="compare-card" style="border-top:3px solid #d97706;">
-            <div class="compare-badge" style="background:#fef3c7; color:#b45309;">口 (kǒu) · Satuan Anggota Keluarga</div>
+          <div class="compare-card" style="border-top:3.5px solid #d97706;">
+            <div class="compare-badge" style="background:#fef3c7; color:#b45309;">? (k?u) ? Satuan Anggota Keluarga</div>
             <ul class="compare-points">
               <li><strong>Fungsi:</strong> Kata satuan khusus yang biasanya digunakan untuk menyatakan <strong>jumlah anggota keluarga</strong>.</li>
               <li><strong>Konteks:</strong> Secara harfiah berarti <em>"mulut"</em> atau <em>"jiwa"</em> dalam konteks tanggungan rumah tangga.</li>
-              <li class="compare-eg">Contoh: <strong>四口人</strong> (sì kǒu rén = empat orang anggota keluarga), <strong>几口人？</strong> (berapa orang keluarga?).</li>
+              <li class="compare-eg">?? <strong>Contoh:</strong> <strong>???</strong> (s? k?u r?n = empat orang anggota keluarga), <strong>????</strong> (berapa orang keluarga?).</li>
             </ul>
           </div>
         </div>
 
         <!-- Kartu Contoh Penggunaan -->
-        <div style="font-size:0.82rem; font-weight:700; color:var(--primary); margin-top:0.6rem;">
-          🔹 Contoh Penggunaan Bertahap:
+        <div style="font-size:0.85rem; font-weight:700; color:var(--primary); margin-top:0.85rem; display:flex; align-items:center; gap:0.4rem;">
+          <span>?? Contoh Penggunaan Bertahap ? ????:</span>
         </div>
         <div class="number-grid wide">
-          <div class="number-card wide" onclick="playPinyin('sì kǒu')" title="Klik untuk mendengar" style="cursor:pointer;">
-            <div class="bubble-hanzi">四口</div>
-            <div class="bubble-pinyin">sì kǒu</div>
+          <div class="number-card wide" onclick="playPinyin('s? k?u')" title="Klik untuk mendengar" style="cursor:pointer; border-top-color:#d97706;">
+            <div class="bubble-hanzi" style="color:#d97706;">??</div>
+            <div class="bubble-pinyin" style="color:#b45309;">s? k?u</div>
             <div class="bubble-arti">Empat (anggota keluarga)</div>
           </div>
-          <div class="number-card wide" onclick="playPinyin('sì kǒu rén')" title="Klik untuk mendengar" style="cursor:pointer; border-left:3px solid #d97706;">
-            <div class="bubble-hanzi">四口人</div>
-            <div class="bubble-pinyin">sì kǒu rén</div>
+          <div class="number-card wide" onclick="playPinyin('s? k?u r?n')" title="Klik untuk mendengar" style="cursor:pointer; border-top-color:#d97706;">
+            <div class="bubble-hanzi" style="color:#d97706;">???</div>
+            <div class="bubble-pinyin" style="color:#b45309;">s? k?u r?n</div>
             <div class="bubble-arti">Empat orang (anggota keluarga)</div>
           </div>
-          <div class="number-card wide" onclick="playPinyin('liǎng gè')" title="Klik untuk mendengar" style="cursor:pointer;">
-            <div class="bubble-hanzi">两个</div>
-            <div class="bubble-pinyin">liǎng gè</div>
+          <div class="number-card wide" onclick="playPinyin('li?ng g?')" title="Klik untuk mendengar" style="cursor:pointer; border-top-color:#059669;">
+            <div class="bubble-hanzi" style="color:#059669;">??</div>
+            <div class="bubble-pinyin" style="color:#047857;">li?ng g?</div>
             <div class="bubble-arti">Dua buah / Dua orang</div>
           </div>
-          <div class="number-card wide" onclick="playPinyin('liǎng gè xuésheng')" title="Klik untuk mendengar" style="cursor:pointer; border-left:3px solid var(--primary);">
-            <div class="bubble-hanzi">两个学生</div>
-            <div class="bubble-pinyin">liǎng gè xuésheng</div>
+          <div class="number-card wide" onclick="playPinyin('li?ng g? xu?sheng')" title="Klik untuk mendengar" style="cursor:pointer; border-top-color:#059669;">
+            <div class="bubble-hanzi" style="color:#059669;">????</div>
+            <div class="bubble-pinyin" style="color:#047857;">li?ng g? xu?sheng</div>
             <div class="bubble-arti">Dua orang pelajar / siswa</div>
           </div>
         </div>
