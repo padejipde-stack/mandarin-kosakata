@@ -184,6 +184,135 @@
       border: 1px solid rgba(0, 0, 0, 0.04);
     }
 
+    
+    /* ── PENGANTAR KONTEKS DIALOG ── */
+    .dialog-context-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border: 1.5px solid #86efac;
+      border-radius: 12px;
+      padding: 0.95rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 0.4rem;
+    }
+    .context-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #15803d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .context-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #14532d;
+      line-height: 1.35;
+    }
+    .context-py {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #16a34a;
+    }
+    .context-en {
+      font-size: 0.78rem;
+      color: #4b5563;
+      font-style: italic;
+    }
+    .context-id {
+      font-size: 0.84rem;
+      color: #1f2937;
+    }
+
+    /* ── CATATAN KECIL (小语助力 / XIAOYU'S TIP) ── */
+    .xiaoyu-tip-box {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border: 1.5px solid #fcd34d;
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.08);
+      margin-top: 1.1rem;
+    }
+    .tip-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tip-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #b45309;
+      background: #fde68a;
+      padding: 0.2rem 0.65rem;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .tip-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #78350f;
+    }
+    .tip-py {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #b45309;
+    }
+    .tip-en {
+      font-size: 0.78rem;
+      color: #6b7280;
+      font-style: italic;
+    }
+    .tip-id {
+      font-size: 0.84rem;
+      color: #451a03;
+    }
+    .tip-examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.65rem;
+      margin-top: 0.4rem;
+    }
+    .tip-ex-item {
+      background: #ffffff;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 0.65rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tip-ex-item:hover {
+      background: #fffdf5;
+      border-color: #f59e0b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(245, 158, 11, 0.1);
+    }
+    .ex-comb {
+      font-size: 0.84rem;
+      color: #92400e;
+    }
+    .ex-comb strong {
+      color: #b45309;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.95rem;
+    }
+    .ex-desc {
+      font-size: 0.76rem;
+      color: #4b5563;
+    }
+
     /* ── DIALOG LINE ── */
     .dialog-line {
       display: flex;
@@ -1158,8 +1287,8 @@
           💡 Rumus Dasar:
         </div>
         <div style="font-size:0.85rem;color:#334155;line-height:1.5;">
-          • <strong>在 + Keterangan Tempat + Kata Kerja</strong> $\rightarrow$ Menyatakan <em>tempat berlangsungnya aktivitas</em> (di...).<br>
-          • <strong>在 + Kata Kerja</strong> $\rightarrow$ Menyatakan <em>aktivitas yang sedang berlangsung</em> (<strong>sedang...</strong> / aspek progresif).
+          • <strong>在 + Keterangan Tempat + Kata Kerja</strong> → Menyatakan <em>tempat berlangsungnya aktivitas</em> (di...).<br>
+          • <strong>在 + Kata Kerja</strong> → Menyatakan <em>aktivitas yang sedang berlangsung</em> (<strong>sedang...</strong> / aspek progresif).
         </div>
       </div>
 
@@ -1234,21 +1363,34 @@
 
   <!-- ══ TEKS 1 ══ -->
   <div>
-    <div class="section-title">💬 Teks 1: 在王一飞家 · Di Rumah Wang Yifei</div>
+    <div class="section-title">💬 Teks 1: 朗读对话 · Read the Dialogue Aloud</div>
     <div class="dialog-box">
 
-      <!-- 白家月: 房间外有一只小猫。 -->
+      <!-- 1. Pengantar Konteks Dialog -->
+      <div class="dialog-context-box">
+        <div class="context-tag">
+          <span>📌 1. Pengantar Konteks Dialog · 背景介绍</span>
+          <button class="audio-btn" onclick="speakChinese('在王一飞家，白家月和陈天中来做客。')" title="Dengarkan pengantar">🔊</button>
+        </div>
+        <div class="context-hz">在王一飞家，白家月和陈天中来做客。</div>
+        <div class="context-py">Zài Wáng Yīfēi jiā, Bái Jiāyuè hé Chén Tiānzhōng lái zuòkè.</div>
+        <div class="context-en">(At Wang Yifei's home, Bai Jiayue and Chen Tianzhong came over for a visit.)</div>
+        <div class="context-id"><strong>Arti:</strong> Di rumah Wang Yifei, Bai Jiayue dan Chen Tianzhong datang berkunjung.</div>
+      </div>
+
+      <!-- 2. Percakapan (朗读对话 / Read the dialogue aloud) -->
+      <!-- 白家月: 房间外有一只小猫. -->
       <div class="dialog-line" onclick="speakChinese('房间外有一只小猫。')">
         <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">月</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bái Jiāyuè)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bai Jiayue)</span></span>
           <div class="bubble">
             <div class="bubble-hanzi">
-              <span>房间外有一只小猫。</span>
+              <span>房间外有一只小猫.</span>
               <button class="audio-btn" title="Dengar suara">🔊</button>
             </div>
-            <div class="bubble-pinyin">Fángjiān wài yǒu yì zhī xiǎomāo.</div>
-            <div class="bubble-arti">Di luar kamar ada seekor anak kucing.</div>
+            <div class="bubble-pinyin">Fángjiān wài yǒu yì zhī xiǎo māo.</div>
+            <div class="bubble-arti">Di luar kamar/ruangan ada seekor anak kucing.</div>
           </div>
         </div>
       </div>
@@ -1257,30 +1399,30 @@
       <div class="dialog-line right chen" onclick="speakChinese('我没看见，它在哪儿呢？')">
         <div class="avatar av-chen" title="陈天中 (Chén Tiānzhōng)">陈</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">陈天中</span><span class="speaker-pinyin"> (Chén Tiānzhōng)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">陈天中</span><span class="speaker-pinyin"> (Chen Tianzhong)</span></span>
           <div class="bubble">
             <div class="bubble-hanzi">
               <span>我没看见，它在哪儿呢？</span>
               <button class="audio-btn" title="Dengar suara">🔊</button>
             </div>
             <div class="bubble-pinyin">Wǒ méi kànjiàn, tā zài nǎr ne?</div>
-            <div class="bubble-arti">Saya tidak melihatnya, dia berada di mana ya?</div>
+            <div class="bubble-arti">Saya tidak melihatnya, dia ada di mana?</div>
           </div>
         </div>
       </div>
 
-      <!-- 白家月: 它在桌子下呢。 -->
+      <!-- 白家月: 它在桌子下呢. -->
       <div class="dialog-line" onclick="speakChinese('它在桌子下呢。')">
         <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">月</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bái Jiāyuè)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">白家月</span><span class="speaker-pinyin"> (Bai Jiayue)</span></span>
           <div class="bubble">
             <div class="bubble-hanzi">
-              <span>它在桌子下呢。</span>
+              <span>它在桌子下呢.</span>
               <button class="audio-btn" title="Dengar suara">🔊</button>
             </div>
             <div class="bubble-pinyin">Tā zài zhuōzi xià ne.</div>
-            <div class="bubble-arti">Dia berada di bawah meja tuh.</div>
+            <div class="bubble-arti">Dia ada di bawah meja.</div>
           </div>
         </div>
       </div>
@@ -1289,14 +1431,45 @@
       <div class="dialog-line right chen" onclick="speakChinese('这只小猫真漂亮！')">
         <div class="avatar av-chen" title="陈天中 (Chén Tiānzhōng)">陈</div>
         <div class="bubble-wrap">
-          <span class="speaker-name"><span class="speaker-hanzi">陈天中</span><span class="speaker-pinyin"> (Chén Tiānzhōng)</span></span>
+          <span class="speaker-name"><span class="speaker-hanzi">陈天中</span><span class="speaker-pinyin"> (Chen Tianzhong)</span></span>
           <div class="bubble">
             <div class="bubble-hanzi">
               <span>这只小猫真漂亮！</span>
               <button class="audio-btn" title="Dengar suara">🔊</button>
             </div>
-            <div class="bubble-pinyin">Zhè zhī xiǎomāo zhēn piàoliang!</div>
-            <div class="bubble-arti">Anak kucing ini sungguh cantik / manis sekali!</div>
+            <div class="bubble-pinyin">Zhè zhī xiǎo māo zhēn piàoliang!</div>
+            <div class="bubble-arti">Anak kucing ini benar-benar cantik!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Catatan Kecil (小语助力 / Xiaoyu's Tip) -->
+      <div class="xiaoyu-tip-box">
+        <div class="tip-header">
+          <div class="tip-badge">💡 3. Catatan Kecil (小语助力 / Xiaoyu's Tip)</div>
+          <button class="audio-btn" onclick="speakChinese('量词可以和指示代词直接组合。比如这只，那只，这个，那个。')" title="Dengarkan penjelasan">🔊</button>
+        </div>
+        <div class="tip-hz">量词可以和指示代词直接组合。</div>
+        <div class="tip-py">Liàngcí kěyǐ hé zhǐshì dàicí zhíjiē zǔhé.</div>
+        <div class="tip-en">(Measure words can directly combine with demonstrative pronouns.)</div>
+        <div class="tip-id"><strong>Arti:</strong> Kata satuan (measure word) dapat langsung digabungkan dengan kata ganti penunjuk (demonstrative pronouns).</div>
+
+        <div class="tip-examples-grid">
+          <div class="tip-ex-item" onclick="speakChinese('这只小猫')">
+            <span class="ex-comb">这 (zhè) + 只 (zhī) → <strong>这只</strong> (zhè zhī)</span>
+            <span class="ex-desc">yang seekor ini (misal: <em>这只小猫</em> = anak kucing ini)</span>
+          </div>
+          <div class="tip-ex-item" onclick="speakChinese('那只小狗')">
+            <span class="ex-comb">那 (nà) + 只 (zhī) → <strong>那只</strong> (nà zhī)</span>
+            <span class="ex-desc">yang seekor itu (misal: <em>那只小狗</em> = anjing itu)</span>
+          </div>
+          <div class="tip-ex-item" onclick="speakChinese('这个人')">
+            <span class="ex-comb">这 (zhè) + 个 (gè) → <strong>这个</strong> (zhè ge)</span>
+            <span class="ex-desc">yang ini (misal: <em>这个人</em> = orang ini)</span>
+          </div>
+          <div class="tip-ex-item" onclick="speakChinese('那本书')">
+            <span class="ex-comb">那 (nà) + 本 (běn) → <strong>那本</strong> (nà běn)</span>
+            <span class="ex-desc">yang itu (misal: <em>那本书</em> = buku itu)</span>
           </div>
         </div>
       </div>
