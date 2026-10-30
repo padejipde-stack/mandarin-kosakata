@@ -493,6 +493,14 @@ function colorizePair(hanziStr, pinyinStr, charColorMap) {
 > |:---:|:---:|
 > | `<div class="word-char">他/她</div>` + `<div class="word-pinyin">tā</div>` | Buat **dua kartu terpisah**: kartu `他` (tā, laki-laki) dan kartu `她` (tā, perempuan) |
 
+> [!IMPORTANT]
+> **Prinsip Pewarnaan Pasangan (Hanzi + Pinyin Mandatory Rule)**:
+> Pewarnaan karakter pada Mode Warna (🎨) memiliki prinsip pasangan yang ketat:
+> 1. **WAJIB DIWARNAI jika dan hanya jika terdapat PASANGAN Hanzi dan Pinyin**:
+>    - Setiap elemen atau blok yang memuat karakter Hanzi **bersama dengan** pelafalan Pinyin-nya (seperti dialog bubble `.bubble`, kartu kosakata `.word-card`, nama pembicara `.speaker-name`, kartu nomor Xiaoyu `.number-card`, latihan pemahaman `.classroom-item`, pilihan ganda `.quiz-options`, kartu bank kata `.match-vocab-item`, dan kartu pencocokan `.match-card .match-answer`) **WAJIB** diwarnai per-karakter / per-suku kata secara sinkron saat Mode Warna aktif.
+> 2. **TIDAK DIWARNAI jika Hanzi atau Pinyin berdiri sendiri (tanpa pasangan)**:
+>    - Jika suatu elemen **hanya memuat Hanzi saja** tanpa Pinyin (misalnya: judul bab, watermark avatar `.avatar`, header grup, teks tombol, badge navigasi) atau **hanya memuat Pinyin saja** tanpa teks Hanzi (misalnya: tabel fonetik murni fonologi tanpa karakter Hanzi), maka elemen tersebut **TIDAK BOLEH** diwarnai (harus tetap memakai warna teks bawaan / default). Jangan pernah memaksakan pewarnaan Hanzi jika tidak ada acuan suku kata Pinyin pasangannya, dan sebaliknya.
+
 // 4. State & Handler Toggle
 let colorActive = false;
 

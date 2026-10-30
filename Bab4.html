@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -3572,15 +3572,15 @@
 
     // 6. Warnai quiz-options (pilihan ganda soal latihan)
     document.querySelectorAll('.quiz-options').forEach(quiz => {
-      quiz.querySelectorAll('span').forEach(opt => {
+      Array.from(quiz.children).forEach(opt => {
         const em = opt.querySelector('em');
         if (!em) return;
-        // Jika ada anak span yang memuat em, proses anak span-nya saja
-        if (opt.querySelector('span em')) return;
+        // Ambil elemen penampung teks pilihan (jika ada span pembungkus di dalam, pilih yang memuat em)
+        const target = Array.from(opt.querySelectorAll('span')).find(s => s.contains(em) && s !== opt) || opt;
 
-        if (!opt.dataset.origHtml) opt.dataset.origHtml = opt.innerHTML;
+        if (!target.dataset.origHtml) target.dataset.origHtml = target.innerHTML;
 
-        const raw = opt.dataset.origHtml;
+        const raw = target.dataset.origHtml;
         const m = raw.match(/^(\s*[A-Z][\.\:]\s*)([^<]+?)(<em[^>]*>\()([^<]+)(\)<\/em>)([\s\S]*)$/);
         if (m) {
           const prefix = m[1];
@@ -3591,15 +3591,38 @@
           const suffix = m[6];
 
           const res = colorizePair(hz, py, charColorMap);
-          opt.innerHTML = prefix + res.hanzi + ' ' + emOpen + res.pinyin + emClose + suffix;
+          target.innerHTML = prefix + res.hanzi + ' ' + emOpen + res.pinyin + emClose + suffix;
         }
       });
+    });
+
+    // 7. Warnai pasangan Hanzi + Pinyin pada kartu pencocokan (Match Bank & Match Cards)
+    document.querySelectorAll('.match-vocab-item').forEach(item => {
+      const hzEl = item.querySelector('.match-hz');
+      const pyEl = item.querySelector('.match-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    document.querySelectorAll('.match-card .match-answer').forEach(ans => {
+      const hzEl = ans.querySelector('.match-hz-big');
+      const pyEl = ans.querySelector('.match-py-text');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
     });
   }
 
   function removeColors() {
     // Kembalikan semua teks ke kondisi asli tanpa span warna
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .match-hz, .match-py, .match-hz-big, .match-py-text';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
