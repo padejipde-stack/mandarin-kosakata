@@ -2798,12 +2798,15 @@
 
 
   function applyColors() {
-    // Inisialisasi peta warna dengan 你 (merah) dan 好 (hijau) sebagai acuan
+    // Inisialisasi peta warna dengan karakter acuan agar kata majemuk selalu kontras
     const charColorMap = {
       '你': '#e11d48', // Merah
-      '好': '#16a34a', // Hijau
+      '好': '#16a34a', // Hijau (hǎo)
+      '的': '#7c3aed', // Ungu (de) - agar '好的' kontras beda warna
       '现': '#2563eb', // Biru Royal (Xiàn)
-      '在': '#ea580c'  // Oranye Terang (zài)
+      '在': '#ea580c', // Oranye Terang (zài)
+      '点': '#0891b2', // Cyan (diǎn)
+      '半': '#c026d3'  // Magenta / Pink Fuchsia (bàn) - agar '点半' kontras beda warna
     };
 
     // 1. Warnai dialog bubbles
