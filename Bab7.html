@@ -2460,25 +2460,25 @@
         </div>
 
         <!-- Kotak Pilihan Kata A - E -->
-        <div style="background:#faf5ff;border:1.5px dashed #c084fc;border-radius:12px;padding:0.85rem 1rem;">
-          <div style="font-size:0.78rem;font-weight:700;color:#6b21a8;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.45rem;">
+        <div class="quiz-options" style="background:#faf5ff;border:1.5px dashed #c084fc;border-radius:12px;padding:0.85rem 1rem;">
+          <div style="width:100%;font-size:0.78rem;font-weight:700;color:#6b21a8;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.45rem;">
             Pilihan Kata · 选项 (A–E):
           </div>
           <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>A. 医院</strong> <em>(yīyuàn / rumah sakit)</em>
+              <strong>A. <span style="color:#9333ea;font-weight:700;">医</span><span style="color:#65a30d;font-weight:700;">院</span></strong> <em>(<span style="color:#9333ea;font-weight:700;">yī</span><span style="color:#65a30d;font-weight:700;">yuàn</span> / rumah sakit)</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>B. 十二点半</strong> <em>(shí'èr diǎn bàn / jam 12:30)</em>
+              <strong>B. <span style="color:#2563eb;font-weight:700;">十</span><span style="color:#059669;font-weight:700;">二</span><span style="color:#4f46e5;font-weight:700;">点</span><span style="color:#059669;font-weight:700;">半</span></strong> <em>(<span style="color:#2563eb;font-weight:700;">shí</span>'<span style="color:#059669;font-weight:700;">èr</span> <span style="color:#4f46e5;font-weight:700;">diǎn</span> <span style="color:#059669;font-weight:700;">bàn</span> / jam 12:30)</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>C. 课</strong> <em>(kè / kelas, pelajaran)</em>
+              <strong>C. <span style="color:#65a30d;font-weight:700;">课</span></strong> <em>(<span style="color:#65a30d;font-weight:700;">kè</span> / kelas, pelajaran)</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>D. 现在</strong> <em>(xiànzài / sekarang)</em>
+              <strong>D. <span style="color:#2563eb;font-weight:700;">现</span><span style="color:#ea580c;font-weight:700;">在</span></strong> <em>(<span style="color:#2563eb;font-weight:700;">xiàn</span><span style="color:#ea580c;font-weight:700;">zài</span> / sekarang)</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>E. 见</strong> <em>(jiàn / bertemu)</em>
+              <strong>E. <span style="color:#0891b2;font-weight:700;">见</span></strong> <em>(<span style="color:#0891b2;font-weight:700;">jiàn</span> / bertemu)</em>
             </span>
           </div>
         </div>
@@ -2895,9 +2895,10 @@
       });
     });
 
-    // 6. Warnai quiz-options (pilihan ganda soal latihan)
+    // 6. Warnai quiz-options (pilihan ganda soal latihan & kotak pilihan kata)
     document.querySelectorAll('.quiz-options').forEach(quiz => {
-      Array.from(quiz.children).forEach(opt => {
+      const opts = quiz.querySelectorAll('span');
+      opts.forEach(opt => {
         const strong = opt.querySelector('strong');
         const em = opt.querySelector('em');
         if (!strong || !em) return;
@@ -2908,16 +2909,19 @@
         const rawStrong = strong.dataset.origHtml;
         const rawEm = em.dataset.origHtml;
 
-        const sm = rawStrong.match(/^([A-Z][.:]s*)([sS]+)$/);
+        const sm = rawStrong.match(/^([A-Z][.:]\s*)([\s\S]+)$/);
         if (sm) {
           const prefix = sm[1];
           const hzPart = sm[2].replace(/<[^>]+>/g, '').trim();
-          let emContent = rawEm.replace(/<[^>]+>/g, '').trim();
-          emContent = emContent.replace(/^[(（]/, '').replace(/[)）].*$/, '').trim();
+          const emClean = rawEm.replace(/<[^>]+>/g, '').trim().replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+          // Pisahkan pinyin dari terjemahan (misal: "yīyuàn / rumah sakit")
+          const parts = emClean.split('/');
+          const pinyinPart = parts[0].trim();
+          const suffixPart = parts.length > 1 ? ' / ' + parts.slice(1).join('/').trim() : '';
 
-          const res = colorizePair(hzPart, emContent, charColorMap);
+          const res = colorizePair(hzPart, pinyinPart, charColorMap);
           strong.innerHTML = prefix + res.hanzi;
-          em.innerHTML = '(' + res.pinyin + ')';
+          em.innerHTML = '(' + res.pinyin + suffixPart + ')';
         }
       });
     });
