@@ -325,8 +325,10 @@
     }
 
     /* Active visibility state */
-    body.show-pinyin .bubble-pinyin { display: block; }
-    body.show-arti .bubble-arti { display: block; }
+    body.show-pinyin .bubble-pinyin,
+    body.show-pinyin .dialog5-pinyin { display: block; }
+    body.show-arti .bubble-arti,
+    body.show-arti .dialog5-arti { display: block; }
 
     /* ── SUB-BREAKDOWN (ARTI PER KATA PER TEKS) ── */
     .sub-breakdown {
@@ -1532,11 +1534,13 @@
       color: #3b82f6;
       font-style: italic;
       margin-top: 2px;
+      display: none;
     }
     .dialog5-arti {
       font-size: 0.82rem;
       color: #64748b;
       margin-top: 2px;
+      display: none;
     }
 
   </style>

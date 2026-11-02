@@ -741,6 +741,10 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
       }
+      .number-grid.cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+      }
     }
 
     /* â”€â”€ COLOR MODE â”€â”€ */
@@ -1210,6 +1214,9 @@
     }
     .number-grid.wide {
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .number-grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
     }
     .number-card {
       background: #ffffff;
@@ -1808,6 +1815,21 @@
             <div class="word-arti">Mempunyai / Memiliki / Ada</div>
           </div>
           <div class="word-card">
+            <div class="word-char">多</div>
+            <div class="word-pinyin">duō</div>
+            <div class="word-arti">Banyak</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">少</div>
+            <div class="word-pinyin">shǎo</div>
+            <div class="word-arti">Sedikit</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">几</div>
+            <div class="word-pinyin">jǐ</div>
+            <div class="word-arti">Berapa (&le; 10, wajib kata satuan)</div>
+          </div>
+          <div class="word-card">
             <div class="word-char">多少</div>
             <div class="word-pinyin">duōshao</div>
             <div class="word-arti">Berapa banyak (&gt;10 / tak tentu, satuan opsional)</div>
@@ -2011,30 +2033,510 @@
           </div>
         </div>
 
-        <!-- Sub 2.1: Angka 0–99 -->
+        <!-- Sub 2.1: Angka 1 hingga 100 -->
         <div style="font-size:0.82rem; font-weight:700; color:var(--primary); margin-top:0.4rem;">
-          🔹 Angka 0–99: Kombinasi puluhan dan satuan dibaca berurutan
+          🔹 Angka 1 hingga 100 (一 到 一百): Kombinasi puluhan dan satuan dibaca berurutan
         </div>
-        <div class="number-grid wide">
-          <div class="number-card wide" onclick="playPinyin('shíjiǔ')" title="Klik untuk mendengar" style="cursor:pointer;">
+        <div class="number-grid">
+          <div class="number-card" onclick="playPinyin('一')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">一</div>
+            <div class="bubble-pinyin">yī</div>
+            <div class="bubble-arti">1</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('二')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">二</div>
+            <div class="bubble-pinyin">èr</div>
+            <div class="bubble-arti">2</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三</div>
+            <div class="bubble-pinyin">sān</div>
+            <div class="bubble-arti">3</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('四')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">四</div>
+            <div class="bubble-pinyin">sì</div>
+            <div class="bubble-arti">4</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五</div>
+            <div class="bubble-pinyin">wǔ</div>
+            <div class="bubble-arti">5</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六</div>
+            <div class="bubble-pinyin">liù</div>
+            <div class="bubble-arti">6</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七</div>
+            <div class="bubble-pinyin">qī</div>
+            <div class="bubble-arti">7</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八</div>
+            <div class="bubble-pinyin">bā</div>
+            <div class="bubble-arti">8</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">九</div>
+            <div class="bubble-pinyin">jiǔ</div>
+            <div class="bubble-arti">9</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('十')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">十</div>
+            <div class="bubble-pinyin">shí</div>
+            <div class="bubble-arti">10</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('十一')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">十一</div>
+            <div class="bubble-pinyin">shíyī</div>
+            <div class="bubble-arti">11</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('十二')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">十二</div>
+            <div class="bubble-pinyin">shíèr</div>
+            <div class="bubble-arti">12</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('十三')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">十三</div>
+            <div class="bubble-pinyin">shísān</div>
+            <div class="bubble-arti">13</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('十四')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">十四</div>
+            <div class="bubble-pinyin">shísì</div>
+            <div class="bubble-arti">14</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('十五')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">十五</div>
+            <div class="bubble-pinyin">shíwǔ</div>
+            <div class="bubble-arti">15</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('十六')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">十六</div>
+            <div class="bubble-pinyin">shíliù</div>
+            <div class="bubble-arti">16</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('十七')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">十七</div>
+            <div class="bubble-pinyin">shíqī</div>
+            <div class="bubble-arti">17</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('十八')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">十八</div>
+            <div class="bubble-pinyin">shíbā</div>
+            <div class="bubble-arti">18</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('十九')" title="Klik untuk mendengar" style="cursor:pointer;">
             <div class="bubble-hanzi">十九</div>
             <div class="bubble-pinyin">shíjiǔ</div>
             <div class="bubble-arti">19</div>
           </div>
-          <div class="number-card wide" onclick="playPinyin('èrshíbā')" title="Klik untuk mendengar" style="cursor:pointer;">
+          <div class="number-card" onclick="playPinyin('二十')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">二十</div>
+            <div class="bubble-pinyin">èrshí</div>
+            <div class="bubble-arti">20</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('二十一')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">二十一</div>
+            <div class="bubble-pinyin">èrshíyī</div>
+            <div class="bubble-arti">21</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('二十二')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">二十二</div>
+            <div class="bubble-pinyin">èrshíèr</div>
+            <div class="bubble-arti">22</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('二十三')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">二十三</div>
+            <div class="bubble-pinyin">èrshísān</div>
+            <div class="bubble-arti">23</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('二十四')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">二十四</div>
+            <div class="bubble-pinyin">èrshísì</div>
+            <div class="bubble-arti">24</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('二十五')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">二十五</div>
+            <div class="bubble-pinyin">èrshíwǔ</div>
+            <div class="bubble-arti">25</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('二十六')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">二十六</div>
+            <div class="bubble-pinyin">èrshíliù</div>
+            <div class="bubble-arti">26</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('二十七')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">二十七</div>
+            <div class="bubble-pinyin">èrshíqī</div>
+            <div class="bubble-arti">27</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('二十八')" title="Klik untuk mendengar" style="cursor:pointer;">
             <div class="bubble-hanzi">二十八</div>
             <div class="bubble-pinyin">èrshíbā</div>
             <div class="bubble-arti">28</div>
           </div>
-          <div class="number-card wide" onclick="playPinyin('sìshíwǔ')" title="Klik untuk mendengar" style="cursor:pointer;">
+          <div class="number-card" onclick="playPinyin('二十九')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">二十九</div>
+            <div class="bubble-pinyin">èrshíjiǔ</div>
+            <div class="bubble-arti">29</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三十')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三十</div>
+            <div class="bubble-pinyin">sānshí</div>
+            <div class="bubble-arti">30</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三十一')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三十一</div>
+            <div class="bubble-pinyin">sānshíyī</div>
+            <div class="bubble-arti">31</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三十二')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三十二</div>
+            <div class="bubble-pinyin">sānshíèr</div>
+            <div class="bubble-arti">32</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三十三')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三十三</div>
+            <div class="bubble-pinyin">sānshísān</div>
+            <div class="bubble-arti">33</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三十四')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三十四</div>
+            <div class="bubble-pinyin">sānshísì</div>
+            <div class="bubble-arti">34</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三十五')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三十五</div>
+            <div class="bubble-pinyin">sānshíwǔ</div>
+            <div class="bubble-arti">35</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三十六')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三十六</div>
+            <div class="bubble-pinyin">sānshíliù</div>
+            <div class="bubble-arti">36</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三十七')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三十七</div>
+            <div class="bubble-pinyin">sānshíqī</div>
+            <div class="bubble-arti">37</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三十八')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三十八</div>
+            <div class="bubble-pinyin">sānshíbā</div>
+            <div class="bubble-arti">38</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('三十九')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">三十九</div>
+            <div class="bubble-pinyin">sānshíjiǔ</div>
+            <div class="bubble-arti">39</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('四十')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">四十</div>
+            <div class="bubble-pinyin">sìshí</div>
+            <div class="bubble-arti">40</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('四十一')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">四十一</div>
+            <div class="bubble-pinyin">sìshíyī</div>
+            <div class="bubble-arti">41</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('四十二')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">四十二</div>
+            <div class="bubble-pinyin">sìshíèr</div>
+            <div class="bubble-arti">42</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('四十三')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">四十三</div>
+            <div class="bubble-pinyin">sìshísān</div>
+            <div class="bubble-arti">43</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('四十四')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">四十四</div>
+            <div class="bubble-pinyin">sìshísì</div>
+            <div class="bubble-arti">44</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('四十五')" title="Klik untuk mendengar" style="cursor:pointer;">
             <div class="bubble-hanzi">四十五</div>
             <div class="bubble-pinyin">sìshíwǔ</div>
             <div class="bubble-arti">45</div>
           </div>
-          <div class="number-card wide" onclick="playPinyin('jiǔshíjiǔ')" title="Klik untuk mendengar" style="cursor:pointer;">
+          <div class="number-card" onclick="playPinyin('四十六')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">四十六</div>
+            <div class="bubble-pinyin">sìshíliù</div>
+            <div class="bubble-arti">46</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('四十七')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">四十七</div>
+            <div class="bubble-pinyin">sìshíqī</div>
+            <div class="bubble-arti">47</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('四十八')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">四十八</div>
+            <div class="bubble-pinyin">sìshíbā</div>
+            <div class="bubble-arti">48</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('四十九')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">四十九</div>
+            <div class="bubble-pinyin">sìshíjiǔ</div>
+            <div class="bubble-arti">49</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五十')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五十</div>
+            <div class="bubble-pinyin">wǔshí</div>
+            <div class="bubble-arti">50</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五十一')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五十一</div>
+            <div class="bubble-pinyin">wǔshíyī</div>
+            <div class="bubble-arti">51</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五十二')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五十二</div>
+            <div class="bubble-pinyin">wǔshíèr</div>
+            <div class="bubble-arti">52</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五十三')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五十三</div>
+            <div class="bubble-pinyin">wǔshísān</div>
+            <div class="bubble-arti">53</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五十四')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五十四</div>
+            <div class="bubble-pinyin">wǔshísì</div>
+            <div class="bubble-arti">54</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五十五')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五十五</div>
+            <div class="bubble-pinyin">wǔshíwǔ</div>
+            <div class="bubble-arti">55</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五十六')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五十六</div>
+            <div class="bubble-pinyin">wǔshíliù</div>
+            <div class="bubble-arti">56</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五十七')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五十七</div>
+            <div class="bubble-pinyin">wǔshíqī</div>
+            <div class="bubble-arti">57</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五十八')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五十八</div>
+            <div class="bubble-pinyin">wǔshíbā</div>
+            <div class="bubble-arti">58</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('五十九')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">五十九</div>
+            <div class="bubble-pinyin">wǔshíjiǔ</div>
+            <div class="bubble-arti">59</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六十')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六十</div>
+            <div class="bubble-pinyin">liùshí</div>
+            <div class="bubble-arti">60</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六十一')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六十一</div>
+            <div class="bubble-pinyin">liùshíyī</div>
+            <div class="bubble-arti">61</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六十二')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六十二</div>
+            <div class="bubble-pinyin">liùshíèr</div>
+            <div class="bubble-arti">62</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六十三')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六十三</div>
+            <div class="bubble-pinyin">liùshísān</div>
+            <div class="bubble-arti">63</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六十四')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六十四</div>
+            <div class="bubble-pinyin">liùshísì</div>
+            <div class="bubble-arti">64</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六十五')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六十五</div>
+            <div class="bubble-pinyin">liùshíwǔ</div>
+            <div class="bubble-arti">65</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六十六')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六十六</div>
+            <div class="bubble-pinyin">liùshíliù</div>
+            <div class="bubble-arti">66</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六十七')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六十七</div>
+            <div class="bubble-pinyin">liùshíqī</div>
+            <div class="bubble-arti">67</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六十八')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六十八</div>
+            <div class="bubble-pinyin">liùshíbā</div>
+            <div class="bubble-arti">68</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('六十九')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">六十九</div>
+            <div class="bubble-pinyin">liùshíjiǔ</div>
+            <div class="bubble-arti">69</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七十')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七十</div>
+            <div class="bubble-pinyin">qīshí</div>
+            <div class="bubble-arti">70</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七十一')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七十一</div>
+            <div class="bubble-pinyin">qīshíyī</div>
+            <div class="bubble-arti">71</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七十二')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七十二</div>
+            <div class="bubble-pinyin">qīshíèr</div>
+            <div class="bubble-arti">72</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七十三')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七十三</div>
+            <div class="bubble-pinyin">qīshísān</div>
+            <div class="bubble-arti">73</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七十四')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七十四</div>
+            <div class="bubble-pinyin">qīshísì</div>
+            <div class="bubble-arti">74</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七十五')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七十五</div>
+            <div class="bubble-pinyin">qīshíwǔ</div>
+            <div class="bubble-arti">75</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七十六')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七十六</div>
+            <div class="bubble-pinyin">qīshíliù</div>
+            <div class="bubble-arti">76</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七十七')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七十七</div>
+            <div class="bubble-pinyin">qīshíqī</div>
+            <div class="bubble-arti">77</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七十八')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七十八</div>
+            <div class="bubble-pinyin">qīshíbā</div>
+            <div class="bubble-arti">78</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('七十九')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">七十九</div>
+            <div class="bubble-pinyin">qīshíjiǔ</div>
+            <div class="bubble-arti">79</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八十')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八十</div>
+            <div class="bubble-pinyin">bāshí</div>
+            <div class="bubble-arti">80</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八十一')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八十一</div>
+            <div class="bubble-pinyin">bāshíyī</div>
+            <div class="bubble-arti">81</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八十二')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八十二</div>
+            <div class="bubble-pinyin">bāshíèr</div>
+            <div class="bubble-arti">82</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八十三')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八十三</div>
+            <div class="bubble-pinyin">bāshísān</div>
+            <div class="bubble-arti">83</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八十四')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八十四</div>
+            <div class="bubble-pinyin">bāshísì</div>
+            <div class="bubble-arti">84</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八十五')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八十五</div>
+            <div class="bubble-pinyin">bāshíwǔ</div>
+            <div class="bubble-arti">85</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八十六')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八十六</div>
+            <div class="bubble-pinyin">bāshíliù</div>
+            <div class="bubble-arti">86</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八十七')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八十七</div>
+            <div class="bubble-pinyin">bāshíqī</div>
+            <div class="bubble-arti">87</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八十八')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八十八</div>
+            <div class="bubble-pinyin">bāshíbā</div>
+            <div class="bubble-arti">88</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('八十九')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">八十九</div>
+            <div class="bubble-pinyin">bāshíjiǔ</div>
+            <div class="bubble-arti">89</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九十')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">九十</div>
+            <div class="bubble-pinyin">jiǔshí</div>
+            <div class="bubble-arti">90</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九十一')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">九十一</div>
+            <div class="bubble-pinyin">jiǔshíyī</div>
+            <div class="bubble-arti">91</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九十二')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">九十二</div>
+            <div class="bubble-pinyin">jiǔshíèr</div>
+            <div class="bubble-arti">92</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九十三')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">九十三</div>
+            <div class="bubble-pinyin">jiǔshísān</div>
+            <div class="bubble-arti">93</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九十四')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">九十四</div>
+            <div class="bubble-pinyin">jiǔshísì</div>
+            <div class="bubble-arti">94</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九十五')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">九十五</div>
+            <div class="bubble-pinyin">jiǔshíwǔ</div>
+            <div class="bubble-arti">95</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九十六')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">九十六</div>
+            <div class="bubble-pinyin">jiǔshíliù</div>
+            <div class="bubble-arti">96</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九十七')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">九十七</div>
+            <div class="bubble-pinyin">jiǔshíqī</div>
+            <div class="bubble-arti">97</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九十八')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">九十八</div>
+            <div class="bubble-pinyin">jiǔshíbā</div>
+            <div class="bubble-arti">98</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('九十九')" title="Klik untuk mendengar" style="cursor:pointer;">
             <div class="bubble-hanzi">九十九</div>
             <div class="bubble-pinyin">jiǔshíjiǔ</div>
             <div class="bubble-arti">99</div>
+          </div>
+          <div class="number-card" onclick="playPinyin('一百')" title="Klik untuk mendengar" style="cursor:pointer;">
+            <div class="bubble-hanzi">一百</div>
+            <div class="bubble-pinyin">yìbǎi</div>
+            <div class="bubble-arti">100</div>
           </div>
         </div>
 
@@ -2147,7 +2649,7 @@
         <div style="font-size:0.82rem; font-weight:700; color:var(--primary); margin-top:0.6rem;">
           🗣️ Contoh Penggunaan 二 (èr) vs 两 (liǎng) (大声朗读 / Baca Aloud):
         </div>
-        <div class="number-grid wide">
+        <div class="number-grid cols-3">
           <!-- Contoh èr -->
           <div class="number-card wide" onclick="playPinyin('shí\'èr')" title="Klik untuk mendengar" style="cursor:pointer;">
             <div class="bubble-hanzi">十二</div>
@@ -2245,14 +2747,14 @@
               <div style="font-size:0.76rem; font-weight:700; color:#475569; margin-bottom:0.35rem;">Pilihan Jawaban:</div>
               <div class="quiz-options" style="font-size:0.84rem; display:flex; gap:0.55rem; flex-wrap:wrap;">
                 <span style="background:#ecfdf5; color:#047857; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #10b981; display:inline-flex; align-items:center; gap:0.35rem;">
-                  <span>A. <span style="color:#ea580c;font-weight:700;">妹</span><span style="color:#ea580c;font-weight:700;">妹</span> <em>(<span style="color:#ea580c;font-weight:700;">mèi</span><span style="color:#ea580c;font-weight:700;">mei</span>)</em> – Adik perempuan</span>
+                  <span>A. 妹妹 <em>(mèimei)</em> – Adik perempuan</span>
                   <span style="background:#10b981; color:#fff; font-size:0.68rem; padding:0.1rem 0.4rem; border-radius:10px;">Jawaban Benar ✓</span>
                 </span>
                 <span style="background:#f8fafc; color:#64748b; padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                  B. <span style="color:#16a34a;font-weight:700;">姐</span><span style="color:#16a34a;font-weight:700;">姐</span> <em>(<span style="color:#16a34a;font-weight:700;">jiě</span><span style="color:#16a34a;font-weight:700;">jie</span>)</em> – Kakak perempuan
+                  B. 姐姐 <em>(jiějie)</em> – Kakak perempuan
                 </span>
                 <span style="background:#f8fafc; color:#64748b; padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                  C. <span style="color:#e11d48;font-weight:700;">哥</span><span style="color:#e11d48;font-weight:700;">哥</span> <em>(<span style="color:#e11d48;font-weight:700;">gē</span><span style="color:#e11d48;font-weight:700;">ge</span>)</em> – Kakak laki-laki
+                  C. 哥哥 <em>(gēge)</em> – Kakak laki-laki
                 </span>
               </div>
             </div>
@@ -2303,14 +2805,14 @@
               <div style="font-size:0.76rem; font-weight:700; color:#475569; margin-bottom:0.35rem;">Pilihan Jawaban:</div>
               <div class="quiz-options" style="font-size:0.84rem; display:flex; gap:0.55rem; flex-wrap:wrap;">
                 <span style="background:#f8fafc; color:#64748b; padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                  A. <span style="color:#0284c7;font-weight:700;">两</span><span style="color:#16a34a;font-weight:700;">口</span><span style="color:#2563eb;font-weight:700;">人</span> <em>(<span style="color:#0284c7;font-weight:700;">liǎng</span> <span style="color:#16a34a;font-weight:700;">kǒu</span> <span style="color:#2563eb;font-weight:700;">rén</span>)</em> – 2 orang
+                  A. 两口人 <em>(liǎng kǒu rén)</em> – 2 orang
                 </span>
                 <span style="background:#ecfdf5; color:#047857; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #10b981; display:inline-flex; align-items:center; gap:0.35rem;">
-                  <span>B. <span style="color:#ea580c;font-weight:700;">四</span><span style="color:#16a34a;font-weight:700;">口</span><span style="color:#2563eb;font-weight:700;">人</span> <em>(<span style="color:#ea580c;font-weight:700;">sì</span> <span style="color:#16a34a;font-weight:700;">kǒu</span> <span style="color:#2563eb;font-weight:700;">rén</span>)</em> – 4 orang</span>
+                  <span>B. 四口人 <em>(sì kǒu rén)</em> – 4 orang</span>
                   <span style="background:#10b981; color:#fff; font-size:0.68rem; padding:0.1rem 0.4rem; border-radius:10px;">Jawaban Benar ✓</span>
                 </span>
                 <span style="background:#f8fafc; color:#64748b; padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                  C. <span style="color:#ca8a04;font-weight:700;">五</span><span style="color:#16a34a;font-weight:700;">口</span><span style="color:#2563eb;font-weight:700;">人</span> <em>(<span style="color:#ca8a04;font-weight:700;">wǔ</span> <span style="color:#16a34a;font-weight:700;">kǒu</span> <span style="color:#2563eb;font-weight:700;">rén</span>)</em> – 5 orang
+                  C. 五口人 <em>(wǔ kǒu rén)</em> – 5 orang
                 </span>
               </div>
             </div>
@@ -2831,9 +3333,9 @@
               </div>
             </div>
             <div class="quiz-options" style="margin-top:0.55rem;font-size:0.92rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
-              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. <span style="color:#e11d48;font-weight:700;">一</span><span style="color:#ea580c;font-weight:700;">个</span> <em>(<span style="color:#e11d48;font-weight:700;">yí</span> <span style="color:#ea580c;font-weight:700;">gè</span>)</em></span>
-              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. <span style="color:#0284c7;font-weight:700;">两</span><span style="color:#ea580c;font-weight:700;">个</span> <em>(<span style="color:#0284c7;font-weight:700;">liǎng</span> <span style="color:#ea580c;font-weight:700;">gè</span>)</em> ✓</span>
-              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. <span style="color:#16a34a;font-weight:700;">三</span><span style="color:#ea580c;font-weight:700;">个</span> <em>(<span style="color:#16a34a;font-weight:700;">sān</span> <span style="color:#ea580c;font-weight:700;">gè</span>)</em></span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 一个 <em>(yí gè)</em></span>
+              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 两个 <em>(liǎng gè)</em> ✓</span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 三个 <em>(sān gè)</em></span>
             </div>
           </div>
         </div>
@@ -2876,9 +3378,9 @@
               </div>
             </div>
             <div class="quiz-options" style="margin-top:0.55rem;font-size:0.92rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
-              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. <span style="color:#ca8a04;font-weight:700;">五</span> <em>(<span style="color:#ca8a04;font-weight:700;">wǔ</span>)</em></span>
-              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. <span style="color:#059669;font-weight:700;">十</span><span style="color:#2563eb;font-weight:700;">二</span> <em>(<span style="color:#059669;font-weight:700;">shí</span><span style="color:#2563eb;font-weight:700;">'èr</span>)</em> ✓</span>
-              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. <span style="color:#2563eb;font-weight:700;">二</span><span style="color:#059669;font-weight:700;">十</span> <em>(<span style="color:#2563eb;font-weight:700;">èr</span><span style="color:#059669;font-weight:700;">shí</span>)</em></span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 五 <em>(wǔ)</em></span>
+              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 十二 <em>(shí'èr)</em> ✓</span>
+              <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 二十 <em>(èrshí)</em></span>
             </div>
           </div>
         </div>

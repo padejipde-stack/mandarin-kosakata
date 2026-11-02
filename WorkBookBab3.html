@@ -325,8 +325,10 @@
     }
 
     /* Active visibility state */
-    body.show-pinyin .bubble-pinyin { display: block; }
-    body.show-arti .bubble-arti { display: block; }
+    body.show-pinyin .bubble-pinyin,
+    body.show-pinyin .dialog5-pinyin { display: block; }
+    body.show-arti .bubble-arti,
+    body.show-arti .dialog5-arti { display: block; }
 
     /* ── SUB-BREAKDOWN (ARTI PER KATA PER TEKS) ── */
     .sub-breakdown {
@@ -1252,7 +1254,8 @@
       border: 1px solid #e2e8f0;
       border-radius: 12px;
       padding: 1.25rem 1.4rem;
-      margin-bottom: 1.1rem;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
       box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
     .aturan-block-title {
@@ -1498,11 +1501,16 @@
       color: #3b82f6;
       font-style: italic;
       margin-top: 2px;
+      display: none;
+    }
+    body.show-color .dialog5-pinyin {
+      color: #64748b;
     }
     .dialog5-arti {
       font-size: 0.82rem;
       color: #64748b;
       margin-top: 2px;
+      display: none;
     }
 
   
@@ -1751,7 +1759,7 @@
       </div>
 
       <!-- Aturan Penggabungan -->
-      <div class="aturan-block" style="margin-top: 1rem;">
+      <div class="aturan-block">
         <div class="aturan-block-title">
           <span class="aturan-block-badge" style="background: #e0f2fe; color: #0369a1;">Kaidah Penggabungan Utama</span>
           <span>Aturan Penggabungan Inisial (zh, ch, sh, r, z, c, s) dengan Final (Yùnmǔ)</span>
@@ -2207,7 +2215,7 @@
       </div>
 
       <!-- Aturan 1: u mandiri diganti w -->
-      <div class="aturan-block" style="margin-top: 0.85rem;">
+      <div class="aturan-block">
         <div class="aturan-block-title">
           <span class="aturan-block-badge" style="background: #e0f2fe; color: #0369a1;">Aturan 1</span>
           <span>Penulisan Final Berawalan "u" sebagai Suku Kata Independen</span>
@@ -2271,7 +2279,7 @@
       </div>
 
       <!-- Latihan Pelafalan Suku Kata dengan "w" -->
-      <div class="aturan-block" style="margin-top: 1rem;">
+      <div class="aturan-block">
         <div class="aturan-block-title">
           <span class="aturan-block-badge" style="background: #fef3c7; color: #b45309;">Latihan Nada</span>
           <span>Pelafalan Suku Kata Mandiri Berawalan "w" dalam 4 Nada</span>
@@ -2342,7 +2350,7 @@
       </div>
 
       <!-- Aturan Singkatan -->
-      <div class="aturan-block" style="margin-top: 0.85rem;">
+      <div class="aturan-block">
         <div class="aturan-block-title">
           <span class="aturan-block-badge" style="background: #d1fae5; color: #065f46;">Aturan Ejaan Khusus</span>
           <span>Penyingkatan "uei" menjadi "ui" &amp; "uen" menjadi "un"</span>
@@ -2446,7 +2454,7 @@
       </div>
 
       <!-- ── LATIHAN 1: MENULISKAN HURUF KONSONAN / INISIAL (声母) ── -->
-      <div class="aturan-block" style="margin-top: 1rem;">
+      <div class="aturan-block">
         <div class="aturan-block-title">
           <span class="aturan-block-badge" style="background: #e0f2fe; color: #0369a1;">Latihan 1: Inisial (Shēngmǔ)</span>
           <span>Dengarkan audio latihan, lalu tuliskan inisial yang sesuai pada garis kosong:</span>
@@ -2555,7 +2563,7 @@
       </div>
 
       <!-- ── LATIHAN 2: MENULISKAN VOKAL / FINAL (韵母) ── -->
-      <div class="aturan-block" style="margin-top: 1.5rem; border-top: 1px dashed #e2e8f0; padding-top: 1.25rem;">
+      <div class="aturan-block" style="border-top: 1px dashed #e2e8f0; padding-top: 1.25rem;">
         <div class="aturan-block-title">
           <span class="aturan-block-badge" style="background: #fef3c7; color: #b45309;">Latihan 2: Final (Yùnmǔ)</span>
           <span>Dengarkan audio latihan, lalu tuliskan vokal/final yang sesuai untuk melengkapi suku kata:</span>
@@ -2685,7 +2693,7 @@
       </div>
 
       <!-- ── LATIHAN 3: MENANDAI NADA (TONES / 声调) ── -->
-      <div class="aturan-block" style="margin-top: 1.5rem; border-top: 1px dashed #e2e8f0; padding-top: 1.25rem;">
+      <div class="aturan-block" style="border-top: 1px dashed #e2e8f0; padding-top: 1.25rem;">
         <div class="aturan-block-title">
           <span class="aturan-block-badge" style="background: #e0e7ff; color: #4338ca;">Latihan 3: Tanda Nada (Tones)</span>
           <span>Berikan tanda nada yang benar pada suku kata berikut, lalu baca dengan nyaring:</span>
@@ -2810,7 +2818,7 @@
       </div>
 
       <!-- ── LATIHAN 4: MENCOCOKKAN GAMBAR DENGAN DIALOG (MATCHING DIALOGUES) ── -->
-      <div class="aturan-block" style="margin-top: 1.5rem; border-top: 1px dashed #e2e8f0; padding-top: 1.25rem;">
+      <div class="aturan-block" style="border-top: 1px dashed #e2e8f0; padding-top: 1.25rem;">
         <div class="aturan-block-title">
           <span class="aturan-block-badge" style="background: #dcfce7; color: #166534;">Latihan 4: Mencocokkan Gambar &amp; Dialog</span>
           <span>Cocokkan nomor dialog dengan deskripsi gambar yang tepat, lalu latih pengucapan:</span>
@@ -2919,15 +2927,14 @@
       </div>
 
       <!-- ── LATIHAN 5: LATIHAN KŌUYǓ (BERBICARA) BAGIAN 1 ── -->
-      <div class="aturan-block" style="margin-top: 1.5rem; border-top: 1px dashed #e2e8f0; padding-top: 1.25rem;">
+      <div class="aturan-block" style="border-top: 1px dashed #e2e8f0; padding-top: 1.25rem;">
         <div class="aturan-block-title">
           <span class="aturan-block-badge" style="background: #fce7f3; color: #be185d;">Latihan 5: Kōuyǔ (Berbicara)</span>
           <span>Latihan membaca nyaring dan mengulangi kalimat-kalimat berikut:</span>
         </div>
 
-        <div style="font-size: 0.82rem; color: #64748b; margin: 0.4rem 0 0.85rem; display: flex; align-items: center; justify-content: space-between;">
+        <div style="font-size: 0.82rem; color: #64748b; margin: 0.4rem 0 0.85rem;">
           <span>Klik kartu kalimat untuk mendengarkan pelafalan audio dengan intonasi natural:</span>
-          <span style="font-size: 0.75rem; color: #be185d;">🗣️ Latihan Berbicara Nyaring</span>
         </div>
 
         <div class="classroom-list">

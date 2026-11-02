@@ -1131,6 +1131,21 @@
       }
     }
 
+  
+    /* SPOK Panel Pinyin & Arti Toggle */
+    .spok-py {
+      display: none;
+    }
+    body.show-pinyin .spok-py {
+      display: block;
+    }
+    .spok-arti {
+      display: none;
+    }
+    body.show-arti .spok-arti {
+      display: block;
+    }
+
   </style>
 </head>
 <body>
@@ -1211,9 +1226,9 @@
             <span class="spok-plus">+</span>
             <span class="spok-chip chip-w">Ket. Waktu</span>
             <span class="spok-plus">+</span>
-            <span class="spok-chip chip-t">在 Tempat</span>
-            <span class="spok-plus">+</span>
             <span class="spok-chip chip-p">Predikat (P)</span>
+            <span class="spok-plus">+</span>
+            <span class="spok-chip chip-t">Ket. Tempat</span>
             <span class="spok-plus">+</span>
             <span class="spok-chip chip-o">Objek (O)</span>
           </div>
@@ -1270,7 +1285,7 @@
 
           <!-- Versi Bahasa Mandarin -->
           <div class="compare-item">
-            <div class="compare-lang">🇨🇳 Versi Bahasa Mandarin (S - K.Waktu - K.Tempat - P - O):</div>
+            <div class="compare-lang">🇨🇳 Versi Bahasa Mandarin (S - K.Waktu - P - K.Tempat - O):</div>
             <div class="compare-blocks">
               <div class="compare-block chip-s">
                 <span class="block-text">我</span>
@@ -1557,19 +1572,19 @@
           <div style="font-size:0.75rem;font-weight:700;color:#0369a1;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.55rem;">📝 Contoh · 例句</div>
           <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:0.5rem;">
             <div style="display:flex;flex-direction:column;align-items:center;background:#dbeafe;border:1px solid #bfdbfe;border-radius:8px;padding:0.45rem 0.65rem;text-align:center;min-width:60px;">
-              <span style="font-family:'Noto Sans SC',sans-serif;font-size:1.25rem;font-weight:700;color:#1e40af;">我</span>
-              <span style="font-size:0.7rem;color:#3b82f6;margin-top:0.1rem;">wǒ</span>
+              <span class="spok-wo-hz" style="font-family:'Noto Sans SC',sans-serif;font-size:1.25rem;font-weight:700;">我</span>
+              <span class="spok-wo-py spok-py" style="font-size:0.7rem;font-weight:600;margin-top:0.1rem;">wǒ</span>
               <span style="font-size:0.65rem;font-weight:700;color:#1d4ed8;margin-top:0.15rem;">主语 (S)</span>
             </div>
             <div style="display:flex;flex-direction:column;align-items:center;background:#dcfce7;border:1px solid #bbf7d0;border-radius:8px;padding:0.45rem 0.65rem;text-align:center;min-width:60px;">
-              <span style="font-family:'Noto Sans SC',sans-serif;font-size:1.25rem;font-weight:700;color:#166534;">叫</span>
-              <span style="font-size:0.7rem;color:#16a34a;margin-top:0.1rem;">jiào</span>
+              <span class="spok-jiao-hz" style="font-family:'Noto Sans SC',sans-serif;font-size:1.25rem;font-weight:700;">叫</span>
+              <span class="spok-jiao-py spok-py" style="font-size:0.7rem;font-weight:600;margin-top:0.1rem;">jiào</span>
               <span style="font-size:0.65rem;font-weight:700;color:#166534;margin-top:0.15rem;">谓语 (P)</span>
             </div>
-            <div style="display:flex;flex-direction:column;align-items:center;background:#ffe4e6;border:1px solid #fecdd3;border-radius:8px;padding:0.45rem 0.65rem;text-align:center;min-width:60px;">
-              <span style="font-family:'Noto Sans SC',sans-serif;font-size:1.25rem;font-weight:700;color:#9f1239;">陈天中</span>
-              <span style="font-size:0.7rem;color:#e11d48;margin-top:0.1rem;">Chén Tiānzhōng</span>
-              <span style="font-size:0.65rem;font-weight:700;color:#9f1239;margin-top:0.15rem;">宾语 (O)</span>
+            <div style="display:flex;flex-direction:column;align-items:center;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:8px;padding:0.45rem 0.65rem;text-align:center;min-width:60px;">
+              <span class="spok-chen-hz" style="font-family:'Noto Sans SC',sans-serif;font-size:1.25rem;font-weight:700;">陈天中</span>
+              <span class="spok-chen-py spok-py" style="font-size:0.7rem;font-weight:600;margin-top:0.1rem;color:#475569;">Chén Tiānzhōng</span>
+              <span style="font-size:0.65rem;font-weight:700;color:#64748b;margin-top:0.15rem;">宾语 (O)</span>
             </div>
           </div>
           <div style="margin-top:0.55rem;font-size:0.8rem;color:#475569;">
@@ -1938,15 +1953,21 @@
   function colorizePair(hanziText, pinyinText, charColorMap) {
     if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
-    // 1. Ekstrak semua karakter Hanzi dan pastikan punya warna
+    // 1. Ekstrak semua karakter Hanzi dan pastikan punya warna (hindari warna sama saat bersebelahan)
     const hzList = [];
+    let prevColor = null;
     for (const ch of hanziText) {
       if (isHanziChar(ch)) {
         hzList.push(ch);
         if (!charColorMap[ch]) {
-          const nextColor = COLOR_PALETTE[Object.keys(charColorMap).length % COLOR_PALETTE.length];
-          charColorMap[ch] = nextColor;
+          let colorIdx = Object.keys(charColorMap).length % COLOR_PALETTE.length;
+          let candidate = COLOR_PALETTE[colorIdx];
+          if (candidate === prevColor) {
+            candidate = COLOR_PALETTE[(colorIdx + 1) % COLOR_PALETTE.length];
+          }
+          charColorMap[ch] = candidate;
         }
+        prevColor = charColorMap[ch];
       }
     }
 
@@ -2009,7 +2030,10 @@
       '你': '#e11d48', // Merah
       '好': '#16a34a', // Hijau
       '现': '#2563eb', // Biru Royal (Xiàn)
-      '在': '#ea580c'  // Oranye Terang (zài)
+      '在': '#ea580c', // Oranye Terang (zài)
+      '陈': '#0891b2', // Cyan (Chén)
+      '天': '#ca8a04', // Kuning Emas (Tiān)
+      '中': '#7c3aed'  // Ungu (zhōng)
     };
 
     // 1. Warnai dialog bubbles
@@ -2089,11 +2113,39 @@
         pyEl.innerHTML = res.pinyin;
       });
     });
+  
+    // 6. Warnai contoh kalimat SPOK (我, 叫, 陈天中)
+    document.querySelectorAll('.spok-wo-hz').forEach(el => {
+      if (!el.dataset.origHtml) el.dataset.origHtml = el.innerHTML;
+      el.innerHTML = '<span style="color:' + (charColorMap['我'] || '#2563eb') + ';font-weight:700;">我</span>';
+    });
+    document.querySelectorAll('.spok-wo-py').forEach(el => {
+      if (!el.dataset.origHtml) el.dataset.origHtml = el.innerHTML;
+      el.innerHTML = '<span style="color:' + (charColorMap['我'] || '#2563eb') + ';font-weight:700;">wǒ</span>';
+    });
+
+    document.querySelectorAll('.spok-jiao-hz').forEach(el => {
+      if (!el.dataset.origHtml) el.dataset.origHtml = el.innerHTML;
+      el.innerHTML = '<span style="color:' + (charColorMap['叫'] || '#ea580c') + ';font-weight:700;">叫</span>';
+    });
+    document.querySelectorAll('.spok-jiao-py').forEach(el => {
+      if (!el.dataset.origHtml) el.dataset.origHtml = el.innerHTML;
+      el.innerHTML = '<span style="color:' + (charColorMap['叫'] || '#ea580c') + ';font-weight:700;">jiào</span>';
+    });
+
+    document.querySelectorAll('.spok-chen-hz').forEach(el => {
+      if (!el.dataset.origHtml) el.dataset.origHtml = el.innerHTML;
+      el.innerHTML = '<span style="color:#0891b2;font-weight:700;">陈</span><span style="color:#ca8a04;font-weight:700;">天</span><span style="color:#7c3aed;font-weight:700;">中</span>';
+    });
+    document.querySelectorAll('.spok-chen-py').forEach(el => {
+      if (!el.dataset.origHtml) el.dataset.origHtml = el.innerHTML;
+      el.innerHTML = '<span style="color:#0891b2;font-weight:700;">Chén</span> <span style="color:#ca8a04;font-weight:700;">Tiān</span><span style="color:#7c3aed;font-weight:700;">zhōng</span>';
+    });
   }
 
   function removeColors() {
     // Kembalikan semua teks ke kondisi asli tanpa span warna
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .spok-wo-hz, .spok-wo-py, .spok-jiao-hz, .spok-jiao-py, .spok-chen-hz, .spok-chen-py';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dialog Bahasa Mandarin - Bab 1: AI小语，你好！ (AI Xiǎoyǔ, nǐ hǎo!)</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#x1F236;</text></svg>">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -767,10 +767,10 @@
       border-radius: 6px;
     }
 
-    /* ── PHONETIC VOCABULARY PHOTO CARDS (2 KOLOM) ── */
+    /* ── PHONETIC VOCABULARY PHOTO CARDS (4 KOLOM) ── */
     .photo-grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 0.85rem;
       margin-top: 0.65rem;
     }
@@ -828,6 +828,7 @@
       display: none;
     }
     body.show-pinyin .twister-pinyin { display: block; }
+    body.show-pinyin .nt-pinyin { display: block; }
     .twister-arti {
       font-family: 'Poppins', sans-serif;
       font-size: 0.85rem;
@@ -839,6 +840,7 @@
       display: none;
     }
     body.show-arti .twister-arti { display: block; }
+    body.show-arti .nt-arti { display: block; }
 
     /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
     .dialog-toolbar {
@@ -935,6 +937,12 @@
     }
 
     /* ── RESPONSIVE MOBILE ── */
+    @media (max-width: 900px) {
+      .photo-grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 768px) {
+      .tone-sandhi-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
     @media (max-width: 600px) {
       .btn-text-desktop { display: none; }
       .btn-text-mobile { display: inline; }
@@ -1298,10 +1306,12 @@
       font-size: 0.88rem;
       font-weight: 500;
       color: var(--primary);
+      display: none;
     }
     .nt-arti {
       font-size: 0.8rem;
       color: var(--sub);
+      display: none;
     }
     .nt-pitch-note {
       font-size: 0.78rem;
@@ -1313,6 +1323,17 @@
     }
     .nt-pitch-low  { background: rgba(220,38,38,0.1);  color: #b91c1c; }
     .nt-pitch-high { background: rgba(22,163,74,0.1); color: #15803d; }
+
+  
+    /* Tone Sandhi pronunciation note */
+    .sandhi-pronun {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: #64748b;
+    }
+    body.show-color .sandhi-pronun {
+      color: #e11d48;
+    }
 
   </style>
 </head>
@@ -1347,6 +1368,459 @@
 </nav>
 
 <div class="wrap">
+
+  <!-- ══ MATERI PENGANTAR: KOSAKATA DUA SUKU KATA ══ -->
+  <div>
+    <div class="section-title">🖼️ 看图读词 · Kosakata Dua Suku Kata (Disyllabic Words)</div>
+    <div class="classroom-box" style="margin-top:0.5rem; margin-bottom:1.5rem; border-left: 5px solid var(--primary);">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color:#fff;">词</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:var(--primary-dark);">Latihan Membaca Kosakata · 双音节词语</div>
+          <div class="classroom-desc">
+            Materi pembelajaran berikut menampilkan latihan melihat ilustrasi gambar dan membaca kosakata dua suku kata <em>(disyllabic words)</em> dalam bahasa Mandarin untuk melatih pelafalan nada dan inisial-final dasar:
+          </div>
+        </div>
+      </div>
+
+      <div class="classroom-list">
+        <div class="breakdown-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.9rem; margin-top:0.4rem;">
+          
+          <!-- 1. kāfēi -->
+          <div class="word-card" style="padding: 1rem 0.9rem; text-align: left; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #ea580c; background: #fff; border: 1px solid var(--border); border-left: 4px solid #ea580c; border-radius: 12px;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem;">
+                <span style="font-size: 1.6rem;">☕</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #ea580c; background: #fff7ed; padding: 0.15rem 0.5rem; border-radius: 6px;">#1</span>
+              </div>
+              <div class="word-char" style="font-size: 1.45rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.15rem;">
+                咖啡
+              </div>
+              <div class="word-pinyin" style="font-size: 0.95rem; font-weight: 600; color: #ea580c; margin-bottom: 0.35rem;">
+                kāfēi
+              </div>
+            </div>
+            <div class="word-arti" style="font-size: 0.82rem; color: var(--text); border-top: 1px dashed var(--border); padding-top: 0.35rem; margin-top: 0.2rem; line-height: 1.35;">
+              <strong>Kopi</strong><br>
+              <span style="color: var(--sub); font-size: 0.78rem;">(Cangkir kopi di atas piring kecil yang dikelilingi biji kopi)</span>
+            </div>
+          </div>
+
+          <!-- 2. kělè -->
+          <div class="word-card" style="padding: 1rem 0.9rem; text-align: left; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #e11d48; background: #fff; border: 1px solid var(--border); border-left: 4px solid #e11d48; border-radius: 12px;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem;">
+                <span style="font-size: 1.6rem;">🥤</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #e11d48; background: #fff1f2; padding: 0.15rem 0.5rem; border-radius: 6px;">#2</span>
+              </div>
+              <div class="word-char" style="font-size: 1.45rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.15rem;">
+                可乐
+              </div>
+              <div class="word-pinyin" style="font-size: 0.95rem; font-weight: 600; color: #e11d48; margin-bottom: 0.35rem;">
+                kělè
+              </div>
+            </div>
+            <div class="word-arti" style="font-size: 0.82rem; color: var(--text); border-top: 1px dashed var(--border); padding-top: 0.35rem; margin-top: 0.2rem; line-height: 1.35;">
+              <strong>Kola / Minuman Bersoda</strong><br>
+              <span style="color: var(--sub); font-size: 0.78rem;">(Segelas minuman bersoda atau cola)</span>
+            </div>
+          </div>
+
+          <!-- 3. kǎoyā -->
+          <div class="word-card" style="padding: 1rem 0.9rem; text-align: left; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #ca8a04; background: #fff; border: 1px solid var(--border); border-left: 4px solid #ca8a04; border-radius: 12px;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem;">
+                <span style="font-size: 1.6rem;">🍗</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #ca8a04; background: #fefce8; padding: 0.15rem 0.5rem; border-radius: 6px;">#3</span>
+              </div>
+              <div class="word-char" style="font-size: 1.45rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.15rem;">
+                烤鸭
+              </div>
+              <div class="word-pinyin" style="font-size: 0.95rem; font-weight: 600; color: #ca8a04; margin-bottom: 0.35rem;">
+                kǎoyā
+              </div>
+            </div>
+            <div class="word-arti" style="font-size: 0.82rem; color: var(--text); border-top: 1px dashed var(--border); padding-top: 0.35rem; margin-top: 0.2rem; line-height: 1.35;">
+              <strong>Bebek Panggang</strong><br>
+              <span style="color: var(--sub); font-size: 0.78rem;">(Hidangan bebek panggang khas)</span>
+            </div>
+          </div>
+
+          <!-- 4. huǒguō -->
+          <div class="word-card" style="padding: 1rem 0.9rem; text-align: left; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #dc2626; background: #fff; border: 1px solid var(--border); border-left: 4px solid #dc2626; border-radius: 12px;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem;">
+                <span style="font-size: 1.6rem;">🍲</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #dc2626; background: #fef2f2; padding: 0.15rem 0.5rem; border-radius: 6px;">#4</span>
+              </div>
+              <div class="word-char" style="font-size: 1.45rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.15rem;">
+                火锅
+              </div>
+              <div class="word-pinyin" style="font-size: 0.95rem; font-weight: 600; color: #dc2626; margin-bottom: 0.35rem;">
+                huǒguō
+              </div>
+            </div>
+            <div class="word-arti" style="font-size: 0.82rem; color: var(--text); border-top: 1px dashed var(--border); padding-top: 0.35rem; margin-top: 0.2rem; line-height: 1.35;">
+              <strong>Hot Pot / Steamboat</strong><br>
+              <span style="color: var(--sub); font-size: 0.78rem;">(Hidangan sup panas dengan aneka isian)</span>
+            </div>
+          </div>
+
+          <!-- 5. dìtú -->
+          <div class="word-card" style="padding: 1rem 0.9rem; text-align: left; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #0891b2; background: #fff; border: 1px solid var(--border); border-left: 4px solid #0891b2; border-radius: 12px;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem;">
+                <span style="font-size: 1.6rem;">🗺️</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #0891b2; background: #ecfeff; padding: 0.15rem 0.5rem; border-radius: 6px;">#5</span>
+              </div>
+              <div class="word-char" style="font-size: 1.45rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.15rem;">
+                地图
+              </div>
+              <div class="word-pinyin" style="font-size: 0.95rem; font-weight: 600; color: #0891b2; margin-bottom: 0.35rem;">
+                dìtú
+              </div>
+            </div>
+            <div class="word-arti" style="font-size: 0.82rem; color: var(--text); border-top: 1px dashed var(--border); padding-top: 0.35rem; margin-top: 0.2rem; line-height: 1.35;">
+              <strong>Peta</strong><br>
+              <span style="color: var(--sub); font-size: 0.78rem;">(Peta wilayah dengan peniti penanda lokasi)</span>
+            </div>
+          </div>
+
+          <!-- 6. fēijī -->
+          <div class="word-card" style="padding: 1rem 0.9rem; text-align: left; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #0284c7; background: #fff; border: 1px solid var(--border); border-left: 4px solid #0284c7; border-radius: 12px;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem;">
+                <span style="font-size: 1.6rem;">✈️</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #0284c7; background: #f0f9ff; padding: 0.15rem 0.5rem; border-radius: 6px;">#6</span>
+              </div>
+              <div class="word-char" style="font-size: 1.45rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.15rem;">
+                飞机
+              </div>
+              <div class="word-pinyin" style="font-size: 0.95rem; font-weight: 600; color: #0284c7; margin-bottom: 0.35rem;">
+                fēijī
+              </div>
+            </div>
+            <div class="word-arti" style="font-size: 0.82rem; color: var(--text); border-top: 1px dashed var(--border); padding-top: 0.35rem; margin-top: 0.2rem; line-height: 1.35;">
+              <strong>Pesawat Terbang</strong><br>
+              <span style="color: var(--sub); font-size: 0.78rem;">(Pesawat terbang yang sedang mengudara)</span>
+            </div>
+          </div>
+
+          <!-- 7. máobǐ -->
+          <div class="word-card" style="padding: 1rem 0.9rem; text-align: left; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #7c3aed; background: #fff; border: 1px solid var(--border); border-left: 4px solid #7c3aed; border-radius: 12px;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem;">
+                <span style="font-size: 1.6rem;">🖌️</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #7c3aed; background: #f5f3ff; padding: 0.15rem 0.5rem; border-radius: 6px;">#7</span>
+              </div>
+              <div class="word-char" style="font-size: 1.45rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.15rem;">
+                毛笔
+              </div>
+              <div class="word-pinyin" style="font-size: 0.95rem; font-weight: 600; color: #7c3aed; margin-bottom: 0.35rem;">
+                máobǐ
+              </div>
+            </div>
+            <div class="word-arti" style="font-size: 0.82rem; color: var(--text); border-top: 1px dashed var(--border); padding-top: 0.35rem; margin-top: 0.2rem; line-height: 1.35;">
+              <strong>Kuas Tulis / Kaligrafi</strong><br>
+              <span style="color: var(--sub); font-size: 0.78rem;">(Kuas tulis atau kaligrafi Tiongkok tradisional)</span>
+            </div>
+          </div>
+
+          <!-- 8. ěrjī -->
+          <div class="word-card" style="padding: 1rem 0.9rem; text-align: left; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #db2777; background: #fff; border: 1px solid var(--border); border-left: 4px solid #db2777; border-radius: 12px;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem;">
+                <span style="font-size: 1.6rem;">🎧</span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #db2777; background: #fdf2f8; padding: 0.15rem 0.5rem; border-radius: 6px;">#8</span>
+              </div>
+              <div class="word-char" style="font-size: 1.45rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.15rem;">
+                耳机
+              </div>
+              <div class="word-pinyin" style="font-size: 0.95rem; font-weight: 600; color: #db2777; margin-bottom: 0.35rem;">
+                ěrjī
+              </div>
+            </div>
+            <div class="word-arti" style="font-size: 0.82rem; color: var(--text); border-top: 1px dashed var(--border); padding-top: 0.35rem; margin-top: 0.2rem; line-height: 1.35;">
+              <strong>Headphone / Earphone</strong><br>
+              <span style="color: var(--sub); font-size: 0.78rem;">(Perangkat headphone atau peredam telinga)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MATERI FONETIK: PERUBAHAN NADA KETIGA (TONE SANDHI) ══ -->
+  <div>
+    <div class="section-title">🎵 语音规则 · Perubahan Nada Ketiga (Tone Sandhi)</div>
+    <div class="classroom-box" style="margin-top:0.5rem; margin-bottom:1.5rem; border-left: 5px solid #d97706;">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu" style="background: linear-gradient(135deg, #d97706, #b45309); color:#fff;">音</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fef3c7; color:#b45309;">Aturan Fonetik · 三声音变 (Tone Sandhi)</div>
+          <div class="classroom-desc">
+            Dalam bahasa Mandarin, terdapat aturan perubahan nada <em>(Tone Sandhi)</em> ketika dua suku kata bernada ketiga (3rd tone) bertemu dan dibaca secara berurutan.
+          </div>
+        </div>
+      </div>
+
+      <div class="classroom-list">
+
+        <!-- Penjelasan Aturan Utama -->
+        <div class="classroom-item" style="border-left: 4px solid #d97706;">
+          <div class="item-number" style="background:#d97706; color:#fff;">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark);">
+              Aturan Utama &amp; Penulisan Pinyin
+            </div>
+            <div class="bubble-arti" style="font-size:0.86rem; color:var(--text); margin-top:0.3rem; line-height:1.55;">
+              • <strong>Aturan Perubahan Pelafalan:</strong> Ketika dua suku kata bernada ketiga (3rd tone) dibaca secara berurutan, suku kata pertama <strong>berubah menjadi nada kedua</strong> (2nd tone).<br>
+              <div style="display:inline-block; margin:0.4rem 0; padding:0.35rem 0.85rem; background:#fffbeb; border:1.5px dashed #f59e0b; border-radius:8px; font-weight:700; font-size:0.95rem; color:#b45309;">
+                Pola: 3rd tone + 3rd tone &nbsp;➔&nbsp; <span style="color:#e11d48;">2nd tone</span> + 3rd tone &nbsp;( 3 + 3 ➔ 2 + 3 )
+              </div><br>
+              • <strong>Penulisan Pinyin:</strong> Meskipun cara bacanya berubah menjadi nada kedua, dalam bentuk tulisan pinyin <strong>tanda nada aslinya tetap dipertahankan</strong> (tetap ditulis nada ketiga).
+            </div>
+
+            <!-- Contoh Inti -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:0.6rem; margin-top:0.75rem;">
+              <div style="background:#fff; border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.8rem;">
+                <div style="font-size:1.05rem; font-weight:700;">
+                  <span style="color:#0284c7; font-weight:700;">你</span> (nǐ) + <span style="color:#16a34a; font-weight:700;">好</span> (hǎo)
+                </div>
+                <div style="font-size:0.84rem; color:#b45309; font-weight:600; margin-top:0.15rem;">
+                  Dibaca: <span style="color:#e11d48; font-weight:700;">ní hǎo</span>
+                </div>
+                <div style="font-size:0.8rem; color:var(--sub); margin-top:0.1rem;">
+                  Arti: Halo / Hai
+                </div>
+              </div>
+
+              <div style="background:#fff; border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.8rem;">
+                <div style="font-size:1.05rem; font-weight:700;">
+                  <span style="color:#e11d48; font-weight:700;">可</span> (kě) + <span style="color:#0891b2; font-weight:700;">以</span> (yǐ)
+                </div>
+                <div style="font-size:0.84rem; color:#b45309; font-weight:600; margin-top:0.15rem;">
+                  Dibaca: <span style="color:#e11d48; font-weight:700;">ké yǐ</span>
+                </div>
+                <div style="font-size:0.8rem; color:var(--sub); margin-top:0.1rem;">
+                  Arti: Boleh / Bisa
+                </div>
+              </div>
+
+              <div style="background:#fff; border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.8rem;">
+                <div style="font-size:1.05rem; font-weight:700;">
+                  <span style="color:#7c3aed; font-weight:700;">辅</span> (fǔ) + <span style="color:#ca8a04; font-weight:700;">导</span> (dǎo)
+                </div>
+                <div style="font-size:0.84rem; color:#b45309; font-weight:600; margin-top:0.15rem;">
+                  Dibaca: <span style="color:#e11d48; font-weight:700;">fú dǎo</span>
+                </div>
+                <div style="font-size:0.8rem; color:var(--sub); margin-top:0.1rem;">
+                  Arti: Membimbing / Bimbingan
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Latihan Membaca Kosakata (3 Baris) -->
+        <div class="classroom-item" style="border-left: 4px solid #059669;">
+          <div class="item-number" style="background:#059669; color:#fff;">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark);">
+              Daftar Latihan Membaca Kosakata (3+3 ➔ 2+3)
+            </div>
+            <div class="bubble-arti" style="font-size:0.84rem; color:var(--text); margin-top:0.25rem;">
+              Bacalah kosakata dua suku kata di bawah ini dengan mengubah suku kata pertama menjadi nada kedua:
+            </div>
+
+            <!-- Baris 1 -->
+            <div style="margin-top:0.75rem;">
+              <div style="font-size:0.8rem; font-weight:700; color:#059669; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.35rem;">
+                📌 Baris 1:
+              </div>
+              <div class="breakdown-grid tone-sandhi-grid" style="grid-template-columns: repeat(4, 1fr); gap: 0.65rem;">
+                <!-- nǐ hǎo -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    你好
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    nǐ hǎo <em class="sandhi-pronun">(dibaca: ní hǎo)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Halo / Hai
+                  </div>
+                </div>
+
+                <!-- kěyǐ -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    可以
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    kěyǐ <em class="sandhi-pronun">(dibaca: ké yǐ)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Boleh / Bisa
+                  </div>
+                </div>
+
+                <!-- fǔdǎo -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    辅导
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    fǔdǎo <em class="sandhi-pronun">(dibaca: fú dǎo)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Membimbing / Mengajar
+                  </div>
+                </div>
+
+                <!-- xiǎojiě -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    小姐
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    xiǎojiě <em class="sandhi-pronun">(dibaca: xiáo jiě)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Nona / Saudari
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Baris 2 -->
+            <div style="margin-top:0.85rem;">
+              <div style="font-size:0.8rem; font-weight:700; color:#059669; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.35rem;">
+                📌 Baris 2:
+              </div>
+              <div class="breakdown-grid tone-sandhi-grid" style="grid-template-columns: repeat(4, 1fr); gap: 0.65rem;">
+                <!-- kǒuyǔ -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    口语
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    kǒuyǔ <em class="sandhi-pronun">(dibaca: kóu yǔ)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Bahasa lisan / Percakapan
+                  </div>
+                </div>
+
+                <!-- yǔfǎ -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    语法
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    yǔfǎ <em class="sandhi-pronun">(dibaca: yú fǎ)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Tata bahasa / Gramatika
+                  </div>
+                </div>
+
+                <!-- Fǎyǔ -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    法语
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    Fǎyǔ <em class="sandhi-pronun">(dibaca: Fá yǔ)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Bahasa Prancis
+                  </div>
+                </div>
+
+                <!-- tǎohǎo -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    讨好
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    tǎohǎo <em class="sandhi-pronun">(dibaca: táo hǎo)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Mencari muka / Menyenangkan orang
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Baris 3 -->
+            <div style="margin-top:0.85rem;">
+              <div style="font-size:0.8rem; font-weight:700; color:#059669; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.35rem;">
+                📌 Baris 3:
+              </div>
+              <div class="breakdown-grid tone-sandhi-grid" style="grid-template-columns: repeat(4, 1fr); gap: 0.65rem;">
+                <!-- liǎojiě -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    了解
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    liǎojiě <em class="sandhi-pronun">(dibaca: liáo jiě)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Memahami / Mengerti
+                  </div>
+                </div>
+
+                <!-- yǒuhǎo -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    友好
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    yǒuhǎo <em class="sandhi-pronun">(dibaca: yóu hǎo)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Ramah / Bersahabat
+                  </div>
+                </div>
+
+                <!-- yǔsǎn -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    雨伞
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    yǔsǎn <em class="sandhi-pronun">(dibaca: yú sǎn)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Payung
+                  </div>
+                </div>
+
+                <!-- shǒubiǎo -->
+                <div class="word-card" style="padding:0.65rem 0.75rem; text-align:left; background:#fff; border:1px solid var(--border); border-radius:10px;">
+                  <div class="word-char" style="font-size:1.25rem; font-weight:700;">
+                    手表
+                  </div>
+                  <div class="word-pinyin" style="font-size:0.88rem; font-weight:600;">
+                    shǒubiǎo <em class="sandhi-pronun">(dibaca: shóu biǎo)</em>
+                  </div>
+                  <div class="word-arti" style="font-size:0.8rem; color:var(--text); margin-top:0.2rem;">
+                    Jam tangan
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- ══ PROFIL TOKOH UTAMA ══ -->
   <div>
@@ -2327,6 +2801,82 @@
             <div class="word-pinyin">Wáng Yīfēi</div>
             <div class="word-arti">Nama orang (王=marga Wang)</div>
           </div>
+
+          <!-- Kata Ganti Orang Tunggal (Singular Pronouns) -->
+          <div class="word-card">
+            <div class="word-char">你</div>
+            <div class="word-pinyin">nǐ</div>
+            <div class="word-arti">Kamu / Engkau</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">我</div>
+            <div class="word-pinyin">wǒ</div>
+            <div class="word-arti">Saya / Aku</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">他</div>
+            <div class="word-pinyin">tā</div>
+            <div class="word-arti">Dia (laki-laki)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">她</div>
+            <div class="word-pinyin">tā</div>
+            <div class="word-arti">Dia (perempuan)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">它</div>
+            <div class="word-pinyin">tā</div>
+            <div class="word-arti">Dia / Itu (benda / hewan)</div>
+          </div>
+
+          <!-- Kata Ganti Orang Jamak (Plural Pronouns) -->
+          <div class="word-card">
+            <div class="word-char">你们</div>
+            <div class="word-pinyin">nǐmen</div>
+            <div class="word-arti">Kalian (kamu sekalian)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">我们</div>
+            <div class="word-pinyin">wǒmen</div>
+            <div class="word-arti">Kami / Kita</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">他们</div>
+            <div class="word-pinyin">tāmen</div>
+            <div class="word-arti">Mereka (laki-laki / campuran)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">她们</div>
+            <div class="word-pinyin">tāmen</div>
+            <div class="word-arti">Mereka (semua perempuan)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">它们</div>
+            <div class="word-pinyin">tāmen</div>
+            <div class="word-arti">Mereka (benda-benda / hewan-hewan)</div>
+          </div>
+
+          <!-- Variasi Sapaan & Tanya Kabar Tambahan -->
+          <div class="word-card">
+            <div class="word-char">哈啰</div>
+            <div class="word-pinyin">hāluō</div>
+            <div class="word-arti">Halo (kata serapan "hello")</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">嗨</div>
+            <div class="word-pinyin">hāi</div>
+            <div class="word-arti">Hai (kata serapan "hi")</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">你好吗</div>
+            <div class="word-pinyin">nǐ hǎo ma</div>
+            <div class="word-arti">Apa kabar? / Bagaimana kabarmu?</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">我很好</div>
+            <div class="word-pinyin">wǒ hěn hǎo</div>
+            <div class="word-arti">Saya sangat baik / Kabar saya baik</div>
+          </div>
         </div>
       </div>
 
@@ -2558,6 +3108,36 @@
             <div class="word-char">老师</div>
             <div class="word-pinyin">lǎoshī</div>
             <div class="word-arti">Guru / Pengajar</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">不谢</div>
+            <div class="word-pinyin">búxiè</div>
+            <div class="word-arti">Sama-sama / Jangan sungkan (singkat dari 不客气)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">不用谢</div>
+            <div class="word-pinyin">bú yòng xiè</div>
+            <div class="word-arti">Tidak usah berterima kasih / Sama-sama</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">没事</div>
+            <div class="word-pinyin">méi shì</div>
+            <div class="word-arti">Tidak apa-apa / Bukan masalah</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">感谢</div>
+            <div class="word-pinyin">gǎnxiè</div>
+            <div class="word-arti">Berterima kasih / Rasa syukur (lebih formal)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">谢啦</div>
+            <div class="word-pinyin">xiè la</div>
+            <div class="word-arti">Makasih ya! / Thanks! (akrab / santai)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">多谢</div>
+            <div class="word-pinyin">duōxiè</div>
+            <div class="word-arti">Banyak terima kasih / Terima kasih banyak</div>
           </div>
 
         </div>
@@ -3476,7 +4056,7 @@
           <div class="neutral-tone-card">
             <div class="nt-tone-badge nt-tone-1">Nada 1 + Nada Netral · 一声 + 轻声</div>
             <div class="nt-hanzi">桌子</div>
-            <div class="nt-pinyin">zhuō<span style="opacity:0.6;font-size:0.78rem;">zi</span></div>
+            <div class="nt-pinyin">zhuōzi</div>
             <div class="nt-arti">🪑 Meja</div>
             <div class="nt-pitch-note nt-pitch-low">↘ Pitch netral lebih rendah</div>
           </div>
@@ -3485,7 +4065,7 @@
           <div class="neutral-tone-card">
             <div class="nt-tone-badge nt-tone-2">Nada 2 + Nada Netral · 二声 + 轻声</div>
             <div class="nt-hanzi">盘子</div>
-            <div class="nt-pinyin">pán<span style="opacity:0.6;font-size:0.78rem;">zi</span></div>
+            <div class="nt-pinyin">pánzi</div>
             <div class="nt-arti">🍽️ Piring</div>
             <div class="nt-pitch-note nt-pitch-low">↘ Pitch netral lebih rendah</div>
           </div>
@@ -3494,7 +4074,7 @@
           <div class="neutral-tone-card">
             <div class="nt-tone-badge nt-tone-3">Nada 3 + Nada Netral · 三声 + 轻声</div>
             <div class="nt-hanzi">椅子</div>
-            <div class="nt-pinyin">yǐ<span style="opacity:0.6;font-size:0.78rem;">zi</span></div>
+            <div class="nt-pinyin">yǐzi</div>
             <div class="nt-arti">🪑 Kursi</div>
             <div class="nt-pitch-note nt-pitch-high">↗ Pitch netral lebih tinggi</div>
           </div>
@@ -3503,7 +4083,7 @@
           <div class="neutral-tone-card">
             <div class="nt-tone-badge nt-tone-4">Nada 4 + Nada Netral · 四声 + 轻声</div>
             <div class="nt-hanzi">裤子</div>
-            <div class="nt-pinyin">kù<span style="opacity:0.6;font-size:0.78rem;">zi</span></div>
+            <div class="nt-pinyin">kùzi</div>
             <div class="nt-arti">👖 Celana</div>
             <div class="nt-pitch-note nt-pitch-low">↘ Pitch netral lebih rendah</div>
           </div>
@@ -3573,14 +4153,48 @@
   function colorizePair(hanziText, pinyinText, charColorMap) {
     if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
-    // 1. Ekstrak semua karakter Hanzi dan pastikan punya warna
+    // 1. Ekstrak semua karakter Hanzi dan pastikan punya warna (hindari warna sama saat bersebelahan)
     const hzList = [];
     for (const ch of hanziText) {
       if (isHanziChar(ch)) {
         hzList.push(ch);
-        if (!charColorMap[ch]) {
-          const nextColor = COLOR_PALETTE[Object.keys(charColorMap).length % COLOR_PALETTE.length];
-          charColorMap[ch] = nextColor;
+      }
+    }
+
+    for (let i = 0; i < hzList.length; i++) {
+      const ch = hzList[i];
+      const prevCh = i > 0 ? hzList[i - 1] : null;
+      const nextCh = i < hzList.length - 1 ? hzList[i + 1] : null;
+
+      if (!charColorMap[ch]) {
+        let colorIdx = Object.keys(charColorMap).length % COLOR_PALETTE.length;
+        let candidate = COLOR_PALETTE[colorIdx];
+        let offset = 0;
+        while (
+          (prevCh && charColorMap[prevCh] === candidate) ||
+          (nextCh && charColorMap[nextCh] === candidate)
+        ) {
+          offset++;
+          candidate = COLOR_PALETTE[(colorIdx + offset) % COLOR_PALETTE.length];
+        }
+        charColorMap[ch] = candidate;
+      } else {
+        // Jika karakter sudah terdaftar namun warnanya sama persis dengan karakter sebelum atau sesudahnya
+        if (
+          (prevCh && charColorMap[prevCh] === charColorMap[ch]) ||
+          (nextCh && charColorMap[nextCh] === charColorMap[ch])
+        ) {
+          let currentIdx = COLOR_PALETTE.indexOf(charColorMap[ch]);
+          let offset = 1;
+          let candidate = COLOR_PALETTE[(currentIdx + offset) % COLOR_PALETTE.length];
+          while (
+            (prevCh && candidate === charColorMap[prevCh]) ||
+            (nextCh && candidate === charColorMap[nextCh])
+          ) {
+            offset++;
+            candidate = COLOR_PALETTE[(currentIdx + offset) % COLOR_PALETTE.length];
+          }
+          charColorMap[ch] = candidate;
         }
       }
     }
@@ -3676,7 +4290,9 @@
       '你': '#e11d48', // Merah
       '好': '#16a34a', // Hijau
       '现': '#2563eb', // Biru Royal (Xiàn)
-      '在': '#ea580c'  // Oranye Terang (zài)
+      '在': '#ea580c', // Oranye Terang (zài)
+      '他': '#2563eb', // Biru (tā)
+      '们': '#0891b2'  // Teal / Cyan (men) - dipastikan beda warna dengan 他
     };
 
     // 1. Warnai dialog bubbles
@@ -3779,11 +4395,25 @@
         pyEl.innerHTML = res.pinyin;
       });
     });
+
+    // 7. Warnai Neutral Tone cards (.neutral-tone-card)
+    document.querySelectorAll('.neutral-tone-card').forEach(card => {
+      const hzEl = card.querySelector('.nt-hanzi');
+      const pyEl = card.querySelector('.nt-pinyin');
+      if (!hzEl || !pyEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML.trim();
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML.trim();
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
   }
 
   function removeColors() {
     // Kembalikan semua teks ke kondisi asli tanpa span warna
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin, .nt-hanzi, .nt-pinyin';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
