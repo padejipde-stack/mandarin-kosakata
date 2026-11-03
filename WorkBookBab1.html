@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buku Latihan (Workbook) Mandarin — Bab 1: 生词 (Shēncí)</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#x1F236;</text></svg>">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -1536,6 +1536,9 @@
       margin-top: 2px;
       display: none;
     }
+    body.show-color .dialog5-pinyin {
+      color: #64748b;
+    }
     .dialog5-arti {
       font-size: 0.82rem;
       color: #64748b;
@@ -1551,17 +1554,14 @@
   <h1>📝 Buku Latihan Mandarin · 练习册</h1>
   <p>HSK 1 练习册 · Workbook Pelajaran 1</p>
   <div class="bab" style="background: #f39c12;">Bab 1 — 生词 (Kosakata Latihan)</div>
+  <div style="margin-top:0.55rem;"><a href="Bab1.html" style="display:inline-flex;align-items:center;gap:0.35rem;background:rgba(255,255,255,0.22);color:#fff;text-decoration:none;padding:0.3rem 0.9rem;border-radius:20px;font-size:0.78rem;font-weight:600;border:1px solid rgba(255,255,255,0.4);transition:all 0.2s ease;">📖 Buka Buku Teks Bab 1 →</a></div>
 </header>
 
 <!-- nav bar -->
 <nav class="nav-bar">
   <div class="nav">
     <div class="nav-side-left">
-      <a href="Bab1.html" class="nav-pager-btn prev" title="Kembali ke Buku Teks Bab 1">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        <span class="btn-text-desktop">Buku Teks Bab 1</span>
-        <span class="btn-text-mobile">Bab 1</span>
-      </a>
+
     </div>
     <div class="nav-center">
       <a href="index.html" class="nav-home-btn" title="Kembali ke Daftar Bab">
@@ -2749,11 +2749,25 @@
         pyEl.innerHTML = res.pinyin;
       });
     });
+
+    // 7. Warnai Latihan 5: Dialog Percakapan (dialog5-line)
+    document.querySelectorAll('.dialog5-line').forEach(line => {
+      const hzEl = line.querySelector('.dialog5-hanzi');
+      const pyEl = line.querySelector('.dialog5-pinyin');
+      if (!hzEl || !pyEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
   }
 
   function removeColors() {
     // Kembalikan semua teks ke kondisi asli tanpa span warna
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin, .dialog5-hanzi, .dialog5-pinyin';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
