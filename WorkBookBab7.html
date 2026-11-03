@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buku Latihan (Workbook) Mandarin — Bab 7: 送气音与不送气音 (Inisial Berembus &amp; Tidak Berembus)</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -232,233 +232,187 @@
       font-size: 0.88rem;
       font-weight: 600;
       color: var(--text);
+      text-align: justify;
     }
 
-    /* ── INITIAL PAIRS GRID ── */
-    .init-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 0.85rem;
-      margin-top: 0.5rem;
-    }
-    .init-item {
-      background: #fff;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 0.85rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-    .init-item:hover {
-      border-color: #f43f5e;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(190, 18, 60, 0.1);
-    }
-    .init-pair-left, .init-pair-right {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.8rem;
-    }
-    .init-bubble {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 0.95rem;
-    }
-    .init-bubble.unasp {
-      background: #f1f5f9;
-      color: #334155;
-      border: 1px solid #cbd5e1;
-    }
-    .init-bubble.asp {
-      background: #ffe4e6;
-      color: #be123c;
-      border: 1.5px solid #fb7185;
-    }
-
-    /* ── COMPARISON CARDS ── */
-    .sandhi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 0.75rem;
-      margin-top: 0.75rem;
-    }
-    .sandhi-card {
-      background: #ffffff;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 0.9rem 0.85rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-    .sandhi-card:hover {
-      border-color: #f43f5e;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(190, 18, 60, 0.12);
-    }
-    .sandhi-card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .sandhi-hz {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: #881337;
-    }
-    .sandhi-tag {
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.15rem 0.5rem;
-      border-radius: 12px;
-      background: #ffe4e6;
-      color: #be123c;
-    }
-    .sandhi-py-row {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.88rem;
-    }
-    .py-read {
-      color: #be123c;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-    .sandhi-arti {
-      font-size: 0.82rem;
-      color: var(--text);
-      border-top: 1px dashed var(--border);
-      padding-top: 0.35rem;
-      margin-top: 0.15rem;
-    }
-
-    /* ── SOAL PILIHAN GANDA (QUIZ) ── */
-    .soal-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-    .soal-item {
-      background: #f8fafc;
+    /* ── ATURAN BLOCKS ── */
+    .aturan-block {
+      background: #fafaf9;
       border: 1.5px solid var(--border);
       border-radius: 14px;
-      padding: 1.1rem 1.25rem;
+      padding: 1.1rem 1.2rem;
+      margin-top: 0.5rem;
     }
-    .soal-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .soal-num {
-      background: var(--primary);
-      color: #fff;
-      font-weight: 800;
-      font-size: 0.82rem;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .soal-pertanyaan { flex: 1; }
-    .soal-hz {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.18rem;
+    .aturan-block-title {
+      font-size: 0.9rem;
       font-weight: 700;
       color: #0f172a;
-      line-height: 1.4;
-      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.75rem;
     }
-    .soal-hz:hover { color: var(--primary); }
-    .soal-py {
-      font-size:0.88rem;
+    .aturan-block-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.18rem 0.55rem;
+      border-radius: 8px;
+    }
+    .aturan-rule {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      padding: 0.75rem 0.95rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      text-align: justify;
+    }
+    .aturan-text {
+      text-align: justify;
+      flex: 1;
+    }
+    .rule-note { background: #fff1f2; border-left: 4px solid #be123c; color: #881337; }
+    .rule-ok   { background: #f0fdf4; border-left: 4px solid #22c55e; color: #14532d; }
+    .aturan-icon { font-size: 1.15rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── CARD PAIR GRID ── */
+    .pair-badge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin-top: 0.75rem;
+    }
+    @media (max-width: 650px) {
+      .pair-badge-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .pair-badge-item {
+      background: #ffffff;
+      border: 1.5px solid #fecdd3;
+      border-radius: 10px;
+      padding: 0.55rem 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .pair-badge-item:hover {
+      border-color: #be123c;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(190, 18, 60, 0.08);
+    }
+    .pair-sub-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #9f1239;
+    }
+    .pair-letters {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
       color: #be123c;
-      font-style: italic;
-      margin-top: 0.2rem;
+      letter-spacing: 0.5px;
     }
-    .soal-id {
-      font-size: 0.82rem;
-      color: var(--sub);
-      margin-top: 0.15rem;
-    }
-    .soal-options {
+
+    /* ── INSTRUCTION BANNER BOX ── */
+    .instruction-banner {
+      background: #fff1f2;
+      border: 1.5px solid #fecdd3;
+      border-left: 5px solid #be123c;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
       display: flex;
       flex-direction: column;
       gap: 0.45rem;
-      margin-top: 0.75rem;
     }
-    .soal-option {
+    .instruction-banner-top {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
-      padding: 0.55rem 0.9rem;
-      background: #fff;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-size: 0.88rem;
-    }
-    .soal-option:hover {
-      border-color: var(--primary);
-      background: var(--primary-soft);
-    }
-    .soal-option.correct {
-      border-color: #10b981;
-      background: #ecfdf5;
-    }
-    .soal-option-letter {
-      font-weight: 800;
-      font-size:0.88rem;
-      color: var(--primary);
-      width: 22px;
-      flex-shrink: 0;
-    }
-    .soal-option.correct .soal-option-letter { color: #047857; }
-    .soal-option-hz {
-      font-family: 'Noto Sans SC', sans-serif;
+      gap: 0.5rem;
+      font-size: 0.85rem;
       font-weight: 700;
-      color: #0f172a;
+      color: #881337;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
-    .soal-answer-badge {
+    .instruction-quote {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+    .instruction-trans {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #881337;
+    }
+    .contrast-table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+    }
+    .contrast-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+      background: #fff;
+    }
+    .contrast-table th {
+      background: #fff1f2;
+      color: #881337;
+      font-weight: 700;
+      padding: 0.75rem 1rem;
+      border-bottom: 1.5px solid var(--border);
+      white-space: nowrap;
+    }
+    .contrast-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .contrast-table tr:last-child td {
+      border-bottom: none;
+    }
+    .contrast-table tr:hover {
+      background: #fff5f7;
+    }
+    .pos-badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+    .pos-badge.change {
+      background: #ffe4e6;
+      color: #be123c;
+      border: 1px solid #fecdd3;
+    }
+    .table-audio-btn {
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      margin-top: 0.7rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #065f46;
-      background: #d1fae5;
-      padding: 0.3rem 0.75rem;
-      border-radius: 20px;
+      color: var(--primary);
+      font-weight: 600;
     }
-    .soal-pembahasan {
-      font-size: 0.82rem;
-      color: #475569;
-      background: #ffffff;
-      border-left: 3.5px solid #10b981;
-      border-radius: 0 10px 10px 0;
-      padding: 0.6rem 0.9rem;
-      margin-top: 0.6rem;
-      line-height: 1.55;
+    .table-audio-btn:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    .table-audio-btn.unasp {
+      color: #334155;
+    }
+    .table-audio-btn.unasp:hover {
+      color: #0f172a;
     }
 
     /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
@@ -486,7 +440,7 @@
       display: flex;
       align-items: center;
       gap: 0.45rem;
-      font-size:0.88rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: var(--text);
       white-space: nowrap;
@@ -532,30 +486,18 @@
       box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
     }
 
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.8rem;
-      color: var(--sub);
-      border-top: 1px solid var(--border);
-    }
-    footer span {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
     .btn-text-mobile { display: none; }
 
     /* ── VISIBILITY TOGGLES (CSS CONTROLLED) ── */
-    body:not(.show-pinyin) .soal-py,
-    body:not(.show-pinyin) .sandhi-py-row { display: none !important; }
+    body:not(.show-pinyin) .contrast-py { display: none !important; }
 
-    body:not(.show-arti) .soal-id,
-    body:not(.show-arti) .sandhi-arti,
-    body:not(.show-arti) .soal-pembahasan { display: none !important; }
+    body:not(.show-arti) .contrast-arti,
+    body:not(.show-arti) .contrast-tag { display: none !important; }
 
-    body:not(.show-vocab) .soal-answer-badge { display: none !important; }
+    body:not(.show-vocab) .contrast-table-container { display: none !important; }
+
+    /* ── COLOR OVERRIDES ── */
+    body.show-color .contrast-py { color: inherit !important; }
 
     /* ── RESPONSIVE MOBILE ── */
     @media (max-width: 600px) {
@@ -573,7 +515,6 @@
       header::before { font-size: 7.5rem; }
       .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.4rem; }
       .classroom-box { padding: 1.1rem 0.9rem; }
-      .sandhi-grid { grid-template-columns: 1fr 1fr !important; gap: 0.55rem; }
       .nav { padding: 0.45rem 0.6rem !important; gap: 0.35rem !important; }
       .nav-home-btn { padding: 0.38rem 0.65rem; font-size: 0.75rem; }
       .nav-home-btn span.label { display: none; }
@@ -601,6 +542,7 @@
   <h1>📝 Buku Latihan Mandarin · 练习册</h1>
   <p>HSK 1 练习册 · Workbook Pelajaran 7</p>
   <div class="bab">Bab 7 — 送气音与不送气音 · Inisial Berembus &amp; Tidak Berembus</div>
+  <div style="margin-top:0.55rem;"><a href="Bab7.html" style="display:inline-flex;align-items:center;gap:0.35rem;background:rgba(255,255,255,0.22);color:#fff;text-decoration:none;padding:0.3rem 0.9rem;border-radius:20px;font-size:0.78rem;font-weight:600;border:1px solid rgba(255,255,255,0.4);transition:all 0.2s ease;">📖 Buka Buku Teks Bab 7 →</a></div>
 </header>
 
 <!-- ══ 3-KOLOM STICKY NAVBAR ══ -->
@@ -620,9 +562,9 @@
       </a>
     </div>
     <div class="nav-side-right">
-      <a href="Bab7.html" class="nav-pager-btn next" title="Buka Buku Teks Bab 7">
-        <span class="btn-text-desktop">Buku Teks Bab 7</span>
-        <span class="btn-text-mobile">Buku Teks</span>
+      <a href="WorkBookBab8.html" class="nav-pager-btn next" title="Lanjut ke Workbook Bab 8">
+        <span class="btn-text-desktop">Workbook Bab 8</span>
+        <span class="btn-text-mobile">Bab 8</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </a>
     </div>
@@ -632,231 +574,615 @@
 <!-- ══ WRAP UTAMA ══ -->
 <div class="wrap">
 
-  <!-- ══ INFO HEADER BANNER ══ -->
-  <div class="classroom-box" style="border-left: 5px solid #be123c;">
-    <div class="classroom-header">
-      <div class="avatar" style="background: linear-gradient(135deg, #be123c, #881337); font-size: 1.15rem; font-weight: 700; color: #fff;">练</div>
-      <div class="classroom-intro">
-        <div class="classroom-badge" style="background: #be123c; color: #fff;">HSK 1 Workbook · 第七课 练习册</div>
-        <div class="classroom-desc">Materi latihan fonetik HSK 1 Bab 7: Pembedaan 6 kelompok inisial berembus (送气) dan tidak berembus (不送气) seperti b/p, d/t, g/k, j/q, zh/ch, z/c beserta contoh kontras minimal dan kuis interaktif. Gunakan toolbar di bawah untuk bantuan membaca!</div>
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 1: PELAFALAN 7-1 — PEMBEDAAN INISIAL BERHEMBUS & TIDAK BERHEMBUS
+       送气音与不送气音 · Aspirated vs Unaspirated Initials
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 Bagian 1: Pelafalan 7-1 — Inisial Berhembus &amp; Tidak Berhembus · 送气音与不送气音</div>
+    <div class="classroom-box" style="border-left: 5px solid #be123c;">
+      
+      <!-- 1. Penjelasan Konsep Utama -->
+      <div class="classroom-header">
+        <div class="avatar av-rose" style="font-size: 1.15rem; font-weight: 700; color: #fff;">气</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #be123c; color: #fff;">1. Penjelasan Konsep Utama</div>
+          <div class="classroom-desc">Pembedaan Konsonan Awal Berhembus (Aspirated) dan Tidak Berhembus (Unaspirated) dalam bahasa Mandarin.</div>
+        </div>
       </div>
+
+      <!-- Penjelasan Konsep Utama Detail -->
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#ffe4e6; color:#881337;">Karakteristik Fonetik</span>
+          <span>Karakteristik Fonetik &amp; Enam Kelompok Inisial</span>
+        </div>
+
+        <div class="aturan-rule rule-note" style="margin-bottom:0.75rem;">
+          <span class="aturan-icon">🌬️</span>
+          <div class="aturan-text">
+            <strong>Karakteristik Fonetik:</strong> Salah satu ciri khas utama dalam pelafalan bahasa Mandarin adalah adanya perbedaan antara inisial (konsonan awal) yang disertai hembusan napas (<em>aspirated</em>) dan yang tidak disertai hembusan napas (<em>unaspirated</em>).
+          </div>
+        </div>
+
+        <div class="aturan-rule rule-ok">
+          <span class="aturan-icon">👥</span>
+          <div class="aturan-text">
+            <strong>Berpasangan (Enam Kelompok):</strong> Inisial berhembus dan tidak berhembus selalu berpasangan dan membentuk total enam kelompok, yaitu:
+            
+            <div class="pair-badge-grid">
+              <div class="pair-badge-item" onclick="playPinyin('b p')" style="cursor:pointer;" title="Klik dengar b dan p">
+                <span class="pair-sub-tag">Kelompok 1</span>
+                <span class="pair-letters">b dan p</span>
+              </div>
+              <div class="pair-badge-item" onclick="playPinyin('d t')" style="cursor:pointer;" title="Klik dengar d dan t">
+                <span class="pair-sub-tag">Kelompok 2</span>
+                <span class="pair-letters">d dan t</span>
+              </div>
+              <div class="pair-badge-item" onclick="playPinyin('g k')" style="cursor:pointer;" title="Klik dengar g dan k">
+                <span class="pair-sub-tag">Kelompok 3</span>
+                <span class="pair-letters">g dan k</span>
+              </div>
+              <div class="pair-badge-item" onclick="playPinyin('j q')" style="cursor:pointer;" title="Klik dengar j dan q">
+                <span class="pair-sub-tag">Kelompok 4</span>
+                <span class="pair-letters">j dan q</span>
+              </div>
+              <div class="pair-badge-item" onclick="playPinyin('zh ch')" style="cursor:pointer;" title="Klik dengar zh dan ch">
+                <span class="pair-sub-tag">Kelompok 5</span>
+                <span class="pair-letters">zh dan ch</span>
+              </div>
+              <div class="pair-badge-item" onclick="playPinyin('z c')" style="cursor:pointer;" title="Klik dengar z dan c">
+                <span class="pair-sub-tag">Kelompok 6</span>
+                <span class="pair-letters">z dan c</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── 2. LATIHAN & CONTOH KATA ── -->
+      <div style="margin-top: 0.5rem; display:flex; flex-direction:column; gap:1.15rem;">
+        
+        <!-- Instruksi Latihan & Pengantar Tabel (Satu Kesatuan) -->
+        <div class="instruction-banner">
+          <div class="instruction-banner-top">
+            <span style="font-size:1.15rem;">🎧</span>
+            <span>2. Instruksi Latihan</span>
+          </div>
+          <div class="instruction-quote">
+            Teks Instruksi: “Dengarkan rekaman, bedakan antara inisial berhembus dan tidak berhembus, lalu baca dengan suara nyaring.”
+          </div>
+          <div class="instruction-trans">
+            (Listen, distinguish between aspirated and unaspirated initials, then read aloud.)
+          </div>
+          <div style="margin-top:0.35rem; padding-top:0.45rem; border-top:1px dashed #fecdd3; font-size:0.84rem; color:#475569; font-weight:500;">
+            Berikut adalah daftar pasangan kata dalam tabel latihan yang terbagi ke dalam berbagai kolom untuk dilafalkan:
+          </div>
+        </div>
+
+        <div class="contrast-table-container" style="margin-top:0;">
+          <table class="contrast-table">
+            <thead>
+              <tr>
+                <th style="width: 15%;">Kolom</th>
+                <th style="width: 40%;">Tidak Berhembus (Unaspirated)</th>
+                <th style="width: 5%; text-align: center;">vs</th>
+                <th style="width: 40%;">Berhembus (Aspirated)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Kolom 1 -->
+              <tr>
+                <td><span class="pos-badge">Kolom 1</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('古', 'gǔ')" title="Klik dengar audio gǔ">
+                    🔊 <strong>古</strong> <span class="contrast-py">gǔ</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('苦', 'kǔ')" title="Klik dengar audio kǔ">
+                    🔊 <strong>苦</strong> <span class="contrast-py">kǔ</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kolom 1</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('颠', 'diān')" title="Klik dengar audio diān">
+                    🔊 <strong>颠</strong> <span class="contrast-py">diān</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('天', 'tiān')" title="Klik dengar audio tiān">
+                    🔊 <strong>天</strong> <span class="contrast-py">tiān</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kolom 1</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('动', 'dòng')" title="Klik dengar audio dòng">
+                    🔊 <strong>动</strong> <span class="contrast-py">dòng</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('痛', 'tòng')" title="Klik dengar audio tòng">
+                    🔊 <strong>痛</strong> <span class="contrast-py">tòng</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kolom 1</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('九', 'jiǔ')" title="Klik dengar audio jiǔ">
+                    🔊 <strong>九</strong> <span class="contrast-py">jiǔ</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('泅', 'qiǔ')" title="Klik dengar audio qiǔ">
+                    🔊 <strong>泅</strong> <span class="contrast-py">qiǔ</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <!-- Kolom 2 -->
+              <tr>
+                <td><span class="pos-badge">Kolom 2</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('增', 'zēng')" title="Klik dengar audio zēng">
+                    🔊 <strong>增</strong> <span class="contrast-py">zēng</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('蹭', 'cēng')" title="Klik dengar audio cēng">
+                    🔊 <strong>蹭</strong> <span class="contrast-py">cēng</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kolom 2</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('准', 'zhǔn')" title="Klik dengar audio zhǔn">
+                    🔊 <strong>准</strong> <span class="contrast-py">zhǔn</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('蠢', 'chǔn')" title="Klik dengar audio chǔn">
+                    🔊 <strong>蠢</strong> <span class="contrast-py">chǔn</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kolom 2</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('直', 'zhí')" title="Klik dengar audio zhí">
+                    🔊 <strong>直</strong> <span class="contrast-py">zhí</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('迟', 'chí')" title="Klik dengar audio chí">
+                    🔊 <strong>迟</strong> <span class="contrast-py">chí</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kolom 2</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('字', 'zì')" title="Klik dengar audio zì">
+                    🔊 <strong>字</strong> <span class="contrast-py">zì</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('次', 'cì')" title="Klik dengar audio cì">
+                    🔊 <strong>次</strong> <span class="contrast-py">cì</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <!-- Kolom 3 -->
+              <tr>
+                <td><span class="pos-badge">Kolom 3</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('白', 'bái')" title="Klik dengar audio bái">
+                    🔊 <strong>白</strong> <span class="contrast-py">bái</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('排', 'pái')" title="Klik dengar audio pái">
+                    🔊 <strong>排</strong> <span class="contrast-py">pái</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kolom 3</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('奔', 'bēn')" title="Klik dengar audio bēn">
+                    🔊 <strong>奔</strong> <span class="contrast-py">bēn</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('喷', 'pēn')" title="Klik dengar audio pēn">
+                    🔊 <strong>喷</strong> <span class="contrast-py">pēn</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kolom 3</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('举', 'jǔ')" title="Klik dengar audio jǔ">
+                    🔊 <strong>举</strong> <span class="contrast-py">jǔ</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('取', 'qǔ')" title="Klik dengar audio qǔ">
+                    🔊 <strong>取</strong> <span class="contrast-py">qǔ</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kolom 3</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('瓜', 'guā')" title="Klik dengar audio guā">
+                    🔊 <strong>瓜</strong> <span class="contrast-py">guā</span> (tidak berhembus)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('夸', 'kuā')" title="Klik dengar audio kuā">
+                    🔊 <strong>夸</strong> <span class="contrast-py">kuā</span> (berhembus)
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
     </div>
   </div>
 
-  
   <!-- ══════════════════════════════════════════════════
-       BAGIAN 1: KONSEP DASAR INISIAL BEREMBUS
+       BAGIAN 2: MATERI 2 — PEMBEDAAN RIAN HIDUNG DEPAN DAN RIAN HIDUNG BELAKANG
+       前鼻尾音与后鼻尾音 · Front Nasal and Back Nasal Finals
   ══════════════════════════════════════════════════ -->
   <div>
-    <div class="section-title">📌 1. Konsep Dasar Inisial Berembus vs Tidak Berembus</div>
-    <div class="classroom-box">
+    <div class="section-title">📌 Bagian 2: Pelafalan 7-2 — Rian Hidung Depan &amp; Belakang · 前鼻尾音与后鼻尾音</div>
+    <div class="classroom-box" style="border-left: 5px solid #be123c;">
       
+      <!-- 1. Penjelasan Konsep Utama -->
       <div class="classroom-header">
-        <div class="avatar" style="background: linear-gradient(135deg, #be123c, #881337); font-size: 1.15rem; font-weight: 700; color: #fff;">气</div>
+        <div class="avatar av-rose" style="font-size: 1.15rem; font-weight: 700; color: #fff;">鼻</div>
         <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #be123c; color: #fff;">Ciri Khas Fonetik Mandarin · 发音关键点</div>
-          <div class="classroom-desc">Perbedaan antara konsonan awal dengan embusan napas kuat (送气 / Aspirated) dan tanpa embusan napas kuat (不送气 / Unaspirated).</div>
+          <div class="classroom-badge" style="background: #be123c; color: #fff;">2. Pembedaan Rian Hidung Depan dan Rian Hidung Belakang</div>
+          <div class="classroom-desc">Distinction Between Front Nasal and Back Nasal Finals (-n vs -ng) dalam bahasa Mandarin.</div>
         </div>
       </div>
 
-      <div style="font-size:0.88rem; color:var(--text); line-height:1.6;">
-        Inisial-inisial konsonan ini berpasangan menjadi <strong>6 kelompok utama</strong>. Klik setiap pasangan untuk mendengarkan perbedaannya:
+      <!-- Penjelasan Konsep -->
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#ffe4e6; color:#881337;">Penjelasan Konsep</span>
+          <span>Perbedaan Akhiran "-n" (Depan) dan "-ng" (Belakang)</span>
+        </div>
+
+        <div class="aturan-rule rule-note" style="margin-bottom:0.75rem;">
+          <span class="aturan-icon">👃</span>
+          <div class="aturan-text">
+            Dalam bahasa Mandarin, <strong>rian hidung depan (front nasal finals)</strong> merujuk pada rima/akhiran yang berakhiran dengan <strong>"-n"</strong>.
+          </div>
+        </div>
+
+        <div class="aturan-rule rule-ok">
+          <span class="aturan-icon">🗣️</span>
+          <div class="aturan-text">
+            Sementara itu, <strong>rian hidung belakang (back nasal finals)</strong> merujuk pada rima/akhiran yang berakhiran dengan <strong>"-ng"</strong>.
+          </div>
+        </div>
+
       </div>
 
-      <div class="init-grid">
-        <div class="init-item" onclick="playPinyin('bā pā')" title="Klik dengar b / p">
-          <div class="init-pair-left">
-            <span class="init-bubble unasp">b</span>
-            <span>(tidak berembus)</span>
+      <!-- ── INSTRUKSI LATIHAN & DAFTAR PASANGAN KATA LATIHAN (KOTAK 1 - 4) ── -->
+      <div style="margin-top: 0.5rem; display:flex; flex-direction:column; gap:1.15rem;">
+        
+        <!-- Instruksi Latihan -->
+        <div class="instruction-banner">
+          <div class="instruction-banner-top">
+            <span style="font-size:1.15rem;">🎧</span>
+            <span>Instruksi Latihan</span>
           </div>
-          <span style="color:#94a3b8; font-weight:700;">➔</span>
-          <div class="init-pair-right">
-            <span class="init-bubble asp">p</span>
-            <span>(berembus)</span>
+          <div class="instruction-quote">
+            “Dengarkan rekaman, bedakan antara rian hidung depan dan rian hidung belakang, lalu baca dengan suara nyaring.”
           </div>
-        </div>
-
-        <div class="init-item" onclick="playPinyin('dā tā')" title="Klik dengar d / t">
-          <div class="init-pair-left">
-            <span class="init-bubble unasp">d</span>
-            <span>(tidak berembus)</span>
+          <div class="instruction-trans">
+            (Listen, distinguish between front nasal finals and back nasal finals, then read aloud.)
           </div>
-          <span style="color:#94a3b8; font-weight:700;">➔</span>
-          <div class="init-pair-right">
-            <span class="init-bubble asp">t</span>
-            <span>(berembus)</span>
+          <div style="margin-top:0.35rem; padding-top:0.45rem; border-top:1px dashed #fecdd3; font-size:0.84rem; color:#475569; font-weight:500;">
+            Berikut adalah daftar latihan perbandingan pelafalan antara akhiran -n (depan) dan -ng (belakang) yang dibagi menjadi beberapa kotak:
           </div>
         </div>
 
-        <div class="init-item" onclick="playPinyin('gē kē')" title="Klik dengar g / k">
-          <div class="init-pair-left">
-            <span class="init-bubble unasp">g</span>
-            <span>(tidak berembus)</span>
-          </div>
-          <span style="color:#94a3b8; font-weight:700;">➔</span>
-          <div class="init-pair-right">
-            <span class="init-bubble asp">k</span>
-            <span>(berembus)</span>
-          </div>
+        <!-- Tabel Perbandingan Kotak 1 - Kotak 4 -->
+        <div class="contrast-table-container" style="margin-top:0;">
+          <table class="contrast-table">
+            <thead>
+              <tr>
+                <th style="width: 15%;">Kotak</th>
+                <th style="width: 40%;">Rian Hidung Depan (-n)</th>
+                <th style="width: 5%; text-align: center;">vs</th>
+                <th style="width: 40%;">Rian Hidung Belakang (-ng)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Kotak 1 -->
+              <tr>
+                <td><span class="pos-badge">Kotak 1</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('盆', 'pén')" title="Klik dengar audio pén">
+                    🔊 <strong>盆</strong> <span class="contrast-py">pén</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('朋', 'péng')" title="Klik dengar audio péng">
+                    🔊 <strong>朋</strong> <span class="contrast-py">péng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 1</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('染', 'rǎn')" title="Klik dengar audio rǎn">
+                    🔊 <strong>染</strong> <span class="contrast-py">rǎn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('嚷', 'rǎng')" title="Klik dengar audio rǎng">
+                    🔊 <strong>嚷</strong> <span class="contrast-py">rǎng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 1</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('年', 'nián')" title="Klik dengar audio nián">
+                    🔊 <strong>年</strong> <span class="contrast-py">nián</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('娘', 'niáng')" title="Klik dengar audio niáng">
+                    🔊 <strong>娘</strong> <span class="contrast-py">niáng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 1</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('见', 'jiàn')" title="Klik dengar audio jiàn">
+                    🔊 <strong>见</strong> <span class="contrast-py">jiàn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('降', 'jiàng')" title="Klik dengar audio jiàng">
+                    🔊 <strong>降</strong> <span class="contrast-py">jiàng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <!-- Kotak 2 -->
+              <tr>
+                <td><span class="pos-badge">Kotak 2</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('感', 'gǎn')" title="Klik dengar audio gǎn">
+                    🔊 <strong>感</strong> <span class="contrast-py">gǎn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('港', 'gǎng')" title="Klik dengar audio gǎng">
+                    🔊 <strong>港</strong> <span class="contrast-py">gǎng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 2</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('门', 'mén')" title="Klik dengar audio mén">
+                    🔊 <strong>门</strong> <span class="contrast-py">mén</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('蒙', 'méng')" title="Klik dengar audio méng">
+                    🔊 <strong>蒙</strong> <span class="contrast-py">méng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 2</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('森', 'sēn')" title="Klik dengar audio sēn">
+                    🔊 <strong>森</strong> <span class="contrast-py">sēn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('僧', 'sēng')" title="Klik dengar audio sēng">
+                    🔊 <strong>僧</strong> <span class="contrast-py">sēng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 2</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('赞', 'zàn')" title="Klik dengar audio zàn">
+                    🔊 <strong>赞</strong> <span class="contrast-py">zàn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('藏', 'zàng')" title="Klik dengar audio zàng">
+                    🔊 <strong>藏</strong> <span class="contrast-py">zàng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <!-- Kotak 3 -->
+              <tr>
+                <td><span class="pos-badge">Kotak 3</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('审', 'shěn')" title="Klik dengar audio shěn">
+                    🔊 <strong>审</strong> <span class="contrast-py">shěn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('省', 'shěng')" title="Klik dengar audio shěng">
+                    🔊 <strong>省</strong> <span class="contrast-py">shěng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 3</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('环', 'huán')" title="Klik dengar audio huán">
+                    🔊 <strong>环</strong> <span class="contrast-py">huán</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('黄', 'huáng')" title="Klik dengar audio huáng">
+                    🔊 <strong>黄</strong> <span class="contrast-py">huáng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 3</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('饭', 'fàn')" title="Klik dengar audio fàn">
+                    🔊 <strong>饭</strong> <span class="contrast-py">fàn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('放', 'fàng')" title="Klik dengar audio fàng">
+                    🔊 <strong>放</strong> <span class="contrast-py">fàng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 3</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('嗔', 'chēn')" title="Klik dengar audio chēn">
+                    🔊 <strong>嗔</strong> <span class="contrast-py">chēn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('称', 'chēng')" title="Klik dengar audio chēng">
+                    🔊 <strong>称</strong> <span class="contrast-py">chēng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <!-- Kotak 4 -->
+              <tr>
+                <td><span class="pos-badge">Kotak 4</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('林', 'lín')" title="Klik dengar audio lín">
+                    🔊 <strong>林</strong> <span class="contrast-py">lín</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('零', 'líng')" title="Klik dengar audio líng">
+                    🔊 <strong>零</strong> <span class="contrast-py">líng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 4</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('险', 'xiǎn')" title="Klik dengar audio xiǎn">
+                    🔊 <strong>险</strong> <span class="contrast-py">xiǎn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('想', 'xiǎng')" title="Klik dengar audio xiǎng">
+                    🔊 <strong>想</strong> <span class="contrast-py">xiǎng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 4</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('鬓', 'bìn')" title="Klik dengar audio bìn">
+                    🔊 <strong>鬓</strong> <span class="contrast-py">bìn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('病', 'bìng')" title="Klik dengar audio bìng">
+                    🔊 <strong>病</strong> <span class="contrast-py">bìng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><span class="pos-badge">Kotak 4</span></td>
+                <td>
+                  <span class="table-audio-btn unasp" onclick="playWord('亲', 'qīn')" title="Klik dengar audio qīn">
+                    🔊 <strong>亲</strong> <span class="contrast-py">qīn</span> (depan)
+                  </span>
+                </td>
+                <td style="text-align: center; color:#be123c; font-weight:700;">vs</td>
+                <td>
+                  <span class="table-audio-btn" onclick="playWord('清', 'qīng')" title="Klik dengar audio qīng">
+                    🔊 <strong>清</strong> <span class="contrast-py">qīng</span> (belakang)
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="init-item" onclick="playPinyin('jī qī')" title="Klik dengar j / q">
-          <div class="init-pair-left">
-            <span class="init-bubble unasp">j</span>
-            <span>(tidak berembus)</span>
-          </div>
-          <span style="color:#94a3b8; font-weight:700;">➔</span>
-          <div class="init-pair-right">
-            <span class="init-bubble asp">q</span>
-            <span>(berembus)</span>
-          </div>
-        </div>
-
-        <div class="init-item" onclick="playPinyin('zhī chī')" title="Klik dengar zh / ch">
-          <div class="init-pair-left">
-            <span class="init-bubble unasp">zh</span>
-            <span>(tidak berembus)</span>
-          </div>
-          <span style="color:#94a3b8; font-weight:700;">➔</span>
-          <div class="init-pair-right">
-            <span class="init-bubble asp">ch</span>
-            <span>(berembus)</span>
-          </div>
-        </div>
-
-        <div class="init-item" onclick="playPinyin('zā cā')" title="Klik dengar z / c">
-          <div class="init-pair-left">
-            <span class="init-bubble unasp">z</span>
-            <span>(tidak berembus)</span>
-          </div>
-          <span style="color:#94a3b8; font-weight:700;">➔</span>
-          <div class="init-pair-right">
-            <span class="init-bubble asp">c</span>
-            <span>(berembus)</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contoh Pasangan Kata Minimum -->
-      <div>
-        <div style="font-size:0.88rem; font-weight:700; color:var(--primary); margin:0.4rem 0 0.25rem;">
-          🗣️ Contoh Pasangan Kosakata Kontras Minimal (Minimal Pairs):
-        </div>
-        <div class="sandhi-grid">
-          <div class="sandhi-card" onclick="playPinyin('bàba')" title="Klik dengar">
-            <div class="sandhi-card-top">
-              <span class="sandhi-hz">爸爸</span>
-              <span class="sandhi-tag">b (tidak berembus)</span>
-            </div>
-            <div class="sandhi-py-row">
-              <span class="py-read">bàba</span>
-            </div>
-            <div class="sandhi-arti">Ayah</div>
-          </div>
-
-          <div class="sandhi-card" onclick="playPinyin('pà')" title="Klik dengar">
-            <div class="sandhi-card-top">
-              <span class="sandhi-hz">怕</span>
-              <span class="sandhi-tag">p (berembus)</span>
-            </div>
-            <div class="sandhi-py-row">
-              <span class="py-read">pà</span>
-            </div>
-            <div class="sandhi-arti">Takut</div>
-          </div>
-
-          <div class="sandhi-card" onclick="playPinyin('dà')" title="Klik dengar">
-            <div class="sandhi-card-top">
-              <span class="sandhi-hz">大</span>
-              <span class="sandhi-tag">d (tidak berembus)</span>
-            </div>
-            <div class="sandhi-py-row">
-              <span class="py-read">dà</span>
-            </div>
-            <div class="sandhi-arti">Besar</div>
-          </div>
-
-          <div class="sandhi-card" onclick="playPinyin('tā')" title="Klik dengar">
-            <div class="sandhi-card-top">
-              <span class="sandhi-hz">他</span>
-              <span class="sandhi-tag">t (berembus)</span>
-            </div>
-            <div class="sandhi-py-row">
-              <span class="py-read">tā</span>
-            </div>
-            <div class="sandhi-arti">Dia (laki-laki)</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════════════
-       BAGIAN 2: LATIHAN SOAL INTERAKTIF
-  ══════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">✍️ 2. Latihan Pemahaman Mandiri (Quiz)</div>
-    <div class="classroom-box" style="border-left: 5px solid #10b981;">
-      
-      <div class="classroom-header">
-        <div class="avatar" style="background: linear-gradient(135deg, #10b981, #047857); font-size: 1.15rem; font-weight: 700; color: #fff;">测</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #10b981; color: #fff;">Latihan Praktis · 自我测评</div>
-          <div class="classroom-desc">Uji kepekaan telinga Anda dalam membedakan inisial berembus dan tidak berembus!</div>
-        </div>
-      </div>
-
-      <div class="soal-grid">
-        <div class="soal-item">
-          <div class="soal-header">
-            <div class="soal-num">1</div>
-            <div class="soal-pertanyaan">
-              <div class="soal-hz" onclick="playPinyin('pā')">Di antara pasangan konsonan b dan p, manakah yang diucapkan dengan embusan napas kuat (送气)?</div>
-              <div class="soal-py">Nǎ ge shì sòngqì yīn?</div>
-              <div class="soal-id">Pertanyaan konsep dasar inisial berembus.</div>
-            </div>
-          </div>
-          <div class="soal-options">
-            <div class="soal-option correct" onclick="playPinyin('p')">
-              <span class="soal-option-letter">A.</span>
-              <span class="soal-option-hz">p</span>
-            </div>
-            <div class="soal-option" onclick="playPinyin('b')">
-              <span class="soal-option-letter">B.</span>
-              <span class="soal-option-hz">b</span>
-            </div>
-          </div>
-          <div class="soal-answer-badge">✅ Kunci Jawaban: A — p</div>
-          <div class="soal-pembahasan">
-            <strong>Pembahasan:</strong> Huruf <strong>p</strong> adalah inisial berembus (送气), jika selembar kertas ditaruh di depan mulut saat mengucapkannya, kertas akan bergerak tertiup angin.
-          </div>
-        </div>
-
-        <div class="soal-item">
-          <div class="soal-header">
-            <div class="soal-num">2</div>
-            <div class="soal-pertanyaan">
-              <div class="soal-hz" onclick="playPinyin('chī')">Kata "吃" (makan / chī) menggunakan konsonan awal apa?</div>
-              <div class="soal-py">"Chī" shǐyòng shénme shēngmǔ?</div>
-              <div class="soal-id">Pertanyaan identifikasi konsonan.</div>
-            </div>
-          </div>
-          <div class="soal-options">
-            <div class="soal-option correct">
-              <span class="soal-option-letter">A.</span>
-              <span class="soal-option-hz">ch (berembus kuat)</span>
-            </div>
-            <div class="soal-option">
-              <span class="soal-option-letter">B.</span>
-              <span class="soal-option-hz">zh (tidak berembus)</span>
-            </div>
-          </div>
-          <div class="soal-answer-badge">✅ Kunci Jawaban: A — ch</div>
-          <div class="soal-pembahasan">
-            <strong>Pembahasan:</strong> Kata 吃 dilafalkan <strong>chī</strong> dengan inisial <strong>ch</strong> (berembus kuat).
-          </div>
-        </div>
       </div>
 
     </div>
@@ -879,6 +1205,130 @@
 </div><!-- /wrap -->
 
 <script>
+  // Palet warna kontras & cerah untuk karakter per kata
+  const COLOR_PALETTE = [
+    '#e11d48', '#16a34a', '#2563eb', '#ea580c', '#7c3aed',
+    '#0891b2', '#c026d3', '#ca8a04', '#4f46e5', '#059669',
+    '#d97706', '#db2777', '#0284c7', '#9333ea', '#65a30d'
+  ];
+
+  const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
+  const _finals = [
+    _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
+    _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
+    _A+'ng', _E+'ng', _O+'ng',
+    _A+'i', _E+'i', _A+_O, _O+_U, _A+'n', _E+'n',
+    _I+_A, _I+_E, _I+'n', _I+_U, _U+_A, _U+_O, _U+_E, _U+_I, _U+'n',
+    _V+_E, 'er',
+    _A, _O, _E, _I, _U, _V
+  ].join('|');
+  const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')(?:r(?![a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛ]))?', 'i');
+
+  function isHanziChar(ch) {
+    return /[\u3007\u4e00-\u9fa5]/.test(ch);
+  }
+
+  function colorizePair(hanziText, pinyinText) {
+    if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
+
+    const hzList = [];
+    for (const ch of hanziText) {
+      if (isHanziChar(ch)) hzList.push(ch);
+    }
+
+    const charColors = [];
+    let prevColor = null;
+
+    for (let i = 0; i < hzList.length; i++) {
+      const ch = hzList[i];
+      let hash = 0;
+      for (let k = 0; k < ch.length; k++) hash = (hash << 5) - hash + ch.charCodeAt(k);
+      let baseIdx = Math.abs(hash + i * 3) % COLOR_PALETTE.length;
+      let offset = 0;
+      let candidate = COLOR_PALETTE[baseIdx];
+      while (candidate === prevColor && offset < COLOR_PALETTE.length) {
+        offset++;
+        candidate = COLOR_PALETTE[(baseIdx + offset) % COLOR_PALETTE.length];
+      }
+      charColors.push(candidate);
+      prevColor = candidate;
+    }
+
+    let outHz = '';
+    let hzPos = 0;
+    for (const ch of hanziText) {
+      if (isHanziChar(ch)) {
+        outHz += '<span style="color:' + charColors[hzPos] + ';font-weight:700;">' + ch + '</span>';
+        hzPos++;
+      } else {
+        outHz += ch;
+      }
+    }
+
+    let outPy = '';
+    let hzIdx = 0;
+    let remaining = pinyinText;
+
+    while (remaining.length > 0) {
+      const tagMatch = remaining.match(/^<[^>]+>/);
+      if (tagMatch) {
+        outPy += tagMatch[0];
+        remaining = remaining.substring(tagMatch[0].length);
+        continue;
+      }
+
+      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
+      if (nonLetterMatch) {
+        outPy += nonLetterMatch[0];
+        remaining = remaining.substring(nonLetterMatch[0].length);
+        continue;
+      }
+
+      const match = remaining.match(PINYIN_SYLL_RE);
+      if (match) {
+        const syll = match[0];
+        const color = charColors[hzIdx];
+        if (color) {
+          outPy += '<span style="color:' + color + ';font-weight:700;">' + syll + '</span>';
+          hzIdx++;
+        } else {
+          outPy += syll;
+        }
+        remaining = remaining.substring(syll.length);
+      } else {
+        outPy += remaining[0];
+        remaining = remaining.substring(1);
+      }
+    }
+
+    return { hanzi: outHz, pinyin: outPy };
+  }
+
+  function applyColors() {
+    document.querySelectorAll('.contrast-table tbody tr').forEach(row => {
+      row.querySelectorAll('td').forEach(td => {
+        const strEl = td.querySelector('strong');
+        const pyEl = td.querySelector('.contrast-py');
+        if (!strEl || !pyEl) return;
+        if (!strEl.dataset.origHtml) strEl.dataset.origHtml = strEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+        const res = colorizePair(strEl.dataset.origHtml, pyEl.dataset.origHtml);
+        strEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      });
+    });
+  }
+
+  function removeColors() {
+    document.querySelectorAll('.contrast-table strong, .contrast-py').forEach(el => {
+      if (el.dataset.origHtml) {
+        el.innerHTML = el.dataset.origHtml;
+      }
+      el.style.color = '';
+    });
+  }
+
   function updateToggleUI() {
     const s = cl => document.body.classList.contains(cl);
     const set = (id, cls) => {
@@ -914,6 +1364,7 @@
     document.body.classList.toggle('show-color');
     const on = document.body.classList.contains('show-color');
     localStorage.setItem('mandarin_show_color', on ? '1' : '0');
+    on ? applyColors() : removeColors();
     updateToggleUI();
   }
 
@@ -927,18 +1378,49 @@
     if (localStorage.getItem('mandarin_show_vocab') !== '0') {
       document.body.classList.add('show-vocab');
     }
+    if (localStorage.getItem('mandarin_show_color') === '1') {
+      document.body.classList.add('show-color');
+      applyColors();
+    }
     updateToggleUI();
   });
 
-  // Audio Text-To-Speech (Web Speech API)
-  function playPinyin(text) {
+  // Cache voice penutur asli bahasa Mandarin (Putonghua mainland china)
+  let chineseVoice = null;
+  function getChineseVoice() {
+    if (!('speechSynthesis' in window)) return null;
+    if (chineseVoice) return chineseVoice;
+    const voices = window.speechSynthesis.getVoices();
+    // Prioritaskan voice penutur asli berkualitas tinggi (Xiaoxiao, Yunyang, Huihui, Yaoyao, Google, dsb)
+    chineseVoice = voices.find(v => v.lang === 'zh-CN' && (v.name.includes('Xiaoxiao') || v.name.includes('Yunyang') || v.name.includes('Natural') || v.name.includes('Google')))
+                || voices.find(v => v.lang === 'zh-CN' || v.lang === 'zh_CN')
+                || voices.find(v => v.lang.startsWith('zh'));
+    return chineseVoice;
+  }
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = () => {
+      chineseVoice = null;
+      getChineseVoice();
+    };
+  }
+
+  // Audio Playback: Prioritaskan pengucapan karakter Hanzi asli agar nada dan inisial/final akurat
+  function playWord(hanzi, pinyin) {
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(text);
+      // Lebih akurat membaca karakter Hanzi aslinya agar sistem mengenali nada dan fonem standar Mandarin
+      const textToSpeak = hanzi || pinyin;
+      const u = new SpeechSynthesisUtterance(textToSpeak);
       u.lang = 'zh-CN';
-      u.rate = 0.85;
+      u.rate = 0.82; // Kecepatan pelafalan jernih untuk bahan belajar fonetik
+      const v = getChineseVoice();
+      if (v) u.voice = v;
       window.speechSynthesis.speak(u);
     }
+  }
+
+  function playPinyin(text) {
+    playWord(text, text);
   }
 </script>
 
