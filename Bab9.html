@@ -562,76 +562,116 @@
     }
 
     /* ── COMPREHENSIVE EXERCISE STYLING ── */
-    .comp-header-badge {
+    .comp-quiz-options {
+      background: #f0fdfa;
+      border: 1.5px dashed #5eead4;
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1rem;
+    }
+    .comp-quiz-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #0f766e;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+    .comp-quiz-badges {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .comp-quiz-badge {
+      background: #ffffff;
+      border: 1.5px solid #99f6e4;
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      background: linear-gradient(135deg, #4f46e5, #6366f1);
-      color: #ffffff;
-      padding: 0.4rem 0.85rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
+      gap: 0.35rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .comp-quiz-badge strong {
+      color: #0d9488;
+    }
+    .comp-quiz-badge em {
+      font-style: normal;
+      color: #64748b;
+      font-size: 0.82rem;
+    }
+    .comp-answer-pill {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
       font-weight: 700;
-      letter-spacing: 0.3px;
-      margin-bottom: 0.8rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 5px;
+      margin: 0 0.15rem;
     }
-    .comp-card {
-      background: #ffffff;
-      border: 1.5px solid #e0e7ff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 3px 10px rgba(79, 70, 229, 0.05);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    .comp-explain-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.83rem;
+      color: #1e40af;
+      margin-top: 0.45rem;
+      line-height: 1.5;
     }
-    .comp-card:hover {
-      box-shadow: 0 6px 16px rgba(79, 70, 229, 0.1);
-    }
-    .comp-pic-wrapper {
-      position: relative;
-      width: 100%;
-      height: 140px;
-      background: #f1f5f9;
-      overflow: hidden;
+    .comp-photo-item {
       display: flex;
+      gap: 1.1rem;
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
       align-items: center;
-      justify-content: center;
-      border-bottom: 1.5px solid #e2e8f0;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     }
-    .comp-pic-wrapper img {
+    .comp-photo-item:hover {
+      border-color: #cbd5e1;
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .comp-photo-thumb {
+      flex-shrink: 0;
+      width: 130px;
+      height: 90px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1.5px solid #cbd5e1;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      background: #f1f5f9;
+    }
+    .comp-photo-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
       transition: transform 0.3s ease;
     }
-    .comp-pic-wrapper:hover img {
-      transform: scale(1.05);
+    .comp-photo-item:hover .comp-photo-thumb img {
+      transform: scale(1.06);
     }
-    .comp-pic-tag {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(4px);
-      color: #ffffff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.2rem 0.55rem;
-      border-radius: 6px;
-    }
-    .comp-card-body {
-      padding: 0.85rem 1rem;
+    .comp-photo-content {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.35rem;
     }
-    .comp-cloze-badge {
-      display: inline-block;
-      background: #ecfdf5;
-      color: #047857;
-      border: 1px solid #a7f3d0;
-      font-weight: 700;
-      padding: 0.1rem 0.4rem;
-      border-radius: 5px;
+    @media (max-width: 600px) {
+      .comp-photo-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .comp-photo-thumb {
+        width: 100%;
+        height: 140px;
+      }
     }
 
     /* ── XIAOYU TIP BOX (CATATAN KHUSUS) ── */
@@ -1876,212 +1916,230 @@
   <!-- ══ LATIHAN KOMPREHENSIF (综合练习 COMPREHENSIVE EXERCISES) ══ -->
   <div>
     <div class="section-title">📝 Comprehensive Exercises · 综合练习</div>
-    <div class="classroom-box" style="border-left: 5px solid #4f46e5;">
-
-      <!-- BAGIAN 1: 选词填空 (CHOOSE PROPER WORDS/PHRASES) -->
-      <div>
-        <div style="font-weight:700;color:var(--text);font-size:0.95rem;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.4rem;">
-          <span>■ 选词填空。Choose the proper words/phrases to fill in the blanks.</span>
-        </div>
-
-        <!-- Pilihan Kata Bank (A - E) -->
-        <div class="selection-box" style="margin-bottom:0.85rem;">
-          <div class="selection-box-title">Pilihan Kata (Vocabulary Bank):</div>
-          <div class="selection-grid">
-            <div class="selection-item"><span class="selection-letter">A.</span> 是 <span class="selection-pinyin">(shì)</span> = adalah</div>
-            <div class="selection-item"><span class="selection-letter">B.</span> 好听 <span class="selection-pinyin">(hǎotīng)</span> = enak didengar / merdu</div>
-            <div class="selection-item"><span class="selection-letter">C.</span> 在学校 <span class="selection-pinyin">(zài xuéxiào)</span> = di sekolah</div>
-            <div class="selection-item"><span class="selection-letter">D.</span> 今天上午 <span class="selection-pinyin">(jīntiān shàngwǔ)</span> = pagi hari ini</div>
-            <div class="selection-item"><span class="selection-letter">E.</span> 椅子 <span class="selection-pinyin">(yǐzi)</span> = kursi</div>
+    <div class="classroom-box" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu" style="background: linear-gradient(135deg, #0d9488, #0f766e); color:#fff;">练</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#ccfbf1; color:#0f766e;">Comprehensive Exercises · 综合练习</div>
+          <div class="classroom-desc">
+            Evaluasi pemahaman Anda dengan melengkapi kalimat (选词填空) dan mendeskripsikan gambar (看图描述) berdasarkan kosakata dan pola tata bahasa Bab 9:
           </div>
-        </div>
-
-        <!-- Soal (1) - (4) -->
-        <div class="classroom-list">
-
-          <!-- Soal (1) -->
-          <div class="classroom-item" style="border-left: 4px solid #4f46e5;">
-            <div class="item-number" style="background:#4f46e5;color:#fff;">1</div>
-            <div class="item-content">
-              <div class="item-title" style="font-size:0.95rem;color:var(--text);">
-                <div style="font-size:0.8rem;font-weight:700;color:#3730a3;margin-bottom:0.25rem;">（1）Soal Isian:</div>
-                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">（ 椅子 ）上有一只小猫，房间外（ 是 ）一只小狗。</div>
-                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.15rem;">( Yǐzi ) shang yǒu yì zhī xiǎomāo, fángjiān wài ( shì ) yì zhī xiǎogǒu.</div>
-                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.2rem;">Arti: Di atas (kursi) ada seekor anak kucing, di luar kamar (adalah) seekor anjing kecil.</div>
-              </div>
-              <div class="item-body" style="margin-top:0.4rem;">
-                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:0.5rem 0.8rem;font-size:0.82rem;color:#1e40af;">
-                  💡 <strong>Jawaban:</strong> <strong>E (椅子)</strong> dan <strong>A (是)</strong><br>
-                  <em>Alasan:</em> Kata tempat di atas yang berpasangan dengan "上" adalah 椅子 (kursi), dan pola kalimat eksistensial penunjuk keberadaan setelah lokasi adalah "是" (adalah).
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Soal (2) -->
-          <div class="classroom-item" style="border-left: 4px solid #4f46e5;">
-            <div class="item-number" style="background:#4f46e5;color:#fff;">2</div>
-            <div class="item-content">
-              <div class="item-title" style="font-size:0.95rem;color:var(--text);">
-                <div style="font-size:0.8rem;font-weight:700;color:#3730a3;margin-bottom:0.25rem;">（2）Soal Isian:</div>
-                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">她（ 今天上午 ）在家里学习。</div>
-                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.15rem;">Tā ( jīntiān shàngwǔ ) zài jiā lǐ xuéxí.</div>
-                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.2rem;">Arti: Dia (pagi hari ini) belajar di rumah.</div>
-              </div>
-              <div class="item-body" style="margin-top:0.4rem;">
-                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:0.5rem 0.8rem;font-size:0.82rem;color:#1e40af;">
-                  💡 <strong>Jawaban:</strong> <strong>D (今天上午)</strong><br>
-                  <em>Alasan:</em> Sesuai pola urutan keterangan dalam kalimat bahasa Mandarin: Subjek + <strong>Waktu (今天上午)</strong> + Tempat (在家里) + Aktivitas (学习).
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Soal (3) -->
-          <div class="classroom-item" style="border-left: 4px solid #4f46e5;">
-            <div class="item-number" style="background:#4f46e5;color:#fff;">3</div>
-            <div class="item-content">
-              <div class="item-title" style="font-size:0.95rem;color:var(--text);">
-                <div style="font-size:0.8rem;font-weight:700;color:#3730a3;margin-bottom:0.25rem;">（3）Percakapan Rumpang:</div>
-                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">王一雪： 你唱歌很（ 好听 ）。</div>
-                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.15rem;">Wáng Yīxuě: Nǐ chàng gē hěn ( hǎotīng ).</div>
-                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;margin-top:0.35rem;">杨同乐： 谢谢！</div>
-                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.15rem;">Yáng Tónglè: Xièxie!</div>
-                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.2rem;">Arti: Wang Yixue: Kamu bernyanyi sangat (merdu/enak didengar). | Yang Tongle: Terima kasih!</div>
-              </div>
-              <div class="item-body" style="margin-top:0.4rem;">
-                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:0.5rem 0.8rem;font-size:0.82rem;color:#1e40af;">
-                  💡 <strong>Jawaban:</strong> <strong>B (好听)</strong><br>
-                  <em>Alasan:</em> Kata sifat yang tepat untuk menerangkan bernyanyi (唱歌) dan direspon dengan ucapan terima kasih adalah 好听 (merdu / enak didengar).
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Soal (4) -->
-          <div class="classroom-item" style="border-left: 4px solid #4f46e5;">
-            <div class="item-number" style="background:#4f46e5;color:#fff;">4</div>
-            <div class="item-content">
-              <div class="item-title" style="font-size:0.95rem;color:var(--text);">
-                <div style="font-size:0.8rem;font-weight:700;color:#3730a3;margin-bottom:0.25rem;">（4）Percakapan Rumpang:</div>
-                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">陈天中： 你下午去哪儿？</div>
-                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.15rem;">Chén Tiānzhōng: Nǐ xiàwǔ qù nǎr?</div>
-                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;margin-top:0.35rem;">安　妮： 我下午还（ 在学校 ）上课。</div>
-                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.15rem;">Ānní: Wǒ xiàwǔ hái ( zài xuéxiào ) shàngkè.</div>
-                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.2rem;">Arti: Chen Tianzhong: Kamu sore ini pergi ke mana? | Anni: Saya sore ini masih ada kelas (di sekolah).</div>
-              </div>
-              <div class="item-body" style="margin-top:0.4rem;">
-                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:0.5rem 0.8rem;font-size:0.82rem;color:#1e40af;">
-                  💡 <strong>Jawaban:</strong> <strong>C (在学校)</strong><br>
-                  <em>Alasan:</em> Menjawab pertanyaan "去哪儿" (ke mana) yang menanyakan tempat keberadaan untuk aktivitas kuliah/sekolah (在学校上课).
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
 
-      <!-- BAGIAN 2: 用本课新学的词语和语言点描述图片 (DESCRIBE PICTURES) -->
-      <div style="margin-top: 1.8rem; padding-top: 1.5rem; border-top: 2px dashed #cbd5e1;">
-        <div style="font-weight:700;color:var(--text);font-size:0.95rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;">
-          <span style="color:#4f46e5;">■ 用本课新学的词语和语言点描述图片。</span>
-          <span style="font-size:0.82rem;color:#64748b;font-weight:normal;">(Describe the pictures using the newly-learned words and language points in this lesson.)</span>
+      <div class="classroom-list">
+
+        <!-- ══ BAGIAN 1: 选词填空 ══ -->
+        <div class="classroom-group-title" style="font-weight:700; color:var(--primary-dark); font-size:0.95rem; margin-top:0.5rem; border-bottom:1.5px solid var(--border); padding-bottom:0.4rem;">
+          <span>✏️ Bagian 1: 选词填空 · Latihan Melengkapi Kalimat (Choose the Proper Words)</span>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.25rem;">
-
-          <!-- Gambar 1: Buku & Gelas di atas meja -->
-          <div class="comp-card">
-            <div class="comp-pic-wrapper">
-              <img src="bab9-comp-1.png" alt="桌子上的书和水杯 (Buku dan Gelas di Atas Meja)">
-              <div class="comp-pic-tag">🖼️ Gambar 1</div>
-            </div>
-            <div class="comp-card-body">
-              <div style="font-size:0.78rem;font-weight:700;color:#4f46e5;text-transform:uppercase;letter-spacing:0.5px;">Buku &amp; Gelas di Atas Meja</div>
-              <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.65rem 0.85rem;">
-                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
-                  桌子上（ 有一本书 ）。
-                </div>
-                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.2rem;">
-                  Zhuōzi shang ( yǒu yì běn shū ).
-                </div>
-                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.25rem;">
-                  Arti: Di atas meja (ada sebuah buku). <span style="color:#4f46e5;font-weight:600;">(Menggunakan kata posisi 上 &amp; kata satuan 本)</span>
-                </div>
-              </div>
-            </div>
+        <!-- Kotak Pilihan Kata Bank (A - E) -->
+        <div class="comp-quiz-options">
+          <div class="comp-quiz-tag">Pilihan Kata · 选项 (A–E):</div>
+          <div class="comp-quiz-badges">
+            <span class="comp-quiz-badge"><strong>A. 是</strong> <em>(shì / adalah)</em></span>
+            <span class="comp-quiz-badge"><strong>B. 好听</strong> <em>(hǎotīng / enak didengar, merdu)</em></span>
+            <span class="comp-quiz-badge"><strong>C. 在学校</strong> <em>(zài xuéxiào / di sekolah)</em></span>
+            <span class="comp-quiz-badge"><strong>D. 今天上午</strong> <em>(jīntiān shàngwǔ / pagi hari ini)</em></span>
+            <span class="comp-quiz-badge"><strong>E. 椅子</strong> <em>(yǐzi / kursi)</em></span>
           </div>
-
-          <!-- Gambar 2: Anak-anak Menonton TV di Rumah -->
-          <div class="comp-card">
-            <div class="comp-pic-wrapper">
-              <img src="bab9-comp-2.png" alt="孩子们看电视 (Anak-anak Menonton TV)">
-              <div class="comp-pic-tag">🖼️ Gambar 2</div>
-            </div>
-            <div class="comp-card-body">
-              <div style="font-size:0.78rem;font-weight:700;color:#4f46e5;text-transform:uppercase;letter-spacing:0.5px;">Anak-anak Menonton TV</div>
-              <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.65rem 0.85rem;">
-                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
-                  孩子们（ 白天 ）在家里（ 看电视 ）。
-                </div>
-                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.2rem;">
-                  Háizimen ( báitiān ) zài jiā lǐ ( kàn diànshì ).
-                </div>
-                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.25rem;">
-                  Arti: Anak-anak (siang hari) di rumah (menonton televisi). <span style="color:#4f46e5;font-weight:600;">(Urutan: Subjek + Waktu + Tempat + Aktivitas)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Gambar 3: Dua Ekor Anak Anjing -->
-          <div class="comp-card">
-            <div class="comp-pic-wrapper">
-              <img src="bab9-comp-3.png" alt="两只小狗 (Dua Ekor Anak Anjing)">
-              <div class="comp-pic-tag">🖼️ Gambar 3</div>
-            </div>
-            <div class="comp-card-body">
-              <div style="font-size:0.78rem;font-weight:700;color:#4f46e5;text-transform:uppercase;letter-spacing:0.5px;">Dua Ekor Anak Anjing</div>
-              <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.65rem 0.85rem;">
-                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
-                  （ 第一 ）只小狗是我的， （ 第 ）二只小狗是她的。
-                </div>
-                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.2rem;">
-                  ( Dì-yī ) zhī xiǎogǒu shì wǒ de, ( dì- ) èr zhī xiǎogǒu shì tā de.
-                </div>
-                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.25rem;">
-                  Arti: Anak anjing (pertama) adalah milik saya, anak anjing ke-(dua) adalah miliknya. <span style="color:#4f46e5;font-weight:600;">(Pola ordinal: 第 + Angka + Satuan 只)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Gambar 4: Belanja di Toko Luar Sekolah -->
-          <div class="comp-card">
-            <div class="comp-pic-wrapper">
-              <img src="bab9-comp-4.png" alt="学校外边的小店 (Toko di Luar Sekolah)">
-              <div class="comp-pic-tag">🖼️ Gambar 4</div>
-            </div>
-            <div class="comp-card-body">
-              <div style="font-size:0.78rem;font-weight:700;color:#4f46e5;text-transform:uppercase;letter-spacing:0.5px;">Belanja di Toko Luar Sekolah</div>
-              <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.65rem 0.85rem;">
-                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
-                  学校外边是一家小店， （ 他在店里买东西 ）。
-                </div>
-                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.2rem;">
-                  Xuéxiào wàibian shì yì jiā xiǎodiàn, ( tā zài diàn lǐ mǎi dōngxi ).
-                </div>
-                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.25rem;">
-                  Arti: Di luar sekolah adalah sebuah toko kecil, (dia berbelanja di dalam toko). <span style="color:#4f46e5;font-weight:600;">(Posisi: 外边 &amp; Aktivitas: 在店里买东西)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <!-- Soal (1) -->
+        <div class="classroom-item" style="border-left: 4px solid #0d9488;">
+          <div class="item-number" style="background:#0d9488; color:#fff;">1</div>
+          <div class="item-content">
+            <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:var(--primary-dark);">
+              （ <span class="comp-answer-pill">E 椅子</span> ）上有一只小猫，房间外（ <span class="comp-answer-pill">A 是</span> ）一只小狗。
+            </div>
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.2rem;">
+              ( Yǐzi ) shang yǒu yì zhī xiǎomāo, fángjiān wài ( shì ) yì zhī xiǎogǒu.
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.25rem;">
+              <strong>Arti:</strong> Di atas (kursi) ada seekor anak kucing, di luar kamar (adalah) seekor anjing kecil.
+            </div>
+            <div class="comp-explain-box">
+              💡 <strong>Jawaban:</strong> <strong>E (椅子)</strong> dan <strong>A (是)</strong><br>
+              <em>Alasan:</em> Kata tempat di atas yang berpasangan dengan "上" adalah <strong>椅子</strong> (kursi), dan pola kalimat eksistensial penunjuk keberadaan setelah penunjuk lokasi kamar adalah <strong>是</strong> (adalah).
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal (2) -->
+        <div class="classroom-item" style="border-left: 4px solid #0d9488;">
+          <div class="item-number" style="background:#0d9488; color:#fff;">2</div>
+          <div class="item-content">
+            <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:var(--primary-dark);">
+              她（ <span class="comp-answer-pill">D 今天上午</span> ）在家里学习。
+            </div>
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.2rem;">
+              Tā ( jīntiān shàngwǔ ) zài jiā lǐ xuéxí.
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.25rem;">
+              <strong>Arti:</strong> Dia (pagi hari ini) belajar di rumah.
+            </div>
+            <div class="comp-explain-box">
+              💡 <strong>Jawaban:</strong> <strong>D (今天上午)</strong><br>
+              <em>Alasan:</em> Sesuai pola urutan keterangan dalam kalimat bahasa Mandarin: Subjek (她) + <strong>Waktu (今天上午)</strong> + Tempat (在家里) + Aktivitas (学习).
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal (3) -->
+        <div class="classroom-item" style="border-left: 4px solid #0d9488;">
+          <div class="item-number" style="background:#0d9488; color:#fff;">3</div>
+          <div class="item-content">
+            <div style="display:flex; flex-direction:column; gap:0.4rem;">
+              <div>
+                <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
+                  <strong style="color:var(--text); font-size:0.88rem;">王一雪：</strong> 你唱歌很（ <span class="comp-answer-pill">B 好听</span> ）。
+                </div>
+                <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
+                  Wáng Yīxuě: Nǐ chàng gē hěn ( hǎotīng ).
+                </div>
+              </div>
+              <div>
+                <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
+                  <strong style="color:var(--text); font-size:0.88rem;">杨同乐：</strong> 谢谢！
+                </div>
+                <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
+                  Yáng Tónglè: Xièxie!
+                </div>
+              </div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.25rem;">
+              <strong>Arti:</strong> Wang Yixue: Kamu bernyanyi sangat (merdu/enak didengar). / Yang Tongle: Terima kasih!
+            </div>
+            <div class="comp-explain-box">
+              💡 <strong>Jawaban:</strong> <strong>B (好听)</strong><br>
+              <em>Alasan:</em> Kata sifat yang tepat untuk menerangkan aktivitas bernyanyi (唱歌) dan disambut dengan ucapan terima kasih adalah <strong>好听</strong> (merdu / enak didengar).
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal (4) -->
+        <div class="classroom-item" style="border-left: 4px solid #0d9488;">
+          <div class="item-number" style="background:#0d9488; color:#fff;">4</div>
+          <div class="item-content">
+            <div style="display:flex; flex-direction:column; gap:0.4rem;">
+              <div>
+                <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
+                  <strong style="color:var(--text); font-size:0.88rem;">陈天中：</strong> 你下午去哪儿？
+                </div>
+                <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
+                  Chén Tiānzhōng: Nǐ xiàwǔ qù nǎr?
+                </div>
+              </div>
+              <div>
+                <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
+                  <strong style="color:var(--text); font-size:0.88rem;">安　妮：</strong> 我下午还（ <span class="comp-answer-pill">C 在学校</span> ）上课。
+                </div>
+                <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
+                  Ānní: Wǒ xiàwǔ hái ( zài xuéxiào ) shàngkè.
+                </div>
+              </div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.25rem;">
+              <strong>Arti:</strong> Chen Tianzhong: Kamu sore ini pergi ke mana? / Anni: Saya sore ini masih ada kelas (di sekolah).
+            </div>
+            <div class="comp-explain-box">
+              💡 <strong>Jawaban:</strong> <strong>C (在学校)</strong><br>
+              <em>Alasan:</em> Menjawab pertanyaan "去哪儿" (ke mana) yang menanyakan tempat keberadaan untuk aktivitas kuliah/sekolah (<strong>在学校</strong>上课).
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ BAGIAN 2: 看图描述 ══ -->
+        <div class="classroom-group-title" style="font-weight:700; color:var(--primary-dark); font-size:0.95rem; margin-top:1.5rem; border-bottom:1.5px solid var(--border); padding-bottom:0.4rem;">
+          <span>🖼️ Bagian 2: 用本课新学的词语和语言点描述图片 · Latihan Mendeskripsikan Gambar</span>
+        </div>
+
+        <!-- Gambar Deskripsi 1 -->
+        <div class="comp-photo-item" style="border-left: 4px solid #0891b2;">
+          <div class="comp-photo-thumb">
+            <img src="bab9-photo-1.png" alt="桌子上的书和水杯 (Buku dan Gelas di Atas Meja)">
+          </div>
+          <div class="comp-photo-content">
+            <div style="font-size:0.8rem; color:#0891b2; font-weight:700;">
+              📖 Gambar 1: Buku &amp; Gelas di Atas Meja
+            </div>
+            <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark);">
+              桌子上（ <span class="comp-answer-pill">有一本书</span> ）。
+            </div>
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
+              Zhuōzi shang ( yǒu yì běn shū ).
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
+              <strong>Arti:</strong> Di atas meja (ada sebuah buku). <span style="color:#0891b2; font-weight:600;">(Pola: Kata Tempat 上 + 有 + Jumlah-Satuan + Benda)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gambar Deskripsi 2 -->
+        <div class="comp-photo-item" style="border-left: 4px solid #059669;">
+          <div class="comp-photo-thumb">
+            <img src="bab9-photo-2.png" alt="孩子们看电视 (Anak-anak Menonton TV)">
+          </div>
+          <div class="comp-photo-content">
+            <div style="font-size:0.8rem; color:#059669; font-weight:700;">
+              📺 Gambar 2: Anak-anak Menonton TV di Rumah
+            </div>
+            <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark);">
+              孩子们（ <span class="comp-answer-pill">白天</span> ）在家里（ <span class="comp-answer-pill">看电视</span> ）。
+            </div>
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
+              Háizimen ( báitiān ) zài jiā lǐ ( kàn diànshì ).
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
+              <strong>Arti:</strong> Anak-anak (siang hari) di rumah (menonton televisi). <span style="color:#059669; font-weight:600;">(Pola: Subjek + Waktu + Tempat + Aktivitas)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gambar Deskripsi 3 -->
+        <div class="comp-photo-item" style="border-left: 4px solid #4f46e5;">
+          <div class="comp-photo-thumb">
+            <img src="bab9-photo-3.png" alt="两只小狗 (Dua Ekor Anak Anjing)">
+          </div>
+          <div class="comp-photo-content">
+            <div style="font-size:0.8rem; color:#4f46e5; font-weight:700;">
+              🐶 Gambar 3: Dua Ekor Anak Anjing
+            </div>
+            <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark);">
+              （ <span class="comp-answer-pill">第一</span> ）只小狗是我的，（ <span class="comp-answer-pill">第</span> ）二只小狗是她的。
+            </div>
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
+              ( Dì-yī ) zhī xiǎogǒu shì wǒ de, ( dì- ) èr zhī xiǎogǒu shì tā de.
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
+              <strong>Arti:</strong> Anak anjing (pertama) adalah milik saya, anak anjing ke-(dua) adalah miliknya. <span style="color:#4f46e5; font-weight:600;">(Pola: 第 + Angka + Satuan 只)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gambar Deskripsi 4 -->
+        <div class="comp-photo-item" style="border-left: 4px solid #ea580c;">
+          <div class="comp-photo-thumb">
+            <img src="bab9-photo-4.png" alt="学校外边的小店 (Toko di Luar Sekolah)">
+          </div>
+          <div class="comp-photo-content">
+            <div style="font-size:0.8rem; color:#ea580c; font-weight:700;">
+              🏪 Gambar 4: Belanja di Toko Luar Sekolah
+            </div>
+            <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark);">
+              学校外边是一家小店，（ <span class="comp-answer-pill">他在店里买东西</span> ）。
+            </div>
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
+              Xuéxiào wàibian shì yì jiā xiǎodiàn, ( tā zài diàn lǐ mǎi dōngxi ).
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
+              <strong>Arti:</strong> Di luar sekolah adalah sebuah toko kecil, (dia berbelanja di dalam toko). <span style="color:#ea580c; font-weight:600;">(Pola: Posisi 外边 &amp; Aktivitas 在店里买东西)</span>
+            </div>
+          </div>
+        </div>
+
       </div>
-
     </div>
   </div>
 
