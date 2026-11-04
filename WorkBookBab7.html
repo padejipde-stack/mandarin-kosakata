@@ -1191,20 +1191,23 @@
   <!-- ══════════════════════════════════════════════════════════════════════════
        BAGIAN 3: AKSARA TIONGHOA (CHINESE CHARACTERS · 汉字)
        ══════════════════════════════════════════════════════════════════════════ -->
-  <div class="classroom-box" id="hanzi-section">
-    <div class="classroom-header">
-      <div class="header-avatar" style="background: linear-gradient(135deg, #0284c7, #0369a1);">字</div>
-      <div class="header-info">
-        <div class="header-badge" style="background:#e0f2fe; color:#0369a1;">Aksara Tionghoa · 汉字</div>
-        <div class="classroom-title">3. Aksara Tionghoa (Chinese Characters / 汉字 - Hànzì)</div>
+  <div>
+    <div class="section-title">📌 Bagian 3: Aksara Tionghoa · 汉字 (Chinese Characters)</div>
+    <div class="classroom-box" id="hanzi-section" style="border-left: 5px solid #be123c;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar av-rose" style="font-size: 1.15rem; font-weight: 700; color: #fff;">字</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #be123c; color: #fff;">Aksara Tionghoa · 汉字</div>
+          <div class="classroom-desc">3. Aksara Tionghoa (Chinese Characters / 汉字 - Hànzì)</div>
+        </div>
       </div>
-    </div>
-    <div class="classroom-body">
 
-      <!-- 1. Pengantar Aksara Tionghoa -->
-      <div class="aturan-block" style="margin-bottom: 1.25rem;">
-        <div class="aturan-title">
-          <span>📜</span>
+      <!-- 1. Pengantar Aksara Tionghoa (汉字简介) -->
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#ffe4e6; color:#881337;">Pengantar</span>
           <span>1. Pengantar Aksara Tionghoa (汉字简介)</span>
         </div>
 
@@ -1222,7 +1225,7 @@
           </div>
         </div>
 
-        <div class="aturan-rule rule-warn">
+        <div class="aturan-rule rule-note">
           <span class="aturan-icon">✍️</span>
           <div class="aturan-text">
             Aksara Tionghoa berfungsi sebagai <strong>simbol tertulis</strong> untuk merekam bahasa Mandarin.
@@ -1231,140 +1234,168 @@
       </div>
 
       <!-- 2. Perkembangan dan Sejarah Bentuk Aksara -->
-      <div class="aturan-block" style="margin-bottom: 1.25rem;">
-        <div class="aturan-title">
-          <span>🔄</span>
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#ffe4e6; color:#881337;">Sejarah &amp; Bentuk</span>
           <span>2. Perkembangan dan Sejarah Bentuk Aksara</span>
         </div>
 
-        <p style="margin: 0.25rem 0 0.85rem; font-size: 0.9rem; color: #475569; line-height: 1.5;">
-          Sepanjang sejarahnya, aksara Tionghoa telah melalui berbagai bentuk skrip penulisan (yang beberapa di antaranya masih digunakan dalam seni kaligrafi):
-        </p>
+        <div class="aturan-rule rule-note" style="margin-bottom:0.85rem;">
+          <span class="aturan-icon">🔄</span>
+          <div class="aturan-text">
+            Sepanjang sejarahnya, aksara Tionghoa telah melalui berbagai bentuk skrip penulisan (yang beberapa di antaranya masih digunakan dalam seni kaligrafi):
+          </div>
+        </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
+        <!-- 7 Skrip Sejarah Grid -->
+        <div class="pair-badge-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem;">
           
-          <div class="contrast-card" onclick="playWord('甲骨文', 'jiǎgǔwén')" style="cursor: pointer; padding: 0.85rem 1rem; text-align: left; background:#ffffff;">
-            <div style="font-size:0.75rem; font-weight:700; color:#0369a1; text-transform:uppercase; margin-bottom:0.25rem;">1. Tulisan Tulang Orakel</div>
-            <div style="display:flex; align-items:baseline; justify-content:space-between;">
+          <div class="pair-badge-item" onclick="playWord('甲骨文', 'jiǎgǔwén')" style="cursor: pointer; padding: 0.85rem 1rem; flex-direction:column; align-items:flex-start; gap:0.25rem;">
+            <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+              <span class="pair-sub-tag">1. Tulisan Tulang Orakel</span>
+              <span style="font-size:0.75rem; color:#be123c; font-weight:700;">🔊 Dengar</span>
+            </div>
+            <div style="display:flex; align-items:baseline; gap:0.6rem; margin-top:0.15rem;">
               <span style="font-size:1.35rem; font-weight:800; color:#0f172a; font-family:'Noto Sans SC', sans-serif;">甲骨文</span>
-              <span style="font-size:0.85rem; color:#64748b; font-family:var(--font-pinyin);">Jiǎgǔwén</span>
+              <span class="contrast-py" style="font-size:0.85rem; color:#be123c; font-weight:600; font-family:var(--font-pinyin);">Jiǎgǔwén</span>
             </div>
-            <div style="font-size:0.8rem; color:#475569; margin-top:0.35rem;">
-              Oracle-bone script · <em>Periode Dinasti Shang</em> 🔊
+            <div style="font-size:0.78rem; color:#64748b; line-height:1.4;">
+              Oracle-bone script · <em>Periode Dinasti Shang</em>
             </div>
           </div>
 
-          <div class="contrast-card" onclick="playWord('金文', 'jīnwén')" style="cursor: pointer; padding: 0.85rem 1rem; text-align: left; background:#ffffff;">
-            <div style="font-size:0.75rem; font-weight:700; color:#0369a1; text-transform:uppercase; margin-bottom:0.25rem;">2. Tulisan Perunggu</div>
-            <div style="display:flex; align-items:baseline; justify-content:space-between;">
+          <div class="pair-badge-item" onclick="playWord('金文', 'jīnwén')" style="cursor: pointer; padding: 0.85rem 1rem; flex-direction:column; align-items:flex-start; gap:0.25rem;">
+            <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+              <span class="pair-sub-tag">2. Tulisan Perunggu</span>
+              <span style="font-size:0.75rem; color:#be123c; font-weight:700;">🔊 Dengar</span>
+            </div>
+            <div style="display:flex; align-items:baseline; gap:0.6rem; margin-top:0.15rem;">
               <span style="font-size:1.35rem; font-weight:800; color:#0f172a; font-family:'Noto Sans SC', sans-serif;">金文</span>
-              <span style="font-size:0.85rem; color:#64748b; font-family:var(--font-pinyin);">Jīnwén</span>
+              <span class="contrast-py" style="font-size:0.85rem; color:#be123c; font-weight:600; font-family:var(--font-pinyin);">Jīnwén</span>
             </div>
-            <div style="font-size:0.8rem; color:#475569; margin-top:0.35rem;">
-              Bronze script · <em>Akhir Dinasti Shang</em> 🔊
+            <div style="font-size:0.78rem; color:#64748b; line-height:1.4;">
+              Bronze script · <em>Akhir Dinasti Shang</em>
             </div>
           </div>
 
-          <div class="contrast-card" onclick="playWord('篆书', 'zhuànshū')" style="cursor: pointer; padding: 0.85rem 1rem; text-align: left; background:#ffffff;">
-            <div style="font-size:0.75rem; font-weight:700; color:#0369a1; text-transform:uppercase; margin-bottom:0.25rem;">3. Tulisan Seal</div>
-            <div style="display:flex; align-items:baseline; justify-content:space-between;">
+          <div class="pair-badge-item" onclick="playWord('篆书', 'zhuànshū')" style="cursor: pointer; padding: 0.85rem 1rem; flex-direction:column; align-items:flex-start; gap:0.25rem;">
+            <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+              <span class="pair-sub-tag">3. Tulisan Seal</span>
+              <span style="font-size:0.75rem; color:#be123c; font-weight:700;">🔊 Dengar</span>
+            </div>
+            <div style="display:flex; align-items:baseline; gap:0.6rem; margin-top:0.15rem;">
               <span style="font-size:1.35rem; font-weight:800; color:#0f172a; font-family:'Noto Sans SC', sans-serif;">篆书</span>
-              <span style="font-size:0.85rem; color:#64748b; font-family:var(--font-pinyin);">Zhuànshū</span>
+              <span class="contrast-py" style="font-size:0.85rem; color:#be123c; font-weight:600; font-family:var(--font-pinyin);">Zhuànshū</span>
             </div>
-            <div style="font-size:0.8rem; color:#475569; margin-top:0.35rem;">
-              Seal script · <em>Periode Dinasti Qin</em> 🔊
+            <div style="font-size:0.78rem; color:#64748b; line-height:1.4;">
+              Seal script · <em>Periode Dinasti Qin</em>
             </div>
           </div>
 
-          <div class="contrast-card" onclick="playWord('隶书', 'lìshū')" style="cursor: pointer; padding: 0.85rem 1rem; text-align: left; background:#ffffff;">
-            <div style="font-size:0.75rem; font-weight:700; color:#0369a1; text-transform:uppercase; margin-bottom:0.25rem;">4. Tulisan Clerical</div>
-            <div style="display:flex; align-items:baseline; justify-content:space-between;">
+          <div class="pair-badge-item" onclick="playWord('隶书', 'lìshū')" style="cursor: pointer; padding: 0.85rem 1rem; flex-direction:column; align-items:flex-start; gap:0.25rem;">
+            <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+              <span class="pair-sub-tag">4. Tulisan Clerical</span>
+              <span style="font-size:0.75rem; color:#be123c; font-weight:700;">🔊 Dengar</span>
+            </div>
+            <div style="display:flex; align-items:baseline; gap:0.6rem; margin-top:0.15rem;">
               <span style="font-size:1.35rem; font-weight:800; color:#0f172a; font-family:'Noto Sans SC', sans-serif;">隶书</span>
-              <span style="font-size:0.85rem; color:#64748b; font-family:var(--font-pinyin);">Lìshū</span>
+              <span class="contrast-py" style="font-size:0.85rem; color:#be123c; font-weight:600; font-family:var(--font-pinyin);">Lìshū</span>
             </div>
-            <div style="font-size:0.8rem; color:#475569; margin-top:0.35rem;">
-              Clerical script · <em>Periode Dinasti Han</em> 🔊
-            </div>
-          </div>
-
-          <div class="contrast-card" onclick="playWord('楷书', 'kǎishū')" style="cursor: pointer; padding: 0.85rem 1rem; text-align: left; background:#eff6ff; border-color:#93c5fd;">
-            <div style="font-size:0.75rem; font-weight:700; color:#1d4ed8; text-transform:uppercase; margin-bottom:0.25rem;">5. Tulisan Reguler (Standar Saat Ini)</div>
-            <div style="display:flex; align-items:baseline; justify-content:space-between;">
-              <span style="font-size:1.35rem; font-weight:800; color:#1e3a8a; font-family:'Noto Sans SC', sans-serif;">楷书</span>
-              <span style="font-size:0.85rem; color:#2563eb; font-family:var(--font-pinyin);">Kǎishū</span>
-            </div>
-            <div style="font-size:0.8rem; color:#1e40af; margin-top:0.35rem;">
-              Regular script · <strong>Merupakan bentuk standar penulisan Tionghoa saat ini</strong> 🔊
+            <div style="font-size:0.78rem; color:#64748b; line-height:1.4;">
+              Clerical script · <em>Periode Dinasti Han</em>
             </div>
           </div>
 
-          <div class="contrast-card" onclick="playWord('草书', 'cǎoshū')" style="cursor: pointer; padding: 0.85rem 1rem; text-align: left; background:#ffffff;">
-            <div style="font-size:0.75rem; font-weight:700; color:#0369a1; text-transform:uppercase; margin-bottom:0.25rem;">6. Tulisan Cursive</div>
-            <div style="display:flex; align-items:baseline; justify-content:space-between;">
+          <div class="pair-badge-item" onclick="playWord('楷书', 'kǎishū')" style="cursor: pointer; padding: 0.85rem 1rem; flex-direction:column; align-items:flex-start; gap:0.25rem; background:#fff1f2; border:2px solid #be123c;">
+            <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+              <span class="pair-sub-tag" style="color:#881337; font-weight:800;">5. Tulisan Reguler (Standar Saat Ini)</span>
+              <span style="font-size:0.75rem; color:#be123c; font-weight:700;">🔊 Dengar</span>
+            </div>
+            <div style="display:flex; align-items:baseline; gap:0.6rem; margin-top:0.15rem;">
+              <span style="font-size:1.35rem; font-weight:800; color:#881337; font-family:'Noto Sans SC', sans-serif;">楷书</span>
+              <span class="contrast-py" style="font-size:0.85rem; color:#be123c; font-weight:700; font-family:var(--font-pinyin);">Kǎishū</span>
+            </div>
+            <div style="font-size:0.78rem; color:#881337; font-weight:600; line-height:1.4;">
+              Regular script · <strong>Merupakan bentuk standar penulisan Tionghoa saat ini</strong>
+            </div>
+          </div>
+
+          <div class="pair-badge-item" onclick="playWord('草书', 'cǎoshū')" style="cursor: pointer; padding: 0.85rem 1rem; flex-direction:column; align-items:flex-start; gap:0.25rem;">
+            <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+              <span class="pair-sub-tag">6. Tulisan Cursive</span>
+              <span style="font-size:0.75rem; color:#be123c; font-weight:700;">🔊 Dengar</span>
+            </div>
+            <div style="display:flex; align-items:baseline; gap:0.6rem; margin-top:0.15rem;">
               <span style="font-size:1.35rem; font-weight:800; color:#0f172a; font-family:'Noto Sans SC', sans-serif;">草书</span>
-              <span style="font-size:0.85rem; color:#64748b; font-family:var(--font-pinyin);">Cǎoshū</span>
+              <span class="contrast-py" style="font-size:0.85rem; color:#be123c; font-weight:600; font-family:var(--font-pinyin);">Cǎoshū</span>
             </div>
-            <div style="font-size:0.8rem; color:#475569; margin-top:0.35rem;">
-              Cursive script 🔊
+            <div style="font-size:0.78rem; color:#64748b; line-height:1.4;">
+              Cursive script
             </div>
           </div>
 
-          <div class="contrast-card" onclick="playWord('行书', 'xíngshū')" style="cursor: pointer; padding: 0.85rem 1rem; text-align: left; background:#ffffff;">
-            <div style="font-size:0.75rem; font-weight:700; color:#0369a1; text-transform:uppercase; margin-bottom:0.25rem;">7. Tulisan Semi-Cursive</div>
-            <div style="display:flex; align-items:baseline; justify-content:space-between;">
-              <span style="font-size:1.35rem; font-weight:800; color:#0f172a; font-family:'Noto Sans SC', sans-serif;">行书</span>
-              <span style="font-size:0.85rem; color:#64748b; font-family:var(--font-pinyin);">Xíngshū</span>
+          <div class="pair-badge-item" onclick="playWord('行书', 'xíngshū')" style="cursor: pointer; padding: 0.85rem 1rem; flex-direction:column; align-items:flex-start; gap:0.25rem;">
+            <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+              <span class="pair-sub-tag">7. Tulisan Semi-Cursive</span>
+              <span style="font-size:0.75rem; color:#be123c; font-weight:700;">🔊 Dengar</span>
             </div>
-            <div style="font-size:0.8rem; color:#475569; margin-top:0.35rem;">
-              Running script 🔊
+            <div style="display:flex; align-items:baseline; gap:0.6rem; margin-top:0.15rem;">
+              <span style="font-size:1.35rem; font-weight:800; color:#0f172a; font-family:'Noto Sans SC', sans-serif;">行书</span>
+              <span class="contrast-py" style="font-size:0.85rem; color:#be123c; font-weight:600; font-family:var(--font-pinyin);">Xíngshū</span>
+            </div>
+            <div style="font-size:0.78rem; color:#64748b; line-height:1.4;">
+              Running script
             </div>
           </div>
 
         </div>
 
-        <div class="aturan-rule rule-note" style="margin-top:0.85rem;">
+        <!-- Contoh Evolusi -->
+        <div class="aturan-rule rule-ok" style="margin-top:0.85rem;">
           <span class="aturan-icon">🌙</span>
           <div class="aturan-text">
-            <strong>Contoh Evolusi:</strong> Karakter untuk bulan / <em>yuè</em> [<strong onclick="playWord('月', 'yuè')" style="cursor:pointer; color:#0369a1;">月 🔊</strong>] berevolusi bentuknya dari gambar bulan sabit pada zaman kuno hingga menjadi karakter kotak teratur yang kita tulis hari ini.
+            <strong>Contoh Evolusi:</strong> Karakter untuk bulan / <em>yuè</em> [<strong onclick="playWord('月', 'yuè')" style="cursor:pointer; color:#be123c;">月 🔊</strong>] berevolusi bentuknya dari gambar bulan sabit pada zaman kuno hingga menjadi karakter kotak teratur yang kita tulis hari ini.
           </div>
         </div>
       </div>
 
       <!-- 3. Karakteristik Aksara Tionghoa -->
-      <div class="aturan-block" style="margin-bottom: 1.25rem;">
-        <div class="aturan-title">
-          <span>💡</span>
+      <div class="aturan-block">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#ffe4e6; color:#881337;">Karakteristik</span>
           <span>3. Karakteristik Aksara Tionghoa</span>
         </div>
 
-        <div class="aturan-rule rule-ok" style="margin-bottom:0.75rem;">
+        <div class="aturan-rule rule-note" style="margin-bottom:0.75rem;">
           <span class="aturan-icon">🧩</span>
           <div class="aturan-text">
             <strong>Berbasis Piktograf &amp; Fonosemantik:</strong> Aksara Tionghoa didasarkan pada piktograf dan didominasi oleh karakter gabungan fonosemantik (<em>phono-semantic compound characters</em>), di mana <strong>sekitar 90% karakter modern</strong> termasuk dalam jenis ini. Sistem ini membuat pembelajaran karakter menjadi lebih mudah diakses.
           </div>
         </div>
 
-        <div class="aturan-rule rule-note" style="margin-bottom:0.85rem;">
+        <div class="aturan-rule rule-ok" style="margin-bottom:0.85rem;">
           <span class="aturan-icon">🎯</span>
           <div class="aturan-text">
             <strong>Keterpaduan Bentuk, Pengucapan, dan Arti:</strong> Sebuah karakter Tionghoa mengintegrasikan <strong>bentuk</strong>, <strong>pelafalan</strong>, dan <strong>makna</strong>. Umumnya, bentuk suatu karakter memberikan petunjuk tentang pengucapan dan maknanya.
           </div>
         </div>
 
+        <!-- Contoh Pasangan Kata Breakdown -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.85rem;">
           
           <!-- Contoh 1: 材 -->
-          <div class="contrast-card" style="padding: 1rem; text-align: left; background:#ffffff; border-left: 4px solid #16a34a;">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-              <span style="font-size:0.8rem; font-weight:700; color:#15803d; text-transform:uppercase;">Contoh 1</span>
+          <div class="instruction-banner" style="padding: 1rem; background:#fff; border: 1.5px solid #fecdd3; border-left: 5px solid #be123c;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
+              <span class="pair-sub-tag" style="font-size:0.75rem;">Contoh 1</span>
               <span class="table-audio-btn" onclick="playWord('材', 'cái')" style="font-size:0.8rem;">🔊 Dengarkan</span>
             </div>
-            <div style="font-size: 1.75rem; font-weight:800; color:#0f172a; font-family:'Noto Sans SC', sans-serif; margin-bottom:0.25rem;">
-              材 <span style="font-size:1rem; font-weight:600; color:#15803d; font-family:var(--font-pinyin);">cái</span>
+            <div style="display:flex; align-items:baseline; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="font-size: 1.85rem; font-weight:800; color:#be123c; font-family:'Noto Sans SC', sans-serif;">材</span>
+              <span class="contrast-py" style="font-size:1.05rem; font-weight:700; color:#881337; font-family:var(--font-pinyin);">cái</span>
             </div>
-            <div style="font-size:0.85rem; color:#334155; line-height:1.5;">
+            <div style="font-size:0.86rem; color:#334155; line-height:1.55;">
               Dalam huruf “<strong>材</strong>” (cái):
-              <ul style="margin:0.35rem 0 0 1.15rem; padding:0;">
+              <ul style="margin:0.4rem 0 0 1.15rem; padding:0; display:flex; flex-direction:column; gap:0.25rem;">
                 <li>Komponen “<strong>才</strong>” menunjukkan <strong>pelafalan</strong>.</li>
                 <li>Radikal “<strong>木</strong>” (mùzìpáng) menunjukkan kaitan dengan <strong>kayu</strong>.</li>
               </ul>
@@ -1372,17 +1403,18 @@
           </div>
 
           <!-- Contoh 2: 花 -->
-          <div class="contrast-card" style="padding: 1rem; text-align: left; background:#ffffff; border-left: 4px solid #db2777;">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-              <span style="font-size:0.8rem; font-weight:700; color:#be185d; text-transform:uppercase;">Contoh 2</span>
+          <div class="instruction-banner" style="padding: 1rem; background:#fff; border: 1.5px solid #fecdd3; border-left: 5px solid #be123c;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem;">
+              <span class="pair-sub-tag" style="font-size:0.75rem;">Contoh 2</span>
               <span class="table-audio-btn" onclick="playWord('花', 'huā')" style="font-size:0.8rem;">🔊 Dengarkan</span>
             </div>
-            <div style="font-size: 1.75rem; font-weight:800; color:#0f172a; font-family:'Noto Sans SC', sans-serif; margin-bottom:0.25rem;">
-              花 <span style="font-size:1rem; font-weight:600; color:#be185d; font-family:var(--font-pinyin);">huā</span>
+            <div style="display:flex; align-items:baseline; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="font-size: 1.85rem; font-weight:800; color:#be123c; font-family:'Noto Sans SC', sans-serif;">花</span>
+              <span class="contrast-py" style="font-size:1.05rem; font-weight:700; color:#881337; font-family:var(--font-pinyin);">huā</span>
             </div>
-            <div style="font-size:0.85rem; color:#334155; line-height:1.5;">
+            <div style="font-size:0.86rem; color:#334155; line-height:1.55;">
               Dalam huruf “<strong>花</strong>” (huā):
-              <ul style="margin:0.35rem 0 0 1.15rem; padding:0;">
+              <ul style="margin:0.4rem 0 0 1.15rem; padding:0; display:flex; flex-direction:column; gap:0.25rem;">
                 <li>Komponen “<strong>化</strong>” menunjukkan <strong>pelafalan</strong>.</li>
                 <li>Radikal “<strong>艹</strong>” (cǎozìtóu) menunjukkan kaitan dengan <strong>tanaman atau bunga</strong>.</li>
               </ul>
@@ -1395,8 +1427,8 @@
 
       <!-- 4. Era Digital dan Pinyin -->
       <div class="aturan-block" style="margin-bottom: 0;">
-        <div class="aturan-title">
-          <span>💻</span>
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#ffe4e6; color:#881337;">Era Digital</span>
           <span>4. Era Digital dan Pinyin</span>
         </div>
 
