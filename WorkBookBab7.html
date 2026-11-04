@@ -490,16 +490,22 @@
 
     /* ── VISIBILITY TOGGLES (CSS CONTROLLED) ── */
     body:not(.show-pinyin) .contrast-py,
-    body:not(.show-pinyin) .match-py { display: none !important; }
+    body:not(.show-pinyin) .match-py,
+    body:not(.show-pinyin) .bubble-pinyin,
+    body:not(.show-pinyin) .opt-py { display: none !important; }
 
     body:not(.show-arti) .contrast-arti,
     body:not(.show-arti) .contrast-tag,
     body:not(.show-arti) .match-arti,
-    body:not(.show-arti) .match-scene-desc { display: none !important; }
+    body:not(.show-arti) .match-scene-desc,
+    body:not(.show-arti) .bubble-arti,
+    body:not(.show-arti) .opt-trans { display: none !important; }
 
     body:not(.show-vocab) .contrast-table-container,
     body:not(.show-vocab) .match-badge,
-    body:not(.show-vocab) .matching-explanation { display: none !important; }
+    body:not(.show-vocab) .matching-explanation,
+    body:not(.show-vocab) .soal-pembahasan,
+    body:not(.show-vocab) .quiz-check { display: none !important; }
 
     /* ── COLOR OVERRIDES ── */
     body.show-color .contrast-py,
@@ -507,7 +513,117 @@
     body.show-color .contrast-table strong,
     body.show-color .script-hz,
     body.show-color .breakdown-hz,
-    body.show-color .match-hz { color: inherit !important; }
+    body.show-color .match-hz,
+    body.show-color .bubble-hanzi,
+    body.show-color .bubble-pinyin,
+    body.show-color .opt-hz,
+    body.show-color .opt-py { color: inherit !important; }
+
+    /* ── LATIHAN LISTENING PART 2 (QUESTION & ANSWER) ── */
+    .classroom-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .classroom-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 0.95rem 1.15rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .classroom-item:hover {
+      border-color: #cbd5e1;
+      transform: translateX(3px);
+    }
+    .item-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+    .item-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      flex: 1;
+    }
+    .item-content .bubble-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.45;
+    }
+    .item-content .bubble-pinyin {
+      font-family: var(--font-pinyin);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .item-content .bubble-arti {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: #64748b;
+      margin-top: 0.15rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.08);
+      padding-top: 0.25rem;
+    }
+    .quiz-options {
+      margin-top: 0.65rem;
+      font-size: 0.92rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .quiz-option-btn {
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.88rem;
+      color: #1e293b;
+      transition: all 0.2s ease;
+    }
+    .quiz-option-btn:hover {
+      border-color: var(--primary);
+      background: #fff1f2;
+    }
+    .quiz-option-btn.correct {
+      background: #ecfdf5;
+      color: #065f46;
+      font-weight: 700;
+      border-color: #10b981;
+    }
+    .quiz-option-btn.correct .quiz-check {
+      color: #059669;
+      font-weight: 800;
+    }
+    .soal-pembahasan {
+      font-size: 0.82rem;
+      color: #334155;
+      background: #ffffff;
+      border-left: 3.5px solid #10b981;
+      border-radius: 0 8px 8px 0;
+      padding: 0.55rem 0.85rem;
+      margin-top: 0.65rem;
+      line-height: 1.55;
+    }
 
     /* ── LATIHAN LISTENING PART 1 (PICTURE MATCHING) ── */
     .matching-list {
@@ -1778,6 +1894,141 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       BAGIAN 5: LATIHAN LISTENING PART 2 (第二部分 · Soal 4–5)
+       听问题，选择正确回答 (Tīng wèntí, xuǎnzé zhèngquè huídá)
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 Bagian 5: Latihan Listening Part 2 · 第二部分 (Soal 4–5)</div>
+    <div class="classroom-box" id="listening-part2-section" style="border-left: 5px solid #be123c;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar av-rose" style="font-size: 1.15rem; font-weight: 700; color: #fff;">听</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #be123c; color: #fff;">第 4—5 题：听问题，选择正确回答 (Soal 4–5)</div>
+          <div class="classroom-desc">Questions 4–5: Listen to each question and choose the correct answer. Each question will be played twice. (Dengarkan setiap pertanyaan dan pilih jawaban yang benar. Setiap pertanyaan akan diputar dua kali).</div>
+        </div>
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎧</span>
+          <span>Petunjuk Umum &amp; Contoh (例如)</span>
+        </div>
+        <div class="instruction-quote">
+          “第4—5题：听问题，选择正确回答。每题听两次。”
+        </div>
+        <div class="instruction-trans">
+          (Questions 4–5: Listen to each question and choose the correct answer. Each question will be played twice.)
+        </div>
+      </div>
+
+      <!-- List Soal Part 2 -->
+      <div class="classroom-list" style="margin-top: 0.85rem;">
+        
+        <!-- Contoh Soal (例如 / Lìrú) -->
+        <div class="classroom-item" style="background:#f0fdf4; border:1.5px solid #bbf7d0;">
+          <div class="item-number" style="background:#16a34a; font-size:0.75rem;">例</div>
+          <div class="item-content">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#16a34a; color:#fff; font-size:0.72rem; font-weight:800; padding:0.15rem 0.5rem; border-radius:4px; text-transform:uppercase;">例如 (Contoh)</span>
+              <button onclick="playWord('今天天气怎么样？', 'Jīntiān tiānqì zěnmeyàng?')" style="cursor:pointer; background:#dcfce7; border:1px solid #86efac; color:#15803d; font-size:0.76rem; font-weight:700; border-radius:6px; padding:0.2rem 0.55rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                <span>🔊 Putar Audio Pertanyaan</span>
+              </button>
+            </div>
+            <div class="bubble-hanzi">今天天气怎么样？</div>
+            <div class="bubble-pinyin" style="color:#059669;">Jīntiān tiānqì zěnmeyàng?</div>
+            <div class="bubble-arti">Bagaimana cuaca hari ini?</div>
+            
+            <div class="quiz-options">
+              <span class="quiz-option-btn correct" onclick="playWord('非常热', 'fēicháng rè')" title="Klik dengar audio: fēicháng rè">
+                A. <span class="opt-hz">非常热</span> <em class="opt-py">(fēicháng rè)</em> <span class="opt-trans">= Sangat panas</span> <span class="quiz-check">✓</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('很好听', 'hěn hǎotīng')" title="Klik dengar audio: hěn hǎotīng">
+                B. <span class="opt-hz">很好听</span> <em class="opt-py">(hěn hǎotīng)</em> <span class="opt-trans">= Terdengar merdu / bagus</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('在喝水', 'zài hē shuǐ')" title="Klik dengar audio: zài hē shuǐ">
+                C. <span class="opt-hz">在喝水</span> <em class="opt-py">(zài hē shuǐ)</em> <span class="opt-trans">= Sedang minum air</span>
+              </span>
+            </div>
+
+            <div class="soal-pembahasan" style="margin-top:0.55rem; background:#ffffff; border-left:3.5px solid #16a34a; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
+              💡 <strong>Pembahasan Contoh:</strong> Pertanyaan menanyakan kondisi cuaca (<strong>天气怎么样</strong>). Jawaban yang logis dan sesuai adalah <strong>A. 非常热 (fēicháng rè - Sangat panas)</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal Nomor 4 -->
+        <div class="classroom-item">
+          <div class="item-number" style="background:#be123c;">4</div>
+          <div class="item-content">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#be123c; color:#fff; font-size:0.72rem; font-weight:800; padding:0.15rem 0.5rem; border-radius:4px;">Soal 4 (Pertanyaan Audio)</span>
+              <button onclick="playWord('你们中午几点下课？', 'Nǐmen zhōngwǔ jǐ diǎn xiàkè?')" style="cursor:pointer; background:#ffe4e6; border:1px solid #fecdd3; color:#881337; font-size:0.76rem; font-weight:700; border-radius:6px; padding:0.2rem 0.55rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                <span>🔊 Putar Pertanyaan</span>
+              </button>
+            </div>
+            <div class="bubble-hanzi">你们中午几点下课？</div>
+            <div class="bubble-pinyin" style="color:#be123c;">Nǐmen zhōngwǔ jǐ diǎn xiàkè?</div>
+            <div class="bubble-arti">Kalian jam berapa selesai kelas (jam istirahat / pulang kelas) pada siang hari?</div>
+            
+            <div class="quiz-options">
+              <span class="quiz-option-btn" onclick="playWord('十点', 'shí diǎn')" title="Klik dengar audio: 10:00">
+                A. <span class="opt-hz">10:00</span> <em class="opt-py">(shí diǎn)</em> <span class="opt-trans">= Pukul sepuluh tepat</span>
+              </span>
+              <span class="quiz-option-btn correct" onclick="playWord('十二点', 'shí\'èr diǎn')" title="Klik dengar audio: 12:00 (Jawaban Benar)">
+                B. <span class="opt-hz">12:00</span> <em class="opt-py">(shí'èr diǎn)</em> <span class="opt-trans">= Pukul dua belas tepat</span> <span class="quiz-check">✓</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('十二号', 'shí\'èr hào')" title="Klik dengar audio: 12号">
+                C. <span class="opt-hz">12号</span> <em class="opt-py">(shí'èr hào)</em> <span class="opt-trans">= Tanggal 12</span>
+              </span>
+            </div>
+
+            <div class="soal-pembahasan" style="margin-top:0.55rem; background:#ffffff; border-left:3.5px solid #10b981; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
+              💡 <strong>Pembahasan Soal 4:</strong> Pertanyaan menanyakan waktu selesai kelas pada siang hari (<strong>中午几点下课？ · zhōngwǔ jǐ diǎn xiàkè?</strong>). Jawaban yang tepat dan logis untuk siang hari adalah <strong>B. 12:00 (shí'èr diǎn)</strong>. Pilihan A (10:00) masih tergolong pagi (上午 / shàngwǔ), sedangkan pilihan C (12号) merupakan tanggal, bukan jam.
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal Nomor 5 -->
+        <div class="classroom-item">
+          <div class="item-number" style="background:#be123c;">5</div>
+          <div class="item-content">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#be123c; color:#fff; font-size:0.72rem; font-weight:800; padding:0.15rem 0.5rem; border-radius:4px;">Soal 5 (Pertanyaan Audio)</span>
+              <button onclick="playWord('现在几点？', 'Xiànzài jǐ diǎn?')" style="cursor:pointer; background:#ffe4e6; border:1px solid #fecdd3; color:#881337; font-size:0.76rem; font-weight:700; border-radius:6px; padding:0.2rem 0.55rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                <span>🔊 Putar Pertanyaan</span>
+              </button>
+            </div>
+            <div class="bubble-hanzi">现在几点？</div>
+            <div class="bubble-pinyin" style="color:#be123c;">Xiànzài jǐ diǎn?</div>
+            <div class="bubble-arti">Sekarang jam berapa?</div>
+            
+            <div class="quiz-options">
+              <span class="quiz-option-btn" onclick="playWord('八月', 'bā yuè')" title="Klik dengar audio: 8月">
+                A. <span class="opt-hz">8月</span> <em class="opt-py">(bā yuè)</em> <span class="opt-trans">= Bulan Agustus</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('三分钟', 'sān fēnzhōng')" title="Klik dengar audio: 三分钟">
+                B. <span class="opt-hz">三分钟</span> <em class="opt-py">(sān fēnzhōng)</em> <span class="opt-trans">= Tiga menit (durasi)</span>
+              </span>
+              <span class="quiz-option-btn correct" onclick="playWord('七点十分', 'qī diǎn shí fēn')" title="Klik dengar audio: 7:10 (Jawaban Benar)">
+                C. <span class="opt-hz">7:10</span> <em class="opt-py">(qī diǎn shí fēn)</em> <span class="opt-trans">= Pukul 07:10</span> <span class="quiz-check">✓</span>
+              </span>
+            </div>
+
+            <div class="soal-pembahasan" style="margin-top:0.55rem; background:#ffffff; border-left:3.5px solid #10b981; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
+              💡 <strong>Pembahasan Soal 5:</strong> Pertanyaan menanyakan jam saat ini (<strong>现在几点？ · Xiànzài jǐ diǎn?</strong>). Jawaban yang tepat harus menunjukkan waktu jam, yaitu <strong>C. 7:10 (qī diǎn shí fēn)</strong>. Pilihan A (8月) menyatakan bulan, dan B (三分钟) menyatakan durasi waktu menit.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
   <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
@@ -1948,10 +2199,34 @@
       hzEl.innerHTML = res.hanzi;
       pyEl.innerHTML = res.pinyin;
     });
+
+    // 5. Bubble Pertanyaan & Pilihan Listening Part 2 (.classroom-item: .bubble-hanzi, .bubble-pinyin & .opt-hz, .opt-py)
+    document.querySelectorAll('.classroom-item').forEach(item => {
+      const bHz = item.querySelector('.bubble-hanzi');
+      const bPy = item.querySelector('.bubble-pinyin');
+      if (bHz && bPy) {
+        if (!bHz.dataset.origHtml) bHz.dataset.origHtml = bHz.innerHTML;
+        if (!bPy.dataset.origHtml) bPy.dataset.origHtml = bPy.innerHTML;
+        const resB = colorizePair(bHz.dataset.origHtml, bPy.dataset.origHtml);
+        bHz.innerHTML = resB.hanzi;
+        bPy.innerHTML = resB.pinyin;
+      }
+
+      item.querySelectorAll('.quiz-option-btn').forEach(btn => {
+        const oHz = btn.querySelector('.opt-hz');
+        const oPy = btn.querySelector('.opt-py');
+        if (!oHz || !oPy) return;
+        if (!oHz.dataset.origHtml) oHz.dataset.origHtml = oHz.innerHTML;
+        if (!oPy.dataset.origHtml) oPy.dataset.origHtml = oPy.innerHTML;
+        const resO = colorizePair(oHz.dataset.origHtml, oPy.dataset.origHtml);
+        oHz.innerHTML = resO.hanzi;
+        oPy.innerHTML = resO.pinyin;
+      });
+    });
   }
 
   function removeColors() {
-    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py').forEach(el => {
+    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py').forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
       }
