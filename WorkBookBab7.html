@@ -492,20 +492,23 @@
     body:not(.show-pinyin) .contrast-py,
     body:not(.show-pinyin) .match-py,
     body:not(.show-pinyin) .bubble-pinyin,
-    body:not(.show-pinyin) .opt-py { display: none !important; }
+    body:not(.show-pinyin) .opt-py,
+    body:not(.show-pinyin) .dialog-py { display: none !important; }
 
     body:not(.show-arti) .contrast-arti,
     body:not(.show-arti) .contrast-tag,
     body:not(.show-arti) .match-arti,
     body:not(.show-arti) .match-scene-desc,
     body:not(.show-arti) .bubble-arti,
-    body:not(.show-arti) .opt-trans { display: none !important; }
+    body:not(.show-arti) .opt-trans,
+    body:not(.show-arti) .dialog-arti { display: none !important; }
 
     body:not(.show-vocab) .contrast-table-container,
     body:not(.show-vocab) .match-badge,
     body:not(.show-vocab) .matching-explanation,
     body:not(.show-vocab) .soal-pembahasan,
-    body:not(.show-vocab) .quiz-check { display: none !important; }
+    body:not(.show-vocab) .quiz-check,
+    body:not(.show-vocab) .match-pic-badge { display: none !important; }
 
     /* ── COLOR OVERRIDES ── */
     body.show-color .contrast-py,
@@ -517,7 +520,73 @@
     body.show-color .bubble-hanzi,
     body.show-color .bubble-pinyin,
     body.show-color .opt-hz,
-    body.show-color .opt-py { color: inherit !important; }
+    body.show-color .opt-py,
+    body.show-color .dialog-hz,
+    body.show-color .dialog-py { color: inherit !important; }
+
+    /* ── LATIHAN LISTENING PART 3 (DIALOG & PICTURE MATCHING) ── */
+    .dialog-box-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.15rem 1.25rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      transition: border-color 0.2s ease;
+    }
+    .dialog-box-card:hover {
+      border-color: #cbd5e1;
+    }
+    .dialog-line-row {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dialog-line-row:hover {
+      background: #fff1f2;
+      transform: translateX(3px);
+    }
+    .dialog-role-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .dialog-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.4;
+    }
+    .dialog-py {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      font-family: var(--font-pinyin);
+    }
+    .dialog-arti {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-top: 0.2rem;
+      padding-top: 0.2rem;
+      border-top: 1px dashed rgba(0,0,0,0.06);
+    }
+    .match-pic-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #fef2f2;
+      border: 1px solid #fecdd3;
+      color: #9f1239;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+    }
 
     /* ── LATIHAN LISTENING PART 2 (QUESTION & ANSWER) ── */
     .classroom-list {
@@ -2031,6 +2100,177 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       BAGIAN 6: LATIHAN LISTENING PART 3 (第三部分 · Soal 6–8)
+       听对话，选择最匹配的图片 (Tīng duìhuà, xuǎnzé zuì pǐpèi de túpiàn)
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 Bagian 6: Latihan Listening Part 3 · 第三部分 (Soal 6–8)</div>
+    <div class="classroom-box" id="listening-part3-section" style="border-left: 5px solid #be123c;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar av-rose" style="font-size: 1.15rem; font-weight: 700; color: #fff;">听</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #be123c; color: #fff;">第 6—8 题：听对话，选择最匹配的图片 (Soal 6–8)</div>
+          <div class="classroom-desc">Questions 6–8: Listen to each dialogue and choose the correct picture. Each dialogue will be played twice. (Dengarkan setiap dialog dan pilih gambar yang paling cocok. Setiap dialog akan diputar dua kali).</div>
+        </div>
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎧</span>
+          <span>Petunjuk Soal Listening Part 3</span>
+        </div>
+        <div class="instruction-quote">
+          “第6—8题：听对话，选择最匹配的图片。每题听两次。”
+        </div>
+        <div class="instruction-trans">
+          (Questions 6–8: Listen to each dialogue and choose the correct picture. Each dialogue will be played twice.)
+        </div>
+      </div>
+
+      <!-- List Percakapan Soal 6 - 8 -->
+      <div style="display:flex; flex-direction:column; gap:1.15rem; margin-top:0.85rem;">
+        
+        <!-- ════ SOAL NOMOR 6 (WAKTU / JANJI TEMU) ════ -->
+        <div class="dialog-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+              <span class="matching-num" style="background:#be123c;">6</span>
+              <span style="font-size:0.88rem; font-weight:700; color:#1e293b;">Soal No. 6: Dialog Terkait Jam / Waktu Janji Temu</span>
+              <span class="match-pic-badge">
+                ⏰ <strong>Kecocokan Gambar B:</strong> Jam meja / alarm menunjukkan waktu bersama buku (jadwal temu) ✓
+              </span>
+            </div>
+            <span style="font-size:0.76rem; color:#881337; font-weight:600;">Klik baris untuk memutar audio 🔊</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.65rem;">
+            <!-- Baris A -->
+            <div class="dialog-line-row" style="border-left:4px solid #be123c;" onclick="playWord('我们星期日早上 7:15 见吧！', 'Wǒmen xīngqírì zǎoshang qī diǎn shíwǔ fēn jiàn ba!')" title="Klik dengar audio A">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#ffe4e6; color:#881337;">A:</span>
+                <span class="dialog-hz">我们星期日早上 7:15 见吧！</span>
+                <span class="dialog-py">Wǒmen xīngqírì zǎoshang qī diǎn shíwǔ fēn jiàn ba!</span>
+              </div>
+              <div class="dialog-arti">
+                Mari kita bertemu hari Minggu pagi pukul 07.15!
+              </div>
+            </div>
+
+            <!-- Baris B -->
+            <div class="dialog-line-row" style="border-left:4px solid #2563eb;" onclick="playWord('好的。', 'Hǎo de.')" title="Klik dengar audio B">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#eff6ff; color:#2563eb;">B:</span>
+                <span class="dialog-hz">好的。</span>
+                <span class="dialog-py">Hǎo de.</span>
+              </div>
+              <div class="dialog-arti">
+                Baik.
+              </div>
+            </div>
+          </div>
+
+          <div class="soal-pembahasan" style="margin-top:0.75rem;">
+            💡 <strong>Pembahasan Soal 6:</strong> Dialog A mengusulkan waktu janji temu pada hari Minggu pagi pukul 07.15 (<strong>星期日早上 7:15 见</strong>). Dialog ini merujuk secara tepat pada <strong>Gambar B</strong>, yang menampilkan jam meja/alarm penunjuk waktu bersama buku catatan agenda.
+          </div>
+        </div>
+
+        <!-- ════ SOAL NOMOR 7 (MAKANAN / BAOZI) ════ -->
+        <div class="dialog-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+              <span class="matching-num" style="background:#be123c;">7</span>
+              <span style="font-size:0.88rem; font-weight:700; color:#1e293b;">Soal No. 7: Dialog Terkait Makanan (Baozi / Bakpao)</span>
+              <span class="match-pic-badge">
+                🥟 <strong>Kecocokan Gambar C:</strong> Kukusan berisi baozi (bakpao) restoran Xi'an ✓
+              </span>
+            </div>
+            <span style="font-size:0.76rem; color:#881337; font-weight:600;">Klik baris untuk memutar audio 🔊</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.65rem;">
+            <!-- Baris A -->
+            <div class="dialog-line-row" style="border-left:4px solid #be123c;" onclick="playWord('我想吃西安饭店的包子。你去买吧！', 'Wǒ xiǎng chī Xī\'ān fàndiàn de bāozi. Nǐ qù mǎi ba!')" title="Klik dengar audio A">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#ffe4e6; color:#881337;">A:</span>
+                <span class="dialog-hz">我想吃西安饭店的包子。你去买吧！</span>
+                <span class="dialog-py">Wǒ xiǎng chī Xī'ān fàndiàn de bāozi. Nǐ qù mǎi ba!</span>
+              </div>
+              <div class="dialog-arti">
+                Saya ingin makan baozi (bakpao) dari restoran Xi'an. Pergilah membelinya!
+              </div>
+            </div>
+
+            <!-- Baris B -->
+            <div class="dialog-line-row" style="border-left:4px solid #2563eb;" onclick="playWord('好，我下班去买。', 'Hǎo, wǒ xiàbān qù mǎi.')" title="Klik dengar audio B">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#eff6ff; color:#2563eb;">B:</span>
+                <span class="dialog-hz">好，我下班去买。</span>
+                <span class="dialog-py">Hǎo, wǒ xiàbān qù mǎi.</span>
+              </div>
+              <div class="dialog-arti">
+                Baiklah, saya akan membelinya sepulang kerja.
+              </div>
+            </div>
+          </div>
+
+          <div class="soal-pembahasan" style="margin-top:0.75rem;">
+            💡 <strong>Pembahasan Soal 7:</strong> Percakapan membahas tentang keinginan membeli bakpao (<strong>我想吃西安饭店的包子 · Wǒ xiǎng chī Xī'ān fàndiàn de bāozi</strong>). Gambar yang paling cocok adalah <strong>Gambar C</strong> yang memperlihatkan wadah kukusan bambu berisi baozi (bakpao hangat).
+          </div>
+        </div>
+
+        <!-- ════ SOAL NOMOR 8 (TRANSPORTASI / TAKSI) ════ -->
+        <div class="dialog-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+              <span class="matching-num" style="background:#be123c;">8</span>
+              <span style="font-size:0.88rem; font-weight:700; color:#1e293b;">Soal No. 8: Dialog Terkait Transportasi (Naik Taksi)</span>
+              <span class="match-pic-badge">
+                🚕 <strong>Kecocokan Gambar D:</strong> Mobil taksi di jalan raya kota (ditandai coretan merah) ✓
+              </span>
+            </div>
+            <span style="font-size:0.76rem; color:#881337; font-weight:600;">Klik baris untuk memutar audio 🔊</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.65rem;">
+            <!-- Baris A -->
+            <div class="dialog-line-row" style="border-left:4px solid #be123c;" onclick="playWord('你怎么去超市？', 'Nǐ zěnme qù chāoshì?')" title="Klik dengar audio A">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#ffe4e6; color:#881337;">A:</span>
+                <span class="dialog-hz">你怎么去超市？</span>
+                <span class="dialog-py">Nǐ zěnme qù chāoshì?</span>
+              </div>
+              <div class="dialog-arti">
+                Bagaimana caramu pergi ke supermarket?
+              </div>
+            </div>
+
+            <!-- Baris B -->
+            <div class="dialog-line-row" style="border-left:4px solid #2563eb;" onclick="playWord('我坐出租车去。', 'Wǒ zuò chūzūchē qù.')" title="Klik dengar audio B">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#eff6ff; color:#2563eb;">B:</span>
+                <span class="dialog-hz">我坐出租车去。</span>
+                <span class="dialog-py">Wǒ zuò chūzūchē qù.</span>
+              </div>
+              <div class="dialog-arti">
+                Saya pergi naik taksi.
+              </div>
+            </div>
+          </div>
+
+          <div class="soal-pembahasan" style="margin-top:0.75rem;">
+            💡 <strong>Pembahasan Soal 8:</strong> Pembicara B menyatakan bahwa ia pergi menggunakan taksi (<strong>我坐出租车去 · Wǒ zuò chūzūchē qù</strong>). Gambar yang paling tepat adalah <strong>Gambar D</strong> yang memperlihatkan mobil taksi sedang melaju di jalan raya kota.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
   <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
@@ -2225,10 +2465,22 @@
         oPy.innerHTML = resO.pinyin;
       });
     });
+
+    // 6. Dialog Percakapan Listening Part 3 (.dialog-line-row: .dialog-hz & .dialog-py)
+    document.querySelectorAll('.dialog-line-row').forEach(row => {
+      const dHz = row.querySelector('.dialog-hz');
+      const dPy = row.querySelector('.dialog-py');
+      if (!dHz || !dPy) return;
+      if (!dHz.dataset.origHtml) dHz.dataset.origHtml = dHz.innerHTML;
+      if (!dPy.dataset.origHtml) dPy.dataset.origHtml = dPy.innerHTML;
+      const resD = colorizePair(dHz.dataset.origHtml, dPy.dataset.origHtml);
+      dHz.innerHTML = resD.hanzi;
+      dPy.innerHTML = resD.pinyin;
+    });
   }
 
   function removeColors() {
-    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py').forEach(el => {
+    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py, .dialog-hz, .dialog-py').forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
       }
