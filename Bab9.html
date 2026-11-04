@@ -561,56 +561,78 @@
       font-size: 0.78rem;
     }
 
-    /* ── TONGUE TWISTER ── */
-    .twister-box {
-      background: #fdf4ff;
-      border: 1.5px solid #f0abfc;
-      border-radius: var(--radius);
-      padding: 1.3rem;
-      box-shadow: var(--shadow);
-    }
-    .twister-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #86198f;
-      margin-bottom: 0.8rem;
-      display: flex;
+    /* ── COMPREHENSIVE EXERCISE STYLING ── */
+    .comp-header-badge {
+      display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-    }
-    .twister-lines {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .twister-line {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-      background: #ffffff;
-      border: 1px solid #fae8ff;
-      border-radius: 10px;
-      padding: 0.65rem 0.85rem;
-    }
-    .twister-hanzi {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.15rem;
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: #ffffff;
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
       font-weight: 700;
-      color: #701a75;
+      letter-spacing: 0.3px;
+      margin-bottom: 0.8rem;
     }
-    .twister-pinyin {
-      font-size: 0.84rem;
-      font-weight: 500;
-      color: #86198f;
-      display: none;
+    .comp-card {
+      background: #ffffff;
+      border: 1.5px solid #e0e7ff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(79, 70, 229, 0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    body.show-pinyin .twister-pinyin { display: block; }
-    .twister-arti {
-      font-size: 0.8rem;
-      color: #64748b;
-      display: none;
+    .comp-card:hover {
+      box-shadow: 0 6px 16px rgba(79, 70, 229, 0.1);
     }
-    body.show-arti .twister-arti { display: block; }
+    .comp-pic-wrapper {
+      position: relative;
+      width: 100%;
+      height: 140px;
+      background: #f1f5f9;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1.5px solid #e2e8f0;
+    }
+    .comp-pic-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .comp-pic-wrapper:hover img {
+      transform: scale(1.05);
+    }
+    .comp-pic-tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+    }
+    .comp-card-body {
+      padding: 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .comp-cloze-badge {
+      display: inline-block;
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      font-weight: 700;
+      padding: 0.1rem 0.4rem;
+      border-radius: 5px;
+    }
 
     /* ── XIAOYU TIP BOX (CATATAN KHUSUS) ── */
     .xiaoyu-tip-box {
@@ -1961,74 +1983,98 @@
       </div>
 
       <!-- BAGIAN 2: 用本课新学的词语和语言点描述图片 (DESCRIBE PICTURES) -->
-      <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 2px dashed #cbd5e1;">
-        <div style="font-weight:700;color:var(--text);font-size:0.95rem;margin-bottom:0.8rem;display:flex;align-items:center;gap:0.4rem;">
-          <span>■ 用本课新学的词语和语言点描述图片。</span>
-          <span style="font-size:0.8rem;color:#64748b;font-weight:normal;">(Describe the pictures using the newly-learned words and language points in this lesson.)</span>
+      <div style="margin-top: 1.8rem; padding-top: 1.5rem; border-top: 2px dashed #cbd5e1;">
+        <div style="font-weight:700;color:var(--text);font-size:0.95rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;">
+          <span style="color:#4f46e5;">■ 用本课新学的词语和语言点描述图片。</span>
+          <span style="font-size:0.82rem;color:#64748b;font-weight:normal;">(Describe the pictures using the newly-learned words and language points in this lesson.)</span>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1.25rem;">
 
-          <!-- Gambar 1: Buku di atas meja -->
-          <div style="background:#ffffff;border:1.5px solid var(--border);border-radius:12px;padding:0.9rem;display:flex;flex-direction:column;gap:0.5rem;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
-            <div style="font-size:0.8rem;font-weight:700;color:#4f46e5;">🖼️ Gambar 1: Buku &amp; Gelas di Atas Meja</div>
-            <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.6rem 0.8rem;">
-              <div class="bubble-hanzi" style="font-size:1.12rem;font-weight:700;color:#1e293b;">
-                桌子上（ 有一本书 ）。
-              </div>
-              <div class="bubble-pinyin" style="font-size:0.84rem;font-weight:600;color:#64748b;margin-top:0.15rem;">
-                Zhuōzi shang ( yǒu yì běn shū ).
-              </div>
-              <div class="bubble-arti" style="font-size:0.8rem;color:var(--sub);margin-top:0.2rem;">
-                Arti: Di atas meja (ada sebuah buku). <small style="color:#4f46e5;">(Menggunakan kata posisi 上 &amp; satuan 本)</small>
+          <!-- Gambar 1: Buku & Gelas di atas meja -->
+          <div class="comp-card">
+            <div class="comp-pic-wrapper">
+              <img src="bab9-comp-1.png" alt="桌子上的书和水杯 (Buku dan Gelas di Atas Meja)">
+              <div class="comp-pic-tag">🖼️ Gambar 1</div>
+            </div>
+            <div class="comp-card-body">
+              <div style="font-size:0.78rem;font-weight:700;color:#4f46e5;text-transform:uppercase;letter-spacing:0.5px;">Buku &amp; Gelas di Atas Meja</div>
+              <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.65rem 0.85rem;">
+                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
+                  桌子上（ 有一本书 ）。
+                </div>
+                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.2rem;">
+                  Zhuōzi shang ( yǒu yì běn shū ).
+                </div>
+                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.25rem;">
+                  Arti: Di atas meja (ada sebuah buku). <span style="color:#4f46e5;font-weight:600;">(Menggunakan kata posisi 上 &amp; kata satuan 本)</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Gambar 2: Anak-anak nonton TV di rumah -->
-          <div style="background:#ffffff;border:1.5px solid var(--border);border-radius:12px;padding:0.9rem;display:flex;flex-direction:column;gap:0.5rem;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
-            <div style="font-size:0.8rem;font-weight:700;color:#4f46e5;">🖼️ Gambar 2: Anak-anak Menonton TV</div>
-            <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.6rem 0.8rem;">
-              <div class="bubble-hanzi" style="font-size:1.12rem;font-weight:700;color:#1e293b;">
-                孩子们（ 白天 ）在家里（ 看电视 ）。
-              </div>
-              <div class="bubble-pinyin" style="font-size:0.84rem;font-weight:600;color:#64748b;margin-top:0.15rem;">
-                Háizimen ( báitiān ) zài jiā lǐ ( kàn diànshì ).
-              </div>
-              <div class="bubble-arti" style="font-size:0.8rem;color:var(--sub);margin-top:0.2rem;">
-                Arti: Anak-anak (siang hari) di rumah (menonton televisi). <small style="color:#4f46e5;">(Urutan: Subjek + Waktu + Tempat + Aktivitas)</small>
+          <!-- Gambar 2: Anak-anak Menonton TV di Rumah -->
+          <div class="comp-card">
+            <div class="comp-pic-wrapper">
+              <img src="bab9-comp-2.png" alt="孩子们看电视 (Anak-anak Menonton TV)">
+              <div class="comp-pic-tag">🖼️ Gambar 2</div>
+            </div>
+            <div class="comp-card-body">
+              <div style="font-size:0.78rem;font-weight:700;color:#4f46e5;text-transform:uppercase;letter-spacing:0.5px;">Anak-anak Menonton TV</div>
+              <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.65rem 0.85rem;">
+                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
+                  孩子们（ 白天 ）在家里（ 看电视 ）。
+                </div>
+                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.2rem;">
+                  Háizimen ( báitiān ) zài jiā lǐ ( kàn diànshì ).
+                </div>
+                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.25rem;">
+                  Arti: Anak-anak (siang hari) di rumah (menonton televisi). <span style="color:#4f46e5;font-weight:600;">(Urutan: Subjek + Waktu + Tempat + Aktivitas)</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Gambar 3: Dua anak anjing (Ordinal 第) -->
-          <div style="background:#ffffff;border:1.5px solid var(--border);border-radius:12px;padding:0.9rem;display:flex;flex-direction:column;gap:0.5rem;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
-            <div style="font-size:0.8rem;font-weight:700;color:#4f46e5;">🖼️ Gambar 3: Dua Ekor Anak Anjing</div>
-            <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.6rem 0.8rem;">
-              <div class="bubble-hanzi" style="font-size:1.12rem;font-weight:700;color:#1e293b;">
-                （ 第一 ）只小狗是我的， （ 第 ）二只小狗是她的。
-              </div>
-              <div class="bubble-pinyin" style="font-size:0.84rem;font-weight:600;color:#64748b;margin-top:0.15rem;">
-                ( Dì-yī ) zhī xiǎogǒu shì wǒ de, ( dì- ) èr zhī xiǎogǒu shì tā de.
-              </div>
-              <div class="bubble-arti" style="font-size:0.8rem;color:var(--sub);margin-top:0.2rem;">
-                Arti: Anak anjing (pertama) adalah milik saya, anak anjing ke-(dua) adalah miliknya. <small style="color:#4f46e5;">(Pola ordinal: 第 + Angka + Satuan 只)</small>
+          <!-- Gambar 3: Dua Ekor Anak Anjing -->
+          <div class="comp-card">
+            <div class="comp-pic-wrapper">
+              <img src="bab9-comp-3.png" alt="两只小狗 (Dua Ekor Anak Anjing)">
+              <div class="comp-pic-tag">🖼️ Gambar 3</div>
+            </div>
+            <div class="comp-card-body">
+              <div style="font-size:0.78rem;font-weight:700;color:#4f46e5;text-transform:uppercase;letter-spacing:0.5px;">Dua Ekor Anak Anjing</div>
+              <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.65rem 0.85rem;">
+                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
+                  （ 第一 ）只小狗是我的， （ 第 ）二只小狗是她的。
+                </div>
+                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.2rem;">
+                  ( Dì-yī ) zhī xiǎogǒu shì wǒ de, ( dì- ) èr zhī xiǎogǒu shì tā de.
+                </div>
+                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.25rem;">
+                  Arti: Anak anjing (pertama) adalah milik saya, anak anjing ke-(dua) adalah miliknya. <span style="color:#4f46e5;font-weight:600;">(Pola ordinal: 第 + Angka + Satuan 只)</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Gambar 4: Toko / Supermarket di luar sekolah -->
-          <div style="background:#ffffff;border:1.5px solid var(--border);border-radius:12px;padding:0.9rem;display:flex;flex-direction:column;gap:0.5rem;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
-            <div style="font-size:0.8rem;font-weight:700;color:#4f46e5;">🖼️ Gambar 4: Belanja di Toko Luar Sekolah</div>
-            <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.6rem 0.8rem;">
-              <div class="bubble-hanzi" style="font-size:1.12rem;font-weight:700;color:#1e293b;">
-                学校外边是一家小店， （ 他在店里买东西 ）。
-              </div>
-              <div class="bubble-pinyin" style="font-size:0.84rem;font-weight:600;color:#64748b;margin-top:0.15rem;">
-                Xuéxiào wàibian shì yì jiā xiǎodiàn, ( tā zài diàn lǐ mǎi dōngxi ).
-              </div>
-              <div class="bubble-arti" style="font-size:0.8rem;color:var(--sub);margin-top:0.2rem;">
-                Arti: Di luar sekolah adalah sebuah toko kecil, (dia berbelanja di dalam toko). <small style="color:#4f46e5;">(Posisi: 外边 &amp; Aktivitas: 在店里买东西)</small>
+          <!-- Gambar 4: Belanja di Toko Luar Sekolah -->
+          <div class="comp-card">
+            <div class="comp-pic-wrapper">
+              <img src="bab9-comp-4.png" alt="学校外边的小店 (Toko di Luar Sekolah)">
+              <div class="comp-pic-tag">🖼️ Gambar 4</div>
+            </div>
+            <div class="comp-card-body">
+              <div style="font-size:0.78rem;font-weight:700;color:#4f46e5;text-transform:uppercase;letter-spacing:0.5px;">Belanja di Toko Luar Sekolah</div>
+              <div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:0.65rem 0.85rem;">
+                <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
+                  学校外边是一家小店， （ 他在店里买东西 ）。
+                </div>
+                <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.2rem;">
+                  Xuéxiào wàibian shì yì jiā xiǎodiàn, ( tā zài diàn lǐ mǎi dōngxi ).
+                </div>
+                <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.25rem;">
+                  Arti: Di luar sekolah adalah sebuah toko kecil, (dia berbelanja di dalam toko). <span style="color:#4f46e5;font-weight:600;">(Posisi: 外边 &amp; Aktivitas: 在店里买东西)</span>
+                </div>
               </div>
             </div>
           </div>
@@ -2039,40 +2085,6 @@
     </div>
   </div>
 
-  <!-- ══ TONGUE TWISTER ══ -->
-  <div>
-    <div class="section-title">👅 Tongue Twister · 绕口令</div>
-    <div class="twister-box">
-      <div class="twister-title">绕口令 · 四是四 (Latihan Konsonan S dan SH serta Keberadaan Nada)</div>
-      <div class="twister-lines">
-        <div class="twister-line">
-          <span class="twister-hanzi">四是四，十是十，</span>
-          <span class="twister-pinyin">Sì shì sì, shí shì shí,</span>
-          <span class="twister-arti">Empat adalah empat, sepuluh adalah sepuluh,</span>
-        </div>
-        <div class="twister-line">
-          <span class="twister-hanzi">十四是十四，四十是四十。</span>
-          <span class="twister-pinyin">Shísì shì shísì, sìshí shì sìshí.</span>
-          <span class="twister-arti">Empat belas adalah empat belas, empat puluh adalah empat puluh.</span>
-        </div>
-        <div class="twister-line">
-          <span class="twister-hanzi">要想说对四，舌头碰牙齿；</span>
-          <span class="twister-pinyin">Yào xiǎng shuō duì sì, shétou pèng yáchǐ;</span>
-          <span class="twister-arti">Jika ingin menyebut empat dengan benar, sentuhkan lidah ke gigi;</span>
-        </div>
-        <div class="twister-line">
-          <span class="twister-hanzi">要想说对十，舌头别伸直。</span>
-          <span class="twister-pinyin">Yào xiǎng shuō duì shí, shétou bié shēnzhí.</span>
-          <span class="twister-arti">Jika ingin menyebut sepuluh dengan benar, jangan luruskan lidah (angkat lidah).</span>
-        </div>
-        <div class="twister-line">
-          <span class="twister-hanzi">认真学，常练习，十四、四十、四十四。</span>
-          <span class="twister-pinyin">Rènzhēn xué, cháng liànxí, shísì, sìshí, sìshísì.</span>
-          <span class="twister-arti">Belajarlah sungguh-sungguh, sering berlatih: 14, 40, 44.</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </div>
 
@@ -2249,48 +2261,7 @@
       pyEl.innerHTML = res.pinyin;
     });
 
-    // 4. Tongue Twister
-    document.querySelectorAll('.twister-box').forEach(box => {
-      const hzs = box.querySelectorAll('.twister-hanzi');
-      const pys = box.querySelectorAll('.twister-pinyin');
-      hzs.forEach((hzEl, i) => {
-        const pyEl = pys[i];
-        if (!hzEl || !pyEl) return;
-
-        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
-        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
-
-        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
-        hzEl.innerHTML = res.hanzi;
-        pyEl.innerHTML = res.pinyin;
-      });
-    });
-
-    // 5. Character cards
-    document.querySelectorAll('.character-box').forEach(box => {
-      box.querySelectorAll('.char-card').forEach(card => {
-        const nameHz = card.querySelector('.char-name-hanzi');
-        const namePy = card.querySelector('.char-name-pinyin');
-        if (nameHz && namePy) {
-          if (!nameHz.dataset.origText) nameHz.dataset.origText = nameHz.textContent;
-          if (!namePy.dataset.origText) namePy.dataset.origText = namePy.textContent;
-          const resName = colorizePair(nameHz.dataset.origText, namePy.dataset.origText, charColorMap);
-          nameHz.innerHTML = resName.hanzi;
-          namePy.innerHTML = resName.pinyin;
-        }
-        const descHz = card.querySelector('.char-desc-hanzi');
-        const descPy = card.querySelector('.char-desc-pinyin');
-        if (descHz && descPy) {
-          if (!descHz.dataset.origText) descHz.dataset.origText = descHz.textContent;
-          if (!descPy.dataset.origText) descPy.dataset.origText = descPy.textContent;
-          const resDesc = colorizePair(descHz.dataset.origText, descPy.dataset.origText, charColorMap);
-          descHz.innerHTML = resDesc.hanzi;
-          descPy.innerHTML = resDesc.pinyin;
-        }
-      });
-    });
-
-    // 6. Classroom items
+    // 4. Classroom & Exercise items
     document.querySelectorAll('.classroom-box').forEach(box => {
       box.querySelectorAll('.bubble-hanzi').forEach(hzEl => {
         const item = hzEl.closest('.bubble-wrap') || hzEl.parentElement;
@@ -2308,7 +2279,7 @@
   }
 
   function removeColors() {
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml !== undefined) {
         el.innerHTML = el.dataset.origHtml;
