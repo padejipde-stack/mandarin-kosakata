@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dialog Bahasa Mandarin - Bab 9: 我明天上午在学校学习 (Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí)</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🈶</text></svg>" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+    :root {
+      --primary:      #4f46e5;
+      --primary-dark: #3730a3;
+      --primary-soft: rgba(79, 70, 229, 0.08);
+      --gold:         #d97706;
+      --bg:           #f4f6f9;
+      --card-bg:      #ffffff;
+      --text:         #2d3436;
+      --sub:          #636e72;
+      --border:       #e2e8f0;
+      --radius:       16px;
+      --shadow:       0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 3rem;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '九';
+      position: absolute;
+      font-size: 11rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.05);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    header h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.5px;
+    }
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    header .bab {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 0.35rem 1.1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    /* ── NAV BAR 3-KOLOM SIMETRIS ── */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .nav {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0.6rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-side-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-side-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .nav-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    .nav-home-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .nav-pager-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: #475569;
+      transition: all 0.2s ease;
+    }
+    .nav-pager-btn:hover {
+      background: #f8fafc;
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* ── CONTAINER ── */
+    .wrap {
+      max-width: 860px;
+      width: 100%;
+      margin: 1.8rem auto 3rem;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    /* ── DIALOG BOX ── */
+    .dialog-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.6rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .dialog-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1.5px dashed var(--border);
+      padding-bottom: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .dialog-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .dialog-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ── DIALOG LINE ── */
+    .dialog-line {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+    .dialog-line.right {
+      flex-direction: row-reverse;
+    }
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+    .av-xiaoyu { background: linear-gradient(135deg, #f39c12, #d68910); }
+    .av-wang   { background: linear-gradient(135deg, #c0392b, #8e1a12); }
+    .av-chen   { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
+    .av-bai    { background: linear-gradient(135deg, #16a085, #0e6655); }
+    .av-li     { background: linear-gradient(135deg, #e67e22, #d35400); }
+    .av-anni   { background: linear-gradient(135deg, #e84393, #fd79a8); }
+    .av-yang   { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+    .av-stu    { background: linear-gradient(135deg, #27ae60, #1e8449); }
+
+    .bubble-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      max-width: 80%;
+    }
+    .dialog-line.right .bubble-wrap {
+      align-items: flex-end;
+    }
+    .speaker-name {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--sub);
+      display: flex;
+      gap: 0.35rem;
+      align-items: baseline;
+      padding: 0 0.2rem;
+    }
+    .speaker-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+    }
+    .speaker-pinyin {
+      font-weight: 500;
+      color: #94a3b8;
+      display: none;
+    }
+    body.show-pinyin .speaker-pinyin { display: inline; }
+
+    .bubble {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: all 0.2s ease;
+    }
+    .dialog-line.right .bubble {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      border-color: transparent;
+    }
+    .bubble-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: 0.5px;
+    }
+    .bubble-pinyin {
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: #475569;
+      line-height: 1.3;
+      display: none;
+    }
+    .dialog-line.right .bubble-pinyin {
+      color: rgba(255, 255, 255, 0.88);
+    }
+    body.show-pinyin .bubble-pinyin { display: block; }
+
+    .bubble-arti {
+      font-size: 0.82rem;
+      color: var(--sub);
+      line-height: 1.35;
+      padding-top: 0.3rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.08);
+      display: none;
+    }
+    .dialog-line.right .bubble-arti {
+      color: rgba(255, 255, 255, 0.9);
+      border-top-color: rgba(255, 255, 255, 0.25);
+    }
+    body.show-arti .bubble-arti { display: block; }
+
+    /* ── SUB BREAKDOWN (KOSAKATA PER TEKS) ── */
+    .sub-breakdown {
+      margin-top: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1.5px dashed var(--border);
+      display: none;
+    }
+    body.show-vocab .sub-breakdown { display: block; }
+    .sub-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.75rem;
+    }
+    .word-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.8rem 0.6rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      transition: all 0.2s ease;
+    }
+    .word-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
+      transform: translateY(-2px);
+    }
+    .word-char {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.2;
+    }
+    .word-pinyin {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #64748b;
+      line-height: 1.2;
+    }
+    .word-arti {
+      font-size: 0.76rem;
+      color: var(--text);
+      line-height: 1.25;
+      margin-top: 0.15rem;
+    }
+
+    /* ── GRAMMAR BOX (.de-box) ── */
+    .de-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1.5px solid var(--border);
+      border-left: 5px solid var(--primary);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .de-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .de-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .de-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .de-desc {
+      font-size: 0.85rem;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+    .de-formula {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      margin-top: 0.3rem;
+    }
+    .de-chip {
+      padding: 0.3rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .chip-subj { background: #e0e7ff; color: #3730a3; }
+    .chip-time { background: #fef3c7; color: #b45309; }
+    .chip-place { background: #dcfce7; color: #166534; }
+    .chip-act  { background: #fce7f3; color: #9d174d; }
+    .chip-num  { background: #ede9fe; color: #5b21b6; }
+    .de-plus { font-weight: 700; color: #94a3b8; font-size: 0.9rem; }
+
+    /* ── CLASSROOM BOX ── */
+    .classroom-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--gold);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .classroom-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+      padding-bottom: 0.85rem;
+    }
+    .classroom-intro {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .classroom-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: #fef3c7;
+      color: #b45309;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .classroom-desc {
+      font-size: 0.85rem;
+      color: var(--sub);
+      line-height: 1.45;
+    }
+    .classroom-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .classroom-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+    .item-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .item-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .item-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .item-body {
+      font-size: 0.85rem;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+
+    /* ── SELECTION BOX (SOAL LATIHAN) ── */
+    .selection-box {
+      background: #eff6ff;
+      border: 1.5px dashed #93c5fd;
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .selection-box-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1d4ed8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .selection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.5rem;
+    }
+    .selection-item {
+      font-size: 0.85rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .selection-letter {
+      font-weight: 700;
+      color: #1d4ed8;
+    }
+    .selection-pinyin {
+      color: #64748b;
+      font-size: 0.78rem;
+    }
+
+    /* ── TONGUE TWISTER ── */
+    .twister-box {
+      background: #fdf4ff;
+      border: 1.5px solid #f0abfc;
+      border-radius: var(--radius);
+      padding: 1.3rem;
+      box-shadow: var(--shadow);
+    }
+    .twister-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #86198f;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .twister-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .twister-line {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      background: #ffffff;
+      border: 1px solid #fae8ff;
+      border-radius: 10px;
+      padding: 0.65rem 0.85rem;
+    }
+    .twister-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #701a75;
+    }
+    .twister-pinyin {
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: #86198f;
+      display: none;
+    }
+    body.show-pinyin .twister-pinyin { display: block; }
+    .twister-arti {
+      font-size: 0.8rem;
+      color: #64748b;
+      display: none;
+    }
+    body.show-arti .twister-arti { display: block; }
+
+    /* ── CHAR CARDS (TOKOH) ── */
+    .character-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.85rem;
+    }
+    .char-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+    .char-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .char-name-group {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+    .char-name-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .char-name-pinyin {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #64748b;
+      display: none;
+    }
+    body.show-pinyin .char-name-pinyin { display: inline; }
+    .char-desc-hanzi {
+      font-size: 0.78rem;
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+    .char-desc-pinyin {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      display: none;
+    }
+    body.show-pinyin .char-desc-pinyin { display: block; }
+    .char-desc-arti {
+      font-size: 0.76rem;
+      color: var(--sub);
+      display: none;
+    }
+    body.show-arti .char-desc-arti { display: block; }
+
+    /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
+    .dialog-toolbar {
+      position: fixed;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 2rem);
+      max-width: 720px;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.04);
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+    }
+    .toolbar-title {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .toolbar-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+      justify-content: flex-end;
+    }
+    .toggle-switch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1.5px solid #cbd5e1;
+      padding: 0.45rem 0.75rem;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .toggle-switch-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .toggle-switch-btn.active {
+      background: #e0e7ff;
+      color: #3730a3;
+      border-color: #6366f1;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+    }
+    .toggle-switch-btn#btnColor.active {
+      background: #fef3c7;
+      color: #b45309;
+      border-color: #f59e0b;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    }
+
+    /* 🎨 COLOR MODE HIGHLIGHTING ── */
+    body.show-color .dialog-line.right .bubble {
+      background: #ffffff !important;
+      color: var(--text) !important;
+      border: 1.5px solid var(--border) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+    }
+    body.show-color .dialog-line.right .bubble .bubble-pinyin {
+      color: #64748b !important;
+    }
+    body.show-color .dialog-line.right .bubble .bubble-arti {
+      color: #475569 !important;
+      border-top-color: rgba(0, 0, 0, 0.12) !important;
+    }
+
+    /* ── RESPONSIVE MOBILE ── */
+    @media (max-width: 600px) {
+      header { padding: 2rem 1rem 1.6rem; }
+      header h1 { font-size: 1.55rem; }
+      header::before { font-size: 8rem; }
+      .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.4rem; }
+      .dialog-box { padding: 1.1rem 0.9rem; }
+      .dialog-line { gap: 0.65rem; }
+      .avatar { width: 38px; height: 38px; font-size: 0.9rem; }
+      .bubble-wrap { max-width: 86%; }
+      .bubble { padding: 0.6rem 0.85rem; }
+      .bubble-hanzi { font-size: 1.12rem; }
+      .bubble-pinyin { font-size: 0.8rem; }
+      .bubble-arti { font-size: 0.78rem; }
+      .breakdown-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+      .word-card { padding: 0.75rem 0.5rem; }
+      .word-char { font-size: 1.5rem; }
+      .word-pinyin { font-size: 0.72rem; }
+      .word-arti { font-size: 0.74rem; }
+      .nav { padding: 0.5rem 0.75rem; }
+      .nav-home-btn span.label { display: none; }
+      .nav-pager-btn { padding: 0.38rem 0.75rem; font-size: 0.78rem; }
+      .dialog-toolbar {
+        bottom: 0.8rem;
+        width: calc(100% - 1.2rem);
+        padding: 0.5rem 0.6rem;
+      }
+      .toolbar-title { display: none; }
+      .toolbar-buttons { width: 100%; justify-content: space-between; gap: 0.35rem; }
+      .toggle-switch-btn {
+        flex: 1;
+        padding: 0.42rem 0.35rem;
+        font-size: 0.74rem;
+      }
+      .classroom-box { padding: 1.1rem 0.9rem; }
+      .classroom-item { padding: 0.75rem 0.85rem; gap: 0.65rem; }
+    }
+  </style>
+</head>
+<body class="show-pinyin show-arti show-vocab">
+
+<!-- HEADER RESMI -->
+<header>
+  <h1>🈶 Dialog Bahasa Mandarin</h1>
+  <p>Latihan percakapan · 对话练习</p>
+  <div class="bab">Bab 9 — 我明天上午在学校学习 (Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí) · Besok Pagi Saya Belajar di Sekolah</div>
+</header>
+
+<!-- NAVBAR 3-KOLOM SIMETRIS -->
+<nav class="nav-bar">
+  <div class="nav">
+    <div class="nav-side-left">
+      <a href="Bab8.html" class="nav-pager-btn prev" title="Kembali ke Bab 8">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span>Bab 8</span>
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="nav-home-btn" title="Kembali ke Menu Utama">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span class="label">Menu Utama</span>
+      </a>
+    </div>
+    <div class="nav-side-right">
+      <!-- Bab 9 adalah bab terbaru -->
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ══ MATERI PENGANTAR TATA BAHASA ══ -->
+  <div>
+    <div class="section-title">📐 Pola Tata Bahasa · 语法解析 (Waktu, Tempat &amp; Aktivitas)</div>
+    <div class="de-box">
+      <div class="de-header">
+        <div class="de-badge">Tata Bahasa Utama · 核心语法</div>
+        <div class="de-title">1. Urutan Waktu dan Tempat sebagai Keterangan Kalimat</div>
+        <div class="de-desc">Dalam bahasa Mandarin, jika keterangan waktu (时间状语) dan keterangan tempat (处所状语) muncul bersamaan dalam satu kalimat, aturannya adalah: <strong>WAKTU SELALU DI DEPAN, TEMPAT DI BELAKANG</strong> sebelum kata kerja/aktivitas!</div>
+      </div>
+      <div class="de-rules">
+        <div class="de-formula">
+          <span class="de-chip chip-subj">Subjek (S)</span>
+          <span class="de-plus">+</span>
+          <span class="de-chip chip-time">Waktu (Kapan)</span>
+          <span class="de-plus">+</span>
+          <span class="de-chip chip-place">在 + Tempat (Di mana)</span>
+          <span class="de-plus">+</span>
+          <span class="de-chip chip-act">Kata Kerja / Aktivitas</span>
+        </div>
+        <div style="font-size:0.83rem;color:var(--sub);margin-top:0.6rem;line-height:1.5;">
+          ✅ <strong>Benar:</strong> 我 明天上午 在学校 学习 (Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí)<br>
+          ❌ <strong>Salah:</strong> 我 在学校 明天上午 学习 <em>(Jangan terbalik mengikuti pola bahasa Indonesia 'Saya belajar di sekolah besok pagi')</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TATA BAHASA 2: KATA BILANGAN TINGKAT (第 dì) ══ -->
+  <div>
+    <div class="de-box" style="border-left-color: #059669;">
+      <div class="de-header">
+        <div class="de-badge" style="background:#dcfce7;color:#166534;">Tata Bahasa Tambahan</div>
+        <div class="de-title">2. Pembentukan Angka Bertingkat dengan "第" (dì)</div>
+        <div class="de-desc">Partikel <strong>第 (dì)</strong> diletakkan di depan angka untuk menyatakan urutan ke- / tingkat (ordinal number):</div>
+      </div>
+      <div class="de-rules">
+        <div class="de-formula">
+          <span class="de-chip chip-num">第 (dì)</span>
+          <span class="de-plus">+</span>
+          <span class="de-chip chip-subj">Angka (一, 二, 三...)</span>
+          <span class="de-plus">+</span>
+          <span class="de-chip chip-place">Kata Satuan (本, 个...)</span>
+          <span class="de-plus">+</span>
+          <span class="de-chip chip-act">Kata Benda</span>
+        </div>
+        <div style="font-size:0.83rem;color:var(--sub);margin-top:0.6rem;line-height:1.5;">
+          • <strong>第一</strong> (dì-yī) = Pertama / ke-1<br>
+          • <strong>第二本书</strong> (dì-èr běn shū) = Buku ke-dua<br>
+          • <strong>第三天</strong> (dì-sān tiān) = Hari ke-tiga
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TEKS 1 ══ -->
+  <div>
+    <div class="section-title">💬 Teks 1: Di Kampus (在校园里)</div>
+    <div class="dialog-box">
+      <div class="dialog-header">
+        <div class="dialog-title">📍 Teks 1: 李文 dan 白家月 merencanakan nonton film</div>
+      </div>
+      <div class="dialog-body">
+
+        <!-- Line 1: Li Wen -->
+        <div class="dialog-line">
+          <div class="avatar av-li" title="李文 (Lǐ Wén)">李</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">李文</span>
+              <span class="speaker-pinyin">Lǐ Wén</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">学校前边有一家电影院。</div>
+              <div class="bubble-pinyin">Xuéxiào qiánbian yǒu yì jiā diànyǐngyuàn.</div>
+              <div class="bubble-arti">Di depan sekolah ada sebuah bioskop.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 2: Bai Jiayue -->
+        <div class="dialog-line right">
+          <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">白</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">白家月</span>
+              <span class="speaker-pinyin">Bái Jiāyuè</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">对。我们晚上去那个电影院看电影吧。</div>
+              <div class="bubble-pinyin">Duì. Wǒmen wǎnshang qù nàge diànyǐngyuàn kàn diànyǐng ba.</div>
+              <div class="bubble-arti">Benar. Nanti malam kita pergi ke bioskop itu untuk menonton film yuk.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 3: Li Wen -->
+        <div class="dialog-line">
+          <div class="avatar av-li" title="李文 (Lǐ Wén)">李</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">李文</span>
+              <span class="speaker-pinyin">Lǐ Wén</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">好！我们七点在电影院外边见，好吗？</div>
+              <div class="bubble-pinyin">Hǎo! Wǒmen qī diǎn zài diànyǐngyuàn wàibian jiàn, hǎo ma?</div>
+              <div class="bubble-arti">Bagus! Kita bertemu jam 7 di luar bioskop, bagaimana?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 4: Bai Jiayue -->
+        <div class="dialog-line right">
+          <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">白</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">白家月</span>
+              <span class="speaker-pinyin">Bái Jiāyuè</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">好的，晚上七点见！</div>
+              <div class="bubble-pinyin">Hǎo de, wǎnshang qī diǎn jiàn!</div>
+              <div class="bubble-arti">Baiklah, sampai jumpa nanti malam jam 7!</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KOSAKATA TEKS 1 -->
+      <div class="sub-breakdown">
+        <div class="sub-title">📖 Kosakata Baru · Teks 1</div>
+        <div class="breakdown-grid">
+          <div class="word-card">
+            <div class="word-char">前边</div>
+            <div class="word-pinyin">qián bian</div>
+            <div class="word-arti">bagian depan (front)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">边</div>
+            <div class="word-pinyin">biān</div>
+            <div class="word-arti">sisi / bagian (side)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">家</div>
+            <div class="word-pinyin">jiā</div>
+            <div class="word-arti">satuan toko/bioskop/bisnis</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">电影院</div>
+            <div class="word-pinyin">diàn yǐng yuàn</div>
+            <div class="word-arti">bioskop (cinema)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">那个</div>
+            <div class="word-pinyin">nà ge</div>
+            <div class="word-arti">yang itu (that one)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">外边</div>
+            <div class="word-pinyin">wài bian</div>
+            <div class="word-arti">bagian luar (outside)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">见</div>
+            <div class="word-pinyin">jiàn</div>
+            <div class="word-arti">bertemu (meet, see)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ TEKS 2 ══ -->
+  <div>
+    <div class="section-title">💬 Teks 2: Di Ruang Kelas (在教室里)</div>
+    <div class="dialog-box">
+      <div class="dialog-header">
+        <div class="dialog-title">📍 Teks 2: 白家月 dan 陈天中 di dalam kelas setelah kuliah</div>
+      </div>
+      <div class="dialog-body">
+
+        <!-- Line 1: Bai Jiayue -->
+        <div class="dialog-line">
+          <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">白</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">白家月</span>
+              <span class="speaker-pinyin">Bái Jiāyuè</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">椅子上有一本中文书，那是谁的书？</div>
+              <div class="bubble-pinyin">Yǐzi shang yǒu yì běn Zhōngwén shū, nà shì shéi de shū?</div>
+              <div class="bubble-arti">Di atas kursi ada sebuah buku bahasa Mandarin, itu buku milik siapa?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 2: Chen Tianzhong -->
+        <div class="dialog-line right">
+          <div class="avatar av-chen" title="陈天中 (Chén Tiānzhōng)">陈</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">陈天中</span>
+              <span class="speaker-pinyin">Chén Tiānzhōng</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">是我的书，谢谢，这是我的第二本中文书。</div>
+              <div class="bubble-pinyin">Shì wǒ de shū, xièxie, zhè shì wǒ de dì-èr běn Zhōngwén shū.</div>
+              <div class="bubble-arti">Itu buku saya, terima kasih, ini adalah buku bahasa Mandarin kedua saya.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 3: Bai Jiayue -->
+        <div class="dialog-line">
+          <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">白</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">白家月</span>
+              <span class="speaker-pinyin">Bái Jiāyuè</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">不客气。你明天上午在哪儿？</div>
+              <div class="bubble-pinyin">Bú kèqi. Nǐ míngtiān shàngwǔ zài nǎr?</div>
+              <div class="bubble-arti">Sama-sama. Besok pagi kamu ada di mana?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 4: Chen Tianzhong -->
+        <div class="dialog-line right">
+          <div class="avatar av-chen" title="陈天中 (Chén Tiānzhōng)">陈</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">陈天中</span>
+              <span class="speaker-pinyin">Chén Tiānzhōng</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">我明天上午在学校学习。</div>
+              <div class="bubble-pinyin">Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí.</div>
+              <div class="bubble-arti">Besok pagi saya belajar di sekolah.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KOSAKATA TEKS 2 -->
+      <div class="sub-breakdown">
+        <div class="sub-title">📖 Kosakata Baru · Teks 2</div>
+        <div class="breakdown-grid">
+          <div class="word-card">
+            <div class="word-char">椅子</div>
+            <div class="word-pinyin">yǐ zi</div>
+            <div class="word-arti">kursi (chair)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">上</div>
+            <div class="word-pinyin">shang</div>
+            <div class="word-arti">di atas (on, above)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">本</div>
+            <div class="word-pinyin">běn</div>
+            <div class="word-arti">satuan buku (jilid)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">书</div>
+            <div class="word-pinyin">shū</div>
+            <div class="word-arti">buku (book)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">那</div>
+            <div class="word-pinyin">nà</div>
+            <div class="word-arti">itu (that)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">第</div>
+            <div class="word-pinyin">dì</div>
+            <div class="word-arti">ke- (awalan angka urutan)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">学习</div>
+            <div class="word-pinyin">xué xí</div>
+            <div class="word-arti">belajar (study, learn)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ TEKS 3 ══ -->
+  <div>
+    <div class="section-title">💬 Teks 3: Rencana Akhir Pekan (周末计划)</div>
+    <div class="dialog-box">
+      <div class="dialog-header">
+        <div class="dialog-title">📍 Teks 3: 王一雪 dan 杨同乐 membicarakan kegiatan hari Sabtu</div>
+      </div>
+      <div class="dialog-body">
+
+        <!-- Line 1: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">Wáng Yīxuě</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">明天星期六，你做什么？</div>
+              <div class="bubble-pinyin">Míngtiān xīngqīliù, nǐ zuò shénme?</div>
+              <div class="bubble-arti">Besok hari Sabtu, kamu melakukan apa?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 2: Yang Tongle -->
+        <div class="dialog-line right">
+          <div class="avatar av-yang" title="杨同乐 (Yáng Tónglè)">杨</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">杨同乐</span>
+              <span class="speaker-pinyin">Yáng Tónglè</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">我白天在家里读书，晚上和朋友们去外边唱歌。</div>
+              <div class="bubble-pinyin">Wǒ báitiān zài jiā lǐ dúshū, wǎnshang hé péngyoumen qù wàibian chàng gē.</div>
+              <div class="bubble-arti">Saya siang hari membaca buku di rumah, malam hari pergi ke luar menyanyi bersama teman-teman.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 3: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">Wáng Yīxuě</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">你唱歌很好听。</div>
+              <div class="bubble-pinyin">Nǐ chàng gē hěn hǎotīng.</div>
+              <div class="bubble-arti">Kamu bernyanyi sangat merdu / enak didengar.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 4: Yang Tongle -->
+        <div class="dialog-line right">
+          <div class="avatar av-yang" title="杨同乐 (Yáng Tónglè)">杨</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">杨同乐</span>
+              <span class="speaker-pinyin">Yáng Tónglè</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">谢谢！您星期六做什么？</div>
+              <div class="bubble-pinyin">Xièxie! Nín xīngqīliù zuò shénme?</div>
+              <div class="bubble-arti">Terima kasih! Anda melakukan apa hari Sabtu?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 5: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">Wáng Yīxuě</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">我在家里做饭、看电视，和孩子们、小狗玩。</div>
+              <div class="bubble-pinyin">Wǒ zài jiā lǐ zuò fàn, kàn diànshì, hé háizimen, xiǎogǒu wán.</div>
+              <div class="bubble-arti">Saya memasak dan menonton TV di rumah, serta bermain bersama anak-anak dan anjing kecil.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 6: Yang Tongle -->
+        <div class="dialog-line right">
+          <div class="avatar av-yang" title="杨同乐 (Yáng Tónglè)">杨</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">杨同乐</span>
+              <span class="speaker-pinyin">Yáng Tónglè</span>
+            </span>
+            <div class="bubble">
+              <div class="bubble-hanzi">我也有一只小狗。</div>
+              <div class="bubble-pinyin">Wǒ yě yǒu yì zhī xiǎogǒu.</div>
+              <div class="bubble-arti">Saya juga punya seekor anak anjing.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KOSAKATA TEKS 3 -->
+      <div class="sub-breakdown">
+        <div class="sub-title">📖 Kosakata Baru · Teks 3</div>
+        <div class="breakdown-grid">
+          <div class="word-card">
+            <div class="word-char">做</div>
+            <div class="word-pinyin">zuò</div>
+            <div class="word-arti">melakukan, membuat</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">白天</div>
+            <div class="word-pinyin">bái tiān</div>
+            <div class="word-arti">siang hari (daytime)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">读书</div>
+            <div class="word-pinyin">dú shū</div>
+            <div class="word-arti">membaca buku, belajar</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">和</div>
+            <div class="word-pinyin">hé</div>
+            <div class="word-arti">dan, bersama dengan</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">朋友</div>
+            <div class="word-pinyin">péng you</div>
+            <div class="word-arti">teman (friend)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">唱</div>
+            <div class="word-pinyin">chàng</div>
+            <div class="word-arti">bernyanyi (sing)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">歌</div>
+            <div class="word-pinyin">gē</div>
+            <div class="word-arti">lagu (song)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">好听</div>
+            <div class="word-pinyin">hǎo tīng</div>
+            <div class="word-arti">enak didengar, merdu</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">电视</div>
+            <div class="word-pinyin">diàn shì</div>
+            <div class="word-arti">televisi (TV)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">狗</div>
+            <div class="word-pinyin">gǒu</div>
+            <div class="word-arti">anjing (dog)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">玩</div>
+            <div class="word-pinyin">wán</div>
+            <div class="word-arti">bermain (play, have fun)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ DAFTAR TOKOH (CHARACTERS) ══ -->
+  <div>
+    <div class="section-title">👥 Tokoh Pembelajaran · 主要人物</div>
+    <div class="character-box">
+      <div class="char-card">
+        <div class="avatar av-li">李</div>
+        <div class="char-info">
+          <div class="char-name-group">
+            <span class="char-name-hanzi">李文</span>
+            <span class="char-name-pinyin">Lǐ Wén</span>
+          </div>
+          <div class="char-desc-hanzi">中国学生 · 热情活泼</div>
+          <div class="char-desc-pinyin">Zhōngguó xuésheng · Rèqíng huópo</div>
+          <div class="char-desc-arti">Mahasiswa Tiongkok, teman sekelas Bai Jiayue</div>
+        </div>
+      </div>
+      <div class="char-card">
+        <div class="avatar av-bai">白</div>
+        <div class="char-info">
+          <div class="char-name-group">
+            <span class="char-name-hanzi">白家月</span>
+            <span class="char-name-pinyin">Bái Jiāyuè</span>
+          </div>
+          <div class="char-desc-hanzi">外国留学生 · 刻苦认真</div>
+          <div class="char-desc-pinyin">Wàiguó liúxuéshēng · Kèkǔ rènzhēn</div>
+          <div class="char-desc-arti">Mahasiswi asing yang rajin belajar bahasa Mandarin</div>
+        </div>
+      </div>
+      <div class="char-card">
+        <div class="avatar av-chen">陈</div>
+        <div class="char-info">
+          <div class="char-name-group">
+            <span class="char-name-hanzi">陈天中</span>
+            <span class="char-name-pinyin">Chén Tiānzhōng</span>
+          </div>
+          <div class="char-desc-hanzi">中国留学生 · 乐于助人</div>
+          <div class="char-desc-pinyin">Zhōngguó liúxuéshēng · Lèyú zhùrén</div>
+          <div class="char-desc-arti">Mahasiswa rajin yang suka belajar di sekolah</div>
+        </div>
+      </div>
+      <div class="char-card">
+        <div class="avatar av-wang">王</div>
+        <div class="char-info">
+          <div class="char-name-group">
+            <span class="char-name-hanzi">王一雪</span>
+            <span class="char-name-pinyin">Wáng Yīxuě</span>
+          </div>
+          <div class="char-desc-hanzi">汉语老师 · 和蔼亲切</div>
+          <div class="char-desc-pinyin">Hànyǔ lǎoshī · Hé'ǎi qīnqiè</div>
+          <div class="char-desc-arti">Guru bahasa Mandarin yang ramah dan keibuan</div>
+        </div>
+      </div>
+      <div class="char-card">
+        <div class="avatar av-yang">杨</div>
+        <div class="char-info">
+          <div class="char-name-group">
+            <span class="char-name-hanzi">杨同乐</span>
+            <span class="char-name-pinyin">Yáng Tónglè</span>
+          </div>
+          <div class="char-desc-hanzi">留学生 · 喜欢唱歌</div>
+          <div class="char-desc-pinyin">Liúxuéshēng · Xǐhuan chàng gē</div>
+          <div class="char-desc-arti">Mahasiswa internasional yang hobi bernyanyi dan memelihara anjing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ RUANG BELAJAR XIAOYU ══ -->
+  <div>
+    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂</div>
+    <div class="classroom-box">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">语</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge">Xiaoyu's Classroom · 小语讲堂</div>
+          <div class="classroom-desc">Fokus materi: Menyusun kalimat terpadu antara Waktu, Tempat, dan Aktivitas serta membaca nyaring (Read Aloud).</div>
+        </div>
+      </div>
+
+      <div class="classroom-list">
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="item-title">Pola Kalimat Sehari-hari (Contoh 1)</div>
+            <div class="item-body">
+              <div class="bubble-hanzi" style="font-size:1.1rem;font-weight:700;">我明天上午在学校学习。</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem;font-weight:600;">Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí.</div>
+              <div class="bubble-arti" style="font-size:0.8rem;color:var(--sub);">Besok pagi saya belajar di sekolah.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="item-title">Pola Kalimat Sehari-hari (Contoh 2)</div>
+            <div class="item-body">
+              <div class="bubble-hanzi" style="font-size:1.1rem;font-weight:700;">我们七点在电影院外边见。</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem;font-weight:600;">Wǒmen qī diǎn zài diànyǐngyuàn wàibian jiàn.</div>
+              <div class="bubble-arti" style="font-size:0.8rem;color:var(--sub);">Kita bertemu jam tujuh di luar bioskop.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="classroom-item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="item-title">Pola Kalimat Sehari-hari (Contoh 3)</div>
+            <div class="item-body">
+              <div class="bubble-hanzi" style="font-size:1.1rem;font-weight:700;">我白天在家里读书，晚上和朋友去唱歌。</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem;font-weight:600;">Wǒ báitiān zài jiā lǐ dúshū, wǎnshang hé péngyou qù chàng gē.</div>
+              <div class="bubble-arti" style="font-size:0.8rem;color:var(--sub);">Siang hari saya membaca buku di rumah, malam hari pergi bernyanyi bersama teman.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ LATIHAN KOMPREHENSIF ══ -->
+  <div>
+    <div class="section-title">📝 Comprehensive Exercises · 综合练习</div>
+    <div class="classroom-box" style="border-left: 5px solid #4f46e5;">
+      
+      <!-- Pilihan Kata Bank -->
+      <div class="selection-box">
+        <div class="selection-box-title">Pilihan Kata (Vocabulary Bank):</div>
+        <div class="selection-grid">
+          <div class="selection-item"><span class="selection-letter">A.</span> 前边 <span class="selection-pinyin">(qiánbian)</span> = depan</div>
+          <div class="selection-item"><span class="selection-letter">B.</span> 椅子 <span class="selection-pinyin">(yǐzi)</span> = kursi</div>
+          <div class="selection-item"><span class="selection-letter">C.</span> 学习 <span class="selection-pinyin">(xuéxí)</span> = belajar</div>
+          <div class="selection-item"><span class="selection-letter">D.</span> 读书 <span class="selection-pinyin">(dúshū)</span> = membaca buku</div>
+          <div class="selection-item"><span class="selection-letter">E.</span> 唱歌 <span class="selection-pinyin">(chàng gē)</span> = bernyanyi</div>
+        </div>
+      </div>
+
+      <!-- Soal 1-5 -->
+      <div class="classroom-list">
+        <div class="classroom-item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="item-title">学校（ &nbsp; ）有一家电影院。</div>
+            <div class="item-body">
+              <p><strong>Pilihan yang tepat:</strong> A. 前边 (qiánbian)</p>
+              <p><strong>Alasan:</strong> Menunjukkan letak bioskop yang berada di depan sekolah (学校前边).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="classroom-item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="item-title">（ &nbsp; ）上有一本中文书。</div>
+            <div class="item-body">
+              <p><strong>Pilihan yang tepat:</strong> B. 椅子 (yǐzi)</p>
+              <p><strong>Alasan:</strong> Kata benda yang biasanya diletakkan buku di atasnya adalah kursi (椅子上).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="classroom-item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="item-title">我明天上午在学校（ &nbsp; ）。</div>
+            <div class="item-body">
+              <p><strong>Pilihan yang tepat:</strong> C. 学习 (xuéxí)</p>
+              <p><strong>Alasan:</strong> Aktivitas utama siswa di sekolah pada pagi hari adalah belajar (在学校学习).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="classroom-item">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div class="item-title">我白天在家里（ &nbsp; ），晚上看电视。</div>
+            <div class="item-body">
+              <p><strong>Pilihan yang tepat:</strong> D. 读书 (dúshū)</p>
+              <p><strong>Alasan:</strong> Cocok berpasangan dengan aktivitas belajar membaca di rumah pada siang hari.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="classroom-item">
+          <div class="item-number">5</div>
+          <div class="item-content">
+            <div class="item-title">她（ &nbsp; ）很好听，大家都很喜欢。</div>
+            <div class="item-body">
+              <p><strong>Pilihan yang tepat:</strong> E. 唱歌 (chàng gē)</p>
+              <p><strong>Alasan:</strong> Kata sifat 好听 (merdu/enak didengar) menjelaskan aktivitas bernyanyi (唱歌很好听).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ TONGUE TWISTER ══ -->
+  <div>
+    <div class="section-title">👅 Tongue Twister · 绕口令</div>
+    <div class="twister-box">
+      <div class="twister-title">绕口令 · 四是四 (Latihan Konsonan S dan SH serta Keberadaan Nada)</div>
+      <div class="twister-lines">
+        <div class="twister-line">
+          <span class="twister-hanzi">四是四，十是十，</span>
+          <span class="twister-pinyin">Sì shì sì, shí shì shí,</span>
+          <span class="twister-arti">Empat adalah empat, sepuluh adalah sepuluh,</span>
+        </div>
+        <div class="twister-line">
+          <span class="twister-hanzi">十四是十四，四十是四十。</span>
+          <span class="twister-pinyin">Shísì shì shísì, sìshí shì sìshí.</span>
+          <span class="twister-arti">Empat belas adalah empat belas, empat puluh adalah empat puluh.</span>
+        </div>
+        <div class="twister-line">
+          <span class="twister-hanzi">要想说对四，舌头碰牙齿；</span>
+          <span class="twister-pinyin">Yào xiǎng shuō duì sì, shétou pèng yáchǐ;</span>
+          <span class="twister-arti">Jika ingin menyebut empat dengan benar, sentuhkan lidah ke gigi;</span>
+        </div>
+        <div class="twister-line">
+          <span class="twister-hanzi">要想说对十，舌头别伸直。</span>
+          <span class="twister-pinyin">Yào xiǎng shuō duì shí, shétou bié shēnzhí.</span>
+          <span class="twister-arti">Jika ingin menyebut sepuluh dengan benar, jangan luruskan lidah (angkat lidah).</span>
+        </div>
+        <div class="twister-line">
+          <span class="twister-hanzi">认真学，常练习，十四、四十、四十四。</span>
+          <span class="twister-pinyin">Rènzhēn xué, cháng liànxí, shísì, sìshí, sìshísì.</span>
+          <span class="twister-arti">Belajarlah sungguh-sungguh, sering berlatih: 14, 40, 44.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FLOATING TOOLBAR BAWAH -->
+<div class="dialog-toolbar">
+  <div class="toolbar-title">
+    <span class="icon">⚙️</span>
+    <span>Bantuan:</span>
+  </div>
+  <div class="toolbar-buttons">
+    <button id="btnPinyin" class="toggle-switch-btn active" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+    <button id="btnArti" class="toggle-switch-btn active" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti">🇮🇩</button>
+    <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Detail">📖</button>
+    <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warnai Karakter Per Kata">🎨</button>
+  </div>
+</div>
+
+<script>
+  const COLOR_PALETTE = [
+    '#e11d48', '#16a34a', '#2563eb', '#ea580c', '#7c3aed',
+    '#0891b2', '#c026d3', '#ca8a04', '#4f46e5', '#059669',
+    '#d97706', '#db2777', '#0284c7', '#9333ea', '#65a30d'
+  ];
+
+  const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
+  const _finals = [
+    _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
+    _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
+    _A+'ng', _E+'ng', _O+'ng',
+    _A+'i', _E+'i', _A+_O, _O+_U, _A+'n', _E+'n',
+    _I+_A, _I+_E, _I+'n', _I+_U, _U+_A, _U+_O, _U+_E, _U+_I, _U+'n',
+    _V+_E, 'er',
+    _A, _O, _E, _I, _U, _V
+  ].join('|');
+  const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
+
+  function isHanziChar(ch) {
+    return /[〇一-龥]/.test(ch);
+  }
+
+  function colorizePair(hanziText, pinyinText, charColorMap) {
+    if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
+
+    const hzList = [];
+    let prevColor = null;
+    for (const ch of hanziText) {
+      if (isHanziChar(ch)) {
+        hzList.push(ch);
+        if (!charColorMap[ch]) {
+          let colorIdx = Object.keys(charColorMap).length % COLOR_PALETTE.length;
+          let candidate = COLOR_PALETTE[colorIdx];
+          if (candidate === prevColor) {
+            candidate = COLOR_PALETTE[(colorIdx + 1) % COLOR_PALETTE.length];
+          }
+          charColorMap[ch] = candidate;
+        }
+        prevColor = charColorMap[ch];
+      }
+    }
+
+    let outHz = '';
+    for (const ch of hanziText) {
+      if (isHanziChar(ch)) {
+        outHz += '<span style="color:' + charColorMap[ch] + ';font-weight:700;">' + ch + '</span>';
+      } else {
+        outHz += ch;
+      }
+    }
+
+    let outPy = '';
+    let hzIdx = 0;
+    let remaining = pinyinText;
+
+    while (remaining.length > 0) {
+      const tagMatch = remaining.match(/^<[^>]+>/);
+      if (tagMatch) {
+        outPy += tagMatch[0];
+        remaining = remaining.substring(tagMatch[0].length);
+        continue;
+      }
+
+      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
+      if (nonLetterMatch) {
+        outPy += nonLetterMatch[0];
+        remaining = remaining.substring(nonLetterMatch[0].length);
+        continue;
+      }
+
+      const match = remaining.match(PINYIN_SYLL_RE);
+      if (match) {
+        const syll = match[0];
+        const isErhua = /r$/i.test(syll) &&
+                        !/^[eēéěè]r$/i.test(syll) &&
+                        hzIdx + 1 < hzList.length &&
+                        hzList[hzIdx + 1] === '儿';
+        if (isErhua) {
+          const rootSyll = syll.slice(0, -1);
+          const rootHz = hzList[hzIdx];
+          const erHz = hzList[hzIdx + 1];
+          outPy += '<span style="color:' + charColorMap[rootHz] + ';font-weight:700;">' + rootSyll + '</span>' +
+                   '<span style="color:' + (charColorMap[erHz] || charColorMap[rootHz]) + ';font-weight:700;">r</span>';
+          hzIdx += 2;
+        } else {
+          const pairedHz = hzList[hzIdx];
+          if (pairedHz && charColorMap[pairedHz]) {
+            outPy += '<span style="color:' + charColorMap[pairedHz] + ';font-weight:700;">' + syll + '</span>';
+            hzIdx++;
+          } else {
+            outPy += syll;
+          }
+        }
+        remaining = remaining.substring(syll.length);
+      } else {
+        outPy += remaining[0];
+        remaining = remaining.substring(1);
+      }
+    }
+
+    return { hanzi: outHz, pinyin: outPy };
+  }
+
+  function applyColors() {
+    const charColorMap = {
+      '我': '#4f46e5',
+      '明': '#059669',
+      '天': '#2563eb',
+      '上': '#d97706',
+      '午': '#ca8a04',
+      '在': '#ea580c',
+      '学': '#7c3aed',
+      '校': '#0891b2',
+      '习': '#db2777'
+    };
+
+    // 1. Dialog bubbles
+    document.querySelectorAll('.bubble').forEach(bubble => {
+      const hzEl = bubble.querySelector('.bubble-hanzi');
+      const pyEl = bubble.querySelector('.bubble-pinyin');
+      if (!hzEl || !pyEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 2. Word cards
+    document.querySelectorAll('.word-card').forEach(card => {
+      const charEl = card.querySelector('.word-char');
+      const pyEl = card.querySelector('.word-pinyin');
+      if (!charEl || !pyEl) return;
+
+      if (!charEl.dataset.origHtml) charEl.dataset.origHtml = charEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(charEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      charEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 3. Speaker names
+    document.querySelectorAll('.speaker-name').forEach(spk => {
+      const hzEl = spk.querySelector('.speaker-hanzi');
+      const pyEl = spk.querySelector('.speaker-pinyin');
+      if (!hzEl || !pyEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 4. Tongue Twister
+    document.querySelectorAll('.twister-box').forEach(box => {
+      const hzs = box.querySelectorAll('.twister-hanzi');
+      const pys = box.querySelectorAll('.twister-pinyin');
+      hzs.forEach((hzEl, i) => {
+        const pyEl = pys[i];
+        if (!hzEl || !pyEl) return;
+
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      });
+    });
+
+    // 5. Character cards
+    document.querySelectorAll('.character-box').forEach(box => {
+      box.querySelectorAll('.char-card').forEach(card => {
+        const nameHz = card.querySelector('.char-name-hanzi');
+        const namePy = card.querySelector('.char-name-pinyin');
+        if (nameHz && namePy) {
+          if (!nameHz.dataset.origText) nameHz.dataset.origText = nameHz.textContent;
+          if (!namePy.dataset.origText) namePy.dataset.origText = namePy.textContent;
+          const resName = colorizePair(nameHz.dataset.origText, namePy.dataset.origText, charColorMap);
+          nameHz.innerHTML = resName.hanzi;
+          namePy.innerHTML = resName.pinyin;
+        }
+        const descHz = card.querySelector('.char-desc-hanzi');
+        const descPy = card.querySelector('.char-desc-pinyin');
+        if (descHz && descPy) {
+          if (!descHz.dataset.origText) descHz.dataset.origText = descHz.textContent;
+          if (!descPy.dataset.origText) descPy.dataset.origText = descPy.textContent;
+          const resDesc = colorizePair(descHz.dataset.origText, descPy.dataset.origText, charColorMap);
+          descHz.innerHTML = resDesc.hanzi;
+          descPy.innerHTML = resDesc.pinyin;
+        }
+      });
+    });
+
+    // 6. Classroom items
+    document.querySelectorAll('.classroom-box').forEach(box => {
+      box.querySelectorAll('.item-body').forEach(item => {
+        const hzEl = item.querySelector('.bubble-hanzi');
+        const pyEl = item.querySelector('.bubble-pinyin');
+        if (!hzEl || !pyEl) return;
+
+        if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
+        if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
+
+        const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      });
+    });
+  }
+
+  function removeColors() {
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin';
+    document.querySelectorAll(selector).forEach(el => {
+      if (el.dataset.origHtml) {
+        el.innerHTML = el.dataset.origHtml;
+      } else if (el.dataset.origText) {
+        el.textContent = el.dataset.origText;
+      }
+      el.style.color = '';
+      el.style.fontWeight = '';
+    });
+  }
+
+  function updateToggleUI() {
+    const s = cl => document.body.classList.contains(cl);
+    const set = (id, cls) => {
+      const b = document.getElementById(id);
+      if (!b) return;
+      b.classList.toggle('active', s(cls));
+    };
+    set('btnPinyin', 'show-pinyin');
+    set('btnArti', 'show-arti');
+    set('btnVocab', 'show-vocab');
+    set('btnColor', 'show-color');
+  }
+
+  function togglePinyin() {
+    document.body.classList.toggle('show-pinyin');
+    localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleArti() {
+    document.body.classList.toggle('show-arti');
+    localStorage.setItem('mandarin_show_arti', document.body.classList.contains('show-arti') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleVocab() {
+    const anchor = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 3);
+    const viewportOffset = anchor ? anchor.getBoundingClientRect().top : 0;
+    document.body.classList.toggle('show-vocab');
+    localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
+    updateToggleUI();
+    if (anchor) {
+      const docOffsetAfter = anchor.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: docOffsetAfter - viewportOffset, behavior: 'instant' });
+    }
+  }
+
+  function toggleColor() {
+    document.body.classList.toggle('show-color');
+    const on = document.body.classList.contains('show-color');
+    localStorage.setItem('mandarin_show_color', on ? '1' : '0');
+    on ? applyColors() : removeColors();
+    updateToggleUI();
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('mandarin_show_pinyin') === '1') document.body.classList.add('show-pinyin');
+    if (localStorage.getItem('mandarin_show_arti') === '1') document.body.classList.add('show-arti');
+    if (localStorage.getItem('mandarin_show_vocab') !== '0') document.body.classList.add('show-vocab');
+    if (localStorage.getItem('mandarin_show_color') === '1') {
+      document.body.classList.add('show-color');
+      applyColors();
+    }
+    updateToggleUI();
+  });
+</script>
+
+</body>
+</html>
