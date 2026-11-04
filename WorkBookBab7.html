@@ -1891,6 +1891,7 @@
   }
 
   function applyColors() {
+    // 1. Baris Tabel Pasangan Kontras (Bagian 1 & Bagian 2)
     document.querySelectorAll('.contrast-table tbody tr').forEach(row => {
       row.querySelectorAll('td').forEach(td => {
         const strEl = td.querySelector('strong');
@@ -1904,10 +1905,49 @@
         pyEl.innerHTML = res.pinyin;
       });
     });
+
+    // 2. Kartu Skrip Sejarah Aksara & Pasangan Kotak (Bagian 3)
+    document.querySelectorAll('.pair-badge-item').forEach(item => {
+      const hzEl = item.querySelector('span[style*="font-family:\'Noto Sans SC\'"]');
+      const pyEl = item.querySelector('.contrast-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 3. Kartu Contoh Breakdown Aksara (材 & 花)
+    document.querySelectorAll('#hanzi-section .instruction-banner').forEach(banner => {
+      const hzEl = banner.querySelector('span[style*="font-family:\'Noto Sans SC\'"]');
+      const pyEl = banner.querySelector('.contrast-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 4. Kartu Pilihan Listening Part 1 (.match-choice: .match-hz & .match-py)
+    document.querySelectorAll('.match-choice').forEach(choice => {
+      const hzEl = choice.querySelector('.match-hz');
+      const pyEl = choice.querySelector('.match-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
   }
 
   function removeColors() {
-    document.querySelectorAll('.contrast-table strong, .contrast-py').forEach(el => {
+    document.querySelectorAll('.contrast-table strong, .contrast-py, .match-hz, .match-py, .pair-badge-item span[style*="font-family:\'Noto Sans SC\'"], #hanzi-section span[style*="font-family:\'Noto Sans SC\'"]').forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
       }
