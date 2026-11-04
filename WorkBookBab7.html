@@ -524,7 +524,9 @@
     body.show-color .dialog-hz,
     body.show-color .dialog-py,
     body.show-color .vocab-pill strong,
-    body.show-color .vocab-py { color: inherit !important; }
+    body.show-color .vocab-py,
+    body.show-color .pair-box-hz,
+    body.show-color .pair-box-py { color: inherit !important; }
 
     /* ── LATIHAN LISTENING PART 3 (DIALOG & PICTURE MATCHING) ── */
     .dialog-box-card {
@@ -936,6 +938,73 @@
       color: #be123c;
       font-family: var(--font-pinyin);
       font-weight: 600;
+    }
+
+    /* ── LATIHAN READING PART 2 (MATCH SENTENCES / PAIRING) ── */
+    .pair-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 640px) {
+      .pair-choice-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .pair-choice-card {
+      background: #ffffff;
+      border: 1px solid #fecdd3;
+      border-radius: 10px;
+      padding: 0.65rem 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pair-choice-card:hover {
+      background: #fff1f2;
+      border-color: #fda4af;
+      transform: translateY(-2px);
+    }
+    .pair-box-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .pair-sentence-box {
+      background: #fff1f2;
+      border: 1.5px solid #fecdd3;
+      border-radius: 10px;
+      padding: 0.95rem 1rem;
+      margin-bottom: 0.85rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pair-sentence-box:hover {
+      background: #ffe4e6;
+      border-color: #fda4af;
+      transform: translateY(-2px);
+    }
+    .pair-box-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.45rem;
+    }
+    .pair-box-py {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #be123c;
+      margin-bottom: 0.25rem;
+    }
+    .pair-box-arti {
+      font-size: 0.84rem;
+      color: #475569;
+      text-align: center;
+      border-top: 1px dashed #fecdd3;
+      padding-top: 0.4rem;
     }
 
     /* ── RESPONSIVE MOBILE ── */
@@ -2781,6 +2850,255 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       BAGIAN 9: LATIHAN READING PART 2 (第二部分 · Soal 14–16)
+       匹配句子 (Pǐpèi jùzi - Match the Sentences)
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 Bagian 9: Reading Part 2 · 第二部分 (Soal 14–16)</div>
+    <div class="classroom-box" id="reading-part2-section" style="border-left: 5px solid #be123c;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar av-rose" style="font-size: 1.15rem; font-weight: 700; color: #fff;">阅</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #be123c; color: #fff;">第 14—16 题：匹配句子 (Soal 14–16)</div>
+          <div class="classroom-desc">Questions 14–16: Match the sentences. (Cocokkan kalimat pertanyaan/pernyataan dengan jawaban atau tanggapan yang paling tepat).</div>
+        </div>
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">💬</span>
+          <span>Petunjuk Soal Reading Part 2 &amp; Contoh (例如)</span>
+        </div>
+        <div class="instruction-quote">
+          “第14—16题：匹配句子。”
+        </div>
+        <div class="instruction-trans">
+          <strong>Bahasa Inggris:</strong> Questions 14–16: Match the sentences.<br>
+          <strong>Bahasa Indonesia:</strong> Pertanyaan 14–16: Cocokkan kalimat-kalimat tersebut.
+        </div>
+      </div>
+
+      <!-- Bank Pilihan Jawaban (A - D) -->
+      <div style="margin-top:0.35rem;">
+        <div style="font-size:0.84rem; font-weight:700; color:#be123c; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.4rem;">
+          <span>📋 Pilihan Jawaban Tersedia (A — D):</span>
+        </div>
+        <div class="pair-choice-grid">
+          <!-- A: 早上七点半 -->
+          <div class="pair-choice-card" onclick="playPinyin('Zǎoshang qī diǎn bàn.')" title="Klik dengar opsi A">
+            <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.15rem;">
+              <span style="font-weight:800; color:#be123c; font-size:0.88rem;">A:</span>
+              <span class="opt-hz" style="font-size:1.05rem; font-weight:700; font-family:'Noto Sans SC',sans-serif;">早上七点半</span>
+            </div>
+            <div class="opt-py" style="font-size:0.82rem; font-weight:600; color:#be123c;">(Zǎoshang qī diǎn bàn)</div>
+            <div class="opt-trans" style="font-size:0.78rem; color:#64748b; margin-top:0.15rem;">– Pukul setengah delapan pagi.</div>
+          </div>
+
+          <!-- B: 对不起，我有课 -->
+          <div class="pair-choice-card" onclick="playPinyin('Duìbuqǐ, wǒ yǒu kè.')" title="Klik dengar opsi B">
+            <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.15rem;">
+              <span style="font-weight:800; color:#be123c; font-size:0.88rem;">B:</span>
+              <span class="opt-hz" style="font-size:1.05rem; font-weight:700; font-family:'Noto Sans SC',sans-serif;">对不起，我有课</span>
+            </div>
+            <div class="opt-py" style="font-size:0.82rem; font-weight:600; color:#be123c;">(Duìbuqǐ, wǒ yǒu kè)</div>
+            <div class="opt-trans" style="font-size:0.78rem; color:#64748b; margin-top:0.15rem;">– Maaf, saya ada kelas.</div>
+          </div>
+
+          <!-- C: 电影院 -->
+          <div class="pair-choice-card" onclick="playPinyin('Diànyǐngyuàn.')" title="Klik dengar opsi C">
+            <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.15rem;">
+              <span style="font-weight:800; color:#be123c; font-size:0.88rem;">C:</span>
+              <span class="opt-hz" style="font-size:1.05rem; font-weight:700; font-family:'Noto Sans SC',sans-serif;">电影院</span>
+            </div>
+            <div class="opt-py" style="font-size:0.82rem; font-weight:600; color:#be123c;">(Diànyǐngyuàn)</div>
+            <div class="opt-trans" style="font-size:0.78rem; color:#64748b; margin-top:0.15rem;">– Bioskop.</div>
+          </div>
+
+          <!-- D: 好的，谢谢！ -->
+          <div class="pair-choice-card" onclick="playPinyin('Hǎo de, xièxie!')" title="Klik dengar opsi D">
+            <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.15rem;">
+              <span style="font-weight:800; color:#be123c; font-size:0.88rem;">D:</span>
+              <span class="opt-hz" style="font-size:1.05rem; font-weight:700; font-family:'Noto Sans SC',sans-serif;">好的，谢谢！</span>
+            </div>
+            <div class="opt-py" style="font-size:0.82rem; font-weight:600; color:#be123c;">(Hǎo de, xièxie!)</div>
+            <div class="opt-trans" style="font-size:0.78rem; color:#64748b; margin-top:0.15rem;">– Baik, terima kasih! (Jawaban Contoh)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contoh Soal (例如 - Lìrú) -->
+      <div style="background:#fff1f2; border:1.5px solid #fecdd3; border-radius:12px; padding:1.1rem 1.25rem; margin-top:0.85rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+          <span style="background:#be123c; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px; text-transform:uppercase;">例如 (Contoh Soal)</span>
+          <button onclick="playPinyin('Nǐ hē shuǐ ma?')" style="cursor:pointer; background:#ffe4e6; border:1px solid #fecdd3; color:#be123c; font-size:0.8rem; font-weight:700; border-radius:6px; padding:0.25rem 0.65rem; display:inline-flex; align-items:center; gap:0.35rem;">
+            <span>🔊 Putar Pertanyaan</span>
+          </button>
+        </div>
+
+        <!-- Kotak Pertanyaan Contoh -->
+        <div class="pair-sentence-box" onclick="playPinyin('Nǐ hē shuǐ ma?')" title="Klik dengar audio pertanyaan">
+          <div style="font-size:0.75rem; font-weight:700; color:#be123c; text-transform:uppercase; margin-bottom:0.35rem; letter-spacing:0.3px;">Pertanyaan:</div>
+          <div class="pair-box-py">Nǐ hē shuǐ ma?</div>
+          <div class="pair-box-hz">你喝水吗？</div>
+          <div class="pair-box-arti">
+            Arti: Apakah kamu ingin minum air?
+          </div>
+        </div>
+
+        <!-- Penjelasan Jawaban Contoh -->
+        <div style="background:#ffffff; border:1px solid #fecdd3; border-radius:8px; padding:0.75rem 1rem;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+            <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: D ✓</span>
+            <span style="font-size:0.88rem; font-weight:700; color:#be123c;">好的，谢谢！ (Hǎo de, xièxie!)</span>
+          </div>
+          <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
+            <strong>Penjelasan Contoh:</strong> Pertanyaan menawarkan minuman (<em>Nǐ hē shuǐ ma?</em>). Jawaban yang paling sopan dan cocok untuk menyetujui tawaran adalah <strong>D. 好的，谢谢！ (Hǎo de, xièxie! - Baik, terima kasih!)</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Pembahasan dan Jawaban Soal 14–16 -->
+      <div style="display:flex; flex-direction:column; gap:1.25rem; margin-top:0.75rem;">
+        
+        <!-- NOMOR 14 -->
+        <div class="pair-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.85rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span style="background:#be123c; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px;">Nomor 14</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Pencocokan Tanya-Jawab</span>
+            </div>
+            <button onclick="playPinyin('Wǒmen zài nǎr jiàn?')" style="cursor:pointer; background:#fff1f2; border:1px solid #fecdd3; color:#be123c; font-size:0.78rem; font-weight:700; border-radius:6px; padding:0.25rem 0.65rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Pertanyaan</span>
+            </button>
+          </div>
+
+          <!-- Kotak Pertanyaan -->
+          <div class="pair-sentence-box" onclick="playPinyin('Wǒmen zài nǎr jiàn?')" title="Klik dengar audio pertanyaan">
+            <div style="font-size:0.75rem; font-weight:700; color:#be123c; text-transform:uppercase; margin-bottom:0.35rem; letter-spacing:0.3px;">Pertanyaan:</div>
+            <div class="pair-box-py">Wǒmen zài nǎr jiàn?</div>
+            <div class="pair-box-hz">我们在哪儿见？</div>
+            <div class="pair-box-arti">
+              Arti: Di mana kita akan bertemu?
+            </div>
+          </div>
+
+          <!-- Kotak Jawaban & Pembahasan -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: C ✓</span>
+              <span style="font-size:0.88rem; font-weight:700; color:#be123c;">电影院 (Diànyǐngyuàn)</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
+              <strong>Analisis &amp; Jawaban:</strong> Pertanyaan menggunakan kata tanya tempat <strong>在哪儿 (zài nǎr - di mana)</strong> untuk menanyakan lokasi pertemuan. Jawaban yang paling tepat adalah menyebutkan nama tempat atau gedung fasilitas umum, yaitu <strong>C. 电影院 (Diànyǐngyuàn - Bioskop)</strong>.
+            </div>
+
+            <!-- Analisis Kosakata -->
+            <div class="vocab-pills-list">
+              <span class="vocab-pill"><strong>我们</strong> (<span class="vocab-py">wǒmen</span>) = Kita / kami</span>
+              <span class="vocab-pill"><strong>在</strong> (<span class="vocab-py">zài</span>) = Di</span>
+              <span class="vocab-pill"><strong>哪儿</strong> (<span class="vocab-py">nǎr</span>) = Mana</span>
+              <span class="vocab-pill"><strong>见</strong> (<span class="vocab-py">jiàn</span>) = Bertemu / berjumpa</span>
+              <span class="vocab-pill"><strong>电影院</strong> (<span class="vocab-py">diànyǐngyuàn</span>) = Bioskop</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOMOR 15 -->
+        <div class="pair-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.85rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span style="background:#be123c; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px;">Nomor 15</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Pencocokan Tanya-Jawab</span>
+            </div>
+            <button onclick="playPinyin('Xiànzài jǐ diǎn?')" style="cursor:pointer; background:#fff1f2; border:1px solid #fecdd3; color:#be123c; font-size:0.78rem; font-weight:700; border-radius:6px; padding:0.25rem 0.65rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Pertanyaan</span>
+            </button>
+          </div>
+
+          <!-- Kotak Pertanyaan -->
+          <div class="pair-sentence-box" onclick="playPinyin('Xiànzài jǐ diǎn?')" title="Klik dengar audio pertanyaan">
+            <div style="font-size:0.75rem; font-weight:700; color:#be123c; text-transform:uppercase; margin-bottom:0.35rem; letter-spacing:0.3px;">Pertanyaan:</div>
+            <div class="pair-box-py">Xiànzài jǐ diǎn?</div>
+            <div class="pair-box-hz">现在几点？</div>
+            <div class="pair-box-arti">
+              Arti: Jam berapa sekarang?
+            </div>
+          </div>
+
+          <!-- Kotak Jawaban & Pembahasan -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: A ✓</span>
+              <span style="font-size:0.88rem; font-weight:700; color:#be123c;">早上七点半 (Zǎoshang qī diǎn bàn)</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
+              <strong>Analisis &amp; Jawaban:</strong> Pertanyaan menanyakan waktu secara langsung menggunakan <strong>几点 (jǐ diǎn - jam berapa)</strong>. Jawaban yang paling tepat adalah menyatakan jam/waktu, yaitu pilihan <strong>A. 早上七点半 (Zǎoshang qī diǎn bàn - Pukul setengah delapan pagi)</strong>.
+            </div>
+
+            <!-- Analisis Kosakata -->
+            <div class="vocab-pills-list">
+              <span class="vocab-pill"><strong>现在</strong> (<span class="vocab-py">xiànzài</span>) = Sekarang</span>
+              <span class="vocab-pill"><strong>几点</strong> (<span class="vocab-py">jǐ diǎn</span>) = Jam berapa</span>
+              <span class="vocab-pill"><strong>早上</strong> (<span class="vocab-py">zǎoshang</span>) = Pagi hari</span>
+              <span class="vocab-pill"><strong>七点半</strong> (<span class="vocab-py">qī diǎn bàn</span>) = Pukul 07.30 / setengah delapan</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOMOR 16 -->
+        <div class="pair-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.85rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span style="background:#be123c; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px;">Nomor 16</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Pencocokan Ajakan &amp; Tanggapan</span>
+            </div>
+            <button onclick="playPinyin('Wǒmen xiàwǔ qù chāoshì ba.')" style="cursor:pointer; background:#fff1f2; border:1px solid #fecdd3; color:#be123c; font-size:0.78rem; font-weight:700; border-radius:6px; padding:0.25rem 0.65rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Kalimat Ajakan</span>
+            </button>
+          </div>
+
+          <!-- Kotak Pernyataan / Ajakan -->
+          <div class="pair-sentence-box" onclick="playPinyin('Wǒmen xiàwǔ qù chāoshì ba.')" title="Klik dengar audio kalimat">
+            <div style="font-size:0.75rem; font-weight:700; color:#be123c; text-transform:uppercase; margin-bottom:0.35rem; letter-spacing:0.3px;">Kalimat Ajakan:</div>
+            <div class="pair-box-py">Wǒmen xiàwǔ qù chāoshì ba.</div>
+            <div class="pair-box-hz">我们下午去超市吧。</div>
+            <div class="pair-box-arti">
+              Arti: Mari kita pergi ke supermarket sore ini.
+            </div>
+          </div>
+
+          <!-- Kotak Jawaban & Pembahasan -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: B ✓</span>
+              <span style="font-size:0.88rem; font-weight:700; color:#be123c;">对不起，我有课 (Duìbuqǐ, wǒ yǒu kè)</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
+              <strong>Analisis &amp; Jawaban:</strong> Kalimat merupakan sebuah ajakan atau saran pergi ke supermarket dengan partikel <strong>吧 (ba)</strong>. Respons yang logis adalah memberikan jawaban atas ajakan tersebut, yaitu menolak secara halus dengan alasan memiliki jadwal pelajaran: <strong>B. 对不起，我有课 (Duìbuqǐ, wǒ yǒu kè - Maaf, saya ada kelas)</strong>.
+            </div>
+
+            <!-- Analisis Kosakata -->
+            <div class="vocab-pills-list">
+              <span class="vocab-pill"><strong>我们</strong> (<span class="vocab-py">wǒmen</span>) = Kita / kami</span>
+              <span class="vocab-pill"><strong>下午</strong> (<span class="vocab-py">xiàwǔ</span>) = Sore hari</span>
+              <span class="vocab-pill"><strong>去</strong> (<span class="vocab-py">qù</span>) = Pergi</span>
+              <span class="vocab-pill"><strong>超市</strong> (<span class="vocab-py">chāoshì</span>) = Supermarket</span>
+              <span class="vocab-pill"><strong>吧</strong> (<span class="vocab-py">ba</span>) = Partikel ajakan / saran</span>
+              <span class="vocab-pill"><strong>对不起</strong> (<span class="vocab-py">duìbuqǐ</span>) = Maaf</span>
+              <span class="vocab-pill"><strong>有课</strong> (<span class="vocab-py">yǒu kè</span>) = Ada kelas / kuliah</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
   <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
@@ -3069,10 +3387,36 @@
       hzEl.innerHTML = res.hanzi;
       pyEl.innerHTML = res.pinyin;
     });
+
+    // 9. Reading Part 2 Kotak Pertanyaan/Pernyataan (.pair-sentence-box: .pair-box-hz & .pair-box-py)
+    document.querySelectorAll('.pair-sentence-box').forEach(box => {
+      const hzEl = box.querySelector('.pair-box-hz');
+      const pyEl = box.querySelector('.pair-box-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 10. Reading Part 2 Pilihan Kartu (.pair-choice-card: .opt-hz & .opt-py)
+    document.querySelectorAll('.pair-choice-card').forEach(card => {
+      const hzEl = card.querySelector('.opt-hz');
+      const pyEl = card.querySelector('.opt-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
   }
 
   function removeColors() {
-    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py, .dialog-hz, .dialog-py, .vocab-pill strong, .vocab-py').forEach(el => {
+    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py, .dialog-hz, .dialog-py, .vocab-pill strong, .vocab-py, .pair-box-hz, .pair-box-py').forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
       }
