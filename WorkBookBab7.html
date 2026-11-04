@@ -835,6 +835,107 @@
       line-height: 1.5;
     }
 
+    /* ── LATIHAN READING PART 1 (MATCH SENTENCE WITH PICTURE) ── */
+    .reading-pic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.15rem;
+    }
+    @media (max-width: 640px) {
+      .reading-pic-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .reading-pic-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .reading-pic-letter {
+      font-weight: 800;
+      font-size: 0.8rem;
+      background: #be123c;
+      color: #fff;
+      padding: 0.15rem 0.55rem;
+      border-radius: 20px;
+    }
+    .reading-pic-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin: 0.2rem 0;
+    }
+    .reading-pic-label {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .reading-card-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .sentence-display-box {
+      background: #fff1f2;
+      border: 1.5px solid #fecdd3;
+      border-radius: 10px;
+      padding: 0.95rem 1rem;
+      margin-bottom: 0.85rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .sentence-display-box:hover {
+      background: #ffe4e6;
+      border-color: #fda4af;
+      transform: translateY(-2px);
+    }
+    .sentence-display-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #be123c;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.3px;
+    }
+    .vocab-pills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.65rem;
+      padding-top: 0.55rem;
+      border-top: 1px dashed #e2e8f0;
+    }
+    .vocab-pill {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.76rem;
+      color: #334155;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .vocab-pill strong {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .vocab-pill .vocab-py {
+      color: #be123c;
+      font-family: var(--font-pinyin);
+      font-weight: 600;
+    }
+
     /* ── RESPONSIVE MOBILE ── */
     @media (max-width: 600px) {
       .btn-text-desktop { display: none; }
@@ -2442,6 +2543,242 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       BAGIAN 8: LATIHAN READING PART 1 (二、阅读 Reading - 第一部分 Part I · Soal 11–13)
+       选择与句子最匹配的图片 (Xuǎnzé yǔ jùzi zuì pǐpèi de túpiàn)
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 Bagian 8: Reading Part 1 · 二、阅读 第一部分 (Soal 11–13)</div>
+    <div class="classroom-box" id="reading-part1-section" style="border-left: 5px solid #be123c;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar av-rose" style="font-size: 1.15rem; font-weight: 700; color: #fff;">阅</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #be123c; color: #fff;">第 11—13 题：选择与句子最匹配的图片 (Soal 11–13)</div>
+          <div class="classroom-desc">Questions 11–13: Choose the correct picture for each sentence. (Pilih gambar yang paling cocok untuk setiap kalimat).</div>
+        </div>
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">📖</span>
+          <span>Petunjuk Soal Reading Part 1 &amp; Contoh (例如)</span>
+        </div>
+        <div class="instruction-quote">
+          “第11—13题：选择与句子最匹配的图片。”
+        </div>
+        <div class="instruction-trans">
+          <strong>Bahasa Inggris:</strong> Questions 11–13: Choose the correct picture for each sentence.<br>
+          <strong>Bahasa Indonesia:</strong> Pertanyaan 11–13: Pilih gambar yang paling cocok untuk setiap kalimat.
+        </div>
+      </div>
+
+      <!-- Referensi Pilihan Gambar (A, B, C, D) -->
+      <div style="margin-top:0.35rem;">
+        <div style="font-size:0.84rem; font-weight:700; color:#be123c; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.4rem;">
+          <span>🖼️ Pilihan Gambar Tersedia (A — D):</span>
+        </div>
+        <div class="reading-pic-grid">
+          <!-- Gambar A -->
+          <div class="reading-pic-card">
+            <span class="reading-pic-letter">Gambar A</span>
+            <div class="reading-pic-icon">📖🧐</div>
+            <div class="reading-pic-label">Seseorang sedang membaca buku</div>
+          </div>
+          <!-- Gambar B -->
+          <div class="reading-pic-card">
+            <span class="reading-pic-letter">Gambar B</span>
+            <div class="reading-pic-icon">🛒🏬</div>
+            <div class="reading-pic-label">Memilih &amp; berbelanja di rak supermarket</div>
+          </div>
+          <!-- Gambar C -->
+          <div class="reading-pic-card">
+            <span class="reading-pic-letter">Gambar C</span>
+            <div class="reading-pic-icon">⏰🕖</div>
+            <div class="reading-pic-label">Jam alarm menunjuk pukul 7:00 malam</div>
+          </div>
+          <!-- Gambar D -->
+          <div class="reading-pic-card">
+            <span class="reading-pic-letter">Gambar D</span>
+            <div class="reading-pic-icon">👩‍🏫🏫</div>
+            <div class="reading-pic-label">Suasana kelas guru sedang mengajar murid</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contoh Soal Reading (例如 - Lìrú) -->
+      <div style="background:#fff1f2; border:1.5px solid #fecdd3; border-radius:12px; padding:1.1rem 1.25rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+          <span style="background:#be123c; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px; text-transform:uppercase;">例如 (Contoh Soal)</span>
+          <button onclick="playPinyin('Wǒ hěn xǐhuan zhè běn shū.')" style="cursor:pointer; background:#ffe4e6; border:1px solid #fecdd3; color:#be123c; font-size:0.8rem; font-weight:700; border-radius:6px; padding:0.25rem 0.65rem; display:inline-flex; align-items:center; gap:0.35rem;">
+            <span>🔊 Putar Audio Kalimat</span>
+          </button>
+        </div>
+
+        <!-- Kalimat Contoh (Pinyin di Atas, Hanzi di Bawah, Rata Tengah) -->
+        <div class="sentence-display-box" onclick="playPinyin('Wǒ hěn xǐhuan zhè běn shū.')" title="Klik dengar audio kalimat">
+          <div class="sentence-display-label">Kalimat:</div>
+          <div class="bubble-pinyin" style="font-size:1.05rem; font-weight:600; margin-bottom:0.25rem;">Wǒ hěn xǐhuan zhè běn shū.</div>
+          <div class="bubble-hanzi" style="font-size:1.55rem; font-weight:700; letter-spacing:0.05em; margin-bottom:0.45rem;">我很喜欢这本书。</div>
+          <div class="bubble-arti" style="font-size:0.84rem; color:#475569; text-align:center; border-top:1px dashed #fecdd3; padding-top:0.4rem;">
+            Arti: Saya sangat menyukai buku ini.
+          </div>
+        </div>
+
+        <!-- Penjelasan Jawaban Contoh -->
+        <div style="background:#ffffff; border:1px solid #fecdd3; border-radius:8px; padding:0.75rem 1rem;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+            <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: A ✓</span>
+            <span style="font-size:1.3rem;">📖🧐</span>
+          </div>
+          <div class="soal-pembahasan" style="font-size:0.84rem; color:#475569; line-height:1.55;">
+            <strong>Penjelasan Contoh:</strong> Kalimat menyatakan bahwa saya sangat menyukai buku ini (<em>Wǒ hěn xǐhuan zhè běn shū</em>). Pilihan gambar yang paling tepat adalah <strong>Gambar A</strong> (seseorang sedang membaca buku).
+          </div>
+        </div>
+      </div>
+
+      <!-- Pembahasan dan Jawaban Soal 11–13 -->
+      <div style="display:flex; flex-direction:column; gap:1.25rem; margin-top:0.5rem;">
+        
+        <!-- NOMOR 11 -->
+        <div class="reading-card-box">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.85rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span style="background:#be123c; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px;">Nomor 11</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Mencocokkan Kalimat &amp; Gambar</span>
+            </div>
+            <button onclick="playPinyin('Wǒ zài shàngkè ne.')" style="cursor:pointer; background:#fff1f2; border:1px solid #fecdd3; color:#be123c; font-size:0.78rem; font-weight:700; border-radius:6px; padding:0.25rem 0.65rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Kalimat</span>
+            </button>
+          </div>
+
+          <!-- Kotak Kalimat (Pinyin di Atas, Hanzi di Bawah, Rata Tengah) -->
+          <div class="sentence-display-box" onclick="playPinyin('Wǒ zài shàngkè ne.')" title="Klik dengar audio kalimat">
+            <div class="sentence-display-label">Kalimat:</div>
+            <div class="bubble-pinyin" style="font-size:1.05rem; font-weight:600; margin-bottom:0.25rem;">Wǒ zài shàngkè ne.</div>
+            <div class="bubble-hanzi" style="font-size:1.55rem; font-weight:700; letter-spacing:0.05em; margin-bottom:0.45rem;">我在上课呢。</div>
+            <div class="bubble-arti" style="font-size:0.84rem; color:#475569; text-align:center; border-top:1px dashed #fecdd3; padding-top:0.4rem;">
+              Arti: Saya sedang mengikuti kelas / belajar.
+            </div>
+          </div>
+
+          <!-- Kotak Jawaban & Pembahasan -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Pilihan Gambar: D ✓</span>
+              <span style="font-size:1.3rem;">👩‍🏫🏫</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
+              <strong>Penjelasan Materi:</strong> Kalimat menyatakan <strong>我在上课呢 (Wǒ zài shàngkè ne - Saya sedang belajar / mengikuti kelas)</strong>. Gambar yang cocok adalah <strong>Gambar D</strong> yang memperlihatkan suasana kelas tempat seorang guru/pengajar sedang mengajar murid-muridnya.
+            </div>
+
+            <!-- Analisis Kosakata -->
+            <div class="vocab-pills-list">
+              <span class="vocab-pill"><strong>我</strong> (<span class="vocab-py">wǒ</span>) = Saya</span>
+              <span class="vocab-pill"><strong>在</strong> (<span class="vocab-py">zài</span>) = Sedang (menunjukkan aktivitas berlangsung)</span>
+              <span class="vocab-pill"><strong>上课</strong> (<span class="vocab-py">shàngkè</span>) = Mengikuti kelas / pelajaran</span>
+              <span class="vocab-pill"><strong>呢</strong> (<span class="vocab-py">ne</span>) = Partikel di akhir kalimat menyatakan proses sedang berlangsung</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOMOR 12 -->
+        <div class="reading-card-box">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.85rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span style="background:#be123c; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px;">Nomor 12</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Mencocokkan Kalimat &amp; Gambar</span>
+            </div>
+            <button onclick="playPinyin('Wǒ xiàwǔ yǒu shì, wǎnshang 7:00 jiàn ba.')" style="cursor:pointer; background:#fff1f2; border:1px solid #fecdd3; color:#be123c; font-size:0.78rem; font-weight:700; border-radius:6px; padding:0.25rem 0.65rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Kalimat</span>
+            </button>
+          </div>
+
+          <!-- Kotak Kalimat (Pinyin di Atas, Hanzi di Bawah, Rata Tengah) -->
+          <div class="sentence-display-box" onclick="playPinyin('Wǒ xiàwǔ yǒu shì, wǎnshang 7:00 jiàn ba.')" title="Klik dengar audio kalimat">
+            <div class="sentence-display-label">Kalimat:</div>
+            <div class="bubble-pinyin" style="font-size:1.05rem; font-weight:600; margin-bottom:0.25rem;">Wǒ xiàwǔ yǒu shì, wǎnshang 7:00 jiàn ba.</div>
+            <div class="bubble-hanzi" style="font-size:1.55rem; font-weight:700; letter-spacing:0.05em; margin-bottom:0.45rem;">我下午有事，晚上 7:00 见吧。</div>
+            <div class="bubble-arti" style="font-size:0.84rem; color:#475569; text-align:center; border-top:1px dashed #fecdd3; padding-top:0.4rem;">
+              Arti: Saya ada urusan pada sore hari, mari kita bertemu pukul 7.00 malam.
+            </div>
+          </div>
+
+          <!-- Kotak Jawaban & Pembahasan -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Pilihan Gambar: C ✓</span>
+              <span style="font-size:1.3rem;">⏰🕖</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
+              <strong>Penjelasan Materi:</strong> Pembicara mengusulkan janji temu pada malam hari pukul 7 tepat (<strong>晚上 7:00 见吧 · wǎnshang 7:00 jiàn ba</strong>). Gambar yang paling sesuai adalah <strong>Gambar C (jam alarm yang menunjuk pada pukul 7.00)</strong>.
+            </div>
+
+            <!-- Analisis Kosakata -->
+            <div class="vocab-pills-list">
+              <span class="vocab-pill"><strong>我</strong> (<span class="vocab-py">wǒ</span>) = Saya</span>
+              <span class="vocab-pill"><strong>下午</strong> (<span class="vocab-py">xiàwǔ</span>) = Sore hari</span>
+              <span class="vocab-pill"><strong>有事</strong> (<span class="vocab-py">yǒu shì</span>) = Ada urusan / kesibukan</span>
+              <span class="vocab-pill"><strong>晚上</strong> (<span class="vocab-py">wǎnshang</span>) = Malam hari</span>
+              <span class="vocab-pill"><strong>7:00</strong> (<span class="vocab-py">qī diǎn</span>) = Pukul tujuh</span>
+              <span class="vocab-pill"><strong>见</strong> (<span class="vocab-py">jiàn</span>) = Bertemu / berjumpa</span>
+              <span class="vocab-pill"><strong>吧</strong> (<span class="vocab-py">ba</span>) = Partikel ajakan / saran ("ayo / mari")</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOMOR 13 -->
+        <div class="reading-card-box">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.85rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span style="background:#be123c; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px;">Nomor 13</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Mencocokkan Kalimat &amp; Gambar</span>
+            </div>
+            <button onclick="playPinyin('Jīntiān bù shàngbān, wǒ qù chāoshì mǎi dōngxi.')" style="cursor:pointer; background:#fff1f2; border:1px solid #fecdd3; color:#be123c; font-size:0.78rem; font-weight:700; border-radius:6px; padding:0.25rem 0.65rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Kalimat</span>
+            </button>
+          </div>
+
+          <!-- Kotak Kalimat (Pinyin di Atas, Hanzi di Bawah, Rata Tengah) -->
+          <div class="sentence-display-box" onclick="playPinyin('Jīntiān bù shàngbān, wǒ qù chāoshì mǎi dōngxi.')" title="Klik dengar audio kalimat">
+            <div class="sentence-display-label">Kalimat:</div>
+            <div class="bubble-pinyin" style="font-size:1.05rem; font-weight:600; margin-bottom:0.25rem;">Jīntiān bù shàngbān, wǒ qù chāoshì mǎi dōngxi.</div>
+            <div class="bubble-hanzi" style="font-size:1.55rem; font-weight:700; letter-spacing:0.05em; margin-bottom:0.45rem;">今天不上班，我去超市买东西。</div>
+            <div class="bubble-arti" style="font-size:0.84rem; color:#475569; text-align:center; border-top:1px dashed #fecdd3; padding-top:0.4rem;">
+              Arti: Hari ini tidak bekerja, saya pergi ke supermarket untuk membeli barang-barang.
+            </div>
+          </div>
+
+          <!-- Kotak Jawaban & Pembahasan -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Pilihan Gambar: B ✓</span>
+              <span style="font-size:1.3rem;">🛒🏬</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
+              <strong>Penjelasan Materi:</strong> Kalimat menyatakan hari ini libur bekerja dan pergi belanja barang ke supermarket (<strong>去超市买东西 · qù chāoshì mǎi dōngxi</strong>). Gambar yang cocok adalah <strong>Gambar B</strong> yang memperlihatkan seseorang sedang memilih dan berbelanja di lorong rak supermarket.
+            </div>
+
+            <!-- Analisis Kosakata -->
+            <div class="vocab-pills-list">
+              <span class="vocab-pill"><strong>今天</strong> (<span class="vocab-py">jīntiān</span>) = Hari ini</span>
+              <span class="vocab-pill"><strong>不上班</strong> (<span class="vocab-py">bù shàngbān</span>) = Tidak bekerja / libur kerja</span>
+              <span class="vocab-pill"><strong>我</strong> (<span class="vocab-py">wǒ</span>) = Saya</span>
+              <span class="vocab-pill"><strong>去</strong> (<span class="vocab-py">qù</span>) = Pergi</span>
+              <span class="vocab-pill"><strong>超市</strong> (<span class="vocab-py">chāoshì</span>) = Supermarket</span>
+              <span class="vocab-pill"><strong>买</strong> (<span class="vocab-py">mǎi</span>) = Membeli</span>
+              <span class="vocab-pill"><strong>东西</strong> (<span class="vocab-py">dōngxi</span>) = Barang / kebutuhan belanja</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
   <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
@@ -2704,6 +3041,18 @@
       const resD = colorizePair(dHz.dataset.origHtml, dPy.dataset.origHtml);
       dHz.innerHTML = resD.hanzi;
       dPy.innerHTML = resD.pinyin;
+    });
+
+    // 7. Kotak Kalimat Reading Part 1 (.sentence-display-box: .bubble-hanzi & .bubble-pinyin)
+    document.querySelectorAll('.sentence-display-box').forEach(box => {
+      const bHz = box.querySelector('.bubble-hanzi');
+      const bPy = box.querySelector('.bubble-pinyin');
+      if (!bHz || !bPy) return;
+      if (!bHz.dataset.origHtml) bHz.dataset.origHtml = bHz.innerHTML;
+      if (!bPy.dataset.origHtml) bPy.dataset.origHtml = bPy.innerHTML;
+      const resB = colorizePair(bHz.dataset.origHtml, bPy.dataset.origHtml);
+      bHz.innerHTML = resB.hanzi;
+      bPy.innerHTML = resB.pinyin;
     });
   }
 
