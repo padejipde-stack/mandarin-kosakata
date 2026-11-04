@@ -526,7 +526,9 @@
     body.show-color .vocab-pill strong,
     body.show-color .vocab-py,
     body.show-color .pair-box-hz,
-    body.show-color .pair-box-py { color: inherit !important; }
+    body.show-color .pair-box-py,
+    body.show-color .cloze-hz,
+    body.show-color .cloze-py { color: inherit !important; }
 
     /* ── LATIHAN LISTENING PART 3 (DIALOG & PICTURE MATCHING) ── */
     .dialog-box-card {
@@ -1005,6 +1007,83 @@
       text-align: center;
       border-top: 1px dashed #fecdd3;
       padding-top: 0.4rem;
+    }
+
+    /* ── LATIHAN READING PART 3 (CLOZE / 选词填空) ── */
+    .cloze-option-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+    }
+    @media (max-width: 640px) {
+      .cloze-option-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .cloze-pill {
+      background: #ffffff;
+      border: 1px solid #fecdd3;
+      border-radius: 8px;
+      padding: 0.6rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cloze-pill:hover {
+      background: #fff1f2;
+      border-color: #fda4af;
+      transform: translateY(-2px);
+    }
+    .cloze-box-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.15rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .cloze-sentence-display {
+      text-align: center;
+      padding: 0.95rem 0.6rem;
+      background: #fff1f2;
+      border-radius: 10px;
+      border: 1.5px solid #fecdd3;
+      margin-bottom: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cloze-sentence-display:hover {
+      background: #ffe4e6;
+      border-color: #fda4af;
+      transform: translateY(-2px);
+    }
+    .cloze-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.45rem;
+      color: #1e293b;
+    }
+    .cloze-py {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #be123c;
+      margin-bottom: 0.25rem;
+    }
+    .cloze-arti {
+      font-size: 0.84rem;
+      color: #475569;
+      margin-top: 0.35rem;
+      font-style: italic;
+      border-top: 1px dashed #fecdd3;
+      padding-top: 0.35rem;
+    }
+    .cloze-blank-tag {
+      color: #16a34a;
+      text-decoration: underline;
+      font-weight: 700;
     }
 
     /* ── RESPONSIVE MOBILE ── */
@@ -3099,6 +3178,206 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       BAGIAN 10: LATIHAN READING PART 3 (第三部分 · Soal 17–18)
+       选词填空 (Xuǎncí tiánkòng - Choose Words to Fill in Blanks)
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 Bagian 10: Reading Part 3 · 第三部分 (Soal 17–18)</div>
+    <div class="classroom-box" id="reading-part3-section" style="border-left: 5px solid #be123c;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar av-rose" style="font-size: 1.15rem; font-weight: 700; color: #fff;">填</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #be123c; color: #fff;">第 17—18 题：选词填空 (Soal 17–18)</div>
+          <div class="classroom-desc">Questions 17–18: Choose the correct word to fill in each blank. (Pilih kata yang benar untuk mengisi setiap bagian rumpang).</div>
+        </div>
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">✏️</span>
+          <span>Petunjuk Soal Reading Part 3 &amp; Contoh (例如)</span>
+        </div>
+        <div class="instruction-quote">
+          “第17—18题：选词填空。”
+        </div>
+        <div class="instruction-trans">
+          <strong>Bahasa Inggris:</strong> Questions 17–18: Choose the correct word to fill in each blank.<br>
+          <strong>Bahasa Indonesia:</strong> Pertanyaan 17–18: Pilih kata yang benar untuk mengisi setiap bagian rumpang (titik-titik).
+        </div>
+      </div>
+
+      <!-- Bank Pilihan Kata (A - C) -->
+      <div style="margin-top:0.35rem;">
+        <div style="font-size:0.84rem; font-weight:700; color:#be123c; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.4rem;">
+          <span>📋 Pilihan Kata Tersedia (A — C):</span>
+        </div>
+        <div class="cloze-option-grid">
+          <!-- Pilihan A: 医院 -->
+          <div class="cloze-pill" onclick="playPinyin('医院')" title="Klik dengar opsi A: 医院">
+            <span style="font-weight:800; color:#be123c; font-size:1.05rem; width:22px;">A:</span>
+            <div style="display:flex; flex-direction:column;">
+              <div style="display:flex; align-items:baseline; gap:0.4rem;">
+                <span class="opt-hz" style="font-size:1.15rem; font-weight:700; color:#1e293b;">医院</span>
+                <span class="opt-py" style="font-size:0.85rem; font-weight:600; color:#be123c;">(yīyuàn)</span>
+              </div>
+              <span class="opt-trans" style="font-size:0.75rem; color:#64748b; line-height:1.2;">Rumah sakit (lokasi/tempat)</span>
+            </div>
+          </div>
+
+          <!-- Pilihan B: 中午 -->
+          <div class="cloze-pill" onclick="playPinyin('中午')" title="Klik dengar opsi B: 中午">
+            <span style="font-weight:800; color:#be123c; font-size:1.05rem; width:22px;">B:</span>
+            <div style="display:flex; flex-direction:column;">
+              <div style="display:flex; align-items:baseline; gap:0.4rem;">
+                <span class="opt-hz" style="font-size:1.15rem; font-weight:700; color:#1e293b;">中午</span>
+                <span class="opt-py" style="font-size:0.85rem; font-weight:600; color:#be123c;">(zhōngwǔ)</span>
+              </div>
+              <span class="opt-trans" style="font-size:0.75rem; color:#64748b; line-height:1.2;">Siang hari (keterangan waktu)</span>
+            </div>
+          </div>
+
+          <!-- Pilihan C: 名字 -->
+          <div class="cloze-pill" onclick="playPinyin('名字')" title="Klik dengar opsi C: 名字">
+            <span style="font-weight:800; color:#be123c; font-size:1.05rem; width:22px;">C:</span>
+            <div style="display:flex; flex-direction:column;">
+              <div style="display:flex; align-items:baseline; gap:0.4rem;">
+                <span class="opt-hz" style="font-size:1.15rem; font-weight:700; color:#1e293b;">名字</span>
+                <span class="opt-py" style="font-size:0.85rem; font-weight:600; color:#be123c;">(míngzi)</span>
+              </div>
+              <span class="opt-trans" style="font-size:0.75rem; color:#64748b; line-height:1.2;">Nama (Jawaban Contoh)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contoh Soal (例如 - Lìrú) -->
+      <div style="background:#fff1f2; border:1.5px solid #fecdd3; border-radius:12px; padding:1.1rem; margin-top:0.85rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.75rem; border-bottom:1px solid #fecdd3; padding-bottom:0.4rem;">
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <span style="background:#be123c; color:#fff; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:6px; letter-spacing:0.5px;">CONTOH</span>
+            <span style="font-weight:700; font-size:0.95rem; color:#be123c;">例如 (Lìrú)</span>
+          </div>
+          <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci Contoh: [ C ✓ ] (名字 / míngzi)</span>
+        </div>
+
+        <!-- Kalimat Soal Contoh (Susunan Vertikal Rata Tengah) -->
+        <div class="cloze-sentence-display" style="background:#ffffff; border-color:#fecdd3;" onclick="playPinyin('Nǐ jiào shénme míngzi?')" title="Klik dengar kalimat lengkap">
+          <div class="cloze-py">Nǐ jiào shénme míngzi?</div>
+          <div class="cloze-hz">你叫什么<span class="cloze-blank-tag">名字</span>？</div>
+          <div class="cloze-arti">
+            Arti: "Siapa namamu? (Kamu dipanggil nama apa?)"
+          </div>
+          <div style="font-size:0.75rem; color:#94a3b8; margin-top:0.25rem;">🔊 Klik untuk mendengarkan kalimat lengkap</div>
+        </div>
+
+        <!-- Penjelasan Contoh -->
+        <div class="soal-pembahasan" style="background:#ffffff; border-radius:8px; padding:0.65rem 0.85rem; border-left:3px solid #be123c; font-size:0.82rem; color:#475569; line-height:1.45;">
+          💡 <strong>Penjelasan:</strong> Pola pertanyaan umum untuk menanyakan nama seseorang dalam bahasa Mandarin adalah <strong>你叫什么名字？</strong> (<em>Nǐ jiào shénme míngzi?</em>). Kata yang paling tepat untuk melengkapi bagian kosong setelah <em>shénme...</em> adalah pilihan <strong>C (míngzi / 名字 = nama)</strong>.
+        </div>
+      </div>
+
+      <!-- Pembahasan dan Jawaban Soal 17–18 -->
+      <div style="display:flex; flex-direction:column; gap:1.25rem; margin-top:0.75rem;">
+        
+        <!-- SOAL 17 -->
+        <div class="cloze-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.75rem; border-bottom:1px solid #f1f5f9; padding-bottom:0.4rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span style="background:#be123c; color:#fff; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:6px;">SOAL 17</span>
+              <span style="font-weight:700; font-size:0.95rem; color:#1e293b;">Melengkapi Keterangan Waktu Pulang Kelas</span>
+            </div>
+            <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci: [ B ✓ ] (中午 / zhōngwǔ)</span>
+          </div>
+
+          <!-- Kalimat Soal 17 (Vertikal Rata Tengah) -->
+          <div class="cloze-sentence-display" onclick="playPinyin('Wǒmen zhōngwǔ shí\'èr diǎn xiàkè.')" title="Klik dengar kalimat lengkap">
+            <div class="cloze-py">Wǒmen zhōngwǔ shí'èr diǎn xiàkè.</div>
+            <div class="cloze-hz">我们<span class="cloze-blank-tag">中午</span> 12:00 下课。</div>
+            <div class="cloze-arti">
+              Arti: "Kami selesai kelas / pulang sekolah pada pukul 12:00 siang."
+            </div>
+            <div style="font-size:0.75rem; color:#be123c; margin-top:0.25rem;">🔊 Klik untuk mendengarkan lafal kalimat lengkap</div>
+          </div>
+
+          <!-- Penjelasan Soal 17 -->
+          <div class="soal-pembahasan" style="background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border-left:3px solid #be123c; font-size:0.82rem; color:#334155; line-height:1.45;">
+            💡 <strong>Penjelasan:</strong> Bagian rumpang terletak tepat sebelum penunjuk jam <strong>12:00 (shí'èr diǎn)</strong> dan aktivitas <strong>下课 (xiàkè - selesai kelas)</strong>. Keterangan pembagian waktu dalam sehari yang paling tepat untuk mendampingi jam 12:00 adalah <strong>B (中午 / zhōngwǔ = siang hari)</strong>.
+          </div>
+
+          <!-- Analisis Kosakata -->
+          <div class="vocab-pills-list">
+            <span class="vocab-pill"><strong>我们</strong> (<span class="vocab-py">wǒmen</span>) = Kami / kita</span>
+            <span class="vocab-pill"><strong>中午</strong> (<span class="vocab-py">zhōngwǔ</span>) = Siang hari</span>
+            <span class="vocab-pill"><strong>12:00</strong> (<span class="vocab-py">shí'èr diǎn</span>) = Pukul dua belas</span>
+            <span class="vocab-pill"><strong>下课</strong> (<span class="vocab-py">xiàkè</span>) = Selesai kelas / bubar kelas</span>
+          </div>
+        </div>
+
+        <!-- SOAL 18 -->
+        <div class="cloze-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.75rem; border-bottom:1px solid #f1f5f9; padding-bottom:0.4rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span style="background:#be123c; color:#fff; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:6px;">SOAL 18</span>
+              <span style="font-weight:700; font-size:0.95rem; color:#1e293b;">Melengkapi Lokasi Keberadaan</span>
+            </div>
+            <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci: [ A ✓ ] (医院 / yīyuàn)</span>
+          </div>
+
+          <!-- Dialog Soal 18 (Vertikal Rata Tengah per Kalimat) -->
+          <div style="background:#fff1f2; border-radius:10px; border:1px solid #fecdd3; padding:0.85rem 0.5rem; margin-bottom:0.75rem;">
+            
+            <!-- Laki-laki (男): 你现在在哪儿？ -->
+            <div style="text-align:center; padding-bottom:0.7rem; margin-bottom:0.7rem; border-bottom:1px dashed #fecdd3; cursor:pointer;" onclick="playPinyin('Nǐ xiànzài zài nǎr?')" title="Klik dengar kalimat laki-laki">
+              <div style="display:inline-block; font-size:0.75rem; font-weight:700; background:#2563eb; color:#fff; border-radius:4px; padding:1px 6px; margin-bottom:0.4rem;">
+                男 (Laki-laki)
+              </div>
+              <div class="cloze-py">Nǐ xiànzài zài nǎr?</div>
+              <div class="cloze-hz">你现在在哪儿？</div>
+              <div class="cloze-arti">
+                Arti: "Di mana kamu sekarang?"
+              </div>
+            </div>
+
+            <!-- Perempuan (女): 我在（医院）呢。 -->
+            <div style="text-align:center; cursor:pointer;" onclick="playPinyin('Wǒ zài yīyuàn ne.')" title="Klik dengar kalimat perempuan">
+              <div style="display:inline-block; font-size:0.75rem; font-weight:700; background:#be123c; color:#fff; border-radius:4px; padding:1px 6px; margin-bottom:0.4rem;">
+                女 (Perempuan)
+              </div>
+              <div class="cloze-py">Wǒ zài yīyuàn ne.</div>
+              <div class="cloze-hz">我在<span class="cloze-blank-tag">医院</span>呢。</div>
+              <div class="cloze-arti">
+                Arti: "Saya sedang berada di ( rumah sakit )."
+              </div>
+              <div style="font-size:0.75rem; color:#be123c; margin-top:0.25rem;">🔊 Klik untuk mendengarkan lafal dialog</div>
+            </div>
+          </div>
+
+          <!-- Penjelasan Soal 18 -->
+          <div class="soal-pembahasan" style="background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border-left:3px solid #be123c; font-size:0.82rem; color:#334155; line-height:1.45;">
+            💡 <strong>Penjelasan:</strong> Pembicara pria bertanya mengenai tempat keberadaan (<strong>在哪儿 · zài nǎr = di mana</strong>). Oleh karena itu, kata pengisi yang tepat setelah kata depan <strong>在 (zài - di/berada di)</strong> adalah nama tempat atau fasilitas, yaitu pilihan <strong>A (医院 / yīyuàn = rumah sakit)</strong>.
+          </div>
+
+          <!-- Analisis Kosakata -->
+          <div class="vocab-pills-list">
+            <span class="vocab-pill"><strong>你</strong> (<span class="vocab-py">nǐ</span>) = Kamu</span>
+            <span class="vocab-pill"><strong>现在</strong> (<span class="vocab-py">xiànzài</span>) = Sekarang</span>
+            <span class="vocab-pill"><strong>在哪儿</strong> (<span class="vocab-py">zài nǎr</span>) = Di mana</span>
+            <span class="vocab-pill"><strong>我</strong> (<span class="vocab-py">wǒ</span>) = Saya</span>
+            <span class="vocab-pill"><strong>在</strong> (<span class="vocab-py">zài</span>) = Berada di</span>
+            <span class="vocab-pill"><strong>医院</strong> (<span class="vocab-py">yīyuàn</span>) = Rumah sakit</span>
+            <span class="vocab-pill"><strong>呢</strong> (<span class="vocab-py">ne</span>) = Partikel menyatakan keadaan sedang berlangsung</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
   <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
@@ -3413,10 +3692,38 @@
       hzEl.innerHTML = res.hanzi;
       pyEl.innerHTML = res.pinyin;
     });
+
+    // 11. Reading Part 3 Kotak Kalimat Rumpang (.cloze-sentence-display, .cloze-hz & .cloze-py)
+    document.querySelectorAll('.cloze-hz').forEach(hzEl => {
+      const container = hzEl.parentElement;
+      if (!container) return;
+      const pyEl = container.querySelector('.cloze-py');
+      if (!pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 12. Reading Part 3 Pil Opsi Pilihan (.cloze-pill: .opt-hz & .opt-py)
+    document.querySelectorAll('.cloze-pill').forEach(pill => {
+      const hzEl = pill.querySelector('.opt-hz');
+      const pyEl = pill.querySelector('.opt-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      let pyText = pyEl.dataset.origHtml.replace(/^[((]/, '').replace(/[))]$/, '');
+      const res = colorizePair(hzEl.dataset.origHtml, pyText);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = '(' + res.pinyin + ')';
+    });
   }
 
   function removeColors() {
-    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py, .dialog-hz, .dialog-py, .vocab-pill strong, .vocab-py, .pair-box-hz, .pair-box-py').forEach(el => {
+    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py, .dialog-hz, .dialog-py, .vocab-pill strong, .vocab-py, .pair-box-hz, .pair-box-py, .cloze-hz, .cloze-py').forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
       }
