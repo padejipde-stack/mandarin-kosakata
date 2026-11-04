@@ -522,7 +522,9 @@
     body.show-color .opt-hz,
     body.show-color .opt-py,
     body.show-color .dialog-hz,
-    body.show-color .dialog-py { color: inherit !important; }
+    body.show-color .dialog-py,
+    body.show-color .vocab-pill strong,
+    body.show-color .vocab-py { color: inherit !important; }
 
     /* ── LATIHAN LISTENING PART 3 (DIALOG & PICTURE MATCHING) ── */
     .dialog-box-card {
@@ -2691,15 +2693,15 @@
               <span style="background:#be123c; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px;">Nomor 12</span>
               <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Mencocokkan Kalimat &amp; Gambar</span>
             </div>
-            <button onclick="playPinyin('Wǒ xiàwǔ yǒu shì, wǎnshang 7:00 jiàn ba.')" style="cursor:pointer; background:#fff1f2; border:1px solid #fecdd3; color:#be123c; font-size:0.78rem; font-weight:700; border-radius:6px; padding:0.25rem 0.65rem; display:inline-flex; align-items:center; gap:0.35rem;">
+            <button onclick="playPinyin('Wǒ xiàwǔ yǒu shì, wǎnshang qī diǎn jiàn ba.')" style="cursor:pointer; background:#fff1f2; border:1px solid #fecdd3; color:#be123c; font-size:0.78rem; font-weight:700; border-radius:6px; padding:0.25rem 0.65rem; display:inline-flex; align-items:center; gap:0.35rem;">
               <span>🔊 Putar Kalimat</span>
             </button>
           </div>
 
           <!-- Kotak Kalimat (Pinyin di Atas, Hanzi di Bawah, Rata Tengah) -->
-          <div class="sentence-display-box" onclick="playPinyin('Wǒ xiàwǔ yǒu shì, wǎnshang 7:00 jiàn ba.')" title="Klik dengar audio kalimat">
+          <div class="sentence-display-box" onclick="playPinyin('Wǒ xiàwǔ yǒu shì, wǎnshang qī diǎn jiàn ba.')" title="Klik dengar audio kalimat">
             <div class="sentence-display-label">Kalimat:</div>
-            <div class="bubble-pinyin" style="font-size:1.05rem; font-weight:600; margin-bottom:0.25rem;">Wǒ xiàwǔ yǒu shì, wǎnshang 7:00 jiàn ba.</div>
+            <div class="bubble-pinyin" style="font-size:1.05rem; font-weight:600; margin-bottom:0.25rem;">Wǒ xiàwǔ yǒu shì, wǎnshang qī diǎn jiàn ba.</div>
             <div class="bubble-hanzi" style="font-size:1.55rem; font-weight:700; letter-spacing:0.05em; margin-bottom:0.45rem;">我下午有事，晚上 7:00 见吧。</div>
             <div class="bubble-arti" style="font-size:0.84rem; color:#475569; text-align:center; border-top:1px dashed #fecdd3; padding-top:0.4rem;">
               Arti: Saya ada urusan pada sore hari, mari kita bertemu pukul 7.00 malam.
@@ -2713,7 +2715,7 @@
               <span style="font-size:1.3rem;">⏰🕖</span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
-              <strong>Penjelasan Materi:</strong> Pembicara mengusulkan janji temu pada malam hari pukul 7 tepat (<strong>晚上 7:00 见吧 · wǎnshang 7:00 jiàn ba</strong>). Gambar yang paling sesuai adalah <strong>Gambar C (jam alarm yang menunjuk pada pukul 7.00)</strong>.
+              <strong>Penjelasan Materi:</strong> Pembicara mengusulkan janji temu pada malam hari pukul 7 tepat (<strong>晚上 7:00 见吧 · wǎnshang qī diǎn jiàn ba</strong>). Gambar yang paling sesuai adalah <strong>Gambar C (jam alarm yang menunjuk pada pukul 7.00)</strong>.
             </div>
 
             <!-- Analisis Kosakata -->
@@ -3054,10 +3056,23 @@
       bHz.innerHTML = resB.hanzi;
       bPy.innerHTML = resB.pinyin;
     });
+
+    // 8. Vocab Pills Analisis Kosakata (.vocab-pill: strong & .vocab-py)
+    document.querySelectorAll('.vocab-pill').forEach(pill => {
+      const hzEl = pill.querySelector('strong');
+      const pyEl = pill.querySelector('.vocab-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
   }
 
   function removeColors() {
-    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py, .dialog-hz, .dialog-py').forEach(el => {
+    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py, .dialog-hz, .dialog-py, .vocab-pill strong, .vocab-py').forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
       }
