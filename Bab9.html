@@ -1163,29 +1163,23 @@
 
                 <!-- Contoh 1 -->
                 <div style="background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:0.6rem 0.85rem;">
-                  <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
-                    我们 <span style="color:#b45309;background:#fef3c7;padding:0.1rem 0.4rem;border-radius:6px;">七点</span>（Waktu）<span style="color:#166534;background:#dcfce7;padding:0.1rem 0.4rem;border-radius:6px;">在电影院外边</span>（Tempat）见。
-                  </div>
+                  <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">我们七点在电影院外边见。</div>
                   <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;">Wǒmen qī diǎn zài diànyǐngyuàn wàibian jiàn.</div>
-                  <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);">Kita bertemu pukul tujuh di luar bioskop.</div>
+                  <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);">Kita bertemu pukul tujuh di luar bioskop. <small style="color:#b45309;">(七点: Waktu, 在电影院外边: Tempat)</small></div>
                 </div>
 
                 <!-- Contoh 2 -->
                 <div style="background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:0.6rem 0.85rem;">
-                  <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
-                    安妮 <span style="color:#b45309;background:#fef3c7;padding:0.1rem 0.4rem;border-radius:6px;">下午</span>（Waktu）<span style="color:#166534;background:#dcfce7;padding:0.1rem 0.4rem;border-radius:6px;">在家里</span>（Tempat）学中文。
-                  </div>
+                  <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">安妮下午在家里学中文。</div>
                   <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;">Ānní xiàwǔ zài jiālǐ xué Zhōngwén.</div>
-                  <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);">Anni belajar bahasa Mandarin di rumah pada sore hari.</div>
+                  <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);">Anni belajar bahasa Mandarin di rumah pada sore hari. <small style="color:#b45309;">(下午: Waktu, 在家里: Tempat)</small></div>
                 </div>
 
                 <!-- Contoh 3 -->
                 <div style="background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:0.6rem 0.85rem;">
-                  <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">
-                    陈天中 <span style="color:#b45309;background:#fef3c7;padding:0.1rem 0.4rem;border-radius:6px;">明天中午</span>（Waktu）<span style="color:#166534;background:#dcfce7;padding:0.1rem 0.4rem;border-radius:6px;">在学校</span>（Tempat）吃午饭。
-                  </div>
+                  <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">陈天中明天中午在学校吃午饭。</div>
                   <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;">Chén Tiānzhōng míngtiān zhōngwǔ zài xuéxiào chī wǔfàn.</div>
-                  <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);">Chen Tianzhong makan siang di sekolah besok siang.</div>
+                  <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);">Chen Tianzhong makan siang di sekolah besok siang. <small style="color:#b45309;">(明天中午: Waktu, 在学校: Tempat)</small></div>
                 </div>
 
               </div>
@@ -2153,15 +2147,15 @@
 
     // 6. Classroom items
     document.querySelectorAll('.classroom-box').forEach(box => {
-      box.querySelectorAll('.item-body').forEach(item => {
-        const hzEl = item.querySelector('.bubble-hanzi');
-        const pyEl = item.querySelector('.bubble-pinyin');
-        if (!hzEl || !pyEl) return;
+      box.querySelectorAll('.bubble-hanzi').forEach(hzEl => {
+        const item = hzEl.closest('.bubble-wrap') || hzEl.parentElement;
+        const pyEl = item ? item.querySelector('.bubble-pinyin') : null;
+        if (!pyEl) return;
 
-        if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
-        if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
 
-        const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
         hzEl.innerHTML = res.hanzi;
         pyEl.innerHTML = res.pinyin;
       });
@@ -2171,9 +2165,9 @@
   function removeColors() {
     const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin';
     document.querySelectorAll(selector).forEach(el => {
-      if (el.dataset.origHtml) {
+      if (el.dataset.origHtml !== undefined) {
         el.innerHTML = el.dataset.origHtml;
-      } else if (el.dataset.origText) {
+      } else if (el.dataset.origText !== undefined) {
         el.textContent = el.dataset.origText;
       }
       el.style.color = '';
