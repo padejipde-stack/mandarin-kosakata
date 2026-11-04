@@ -489,15 +489,160 @@
     .btn-text-mobile { display: none; }
 
     /* ── VISIBILITY TOGGLES (CSS CONTROLLED) ── */
-    body:not(.show-pinyin) .contrast-py { display: none !important; }
+    body:not(.show-pinyin) .contrast-py,
+    body:not(.show-pinyin) .match-py { display: none !important; }
 
     body:not(.show-arti) .contrast-arti,
-    body:not(.show-arti) .contrast-tag { display: none !important; }
+    body:not(.show-arti) .contrast-tag,
+    body:not(.show-arti) .match-arti,
+    body:not(.show-arti) .match-scene-desc { display: none !important; }
 
-    body:not(.show-vocab) .contrast-table-container { display: none !important; }
+    body:not(.show-vocab) .contrast-table-container,
+    body:not(.show-vocab) .match-badge,
+    body:not(.show-vocab) .matching-explanation { display: none !important; }
 
     /* ── COLOR OVERRIDES ── */
-    body.show-color .contrast-py { color: inherit !important; }
+    body.show-color .contrast-py,
+    body.show-color .match-py { color: inherit !important; }
+
+    /* ── LATIHAN LISTENING PART 1 (PICTURE MATCHING) ── */
+    .matching-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 0.85rem;
+    }
+    .matching-item {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      transition: all 0.2s ease;
+    }
+    .matching-item:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+    }
+    .matching-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 0.55rem;
+    }
+    .matching-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .matching-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 700px) {
+      .matching-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .match-choice {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 0.75rem;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.35rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .match-choice:hover {
+      border-color: var(--primary);
+      background: #fff1f2;
+      transform: translateY(-2px);
+    }
+    .match-choice.selected-wrong {
+      border: 1.5px solid #cbd5e1;
+      background: #f8fafc;
+    }
+    .match-choice.check-reference {
+      border: 2px solid #16a34a;
+      background: #f0fdf4;
+      box-shadow: 0 0 0 1px #16a34a inset;
+    }
+    .choice-badge-letter {
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 20px;
+      background: #e2e8f0;
+      color: #334155;
+    }
+    .match-choice.check-reference .choice-badge-letter {
+      background: #16a34a;
+      color: #fff;
+    }
+    .match-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin: 0.2rem 0;
+    }
+    .match-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .match-py {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-family: var(--font-pinyin);
+    }
+    .match-arti {
+      font-size: 0.8rem;
+      color: var(--sub);
+      line-height: 1.35;
+    }
+    .match-scene-desc {
+      font-size: 0.72rem;
+      color: #64748b;
+      background: rgba(0,0,0,0.03);
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      width: 100%;
+      margin-top: 0.25rem;
+    }
+    .match-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      margin-top: 0.2rem;
+    }
+    .matching-explanation {
+      background: #fff;
+      border-left: 3.5px solid #16a34a;
+      border-radius: 0 8px 8px 0;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.82rem;
+      color: #334155;
+      line-height: 1.5;
+    }
 
     /* ── RESPONSIVE MOBILE ── */
     @media (max-width: 600px) {
@@ -1438,6 +1583,192 @@
             Dengan datangnya era digital, jalur dan metode untuk mengenali serta membaca aksara Tionghoa melalui Pinyin menjadi semakin beragam. Hal ini semakin memudahkan para pembelajar dalam menguasai aksara Tionghoa serta meningkatkan kemampuan membaca bahasa Mandarin.
           </div>
         </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       BAGIAN 4: LATIHAN LISTENING PART 1 (Mencocokkan Gambar & Waktu/Aktivitas)
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 Bagian 4: Latihan Listening Part 1 · 第一部分 (Soal 1–3)</div>
+    <div class="classroom-box" id="listening-part1-section" style="border-left: 5px solid #be123c;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar av-rose" style="font-size: 1.15rem; font-weight: 700; color: #fff;">听</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #be123c; color: #fff;">Part 1 · 第一部分 (Soal 1–3)</div>
+          <div class="classroom-desc">Mencocokkan gambar dengan keterangan waktu atau aktivitas yang tepat (Pilihan A, B, atau C).</div>
+        </div>
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎧</span>
+          <span>Instruksi Soal Listening Part 1</span>
+        </div>
+        <div class="instruction-quote">
+          “Perhatikan ketiga gambar pilihan (A, B, C) pada setiap nomor. Dengarkan audio rekaman, lalu cocokkan dan pilih keterangan yang paling tepat sesuai gambar.”
+        </div>
+        <div class="instruction-trans">
+          (Listen to the recording, match the audio with the correct time or activity picture, and select the right option.)
+        </div>
+      </div>
+
+      <!-- Daftar Soal 1 - 3 -->
+      <div class="matching-list">
+        
+        <!-- ════ NOMOR 1 (WAKTU / JAM) ════ -->
+        <div class="matching-item">
+          <div class="matching-header">
+            <span class="matching-num">1</span>
+            <div style="flex:1;">
+              <span style="font-size:0.88rem; font-weight:700; color:#1e293b;">Nomor 1: Mencocokkan Waktu / Jam</span>
+            </div>
+          </div>
+
+          <div class="matching-grid">
+            
+            <!-- Pilihan A -->
+            <div class="match-choice selected-wrong" onclick="playWord('下午四点零八分', 'Xiàwǔ sì diǎn líng bā fēn')" title="Klik dengar audio A">
+              <span class="choice-badge-letter">Pilihan A</span>
+              <div class="match-icon">🕓</div>
+              <div class="match-hz">下午四点零八分</div>
+              <div class="match-py">Xiàwǔ sì diǎn líng bā fēn</div>
+              <div class="match-arti">Pukul 04.08 sore</div>
+              <div class="match-scene-desc">Jam dinding dengan jarum pendek di angka 4 dan jarum panjang di angka 2 (lewat kurleb 8 menit)</div>
+            </div>
+
+            <!-- Pilihan B -->
+            <div class="match-choice selected-wrong" onclick="playWord('一点三十八分', 'Yī diǎn sānshí bā fēn')" title="Klik dengar audio B">
+              <span class="choice-badge-letter">Pilihan B</span>
+              <div class="match-icon">🕜</div>
+              <div class="match-hz">一点三十八分</div>
+              <div class="match-py">Yī diǎn sānshí bā fēn</div>
+              <div class="match-arti">Pukul 01.38</div>
+              <div class="match-scene-desc">Jam dinding warna biru dengan jarum pendek di antara angka 1 dan 2, jarum panjang di angka 7/8</div>
+            </div>
+
+            <!-- Pilihan C (Jawaban yang benar/dicentang) -->
+            <div class="match-choice check-reference" onclick="playWord('晚上八点', 'Wǎnshang bā diǎn')" title="Klik dengar audio C (Jawaban Benar)">
+              <span class="choice-badge-letter">Pilihan C</span>
+              <div class="match-icon">⏰</div>
+              <div class="match-hz">晚上八点</div>
+              <div class="match-py">Wǎnshang bā diǎn</div>
+              <div class="match-arti">Pukul 08.00 malam</div>
+              <div class="match-scene-desc">Jam alarm hitam menunjukkan pukul 8 malam</div>
+              <span class="match-badge" style="background:#dcfce7; color:#15803d;">✓ Jawaban Benar / Dicentang</span>
+            </div>
+
+          </div>
+
+          <div class="matching-explanation">
+            <strong>Pembahasan Soal 1:</strong> Jawaban yang benar adalah <strong>C (晚上八点 · Wǎnshang bā diǎn)</strong> karena gambar menunjukkan jam alarm menunjukkan pukul 08.00 malam.
+          </div>
+        </div>
+
+        <!-- ════ NOMOR 2 (AKTIVITAS) ════ -->
+        <div class="matching-item">
+          <div class="matching-header">
+            <span class="matching-num">2</span>
+            <div style="flex:1;">
+              <span style="font-size:0.88rem; font-weight:700; color:#1e293b;">Nomor 2: Mencocokkan Aktivitas Sehari-hari</span>
+            </div>
+          </div>
+
+          <div class="matching-grid">
+            
+            <!-- Pilihan A (Disilang/Salah) -->
+            <div class="match-choice selected-wrong" onclick="playWord('下午上课', 'Xiàwǔ shàngkè')" title="Klik dengar audio A">
+              <span class="choice-badge-letter">Pilihan A</span>
+              <div class="match-icon">🏫</div>
+              <div class="match-hz">下午上课</div>
+              <div class="match-py">Xiàwǔ shàngkè</div>
+              <div class="match-arti">Kelas / Pelajaran siang hari</div>
+              <div class="match-scene-desc">Suasana di dalam kelas / ruang belajar</div>
+              <span class="match-badge" style="background:#fee2e2; color:#b91c1c;">✗ Disilang / Salah</span>
+            </div>
+
+            <!-- Pilihan B (Jawaban yang benar) -->
+            <div class="match-choice check-reference" onclick="playWord('踢足球', 'tī zúqiú')" title="Klik dengar audio B (Jawaban Benar)">
+              <span class="choice-badge-letter">Pilihan B</span>
+              <div class="match-icon">⚽</div>
+              <div class="match-hz">踢足球</div>
+              <div class="match-py">tī zúqiú</div>
+              <div class="match-arti">Bermain sepak bola</div>
+              <div class="match-scene-desc">Orang sedang bermain sepak bola di stadion</div>
+              <span class="match-badge" style="background:#dcfce7; color:#15803d;">✓ Jawaban yang Benar</span>
+            </div>
+
+            <!-- Pilihan C -->
+            <div class="match-choice selected-wrong" onclick="playWord('工作', 'gōngzuò')" title="Klik dengar audio C">
+              <span class="choice-badge-letter">Pilihan C</span>
+              <div class="match-icon">💼</div>
+              <div class="match-hz">工作</div>
+              <div class="match-py">gōngzuò</div>
+              <div class="match-arti">Bekerja</div>
+              <div class="match-scene-desc">Seseorang sedang bekerja di meja kerja / kantor</div>
+            </div>
+
+          </div>
+
+          <div class="matching-explanation">
+            <strong>Pembahasan Soal 2:</strong> Jawaban yang benar adalah <strong>B (踢足球 · tī zúqiú)</strong> karena gambar memperlihatkan aktivitas olahraga bermain sepak bola di stadion.
+          </div>
+        </div>
+
+        <!-- ════ NOMOR 3 (AKTIVITAS) ════ -->
+        <div class="matching-item">
+          <div class="matching-header">
+            <span class="matching-num">3</span>
+            <div style="flex:1;">
+              <span style="font-size:0.88rem; font-weight:700; color:#1e293b;">Nomor 3: Mencocokkan Aktivitas Kegiatan</span>
+            </div>
+          </div>
+
+          <div class="matching-grid">
+            
+            <!-- Pilihan A (Jawaban yang benar/dicentang) -->
+            <div class="match-choice check-reference" onclick="playWord('唱歌', 'chàng gē')" title="Klik dengar audio A (Jawaban Benar)">
+              <span class="choice-badge-letter">Pilihan A</span>
+              <div class="match-icon">🎤</div>
+              <div class="match-hz">唱歌</div>
+              <div class="match-py">chàng gē</div>
+              <div class="match-arti">Menyanyi</div>
+              <div class="match-scene-desc">Seseorang sedang bernyanyi sambil memegang gitar</div>
+              <span class="match-badge" style="background:#dcfce7; color:#15803d;">✓ Jawaban Benar / Dicentang</span>
+            </div>
+
+            <!-- Pilihan B -->
+            <div class="match-choice selected-wrong" onclick="playWord('学习', 'xuéxí')" title="Klik dengar audio B">
+              <span class="choice-badge-letter">Pilihan B</span>
+              <div class="match-icon">📖</div>
+              <div class="match-hz">学习</div>
+              <div class="match-py">xuéxí</div>
+              <div class="match-arti">Belajar</div>
+              <div class="match-scene-desc">Seorang anak sedang belajar di meja</div>
+            </div>
+
+            <!-- Pilihan C -->
+            <div class="match-choice selected-wrong" onclick="playWord('买菜', 'mǎicài')" title="Klik dengar audio C">
+              <span class="choice-badge-letter">Pilihan C</span>
+              <div class="match-icon">🥬</div>
+              <div class="match-hz">买菜</div>
+              <div class="match-py">mǎicài</div>
+              <div class="match-arti">Membeli bahan makanan / sayur</div>
+              <div class="match-scene-desc">Seseorang (wanita) sedang berbelanja bahan makanan/sayur di pasar</div>
+            </div>
+
+          </div>
+
+          <div class="matching-explanation">
+            <strong>Pembahasan Soal 3:</strong> Jawaban yang benar adalah <strong>A (唱歌 · chàng gē)</strong> karena gambar memperlihatkan seseorang sedang bernyanyi sambil memegang gitar.
+          </div>
+        </div>
+
       </div>
 
     </div>
