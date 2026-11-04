@@ -612,6 +612,39 @@
     }
     body.show-arti .twister-arti { display: block; }
 
+    /* ── XIAOYU TIP BOX (CATATAN KHUSUS) ── */
+    .xiaoyu-tip-box {
+      background: #fffbeb;
+      border: 1.5px solid #fde68a;
+      border-left: 5px solid #f59e0b;
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      margin-top: 0.8rem;
+    }
+    .xiaoyu-tip-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .xiaoyu-tip-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #b45309;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .xiaoyu-tip-desc {
+      font-size: 0.84rem;
+      color: #78350f;
+      line-height: 1.55;
+    }
+
     /* ── CHAR CARDS (TOKOH) ── */
     .character-box {
       display: grid;
@@ -883,9 +916,26 @@
   <!-- ══ TEKS 1 ══ -->
   <div>
     <div class="section-title">💬 Teks 1: Di Kampus (在校园里)</div>
+
+    <!-- 💡 XIAOYU'S TIP ATAS: PENGUCAPAN & TATA BAHASA "边" (biān) -->
+    <div class="xiaoyu-tip-box" style="margin-bottom: 1rem; border-left-color: #f59e0b; background: #fffbeb;">
+      <div class="avatar av-xiaoyu" style="width:38px;height:38px;font-size:0.95rem;">语</div>
+      <div class="xiaoyu-tip-content">
+        <div class="xiaoyu-tip-title">
+          <span>💡 Xiaoyu's Tip: Penjelasan Pengucapan &amp; Karakter “边” (biān)</span>
+        </div>
+        <div class="xiaoyu-tip-desc">
+          • Kata <strong>qiánbiān</strong> (前边 - di depan) dapat diubah menjadi bentuk <em>retroflex suffix</em> (penambahan akhiran "r" atau Erhua) menjadi <strong>qiánbiānr (前边儿)</strong>.<br>
+          • Di sini, kata <strong>“边”</strong> berfungsi sebagai akhiran posisi dan diucapkan dengan <strong>nada netral (neutral tone / 轻声)</strong>.<br>
+          • Namun, ketika <strong>“边”</strong> berdiri sendiri atau berfungsi sebagai kata benda murni, kata tersebut diucapkan dengan <strong>nada pertama</strong>, yaitu <strong>“biān”</strong>.<br>
+          • <em>Catatan Posisi Sebaliknya:</em> Kalimat <code>学校前边有一家电影院</code> (Di depan sekolah ada bioskop) memiliki posisi sebaliknya: <strong>“电影院前边是学校”</strong> (Di depan bioskop adalah sekolah).
+        </div>
+      </div>
+    </div>
+
     <div class="dialog-box">
       <div class="dialog-header">
-        <div class="dialog-title">📍 Teks 1: 李文 dan 白家月 merencanakan nonton film</div>
+        <div class="dialog-title">📍 Teks 1: 李文 (Li Wen) dan 白家月 (Bai Jiayue / Nadia) merencanakan nonton film</div>
       </div>
       <div class="dialog-body">
 
@@ -900,23 +950,23 @@
             <div class="bubble">
               <div class="bubble-hanzi">学校前边有一家电影院。</div>
               <div class="bubble-pinyin">Xuéxiào qiánbian yǒu yì jiā diànyǐngyuàn.</div>
-              <div class="bubble-arti">Di depan sekolah ada sebuah bioskop.</div>
+              <div class="bubble-arti">Di depan sekolah ada satu bioskop.</div>
             </div>
           </div>
         </div>
 
         <!-- Line 2: Bai Jiayue -->
         <div class="dialog-line right">
-          <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">白</div>
+          <div class="avatar av-bai" title="白家月 / Nadia (Bái Jiāyuè)">白</div>
           <div class="bubble-wrap">
             <span class="speaker-name">
-              <span class="speaker-hanzi">白家月</span>
+              <span class="speaker-hanzi">白家月 (Nadia)</span>
               <span class="speaker-pinyin">Bái Jiāyuè</span>
             </span>
             <div class="bubble">
               <div class="bubble-hanzi">对。我们晚上去那个电影院看电影吧。</div>
               <div class="bubble-pinyin">Duì. Wǒmen wǎnshang qù nàge diànyǐngyuàn kàn diànyǐng ba.</div>
-              <div class="bubble-arti">Benar. Nanti malam kita pergi ke bioskop itu untuk menonton film yuk.</div>
+              <div class="bubble-arti">Betul. Malam kita pergi ke bioskop nonton film yuk.</div>
             </div>
           </div>
         </div>
@@ -932,27 +982,40 @@
             <div class="bubble">
               <div class="bubble-hanzi">好！我们七点在电影院外边见，好吗？</div>
               <div class="bubble-pinyin">Hǎo! Wǒmen qī diǎn zài diànyǐngyuàn wàibian jiàn, hǎo ma?</div>
-              <div class="bubble-arti">Bagus! Kita bertemu jam 7 di luar bioskop, bagaimana?</div>
+              <div class="bubble-arti">Oke! Jam 7 kita temuan di depan (luar) bioskop, oke gak?</div>
             </div>
           </div>
         </div>
 
         <!-- Line 4: Bai Jiayue -->
         <div class="dialog-line right">
-          <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">白</div>
+          <div class="avatar av-bai" title="白家月 / Nadia (Bái Jiāyuè)">白</div>
           <div class="bubble-wrap">
             <span class="speaker-name">
-              <span class="speaker-hanzi">白家月</span>
+              <span class="speaker-hanzi">白家月 (Nadia)</span>
               <span class="speaker-pinyin">Bái Jiāyuè</span>
             </span>
             <div class="bubble">
               <div class="bubble-hanzi">好的，晚上七点见！</div>
               <div class="bubble-pinyin">Hǎo de, wǎnshang qī diǎn jiàn!</div>
-              <div class="bubble-arti">Baiklah, sampai jumpa nanti malam jam 7!</div>
+              <div class="bubble-arti">Oke, sampai ketemu jam 7 malam nanti.</div>
             </div>
           </div>
         </div>
 
+      </div>
+
+      <!-- 💡 XIAOYU'S TIP KANAN: PENGUCAPAN LISAN “那个” (nàge / nèige) -->
+      <div class="xiaoyu-tip-box" style="margin-top: 0.5rem; border-left-color: #3b82f6; background: #eff6ff;">
+        <div class="avatar av-xiaoyu" style="width:38px;height:38px;font-size:0.95rem;background:linear-gradient(135deg, #3b82f6, #1d4ed8);">语</div>
+        <div class="xiaoyu-tip-content">
+          <div class="xiaoyu-tip-title" style="color:#1d4ed8;">
+            <span>🗣️ Xiaoyu's Tip: Pengucapan Lisan (Colloquial) “那个”</span>
+          </div>
+          <div class="xiaoyu-tip-desc" style="color:#1e3a8a;">
+            Dalam percakapan sehari-hari atau bahasa lisan (<em>colloquial speech</em>), kata <strong>“那个”</strong> (yang artinya "itu / that") sering kali diucapkan sebagai <strong>“nèige”</strong> (selain pengucapan standar <em>“nàge”</em>). Begitu pula dengan <strong>“这个”</strong> yang kerap diucapkan sebagai <strong>“zhèige”</strong>.
+          </div>
+        </div>
       </div>
 
       <!-- KOSAKATA TEKS 1 -->
