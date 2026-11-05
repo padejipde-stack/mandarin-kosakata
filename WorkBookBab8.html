@@ -627,6 +627,8 @@
     body.show-color .vocab-py,
     body.show-color .pair-box-hz,
     body.show-color .pair-box-py,
+    body.show-color .reading-pic-hz,
+    body.show-color .reading-pic-py,
     body.show-color .cloze-hz,
     body.show-color .cloze-py { color: inherit !important; }
 
@@ -2885,34 +2887,46 @@
         <div class="reading-pic-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 640px; margin: 0 auto 1.25rem; gap: 1rem;">
           
           <!-- Gambar A: Membaca Buku -->
-          <div class="reading-pic-card">
+          <div class="reading-pic-card" onclick="playWord('看书', 'Kàn shū')" title="Klik dengar audio: 看书" style="cursor:pointer;">
             <span class="reading-pic-letter">Gambar A</span>
             <div class="reading-pic-icon" style="font-size: 2.8rem; line-height: 1.1; margin: 0.6rem 0;">📖👩</div>
-            <div class="reading-pic-label" style="font-weight: 700; color: #1e293b; font-size: 0.88rem;">看书 (Kàn shū)</div>
+            <div class="reading-pic-label" style="font-size: 0.95rem; margin-bottom: 0.2rem;">
+              <span class="reading-pic-hz" style="font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">看书</span>
+              <span class="reading-pic-py" style="font-weight:600; font-family:var(--font-pinyin); color:#4f46e5; margin-left:0.25rem;">(Kàn shū)</span>
+            </div>
             <div style="font-size: 0.76rem; color: #64748b;">Membaca buku</div>
           </div>
 
           <!-- Gambar B: Ponsel di Atas Meja -->
-          <div class="reading-pic-card">
+          <div class="reading-pic-card" onclick="playWord('手机在桌子上', 'Shǒujī zài zhuōzi shang')" title="Klik dengar audio: 手机在桌子上" style="cursor:pointer;">
             <span class="reading-pic-letter">Gambar B</span>
             <div class="reading-pic-icon" style="font-size: 2.8rem; line-height: 1.1; margin: 0.6rem 0;">📱🪵</div>
-            <div class="reading-pic-label" style="font-weight: 700; color: #1e293b; font-size: 0.88rem;">手机在桌子上 (Shǒujī zài zhuōzi shang)</div>
+            <div class="reading-pic-label" style="font-size: 0.95rem; margin-bottom: 0.2rem;">
+              <span class="reading-pic-hz" style="font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">手机在桌子上</span>
+              <span class="reading-pic-py" style="font-weight:600; font-family:var(--font-pinyin); color:#4f46e5; margin-left:0.25rem;">(Shǒujī zài zhuōzi shang)</span>
+            </div>
             <div style="font-size: 0.76rem; color: #64748b;">Telepon genggam berada di atas meja</div>
           </div>
 
           <!-- Gambar C: Dokter & Perawat di Rumah Sakit -->
-          <div class="reading-pic-card">
+          <div class="reading-pic-card" onclick="playWord('医院里医生工作', 'Yīyuàn lǐ yīshēng gōngzuò')" title="Klik dengar audio: 医院里医生工作" style="cursor:pointer;">
             <span class="reading-pic-letter">Gambar C</span>
             <div class="reading-pic-icon" style="font-size: 2.8rem; line-height: 1.1; margin: 0.6rem 0;">👨‍⚕️🏥</div>
-            <div class="reading-pic-label" style="font-weight: 700; color: #1e293b; font-size: 0.88rem;">医院里医生工作 (Yīyuàn lǐ yīshēng gōngzuò)</div>
+            <div class="reading-pic-label" style="font-size: 0.95rem; margin-bottom: 0.2rem;">
+              <span class="reading-pic-hz" style="font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">医院里医生工作</span>
+              <span class="reading-pic-py" style="font-weight:600; font-family:var(--font-pinyin); color:#4f46e5; margin-left:0.25rem;">(Yīyuàn lǐ yīshēng gōngzuò)</span>
+            </div>
             <div style="font-size: 0.76rem; color: #64748b;">Dokter dan perawat bekerja di rumah sakit</div>
           </div>
 
           <!-- Gambar D: Bersantap Makan Siang -->
-          <div class="reading-pic-card">
+          <div class="reading-pic-card" onclick="playWord('吃午饭', 'Chī wǔfàn')" title="Klik dengar audio: 吃午饭" style="cursor:pointer;">
             <span class="reading-pic-letter">Gambar D</span>
             <div class="reading-pic-icon" style="font-size: 2.8rem; line-height: 1.1; margin: 0.6rem 0;">🍱🥢</div>
-            <div class="reading-pic-label" style="font-weight: 700; color: #1e293b; font-size: 0.88rem;">吃午饭 (Chī wǔfàn)</div>
+            <div class="reading-pic-label" style="font-size: 0.95rem; margin-bottom: 0.2rem;">
+              <span class="reading-pic-hz" style="font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">吃午饭</span>
+              <span class="reading-pic-py" style="font-weight:600; font-family:var(--font-pinyin); color:#4f46e5; margin-left:0.25rem;">(Chī wǔfàn)</span>
+            </div>
             <div style="font-size: 0.76rem; color: #64748b;">Bersantap makan siang</div>
           </div></div>
       </div>
@@ -3658,7 +3672,21 @@
       pyEl.innerHTML = res.pinyin;
     });
 
-    // 11. Reading Part 3 Kotak Kalimat Rumpang (.cloze-sentence-display, .cloze-hz & .cloze-py)
+    // 11. Reading Part 1 Pilihan Gambar A-D (.reading-pic-card: .reading-pic-hz & .reading-pic-py)
+    document.querySelectorAll('.reading-pic-card').forEach(card => {
+      const hzEl = card.querySelector('.reading-pic-hz');
+      const pyEl = card.querySelector('.reading-pic-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      let pyText = pyEl.dataset.origHtml.replace(/^[((]/, '').replace(/[))]$/, '');
+      const res = colorizePair(hzEl.dataset.origHtml, pyText);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = '(' + res.pinyin + ')';
+    });
+
+    // 12. Reading Part 3 Kotak Kalimat Rumpang (.cloze-sentence-display, .cloze-hz & .cloze-py)
     document.querySelectorAll('.cloze-hz').forEach(hzEl => {
       const container = hzEl.parentElement;
       if (!container) return;
@@ -3672,7 +3700,7 @@
       pyEl.innerHTML = res.pinyin;
     });
 
-    // 12. Reading Part 3 Pil Opsi Pilihan (.cloze-pill: .opt-hz & .opt-py)
+    // 13. Reading Part 3 Pil Opsi Pilihan (.cloze-pill: .opt-hz & .opt-py)
     document.querySelectorAll('.cloze-pill').forEach(pill => {
       const hzEl = pill.querySelector('.opt-hz');
       const pyEl = pill.querySelector('.opt-py');
@@ -3688,7 +3716,7 @@
   }
 
   function removeColors() {
-    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py, .dialog-hz, .dialog-py, .vocab-pill strong, .vocab-py, .pair-box-hz, .pair-box-py, .cloze-hz, .cloze-py').forEach(el => {
+    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py, .dialog-hz, .dialog-py, .vocab-pill strong, .vocab-py, .pair-box-hz, .pair-box-py, .reading-pic-hz, .reading-pic-py, .cloze-hz, .cloze-py').forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;
       }
