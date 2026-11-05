@@ -763,6 +763,77 @@
     .insight-text strong {
       color: #0f172a;
     }
+
+    /* ── LISTENING PRE-TEXT 2 CARD ── */
+    .listen-task-card {
+      background: #ffffff;
+      border: 1.5px solid #fbcfe8;
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      box-shadow: 0 2px 8px rgba(219, 39, 119, 0.05);
+      transition: all 0.2s ease;
+    }
+    .listen-task-card:hover {
+      border-color: #ec4899;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.1);
+    }
+    .listen-task-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px dashed #fbcfe8;
+      padding-bottom: 0.5rem;
+    }
+    .listen-task-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-weight: 800;
+      font-size: 0.82rem;
+      color: #9d174d;
+      background: #fce7f3;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .listen-options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.65rem;
+      margin-top: 0.35rem;
+    }
+    .listen-opt-btn {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 0.65rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .listen-opt-btn:hover {
+      border-color: #ec4899;
+      background: #fdf2f8;
+      transform: translateY(-2px);
+    }
+    .listen-opt-btn.correct {
+      border-color: #10b981;
+      background: #ecfdf5;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+    }
+    .listen-opt-letter {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #9d174d;
+    }
+    .listen-opt-btn.correct .listen-opt-letter {
+      color: #059669;
+    }
     .de-formula {
       display: flex;
       align-items: center;
@@ -1985,6 +2056,146 @@
         </div>
 
       </div>
+    </div>
+  </div>
+
+  <!-- ══ LATIHAN MENDENGARKAN SEBELUM TEKS 2 (听力练习 · LISTENING PRE-TEXT 2) ══ -->
+  <div>
+    <div class="section-title">🎧 Latihan Mendengar Sebelum Teks 2 · 听录音选答案 (Soal 1–2)</div>
+    
+    <div class="classroom-box" style="border-left: 5px solid #db2777; background: #fff;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar" style="background:#db2777; font-size:1.15rem; font-weight:700; color:#fff;">听</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fce7f3; color:#9d174d;">听力理解 · Listening Pre-Text 2</div>
+          <div class="classroom-desc">
+            <strong>听两遍对话，选择正确答案。</strong> (Listen to the dialogue twice and choose the correct answer / Dengarkan rekaman percakapan dua kali, lalu pilihlah jawaban yang benar).
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:1.1rem; margin-top:0.4rem;">
+        
+        <!-- SOAL ( 1 ) -->
+        <div class="listen-task-card">
+          <div class="listen-task-header">
+            <span class="listen-task-badge">🎧 PERTANYAAN ( 1 )</span>
+            <span class="dialogue-key-pill">Kunci Jawaban: [ A ✓ 一本书 ]</span>
+          </div>
+
+          <!-- Kalimat Soal 1 -->
+          <div style="cursor:pointer; padding:0.4rem 0.2rem;" onclick="playPinyin('Yǐzi shang yǒu yì běn shū.')" title="Klik dengar kalimat lengkap Soal 1">
+            <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#db2777; margin-bottom:0.15rem;">
+              ( 1 ) Yǐzi shang yǒu ( yì běn shū ).
+            </div>
+            <div class="bubble-hanzi" style="font-size:1.35rem; font-weight:700; color:#1e293b;">
+              ( 1 ) 椅子上 有（ <span class="cloze-blank-box" style="border-color:#10b981; background:#ecfdf5; color:#059669;">一本书</span> ）。
+            </div>
+            <div style="font-size:0.82rem; color:#64748b; font-style:italic; margin-top:0.25rem;">
+              Arti: "Di atas kursi ada satu buku."
+            </div>
+          </div>
+
+          <!-- Pilihan Opsi (A - C) -->
+          <div class="listen-options-grid">
+            <div class="listen-opt-btn correct" onclick="playPinyin('yì běn shū')" title="Klik dengar opsi A">
+              <div style="display:flex; align-items:center; justify-content:space-between;">
+                <span class="listen-opt-letter">A</span>
+                <span style="font-size:0.75rem; color:#059669; font-weight:800;">✓ Benar</span>
+              </div>
+              <div class="bubble-pinyin" style="font-size:0.8rem; color:#059669; font-weight:600;">yì běn shū</div>
+              <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">一本书</div>
+              <div style="font-size:0.75rem; color:#64748b;">Sebuah buku</div>
+            </div>
+
+            <div class="listen-opt-btn" onclick="playPinyin('yì zhī māo')" title="Klik dengar opsi B">
+              <span class="listen-opt-letter">B</span>
+              <div class="bubble-pinyin" style="font-size:0.8rem; color:#64748b; font-weight:600;">yì zhī māo</div>
+              <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">一只猫</div>
+              <div style="font-size:0.75rem; color:#64748b;">Seekor kucing</div>
+            </div>
+
+            <div class="listen-opt-btn" onclick="playPinyin('yí gè shǒujī')" title="Klik dengar opsi C">
+              <span class="listen-opt-letter">C</span>
+              <div class="bubble-pinyin" style="font-size:0.8rem; color:#64748b; font-weight:600;">yí gè shǒujī</div>
+              <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">一个手机</div>
+              <div style="font-size:0.75rem; color:#64748b;">Sebuah ponsel/HP</div>
+            </div>
+          </div>
+
+          <!-- Pembahasan Insight Soal 1 -->
+          <div class="dialogue-insight-card">
+            <div class="insight-row">
+              <span class="insight-pill pill-reason">💡 Alasan</span>
+              <div class="insight-text">
+                Dalam percakapan Teks 2, Bai Jiayue berkata: <em>“椅子上有一本中文书，那是谁的书？”</em> (Di atas kursi ada sebuah buku bahasa Mandarin). Benda yang berada di atas kursi adalah buku, sehingga jawaban yang tepat adalah <strong>A. 一本书 (yì běn shū)</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOAL ( 2 ) -->
+        <div class="listen-task-card">
+          <div class="listen-task-header">
+            <span class="listen-task-badge">🎧 PERTANYAAN ( 2 )</span>
+            <span class="dialogue-key-pill">Kunci Jawaban: [ B ✓ 第二本 ]</span>
+          </div>
+
+          <!-- Kalimat Soal 2 -->
+          <div style="cursor:pointer; padding:0.4rem 0.2rem;" onclick="playPinyin('Zhè shì Chén Tiānzhōng de dì-èr běn Zhōngwén shū.')" title="Klik dengar kalimat lengkap Soal 2">
+            <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#db2777; margin-bottom:0.15rem;">
+              ( 2 ) Zhè shì Chén Tiānzhōng de ( dì-èr běn ) Zhōngwén shū.
+            </div>
+            <div class="bubble-hanzi" style="font-size:1.35rem; font-weight:700; color:#1e293b;">
+              ( 2 ) 这是 陈 天中的（ <span class="cloze-blank-box" style="border-color:#10b981; background:#ecfdf5; color:#059669;">第二本</span> ）中文 书。
+            </div>
+            <div style="font-size:0.82rem; color:#64748b; font-style:italic; margin-top:0.25rem;">
+              Arti: "Ini adalah buku bahasa Mandarin ke-2 milik Chen Tianzhong."
+            </div>
+          </div>
+
+          <!-- Pilihan Opsi (A - C) -->
+          <div class="listen-options-grid">
+            <div class="listen-opt-btn" onclick="playPinyin('dì-yī běn')" title="Klik dengar opsi A">
+              <span class="listen-opt-letter">A</span>
+              <div class="bubble-pinyin" style="font-size:0.8rem; color:#64748b; font-weight:600;">dì-yī běn</div>
+              <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">第一本</div>
+              <div style="font-size:0.75rem; color:#64748b;">Buku pertama</div>
+            </div>
+
+            <div class="listen-opt-btn correct" onclick="playPinyin('dì-èr běn')" title="Klik dengar opsi B">
+              <div style="display:flex; align-items:center; justify-content:space-between;">
+                <span class="listen-opt-letter">B</span>
+                <span style="font-size:0.75rem; color:#059669; font-weight:800;">✓ Benar</span>
+              </div>
+              <div class="bubble-pinyin" style="font-size:0.8rem; color:#059669; font-weight:600;">dì-èr běn</div>
+              <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">第二本</div>
+              <div style="font-size:0.75rem; color:#64748b;">Buku kedua</div>
+            </div>
+
+            <div class="listen-opt-btn" onclick="playPinyin('dì-sān běn')" title="Klik dengar opsi C">
+              <span class="listen-opt-letter">C</span>
+              <div class="bubble-pinyin" style="font-size:0.8rem; color:#64748b; font-weight:600;">dì-sān běn</div>
+              <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">第三本</div>
+              <div style="font-size:0.75rem; color:#64748b;">Buku ketiga</div>
+            </div>
+          </div>
+
+          <!-- Pembahasan Insight Soal 2 -->
+          <div class="dialogue-insight-card">
+            <div class="insight-row">
+              <span class="insight-pill pill-reason">💡 Alasan</span>
+              <div class="insight-text">
+                Chen Tianzhong menjawab dalam percakapan: <em>“是我的书，谢谢，这是我的第二本中文书。”</em> (Itu buku saya, terima kasih, ini buku bahasa Mandarin kedua saya). Menggunakan rumus bilangan bertingkat <strong>第 (dì) + 二 (èr) + 本 (běn)</strong>, sehingga jawaban yang tepat adalah <strong>B. 第二本 (dì-èr běn)</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </div>
 
