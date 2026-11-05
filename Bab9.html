@@ -715,14 +715,53 @@
       margin: 0 0.2rem;
       box-shadow: 0 1px 3px rgba(59, 130, 246, 0.15);
     }
-    .dialogue-explain-box {
+
+    /* ── STYLED INSIGHT CARD UNTUK PEMBAHASAN & ARTI ── */
+    .dialogue-insight-card {
       background: #f8fafc;
-      border-left: 3.5px solid #d97706;
-      border-radius: 8px;
-      padding: 0.65rem 0.85rem;
-      font-size: 0.82rem;
-      color: #475569;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-top: 0.2rem;
+    }
+    .insight-row {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+    .insight-pill {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      letter-spacing: 0.4px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .pill-reason {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+    .pill-meaning {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+    .insight-text {
+      font-size: 0.84rem;
       line-height: 1.55;
+      color: #334155;
+      flex: 1;
+    }
+    .insight-text strong {
+      color: #0f172a;
     }
     .de-formula {
       display: flex;
@@ -1879,10 +1918,20 @@
                     </div>
                   </div>
 
-                  <!-- Penjelasan Soal 1 -->
-                  <div class="dialogue-explain-box">
-                    💡 <strong>Pembahasan (1):</strong> Karena respons <strong>B</strong> menyatakan lokasi/tempat belajar (<strong>在学校</strong> · <em>zài xuéxiào - di sekolah</em>), maka kata tanya yang tepat untuk melengkapi bagian rumpang adalah <strong>在哪儿 (zài nǎr - di mana)</strong>.<br>
-                    💬 <strong>Arti Dialog:</strong> <em>A: "Jam dua siang ini kalian kuliah/sekolah di mana?" — B: "Di sekolah."</em>
+                  <!-- Penjelasan Soal 1: Desain Kartu Rinci & Terstruktur -->
+                  <div class="dialogue-insight-card">
+                    <div class="insight-row">
+                      <span class="insight-pill pill-reason">💡 Alasan</span>
+                      <div class="insight-text">
+                        Karena respons <strong>B</strong> menyatakan lokasi/tempat belajar (<strong>在学校</strong> · <em>zài xuéxiào = di sekolah</em>), maka kata tanya yang tepat untuk melengkapi bagian rumpang adalah kata tanya penunjuk lokasi: <strong>在哪儿 (zài nǎr - di mana)</strong>.
+                      </div>
+                    </div>
+                    <div class="insight-row">
+                      <span class="insight-pill pill-meaning">💬 Arti</span>
+                      <div class="insight-text">
+                        <strong>A:</strong> "Jam dua siang ini kalian kuliah/sekolah di mana?" — <strong>B:</strong> "Di sekolah."
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -1913,10 +1962,20 @@
                     </div>
                   </div>
 
-                  <!-- Penjelasan Soal 2 -->
-                  <div class="dialogue-explain-box">
-                    💡 <strong>Pembahasan (2):</strong> Sesuai rumus pokok kalimat: <strong>Subjek (你们) + Keterangan Waktu (现在) + 在 + Tempat (在超市) + Kata Kerja (买) + Objek (什么) + 呢</strong>. Kata waktu yang tepat untuk melengkapi bagian rumpang sebelum <em>在超市</em> adalah <strong>现在 (xiànzài - sekarang)</strong>.<br>
-                    💬 <strong>Arti Dialog:</strong> <em>A: "Kalian sekarang sedang belanja apa di supermarket?" — B: "Sedang beli sayuran."</em>
+                  <!-- Penjelasan Soal 2: Desain Kartu Rinci & Terstruktur -->
+                  <div class="dialogue-insight-card">
+                    <div class="insight-row">
+                      <span class="insight-pill pill-reason">💡 Alasan</span>
+                      <div class="insight-text">
+                        Sesuai rumus baku kalimat bahasa Mandarin: <strong>Subjek (你们) + Keterangan Waktu (现在) + 在 + Tempat (在超市) + Verb (买) + Objek (什么) + 呢</strong>. Kata yang paling tepat mengisi bagian rumpang sebelum <em>在超市</em> adalah keterangan waktu saat ini: <strong>现在 (xiànzài - sekarang)</strong>.
+                      </div>
+                    </div>
+                    <div class="insight-row">
+                      <span class="insight-pill pill-meaning">💬 Arti</span>
+                      <div class="insight-text">
+                        <strong>A:</strong> "Kalian sekarang sedang belanja apa di supermarket?" — <strong>B:</strong> "Sedang beli sayuran."
+                      </div>
+                    </div>
                   </div>
                 </div>
 
