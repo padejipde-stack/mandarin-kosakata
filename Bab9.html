@@ -610,6 +610,120 @@
       color: #b91c1c;
       font-size: 0.82rem;
     }
+
+    /* ── DIALOGUE COMPLETION EXERCISE (完成对话) ── */
+    .dialogue-cloze-card {
+      background: #ffffff;
+      border: 1.5px solid #fed7aa;
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.05);
+      transition: all 0.2s ease;
+    }
+    .dialogue-cloze-card:hover {
+      border-color: #f97316;
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.1);
+    }
+    .dialogue-cloze-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px dashed #fed7aa;
+      padding-bottom: 0.5rem;
+    }
+    .dialogue-num-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-weight: 800;
+      font-size: 0.82rem;
+      color: #c2410c;
+      background: #ffedd5;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .dialogue-key-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #15803d;
+      background: #dcfce7;
+      border: 1px solid #bbf7d0;
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+    }
+    .dialogue-chat-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .dialogue-chat-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      cursor: pointer;
+      padding: 0.45rem 0.65rem;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .dialogue-chat-row:hover {
+      background: #fffaf5;
+    }
+    .dialogue-chat-speaker {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+      color: #fff;
+    }
+    .spk-a { background: #ea580c; }
+    .spk-b { background: #0284c7; }
+    .dialogue-chat-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .dialogue-hz-line {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #1e293b;
+      letter-spacing: 0.5px;
+      line-height: 1.35;
+    }
+    .dialogue-py-line {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .cloze-blank-box {
+      display: inline-block;
+      padding: 0.1rem 0.45rem;
+      border-radius: 6px;
+      border: 1.5px solid #3b82f6;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-weight: 800;
+      margin: 0 0.2rem;
+      box-shadow: 0 1px 3px rgba(59, 130, 246, 0.15);
+    }
+    .dialogue-explain-box {
+      background: #f8fafc;
+      border-left: 3.5px solid #d97706;
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.55;
+    }
     .de-formula {
       display: flex;
       align-items: center;
@@ -1725,40 +1839,84 @@
         </div>
 
         <!-- 3. 完成对话 (Complete the Dialogues) -->
-        <div class="classroom-item" style="border-left: 4px solid #d97706;">
+        <div class="classroom-item" style="border-left: 4px solid #d97706; background:#fffcf9;">
           <div class="item-number" style="background:#d97706;color:#fff;">3</div>
           <div class="item-content">
-            <div class="item-title" style="color:#92400e;font-size:1rem;">
+            <div class="item-title" style="color:#92400e;font-size:1.05rem;">
               3. 完成对话 (Complete the Dialogues) — Melengkapi Percakapan
             </div>
             <div class="item-body">
-              <p style="margin-bottom:0.6rem;">
-                Latihan mengisi bagian rumpang pada kalimat tanya berdasarkan jawaban lawan bicara:
+              <p style="margin-bottom:0.85rem; font-size:0.86rem; color:#475569;">
+                Latihan melengkapi bagian rumpang pada kalimat tanya berdasarkan jawaban lawan bicara (klik baris untuk mendengar audio):
               </p>
 
-              <div style="display:flex;flex-direction:column;gap:0.75rem;">
+              <div style="display:flex; flex-direction:column; gap:1rem;">
 
-                <!-- Soal 1 -->
-                <div style="background:#ffffff;border:1px solid #fed7aa;border-radius:10px;padding:0.75rem 0.95rem;">
-                  <div style="font-size:0.88rem;color:var(--text);line-height:1.6;cursor:pointer;" onclick="playPinyin('Nǐmen jīntiān xiàwǔ liǎng diǎn zài nǎr shàngkè? Zài xuéxiào.')" title="Klik dengar audio dialog 1">
-                    <span style="font-weight:700;color:#c2410c;">( 1 )</span> <strong>A:</strong> 你们今天下午两点（ <strong style="color:#2563eb;text-decoration:underline;">在哪儿</strong> ）上课？&nbsp;&nbsp;&nbsp;&nbsp;<strong>B:</strong> <strong>在学校。</strong><br>
-                    <span style="font-size:0.8rem;color:#64748b;">( 1 ) A: Nǐmen jīntiān xiàwǔ liǎng diǎn (<strong>zài nǎr</strong>) shàngkè?&nbsp;&nbsp;&nbsp;&nbsp;B: <strong>Zài xuéxiào.</strong></span>
+                <!-- Soal ( 1 ) Card -->
+                <div class="dialogue-cloze-card">
+                  <div class="dialogue-cloze-header">
+                    <span class="dialogue-num-badge">📌 PERCAKAPAN ( 1 )</span>
+                    <span class="dialogue-key-pill">Kunci Isian: [ 在哪儿 · zài nǎr ]</span>
                   </div>
-                  <div style="margin-top:0.4rem;padding-top:0.4rem;border-top:1px dashed #fed7aa;font-size:0.8rem;color:#78350f;">
-                    💡 <strong>Pembahasan (1):</strong> Karena jawaban B menyatakan keterangan tempat (<strong>在学校</strong> · <em>zài xuéxiào - di sekolah</em>), maka kata tanya yang tepat untuk melengkapi bagian rumpang adalah <strong>在哪儿 (zài nǎr - di mana)</strong>.<br>
-                    <em>Arti:</em> A: "Kalian hari ini jam 2 siang kuliah/belajar di mana?" — B: "Di sekolah."
+
+                  <div class="dialogue-chat-flow">
+                    <!-- Speaker A -->
+                    <div class="dialogue-chat-row" onclick="playPinyin('Nǐmen jīntiān xiàwǔ liǎng diǎn zài nǎr shàngkè?')" title="Klik dengar pertanyaan A">
+                      <div class="dialogue-chat-speaker spk-a">A</div>
+                      <div class="dialogue-chat-text">
+                        <div class="dialogue-py-line bubble-pinyin">Nǐmen jīntiān xiàwǔ liǎng diǎn zài nǎr shàngkè?</div>
+                        <div class="dialogue-hz-line bubble-hanzi">你们今天下午两点（ <span class="cloze-blank-box">在哪儿</span> ）上课？</div>
+                      </div>
+                    </div>
+
+                    <!-- Speaker B -->
+                    <div class="dialogue-chat-row" onclick="playPinyin('Zài xuéxiào.')" title="Klik dengar jawaban B">
+                      <div class="dialogue-chat-speaker spk-b">B</div>
+                      <div class="dialogue-chat-text">
+                        <div class="dialogue-py-line bubble-pinyin">Zài xuéxiào.</div>
+                        <div class="dialogue-hz-line bubble-hanzi">在学校。</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Penjelasan Soal 1 -->
+                  <div class="dialogue-explain-box">
+                    💡 <strong>Pembahasan (1):</strong> Karena respons <strong>B</strong> menyatakan lokasi/tempat belajar (<strong>在学校</strong> · <em>zài xuéxiào - di sekolah</em>), maka kata tanya yang tepat untuk melengkapi bagian rumpang adalah <strong>在哪儿 (zài nǎr - di mana)</strong>.<br>
+                    💬 <strong>Arti Dialog:</strong> <em>A: "Jam dua siang ini kalian kuliah/sekolah di mana?" — B: "Di sekolah."</em>
                   </div>
                 </div>
 
-                <!-- Soal 2 -->
-                <div style="background:#ffffff;border:1px solid #fed7aa;border-radius:10px;padding:0.75rem 0.95rem;">
-                  <div style="font-size:0.88rem;color:var(--text);line-height:1.6;cursor:pointer;" onclick="playPinyin('Nǐmen xiànzài zài chāoshì mǎi shénme ne? Mǎi cài ne.')" title="Klik dengar audio dialog 2">
-                    <span style="font-weight:700;color:#c2410c;">( 2 )</span> <strong>A:</strong> 你们（ <strong style="color:#2563eb;text-decoration:underline;border:1.5px solid #93c5fd;padding:0 4px;border-radius:4px;background:#eff6ff;">现在</strong> ）在超市买什么呢？&nbsp;&nbsp;&nbsp;&nbsp;<strong>B:</strong> <strong>买菜呢。</strong><br>
-                    <span style="font-size:0.8rem;color:#64748b;">( 2 ) A: Nǐmen (<strong>xiànzài</strong>) zài chāoshì mǎi shénme ne?&nbsp;&nbsp;&nbsp;&nbsp;B: <strong>Mǎi cài ne.</strong></span>
+                <!-- Soal ( 2 ) Card -->
+                <div class="dialogue-cloze-card">
+                  <div class="dialogue-cloze-header">
+                    <span class="dialogue-num-badge">📌 PERCAKAPAN ( 2 )</span>
+                    <span class="dialogue-key-pill">Kunci Isian: [ 现在 · xiànzài ]</span>
                   </div>
-                  <div style="margin-top:0.4rem;padding-top:0.4rem;border-top:1px dashed #fed7aa;font-size:0.8rem;color:#78350f;">
+
+                  <div class="dialogue-chat-flow">
+                    <!-- Speaker A -->
+                    <div class="dialogue-chat-row" onclick="playPinyin('Nǐmen xiànzài zài chāoshì mǎi shénme ne?')" title="Klik dengar pertanyaan A">
+                      <div class="dialogue-chat-speaker spk-a">A</div>
+                      <div class="dialogue-chat-text">
+                        <div class="dialogue-py-line bubble-pinyin">Nǐmen xiànzài zài chāoshì mǎi shénme ne?</div>
+                        <div class="dialogue-hz-line bubble-hanzi">你们（ <span class="cloze-blank-box">现在</span> ）在超市买什么呢？</div>
+                      </div>
+                    </div>
+
+                    <!-- Speaker B -->
+                    <div class="dialogue-chat-row" onclick="playPinyin('Mǎi cài ne.')" title="Klik dengar jawaban B">
+                      <div class="dialogue-chat-speaker spk-b">B</div>
+                      <div class="dialogue-chat-text">
+                        <div class="dialogue-py-line bubble-pinyin">Mǎi cài ne.</div>
+                        <div class="dialogue-hz-line bubble-hanzi">买菜呢。</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Penjelasan Soal 2 -->
+                  <div class="dialogue-explain-box">
                     💡 <strong>Pembahasan (2):</strong> Sesuai rumus pokok kalimat: <strong>Subjek (你们) + Keterangan Waktu (现在) + 在 + Tempat (在超市) + Kata Kerja (买) + Objek (什么) + 呢</strong>. Kata waktu yang tepat untuk melengkapi bagian rumpang sebelum <em>在超市</em> adalah <strong>现在 (xiànzài - sekarang)</strong>.<br>
-                    <em>Arti:</em> A: "Kalian sekarang sedang belanja apa di supermarket?" — B: "Sedang beli sayuran."
+                    💬 <strong>Arti Dialog:</strong> <em>A: "Kalian sekarang sedang belanja apa di supermarket?" — B: "Sedang beli sayuran."</em>
                   </div>
                 </div>
 
