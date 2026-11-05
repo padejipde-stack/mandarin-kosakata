@@ -414,6 +414,191 @@
       color: var(--sub);
       line-height: 1.5;
     }
+
+    /* ── GRAMMAR BANNER & CARD REDESIGN ── */
+    .grammar-hero-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.08), 0 8px 10px -6px rgba(79, 70, 229, 0.04);
+      border: 1.5px solid #e2e8f0;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      transition: all 0.2s ease;
+    }
+    .grammar-banner {
+      background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+      color: #ffffff;
+      padding: 1.6rem 1.4rem;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grammar-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 10px 12px 0 12px;
+      border-style: solid;
+      border-color: #3730a3 transparent transparent transparent;
+      display: block;
+      width: 0;
+    }
+    .grammar-banner-pinyin {
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #e0e7ff;
+      margin-bottom: 0.25rem;
+    }
+    .grammar-banner-hanzi {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      line-height: 1.25;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      margin-bottom: 0.45rem;
+    }
+    .grammar-banner-arti {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #c7d2fe;
+      font-style: italic;
+    }
+    .grammar-banner-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.18);
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      margin-top: 0.75rem;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+    }
+
+    .grammar-content {
+      padding: 1.6rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .grammar-rule-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 0.25rem 0.7rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      align-self: flex-start;
+    }
+    .grammar-formula-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      background: #f8fafc;
+      border: 1.5px dashed #cbd5e1;
+      padding: 0.9rem 1.1rem;
+      border-radius: 12px;
+    }
+    .formula-tag {
+      padding: 0.35rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .tag-s { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+    .tag-time { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+    .tag-place { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .tag-verb { background: #fce7f3; color: #9d174d; border: 1px solid #fbcfe8; }
+    .tag-obj { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+    .formula-sep { font-weight: 800; color: #94a3b8; font-size: 1rem; }
+
+    .grammar-breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 640px) {
+      .grammar-breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .breakdown-box {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.9rem 0.6rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      transition: all 0.2s;
+    }
+    .breakdown-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-color: #cbd5e1;
+    }
+    .breakdown-type {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      margin-bottom: 0.35rem;
+    }
+    .breakdown-hz {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.2;
+    }
+    .breakdown-py {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #4f46e5;
+    }
+    .breakdown-id {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 0.15rem;
+    }
+
+    .grammar-compare-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .grammar-compare-box .correct-row {
+      color: #15803d;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .grammar-compare-box .wrong-row {
+      color: #b91c1c;
+      font-size: 0.82rem;
+    }
     .de-formula {
       display: flex;
       align-items: center;
@@ -924,70 +1109,89 @@
   <!-- ══ MATERI PENGANTAR TATA BAHASA: WAKTU, TEMPAT & AKTIVITAS ══ -->
   <div>
     <div class="section-title">📐 Pola Tata Bahasa · 语法解析 (Struktur Kalimat Bahasa Mandarin)</div>
-    <div class="de-box" style="border-left-color: #0d9488;">
-      <div class="de-header">
-        <div class="de-badge" style="background:#ccfbf1; color:#0f766e;">Rumus Pokok Kalimat · 核心句型</div>
-        <div class="de-title">Struktur Urutan: Subjek + Waktu + 在 (Tempat) + Predikat (Kata Kerja) + Objek</div>
-        <div class="de-desc">
-          Berbeda dengan tata bahasa Indonesia atau Inggris yang sering menaruh keterangan waktu dan tempat di akhir kalimat (misal: <em>"Saya belajar di sekolah besok pagi"</em>), dalam <strong>Bahasa Mandarin</strong> urutan kata bersifat sangat tegas dan teratur: <strong>keterangan waktu selalu mendahului tempat, dan keterangan tempat selalu diletakkan sebelum tindakan/kata kerja!</strong>
+    
+    <div class="grammar-hero-card">
+      <!-- Banner Atas (Mirip Header Buku Pelajaran) -->
+      <div class="grammar-banner" onclick="playPinyin('Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí.')" title="Klik dengar pelafalan audio">
+        <div class="grammar-banner-pinyin bubble-pinyin">Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí</div>
+        <div class="grammar-banner-hanzi bubble-hanzi">我明天上午在学校学习</div>
+        <div class="grammar-banner-arti">I'll be studying at school tomorrow morning · Saya besok pagi belajar di sekolah</div>
+        <div>
+          <span class="grammar-banner-hint">🔊 Klik banner ini untuk mendengarkan lafal audio</span>
         </div>
       </div>
 
-      <div class="de-rules">
-        <!-- Visual Formula Box -->
-        <div class="de-formula" style="background:#f0fdfa; border-color:#99f6e4;">
-          <span class="de-chip chip-subj" title="Subjek / Pelaku">S (Subjek)</span>
-          <span class="de-plus">+</span>
-          <span class="de-chip chip-time" title="Keterangan Waktu">Ket. Waktu (Kapan)</span>
-          <span class="de-plus">+</span>
-          <span class="de-chip chip-place" title="在 + Lokasi / Tempat">在 zài + Ket. Tempat (Di mana)</span>
-          <span class="de-plus">+</span>
-          <span class="de-chip chip-act" title="Kata Kerja / Tindakan">Verb (Kata Kerja)</span>
-          <span class="de-plus">+</span>
-          <span class="de-chip" style="background:#f1f5f9; color:#475569;" title="Objek (Opsional)">(Objek)</span>
-        </div>
-
-        <!-- Contoh Kalimat Utama -->
-        <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:0.9rem 1.1rem; margin-top:0.75rem; cursor:pointer;" onclick="playPinyin('Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí.')" title="Klik dengar pelafalan audio">
-          <div style="font-size:0.72rem; font-weight:800; color:#0d9488; text-transform:uppercase; margin-bottom:0.35rem; letter-spacing:0.5px;">Contoh Kalimat Utama:</div>
-          <div style="font-size:0.95rem; font-weight:600; color:#0d9488; margin-bottom:0.15rem;">Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí.</div>
-          <div style="font-size:1.4rem; font-weight:700; color:#1e293b; letter-spacing:1px; margin-bottom:0.35rem;">我明天上午在学校学习。</div>
-          <div style="font-size:0.85rem; color:#475569; line-height:1.45;">
-            <strong>Arti:</strong> "Saya besok pagi belajar di sekolah." <span style="color:#64748b;">(I'll be studying at school tomorrow morning)</span>
+      <!-- Konten Detail & Formula -->
+      <div class="grammar-content">
+        
+        <!-- Penjelasan Singkat & Tag -->
+        <div style="display:flex; flex-direction:column; gap:0.4rem;">
+          <div class="grammar-rule-badge">
+            <span>📌 Rumus Pokok Kalimat (Word Order)</span>
           </div>
-          <div style="font-size:0.75rem; color:#94a3b8; margin-top:0.35rem;">🔊 Klik kotak ini untuk mendengarkan lafal audio</div>
-        </div>
-
-        <!-- Breakdown Komponen Kata -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:0.5rem; margin-top:0.75rem;">
-          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.6rem; text-align:center;">
-            <div style="font-size:0.7rem; font-weight:800; color:#3730a3; text-transform:uppercase;">Subjek (S)</div>
-            <div style="font-size:1.15rem; font-weight:700; color:#1e293b; margin:0.1rem 0;">我</div>
-            <div style="font-size:0.75rem; color:#64748b;">wǒ (saya)</div>
-          </div>
-          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.6rem; text-align:center;">
-            <div style="font-size:0.7rem; font-weight:800; color:#b45309; text-transform:uppercase;">Ket. Waktu</div>
-            <div style="font-size:1.15rem; font-weight:700; color:#1e293b; margin:0.1rem 0;">明天上午</div>
-            <div style="font-size:0.75rem; color:#64748b;">míngtiān shàngwǔ (besok pagi)</div>
-          </div>
-          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.6rem; text-align:center;">
-            <div style="font-size:0.7rem; font-weight:800; color:#166534; text-transform:uppercase;">在 + Ket. Tempat</div>
-            <div style="font-size:1.15rem; font-weight:700; color:#1e293b; margin:0.1rem 0;">在学校</div>
-            <div style="font-size:0.75rem; color:#64748b;">zài xuéxiào (di sekolah)</div>
-          </div>
-          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.6rem; text-align:center;">
-            <div style="font-size:0.7rem; font-weight:800; color:#9d174d; text-transform:uppercase;">Verb (Aktivitas)</div>
-            <div style="font-size:1.15rem; font-weight:700; color:#1e293b; margin:0.1rem 0;">学习</div>
-            <div style="font-size:0.75rem; color:#64748b;">xuéxí (belajar)</div>
+          <div style="font-size:0.88rem; color:#475569; line-height:1.55;">
+            Berbeda dengan bahasa Indonesia atau Inggris yang sering menaruh keterangan waktu dan tempat di akhir kalimat, dalam <strong>Bahasa Mandarin</strong> urutan kata bersifat sangat tertib dan berurutan: <strong>Keterangan waktu selalu mendahului tempat, dan tempat selalu diletakkan sebelum tindakan/kata kerja!</strong>
           </div>
         </div>
 
-        <!-- Perbandingan Benar vs Salah -->
-        <div style="font-size:0.83rem; color:var(--sub); margin-top:0.75rem; line-height:1.6; background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border-left:3px solid #0d9488;">
-          ✅ <strong>Benar (Mandarin):</strong> 我 <strong>明天上午</strong> (waktu) <strong>在学校</strong> (tempat) <strong>学习</strong> (aktivitas).<br>
-          ❌ <strong>Salah (Terpengaruh bahasa Indonesia/Inggris):</strong> 我 在学校 明天上午 学习 <em>(Waktu tidak boleh diletakkan setelah tempat)</em>.<br>
-          ❌ <strong>Salah:</strong> 我 在学校 学习 明天上午 <em>(Keterangan waktu dan tempat tidak ditaruh di akhir kalimat)</em>.
+        <!-- Formula Baris (Sesuai Gambar User) -->
+        <div class="grammar-formula-bar">
+          <span class="formula-tag tag-s">S (Subjek)</span>
+          <span class="formula-sep">+</span>
+          <span class="formula-tag tag-time">ket waktu</span>
+          <span class="formula-sep">+</span>
+          <span class="formula-tag tag-place">在 zài + ket tempat</span>
+          <span class="formula-sep">+</span>
+          <span class="formula-tag tag-verb">verb (kata kerja)</span>
+          <span class="formula-sep">+</span>
+          <span class="formula-tag tag-obj">(obj)</span>
         </div>
+
+        <!-- Grid Komponen Terurai (Breakdown) -->
+        <div class="grammar-breakdown-grid">
+          <!-- 1. Subjek -->
+          <div class="breakdown-box" style="border-top: 3px solid #4f46e5;">
+            <span class="breakdown-type tag-s">Subjek (S)</span>
+            <span class="breakdown-hz bubble-hanzi">我</span>
+            <span class="breakdown-py bubble-pinyin">wǒ</span>
+            <span class="breakdown-id">Saya</span>
+          </div>
+          <!-- 2. Waktu -->
+          <div class="breakdown-box" style="border-top: 3px solid #d97706;">
+            <span class="breakdown-type tag-time">Ket. Waktu</span>
+            <span class="breakdown-hz bubble-hanzi">明天上午</span>
+            <span class="breakdown-py bubble-pinyin">míngtiān shàngwǔ</span>
+            <span class="breakdown-id">Besok pagi</span>
+          </div>
+          <!-- 3. Tempat -->
+          <div class="breakdown-box" style="border-top: 3px solid #16a34a;">
+            <span class="breakdown-type tag-place">在 + Tempat</span>
+            <span class="breakdown-hz bubble-hanzi">在学校</span>
+            <span class="breakdown-py bubble-pinyin">zài xuéxiào</span>
+            <span class="breakdown-id">Di sekolah</span>
+          </div>
+          <!-- 4. Verb -->
+          <div class="breakdown-box" style="border-top: 3px solid #db2777;">
+            <span class="breakdown-type tag-verb">Verb (Aktivitas)</span>
+            <span class="breakdown-hz bubble-hanzi">学习</span>
+            <span class="breakdown-py bubble-pinyin">xuéxí</span>
+            <span class="breakdown-id">Belajar</span>
+          </div>
+        </div>
+
+        <!-- Komparasi Benar vs Salah -->
+        <div class="grammar-compare-box">
+          <div class="correct-row">
+            ✅ <strong>Benar (Mandarin):</strong> 我 <strong>明天上午</strong> (waktu) <strong>在学校</strong> (tempat) <strong>学习</strong> (aktivitas).
+          </div>
+          <div class="wrong-row">
+            ❌ <strong>Salah (Urutan Terbalik):</strong> 我 在学校 明天上午 学习 <em>(Waktu tidak boleh berada setelah tempat)</em>.
+          </div>
+          <div class="wrong-row" style="margin-top:0.25rem;">
+            ❌ <strong>Salah (Pola Bhs Indonesia):</strong> 我 在学校 学习 明天上午 <em>(Keterangan waktu &amp; tempat tidak ditaruh di akhir)</em>.
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -2335,10 +2539,35 @@
         pyEl.innerHTML = res.pinyin;
       });
     });
+
+    // 5. Grammar Hero Card items
+    document.querySelectorAll('.grammar-hero-card').forEach(card => {
+      // Banner
+      const bHz = card.querySelector('.grammar-banner-hanzi');
+      const bPy = card.querySelector('.grammar-banner-pinyin');
+      if (bHz && bPy) {
+        if (!bHz.dataset.origHtml) bHz.dataset.origHtml = bHz.innerHTML;
+        if (!bPy.dataset.origHtml) bPy.dataset.origHtml = bPy.innerHTML;
+        const res = colorizePair(bHz.dataset.origHtml, bPy.dataset.origHtml, charColorMap);
+        bHz.innerHTML = res.hanzi;
+        bPy.innerHTML = res.pinyin;
+      }
+      // Breakdown boxes
+      card.querySelectorAll('.breakdown-box').forEach(box => {
+        const hzEl = box.querySelector('.breakdown-hz');
+        const pyEl = box.querySelector('.breakdown-py');
+        if (!hzEl || !pyEl) return;
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      });
+    });
   }
 
   function removeColors() {
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml !== undefined) {
         el.innerHTML = el.dataset.origHtml;
