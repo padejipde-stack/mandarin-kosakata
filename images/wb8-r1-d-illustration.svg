@@ -1,0 +1,104 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+    <linearGradient id="tableGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="bentoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Latar Belakang Hangat -->
+  <rect width="400" height="300" fill="url(#bgGrad)"/>
+  
+  <!-- Jendela / Hiasan Belakang -->
+  <rect x="30" y="25" width="90" height="90" rx="8" fill="#ffffff" opacity="0.6"/>
+  <line x1="75" y1="25" x2="75" y2="115" stroke="#fde68a" stroke-width="2"/>
+  <line x1="30" y1="70" x2="120" y2="70" stroke="#fde68a" stroke-width="2"/>
+  
+  <!-- Meja Makan -->
+  <path d="M 0 190 Q 200 175 400 190 L 400 300 L 0 300 Z" fill="url(#tableGrad)" opacity="0.95"/>
+  <rect x="0" y="195" width="400" height="6" fill="#b45309" opacity="0.4"/>
+
+  <!-- Siswi / Wanita Sedang Makan Siang -->
+  <!-- Badan / Baju -->
+  <path d="M 140 185 C 140 120, 260 120, 260 185 Z" fill="#ef4444" filter="url(#shadow)"/>
+  <path d="M 185 145 L 200 165 L 215 145 Z" fill="#ffffff"/> <!-- Kerah Baju Putih -->
+
+  <!-- Leher & Kepala -->
+  <rect x="190" y="115" width="20" height="20" fill="#fed7aa" rx="2"/>
+  <!-- Rambut Belakang -->
+  <ellipse cx="200" cy="95" rx="36" ry="42" fill="#1e293b"/>
+  <!-- Wajah -->
+  <ellipse cx="200" cy="100" rx="28" ry="30" fill="#fed7aa"/>
+  <!-- Mata Tersenyum -->
+  <path d="M 186 98 Q 192 92 198 98" stroke="#334155" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 202 98 Q 208 92 214 98" stroke="#334155" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Pipi Merona -->
+  <circle cx="184" cy="106" r="4.5" fill="#f87171" opacity="0.6"/>
+  <circle cx="216" cy="106" r="4.5" fill="#f87171" opacity="0.6"/>
+  <!-- Senyum -->
+  <path d="M 194 112 Q 200 120 206 112" stroke="#b91c1c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Rambut Depan / Poni -->
+  <path d="M 172 88 Q 200 70 228 88 Q 220 74 200 74 Q 180 74 172 88 Z" fill="#1e293b"/>
+
+  <!-- Tangan Memegang Sendok Makan -->
+  <ellipse cx="235" cy="165" rx="9" ry="8" fill="#fed7aa"/>
+  <!-- Sendok Perak Menghadap Mulut -->
+  <path d="M 235 165 L 218 135" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="216" cy="132" rx="6" ry="4" fill="#cbd5e1" transform="rotate(-30 216 132)"/>
+  <!-- Butir Nasi di Sendok -->
+  <ellipse cx="216" cy="131" rx="3.5" ry="2" fill="#ffffff"/>
+
+  <!-- Kotak Bekal Makan Siang (Bento Box - 便当 / 午饭) di Atas Meja -->
+  <g transform="translate(130, 195)" filter="url(#shadow)">
+    <!-- Wadah Luar Kotak Bekal -->
+    <rect x="0" y="0" width="140" height="75" rx="10" fill="url(#bentoGrad)"/>
+    <rect x="4" y="4" width="132" height="67" rx="8" fill="#334155"/>
+    
+    <!-- Kompartemen Nasi Putih -->
+    <rect x="8" y="8" width="60" height="59" rx="6" fill="#f8fafc"/>
+    <circle cx="38" cy="37" r="5.5" fill="#dc2626"/> <!-- Umeboshi (Ceri/Plum merah di atas nasi) -->
+    <!-- Taburan Wijen -->
+    <circle cx="24" cy="22" r="1.2" fill="#0f172a"/>
+    <circle cx="50" cy="25" r="1.2" fill="#0f172a"/>
+    <circle cx="28" cy="48" r="1.2" fill="#0f172a"/>
+    <circle cx="48" cy="50" r="1.2" fill="#0f172a"/>
+
+    <!-- Kompartemen Lauk Sayur Segar (Brokoli & Tomat) -->
+    <rect x="72" y="8" width="54" height="27" rx="6" fill="#166534"/>
+    <circle cx="84" cy="20" r="6" fill="#22c55e"/>
+    <circle cx="95" cy="18" r="7" fill="#16a34a"/>
+    <circle cx="106" cy="21" r="5" fill="#4ade80"/>
+    <circle cx="116" cy="18" r="5" fill="#ef4444"/> <!-- Potongan Tomat -->
+
+    <!-- Kompartemen Lauk Telur Gulung (Tamagoyaki) & Daging -->
+    <rect x="72" y="39" width="54" height="28" rx="6" fill="#78350f"/>
+    <rect x="76" y="43" width="18" height="20" rx="3" fill="#facc15"/>
+    <rect x="98" y="43" width="22" height="20" rx="3" fill="#b45309"/>
+  </g>
+
+  <!-- Botol Minum / Tumbler di Meja -->
+  <g transform="translate(290, 170)" filter="url(#shadow)">
+    <rect x="0" y="10" width="24" height="65" rx="5" fill="#0284c7" opacity="0.85"/>
+    <rect x="3" y="0" width="18" height="12" rx="3" fill="#0369a1"/>
+    <line x1="6" y1="20" x2="6" y2="65" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <!-- Sepasang Sumpit di Sebelah Kotak Makan -->
+  <line x1="85" y1="215" x2="115" y2="255" stroke="#92400e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="92" y1="215" x2="122" y2="255" stroke="#b45309" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Teks Label Ilustrasi -->
+  <rect x="140" y="275" width="120" height="20" rx="10" fill="#ffffff" opacity="0.9"/>
+  <text x="200" y="289" font-family="'Noto Sans SC', sans-serif" font-size="11" font-weight="bold" fill="#0f172a" text-anchor="middle">吃午饭 · Makan Siang</text>
+</svg>
