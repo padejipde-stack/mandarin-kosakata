@@ -1,3 +1,91 @@
+
+<style>
+  /* ── GRID TIANZIGE / MIZIGE (KOTAK KOTAK KALIGRAFI MANDARIN) ── */
+  .grid-mizige-table {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding: 0.35rem 0;
+  }
+  .mizige-cell {
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid #ef4444; /* Garis batas merah luar kotak karakter */
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    flex-shrink: 0;
+    margin-right: -1.5px; /* Border collapse manual antar cell */
+    user-select: none;
+  }
+  /* Garis putus-putus silang & tegak (Mizige) */
+  .mizige-cell::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 0;
+    border-top: 1px dashed rgba(239, 68, 68, 0.4);
+  }
+  .mizige-cell::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    border-left: 1px dashed rgba(239, 68, 68, 0.4);
+  }
+  .mizige-cross {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .mizige-cross::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top right, transparent calc(50% - 0.5px), rgba(239,68,68,0.25) 50%, transparent calc(50% + 0.5px)),
+                linear-gradient(to bottom right, transparent calc(50% - 0.5px), rgba(239,68,68,0.25) 50%, transparent calc(50% + 0.5px));
+  }
+  .mizige-char {
+    position: relative;
+    z-index: 2;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.85rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  .mizige-char.sample-red { color: #dc2626; }
+  .mizige-char.sample-black { color: #0f172a; }
+  .mizige-char.trace-gray { color: #cbd5e1; }
+  .mizige-char.trace-light { color: #e2e8f0; }
+
+  /* Baris Kata Gabungan (Kombinasi Karakter + Label Kosakata) */
+  .writing-word-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 0.85rem;
+  }
+  .writing-word-label {
+    margin-top: 0.5rem;
+    padding-top: 0.45rem;
+    border-top: 1px dashed #e2e8f0;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+</style>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -1783,6 +1871,229 @@
 
       </div>
 
+
+      <!-- ══════════════════════════════════════════════════
+           2. 学练笔画 Stroke Practice (Latihan Goresan)
+      ══════════════════════════════════════════════════ -->
+      <div class="aturan-block" style="margin-top: 1.25rem;">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#e0e7ff; color:#3730a3;">Latihan 2</span>
+          <span>2. 学练笔画 · Stroke Practice (Latihan Bentuk &amp; Arah Goresan)</span>
+        </div>
+
+        <div class="contrast-table-container" style="margin-top: 0.35rem;">
+          <table class="contrast-table">
+            <thead>
+              <tr>
+                <th style="width: 15%; text-align: center;">笔形<br><span style="font-size:0.75rem; font-weight:500;">Stroke Shapes</span></th>
+                <th style="width: 20%; text-align: center;">名称<br><span style="font-size:0.75rem; font-weight:500;">Stroke Names</span></th>
+                <th style="width: 20%; text-align: center;">运笔方向<br><span style="font-size:0.75rem; font-weight:500;">Stroke Directions</span></th>
+                <th style="width: 45%; text-align: center;">描写<br><span style="font-size:0.75rem; font-weight:500;">Stroke Tracing</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Goresan 1: 横 (héng) -->
+              <tr>
+                <td style="text-align: center;">
+                  <span style="font-family:'Noto Sans SC',sans-serif; font-size:2.2rem; font-weight:900; color:#4f46e5; line-height:1;">一</span>
+                </td>
+                <td style="text-align: center;">
+                  <button type="button" class="table-audio-btn" onclick="playWord('横', 'héng')" style="background:none; border:none; cursor:pointer;" title="Klik dengar pelafalan héng">
+                    <div style="font-size:0.8rem; color:#4f46e5; font-family:var(--font-pinyin);">héng</div>
+                    <div style="font-family:'Noto Sans SC',sans-serif; font-size:1.25rem; font-weight:800; color:#1e293b;">横</div>
+                  </button>
+                </td>
+                <td style="text-align: center;">
+                  <div style="display:inline-flex; align-items:center; gap:0.35rem; background:#f8fafc; border:1px solid #cbd5e1; padding:0.35rem 0.75rem; border-radius:8px;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.45rem; font-weight:900; color:#0f172a;">一</span>
+                    <span style="color:#ef4444; font-weight:800; font-size:1.1rem;">➔</span>
+                  </div>
+                  <div style="font-size:0.74rem; color:#64748b; margin-top:2px;">Kiri ke Kanan</div>
+                </td>
+                <td>
+                  <div style="display:flex; align-items:center; justify-content:space-around; background:#fafafa; border:1px dashed #cbd5e1; border-radius:8px; padding:0.45rem 0.65rem;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#94a3b8;">一</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">一</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">一</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">一</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">一</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">一</span>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Goresan 2: 竖 (shù) -->
+              <tr>
+                <td style="text-align: center;">
+                  <span style="font-family:'Noto Sans SC',sans-serif; font-size:2.2rem; font-weight:900; color:#4f46e5; line-height:1;">丨</span>
+                </td>
+                <td style="text-align: center;">
+                  <button type="button" class="table-audio-btn" onclick="playWord('竖', 'shù')" style="background:none; border:none; cursor:pointer;" title="Klik dengar pelafalan shù">
+                    <div style="font-size:0.8rem; color:#4f46e5; font-family:var(--font-pinyin);">shù</div>
+                    <div style="font-family:'Noto Sans SC',sans-serif; font-size:1.25rem; font-weight:800; color:#1e293b;">竖</div>
+                  </button>
+                </td>
+                <td style="text-align: center;">
+                  <div style="display:inline-flex; align-items:center; gap:0.35rem; background:#f8fafc; border:1px solid #cbd5e1; padding:0.35rem 0.75rem; border-radius:8px;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.45rem; font-weight:900; color:#0f172a;">丨</span>
+                    <span style="color:#ef4444; font-weight:800; font-size:1.1rem;">↓</span>
+                  </div>
+                  <div style="font-size:0.74rem; color:#64748b; margin-top:2px;">Atas ke Bawah</div>
+                </td>
+                <td>
+                  <div style="display:flex; align-items:center; justify-content:space-around; background:#fafafa; border:1px dashed #cbd5e1; border-radius:8px; padding:0.45rem 0.65rem;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#94a3b8;">丨</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">丨</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">丨</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">丨</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">丨</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">丨</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════
+           3. 学练笔顺 Stroke Order Practice (Aturan Urutan Goresan)
+      ══════════════════════════════════════════════════ -->
+      <div class="aturan-block" style="margin-top: 1.25rem;">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#e0e7ff; color:#3730a3;">Latihan 3</span>
+          <span>3. 学练笔顺 · Stroke Order Practice (Aturan Urutan Penulisan Goresan)</span>
+        </div>
+
+        <div class="contrast-table-container" style="margin-top: 0.35rem;">
+          <table class="contrast-table">
+            <thead>
+              <tr>
+                <th style="width: 50%; text-align: center;">笔顺规则<br><span style="font-size:0.75rem; font-weight:500;">Stroke Order Rule</span></th>
+                <th style="width: 50%; text-align: center;">例字<br><span style="font-size:0.75rem; font-weight:500;">Example Character</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center; padding: 1.1rem 1rem;">
+                  <div style="font-family:'Noto Sans SC',sans-serif; font-size:1.25rem; font-weight:800; color:#1e293b;">先横后竖</div>
+                  <div style="font-size:0.86rem; color:#475569; margin-top:3px;">Horizontal preceding vertical <em>(Dahulukan garis mendatar, baru garis tegak lurus)</em></div>
+                </td>
+                <td style="text-align: center; padding: 1.1rem 1rem;">
+                  <button type="button" class="table-audio-btn" onclick="playWord('十', 'shí')" style="background:none; border:none; cursor:pointer;" title="Klik dengar pelafalan shí">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:2.4rem; font-weight:900; color:#4f46e5; line-height:1;">十</span>
+                    <span style="font-size:0.9rem; font-family:var(--font-pinyin); color:#64748b; margin-left:0.4rem;">shí (sepuluh)</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Tracing Step-by-Step Kotak Tianzige untuk Karakter 十 -->
+        <div style="margin-top: 0.85rem;">
+          <div style="font-size:0.8rem; font-weight:700; color:#475569; text-transform:uppercase; margin-bottom:0.45rem;">
+            描写 Character Tracing (Tahapan Goresan Karakter "十"):
+          </div>
+
+          <div class="grid-mizige-table">
+            <!-- Langkah 1: 一 (merah) -->
+            <div class="mizige-cell">
+              <div class="mizige-cross"></div>
+              <span class="mizige-char sample-red">一</span>
+            </div>
+            <!-- Langkah 2: 十 (merah) -->
+            <div class="mizige-cell">
+              <div class="mizige-cross"></div>
+              <span class="mizige-char sample-red">十</span>
+            </div>
+            <!-- Tracing Gray 1 s/d 5 -->
+            <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">十</span></div>
+            <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">十</span></div>
+            <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">十</span></div>
+            <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-light">十</span></div>
+            <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-light">十</span></div>
+            <!-- Kotak Kosong Latihan Mandiri -->
+            <div class="mizige-cell"><div class="mizige-cross"></div></div>
+            <div class="mizige-cell"><div class="mizige-cross"></div></div>
+            <div class="mizige-cell"><div class="mizige-cross"></div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ══════════════════════════════════════════════════
+           4. 抄写字词 Character and Word Writing (Salin Tulis Aksara & Kosakata)
+      ══════════════════════════════════════════════════ -->
+      <div class="aturan-block" style="margin-top: 1.25rem;">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#e0e7ff; color:#3730a3;">Latihan 4</span>
+          <span>4. 抄写字词 · Character and Word Writing (Menulis Karakter &amp; Kosakata Terkait)</span>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.9rem; margin-top:0.65rem;">
+          
+          <!-- Kata 1: 二 (èr) -> 二十 (èrshí) -->
+          <div class="writing-word-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.45rem;">
+              <span style="font-size:0.82rem; font-weight:700; color:#4f46e5;">Karakter 1: 二 (èr = dua)</span>
+              <span class="table-audio-btn" onclick="playWord('二十', 'èrshí')" style="font-size:0.8rem; cursor:pointer;">🔊 Dengar "二十"</span>
+            </div>
+
+            <!-- Grid Tracing 二 -->
+            <div class="grid-mizige-table">
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char sample-red">二</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">二</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-light">二</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+            </div>
+
+            <!-- Label Kosakata Gabungan: 二十 (èrshí = dua puluh) -->
+            <div class="writing-word-label">
+              <span>二十</span>
+              <span style="font-size:0.85rem; font-family:var(--font-pinyin); color:#4f46e5; font-weight:600;">èrshí</span>
+              <span style="font-size:0.82rem; color:#64748b; font-weight:400;">= Dua puluh</span>
+            </div>
+          </div>
+
+          <!-- Kata 2: 工 (gōng) -> 工作 (gōngzuò) -->
+          <div class="writing-word-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.45rem;">
+              <span style="font-size:0.82rem; font-weight:700; color:#4f46e5;">Karakter 2: 工 (gōng = kerja/tenaga)</span>
+              <span class="table-audio-btn" onclick="playWord('工作', 'gōngzuò')" style="font-size:0.8rem; cursor:pointer;">🔊 Dengar "工作"</span>
+            </div>
+
+            <!-- Grid Tracing 工: 一 -> 匚/工 -> 工 -->
+            <div class="grid-mizige-table">
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char sample-red">工</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">一</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">工</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-light">工</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+            </div>
+
+            <!-- Label Kosakata Gabungan: 工作 (gōngzuò = bekerja / pekerjaan) -->
+            <div class="writing-word-label">
+              <span>工作</span>
+              <span style="font-size:0.85rem; font-family:var(--font-pinyin); color:#4f46e5; font-weight:600;">gōngzuò</span>
+              <span style="font-size:0.82rem; color:#64748b; font-weight:400;">= Bekerja / Pekerjaan</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
   </div>
 
