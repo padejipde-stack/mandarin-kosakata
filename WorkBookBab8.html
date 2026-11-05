@@ -1159,202 +1159,246 @@
 </div>
 
 <!-- ══ WRAP UTAMA ══ -->
-<div class="wrap">
 
-  <!-- ══════════════════════════════════════════════════
-       BAGIAN 1: 1. 音节辨析 (1) · Syllable Distinction (1)
-  ══════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">📌 1. 音节辨析 (1) · Syllable Distinction (1)</div>
-    <div class="classroom-box" style="border-left: 5px solid #4f46e5; gap: 0.85rem;">
+
+<style>
+  /* ── PERSIS TAMPILAN BUKU TEKS WORKBOOK ── */
+  .book-page-sheet {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 2.2rem 2.8rem;
+    max-width: 820px;
+    margin: 1.5rem auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (max-width: 680px) {
+    .book-page-sheet {
+      padding: 1.25rem 1rem;
+    }
+  }
+
+  /* Judul Latihan: Kotak Oranye 1 + Hanzi + English */
+  .book-ex-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .book-orange-box {
+    background: #e65100;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.05rem;
+    width: 26px;
+    height: 26px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .book-title-hanzi {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: 0.5px;
+  }
+  .book-title-en {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #334155;
+    margin-left: 0.25rem;
+  }
+
+  /* Instruksi dengan Ikon Kotak Oranye Bertekstur */
+  .book-instr-container {
+    margin-left: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 680px) {
+    .book-instr-container { margin-left: 0.5rem; }
+  }
+  .book-instr-row-hz {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.12rem;
+    font-weight: 500;
+    color: #334155;
+    line-height: 1.4;
+  }
+  .book-instr-icon {
+    width: 17px;
+    height: 17px;
+    background: #e65100;
+    border-radius: 4px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .book-instr-row-en {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #475569;
+    margin-top: 0.4rem;
+    margin-left: 1.8rem;
+    line-height: 1.4;
+  }
+
+  /* Dua Kolom Soal Persis Buku */
+  .book-grid-2cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3.5rem;
+    row-gap: 1.5rem;
+    margin-left: 1.8rem;
+    max-width: 680px;
+  }
+  @media (max-width: 640px) {
+    .book-grid-2cols {
+      grid-template-columns: 1fr;
+      row-gap: 1.25rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  /* Baris Soal: ( 1 ) SukuKataA [SukuKataB] */
+  .book-item-row {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+  .book-item-num {
+    font-size: 1.15rem;
+    color: #1e293b;
+    font-weight: 500;
+    min-width: 48px;
+    user-select: none;
+  }
+  .book-syllable {
+    font-size: 1.32rem;
+    font-weight: 400;
+    color: #0f172a;
+    padding: 0.25rem 0.65rem;
+    border-radius: 2px;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid transparent;
+    transition: all 0.15s ease;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .book-syllable:hover {
+    background: #f1f5f9;
+  }
+
+  /* Kotak Merah Jawaban Persis di Screenshot */
+  .book-syllable.selected-box {
+    border: 2px solid #e11d48 !important; /* Kotak merah persis garis pena / kunci jawaban di gambar */
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .book-syllable:active {
+    transform: scale(0.96);
+  }
+</style>
+
+
+<div class="wrap" style="padding-top: 1rem;">
+
+  <!-- KARTU HALAMAN BUKU (MIRIP SEKALI DENGAN GAMBAR SCREENSHOT) -->
+  <div class="book-page-sheet">
+    
+    <!-- 1 音节辨析 ( 1 )  Syllable Distinction (1) -->
+    <div class="book-ex-title-row">
+      <div class="book-orange-box">1</div>
+      <div class="book-title-hanzi">音节辨析（1）</div>
+      <div class="book-title-en">Syllable Distinction (1)</div>
+    </div>
+
+    <!-- Instruksi Buku: 听录音，选择听到的音节并大声朗读。 -->
+    <div class="book-instr-container">
+      <div class="book-instr-row-hz">
+        <div class="book-instr-icon"></div>
+        <div>听录音，选择听到的音节并大声朗读。</div>
+      </div>
+      <div class="book-instr-row-en">
+        Listen, choose the syllables you hear, then read aloud.
+      </div>
+    </div>
+
+    <!-- 2 KOLOM SOAL PERSIS SCREENSHOT (DENGAN KOTAK MERAH PADA JAWABAN) -->
+    <div class="book-grid-2cols">
       
-      <!-- Header Latihan Utama -->
-      <div class="classroom-header" style="padding-bottom: 0.75rem;">
-        <div class="avatar" style="background: linear-gradient(135deg, #4f46e5, #3730a3); font-size: 1.15rem; font-weight: 700; color: #fff;">音</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #4f46e5; color: #fff;">1. 音节辨析 (1) · Syllable Distinction (1)</div>
-          <div class="classroom-desc">Latihan Pembedaan Suku Kata Fonetik Mandarin (Inisial, Final, &amp; Nada).</div>
-        </div>
+      <!-- ( 1 ) lián | [ nián ] -->
+      <div class="book-item-row">
+        <span class="book-item-num">( 1 )</span>
+        <button type="button" class="book-syllable" onclick="playPinyin('lián')" title="Klik dengar lián">lián</button>
+        <button type="button" class="book-syllable selected-box" onclick="playPinyin('nián')" title="Klik dengar nián (Kunci Jawaban)">nián</button>
       </div>
 
-      <!-- Banner Instruksi Asli Buku (Langsung Menyambung Rapi) -->
-      <div class="instruction-banner" style="background: #eef2ff; border: 1.5px solid #c7d2fe; border-left: 5px solid #4f46e5; padding: 0.85rem 1.1rem; gap: 0.35rem;">
-        <div class="instruction-banner-top" style="color: #3730a3;">
-          <span style="font-size:1.15rem;">🎧</span>
-          <span>Instruksi Buku Latihan</span>
-        </div>
-        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem; font-weight: 700; color: #1e1b4b;">
-          听录音，选择听到的音节并大声朗读。
-        </div>
-        <div class="instruction-trans" style="font-size: 0.86rem; color: #475569; font-weight: 500;">
-          Dengarkan rekaman, pilih suku kata yang didengar, lalu bacalah dengan suara nyaring. 
-          <em style="color:#64748b; font-size:0.82rem;">(Listen, choose the syllables you hear, then read aloud.)</em>
-        </div>
+      <!-- ( 2 ) [ rěn ] | shěn -->
+      <div class="book-item-row">
+        <span class="book-item-num">( 2 )</span>
+        <button type="button" class="book-syllable selected-box" onclick="playPinyin('rěn')" title="Klik dengar rěn (Kunci Jawaban)">rěn</button>
+        <button type="button" class="book-syllable" onclick="playPinyin('shěn')" title="Klik dengar shěn">shěn</button>
       </div>
 
-      <!-- Poin Fokus Pembedaan Suku Kata (Ringkas & Informatif) -->
-      <div class="aturan-rule rule-ok" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.65rem 0.95rem;">
-        <span class="aturan-icon">💡</span>
-        <div class="aturan-text" style="font-size: 0.85rem; line-height: 1.55;">
-          <strong>Fokus Latihan 8 Nomor:</strong> Klik tombol audio 🔊 pada masing-masing suku kata di bawah untuk mendengarkan lafal dan nada standar Mandarin:
-          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.45rem;">
-            <span class="pos-badge"><b>(1)</b> l vs n</span>
-            <span class="pos-badge"><b>(2)</b> r vs sh</span>
-            <span class="pos-badge"><b>(3)</b> d vs t</span>
-            <span class="pos-badge"><b>(4)</b> -n vs -ng</span>
-            <span class="pos-badge"><b>(5)</b> -ie vs -üe</span>
-            <span class="pos-badge"><b>(6)</b> h-un vs f-en</span>
-            <span class="pos-badge"><b>(7)</b> -in vs -ing</span>
-            <span class="pos-badge"><b>(8)</b> g vs k</span>
-          </div>
-        </div>
+      <!-- ( 3 ) diē | [ tiē ] -->
+      <div class="book-item-row">
+        <span class="book-item-num">( 3 )</span>
+        <button type="button" class="book-syllable" onclick="playPinyin('diē')" title="Klik dengar diē">diē</button>
+        <button type="button" class="book-syllable selected-box" onclick="playPinyin('tiē')" title="Klik dengar tiē (Kunci Jawaban)">tiē</button>
       </div>
 
-      <!-- Tabel Latihan 8 Pasang Suku Kata Interaktif -->
-      <div class="contrast-table-container" style="margin-top: 0.25rem;">
-        <table class="contrast-table">
-          <thead>
-            <tr>
-              <th style="width: 14%; text-align: center;">Nomor</th>
-              <th style="width: 39%; text-align: center;">Pilihan Suku Kata A</th>
-              <th style="width: 8%; text-align: center;">vs</th>
-              <th style="width: 39%; text-align: center;">Pilihan Suku Kata B</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- (1) lián vs nián -->
-            <tr>
-              <td style="text-align: center;"><span class="pos-badge" style="font-weight:700;">( 1 )</span></td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('lián')" title="Klik dengar lián" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">lián</span>
-                </button>
-              </td>
-              <td style="text-align: center; color:#94a3b8; font-weight:700;">vs</td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('nián')" title="Klik dengar nián" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">nián</span>
-                </button>
-              </td>
-            </tr>
+      <!-- ( 4 ) [ chǎn ] | chǎng -->
+      <div class="book-item-row">
+        <span class="book-item-num">( 4 )</span>
+        <button type="button" class="book-syllable selected-box" onclick="playPinyin('chǎn')" title="Klik dengar chǎn (Kunci Jawaban)">chǎn</button>
+        <button type="button" class="book-syllable" onclick="playPinyin('chǎng')" title="Klik dengar chǎng">chǎng</button>
+      </div>
 
-            <!-- (2) rěn vs shěn -->
-            <tr>
-              <td style="text-align: center;"><span class="pos-badge" style="font-weight:700;">( 2 )</span></td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('rěn')" title="Klik dengar rěn" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">rěn</span>
-                </button>
-              </td>
-              <td style="text-align: center; color:#94a3b8; font-weight:700;">vs</td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('shěn')" title="Klik dengar shěn" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">shěn</span>
-                </button>
-              </td>
-            </tr>
+      <!-- ( 5 ) liè | [ lüè ] -->
+      <div class="book-item-row">
+        <span class="book-item-num">( 5 )</span>
+        <button type="button" class="book-syllable" onclick="playPinyin('liè')" title="Klik dengar liè">liè</button>
+        <button type="button" class="book-syllable selected-box" onclick="playPinyin('lüè')" title="Klik dengar lüè (Kunci Jawaban)">lüè</button>
+      </div>
 
-            <!-- (3) diē vs tiē -->
-            <tr>
-              <td style="text-align: center;"><span class="pos-badge" style="font-weight:700;">( 3 )</span></td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('diē')" title="Klik dengar diē" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">diē</span>
-                </button>
-              </td>
-              <td style="text-align: center; color:#94a3b8; font-weight:700;">vs</td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('tiē')" title="Klik dengar tiē" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">tiē</span>
-                </button>
-              </td>
-            </tr>
+      <!-- ( 6 ) [ hún ] | fén -->
+      <div class="book-item-row">
+        <span class="book-item-num">( 6 )</span>
+        <button type="button" class="book-syllable selected-box" onclick="playPinyin('hún')" title="Klik dengar hún (Kunci Jawaban)">hún</button>
+        <button type="button" class="book-syllable" onclick="playPinyin('fén')" title="Klik dengar fén">fén</button>
+      </div>
 
-            <!-- (4) chǎn vs chǎng -->
-            <tr>
-              <td style="text-align: center;"><span class="pos-badge" style="font-weight:700;">( 4 )</span></td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('chǎn')" title="Klik dengar chǎn" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">chǎn</span>
-                </button>
-              </td>
-              <td style="text-align: center; color:#94a3b8; font-weight:700;">vs</td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('chǎng')" title="Klik dengar chǎng" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">chǎng</span>
-                </button>
-              </td>
-            </tr>
+      <!-- ( 7 ) bīn | [ bīng ] -->
+      <div class="book-item-row">
+        <span class="book-item-num">( 7 )</span>
+        <button type="button" class="book-syllable" onclick="playPinyin('bīn')" title="Klik dengar bīn">bīn</button>
+        <button type="button" class="book-syllable selected-box" onclick="playPinyin('bīng')" title="Klik dengar bīng (Kunci Jawaban)">bīng</button>
+      </div>
 
-            <!-- (5) liè vs lüè -->
-            <tr>
-              <td style="text-align: center;"><span class="pos-badge" style="font-weight:700;">( 5 )</span></td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('liè')" title="Klik dengar liè" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">liè</span>
-                </button>
-              </td>
-              <td style="text-align: center; color:#94a3b8; font-weight:700;">vs</td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('lüè')" title="Klik dengar lüè" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">lüè</span>
-                </button>
-              </td>
-            </tr>
-
-            <!-- (6) hún vs fén -->
-            <tr>
-              <td style="text-align: center;"><span class="pos-badge" style="font-weight:700;">( 6 )</span></td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('hún')" title="Klik dengar hún" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">hún</span>
-                </button>
-              </td>
-              <td style="text-align: center; color:#94a3b8; font-weight:700;">vs</td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('fén')" title="Klik dengar fén" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">fén</span>
-                </button>
-              </td>
-            </tr>
-
-            <!-- (7) bīn vs bīng -->
-            <tr>
-              <td style="text-align: center;"><span class="pos-badge" style="font-weight:700;">( 7 )</span></td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('bīn')" title="Klik dengar bīn" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">bīn</span>
-                </button>
-              </td>
-              <td style="text-align: center; color:#94a3b8; font-weight:700;">vs</td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('bīng')" title="Klik dengar bīng" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">bīng</span>
-                </button>
-              </td>
-            </tr>
-
-            <!-- (8) gǒng vs kǒng -->
-            <tr>
-              <td style="text-align: center;"><span class="pos-badge" style="font-weight:700;">( 8 )</span></td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('gǒng')" title="Klik dengar gǒng" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">gǒng</span>
-                </button>
-              </td>
-              <td style="text-align: center; color:#94a3b8; font-weight:700;">vs</td>
-              <td style="text-align: center;">
-                <button type="button" class="table-audio-btn" onclick="playPinyin('kǒng')" title="Klik dengar kǒng" style="background:none; border:none; font-size:1.15rem; font-weight:700; color:#4f46e5; cursor:pointer; padding:0.35rem 0.75rem; border-radius:8px;">
-                  🔊 <span class="contrast-py" style="font-size:1.2rem;">kǒng</span>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- ( 8 ) gǒng | [ kǒng ] -->
+      <div class="book-item-row">
+        <span class="book-item-num">( 8 )</span>
+        <button type="button" class="book-syllable" onclick="playPinyin('gǒng')" title="Klik dengar gǒng">gǒng</button>
+        <button type="button" class="book-syllable selected-box" onclick="playPinyin('kǒng')" title="Klik dengar kǒng (Kunci Jawaban)">kǒng</button>
       </div>
 
     </div>
+
   </div>
+
+</div>
 
 <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
   <div class="dialog-toolbar">
