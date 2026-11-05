@@ -1035,6 +1035,30 @@
       border-top-color: rgba(0, 0, 0, 0.12) !important;
     }
 
+    /* 🎨 Adaptasi Grammar Hero Banner saat Color Mode Aktif */
+    body.show-color .grammar-banner {
+      background: #f8fafc !important;
+      border-bottom: 2px solid #e2e8f0;
+      color: #1e293b !important;
+    }
+    body.show-color .grammar-banner::after {
+      border-color: #cbd5e1 transparent transparent transparent !important;
+    }
+    body.show-color .grammar-banner-hanzi {
+      color: #1e293b !important;
+      text-shadow: none !important;
+    }
+    body.show-color .grammar-banner-pinyin {
+      color: #64748b !important;
+    }
+    body.show-color .grammar-banner-arti {
+      color: #64748b !important;
+    }
+    body.show-color .grammar-banner-hint {
+      background: #e2e8f0 !important;
+      color: #475569 !important;
+    }
+
     /* ── RESPONSIVE MOBILE ── */
     @media (max-width: 600px) {
       header { padding: 2rem 1rem 1.6rem; }
