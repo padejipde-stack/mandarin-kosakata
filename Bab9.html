@@ -29,8 +29,6 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
       padding-bottom: 3rem;
     }
 
@@ -2409,16 +2407,22 @@
                   </div>
 
                   <!-- Dialog Baris A & B -->
-                  <div style="display:flex; flex-direction:column; gap:0.35rem;">
-                    <div style="cursor:pointer;" onclick="playPinyin('Nǐmen jīntiān xiàwǔ liǎng diǎn zài nǎr shàngkè?')" title="Klik dengar kalimat A">
-                      <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#64748b;">A: Nǐmen jīntiān xiàwǔ liǎng diǎn zài nǎr shàngkè?</div>
-                      <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">
-                        A: 你们今天下午两点（ <span style="color:#059669; font-weight:700; border-bottom:2px solid #059669; padding:0 0.2rem;">在哪儿</span> ）上课？
+                  <div style="display:flex; flex-direction:column; gap:0.45rem;">
+                    <div style="cursor:pointer; display:flex; gap:0.4rem; align-items:flex-start;" onclick="playPinyin('Nǐmen jīntiān xiàwǔ liǎng diǎn zài nǎr shàngkè?')" title="Klik dengar kalimat A">
+                      <strong style="color:var(--text); font-size:0.95rem; line-height:1.4; flex-shrink:0; margin-top:0.1rem;">A:</strong>
+                      <div style="flex:1;">
+                        <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#64748b;">Nǐmen jīntiān xiàwǔ liǎng diǎn zài nǎr shàngkè?</div>
+                        <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">
+                          你们今天下午两点（ <span style="color:#059669; font-weight:700; border-bottom:2px solid #059669; padding:0 0.2rem;">在哪儿</span> ）上课？
+                        </div>
                       </div>
                     </div>
-                    <div style="cursor:pointer;" onclick="playPinyin('Zài xuéxiào.')" title="Klik dengar kalimat B">
-                      <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#64748b;">B: Zài xuéxiào.</div>
-                      <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">B: 在学校。</div>
+                    <div style="cursor:pointer; display:flex; gap:0.4rem; align-items:flex-start;" onclick="playPinyin('Zài xuéxiào.')" title="Klik dengar kalimat B">
+                      <strong style="color:var(--text); font-size:0.95rem; line-height:1.4; flex-shrink:0; margin-top:0.1rem;">B:</strong>
+                      <div style="flex:1;">
+                        <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#64748b;">Zài xuéxiào.</div>
+                        <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">在学校。</div>
+                      </div>
                     </div>
                   </div>
 
@@ -2437,16 +2441,22 @@
                   </div>
 
                   <!-- Dialog Baris A & B -->
-                  <div style="display:flex; flex-direction:column; gap:0.35rem;">
-                    <div style="cursor:pointer;" onclick="playPinyin('Nǐmen xiànzài zài chāoshì mǎi shénme ne?')" title="Klik dengar kalimat A">
-                      <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#64748b;">A: Nǐmen xiànzài zài chāoshì mǎi shénme ne?</div>
-                      <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">
-                        A: 你们（ <span style="color:#059669; font-weight:700; border-bottom:2px solid #059669; padding:0 0.2rem;">现在</span> ）在超市买什么呢？
+                  <div style="display:flex; flex-direction:column; gap:0.45rem;">
+                    <div style="cursor:pointer; display:flex; gap:0.4rem; align-items:flex-start;" onclick="playPinyin('Nǐmen xiànzài zài chāoshì mǎi shénme ne?')" title="Klik dengar kalimat A">
+                      <strong style="color:var(--text); font-size:0.95rem; line-height:1.4; flex-shrink:0; margin-top:0.1rem;">A:</strong>
+                      <div style="flex:1;">
+                        <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#64748b;">Nǐmen xiànzài zài chāoshì mǎi shénme ne?</div>
+                        <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">
+                          你们（ <span style="color:#059669; font-weight:700; border-bottom:2px solid #059669; padding:0 0.2rem;">现在</span> ）在超市买什么呢？
+                        </div>
                       </div>
                     </div>
-                    <div style="cursor:pointer;" onclick="playPinyin('Mǎi cài ne.')" title="Klik dengar kalimat B">
-                      <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#64748b;">B: Mǎi cài ne.</div>
-                      <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">B: 买菜呢。</div>
+                    <div style="cursor:pointer; display:flex; gap:0.4rem; align-items:flex-start;" onclick="playPinyin('Mǎi cài ne.')" title="Klik dengar kalimat B">
+                      <strong style="color:var(--text); font-size:0.95rem; line-height:1.4; flex-shrink:0; margin-top:0.1rem;">B:</strong>
+                      <div style="flex:1;">
+                        <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#64748b;">Mǎi cài ne.</div>
+                        <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">买菜呢。</div>
+                      </div>
                     </div>
                   </div>
 
@@ -2866,100 +2876,84 @@
     </div>
   </div>
 
-  <!-- ══ SOAL PENGANTAR TEKS 3 (听力 / 练习) ══ -->
+  <!-- ══ LATIHAN MENDENGARKAN (LISTENING) TEKS 3 ══ -->
   <div>
-    <div class="section-title">🎧 Latihan Menyimak Teks 3 · 听力理解</div>
+    <div class="section-title">🎧 Latihan Mendengarkan · 听力练习 (Teks 3)</div>
     <div class="classroom-box" style="border-left: 5px solid #2563eb;">
       <div class="classroom-header">
-        <div class="avatar av-yang" style="width:40px;height:40px;font-size:1rem;">杨</div>
+        <div class="avatar av-xiaoyu" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color:#fff;">听</div>
         <div class="classroom-intro">
-          <div class="classroom-badge" style="background:#dbeafe;color:#1e40af;">Konteks Teks 3 · 课文导读</div>
+          <div class="classroom-badge" style="background:#dbeafe; color:#1e40af;">Latihan Pilihan Ganda · 选择正确答案</div>
           <div class="classroom-desc">
             📍 <strong>在办公室里，休息时，王一雪和杨同乐谈论周末生活。</strong><br>
-            <em>(In the office, Wang Yixue and Yang Tongle were talking about their weekend lives during a break — Di dalam kantor, saat istirahat, Wang Yixue dan Yang Tongle sedang membicarakan kehidupan akhir pekan mereka.)</em>
+            听两遍对话，选择正确答案 <em>(Dengarkan rekaman percakapan dua kali, lalu pilihlah jawaban yang benar)</em>:
           </div>
         </div>
       </div>
-
-      <div style="font-weight:700;color:var(--text);font-size:0.88rem;margin-top:0.35rem;display:flex;align-items:center;gap:0.4rem;">
-        <span>■ 听两遍对话，选择正确答案。</span>
-        <span style="font-size:0.8rem;color:#64748b;font-weight:normal;">(Listen to the dialogue twice and choose the correct answer. 🔊 9-5)</span>
-      </div>
-
-      <div class="classroom-list" style="margin-top:0.5rem;">
-
-        <!-- Soal (1) -->
-        <div class="classroom-item" style="border-left: 4px solid #2563eb;">
-          <div class="item-number" style="background:#2563eb;color:#fff;">1</div>
+      
+      <div class="classroom-list">
+        <!-- Soal 1 -->
+        <div class="classroom-item" style="border-left:4px solid #2563eb;">
+          <div class="item-number" style="background:#2563eb; color:#fff;">1</div>
           <div class="item-content">
-            <div class="item-title" style="font-size:0.95rem;color:var(--text);">
-              <div style="font-size:0.8rem;font-weight:700;color:#1d4ed8;margin-bottom:0.25rem;">（1）Pertanyaan Rumpang:</div>
-              <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">杨同乐唱歌（ 很好听 ）。</div>
-              <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.15rem;">Yáng Tónglè chàng gē ( hěn hǎotīng ).</div>
-              <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.2rem;">Arti: Nyanyian Yang Tongle (sangat merdu / enak didengar).</div>
+            <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700;">
+              杨同乐唱歌（ 很好听 ）。
+            </div>
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
+              Yáng Tónglè chàng gē ( hěn hǎotīng ).
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
+              Arti: Nyanyian Yang Tongle (sangat merdu / enak didengar).
+            </div>
+            
+            <div class="quiz-options" style="margin-top:0.6rem; font-size:0.88rem; display:flex; gap:0.65rem; flex-wrap:wrap;">
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>A. 不太好</strong> <em>(bú tài hǎo)</em> → Kurang bagus
+              </span>
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>B. 不好听</strong> <em>(bù hǎotīng)</em> → Tidak enak didengar
+              </span>
+              <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669;">
+                <strong>C. 很好听</strong> <em>(hěn hǎotīng)</em> → Sangat merdu / enak ✓
+              </span>
             </div>
 
-            <!-- Pilihan Jawaban A, B, C -->
-            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));gap:0.6rem;margin-top:0.6rem;">
-              <div style="background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:0.6rem 0.8rem;text-align:center;">
-                <div style="font-weight:700;color:#ef4444;font-size:0.85rem;">A. 不太好</div>
-                <div style="font-size:0.78rem;color:#64748b;">bú tài hǎo</div>
-                <div style="font-size:0.75rem;color:var(--sub);">kurang bagus</div>
-              </div>
-              <div style="background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:0.6rem 0.8rem;text-align:center;">
-                <div style="font-weight:700;color:#ef4444;font-size:0.85rem;">B. 不好听</div>
-                <div style="font-size:0.78rem;color:#64748b;">bù hǎotīng</div>
-                <div style="font-size:0.75rem;color:var(--sub);">tidak enak didengar</div>
-              </div>
-              <div style="background:#ecfdf5;border:2px solid #10b981;border-radius:10px;padding:0.6rem 0.8rem;text-align:center;box-shadow:0 2px 8px rgba(16,185,129,0.15);">
-                <div style="font-weight:700;color:#047857;font-size:0.88rem;">C. 很好听 ✓</div>
-                <div style="font-size:0.78rem;color:#059669;font-weight:600;">hěn hǎotīng</div>
-                <div style="font-size:0.75rem;color:#047857;">sangat merdu / enak</div>
-              </div>
-            </div>
-
-            <!-- Kunci & Pembahasan -->
-            <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:0.5rem 0.8rem;margin-top:0.5rem;font-size:0.8rem;color:#1e40af;">
-              💡 <strong>Kunci Jawaban:</strong> C. 很好听 (hěn hǎotīng)<br>
-              <strong>Berdasarkan Teks:</strong> Wang Yixue memuji Yang Tongle: <em>“你唱歌很好听。”</em> (Kamu bernyanyi sangat merdu).
+            <!-- Pembahasan -->
+            <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:0.45rem 0.75rem; margin-top:0.5rem; font-size:0.8rem; color:#1e40af;">
+              💡 <strong>Alasan:</strong> Wang Yixue memuji Yang Tongle dalam dialog: <em>“你唱歌很好听。”</em> (Kamu bernyanyi sangat merdu), sehingga jawaban yang benar adalah <strong>C. 很好听</strong>.
             </div>
           </div>
         </div>
 
-        <!-- Soal (2) -->
-        <div class="classroom-item" style="border-left: 4px solid #2563eb;">
-          <div class="item-number" style="background:#2563eb;color:#fff;">2</div>
+        <!-- Soal 2 -->
+        <div class="classroom-item" style="border-left:4px solid #2563eb;">
+          <div class="item-number" style="background:#2563eb; color:#fff;">2</div>
           <div class="item-content">
-            <div class="item-title" style="font-size:0.95rem;color:var(--text);">
-              <div style="font-size:0.8rem;font-weight:700;color:#1d4ed8;margin-bottom:0.25rem;">（2）Pertanyaan Rumpang:</div>
-              <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;color:#1e293b;">王一雪家有一只（ 小狗 ）。</div>
-              <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;color:#64748b;margin-top:0.15rem;">Wáng Yīxuě jiā yǒu yì zhī ( xiǎogǒu ).</div>
-              <div class="bubble-arti" style="font-size:0.82rem;color:var(--sub);margin-top:0.2rem;">Arti: Di rumah Wang Yixue ada seekor (anak anjing).</div>
+            <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700;">
+              王一雪家有一只（ 小狗 ）。
+            </div>
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
+              Wáng Yīxuě jiā yǒu yì zhī ( xiǎogǒu ).
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
+              Arti: Di rumah Wang Yixue ada seekor (anak anjing).
+            </div>
+            
+            <div class="quiz-options" style="margin-top:0.6rem; font-size:0.88rem; display:flex; gap:0.65rem; flex-wrap:wrap;">
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>A. 小猫</strong> <em>(xiǎomāo)</em> → Kucing kecil
+              </span>
+              <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669;">
+                <strong>B. 小狗</strong> <em>(xiǎogǒu)</em> → Anjing kecil ✓
+              </span>
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>C. 大狗</strong> <em>(dàgǒu)</em> → Anjing besar
+              </span>
             </div>
 
-            <!-- Pilihan Jawaban A, B, C -->
-            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));gap:0.6rem;margin-top:0.6rem;">
-              <div style="background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:0.6rem 0.8rem;text-align:center;">
-                <div style="font-weight:700;color:#ef4444;font-size:0.85rem;">A. 小猫</div>
-                <div style="font-size:0.78rem;color:#64748b;">xiǎomāo</div>
-                <div style="font-size:0.75rem;color:var(--sub);">kucing kecil</div>
-              </div>
-              <div style="background:#ecfdf5;border:2px solid #10b981;border-radius:10px;padding:0.6rem 0.8rem;text-align:center;box-shadow:0 2px 8px rgba(16,185,129,0.15);">
-                <div style="font-weight:700;color:#047857;font-size:0.88rem;">B. 小狗 ✓</div>
-                <div style="font-size:0.78rem;color:#059669;font-weight:600;">xiǎogǒu</div>
-                <div style="font-size:0.75rem;color:#047857;">anjing kecil</div>
-              </div>
-              <div style="background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:0.6rem 0.8rem;text-align:center;">
-                <div style="font-weight:700;color:#ef4444;font-size:0.85rem;">C. 大狗</div>
-                <div style="font-size:0.78rem;color:#64748b;">dàgǒu</div>
-                <div style="font-size:0.75rem;color:var(--sub);">anjing besar</div>
-              </div>
-            </div>
-
-            <!-- Kunci & Pembahasan -->
-            <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:0.5rem 0.8rem;margin-top:0.5rem;font-size:0.8rem;color:#1e40af;">
-              💡 <strong>Kunci Jawaban:</strong> B. 小狗 (xiǎogǒu)<br>
-              <strong>Berdasarkan Teks:</strong> Wang Yixue berkata: <em>“我在家里做饭、看电视，和孩子们、小狗玩。”</em> (Saya di rumah masak, nonton TV, bermain bersama anak-anak dan anjing kecil).
+            <!-- Pembahasan -->
+            <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:0.45rem 0.75rem; margin-top:0.5rem; font-size:0.8rem; color:#1e40af;">
+              💡 <strong>Alasan:</strong> Wang Yixue berkata dalam dialog: <em>“我在家里做饭、看电视，和孩子们、小狗玩。”</em> (Saya di rumah masak, nonton TV, dan bermain bersama anak-anak dan anjing kecil), sehingga jawaban yang benar adalah <strong>B. 小狗</strong>.
             </div>
           </div>
         </div>
@@ -3278,20 +3272,26 @@
           <div class="item-number" style="background:#0d9488; color:#fff;">3</div>
           <div class="item-content">
             <div style="display:flex; flex-direction:column; gap:0.4rem;">
-              <div>
-                <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
-                  <strong style="color:var(--text); font-size:0.88rem;">王一雪：</strong> 你唱歌很（ <span class="comp-answer-pill">好听</span> ）。
-                </div>
-                <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
-                  Wáng Yīxuě: Nǐ chàng gē hěn ( hǎotīng ).
+              <div style="display:flex; gap:0.4rem; align-items:flex-start;">
+                <strong style="color:var(--text); font-size:0.88rem; flex-shrink:0; margin-top:0.15rem;">王一雪：</strong>
+                <div style="flex:1;">
+                  <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
+                    Nǐ chàng gē hěn ( hǎotīng ).
+                  </div>
+                  <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
+                    你唱歌很（ <span class="comp-answer-pill">好听</span> ）。
+                  </div>
                 </div>
               </div>
-              <div>
-                <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
-                  <strong style="color:var(--text); font-size:0.88rem;">杨同乐：</strong> 谢谢！
-                </div>
-                <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
-                  Yáng Tónglè: Xièxie!
+              <div style="display:flex; gap:0.4rem; align-items:flex-start;">
+                <strong style="color:var(--text); font-size:0.88rem; flex-shrink:0; margin-top:0.15rem;">杨同乐：</strong>
+                <div style="flex:1;">
+                  <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
+                    Xièxie!
+                  </div>
+                  <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
+                    谢谢！
+                  </div>
                 </div>
               </div>
             </div>
@@ -3310,20 +3310,26 @@
           <div class="item-number" style="background:#0d9488; color:#fff;">4</div>
           <div class="item-content">
             <div style="display:flex; flex-direction:column; gap:0.4rem;">
-              <div>
-                <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
-                  <strong style="color:var(--text); font-size:0.88rem;">陈天中：</strong> 你下午去哪儿？
-                </div>
-                <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
-                  Chén Tiānzhōng: Nǐ xiàwǔ qù nǎr?
+              <div style="display:flex; gap:0.4rem; align-items:flex-start;">
+                <strong style="color:var(--text); font-size:0.88rem; flex-shrink:0; margin-top:0.15rem;">陈天中：</strong>
+                <div style="flex:1;">
+                  <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
+                    Nǐ xiàwǔ qù nǎr?
+                  </div>
+                  <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
+                    你下午去哪儿？
+                  </div>
                 </div>
               </div>
-              <div>
-                <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
-                  <strong style="color:var(--text); font-size:0.88rem;">安　妮：</strong> 我下午还（ <span class="comp-answer-pill">在学校</span> ）上课。
-                </div>
-                <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
-                  Ānní: Wǒ xiàwǔ hái ( zài xuéxiào ) shàngkè.
+              <div style="display:flex; gap:0.4rem; align-items:flex-start;">
+                <strong style="color:var(--text); font-size:0.88rem; flex-shrink:0; margin-top:0.15rem;">安　妮：</strong>
+                <div style="flex:1;">
+                  <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
+                    Wǒ xiàwǔ hái ( zài xuéxiào ) shàngkè.
+                  </div>
+                  <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">
+                    我下午还（ <span class="comp-answer-pill">在学校</span> ）上课。
+                  </div>
                 </div>
               </div>
             </div>
