@@ -83,9 +83,10 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
+      position: -webkit-sticky;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
     .nav {
@@ -1402,7 +1403,7 @@
     
     /* ── MOBILE GLOBAL OVERFLOW & TEXT PROTECTION ── */
     html, body {
-      overflow-x: hidden;
+      overflow-x: clip;
       max-width: 100vw;
     }
     code, pre {
@@ -1642,7 +1643,7 @@
     
     /* ── MOBILE GLOBAL OVERFLOW & TEXT PROTECTION ── */
     html, body {
-      overflow-x: hidden;
+      overflow-x: clip;
       max-width: 100vw;
     }
     code, pre {
@@ -2965,6 +2966,33 @@
   <!-- ══ TEKS 3 ══ -->
   <div>
     <div class="section-title">💬 Teks 3: Rencana Akhir Pekan (周末计划)</div>
+
+    <!-- 💡 XIAOYU'S TIP: PENGUCAPAN ERHUA “玩” -> “玩儿” (wán / wánr) -->
+    <div class="xiaoyu-tip-box" style="margin-bottom: 1rem; border-left-color: #f43f5e; background: #fff1f2; border-color: #fecdd3;">
+      <div class="avatar" style="width:38px;height:38px;font-size:0.95rem;background:linear-gradient(135deg, #f43f5e, #be123c);color:#fff;">语</div>
+      <div class="xiaoyu-tip-content">
+        <div class="xiaoyu-tip-title" style="color:#be123c;">
+          <span>💡 小语助力 (Xiaoyu's Tip): Bentuk Erhua “玩儿” (wánr) pada Kata Kerja “玩” (wán)</span>
+        </div>
+        <div class="xiaoyu-tip-desc" style="color:#881337;">
+          <div style="font-weight:600; margin-bottom:0.25rem;">
+            在口语中常儿化，说 “玩儿”。
+          </div>
+          <div style="font-size:0.8rem; color:#9f1239; line-height:1.45;">
+            <em>In colloquial speech, it is often pronounced with a retroflex suffix as “玩儿” (wánr).</em>
+          </div>
+          <div style="background:#ffffff; border-radius:8px; padding:0.5rem 0.75rem; margin-top:0.45rem; border:1px solid #fecdd3; font-size:0.8rem; color:#475569;">
+            📌 <strong>Penjelasan Bahasa Indonesia:</strong><br>
+            • Kata <strong>玩 (wán)</strong> berarti <em>bermain / bersenang-senang</em>.<br>
+            • Dalam bahasa percakapan lisan sehari-hari (<em>kǒuyǔ</em>), kata ini sangat sering mengalami penambahan akhiran retroflex <strong>儿 (Erhua)</strong> menjadi <strong>玩儿 (wánr)</strong>.<br>
+            • Maknanya tetap sama dengan <strong>玩 (wán)</strong>, tetapi <strong>玩儿 (wánr)</strong> terdengar jauh lebih luwes, santai, dan alami dalam percakapan akrab (terutama di daerah Beijing/Tiongkok Utara).<br>
+            • <strong>Catatan Perubahan Nada (Tone Sandhi) pada Kalimat Balasan 杨同乐:</strong><br>
+            &nbsp;&nbsp;▸ <strong>我也有一只小狗</strong>: kata <strong>也 (yě - nada 3)</strong> bertemu kata <strong>有 (yǒu - nada 3)</strong>, sehingga nada kata <strong>也</strong> otomatis dibaca berubah naik menjadi <strong>nada ke-2 (yé)</strong>: <em>Wǒ yé yǒu...</em><br>
+            &nbsp;&nbsp;▸ Angka <strong>一 (yī)</strong> yang diikuti kata bernada 1 (<strong>只 zhī</strong>) mengalami perubahan nada menjadi nada ke-4: <strong>yì zhī</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="dialog-box">
       <div class="dialog-header">
         <div class="dialog-title">📍 Teks 3: 在办公室里，王一雪 (Wang Yixue) dan 杨同乐 (Yang Tongle) membicarakan kegiatan akhir pekan</div>
@@ -3125,8 +3153,13 @@
           </div>
           <div class="word-card">
             <div class="word-char">玩</div>
-            <div class="word-pinyin">wán</div>
+            <div class="word-pinyin">wán (wánr)</div>
             <div class="word-arti">bermain (play, have fun)</div>
+          </div>
+          <div class="word-card">
+            <div class="word-char">玩儿</div>
+            <div class="word-pinyin">wánr</div>
+            <div class="word-arti">bermain (bentuk lisan Erhua)</div>
           </div>
         </div>
       </div>
@@ -3219,11 +3252,11 @@
         <div class="comp-quiz-options">
           <div class="comp-quiz-tag">Pilihan Kata · 选项 (A–E):</div>
           <div class="comp-quiz-badges">
-            <span class="comp-quiz-badge"><strong>A. 是</strong> <em>(shì / adalah)</em></span>
-            <span class="comp-quiz-badge"><strong>B. 好听</strong> <em>(hǎotīng / enak didengar, merdu)</em></span>
-            <span class="comp-quiz-badge"><strong>C. 在学校</strong> <em>(zài xuéxiào / di sekolah)</em></span>
-            <span class="comp-quiz-badge"><strong>D. 今天上午</strong> <em>(jīntiān shàngwǔ / pagi hari ini)</em></span>
-            <span class="comp-quiz-badge"><strong>E. 椅子</strong> <em>(yǐzi / kursi)</em></span>
+            <span class="comp-quiz-badge"><strong>A. <span class="badge-hz" style="color:#059669;font-weight:700;">是</span></strong> <em>(<span class="badge-py" style="color:#059669;font-weight:700;">shì</span> / adalah)</em></span>
+            <span class="comp-quiz-badge"><strong>B. <span class="badge-hz"><span style="color:#ca8a04;font-weight:700;">好</span><span style="color:#2563eb;font-weight:700;">听</span></span></strong> <em>(<span class="badge-py"><span style="color:#ca8a04;font-weight:700;">hǎo</span><span style="color:#2563eb;font-weight:700;">tīng</span></span> / enak didengar, merdu)</em></span>
+            <span class="comp-quiz-badge"><strong>C. <span class="badge-hz"><span style="color:#ea580c;font-weight:700;">在</span><span style="color:#7c3aed;font-weight:700;">学</span><span style="color:#0891b2;font-weight:700;">校</span></span></strong> <em>(<span class="badge-py"><span style="color:#ea580c;font-weight:700;">zài</span> <span style="color:#7c3aed;font-weight:700;">xué</span><span style="color:#0891b2;font-weight:700;">xiào</span></span> / di sekolah)</em></span>
+            <span class="comp-quiz-badge"><strong>D. <span class="badge-hz"><span style="color:#16a34a;font-weight:700;">今</span><span style="color:#2563eb;font-weight:700;">天</span><span style="color:#d97706;font-weight:700;">上</span><span style="color:#c026d3;font-weight:700;">午</span></span></strong> <em>(<span class="badge-py"><span style="color:#16a34a;font-weight:700;">jīn</span><span style="color:#2563eb;font-weight:700;">tiān</span> <span style="color:#d97706;font-weight:700;">shàng</span><span style="color:#c026d3;font-weight:700;">wǔ</span></span> / pagi hari ini)</em></span>
+            <span class="comp-quiz-badge"><strong>E. <span class="badge-hz"><span style="color:#e11d48;font-weight:700;">椅</span><span style="color:#0284c7;font-weight:700;">子</span></span></strong> <em>(<span class="badge-py"><span style="color:#e11d48;font-weight:700;">yǐ</span><span style="color:#0284c7;font-weight:700;">zi</span></span> / kursi)</em></span>
           </div>
         </div>
 
@@ -3351,20 +3384,20 @@
         <!-- Gambar Deskripsi 1 -->
         <div class="comp-photo-item" style="border-left: 4px solid #0891b2;">
           <div class="comp-photo-thumb">
-            <img src="images/bab9-photo-1.png" alt="桌子上的书和水杯 (Buku dan Gelas di Atas Meja)">
+            <img src="images/bab9-photo-1.png" alt="桌子上的书和两杯水 (Buku dan Dua Cangkir Air di Atas Meja)">
           </div>
           <div class="comp-photo-content">
             <div style="font-size:0.8rem; color:#0891b2; font-weight:700;">
               📖 Gambar 1: Buku &amp; Gelas di Atas Meja
             </div>
             <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark);">
-              桌子上（ <span class="comp-answer-pill">有一本书</span> ）。
+              桌子上 <span class="comp-answer-pill" style="text-decoration:underline;">有一本书和两杯水</span>
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
-              Zhuōzi shang ( yǒu yì běn shū ).
+              Zhuōzi shang ( yǒu yì běn shū hé liǎng bēi shuǐ ).
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
-              <strong>Arti:</strong> Di atas meja (ada sebuah buku). <span style="color:#0891b2; font-weight:600;">(Pola: Kata Tempat 上 + 有 + Jumlah-Satuan + Benda)</span>
+              <strong>Arti:</strong> Di atas meja (ada sebuah buku dan dua cangkir air). <span style="color:#0891b2; font-weight:600;">(Pola: Kata Tempat 上 + 有 + Jumlah-Satuan + Benda)</span>
             </div>
           </div>
         </div>
@@ -3379,13 +3412,13 @@
               📺 Gambar 2: Anak-anak Menonton TV di Rumah
             </div>
             <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark);">
-              孩子们（ <span class="comp-answer-pill">白天</span> ）在家里（ <span class="comp-answer-pill">看电视</span> ）。
+              孩子们 <span class="comp-answer-pill" style="text-decoration:underline;">都/现在</span> 在家里 <span class="comp-answer-pill" style="text-decoration:underline;">看电视</span>。
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
-              Háizimen ( báitiān ) zài jiā lǐ ( kàn diànshì ).
+              Háizimen ( dōu / xiànzài ) zài jiā lǐ ( kàn diànshì ).
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
-              <strong>Arti:</strong> Anak-anak (siang hari) di rumah (menonton televisi). <span style="color:#059669; font-weight:600;">(Pola: Subjek + Waktu + Tempat + Aktivitas)</span>
+              <strong>Arti:</strong> Anak-anak (semuanya / sekarang) di rumah (menonton televisi). <span style="color:#059669; font-weight:600;">(Pola: Subjek + Keterangan + Tempat 在家里 + Aktivitas 看电视)</span>
             </div>
           </div>
         </div>
@@ -3400,13 +3433,13 @@
               🐶 Gambar 3: Dua Ekor Anak Anjing
             </div>
             <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark);">
-              （ <span class="comp-answer-pill">第一</span> ）只小狗是我的，（ <span class="comp-answer-pill">第</span> ）二只小狗是她的。
+              <span class="comp-answer-pill" style="text-decoration:underline;">第</span> 一只小狗是我的，<span class="comp-answer-pill" style="text-decoration:underline;">第</span> 二只小狗是她的。
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
-              ( Dì-yī ) zhī xiǎogǒu shì wǒ de, ( dì- ) èr zhī xiǎogǒu shì tā de.
+              ( Dì ) yī zhī xiǎogǒu shì wǒ de, ( dì ) èr zhī xiǎogǒu shì tā de.
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
-              <strong>Arti:</strong> Anak anjing (pertama) adalah milik saya, anak anjing ke-(dua) adalah miliknya. <span style="color:#4f46e5; font-weight:600;">(Pola: 第 + Angka + Satuan 只)</span>
+              <strong>Arti:</strong> Anak anjing ke-(satu) adalah milik saya, anak anjing ke-(dua) adalah miliknya. <span style="color:#4f46e5; font-weight:600;">(Pola: Bilangan Ordinal 第 + Angka 一/二 + Satuan 只)</span>
             </div>
           </div>
         </div>
@@ -3421,13 +3454,13 @@
               🏪 Gambar 4: Belanja di Toko Luar Sekolah
             </div>
             <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark);">
-              学校外边是一家小店，（ <span class="comp-answer-pill">他在店里买东西</span> ）。
+              学校外边是一家小店，<span class="comp-answer-pill" style="text-decoration:underline;">里边有很多东西</span>。
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
-              Xuéxiào wàibian shì yì jiā xiǎodiàn, ( tā zài diàn lǐ mǎi dōngxi ).
+              Xuéxiào wàibian shì yì jiā xiǎodiàn, ( lǐbian yǒu hěn duō dōngxi ).
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
-              <strong>Arti:</strong> Di luar sekolah adalah sebuah toko kecil, (dia berbelanja di dalam toko). <span style="color:#ea580c; font-weight:600;">(Pola: Posisi 外边 &amp; Aktivitas 在店里买东西)</span>
+              <strong>Arti:</strong> Di luar sekolah adalah sebuah toko kecil, (di dalamnya ada banyak barang). <span style="color:#ea580c; font-weight:600;">(Pola: Kata Tempat 里边 + 有 + Banyak Barang 很多东西)</span>
             </div>
           </div>
         </div>
@@ -3479,27 +3512,37 @@
   function colorizePair(hanziText, pinyinText, charColorMap) {
     if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
-    const hzList = [];
+    // First pass: extract Hanzi chars and assign sequential colors with zero adjacent duplicates
+    const hzItems = [];
     let prevColor = null;
+
     for (const ch of hanziText) {
       if (isHanziChar(ch)) {
-        hzList.push(ch);
-        if (!charColorMap[ch]) {
-          let colorIdx = Object.keys(charColorMap).length % COLOR_PALETTE.length;
-          let candidate = COLOR_PALETTE[colorIdx];
-          if (candidate === prevColor) {
-            candidate = COLOR_PALETTE[(colorIdx + 1) % COLOR_PALETTE.length];
+        let chosenColor = charColorMap[ch];
+        if (!chosenColor || chosenColor === prevColor) {
+          let baseIdx = Object.keys(charColorMap).length;
+          let candidate = COLOR_PALETTE[baseIdx % COLOR_PALETTE.length];
+          let offset = 0;
+          while (candidate === prevColor) {
+            offset++;
+            candidate = COLOR_PALETTE[(baseIdx + offset) % COLOR_PALETTE.length];
           }
-          charColorMap[ch] = candidate;
+          chosenColor = candidate;
+          if (!charColorMap[ch]) {
+            charColorMap[ch] = chosenColor;
+          }
         }
-        prevColor = charColorMap[ch];
+        hzItems.push({ ch, color: chosenColor });
+        prevColor = chosenColor;
       }
     }
 
     let outHz = '';
+    let hzAssignIdx = 0;
     for (const ch of hanziText) {
       if (isHanziChar(ch)) {
-        outHz += '<span style="color:' + charColorMap[ch] + ';font-weight:700;">' + ch + '</span>';
+        const item = hzItems[hzAssignIdx++];
+        outHz += '<span style="color:' + item.color + ';font-weight:700;">' + ch + '</span>';
       } else {
         outHz += ch;
       }
@@ -3529,19 +3572,19 @@
         const syll = match[0];
         const isErhua = /r$/i.test(syll) &&
                         !/^[eēéěè]r$/i.test(syll) &&
-                        hzIdx + 1 < hzList.length &&
-                        hzList[hzIdx + 1] === '儿';
+                        hzIdx + 1 < hzItems.length &&
+                        hzItems[hzIdx + 1].ch === '儿';
         if (isErhua) {
           const rootSyll = syll.slice(0, -1);
-          const rootHz = hzList[hzIdx];
-          const erHz = hzList[hzIdx + 1];
-          outPy += '<span style="color:' + charColorMap[rootHz] + ';font-weight:700;">' + rootSyll + '</span>' +
-                   '<span style="color:' + (charColorMap[erHz] || charColorMap[rootHz]) + ';font-weight:700;">r</span>';
+          const rootItem = hzItems[hzIdx];
+          const erItem = hzItems[hzIdx + 1];
+          outPy += '<span style="color:' + rootItem.color + ';font-weight:700;">' + rootSyll + '</span>' +
+                   '<span style="color:' + erItem.color + ';font-weight:700;">r</span>';
           hzIdx += 2;
         } else {
-          const pairedHz = hzList[hzIdx];
-          if (pairedHz && charColorMap[pairedHz]) {
-            outPy += '<span style="color:' + charColorMap[pairedHz] + ';font-weight:700;">' + syll + '</span>';
+          const item = hzItems[hzIdx];
+          if (item) {
+            outPy += '<span style="color:' + item.color + ';font-weight:700;">' + syll + '</span>';
             hzIdx++;
           } else {
             outPy += syll;
@@ -3655,7 +3698,7 @@
   }
 
   function removeColors() {
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py, .badge-hz, .badge-py';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml !== undefined) {
         el.innerHTML = el.dataset.origHtml;

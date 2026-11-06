@@ -130,6 +130,96 @@
     align-items: center;
     gap: 0.65rem;
   }
+
+  /* Grid Buku Asli: 2 Baris Kotak Mizige Merah Presisi */
+  .workbook-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .wb-hanzi-grid {
+    border-collapse: collapse;
+    border: 2px solid #dc2626; /* Bingkai merah luar buku latihan */
+    margin: 0 auto;
+    background: #ffffff;
+  }
+  .wb-hanzi-grid td {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #dc2626; /* Garis kotak merah buku latihan */
+    vertical-align: middle;
+    text-align: center;
+  }
+  .wb-cell-mizige {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    user-select: none;
+  }
+  /* Garis bantu putus-putus merah di dalam kotak Tianzige / Mizige */
+  .wb-cell-mizige::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 0;
+    border-top: 1px dashed rgba(220, 38, 38, 0.35);
+    pointer-events: none;
+  }
+  .wb-cell-mizige::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    border-left: 1px dashed rgba(220, 38, 38, 0.35);
+    pointer-events: none;
+  }
+  .wb-cell-cross {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .wb-cell-cross::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top right, transparent calc(50% - 0.5px), rgba(220, 38, 38, 0.22) 50%, transparent calc(50% + 0.5px)),
+                linear-gradient(to bottom right, transparent calc(50% - 0.5px), rgba(220, 38, 38, 0.22) 50%, transparent calc(50% + 0.5px));
+  }
+  .wb-char {
+    position: relative;
+    z-index: 2;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  .wb-char.red-sample { color: #dc2626; }
+  .wb-char.gray-step { color: #94a3b8; }
+  .wb-char.gray-trace { color: #cbd5e1; }
+  .wb-char.light-trace { color: #e2e8f0; }
+
+  /* Baris Bawah: Kotak Label Kosakata Lebar */
+  .wb-word-block {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    background: #ffffff;
+  }
 </style>
 
 <!DOCTYPE html>
@@ -217,9 +307,10 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
+      position: -webkit-sticky;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
     .nav {
@@ -1220,7 +1311,7 @@
     
     /* ── MOBILE GLOBAL OVERFLOW & TEXT PROTECTION ── */
     html, body {
-      overflow-x: hidden;
+      overflow-x: clip;
       max-width: 100vw;
     }
     code, pre {
@@ -1401,56 +1492,430 @@
     color: #0f766e;
     margin-top: 0.25rem;
   }
+  /* Card Pinyin & Fonetik Styling */
+  .phonetic-card {
+    background: #ffffff;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85rem 0.65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  }
+  .phonetic-card:hover {
+    border-color: #0d9488;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.1);
+  }
+  .phonetic-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+  }
+  .phonetic-pinyin-raw {
+    font-family: var(--font-pinyin, inherit);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #475569;
+    letter-spacing: 0.5px;
+  }
+  .phonetic-pinyin-toned {
+    font-family: var(--font-pinyin, inherit);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #0d9488;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .phonetic-pinyin-toned:hover {
+    color: #0f766e;
+    transform: scale(1.05);
+  }
+  .phonetic-hanzi {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .phonetic-arti {
+    font-size: 0.78rem;
+    color: #64748b;
+    text-align: center;
+    line-height: 1.25;
+  }
+  .phonetic-tone-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    background: #f0fdfa;
+    color: #0d9488;
+    border: 1px solid #99f6e4;
+  }
+
+  /* Tone distinction choice card */
+  .tone-row {
+    background: #ffffff;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    transition: all 0.2s ease;
+  }
+  .tone-row:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  .tone-opt-btn {
+    border: 1.5px solid var(--border);
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 0.45rem 0.85rem;
+    font-family: var(--font-pinyin, inherit);
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: #1e293b;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s ease;
+    min-width: 95px;
+    justify-content: center;
+  }
+  .tone-opt-btn:hover {
+    border-color: #0d9488;
+    background: #f0fdfa;
+    color: #0d9488;
+  }
+  .tone-opt-btn.correct-ans {
+    border: 2px solid #ef4444 !important;
+    background: #fef2f2 !important;
+    color: #b91c1c !important;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.15);
+    position: relative;
+  }
+  .tone-opt-btn.correct-ans::after {
+    content: "✓ Beda Nada";
+    position: absolute;
+    top: -9px;
+    right: -8px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
 </style>
 
   <!-- ══════════════════════════════════════════════════
-       BAGIAN 1: 1. 音节辨析 (1) Syllable Distinction (1)
+       BAGIAN 1: 一、语音 Pronunciation · 1 声调标写 Tone Marking
   ══════════════════════════════════════════════════ -->
   <div>
-    <div class="section-title">📌 1. 音节辨析 (1) · Syllable Distinction (1)</div>
+    <div class="section-title">📌 一、语音 Pronunciation · 1 声调标写 Tone Marking</div>
     <div class="classroom-box" style="border-left: 5px solid #0d9488;">
       <div class="classroom-header">
         <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">1</div>
         <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">1. 音节辨析（1）· Syllable Distinction (1)</div>
-          <div class="classroom-desc">Latihan Pembedaan Suku Kata Fonetik Mandarin (Inisial, Final &amp; Nada) — Sesuai HSK 1 Standard Course Workbook Pelajaran 9.</div>
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">小语讲堂 · Xiaoyu's Classroom · 1 声调标写 Tone Marking</div>
+          <div class="classroom-desc">Mendengarkan audio (🔊 9-1), memberi tanda nada (tone marks / 声调) pada suku kata Pinyin, lalu melafalkannya dengan lantang.</div>
         </div>
+      </div>
+
+      <!-- Foto Lembar Soal Asli Buku Bab 9 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-tone-marking.jpg" alt="1 声调标写 Tone Marking" style="max-width: 100%; width: 620px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
       </div>
 
       <div class="instruction-banner">
         <div class="instruction-banner-top">
           <span style="font-size:1.15rem;">🎧</span>
-          <span>Instruksi Soal Buku</span>
+          <span>Instruksi Soal Buku (Audio 9-1)</span>
         </div>
         <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          听录音，选择听到的音节并大声朗读。
+          听录音，给音节标声调，并大声朗读。
         </div>
         <div class="instruction-trans">
-          (Listen, choose the syllables you hear, then read aloud.)
+          (Listen, mark the tones of the syllables, then read aloud.)
+        </div>
+        <div style="margin-top:0.35rem; padding-top:0.45rem; border-top:1px dashed #99f6e4; font-size:0.84rem; color:#475569; font-weight:500;">
+          💡 <em>Klik tombol speaker atau teks bertanda nada untuk mendengarkan pelafalan nada yang tepat dengan suara penutur asli!</em>
         </div>
       </div>
 
-      <div class="placeholder-box">
-        <div class="placeholder-icon">📋</div>
-        <div class="placeholder-title">Materi Bagian 1 Siap Diisi</div>
-        <div class="placeholder-desc">Template struktur tabel interaktif fonetik A vs B telah siap dengan tema warna Teal (#0d9488). Materi soal dapat ditambahkan kapan saja.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      <!-- Grid 8 Nomor Tone Marking -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-top: 0.35rem;">
+        
+        <!-- (1) hao -> hǎo -->
+        <div class="phonetic-card">
+          <div class="phonetic-num">( 1 )</div>
+          <div class="phonetic-pinyin-raw">hao</div>
+          <div style="font-size: 0.75rem; color:#94a3b8;">⬇ beri nada</div>
+          <button type="button" class="phonetic-pinyin-toned" onclick="playWord('好', 'hǎo')" title="Klik dengar: hǎo" style="background:none;border:none;">
+            🔊 hǎo
+          </button>
+          <div class="phonetic-tone-badge">Nada 3 (ˇ)</div>
+          <div class="phonetic-hanzi">好</div>
+          <div class="phonetic-arti">baik / bagus</div>
+        </div>
+
+        <!-- (2) xie -> xiè / xiě -->
+        <div class="phonetic-card">
+          <div class="phonetic-num">( 2 )</div>
+          <div class="phonetic-pinyin-raw">xie</div>
+          <div style="font-size: 0.75rem; color:#94a3b8;">⬇ beri nada</div>
+          <button type="button" class="phonetic-pinyin-toned" onclick="playWord('谢', 'xiè')" title="Klik dengar: xiè" style="background:none;border:none;">
+            🔊 xiè
+          </button>
+          <div class="phonetic-tone-badge">Nada 4 (ˋ)</div>
+          <div class="phonetic-hanzi">谢 / 写</div>
+          <div class="phonetic-arti">terima kasih / menulis</div>
+        </div>
+
+        <!-- (3) nin -> nín -->
+        <div class="phonetic-card">
+          <div class="phonetic-num">( 3 )</div>
+          <div class="phonetic-pinyin-raw">nin</div>
+          <div style="font-size: 0.75rem; color:#94a3b8;">⬇ beri nada</div>
+          <button type="button" class="phonetic-pinyin-toned" onclick="playWord('您', 'nín')" title="Klik dengar: nín" style="background:none;border:none;">
+            🔊 nín
+          </button>
+          <div class="phonetic-tone-badge">Nada 2 (ˊ)</div>
+          <div class="phonetic-hanzi">您</div>
+          <div class="phonetic-arti">Anda (sopan)</div>
+        </div>
+
+        <!-- (4) zhong -> zhōng -->
+        <div class="phonetic-card">
+          <div class="phonetic-num">( 4 )</div>
+          <div class="phonetic-pinyin-raw">zhong</div>
+          <div style="font-size: 0.75rem; color:#94a3b8;">⬇ beri nada</div>
+          <button type="button" class="phonetic-pinyin-toned" onclick="playWord('中', 'zhōng')" title="Klik dengar: zhōng" style="background:none;border:none;">
+            🔊 zhōng
+          </button>
+          <div class="phonetic-tone-badge">Nada 1 (ˉ)</div>
+          <div class="phonetic-hanzi">中</div>
+          <div class="phonetic-arti">tengah / China</div>
+        </div>
+
+        <!-- (5) tongxue -> tóngxué -->
+        <div class="phonetic-card">
+          <div class="phonetic-num">( 5 )</div>
+          <div class="phonetic-pinyin-raw">tongxue</div>
+          <div style="font-size: 0.75rem; color:#94a3b8;">⬇ beri nada</div>
+          <button type="button" class="phonetic-pinyin-toned" onclick="playWord('同学', 'tóngxué')" title="Klik dengar: tóngxué" style="background:none;border:none;">
+            🔊 tóngxué
+          </button>
+          <div class="phonetic-tone-badge">Nada 2 + Nada 2</div>
+          <div class="phonetic-hanzi">同学</div>
+          <div class="phonetic-arti">teman sekelas</div>
+        </div>
+
+        <!-- (6) dajia -> dàjiā -->
+        <div class="phonetic-card">
+          <div class="phonetic-num">( 6 )</div>
+          <div class="phonetic-pinyin-raw">dajia</div>
+          <div style="font-size: 0.75rem; color:#94a3b8;">⬇ beri nada</div>
+          <button type="button" class="phonetic-pinyin-toned" onclick="playWord('大家', 'dàjiā')" title="Klik dengar: dàjiā" style="background:none;border:none;">
+            🔊 dàjiā
+          </button>
+          <div class="phonetic-tone-badge">Nada 4 + Nada 1</div>
+          <div class="phonetic-hanzi">大家</div>
+          <div class="phonetic-arti">semua orang</div>
+        </div>
+
+        <!-- (7) zaijian -> zàijiàn -->
+        <div class="phonetic-card">
+          <div class="phonetic-num">( 7 )</div>
+          <div class="phonetic-pinyin-raw">zaijian</div>
+          <div style="font-size: 0.75rem; color:#94a3b8;">⬇ beri nada</div>
+          <button type="button" class="phonetic-pinyin-toned" onclick="playWord('再见', 'zàijiàn')" title="Klik dengar: zàijiàn" style="background:none;border:none;">
+            🔊 zàijiàn
+          </button>
+          <div class="phonetic-tone-badge">Nada 4 + Nada 4</div>
+          <div class="phonetic-hanzi">再见</div>
+          <div class="phonetic-arti">sampai jumpa</div>
+        </div>
+
+        <!-- (8) renshi -> rènshi -->
+        <div class="phonetic-card">
+          <div class="phonetic-num">( 8 )</div>
+          <div class="phonetic-pinyin-raw">renshi</div>
+          <div style="font-size: 0.75rem; color:#94a3b8;">⬇ beri nada</div>
+          <button type="button" class="phonetic-pinyin-toned" onclick="playWord('认识', 'rènshi')" title="Klik dengar: rènshi" style="background:none;border:none;">
+            🔊 rènshi
+          </button>
+          <div class="phonetic-tone-badge">Nada 4 + Netral</div>
+          <div class="phonetic-hanzi">认识</div>
+          <div class="phonetic-arti">mengenal / kenal</div>
+        </div>
+
       </div>
+
+      <!-- Ringkasan Aturan Penandaan Nada Lengkap -->
+      <div class="aturan-block" style="margin-top:0.85rem;">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#ccfbf1; color:#0f766e; font-weight:700;">💡 Panduan Lengkap</span>
+          <span>Aturan Urutan Penempatan Tanda Nada Pinyin (标调规则) : <strong>a &gt; o &gt; e &gt; i &gt; u &gt; ü</strong></span>
+        </div>
+
+        <!-- Prinsip Dasar / Syair Rumus Cepat Menghafal -->
+        <div class="aturan-rule rule-note" style="margin-bottom:0.75rem;">
+          <span class="aturan-icon">📖</span>
+          <div class="aturan-text">
+            <div style="font-weight:700; color:#0f766e; font-size:0.95rem; margin-bottom:0.35rem;">
+              Rumus Cepat Menghafal Urutan Nada (标调歌诀 / Jingle):
+            </div>
+            <div style="font-family:'Noto Sans SC',sans-serif; font-size:1.02rem; font-weight:700; color:#1e293b; background:#f0fdfa; padding:0.5rem 0.75rem; border-radius:8px; border-left:3px solid #0d9488; line-height:1.6;">
+              有 a 先找 a，无 a 找 o、e，<br>
+              i、u 并列标在后，单个元音不用说。
+            </div>
+            <div style="font-size:0.84rem; color:#475569; margin-top:0.35rem; line-height:1.5;">
+              <em>Artinya:</em> Jika ada <strong>a</strong> selalu letakkan di <strong>a</strong>; jika tidak ada <strong>a</strong>, cari <strong>o</strong> atau <strong>e</strong>; jika <strong>i</strong> dan <strong>u</strong> berdampingan, tanda nada diletakkan di vokal yang paling belakang; jika hanya ada satu vokal tunggal, langsung letakkan pada vokal tersebut!
+            </div>
+          </div>
+        </div>
+
+        <!-- Penjelasan Detail 6 Vokal Tunggal (a, o, e, i, u, ü) -->
+        <div style="display:flex; flex-direction:column; gap:0.65rem; margin-top:0.5rem;">
+          
+          <!-- 1. Vokal 'a' -->
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #ef4444; border-radius:8px; padding:0.65rem 0.85rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.35rem;">
+              <span style="font-weight:700; font-size:0.92rem; color:#1e293b;">1. Vokal [ a ] — Prioritas Paling Utama (Nomor 1)</span>
+              <span class="pos-badge" style="background:#fef2f2; color:#ef4444; font-weight:700;">Prioritas Tertinggi</span>
+            </div>
+            <div style="font-size:0.84rem; color:#475569; margin-top:0.35rem; line-height:1.5;">
+              Selama dalam satu suku kata terdapat huruf <strong>a</strong>, maka tanda nada <strong>wajib dan mutlak</strong> diletakkan di atas <strong>a</strong>, terlepas dari vokal lain yang menyertainya.<br>
+              <strong>Contoh:</strong> 
+              <span style="color:#ef4444; font-weight:700;">hǎo</span> (好 - baik), 
+              <span style="color:#ef4444; font-weight:700;">dàjiā</span> (大家 - semua orang), 
+              <span style="color:#ef4444; font-weight:700;">māma</span> (妈妈 - ibu), 
+              <span style="color:#ef4444; font-weight:700;">xiǎo</span> (小 - kecil), 
+              <span style="color:#ef4444; font-weight:700;">guān</span> (关 - tutup).
+            </div>
+          </div>
+
+          <!-- 2. Vokal 'o' dan 'e' -->
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #f59e0b; border-radius:8px; padding:0.65rem 0.85rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.35rem;">
+              <span style="font-weight:700; font-size:0.92rem; color:#1e293b;">2. Vokal [ o ] dan [ e ] — Prioritas Kedua (Bila Tidak Ada 'a')</span>
+              <span class="pos-badge" style="background:#fffbeb; color:#d97706; font-weight:700;">Prioritas Ke-2</span>
+            </div>
+            <div style="font-size:0.84rem; color:#475569; margin-top:0.35rem; line-height:1.5;">
+              Jika tidak ada huruf <strong>a</strong>, periksa apakah ada <strong>o</strong> atau <strong>e</strong>. Dalam fonetik bahasa Mandarin, <strong>o</strong> dan <strong>e</strong> tidak pernah muncul bersamaan dalam satu suku kata tunggal, sehingga jika salah satunya ada, tanda nada diletakkan padanya.<br>
+              <strong>Contoh pada 'o':</strong> 
+              <span style="color:#d97706; font-weight:700;">zhōng</span> (中 - tengah), 
+              <span style="color:#d97706; font-weight:700;">gǒu</span> (狗 - anjing), 
+              <span style="color:#d97706; font-weight:700;">duō</span> (多 - banyak).<br>
+              <strong>Contoh pada 'e':</strong> 
+              <span style="color:#d97706; font-weight:700;">xiè</span> (谢 - terima kasih), 
+              <span style="color:#d97706; font-weight:700;">tóngxué</span> (同学 - teman sekelas), 
+              <span style="color:#d97706; font-weight:700;">běn</span> (本 - jilid/buku), 
+              <span style="color:#d97706; font-weight:700;">gēge</span> (哥哥 - kakak laki-laki).
+            </div>
+          </div>
+
+          <!-- 3. Vokal 'i' dan 'u' -->
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #0d9488; border-radius:8px; padding:0.65rem 0.85rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.35rem;">
+              <span style="font-weight:700; font-size:0.92rem; color:#1e293b;">3. Vokal [ i ] dan [ u ] — Prioritas Ketiga</span>
+              <span class="pos-badge" style="background:#f0fdfa; color:#0d9488; font-weight:700;">Tunggal &amp; Pasangan</span>
+            </div>
+            <div style="font-size:0.84rem; color:#475569; margin-top:0.35rem; line-height:1.5;">
+              • <strong>Jika berdiri sendiri (vokal tunggal):</strong> Langsung beri tanda nada di atas huruf tersebut. Khusus huruf <strong>i</strong> bertanda nada, titik di atas huruf <strong>i</strong> dihilangkan lalu diganti oleh tanda nada (misal: <em>ī, í, ǐ, ì</em>).<br>
+              <strong>Contoh:</strong> <span style="color:#0d9488; font-weight:700;">nín</span> (您 - Anda), <span style="color:#0d9488; font-weight:700;">shū</span> (书 - buku), <span style="color:#0d9488; font-weight:700;">bù</span> (不 - tidak).<br>
+              • <strong>Kasus Khusus Pasangan (iu dan ui):</strong> Lihat kotak catatan spesial di bawah!
+            </div>
+          </div>
+
+          <!-- 4. Vokal 'ü' (u titik dua / 鱼 yú / 迂 yū) -->
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #8b5cf6; border-radius:8px; padding:0.65rem 0.85rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.35rem;">
+              <span style="font-weight:700; font-size:0.92rem; color:#1e293b;">4. Vokal [ ü ] (u Titik Dua / Umlaut) — Prioritas Terakhir</span>
+              <span class="pos-badge" style="background:#f5f3ff; color:#7c3aed; font-weight:700;">Vokal Spesifik ü</span>
+            </div>
+            <div style="font-size:0.84rem; color:#475569; margin-top:0.35rem; line-height:1.5;">
+              Vokal <strong>ü</strong> dilafalkan dengan posisi bibir membulat seperti bersiul sambil mengucapkan "i". Aturan penandaan nadanya adalah:<br>
+              • <strong>Bentuk nada:</strong> <em>ǖ, ǘ, ǚ, ǜ</em> (tanda nada diletakkan tepat di atas kedua titik umlautnya).<br>
+              • <strong>Saat bertemu j, q, x, y:</strong> Kedua titik di atas <strong>ü</strong> dihilangkan dalam penulisan ejaan baku Pinyin, namun nadanya tetap berada di atas huruf <strong>u</strong> tersebut (karena secara fonetik aslinya adalah <strong>ü</strong>).<br>
+              <strong>Contoh:</strong> 
+              <span style="color:#7c3aed; font-weight:700;">nǚ</span> (女 - wanita / titik tetap ada), 
+              <span style="color:#7c3aed; font-weight:700;">lǜ</span> (绿 - hijau / titik tetap ada), 
+              <span style="color:#7c3aed; font-weight:700;">qù</span> (去 - pergi / asal kata q + ü, titik lebur), 
+              <span style="color:#7c3aed; font-weight:700;">xué</span> (学 - belajar / asal kata x + üé), 
+              <span style="color:#7c3aed; font-weight:700;">yuè</span> (月 - bulan).
+            </div>
+          </div>
+
+          <!-- 5. Catatan Khusus iu dan ui (Sesuai Catatan Merah di Gambar Buku) -->
+          <div style="background:#e0f2fe; border:1.5px solid #38bdf8; border-radius:10px; padding:0.85rem 1rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="font-size:1.25rem;">⭐</span>
+              <strong style="color: #0369a1; font-size:0.95rem;">Catatan Khusus Buku: "yg ini special" (Aturan iu &amp; ui)</strong>
+            </div>
+            <div style="font-size:0.86rem; color:#1e293b; line-height:1.55;">
+              Ketika vokal <strong>i</strong> dan <strong>u</strong> muncul bersamaan dalam satu suku kata (berpasangan / berdampingan), urutan <em>i &gt; u</em> tidak berlaku. Aturannya adalah: <strong>Tanda nada selalu diletakkan pada vokal yang posisinya berada paling belakang (terakhir)!</strong>
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:0.6rem; margin-top:0.5rem;">
+                <div style="background:#ffffff; border:1px solid #bae6fd; border-radius:8px; padding:0.55rem 0.75rem;">
+                  <div style="font-weight:700; color:#0284c7; font-size:0.88rem;">Kombinasi [ iu ] ➔ tanda nada di [ u ]</div>
+                  <div style="margin-top:3px; font-size:0.82rem; color:#475569;">
+                    Karena <strong>u</strong> berada di belakang, maka nada diletakkan pada <strong>u</strong>:<br>
+                    <code style="background:#f1f5f9; padding:2px 5px; border-radius:4px; font-weight:700; color:#b91c1c;">iu ➔ iū / iú / iǔ / iù</code><br>
+                    Contoh: <strong>liù</strong> (六 - enam), <strong>jiǔ</strong> (九 - sembilan), <strong>xiūxi</strong> (休息 - istirahat).
+                  </div>
+                </div>
+                <div style="background:#ffffff; border:1px solid #bae6fd; border-radius:8px; padding:0.55rem 0.75rem;">
+                  <div style="font-weight:700; color:#0284c7; font-size:0.88rem;">Kombinasi [ ui ] ➔ tanda nada di [ i ]</div>
+                  <div style="margin-top:3px; font-size:0.82rem; color:#475569;">
+                    Karena <strong>i</strong> berada di belakang, maka nada diletakkan pada <strong>i</strong>:<br>
+                    <code style="background:#f1f5f9; padding:2px 5px; border-radius:4px; font-weight:700; color:#b91c1c;">ui ➔ uī / uí / uǐ / uì</code><br>
+                    Contoh: <strong>duì</strong> (对 - benar), <strong>guì</strong> (贵 - mahal), <strong>shuǐ</strong> (水 - air).
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   </div>
 
   <!-- ══════════════════════════════════════════════════
-       BAGIAN 2: 2. 音节辨析 (2) Syllable Distinction (2)
+       BAGIAN 2: 一、语音 Pronunciation · 2 声调辨析 Tone Distinction
   ══════════════════════════════════════════════════ -->
   <div>
-    <div class="section-title">📌 2. 音节辨析 (2) · Syllable Distinction (2)</div>
+    <div class="section-title">📌 一、语音 Pronunciation · 2 声调辨析 Tone Distinction</div>
     <div class="classroom-box" style="border-left: 5px solid #0d9488;">
       <div class="classroom-header">
         <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">2</div>
         <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">2. 音节辨析（2）· Syllable Distinction (2)</div>
-          <div class="classroom-desc">Latihan Pembedaan Pasangan Fonetik &amp; Nada Berurutan — Sesuai HSK 1 Standard Course Workbook Pelajaran 9.</div>
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">小语讲堂 · Xiaoyu's Classroom · 2 声调辨析 Tone Distinction</div>
+          <div class="classroom-desc">Mendengarkan rekaman audio dan memilih suku kata yang memiliki nada berbeda dalam setiap kelompok (A, B, atau C).</div>
         </div>
+      </div>
+
+      <!-- Foto Lembar Soal Asli Buku Bab 9 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-tone-distinction.png" alt="Soal 2 声调辨析 Tone Distinction" style="max-width: 100%; width: 560px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
       </div>
 
       <div class="instruction-banner">
@@ -1459,19 +1924,105 @@
           <span>Instruksi Soal Buku</span>
         </div>
         <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          听录音，选择听到的音节并大声朗读。
+          听录音，选出每组音节里声调不同的一个。
         </div>
         <div class="instruction-trans">
-          (Listen, choose the syllables you hear, then read aloud.)
+          (Listen and choose the syllable with a different tone in each group.)
+        </div>
+        <div style="margin-top:0.35rem; padding-top:0.45rem; border-top:1px dashed #99f6e4; font-size:0.84rem; color:#475569; font-weight:500;">
+          Dengarkan dan perhatikan tanda nada suku kata di bawah. Tombol dengan tanda warna merah (<span style="color:#ef4444;font-weight:700;">✓ Beda Nada</span>) adalah jawaban yang memiliki nada berbeda dari dua opsi lainnya:
         </div>
       </div>
 
-      <div class="placeholder-box">
-        <div class="placeholder-icon">📋</div>
-        <div class="placeholder-title">Materi Bagian 2 Siap Diisi</div>
-        <div class="placeholder-desc">Template tabel perbandingan suku kata fonetik dan aturan pelafalan siap digunakan.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      <!-- Daftar 4 Soal Tone Distinction -->
+      <div style="display: flex; flex-direction: column; gap: 0.85rem; margin-top: 0.5rem;">
+        
+        <!-- Soal (1): A qián (2), B xiǎo (3), C nián (2) -> Beda: B xiǎo -->
+        <div class="tone-row">
+          <div style="display:flex; align-items:center; gap:0.5rem; min-width: 60px;">
+            <span class="pos-badge" style="font-size:0.85rem; font-weight:700;">( 1 )</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem; flex:1; justify-content: space-around; flex-wrap: wrap;">
+            <button type="button" class="tone-opt-btn" onclick="playPinyin('qián')" title="qián (Nada 2 - naik)">
+              🔊 <strong>A</strong> &nbsp;qián <span style="font-size:0.72rem;color:#64748b;margin-left:4px;">(2)</span>
+            </button>
+            <button type="button" class="tone-opt-btn correct-ans" onclick="playPinyin('xiǎo')" title="xiǎo (Nada 3 - turun-naik) -> Berbeda!">
+              🔊 <strong>B</strong> &nbsp;xiǎo <span style="font-size:0.72rem;color:#b91c1c;margin-left:4px;">(3) ✓ Beda</span>
+            </button>
+            <button type="button" class="tone-opt-btn" onclick="playPinyin('nián')" title="nián (Nada 2 - naik)">
+              🔊 <strong>C</strong> &nbsp;nián <span style="font-size:0.72rem;color:#64748b;margin-left:4px;">(2)</span>
+            </button>
+          </div>
+          <div class="soal-pembahasan" style="width:100%; margin-top:0.35rem; background:#f0fdfa; border-left-color:#0d9488;">
+            <strong>Pembahasan Soal (1):</strong> Pilihan <strong>A qián</strong> (钱/前) bernada 2 (naik) dan pilihan <strong>C nián</strong> (年) juga bernada 2 (naik). Sedangkan pilihan <strong>B xiǎo</strong> (小) bernada 3 (turun-naik), sehingga <strong>B</strong> adalah jawaban yang tepat karena memiliki nada berbeda.
+          </div>
+        </div>
+
+        <!-- Soal (2): A chàng (4), B shū (1), C zhōng (1) -> Beda: A chàng -->
+        <div class="tone-row">
+          <div style="display:flex; align-items:center; gap:0.5rem; min-width: 60px;">
+            <span class="pos-badge" style="font-size:0.85rem; font-weight:700;">( 2 )</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem; flex:1; justify-content: space-around; flex-wrap: wrap;">
+            <button type="button" class="tone-opt-btn correct-ans" onclick="playPinyin('chàng')" title="chàng (Nada 4 - turun) -> Berbeda!">
+              🔊 <strong>A</strong> &nbsp;chàng <span style="font-size:0.72rem;color:#b91c1c;margin-left:4px;">(4) ✓ Beda</span>
+            </button>
+            <button type="button" class="tone-opt-btn" onclick="playPinyin('shū')" title="shū (Nada 1 - datar)">
+              🔊 <strong>B</strong> &nbsp;shū <span style="font-size:0.72rem;color:#64748b;margin-left:4px;">(1)</span>
+            </button>
+            <button type="button" class="tone-opt-btn" onclick="playPinyin('zhōng')" title="zhōng (Nada 1 - datar)">
+              🔊 <strong>C</strong> &nbsp;zhōng <span style="font-size:0.72rem;color:#64748b;margin-left:4px;">(1)</span>
+            </button>
+          </div>
+          <div class="soal-pembahasan" style="width:100%; margin-top:0.35rem; background:#f0fdfa; border-left-color:#0d9488;">
+            <strong>Pembahasan Soal (2):</strong> Pilihan <strong>B shū</strong> (书) bernada 1 (tinggi-datar) dan pilihan <strong>C zhōng</strong> (中) bernada 1 (tinggi-datar). Sedangkan pilihan <strong>A chàng</strong> (唱) bernada 4 (jatuh-turun), sehingga <strong>A</strong> adalah jawaban yang memiliki nada berbeda.
+          </div>
+        </div>
+
+        <!-- Soal (3): A gǒu (3), B běn (3), C xué (2) -> Beda: C xué -->
+        <div class="tone-row">
+          <div style="display:flex; align-items:center; gap:0.5rem; min-width: 60px;">
+            <span class="pos-badge" style="font-size:0.85rem; font-weight:700;">( 3 )</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem; flex:1; justify-content: space-around; flex-wrap: wrap;">
+            <button type="button" class="tone-opt-btn" onclick="playPinyin('gǒu')" title="gǒu (Nada 3 - turun-naik)">
+              🔊 <strong>A</strong> &nbsp;gǒu <span style="font-size:0.72rem;color:#64748b;margin-left:4px;">(3)</span>
+            </button>
+            <button type="button" class="tone-opt-btn" onclick="playPinyin('běn')" title="běn (Nada 3 - turun-naik)">
+              🔊 <strong>B</strong> &nbsp;běn <span style="font-size:0.72rem;color:#64748b;margin-left:4px;">(3)</span>
+            </button>
+            <button type="button" class="tone-opt-btn correct-ans" onclick="playPinyin('xué')" title="xué (Nada 2 - naik) -> Berbeda!">
+              🔊 <strong>C</strong> &nbsp;xué <span style="font-size:0.72rem;color:#b91c1c;margin-left:4px;">(2) ✓ Beda</span>
+            </button>
+          </div>
+          <div class="soal-pembahasan" style="width:100%; margin-top:0.35rem; background:#f0fdfa; border-left-color:#0d9488;">
+            <strong>Pembahasan Soal (3):</strong> Pilihan <strong>A gǒu</strong> (狗 - anjing) bernada 3 dan pilihan <strong>B běn</strong> (本 - buku) bernada 3. Sedangkan pilihan <strong>C xué</strong> (学 - belajar) bernada 2 (naik), sehingga <strong>C</strong> adalah jawaban yang tepat.
+          </div>
+        </div>
+
+        <!-- Soal (4): A biān (1), B gē (1), C dì (4) -> Beda: C dì -->
+        <div class="tone-row">
+          <div style="display:flex; align-items:center; gap:0.5rem; min-width: 60px;">
+            <span class="pos-badge" style="font-size:0.85rem; font-weight:700;">( 4 )</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem; flex:1; justify-content: space-around; flex-wrap: wrap;">
+            <button type="button" class="tone-opt-btn" onclick="playPinyin('biān')" title="biān (Nada 1 - datar)">
+              🔊 <strong>A</strong> &nbsp;biān <span style="font-size:0.72rem;color:#64748b;margin-left:4px;">(1)</span>
+            </button>
+            <button type="button" class="tone-opt-btn" onclick="playPinyin('gē')" title="gē (Nada 1 - datar)">
+              🔊 <strong>B</strong> &nbsp;gē <span style="font-size:0.72rem;color:#64748b;margin-left:4px;">(1)</span>
+            </button>
+            <button type="button" class="tone-opt-btn correct-ans" onclick="playPinyin('dì')" title="dì (Nada 4 - turun) -> Berbeda!">
+              🔊 <strong>C</strong> &nbsp;dì <span style="font-size:0.72rem;color:#b91c1c;margin-left:4px;">(4) ✓ Beda</span>
+            </button>
+          </div>
+          <div class="soal-pembahasan" style="width:100%; margin-top:0.35rem; background:#f0fdfa; border-left-color:#0d9488;">
+            <strong>Pembahasan Soal (4):</strong> Pilihan <strong>A biān</strong> (边 - sisi) bernada 1 dan pilihan <strong>B gē</strong> (歌/哥 - lagu/kakak) bernada 1. Sedangkan pilihan <strong>C dì</strong> (第/弟 - ke-/adik) bernada 4 (jatuh-turun), sehingga <strong>C</strong> adalah jawaban yang memiliki nada berbeda.
+          </div>
+        </div>
+
       </div>
+
     </div>
   </div>
 
@@ -1484,320 +2035,587 @@
       <div class="classroom-header">
         <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">字</div>
         <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">二、汉字 · Chinese Characters — Pelajaran 9</div>
-          <div class="classroom-desc">Aksara Radikal, Guratan &amp; Latihan Tianzige/Mizige — Sesuai HSK 1 Standard Course Workbook Pelajaran 9.</div>
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">二、汉字 · Chinese Characters — 汉字书写（二）</div>
+          <div class="classroom-desc">Belajar bentuk goresan baru (笔画), arah tarikan kuas (运笔方向), dan kaidah urutan goresan (笔顺规则) — Sesuai HSK 1 Standard Course Workbook Bab 9.</div>
         </div>
       </div>
 
-      <div class="instruction-banner">
-        <div class="instruction-banner-top">
-          <span style="font-size:1.15rem;">✍️</span>
-          <span>Instruksi Penulisan Aksara Hanzi</span>
+      <!-- Foto Lembar Soal Asli Buku Bab 9 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-hanzi-strokes.jpg" alt="二、汉字 汉字书写（二） Chinese Character Writing (II)" style="max-width: 100%; width: 560px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      </div>
+
+      <!-- ══════════════════════════════════════════════════
+           1. 学练笔画 Stroke Practice (Latihan 4 Goresan Dasar)
+      ══════════════════════════════════════════════════ -->
+      <div class="aturan-block" style="margin-top: 1rem;">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#ccfbf1; color:#0f766e;">Latihan 1</span>
+          <span>1. 学练笔画 · Stroke Practice (Bentuk &amp; Arah Tarikan Goresan)</span>
         </div>
-        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          汉字书写及笔画部件解析。
-        </div>
-        <div class="instruction-trans">
-          (Analysis of Chinese Character Strokes, Radicals and Writing Practice.)
+
+        <div class="contrast-table-container" style="margin-top: 0.5rem;">
+          <table class="contrast-table">
+            <thead>
+              <tr>
+                <th style="width: 16%; text-align: center;">笔形<br><span style="font-size:0.75rem; font-weight:500;">Stroke Shapes</span></th>
+                <th style="width: 22%; text-align: center;">名称<br><span style="font-size:0.75rem; font-weight:500;">Stroke Names</span></th>
+                <th style="width: 22%; text-align: center;">运笔方向<br><span style="font-size:0.75rem; font-weight:500;">Stroke Directions</span></th>
+                <th style="width: 40%; text-align: center;">描写<br><span style="font-size:0.75rem; font-weight:500;">Stroke Tracing</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Goresan 1: 撇 (piě) -->
+              <tr>
+                <td style="text-align: center;">
+                  <span style="font-family:'Noto Sans SC',sans-serif; font-size:2.2rem; font-weight:900; color:#0d9488; line-height:1;">丿</span>
+                </td>
+                <td style="text-align: center;">
+                  <button type="button" class="table-audio-btn" onclick="playWord('撇', 'piě')" style="background:none; border:none; cursor:pointer;" title="Klik dengar pelafalan piě">
+                    <div style="font-size:0.8rem; color:#0d9488; font-family:var(--font-pinyin); font-weight:700;">piě</div>
+                    <div style="font-family:'Noto Sans SC',sans-serif; font-size:1.25rem; font-weight:800; color:#1e293b;">撇</div>
+                  </button>
+                </td>
+                <td style="text-align: center;">
+                  <div style="display:inline-flex; align-items:center; gap:0.35rem; background:#f0fdfa; border:1px solid #99f6e4; padding:0.35rem 0.75rem; border-radius:8px;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.4rem; font-weight:900; color:#0f766e;">丿</span>
+                    <span style="color:#ef4444; font-weight:800; font-size:1.05rem;">↙</span>
+                  </div>
+                  <div style="font-size:0.74rem; color:#64748b; margin-top:3px;">Atas kanan ke kiri bawah (Menyerong)</div>
+                </td>
+                <td>
+                  <div style="display:flex; align-items:center; justify-content:space-around; background:#fafafa; border:1px dashed #cbd5e1; border-radius:8px; padding:0.45rem 0.65rem;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#94a3b8;">丿</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">丿</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">丿</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">丿</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">丿</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">丿</span>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Goresan 2: 捺 (nà) -->
+              <tr>
+                <td style="text-align: center;">
+                  <span style="font-family:'Noto Sans SC',sans-serif; font-size:2.2rem; font-weight:900; color:#0d9488; line-height:1;">乀</span>
+                </td>
+                <td style="text-align: center;">
+                  <button type="button" class="table-audio-btn" onclick="playWord('捺', 'nà')" style="background:none; border:none; cursor:pointer;" title="Klik dengar pelafalan nà">
+                    <div style="font-size:0.8rem; color:#0d9488; font-family:var(--font-pinyin); font-weight:700;">nà</div>
+                    <div style="font-family:'Noto Sans SC',sans-serif; font-size:1.25rem; font-weight:800; color:#1e293b;">捺</div>
+                  </button>
+                </td>
+                <td style="text-align: center;">
+                  <div style="display:inline-flex; align-items:center; gap:0.35rem; background:#f0fdfa; border:1px solid #99f6e4; padding:0.35rem 0.75rem; border-radius:8px;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.4rem; font-weight:900; color:#0f766e;">乀</span>
+                    <span style="color:#ef4444; font-weight:800; font-size:1.05rem;">↘</span>
+                  </div>
+                  <div style="font-size:0.74rem; color:#64748b; margin-top:3px;">Atas kiri ke kanan bawah (Menyerong)</div>
+                </td>
+                <td>
+                  <div style="display:flex; align-items:center; justify-content:space-around; background:#fafafa; border:1px dashed #cbd5e1; border-radius:8px; padding:0.45rem 0.65rem;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#94a3b8;">乀</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">乀</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">乀</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">乀</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">乀</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">乀</span>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Goresan 3: 点 (diǎn) -->
+              <tr>
+                <td style="text-align: center;">
+                  <span style="font-family:'Noto Sans SC',sans-serif; font-size:2.2rem; font-weight:900; color:#0d9488; line-height:1;">丶</span>
+                </td>
+                <td style="text-align: center;">
+                  <button type="button" class="table-audio-btn" onclick="playWord('点', 'diǎn')" style="background:none; border:none; cursor:pointer;" title="Klik dengar pelafalan diǎn">
+                    <div style="font-size:0.8rem; color:#0d9488; font-family:var(--font-pinyin); font-weight:700;">diǎn</div>
+                    <div style="font-family:'Noto Sans SC',sans-serif; font-size:1.25rem; font-weight:800; color:#1e293b;">点</div>
+                  </button>
+                </td>
+                <td style="text-align: center;">
+                  <div style="display:inline-flex; align-items:center; gap:0.35rem; background:#f0fdfa; border:1px solid #99f6e4; padding:0.35rem 0.75rem; border-radius:8px;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.4rem; font-weight:900; color:#0f766e;">丶</span>
+                    <span style="color:#ef4444; font-weight:800; font-size:1.05rem;">↘</span>
+                  </div>
+                  <div style="font-size:0.74rem; color:#64748b; margin-top:3px;">Titik pendek dari atas ke kanan bawah</div>
+                </td>
+                <td>
+                  <div style="display:flex; align-items:center; justify-content:space-around; background:#fafafa; border:1px dashed #cbd5e1; border-radius:8px; padding:0.45rem 0.65rem;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#94a3b8;">丶</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">丶</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">丶</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">丶</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">丶</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">丶</span>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Goresan 4: 提 (tí) -->
+              <tr>
+                <td style="text-align: center;">
+                  <span style="font-family:'Noto Sans SC',sans-serif; font-size:2.2rem; font-weight:900; color:#0d9488; line-height:1;">㇀</span>
+                </td>
+                <td style="text-align: center;">
+                  <button type="button" class="table-audio-btn" onclick="playWord('提', 'tí')" style="background:none; border:none; cursor:pointer;" title="Klik dengar pelafalan tí">
+                    <div style="font-size:0.8rem; color:#0d9488; font-family:var(--font-pinyin); font-weight:700;">tí</div>
+                    <div style="font-family:'Noto Sans SC',sans-serif; font-size:1.25rem; font-weight:800; color:#1e293b;">提</div>
+                  </button>
+                </td>
+                <td style="text-align: center;">
+                  <div style="display:inline-flex; align-items:center; gap:0.35rem; background:#f0fdfa; border:1px solid #99f6e4; padding:0.35rem 0.75rem; border-radius:8px;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.4rem; font-weight:900; color:#0f766e;">㇀</span>
+                    <span style="color:#ef4444; font-weight:800; font-size:1.05rem;">↗</span>
+                  </div>
+                  <div style="font-size:0.74rem; color:#64748b; margin-top:3px;">Kiri bawah dicongkel naik ke kanan atas</div>
+                </td>
+                <td>
+                  <div style="display:flex; align-items:center; justify-content:space-around; background:#fafafa; border:1px dashed #cbd5e1; border-radius:8px; padding:0.45rem 0.65rem;">
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#94a3b8;">㇀</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">㇀</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#cbd5e1;">㇀</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">㇀</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">㇀</span>
+                    <span style="font-family:'Noto Sans SC',sans-serif; font-size:1.6rem; color:#e2e8f0;">㇀</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <div class="placeholder-box">
-        <div class="placeholder-icon">🖌️</div>
-        <div class="placeholder-title">Materi Aksara &amp; Kotak Kaligrafi Siap Diisi</div>
-        <div class="placeholder-desc">Struktur grid Tianzige/Mizige interaktif dengan garis bantu pelafalan dan kaligrafi siap dipasangkan dengan karakter Bab 9.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      <!-- ══════════════════════════════════════════════════
+           2. 学练笔顺 Stroke Order Practice (Aturan Urutan Penulisan)
+      ══════════════════════════════════════════════════ -->
+      <div class="aturan-block" style="margin-top: 1.25rem;">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#ccfbf1; color:#0f766e;">Latihan 2</span>
+          <span>2. 学练笔顺 · Stroke Order Practice (Kaidah Urutan Penulisan Goresan)</span>
+        </div>
+
+        <!-- Aturan 1: 先撇后捺 (Dahulukan Piě baru Nà) -> 例字: 人 -->
+        <div style="margin-top: 0.75rem; background:#ffffff; border:1px solid #e2e8f0; border-radius:10px; padding:1rem;">
+          <div class="contrast-table-container">
+            <table class="contrast-table">
+              <thead>
+                <tr>
+                  <th style="width: 50%; text-align: center;">笔顺规则<br><span style="font-size:0.75rem; font-weight:500;">Stroke Order Rule</span></th>
+                  <th style="width: 50%; text-align: center;">例字<br><span style="font-size:0.75rem; font-weight:500;">Example Character</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center; padding: 1rem;">
+                    <div style="font-size:0.9rem; color:#0d9488; font-family:var(--font-pinyin); font-weight:700;">xiān piě hòu nà</div>
+                    <div style="font-family:'Noto Sans SC',sans-serif; font-size:1.4rem; font-weight:800; color:#1e293b; margin:2px 0;">先撇后捺</div>
+                    <div style="font-size:0.86rem; color:#475569; margin-top:3px;">
+                      Left-falling stroke preceding right-falling stroke<br>
+                      <strong style="color:#0f766e;">(Dahulukan goresan miring ke kiri / piě, baru kemudian miring ke kanan / nà)</strong>
+                    </div>
+                  </td>
+                  <td style="text-align: center; padding: 1rem;">
+                    <button type="button" class="table-audio-btn" onclick="playWord('人', 'rén')" style="background:none; border:none; cursor:pointer;" title="Klik dengar pelafalan rén">
+                      <span style="font-family:'Noto Sans SC',sans-serif; font-size:2.5rem; font-weight:900; color:#0d9488; line-height:1;">人</span>
+                      <span style="font-size:0.95rem; font-family:var(--font-pinyin); color:#64748b; margin-left:0.4rem; font-weight:700;">rén (orang)</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Penjelasan Makna Kata Per Kata: 先撇后捺 -->
+          <div style="margin-top:0.75rem; padding:0.65rem 0.85rem; background:#f0fdfa; border:1px solid #99f6e4; border-radius:8px; font-size:0.84rem; color:#334155; line-height:1.6;">
+            <div style="font-weight:700; color:#0f766e; margin-bottom:0.25rem;">🔍 Bedah Kosakata &amp; Makna Kaidah:</div>
+            • <strong>先 (xiān)</strong> = Dahulu / Lebih dulu / Pertama-tama.<br>
+            • <strong>撇 (piě)</strong> = Goresan miring melengkung ke kiri bawah (<strong>丿</strong>).<br>
+            • <strong>后 (hòu)</strong> = Kemudian / Belakangan / Setelah itu.<br>
+            • <strong>捺 (nà)</strong> = Goresan miring melebar ke kanan bawah (<strong>乀</strong>).<br>
+            💡 <em>Kesimpulan:</em> Saat menulis karakter yang memiliki persilangan atau pertemuan goresan miring (seperti karakter <strong>人 rén</strong>, <strong>八 bā</strong>, <strong>大 dà</strong>, <strong>天 tiān</strong>), tangan harus selalu menarik garis serong kiri (<strong>撇 piě</strong>) terlebih dahulu, baru kemudian menarik garis serong kanan (<strong>捺 nà</strong>).
+          </div>
+
+          <!-- Tracing Step-by-Step Kotak Tianzige untuk Karakter 人 -->
+          <div style="margin-top: 0.85rem;">
+            <div style="font-size:0.82rem; font-weight:700; color:#475569; margin-bottom:0.45rem;">
+              描写 Character Tracing (Tahapan Goresan Karakter "人" : 2 Goresan — 1. 丿 piě ➔ 2. 人):
+            </div>
+
+            <div class="grid-mizige-table">
+              <!-- Langkah 1: 丿 (merah) -->
+              <div class="mizige-cell">
+                <div class="mizige-cross"></div>
+                <span class="mizige-char sample-red">丿</span>
+              </div>
+              <!-- Langkah 2: 人 (merah) -->
+              <div class="mizige-cell">
+                <div class="mizige-cross"></div>
+                <span class="mizige-char sample-red">人</span>
+              </div>
+              <!-- Tracing Gray 1 s/d 5 -->
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">人</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">人</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">人</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-light">人</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-light">人</span></div>
+              <!-- Kotak Kosong Latihan Mandiri -->
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aturan 2: 从上到下 (Dari Atas ke Bawah) -> 例字: 文 -->
+        <div style="margin-top: 1rem; background:#ffffff; border:1px solid #e2e8f0; border-radius:10px; padding:1rem;">
+          <div class="contrast-table-container">
+            <table class="contrast-table">
+              <thead>
+                <tr>
+                  <th style="width: 50%; text-align: center;">笔顺规则<br><span style="font-size:0.75rem; font-weight:500;">Stroke Order Rule</span></th>
+                  <th style="width: 50%; text-align: center;">例字<br><span style="font-size:0.75rem; font-weight:500;">Example Character</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center; padding: 1rem;">
+                    <div style="font-size:0.9rem; color:#0d9488; font-family:var(--font-pinyin); font-weight:700;">cóng shàng dào xià</div>
+                    <div style="font-family:'Noto Sans SC',sans-serif; font-size:1.4rem; font-weight:800; color:#1e293b; margin:2px 0;">从上到下</div>
+                    <div style="font-size:0.86rem; color:#475569; margin-top:3px;">
+                      From top to bottom<br>
+                      <strong style="color:#0f766e;">(Tulis bagian atas terlebih dahulu, kemudian berurutan ke bagian bawah)</strong>
+                    </div>
+                  </td>
+                  <td style="text-align: center; padding: 1rem;">
+                    <button type="button" class="table-audio-btn" onclick="playWord('文', 'wén')" style="background:none; border:none; cursor:pointer;" title="Klik dengar pelafalan wén">
+                      <span style="font-family:'Noto Sans SC',sans-serif; font-size:2.5rem; font-weight:900; color:#0d9488; line-height:1;">文</span>
+                      <span style="font-size:0.95rem; font-family:var(--font-pinyin); color:#64748b; margin-left:0.4rem; font-weight:700;">wén (bahasa/aksara/budaya)</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Penjelasan Makna Kata Per Kata: 从上到下 -->
+          <div style="margin-top:0.75rem; padding:0.65rem 0.85rem; background:#f0fdfa; border:1px solid #99f6e4; border-radius:8px; font-size:0.84rem; color:#334155; line-height:1.6;">
+            <div style="font-weight:700; color:#0f766e; margin-bottom:0.25rem;">🔍 Bedah Kosakata &amp; Makna Kaidah:</div>
+            • <strong>从 (cóng)</strong> = Dari.<br>
+            • <strong>上 (shàng)</strong> = Atas.<br>
+            • <strong>到 (dào)</strong> = Sampai / Menuju ke.<br>
+            • <strong>下 (xià)</strong> = Bawah.<br>
+            💡 <em>Kesimpulan:</em> Saat menulis karakter dengan struktur bertingkat atas-bawah (seperti karakter <strong>文 wén</strong>, <strong>三 sān</strong>, <strong>二 èr</strong>, <strong>言 yán</strong>), mulailah menarik goresan paling atas (titik <strong>丶 diǎn</strong> atau garis mendatar <strong>一 héng</strong>), lalu bergerak bertahap menuju goresan yang berada di bagian bawah.
+          </div>
+
+          <!-- Tracing Step-by-Step Kotak Tianzige untuk Karakter 文 -->
+          <div style="margin-top: 0.85rem;">
+            <div style="font-size:0.82rem; font-weight:700; color:#475569; margin-bottom:0.45rem;">
+              描写 Character Tracing (Tahapan Goresan Karakter "文" : 4 Goresan — 1. 丶 diǎn ➔ 2. 亠 ➔ 3. 撇 piě ➔ 4. 捺 nà):
+            </div>
+
+            <div class="grid-mizige-table">
+              <!-- Langkah 1: 丶 (titik atas) -->
+              <div class="mizige-cell">
+                <div class="mizige-cross"></div>
+                <span class="mizige-char sample-red">丶</span>
+              </div>
+              <!-- Langkah 2: 亠 (titik + mendatar) -->
+              <div class="mizige-cell">
+                <div class="mizige-cross"></div>
+                <span class="mizige-char sample-red">亠</span>
+              </div>
+              <!-- Langkah 3: 亠 + 丿 -->
+              <div class="mizige-cell">
+                <div class="mizige-cross"></div>
+                <span class="mizige-char sample-red" style="font-size:1.6rem;">文</span>
+              </div>
+              <!-- Langkah 4: 文 utuh -->
+              <div class="mizige-cell">
+                <div class="mizige-cross"></div>
+                <span class="mizige-char sample-red">文</span>
+              </div>
+              <!-- Tracing Gray 1 s/d 4 -->
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">文</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-gray">文</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-light">文</span></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div><span class="mizige-char trace-light">文</span></div>
+              <!-- Kotak Kosong Latihan Mandiri -->
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+              <div class="mizige-cell"><div class="mizige-cross"></div></div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <!-- ══════════════════════════════════════════════════
+           3. 抄写字词 Character and Word Writing (Salin Tulis Aksara & Kosakata)
+      ══════════════════════════════════════════════════ -->
+      <div class="aturan-block" style="margin-top: 1.25rem;">
+        <div class="aturan-block-title">
+          <span class="aturan-block-badge" style="background:#ccfbf1; color:#0f766e;">Latihan 3</span>
+          <span>3. 抄写字词 · Character and Word Writing (Menulis Karakter &amp; Kosakata Terkait)</span>
+        </div>
+
+        <!-- Foto Lembar Latihan 3 Asli Buku Bab 9 -->
+        <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+          <img src="images/bab9-wb-hanzi-copying.png" alt="3 抄写字词 Character and Word Writing" style="max-width: 100%; width: 560px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+        </div>
+
+        <div style="margin-bottom:0.65rem; font-size:0.85rem; color:#475569;">
+          💡 <em>Struktur kotak latihan di bawah disesuaikan 100% persis seperti lembar buku: baris atas kotak Mizige merah untuk menulis karakter huruf per huruf (tahapan goresan), dan baris bawah untuk menulis kosakata gabungannya.</em>
+        </div>
+
+        <!-- Tabel Grid 10 Kolom Persis Buku Asli (4 Blok Karakter) -->
+        <div class="workbook-table-container">
+          <table class="wb-hanzi-grid">
+            <tbody>
+              
+              <!-- ─── BLOK 1: 个 (gè) -> 那个 (nàge) ─── -->
+              <!-- Baris Atas: 10 Kotak Mizige untuk Karakter '个' -->
+              <tr>
+                <!-- Kolom 1: Karakter Utama Merah -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char red-sample">个</span>
+                  </div>
+                </td>
+                <!-- Kolom 2: Goresan 1 (丿) abu-abu -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">丿</span>
+                  </div>
+                </td>
+                <!-- Kolom 3: Goresan 2 (人) abu-abu -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">人</span>
+                  </div>
+                </td>
+                <!-- Kolom 4: Goresan 3 Utuh (个) abu-abu -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">个</span>
+                  </div>
+                </td>
+                <!-- Kolom 5 s/d 10: Kotak Latihan Kosong -->
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+              </tr>
+              <!-- Baris Bawah: Kosakata 那个 (nàge) -->
+              <tr>
+                <td colspan="2">
+                  <div class="wb-word-block" onclick="playWord('那个', 'nàge')" style="cursor:pointer;" title="Klik dengar '那个 nàge'">
+                    <span>那个</span>
+                    <span style="font-size:0.8rem; font-family:var(--font-pinyin); color:#0d9488; font-weight:600;">nàge</span>
+                  </div>
+                </td>
+                <td colspan="3"><div class="wb-word-block"></div></td>
+                <td colspan="3"><div class="wb-word-block"></div></td>
+                <td colspan="2"><div class="wb-word-block"></div></td>
+              </tr>
+
+              <!-- ─── BLOK 2: 今 (jīn) -> 今天 (jīntiān) ─── -->
+              <!-- Baris Atas: 10 Kotak Mizige untuk Karakter '今' -->
+              <tr>
+                <!-- Kolom 1: Karakter Utama Merah -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char red-sample">今</span>
+                  </div>
+                </td>
+                <!-- Kolom 2: Goresan 1 (丿) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">丿</span>
+                  </div>
+                </td>
+                <!-- Kolom 3: Goresan 2 (人) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">人</span>
+                  </div>
+                </td>
+                <!-- Kolom 4: Goresan 3 (今 step 3) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">今</span>
+                  </div>
+                </td>
+                <!-- Kolom 5: Goresan 4 Utuh (今) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">今</span>
+                  </div>
+                </td>
+                <!-- Kolom 6 s/d 10: Kotak Latihan Kosong -->
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+              </tr>
+              <!-- Baris Bawah: Kosakata 今天 (jīntiān) -->
+              <tr>
+                <td colspan="2">
+                  <div class="wb-word-block" onclick="playWord('今天', 'jīntiān')" style="cursor:pointer;" title="Klik dengar '今天 jīntiān'">
+                    <span>今天</span>
+                    <span style="font-size:0.8rem; font-family:var(--font-pinyin); color:#0d9488; font-weight:600;">jīntiān</span>
+                  </div>
+                </td>
+                <td colspan="3"><div class="wb-word-block"></div></td>
+                <td colspan="3"><div class="wb-word-block"></div></td>
+                <td colspan="2"><div class="wb-word-block"></div></td>
+              </tr>
+
+              <!-- ─── BLOK 3: 认 (rèn) -> 认识 (rènshi) ─── -->
+              <!-- Baris Atas: 10 Kotak Mizige untuk Karakter '认' -->
+              <tr>
+                <!-- Kolom 1: Karakter Utama Merah -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char red-sample">认</span>
+                  </div>
+                </td>
+                <!-- Kolom 2: Goresan 1 (丶) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">丶</span>
+                  </div>
+                </td>
+                <!-- Kolom 3: Goresan 2 (讠) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">讠</span>
+                  </div>
+                </td>
+                <!-- Kolom 4: Goresan 3 (认 step 3) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">认</span>
+                  </div>
+                </td>
+                <!-- Kolom 5: Goresan 4 Utuh (认) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">认</span>
+                  </div>
+                </td>
+                <!-- Kolom 6 s/d 10: Kotak Latihan Kosong -->
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+              </tr>
+              <!-- Baris Bawah: Kosakata 认识 (rènshi) -->
+              <tr>
+                <td colspan="2">
+                  <div class="wb-word-block" onclick="playWord('认识', 'rènshi')" style="cursor:pointer;" title="Klik dengar '认识 rènshi'">
+                    <span>认识</span>
+                    <span style="font-size:0.8rem; font-family:var(--font-pinyin); color:#0d9488; font-weight:600;">rènshi</span>
+                  </div>
+                </td>
+                <td colspan="3"><div class="wb-word-block"></div></td>
+                <td colspan="3"><div class="wb-word-block"></div></td>
+                <td colspan="2"><div class="wb-word-block"></div></td>
+              </tr>
+
+              <!-- ─── BLOK 4: 打 (dǎ) -> 打电话 (dǎ diànhuà) ─── -->
+              <!-- Baris Atas: 10 Kotak Mizige untuk Karakter '打' -->
+              <tr>
+                <!-- Kolom 1: Karakter Utama Merah -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char red-sample">打</span>
+                  </div>
+                </td>
+                <!-- Kolom 2: Goresan 1 (一) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">一</span>
+                  </div>
+                </td>
+                <!-- Kolom 3: Goresan 2 (十) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">十</span>
+                  </div>
+                </td>
+                <!-- Kolom 4: Goresan 3 (扌) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">扌</span>
+                  </div>
+                </td>
+                <!-- Kolom 5: Goresan 4 (打 step 4) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">打</span>
+                  </div>
+                </td>
+                <!-- Kolom 6: Goresan 5 Utuh (打) -->
+                <td>
+                  <div class="wb-cell-mizige">
+                    <div class="wb-cell-cross"></div>
+                    <span class="wb-char gray-step">打</span>
+                  </div>
+                </td>
+                <!-- Kolom 7 s/d 10: Kotak Latihan Kosong -->
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+                <td><div class="wb-cell-mizige"><div class="wb-cell-cross"></div></div></td>
+              </tr>
+              <!-- Baris Bawah: Kosakata 打电话 (dǎ diànhuà) -->
+              <tr>
+                <td colspan="2">
+                  <div class="wb-word-block" onclick="playWord('打电话', 'dǎ diànhuà')" style="cursor:pointer;" title="Klik dengar '打电话 dǎ diànhuà'">
+                    <span>打电话</span>
+                    <span style="font-size:0.8rem; font-family:var(--font-pinyin); color:#0d9488; font-weight:600;">dǎ diànhuà</span>
+                  </div>
+                </td>
+                <td colspan="3"><div class="wb-word-block"></div></td>
+                <td colspan="3"><div class="wb-word-block"></div></td>
+                <td colspan="2"><div class="wb-word-block"></div></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════
-       BAGIAN 4: 三、听力练习 · Part 1: 第一部分 (Soal 1–3)
-  ══════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">📌 三、听力练习 · Part 1: 第一部分 (Soal 1–3)</div>
-    <div class="classroom-box" id="listening-part1-section" style="border-left: 5px solid #0d9488;">
-      <div class="classroom-header">
-        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">听</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 1 · 第一部分 (Soal 1–3)</div>
-          <div class="classroom-desc">Mencocokkan rekaman audio dengan ilustrasi situasi / gambar kegiatan yang sesuai (Pilihan A, B, atau C).</div>
-        </div>
-      </div>
-
-      <div class="instruction-banner">
-        <div class="instruction-banner-top">
-          <span style="font-size:1.15rem;">🎧</span>
-          <span>Instruksi Soal Listening Part 1</span>
-        </div>
-        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          第一部分：听录音，选出与所听内容相符的图片。
-        </div>
-        <div class="instruction-trans">
-          (Part 1: Listen to the audio and choose the picture that matches what you hear.)
-        </div>
-      </div>
-
-      <div class="placeholder-box">
-        <div class="placeholder-icon">🎧</div>
-        <div class="placeholder-title">Materi Soal Listening Part 1 Siap Diisi</div>
-        <div class="placeholder-desc">Struktur kartu pilihan gambar interaktif A, B, C dengan audio player dan pembahasan kunci telah disiapkan.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════════════
-       BAGIAN 5: 三、听力练习 · Part 2: 第二部分 (Soal 4–5)
-  ══════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">📌 三、听力练习 · Part 2: 第二部分 (Soal 4–5)</div>
-    <div class="classroom-box" id="listening-part2-section" style="border-left: 5px solid #0d9488;">
-      <div class="classroom-header">
-        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">2</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 2 · 第二部分 (Soal 4–5)</div>
-          <div class="classroom-desc">Mendengarkan pertanyaan lisan lalu menentukan pilihan jawaban yang paling logis dan gramatikal.</div>
-        </div>
-      </div>
-
-      <div class="instruction-banner">
-        <div class="instruction-banner-top">
-          <span style="font-size:1.15rem;">🎧</span>
-          <span>Instruksi Soal Listening Part 2</span>
-        </div>
-        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          第二部分：听问句，选出最合适的答句。
-        </div>
-        <div class="instruction-trans">
-          (Part 2: Listen to the question and select the most appropriate response.)
-        </div>
-      </div>
-
-      <div class="placeholder-box">
-        <div class="placeholder-icon">💬</div>
-        <div class="placeholder-title">Materi Soal Listening Part 2 Siap Diisi</div>
-        <div class="placeholder-desc">Format tanya-jawab dengan audio bubble dan opsi pilihan berganda A/B/C telah siap.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════════════
-       BAGIAN 6: 三、听力练习 · Part 3: 第三部分 (Soal 6–8)
-  ══════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">📌 三、听力练习 · Part 3: 第三部分 (Soal 6–8)</div>
-    <div class="classroom-box" id="listening-part3-section" style="border-left: 5px solid #0d9488;">
-      <div class="classroom-header">
-        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">3</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 3 · 第三部分 (Soal 6–8)</div>
-          <div class="classroom-desc">Mendengarkan dialog dua orang pembicara dan mencocokkan dengan konteks gambar yang sesuai.</div>
-        </div>
-      </div>
-
-      <div class="instruction-banner">
-        <div class="instruction-banner-top">
-          <span style="font-size:1.15rem;">🎧</span>
-          <span>Instruksi Soal Listening Part 3</span>
-        </div>
-        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          第三部分：听对话，选择与对话内容相符的图片。
-        </div>
-        <div class="instruction-trans">
-          (Part 3: Listen to the dialogue and match with the corresponding picture.)
-        </div>
-      </div>
-
-      <div class="placeholder-box">
-        <div class="placeholder-icon">🗣️</div>
-        <div class="placeholder-title">Materi Soal Listening Part 3 Siap Diisi</div>
-        <div class="placeholder-desc">Struktur baris dialog interaktif per giliran bicara (A &amp; B) dengan audio lafal alami telah siap.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════════════
-       BAGIAN 7: 三、听力练习 · Part 4: 第四部分 (Soal 9–10)
-  ══════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">📌 三、听力练习 · Part 4: 第四部分 (Soal 9–10)</div>
-    <div class="classroom-box" id="listening-part4-section" style="border-left: 5px solid #0d9488;">
-      <div class="classroom-header">
-        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">4</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 4 · 第四部分 (Soal 9–10)</div>
-          <div class="classroom-desc">Mendengarkan dialog singkat dan menjawab pertanyaan pemahaman isi percakapan.</div>
-        </div>
-      </div>
-
-      <div class="instruction-banner">
-        <div class="instruction-banner-top">
-          <span style="font-size:1.15rem;">🎧</span>
-          <span>Instruksi Soal Listening Part 4</span>
-        </div>
-        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          第四部分：听简短对话和问题，选出正确答案。
-        </div>
-        <div class="instruction-trans">
-          (Part 4: Listen to the short dialogue and question, then choose the correct answer.)
-        </div>
-      </div>
-
-      <div class="placeholder-box">
-        <div class="placeholder-icon">📝</div>
-        <div class="placeholder-title">Materi Soal Listening Part 4 Siap Diisi</div>
-        <div class="placeholder-desc">Layout percakapan pendek, baris pertanyaan penutup, dan opsi jawaban siap dipakai.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════════════
-       BAGIAN 8: 二、阅读 · Reading Part 1: 第一部分 (Soal 11–13)
-  ══════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">📌 二、阅读 · Reading Part 1: 第一部分 (Soal 11–13)</div>
-    <div class="classroom-box" id="reading-part1-section" style="border-left: 5px solid #0d9488;">
-      <div class="classroom-header">
-        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">读</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Reading Part 1 · 第一部分 (Soal 11–13)</div>
-          <div class="classroom-desc">Membaca kalimat tertulis dan mencocokkannya dengan kartu gambar situasi (A–D).</div>
-        </div>
-      </div>
-
-      <div class="instruction-banner">
-        <div class="instruction-banner-top">
-          <span style="font-size:1.15rem;">📖</span>
-          <span>Instruksi Soal Reading Part 1</span>
-        </div>
-        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          第一部分：读句子，选择与句意相符的图片。
-        </div>
-        <div class="instruction-trans">
-          (Part 1: Read each sentence and match it with the correct picture.)
-        </div>
-      </div>
-
-      <div class="placeholder-box">
-        <div class="placeholder-icon">🖼️</div>
-        <div class="placeholder-title">Materi Soal Reading Part 1 Siap Diisi</div>
-        <div class="placeholder-desc">Grid gambar ilustrasi A–D dan blok kalimat membaca ber-audio siap dimasukkan.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════════════
-       BAGIAN 9: 二、阅读 · Reading Part 2: 第二部分 (Soal 14–16)
-  ══════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">📌 二、阅读 · Reading Part 2: 第二部分 (Soal 14–16)</div>
-    <div class="classroom-box" id="reading-part2-section" style="border-left: 5px solid #0d9488;">
-      <div class="classroom-header">
-        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">配</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Reading Part 2 · 第二部分 (Soal 14–16)</div>
-          <div class="classroom-desc">Mencocokkan pasangan kalimat tanya-jawab atau pernyataan berkorelasi (A–D).</div>
-        </div>
-      </div>
-
-      <div class="instruction-banner">
-        <div class="instruction-banner-top">
-          <span style="font-size:1.15rem;">🔗</span>
-          <span>Instruksi Soal Reading Part 2</span>
-        </div>
-        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          第二部分：读句子，选择相对应的答句或配对句。
-        </div>
-        <div class="instruction-trans">
-          (Part 2: Read each sentence and choose the matching response or paired statement.)
-        </div>
-      </div>
-
-      <div class="placeholder-box">
-        <div class="placeholder-icon">🧩</div>
-        <div class="placeholder-title">Materi Soal Reading Part 2 Siap Diisi</div>
-        <div class="placeholder-desc">Grid opsi kartu respons dan kotak stimulus kalimat siap dihubungkan.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════════════
-       BAGIAN 10: Reading Part 3 · 第三部分 (Soal 17–18)
-  ══════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">📌 Bagian 10: Reading Part 3 · 第三部分 (Soal 17–18)</div>
-    <div class="classroom-box" id="reading-part3-section" style="border-left: 5px solid #0d9488;">
-      <div class="classroom-header">
-        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">填</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Reading Part 3 · 第三部分 (Soal 17–18)</div>
-          <div class="classroom-desc">Melengkapi kalimat rumpang dengan kata yang paling tepat (选词填空 / Cloze Test).</div>
-        </div>
-      </div>
-
-      <div class="instruction-banner">
-        <div class="instruction-banner-top">
-          <span style="font-size:1.15rem;">✏️</span>
-          <span>Instruksi Soal Reading Part 3</span>
-        </div>
-        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          第三部分：选词填空，选择最恰当的词语补全句子。
-        </div>
-        <div class="instruction-trans">
-          (Part 3: Fill in the blanks with the most appropriate words from the options.)
-        </div>
-      </div>
-
-      <div class="placeholder-box">
-        <div class="placeholder-icon">🔠</div>
-        <div class="placeholder-title">Materi Soal Reading Part 3 Siap Diisi</div>
-        <div class="placeholder-desc">Koleksi bank kata pilihan A–F dan kartu kalimat rumpang dengan tombol audio telah siap.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════════════
-       BAGIAN 11: Reading Part 4 · 第四部分 (Soal 19–20)
-  ══════════════════════════════════════════════════ -->
-  <div>
-    <div class="section-title">📌 Bagian 11: Reading Part 4 · 第四部分 (Soal 19–20)</div>
-    <div class="classroom-box" id="reading-part4-section" style="border-left: 5px solid #0d9488;">
-      <div class="classroom-header">
-        <div class="avatar" style="background:#0d9488; font-size: 1.15rem; font-weight: 700; color: #fff;">答</div>
-        <div class="classroom-intro">
-          <div class="classroom-badge" style="background: #0d9488; color: #fff;">第 19—20 题：选择正确答案 (Soal 19–20)</div>
-          <div class="classroom-desc">Membaca teks atau dialog pendek dan memilih jawaban pertanyaan yang paling akurat (A, B, atau C).</div>
-        </div>
-      </div>
-
-      <div class="instruction-banner">
-        <div class="instruction-banner-top">
-          <span style="font-size:1.15rem;">🎯</span>
-          <span>Instruksi Soal Reading Part 4</span>
-        </div>
-        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
-          第四部分：读短文或对话，选择正确答案。
-        </div>
-        <div class="instruction-trans">
-          (Part 4: Read the passage or dialogue, then choose the correct answer to the question.)
-        </div>
-      </div>
-
-      <div class="placeholder-box">
-        <div class="placeholder-icon">📑</div>
-        <div class="placeholder-title">Materi Soal Reading Part 4 Siap Diisi</div>
-        <div class="placeholder-desc">Format bacaan paragraf komprehensif, daftar pertanyaan, pembahasan, serta uraian vocab pills siap diisi.</div>
-        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
-      </div>
-    </div>
-  </div>
 
 <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
   <div class="dialog-toolbar">
