@@ -831,6 +831,31 @@
     }
 
     /* ── RESPONSIVE MOBILE ── */
+    
+    /* ── MOBILE GLOBAL OVERFLOW & TEXT PROTECTION ── */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    code, pre {
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      white-space: pre-wrap !important;
+    }
+    .classroom-item, .classroom-desc, .classroom-intro {
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    .item-content {
+      min-width: 0;
+      flex: 1;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     @media (max-width: 600px) {
       .btn-text-desktop { display: none; }
       .btn-text-mobile  { display: inline; }
@@ -882,6 +907,42 @@
       .number-card .bubble-pinyin { font-size: 0.72rem; }
       .number-card .bubble-arti { font-size: 0.75rem; }
     }
+  
+    @media (max-width: 600px) {
+      .classroom-header {
+        align-items: flex-start;
+        gap: 0.65rem;
+      }
+      .classroom-item {
+        align-items: flex-start;
+        gap: 0.65rem;
+        padding: 0.75rem 0.6rem;
+      }
+      .item-number {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+      }
+      .item-content {
+        min-width: 0;
+        flex: 1;
+        width: 100%;
+      }
+      .spok-formula {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.5rem;
+        gap: 0.25rem;
+      }
+      .spok-chip {
+        font-size: 0.72rem;
+        padding: 0.15rem 0.4rem;
+      }
+      [style*="grid-template-columns"] {
+        max-width: 100%;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -999,10 +1060,10 @@
                   <!-- Contoh 1 -->
                   <div style="background:#f8fafc;border-radius:8px;padding:0.5rem 0.75rem;border:1px solid #e2e8f0;">
                     <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
-                      <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;"><span style="color:#7c3aed;font-weight:700;">爸</span><span style="color:#7c3aed;font-weight:700;">爸</span><span style="color:#0891b2;font-weight:700;">在</span><span style="color:#059669;font-weight:700;">医</span><span style="color:#ca8a04;font-weight:700;">院</span><span style="color:#d97706;font-weight:700;">工</span><span style="color:#db2777;font-weight:700;">作</span></span>
+                      <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;"><span style="color:#7c3aed;font-weight:700;">爸</span><span style="color:#0284c7;font-weight:700;">爸</span><span style="color:#0891b2;font-weight:700;">在</span><span style="color:#059669;font-weight:700;">医</span><span style="color:#ca8a04;font-weight:700;">院</span><span style="color:#d97706;font-weight:700;">工</span><span style="color:#db2777;font-weight:700;">作</span></span>
                     </div>
                     <div class="bubble-pinyin" style="display:inline-block;font-size:0.84rem;font-weight:600;margin-top:0.1rem;">
-                      <span style="color:#7c3aed;font-weight:700;">bàba</span> <span style="color:#0891b2;font-weight:700;">zài</span> <span style="color:#059669;font-weight:700;">yī</span><span style="color:#ca8a04;font-weight:700;">yuàn</span> <span style="color:#d97706;font-weight:700;">gōng</span><span style="color:#db2777;font-weight:700;">zuò</span>
+                      <span style="color:#7c3aed;font-weight:700;">bà</span><span style="color:#0284c7;font-weight:700;">ba</span> <span style="color:#0891b2;font-weight:700;">zài</span> <span style="color:#059669;font-weight:700;">yī</span><span style="color:#ca8a04;font-weight:700;">yuàn</span> <span style="color:#d97706;font-weight:700;">gōng</span><span style="color:#db2777;font-weight:700;">zuò</span>
                     </div>
                     <div style="font-size:0.82rem;color:#475569;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
                       → <strong>Papa kerja di rumah sakit.</strong>
@@ -1012,10 +1073,10 @@
                   <!-- Contoh 2 -->
                   <div style="background:#f8fafc;border-radius:8px;padding:0.5rem 0.75rem;border:1px solid #e2e8f0;">
                     <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
-                      <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;"><span style="color:#7c3aed;font-weight:700;">爸</span><span style="color:#7c3aed;font-weight:700;">爸</span><span style="color:#0891b2;font-weight:700;">在</span><span style="color:#d97706;font-weight:700;">工</span><span style="color:#db2777;font-weight:700;">作</span></span>
+                      <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;"><span style="color:#7c3aed;font-weight:700;">爸</span><span style="color:#0284c7;font-weight:700;">爸</span><span style="color:#0891b2;font-weight:700;">在</span><span style="color:#d97706;font-weight:700;">工</span><span style="color:#db2777;font-weight:700;">作</span></span>
                     </div>
                     <div class="bubble-pinyin" style="display:inline-block;font-size:0.84rem;font-weight:600;margin-top:0.1rem;">
-                      <span style="color:#7c3aed;font-weight:700;">bàba</span> <span style="color:#0891b2;font-weight:700;">zài</span> <span style="color:#d97706;font-weight:700;">gōng</span><span style="color:#db2777;font-weight:700;">zuò</span>
+                      <span style="color:#7c3aed;font-weight:700;">bà</span><span style="color:#0284c7;font-weight:700;">ba</span> <span style="color:#0891b2;font-weight:700;">zài</span> <span style="color:#d97706;font-weight:700;">gōng</span><span style="color:#db2777;font-weight:700;">zuò</span>
                     </div>
                     <div style="font-size:0.82rem;color:#475569;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
                       → <strong>Ayah sedang kerja.</strong>
@@ -1569,10 +1630,10 @@
           <div class="item-number" style="background:#0284c7;color:#fff;">1</div>
           <div class="item-content">
             <div class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;">
-              <span style="color:#16a085;font-weight:700;">白</span><span style="color:#7c3aed;font-weight:700;">家</span><span style="color:#0891b2;font-weight:700;">月</span><span style="color:#ca8a04;font-weight:700;">和</span><span style="color:#0284c7;font-weight:700;">李</span><span style="color:#d97706;font-weight:700;">文</span><span style="color:#0891b2;font-weight:700;">在</span><span style="color:#ca8a04;font-weight:700;">书</span><span style="color:#059669;font-weight:700;">店</span><span style="color:#059669;font-weight:700;">前</span><span style="color:#e11d48;font-weight:700;">见</span>。
+              <span style="color:#16a085;font-weight:700;">白</span><span style="color:#7c3aed;font-weight:700;">家</span><span style="color:#0891b2;font-weight:700;">月</span><span style="color:#ca8a04;font-weight:700;">和</span><span style="color:#0284c7;font-weight:700;">李</span><span style="color:#d97706;font-weight:700;">文</span><span style="color:#0891b2;font-weight:700;">在</span><span style="color:#ca8a04;font-weight:700;">书</span><span style="color:#059669;font-weight:700;">店</span><span style="color:#ea580c;font-weight:700;">前</span><span style="color:#e11d48;font-weight:700;">见</span>。
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem;font-weight:600;display:inline-block;margin-top:0.15rem;">
-              <span style="color:#16a085;font-weight:700;">Bái</span> <span style="color:#7c3aed;font-weight:700;">Jiā</span><span style="color:#0891b2;font-weight:700;">yuè</span> <span style="color:#ca8a04;font-weight:700;">hé</span> <span style="color:#0284c7;font-weight:700;">Lǐ</span> <span style="color:#d97706;font-weight:700;">Wén</span> <span style="color:#0891b2;font-weight:700;">zài</span> <span style="color:#ca8a04;font-weight:700;">shū</span><span style="color:#059669;font-weight:700;">diàn</span> <span style="color:#059669;font-weight:700;">qián</span> <span style="color:#e11d48;font-weight:700;">jiàn</span>.
+              <span style="color:#16a085;font-weight:700;">Bái</span> <span style="color:#7c3aed;font-weight:700;">Jiā</span><span style="color:#0891b2;font-weight:700;">yuè</span> <span style="color:#ca8a04;font-weight:700;">hé</span> <span style="color:#0284c7;font-weight:700;">Lǐ</span> <span style="color:#d97706;font-weight:700;">Wén</span> <span style="color:#0891b2;font-weight:700;">zài</span> <span style="color:#ca8a04;font-weight:700;">shū</span><span style="color:#059669;font-weight:700;">diàn</span> <span style="color:#ea580c;font-weight:700;">qián</span> <span style="color:#e11d48;font-weight:700;">jiàn</span>.
             </div>
             <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);margin-top:0.2rem;">
               Arti: Bai Jiayue dan Li Wen bertemu di depan toko buku.
@@ -1586,7 +1647,7 @@
                 <strong>B. <span style="color:#ca8a04;font-weight:700;">书</span><span style="color:#059669;font-weight:700;">店</span><span style="color:#ca8a04;font-weight:700;">里</span></strong> <em>(<span style="color:#ca8a04;font-weight:700;">shū</span><span style="color:#059669;font-weight:700;">diàn</span> <span style="color:#ca8a04;font-weight:700;">lǐ</span>)</em> → Di dalam toko buku
               </span>
               <span style="background:#ecfdf5;color:#059669;font-weight:700;padding:0.35rem 0.75rem;border-radius:8px;border:1.5px solid #059669;">
-                <strong>C. <span style="color:#ca8a04;font-weight:700;">书</span><span style="color:#059669;font-weight:700;">店</span><span style="color:#059669;font-weight:700;">前</span></strong> <em>(<span style="color:#ca8a04;font-weight:700;">shū</span><span style="color:#059669;font-weight:700;">diàn</span> <span style="color:#059669;font-weight:700;">qián</span>)</em> → Di depan toko buku ✓
+                <strong>C. <span style="color:#ca8a04;font-weight:700;">书</span><span style="color:#059669;font-weight:700;">店</span><span style="color:#ea580c;font-weight:700;">前</span></strong> <em>(<span style="color:#ca8a04;font-weight:700;">shū</span><span style="color:#059669;font-weight:700;">diàn</span> <span style="color:#ea580c;font-weight:700;">qián</span>)</em> → Di depan toko buku ✓
               </span>
             </div>
           </div>
@@ -1754,7 +1815,7 @@
   <!-- ══ TATA BAHASA: PERBEDAAN 会 (huì) VS 能 (néng) ══ -->
   <div>
     <div class="section-title">📐 Pola Tata Bahasa · 语法解析 (会 VS 能)</div>
-    <div class="classroom-box" style="margin-top:0.5rem;margin-bottom:1.25rem;">
+    <div class="classroom-box">
       <div class="classroom-header">
         <div class="avatar av-tata" style="background: linear-gradient(135deg, #0d9488, #0f766e); color:#fff;">法</div>
         <div class="classroom-intro">
@@ -1832,10 +1893,10 @@
             <div style="display:flex;flex-direction:column;gap:0.45rem;margin-top:0.6rem;">
               <div style="background:#f8fafc;padding:0.45rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <div style="font-size:1.02rem;font-weight:700;">
-                  <span style="color:#0284c7;font-weight:700;">李</span><span style="color:#d97706;font-weight:700;">文</span><span style="color:#4f46e5;font-weight:700;">下</span><span style="color:#c026d3;font-weight:700;">午</span><span style="color:#4f46e5;font-weight:700;">两</span><span style="color:#0284c7;font-weight:700;">点</span><span style="color:#0284c7;font-weight:700;">能</span><span style="color:#ea580c;font-weight:700;">到</span>。
+                  <span style="color:#0284c7;font-weight:700;">李</span><span style="color:#d97706;font-weight:700;">文</span><span style="color:#4f46e5;font-weight:700;">下</span><span style="color:#c026d3;font-weight:700;">午</span><span style="color:#4f46e5;font-weight:700;">两</span><span style="color:#0284c7;font-weight:700;">点</span><span style="color:#16a085;font-weight:700;">能</span><span style="color:#ea580c;font-weight:700;">到</span>。
                 </div>
                 <div style="font-size:0.84rem;color:#64748b;font-weight:600;margin-top:0.1rem;">
-                  <span style="color:#0284c7;font-weight:700;">Lǐ</span> <span style="color:#d97706;font-weight:700;">Wén</span> <span style="color:#4f46e5;font-weight:700;">xià</span><span style="color:#c026d3;font-weight:700;">wǔ</span> <span style="color:#4f46e5;font-weight:700;">liǎng</span> <span style="color:#0284c7;font-weight:700;">diǎn</span> <span style="color:#0284c7;font-weight:700;">néng</span> <span style="color:#ea580c;font-weight:700;">dào</span>.
+                  <span style="color:#0284c7;font-weight:700;">Lǐ</span> <span style="color:#d97706;font-weight:700;">Wén</span> <span style="color:#4f46e5;font-weight:700;">xià</span><span style="color:#c026d3;font-weight:700;">wǔ</span> <span style="color:#4f46e5;font-weight:700;">liǎng</span> <span style="color:#0284c7;font-weight:700;">diǎn</span> <span style="color:#16a085;font-weight:700;">néng</span> <span style="color:#ea580c;font-weight:700;">dào</span>.
                 </div>
                 <div style="font-size:0.82rem;color:var(--text);margin-top:0.1rem;">
                   → Li Wen sore hari pukul 2 bisa tiba. <em>(keadaan waktu memungkinkan)</em>
@@ -1844,10 +1905,10 @@
 
               <div style="background:#f8fafc;padding:0.45rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <div style="font-size:1.02rem;font-weight:700;">
-                  <span style="color:#0284c7;font-weight:700;">我</span><span style="color:#ea580c;font-weight:700;">今</span><span style="color:#0891b2;font-weight:700;">天</span><span style="color:#ca8a04;font-weight:700;">很</span><span style="color:#e11d48;font-weight:700;">忙</span>，<span style="color:#e11d48;font-weight:700;">不</span><span style="color:#0284c7;font-weight:700;">能</span><span style="color:#0891b2;font-weight:700;">去</span>。
+                  <span style="color:#0284c7;font-weight:700;">我</span><span style="color:#ea580c;font-weight:700;">今</span><span style="color:#0891b2;font-weight:700;">天</span><span style="color:#ca8a04;font-weight:700;">很</span><span style="color:#e11d48;font-weight:700;">忙</span>，<span style="color:#059669;font-weight:700;">不</span><span style="color:#0284c7;font-weight:700;">能</span><span style="color:#0891b2;font-weight:700;">去</span>。
                 </div>
                 <div style="font-size:0.84rem;color:#64748b;font-weight:600;margin-top:0.1rem;">
-                  <span style="color:#0284c7;font-weight:700;">Wǒ</span> <span style="color:#ea580c;font-weight:700;">jīn</span><span style="color:#0891b2;font-weight:700;">tiān</span> <span style="color:#ca8a04;font-weight:700;">hěn</span> <span style="color:#e11d48;font-weight:700;">máng</span>, <span style="color:#e11d48;font-weight:700;">bù</span> <span style="color:#0284c7;font-weight:700;">néng</span> <span style="color:#0891b2;font-weight:700;">qù</span>.
+                  <span style="color:#0284c7;font-weight:700;">Wǒ</span> <span style="color:#ea580c;font-weight:700;">jīn</span><span style="color:#0891b2;font-weight:700;">tiān</span> <span style="color:#ca8a04;font-weight:700;">hěn</span> <span style="color:#e11d48;font-weight:700;">máng</span>, <span style="color:#059669;font-weight:700;">bù</span> <span style="color:#0284c7;font-weight:700;">néng</span> <span style="color:#0891b2;font-weight:700;">qù</span>.
                 </div>
                 <div style="font-size:0.82rem;color:var(--text);margin-top:0.1rem;">
                   → Hari ini saya sangat sibuk, tidak bisa pergi. <em>(faktor situasi tidak memungkinkan)</em>
@@ -1900,7 +1961,7 @@
   <!-- ══ TATA BAHASA: PREPOSISI 在 & KATA KERJA MODAL 能 ══ -->
   <div>
     <div class="section-title">📐 Pola Tata Bahasa · 语法解析 (介词“在”与能愿动词“能”)</div>
-    <div class="classroom-box" style="margin-top:0.5rem;margin-bottom:1.25rem;">
+    <div class="classroom-box">
       <div class="classroom-header">
         <div class="avatar av-tata" style="background: linear-gradient(135deg, #0d9488, #0f766e); color:#fff;">法</div>
         <div class="classroom-intro">
@@ -1947,10 +2008,10 @@
               <!-- Contoh 2 -->
               <div style="background:#f8fafc;padding:0.45rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <div style="font-size:1.05rem;font-weight:700;">
-                  <span style="color:#db2777;font-weight:700;">他</span><span style="color:#0284c7;font-weight:700;">爸</span><span style="color:#0284c7;font-weight:700;">爸</span><span style="color:#0d9488;font-weight:700;">在</span><span style="color:#059669;font-weight:700;">医</span><span style="color:#ca8a04;font-weight:700;">院</span><span style="color:#7c3aed;font-weight:700;">工</span><span style="color:#ea580c;font-weight:700;">作</span>。
+                  <span style="color:#db2777;font-weight:700;">他</span><span style="color:#0284c7;font-weight:700;">爸</span><span style="color:#ea580c;font-weight:700;">爸</span><span style="color:#0d9488;font-weight:700;">在</span><span style="color:#059669;font-weight:700;">医</span><span style="color:#ca8a04;font-weight:700;">院</span><span style="color:#7c3aed;font-weight:700;">工</span><span style="color:#ea580c;font-weight:700;">作</span>。
                 </div>
                 <div style="font-size:0.84rem;color:#64748b;font-weight:600;margin-top:0.1rem;">
-                  <span style="color:#db2777;font-weight:700;">Tā</span> <span style="color:#0284c7;font-weight:700;">bà</span><span style="color:#0284c7;font-weight:700;">ba</span> <span style="color:#0d9488;font-weight:700;">zài</span> <span style="color:#059669;font-weight:700;">yī</span><span style="color:#ca8a04;font-weight:700;">yuàn</span> <span style="color:#7c3aed;font-weight:700;">gōng</span><span style="color:#ea580c;font-weight:700;">zuò</span>.
+                  <span style="color:#db2777;font-weight:700;">Tā</span> <span style="color:#0284c7;font-weight:700;">bà</span><span style="color:#ea580c;font-weight:700;">ba</span> <span style="color:#0d9488;font-weight:700;">zài</span> <span style="color:#059669;font-weight:700;">yī</span><span style="color:#ca8a04;font-weight:700;">yuàn</span> <span style="color:#7c3aed;font-weight:700;">gōng</span><span style="color:#ea580c;font-weight:700;">zuò</span>.
                 </div>
                 <div style="font-size:0.82rem;color:var(--text);margin-top:0.1rem;">
                   Arti: Ayahnya bekerja di rumah sakit.
@@ -1960,10 +2021,10 @@
               <!-- Contoh 3 -->
               <div style="background:#f8fafc;padding:0.45rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <div style="font-size:1.05rem;font-weight:700;">
-                  <span style="color:#0284c7;font-weight:700;">你</span><span style="color:#0d9488;font-weight:700;">在</span><span style="color:#0891b2;font-weight:700;">哪</span><span style="color:#0891b2;font-weight:700;">儿</span><span style="color:#ca8a04;font-weight:700;">买</span><span style="color:#059669;font-weight:700;">菜</span>？
+                  <span style="color:#0284c7;font-weight:700;">你</span><span style="color:#0d9488;font-weight:700;">在</span><span style="color:#0891b2;font-weight:700;">哪</span><span style="color:#ca8a04;font-weight:700;">儿</span><span style="color:#d97706;font-weight:700;">买</span><span style="color:#059669;font-weight:700;">菜</span>？
                 </div>
                 <div style="font-size:0.84rem;color:#64748b;font-weight:600;margin-top:0.1rem;">
-                  <span style="color:#0284c7;font-weight:700;">Nǐ</span> <span style="color:#0d9488;font-weight:700;">zài</span> <span style="color:#0891b2;font-weight:700;">nǎr</span> <span style="color:#ca8a04;font-weight:700;">mǎi</span> <span style="color:#059669;font-weight:700;">cài</span>?
+                  <span style="color:#0284c7;font-weight:700;">Nǐ</span> <span style="color:#0d9488;font-weight:700;">zài</span> <span style="color:#0891b2;font-weight:700;">nǎ</span><span style="color:#ca8a04;font-weight:700;">r</span> <span style="color:#d97706;font-weight:700;">mǎi</span> <span style="color:#059669;font-weight:700;">cài</span>?
                 </div>
                 <div style="font-size:0.82rem;color:var(--text);margin-top:0.1rem;">
                   Arti: Di mana kamu membeli bahan makanan / sayuran?
@@ -1994,10 +2055,10 @@
               <!-- Contoh 1 -->
               <div style="background:#f8fafc;padding:0.45rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <div style="font-size:1.05rem;font-weight:700;">
-                  <span style="color:#4f46e5;font-weight:700;">下</span><span style="color:#c026d3;font-weight:700;">午</span><span style="color:#4f46e5;font-weight:700;">两</span><span style="color:#0284c7;font-weight:700;">点</span><span style="color:#0284c7;font-weight:700;">你</span><span style="color:#0284c7;font-weight:700;">能</span><span style="color:#ea580c;font-weight:700;">到</span><span style="color:#059669;font-weight:700;">吗</span>？
+                  <span style="color:#4f46e5;font-weight:700;">下</span><span style="color:#c026d3;font-weight:700;">午</span><span style="color:#4f46e5;font-weight:700;">两</span><span style="color:#0284c7;font-weight:700;">点</span><span style="color:#ca8a04;font-weight:700;">你</span><span style="color:#0284c7;font-weight:700;">能</span><span style="color:#ea580c;font-weight:700;">到</span><span style="color:#059669;font-weight:700;">吗</span>？
                 </div>
                 <div style="font-size:0.84rem;color:#64748b;font-weight:600;margin-top:0.1rem;">
-                  <span style="color:#4f46e5;font-weight:700;">Xià</span><span style="color:#c026d3;font-weight:700;">wǔ</span> <span style="color:#4f46e5;font-weight:700;">liǎng</span> <span style="color:#0284c7;font-weight:700;">diǎn</span> <span style="color:#0284c7;font-weight:700;">nǐ</span> <span style="color:#0284c7;font-weight:700;">néng</span> <span style="color:#ea580c;font-weight:700;">dào</span> <span style="color:#059669;font-weight:700;">ma</span>?
+                  <span style="color:#4f46e5;font-weight:700;">Xià</span><span style="color:#c026d3;font-weight:700;">wǔ</span> <span style="color:#4f46e5;font-weight:700;">liǎng</span> <span style="color:#0284c7;font-weight:700;">diǎn</span> <span style="color:#ca8a04;font-weight:700;">nǐ</span> <span style="color:#0284c7;font-weight:700;">néng</span> <span style="color:#ea580c;font-weight:700;">dào</span> <span style="color:#059669;font-weight:700;">ma</span>?
                 </div>
                 <div style="font-size:0.82rem;color:var(--text);margin-top:0.1rem;">
                   Arti: Bisakah kamu tiba pukul dua siang?
@@ -2007,10 +2068,10 @@
               <!-- Contoh 2 -->
               <div style="background:#f8fafc;padding:0.45rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <div style="font-size:1.05rem;font-weight:700;">
-                  <span style="color:#0284c7;font-weight:700;">爸</span><span style="color:#0284c7;font-weight:700;">爸</span><span style="color:#0284c7;font-weight:700;">能</span><span style="color:#0891b2;font-weight:700;">去</span>。
+                  <span style="color:#7c3aed;font-weight:700;">爸</span><span style="color:#ca8a04;font-weight:700;">爸</span><span style="color:#0284c7;font-weight:700;">能</span><span style="color:#0891b2;font-weight:700;">去</span>。
                 </div>
                 <div style="font-size:0.84rem;color:#64748b;font-weight:600;margin-top:0.1rem;">
-                  <span style="color:#0284c7;font-weight:700;">Bà</span><span style="color:#0284c7;font-weight:700;">ba</span> <span style="color:#0284c7;font-weight:700;">néng</span> <span style="color:#0891b2;font-weight:700;">qù</span>.
+                  <span style="color:#7c3aed;font-weight:700;">Bà</span><span style="color:#ca8a04;font-weight:700;">ba</span> <span style="color:#0284c7;font-weight:700;">néng</span> <span style="color:#0891b2;font-weight:700;">qù</span>.
                 </div>
                 <div style="font-size:0.82rem;color:var(--text);margin-top:0.1rem;">
                   Arti: Ayah bisa pergi.
@@ -2040,7 +2101,7 @@
   <!-- ══ LATIHAN MENDENGARKAN (LISTENING) TEKS 3 ══ -->
   <div>
     <div class="section-title">🎧 Latihan Mendengarkan · 听力练习 (Teks 3)</div>
-    <div class="classroom-box" style="margin-top:0.5rem;margin-bottom:1.25rem;">
+    <div class="classroom-box">
       <div class="classroom-header">
         <div class="avatar av-xiaoyu" style="background: linear-gradient(135deg, #0284c7, #0369a1); color:#fff;">听</div>
         <div class="classroom-intro">
@@ -2074,7 +2135,7 @@
                 <strong>B. <span style="color:#059669;font-weight:700;">病</span><span style="color:#0284c7;font-weight:700;">人</span><span style="color:#d97706;font-weight:700;">多</span></strong> <em>(<span style="color:#059669;font-weight:700;">bìng</span><span style="color:#0284c7;font-weight:700;">rén</span> <span style="color:#d97706;font-weight:700;">duō</span>)</em> → Banyak pasien ✓
               </span>
               <span style="background:var(--bg);padding:0.35rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
-                <strong>C. <span style="color:#059669;font-weight:700;">医</span><span style="color:#ca8a04;font-weight:700;">生</span><span style="color:#e11d48;font-weight:700;">不</span><span style="color:#e11d48;font-weight:700;">忙</span></strong> <em>(<span style="color:#059669;font-weight:700;">yī</span><span style="color:#ca8a04;font-weight:700;">shēng</span> <span style="color:#e11d48;font-weight:700;">bù</span> <span style="color:#e11d48;font-weight:700;">máng</span>)</em> → Dokter tidak sibuk
+                <strong>C. <span style="color:#059669;font-weight:700;">医</span><span style="color:#ca8a04;font-weight:700;">生</span><span style="color:#e11d48;font-weight:700;">不</span><span style="color:#0891b2;font-weight:700;">忙</span></strong> <em>(<span style="color:#059669;font-weight:700;">yī</span><span style="color:#ca8a04;font-weight:700;">shēng</span> <span style="color:#e11d48;font-weight:700;">bù</span> <span style="color:#0891b2;font-weight:700;">máng</span>)</em> → Dokter tidak sibuk
               </span>
             </div>
           </div>
@@ -2293,7 +2354,7 @@
   <!-- ══ LATIHAN SOAL & PEMBAHASAN (EXERCISES) ══ -->
   <div>
     <div class="section-title">📝 Latihan Soal &amp; Pembahasan · 课堂练习</div>
-    <div class="classroom-box" style="border-left: 5px solid #0d9488; margin-top:0.5rem; margin-bottom:1.5rem;">
+    <div class="classroom-box" style="border-left: 5px solid #0d9488;">
       <div class="classroom-header">
         <div class="avatar av-xiaoyu" style="background: linear-gradient(135deg, #0d9488, #0f766e); color:#fff;">练</div>
         <div class="classroom-intro">
@@ -2318,7 +2379,7 @@
           </div>
           <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
             <span style="background:#fff; border:1.5px solid #99f6e4; padding:0.35rem 0.75rem; border-radius:8px; font-size:0.88rem;">
-              <strong>A. <span style="color:#0891b2; font-weight:700;">哪</span><span style="color:#0891b2; font-weight:700;">儿</span></strong> <em>(<span style="color:#0891b2; font-weight:700;">nǎr</span> / di mana, mana)</em>
+              <strong>A. <span style="color:#0891b2; font-weight:700;">哪</span><span style="color:#ca8a04; font-weight:700;">儿</span></strong> <em>(<span style="color:#0891b2; font-weight:700;">nǎ</span><span style="color:#ca8a04; font-weight:700;">r</span> / di mana, mana)</em>
             </span>
             <span style="background:#fff; border:1.5px solid #99f6e4; padding:0.35rem 0.75rem; border-radius:8px; font-size:0.88rem;">
               <strong>B. <span style="color:#0d9488; font-weight:700;">在</span></strong> <em>(<span style="color:#0d9488; font-weight:700;">zài</span> / di, pada)</em>
@@ -2340,10 +2401,10 @@
           <div class="item-number" style="background:#0d9488; color:#fff;">1</div>
           <div class="item-content">
             <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:var(--primary-dark);">
-              <span style="color:#0d9488; font-weight:700;">胡</span><span style="color:#059669; font-weight:700;">医</span><span style="color:#ca8a04; font-weight:700;">生</span><span style="color:#7c3aed; font-weight:700;">的</span><span style="color:#0284c7; font-weight:700;">爸</span><span style="color:#0284c7; font-weight:700;">爸</span><span style="color:#0d9488; font-weight:700;">在</span><span style="color:#059669; font-weight:700;">医</span><span style="color:#ca8a04; font-weight:700;">院</span><span style="color:#7c3aed; font-weight:700;">工</span><span style="color:#ea580c; font-weight:700;">作</span>。
+              <span style="color:#0d9488; font-weight:700;">胡</span><span style="color:#059669; font-weight:700;">医</span><span style="color:#ca8a04; font-weight:700;">生</span><span style="color:#7c3aed; font-weight:700;">的</span><span style="color:#0284c7; font-weight:700;">爸</span><span style="color:#ea580c; font-weight:700;">爸</span><span style="color:#0d9488; font-weight:700;">在</span><span style="color:#059669; font-weight:700;">医</span><span style="color:#ca8a04; font-weight:700;">院</span><span style="color:#7c3aed; font-weight:700;">工</span><span style="color:#ea580c; font-weight:700;">作</span>。
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
-              <span style="color:#0d9488; font-weight:700;">Hú</span> <span style="color:#059669; font-weight:700;">yī</span><span style="color:#ca8a04; font-weight:700;">shēng</span> <span style="color:#7c3aed; font-weight:700;">de</span> <span style="color:#0284c7; font-weight:700;">bà</span><span style="color:#0284c7; font-weight:700;">ba</span> <span style="color:#0d9488; font-weight:700;">zài</span> <span style="color:#059669; font-weight:700;">yī</span><span style="color:#ca8a04; font-weight:700;">yuàn</span> <span style="color:#7c3aed; font-weight:700;">gōng</span><span style="color:#ea580c; font-weight:700;">zuò</span>.
+              <span style="color:#0d9488; font-weight:700;">Hú</span> <span style="color:#059669; font-weight:700;">yī</span><span style="color:#ca8a04; font-weight:700;">shēng</span> <span style="color:#7c3aed; font-weight:700;">de</span> <span style="color:#0284c7; font-weight:700;">bà</span><span style="color:#ea580c; font-weight:700;">ba</span> <span style="color:#0d9488; font-weight:700;">zài</span> <span style="color:#059669; font-weight:700;">yī</span><span style="color:#ca8a04; font-weight:700;">yuàn</span> <span style="color:#7c3aed; font-weight:700;">gōng</span><span style="color:#ea580c; font-weight:700;">zuò</span>.
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
               <strong>Arti:</strong> Ayah Dokter Hu bekerja di rumah sakit.
@@ -2356,10 +2417,10 @@
           <div class="item-number" style="background:#0d9488; color:#fff;">2</div>
           <div class="item-content">
             <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:var(--primary-dark);">
-              <span style="color:#0284c7; font-weight:700;">我</span><span style="color:#4f46e5; font-weight:700;">下</span><span style="color:#c026d3; font-weight:700;">午</span><span style="color:#4f46e5; font-weight:700;">两</span><span style="color:#0284c7; font-weight:700;">点</span><span style="color:#0284c7; font-weight:700;">能</span><span style="color:#ea580c; font-weight:700;">到</span><span style="color:#7c3aed; font-weight:700;">学</span><span style="color:#ca8a04; font-weight:700;">校</span>。
+              <span style="color:#0284c7; font-weight:700;">我</span><span style="color:#4f46e5; font-weight:700;">下</span><span style="color:#c026d3; font-weight:700;">午</span><span style="color:#4f46e5; font-weight:700;">两</span><span style="color:#0284c7; font-weight:700;">点</span><span style="color:#16a085; font-weight:700;">能</span><span style="color:#ea580c; font-weight:700;">到</span><span style="color:#7c3aed; font-weight:700;">学</span><span style="color:#ca8a04; font-weight:700;">校</span>。
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
-              <span style="color:#0284c7; font-weight:700;">Wǒ</span> <span style="color:#4f46e5; font-weight:700;">xià</span><span style="color:#c026d3; font-weight:700;">wǔ</span> <span style="color:#4f46e5; font-weight:700;">liǎng</span> <span style="color:#0284c7; font-weight:700;">diǎn</span> <span style="color:#0284c7; font-weight:700;">néng</span> <span style="color:#ea580c; font-weight:700;">dào</span> <span style="color:#7c3aed; font-weight:700;">xué</span><span style="color:#ca8a04; font-weight:700;">xiào</span>.
+              <span style="color:#0284c7; font-weight:700;">Wǒ</span> <span style="color:#4f46e5; font-weight:700;">xià</span><span style="color:#c026d3; font-weight:700;">wǔ</span> <span style="color:#4f46e5; font-weight:700;">liǎng</span> <span style="color:#0284c7; font-weight:700;">diǎn</span> <span style="color:#16a085; font-weight:700;">néng</span> <span style="color:#ea580c; font-weight:700;">dào</span> <span style="color:#7c3aed; font-weight:700;">xué</span><span style="color:#ca8a04; font-weight:700;">xiào</span>.
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
               <strong>Arti:</strong> Saya bisa sampai di sekolah pukul dua siang.
@@ -2374,10 +2435,10 @@
             <div style="display:flex; flex-direction:column; gap:0.4rem;">
               <div>
                 <div class="bubble-hanzi" style="font-size:1.08rem; font-weight:700; color:var(--primary-dark);">
-                  <strong style="color:var(--text); font-size:0.88rem;">陈天中：</strong><span style="color:#0891b2; font-weight:700;">小</span><span style="color:#ca8a04; font-weight:700;">猫</span><span style="color:#0d9488; font-weight:700;">在</span><span style="color:#0891b2; font-weight:700;">哪</span><span style="color:#0891b2; font-weight:700;">儿</span><span style="color:#059669; font-weight:700;">呢</span>？
+                  <strong style="color:var(--text); font-size:0.88rem;">陈天中：</strong><span style="color:#0891b2; font-weight:700;">小</span><span style="color:#ca8a04; font-weight:700;">猫</span><span style="color:#0d9488; font-weight:700;">在</span><span style="color:#0891b2; font-weight:700;">哪</span><span style="color:#ca8a04; font-weight:700;">儿</span><span style="color:#059669; font-weight:700;">呢</span>？
                 </div>
                 <div class="bubble-pinyin" style="font-size:0.83rem; font-weight:600;">
-                  Chén Tiānzhōng: <span style="color:#0891b2; font-weight:700;">Xiǎo</span><span style="color:#ca8a04; font-weight:700;">māo</span> <span style="color:#0d9488; font-weight:700;">zài</span> <span style="color:#0891b2; font-weight:700;">nǎr</span> <span style="color:#059669; font-weight:700;">ne</span>?
+                  Chén Tiānzhōng: <span style="color:#0891b2; font-weight:700;">Xiǎo</span><span style="color:#ca8a04; font-weight:700;">māo</span> <span style="color:#0d9488; font-weight:700;">zài</span> <span style="color:#0891b2; font-weight:700;">nǎ</span><span style="color:#ca8a04; font-weight:700;">r</span> <span style="color:#059669; font-weight:700;">ne</span>?
                 </div>
               </div>
               <div>
@@ -2402,10 +2463,10 @@
             <div style="display:flex; flex-direction:column; gap:0.4rem;">
               <div>
                 <div class="bubble-hanzi" style="font-size:1.08rem; font-weight:700; color:var(--primary-dark);">
-                  <strong style="color:var(--text); font-size:0.88rem;">白家月：</strong><span style="color:#0284c7; font-weight:700;">我</span><span style="color:#0891b2; font-weight:700;">们</span><span style="color:#0891b2; font-weight:700;">去</span><span style="color:#ca8a04; font-weight:700;">书</span><span style="color:#059669; font-weight:700;">店</span>，<span style="color:#0284c7; font-weight:700;">你</span><span style="color:#0891b2; font-weight:700;">去</span><span style="color:#059669; font-weight:700;">吗</span>？
+                  <strong style="color:var(--text); font-size:0.88rem;">白家月：</strong><span style="color:#0284c7; font-weight:700;">我</span><span style="color:#0891b2; font-weight:700;">们</span><span style="color:#16a085; font-weight:700;">去</span><span style="color:#ca8a04; font-weight:700;">书</span><span style="color:#059669; font-weight:700;">店</span>，<span style="color:#0284c7; font-weight:700;">你</span><span style="color:#0891b2; font-weight:700;">去</span><span style="color:#059669; font-weight:700;">吗</span>？
                 </div>
                 <div class="bubble-pinyin" style="font-size:0.83rem; font-weight:600;">
-                  Bái Jiāyuè: <span style="color:#0284c7; font-weight:700;">Wǒ</span><span style="color:#0891b2; font-weight:700;">men</span> <span style="color:#0891b2; font-weight:700;">qù</span> <span style="color:#ca8a04; font-weight:700;">shū</span><span style="color:#059669; font-weight:700;">diàn</span>, <span style="color:#0284c7; font-weight:700;">nǐ</span> <span style="color:#0891b2; font-weight:700;">qù</span> <span style="color:#059669; font-weight:700;">ma</span>?
+                  Bái Jiāyuè: <span style="color:#0284c7; font-weight:700;">Wǒ</span><span style="color:#0891b2; font-weight:700;">men</span> <span style="color:#16a085; font-weight:700;">qù</span> <span style="color:#ca8a04; font-weight:700;">shū</span><span style="color:#059669; font-weight:700;">diàn</span>, <span style="color:#0284c7; font-weight:700;">nǐ</span> <span style="color:#0891b2; font-weight:700;">qù</span> <span style="color:#059669; font-weight:700;">ma</span>?
                 </div>
               </div>
               <div>
@@ -2439,7 +2500,7 @@
               <span style="color:#059669; font-weight:700;">医</span><span style="color:#ca8a04; font-weight:700;">生</span> <span style="color:#0d9488; text-decoration:underline;">在医院工作</span>。
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
-              Pinyin: <span style="color:#059669; font-weight:700;">Yī</span><span style="color:#ca8a04; font-weight:700;">shēng</span> <span style="color:#0d9488; text-decoration:underline;">zài yīyuàn gōngzuò</span>.
+              <span style="color:#059669; font-weight:700;">Yī</span><span style="color:#ca8a04; font-weight:700;">shēng</span> <span style="color:#0d9488; text-decoration:underline;">zài yīyuàn gōngzuò</span>.
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
               <strong>Arti:</strong> Dokter bekerja di rumah sakit.
@@ -2458,7 +2519,7 @@
               <span style="color:#0284c7; font-weight:700;">我</span><span style="color:#0891b2; font-weight:700;">们</span><span style="color:#0d9488; font-weight:700;">在</span> <span style="color:#ca8a04; text-decoration:underline;">书店</span> <span style="color:#e11d48; font-weight:700;">见</span><span style="color:#059669; font-weight:700;">吧</span>。
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
-              Pinyin: <span style="color:#0284c7; font-weight:700;">Wǒ</span><span style="color:#0891b2; font-weight:700;">men</span> <span style="color:#0d9488; font-weight:700;">zài</span> <span style="color:#ca8a04; text-decoration:underline;">shūdiàn</span> <span style="color:#e11d48; font-weight:700;">jiàn</span> <span style="color:#059669; font-weight:700;">ba</span>.
+              <span style="color:#0284c7; font-weight:700;">Wǒ</span><span style="color:#0891b2; font-weight:700;">men</span> <span style="color:#0d9488; font-weight:700;">zài</span> <span style="color:#ca8a04; text-decoration:underline;">shūdiàn</span> <span style="color:#e11d48; font-weight:700;">jiàn</span> <span style="color:#059669; font-weight:700;">ba</span>.
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
               <strong>Arti:</strong> Mari kita bertemu di toko buku.
@@ -2471,16 +2532,16 @@
           <div class="item-number" style="background:#4f46e5; color:#fff;">3</div>
           <div class="item-content">
             <div style="font-size:0.8rem; color:#4f46e5; font-weight:700;">
-              🏬 Gambar 3 (Toko / Supermarket):
+              🏬 Gambar 3 (Supermarket):
             </div>
             <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark); margin-top:0.2rem;">
-              <span style="color:#0284c7; font-weight:700;">你</span> <span style="color:#0284c7; text-decoration:underline;">能</span> <span style="color:#0891b2; font-weight:700;">去</span> <span style="color:#0891b2; text-decoration:underline;">哪儿</span> <span style="color:#059669; font-weight:700;">吗</span>？
+              <span style="color:#0284c7; font-weight:700;">你</span><span style="color:#16a085; text-decoration:underline;">能</span><span style="color:#0891b2; font-weight:700;">去</span><span style="color:#ca8a04; text-decoration:underline;">超市</span><span style="color:#059669; font-weight:700;">吗</span>？
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
-              Pinyin: <span style="color:#0284c7; font-weight:700;">Nǐ</span> <span style="color:#0284c7; text-decoration:underline;">néng</span> <span style="color:#0891b2; font-weight:700;">qù</span> <span style="color:#0891b2; text-decoration:underline;">nǎr</span> <span style="color:#059669; font-weight:700;">ma</span>?
+              <span style="color:#0284c7; font-weight:700;">Nǐ</span> <span style="color:#16a085; text-decoration:underline;">néng</span> <span style="color:#0891b2; font-weight:700;">qù</span> <span style="color:#ca8a04; text-decoration:underline;">chāoshì</span> <span style="color:#059669; font-weight:700;">ma</span>?
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
-              <strong>Arti:</strong> Kamu bisa pergi ke mana? / Bisakah kamu pergi ke (tempat ini)?
+              <strong>Arti:</strong> Bisakah kamu pergi ke supermarket?
             </div>
           </div>
         </div>
@@ -2493,246 +2554,17 @@
               🐱 Gambar 4 (Kucing di Atas Meja):
             </div>
             <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:var(--primary-dark); margin-top:0.2rem;">
-              <span style="color:#7c3aed; font-weight:700;">桌</span><span style="color:#0891b2; font-weight:700;">子</span><span style="color:#ea580c; font-weight:700;">上</span> <span style="color:#059669; text-decoration:underline;">有小猫</span>。
+              <span style="color:#7c3aed; font-weight:700;">桌</span><span style="color:#0891b2; font-weight:700;">子</span><span style="color:#ea580c; font-weight:700;">上</span> <span style="color:#059669; text-decoration:underline;">有一只小猫</span>。
             </div>
             <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
-              Pinyin: <span style="color:#7c3aed; font-weight:700;">Zhuō</span><span style="color:#0891b2; font-weight:700;">zi</span> <span style="color:#ea580c; font-weight:700;">shang</span> <span style="color:#059669; text-decoration:underline;">yǒu xiǎomāo</span>.
+              <span style="color:#7c3aed; font-weight:700;">Zhuō</span><span style="color:#0891b2; font-weight:700;">zi</span> <span style="color:#ea580c; font-weight:700;">shang</span> <span style="color:#059669; text-decoration:underline;">yǒu yì zhī xiǎomāo</span>.
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
-              <strong>Arti:</strong> Di atas meja ada anak kucing.
+              <strong>Arti:</strong> Di atas meja ada seekor anak kucing.
             </div>
           </div>
         </div>
 
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ TONGUE TWISTER ══ -->
-  <div>
-    <div class="section-title">👅 Tongue Twister · 绕口令</div>
-    <div class="twister-box">
-      <div class="twister-line">
-        <div class="twister-hanzi">白猫一只，黑猫一只。</div>
-        <div class="twister-pinyin">Bái māo yì zhī, hēi māo yì zhī.</div>
-        <div class="twister-arti">Seekor kucing putih, seekor kucing hitam.</div>
-      </div>
-      <div class="twister-line">
-        <div class="twister-hanzi">白猫抓老鼠，黑猫也抓老鼠。</div>
-        <div class="twister-pinyin">Bái māo zhuā lǎoshǔ, hēi māo yě zhuā lǎoshǔ.</div>
-        <div class="twister-arti">Kucing putih menangkap tikus, kucing hitam juga menangkap tikus.</div>
-      </div>
-      <div class="twister-line">
-        <div class="twister-hanzi">两只小猫，真厉害！</div>
-        <div class="twister-pinyin">Liǎng zhī xiǎomāo, zhēn lìhai!</div>
-        <div class="twister-arti">Dua ekor anak kucing, sungguh hebat!</div>
-      </div>
-
-      <!-- Sub-breakdown Twister -->
-      <div class="twister-breakdown">
-        <div class="twister-breakdown-title">📖 Arti per Kata · 词汇拆解</div>
-        <div class="twister-grid">
-          <div class="word-card">
-            <div class="word-char">白</div>
-            <div class="word-pinyin">bái</div>
-            <div class="word-arti">putih</div>
-          </div>
-          <div class="word-card">
-            <div class="word-char">黑</div>
-            <div class="word-pinyin">hēi</div>
-            <div class="word-arti">hitam</div>
-          </div>
-          <div class="word-card">
-            <div class="word-char">猫</div>
-            <div class="word-pinyin">māo</div>
-            <div class="word-arti">kucing</div>
-          </div>
-          <div class="word-card">
-            <div class="word-char">抓</div>
-            <div class="word-pinyin">zhuā</div>
-            <div class="word-arti">menangkap</div>
-          </div>
-          <div class="word-card">
-            <div class="word-char">老鼠</div>
-            <div class="word-pinyin">lǎoshǔ</div>
-            <div class="word-arti">tikus</div>
-          </div>
-          <div class="word-card">
-            <div class="word-char">厉害</div>
-            <div class="word-pinyin">lìhai</div>
-            <div class="word-arti">hebat / jago</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ XIAOYU'S CLASSROOM ══ -->
-  <div>
-    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂</div>
-    <div class="classroom-box">
-      <div class="classroom-header">
-        <div class="avatar av-xiaoyu">语</div>
-        <div>
-          <span class="classroom-badge">Xiaoyu's Classroom · 语法解析与核心句型</span>
-          <div class="classroom-desc">Panduan komprehensif tata bahasa Bab 8: Rumus aktivitas di tempat, perbandingan fungsi "在", catatan penggabungan kata satuan, dan modal "能":</div>
-        </div>
-      </div>
-
-      <div class="classroom-list">
-        <!-- Item 1: Rumus Tata Bahasa Utama (Kotak Biru) -->
-        <div class="classroom-item">
-          <div class="item-number">1</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">Rumus Tata Bahasa: Aktivitas di Suatu Tempat</div>
-            <div class="bubble-pinyin">Grammar Structure: S + 去/在 + Tempat + Aktivitas</div>
-            <div class="bubble-arti">
-              <strong>1. Rumus Pergerakan Berarah:</strong><br>
-              <code style="background:#e0f2fe;color:#0369a1;padding:2px 6px;border-radius:4px;font-weight:700;">Subjek + 去 (qù) + Keterangan Tempat + Aktivitas / Kata Kerja</code><br>
-              (Subjek + pergi ke + keterangan tempat + aktivitas/kata kerja)<br>
-              • 我去医院看病。(Wǒ qù yīyuàn kàn bìng. = Saya pergi ke rumah sakit untuk periksa/berobat.)<br>
-              • 他去学校上课。(Tā qù xuéxiào shàngkè. = Dia pergi ke sekolah untuk masuk kelas.)<br><br>
-              <strong>2. Rumus Tempat Terjadinya Aksi:</strong><br>
-              <code style="background:#e0f2fe;color:#0369a1;padding:2px 6px;border-radius:4px;font-weight:700;">Subjek + 在 (zài) + Keterangan Tempat + Kata Kerja</code><br>
-              (Subjek + berada/di + keterangan tempat + kata kerja)<br>
-              • <strong>我爸爸也在医院工作。</strong> (Wǒ bàba yě zài yīyuàn gōngzuò. = Papa saya juga bekerja di rumah sakit.)<br>
-              • 我在学校吃午饭。(Wǒ zài xuéxiào chī wǔfàn. = Saya makan siang di sekolah.)
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 2: Catatan Tambahan - Perbandingan Dua Fungsi "在" (Kotak Merah) -->
-        <div class="classroom-item">
-          <div class="item-number">2</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">Catatan Tambahan: Perbandingan Penggunaan Kata "在" (zài)</div>
-            <div class="bubble-pinyin">Grammar Note: 在 + Tempat + Verb vs 在 + Verb</div>
-            <div class="bubble-arti">
-              <strong>Pola A: Menunjukkan Lokasi Aktivitas (Subjek + berada di tempat + kerja)</strong><br>
-              👉 <strong>爸爸在医院工作</strong> (bàba zài yīyuàn gōngzuò)<br>
-              Arti: <em>Papa kerja di rumah sakit</em>.<br><br>
-              <strong>Pola B: Menunjukkan Aktivitas Sedang Berlangsung (Subjek + sedang + kata kerja)</strong><br>
-              👉 <strong>爸爸在工作</strong> (bàba zài gōngzuò)<br>
-              Arti: <em>Ayah sedang kerja</em>.<br><br>
-              <em>Contoh Berpasangan:</em><br>
-              • 我在学校吃午饭 (Saya makan siang di sekolah) ↔ 我在吃午饭 (Saya sedang makan siang).<br>
-              • 她在图书馆看书 (Dia membaca buku di perpustakaan) ↔ 她在看书呢 (Dia sedang membaca buku).
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 3: Catatan Kecil (小语助力 / Xiaoyu's Tip) -->
-        <div class="classroom-item">
-          <div class="item-number">3</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">小语助力：量词可以和指示代词直接组合</div>
-            <div class="bubble-pinyin">Liàngcí kěyǐ hé zhǐshì dàicí zhíjiē zǔhé.</div>
-            <div class="bubble-arti">
-              <strong>Aturan Satuan:</strong> Kata satuan <em>(measure word)</em> dapat langsung digabungkan dengan kata ganti penunjuk <em>(demonstrative pronouns)</em>.<br>
-              • <strong>这 (zhè) + 只 (zhī) → 这只 (zhè zhī)</strong> = yang seekor ini (contoh: <em>这只小猫</em> = anak kucing ini).<br>
-              • <strong>那 (nà) + 只 (zhī) → 那只 (nà zhī)</strong> = yang seekor itu (contoh: <em>那只小狗</em> = anjing itu).<br>
-              • <strong>这 (zhè) + 个 (gè) → 这个 (zhè ge)</strong> = yang ini (contoh: <em>这个人</em> = orang ini).<br>
-              • <strong>那 (nà) + 本 (běn) → 那本 (nà běn)</strong> = yang itu (contoh: <em>那本书</em> = buku itu).
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 4: Kata Penunjuk Arah & Posisi (方位词) -->
-        <div class="classroom-item">
-          <div class="item-number">4</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">方位词：Kata Penunjuk Arah dan Posisi</div>
-            <div class="bubble-pinyin">Fāngwèicí: Kata Benda + 方位词</div>
-            <div class="bubble-arti">
-              Letakkan kata benda di depan, lalu diikuti kata posisi:<br>
-              • <strong>房间外</strong> (fángjiān wài) = di luar kamar.<br>
-              • <strong>桌子下</strong> (zhuōzi xià) = di bawah meja.<br>
-              • <strong>书店前</strong> (shūdiàn qián) = di depan toko buku.<br>
-              • <strong>医院里</strong> (yīyuàn lǐ) = di dalam rumah sakit.<br>
-              • <em>Catatan Satuan:</em> Hewan kecil menggunakan <strong>只 (zhī)</strong>, sedangkan hewan besar menggunakan <strong>头 (tóu)</strong> (misal: 一头大象 = seekor gajah).
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 5: Kata Bantu Modal 能 (néng) -->
-        <div class="classroom-item">
-          <div class="item-number">5</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">助动词“能”：Menyatakan Kemampuan atau Kesempatan</div>
-            <div class="bubble-pinyin">Modal Verb "néng": S + 能 + Verb</div>
-            <div class="bubble-arti">
-              • <strong>Positif:</strong> 下午两点我能到。(Jam dua siang saya bisa sampai.)<br>
-              • <strong>Negatif:</strong> 对不起，我不能去。(Maaf, saya tidak bisa pergi.)<br>
-              • <strong>Tanya:</strong> 下午两点你能到吗？(Jam dua siang apakah kamu bisa sampai?)
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ LATIHAN KOMPREHENSIF ══ -->
-  <div>
-    <div class="section-title">📝 Comprehensive Exercises · 综合练习</div>
-    <div class="classroom-box" style="border-left: 5px solid #8e44ad;">
-      <div class="classroom-header">
-        <div class="avatar av-xiaoyu" style="background:#8e44ad;">练</div>
-        <div>
-          <span class="classroom-badge" style="background:#f3e8ff;color:#7e22ce;">Comprehensive Exercises · 综合练习</span>
-          <div class="classroom-desc">Evaluasi pemahaman Anda dengan melengkapi kalimat dan menyusun pola kalimat:</div>
-        </div>
-      </div>
-
-      <!-- Bank Kosakata Pilihan A - E -->
-      <div style="background:#fdf4ff;border:1.5px dashed #d8b4fe;border-radius:12px;padding:0.85rem 1rem;">
-        <div style="font-size:0.78rem;font-weight:700;color:#7e22ce;text-transform:uppercase;margin-bottom:0.45rem;">
-          Pilihan Kata · 选项 (A–E):
-        </div>
-        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;font-size:0.86rem;">
-          <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.3rem 0.65rem;border-radius:8px;"><strong>A.</strong> 医院 (yīyuàn / rumah sakit)</span>
-          <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.3rem 0.65rem;border-radius:8px;"><strong>B.</strong> 漂亮 (piàoliang / cantik)</span>
-          <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.3rem 0.65rem;border-radius:8px;"><strong>C.</strong> 在 (zài / di, berada)</span>
-          <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.3rem 0.65rem;border-radius:8px;"><strong>D.</strong> 能 (néng / bisa, mampu)</span>
-          <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.3rem 0.65rem;border-radius:8px;"><strong>E.</strong> 房间外 (fángjiān wài / di luar kamar)</span>
-        </div>
-      </div>
-
-      <div class="classroom-list" style="margin-top:0.85rem;">
-        <div class="classroom-item">
-          <div class="item-number" style="background:#8e44ad;">1</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">（ <strong>E 房间外</strong> ）有一只小猫。</div>
-            <div class="bubble-pinyin">Fángjiān wài yǒu yì zhī xiǎomāo.</div>
-            <div class="bubble-arti"><strong>Jawaban:</strong> E. 房间外 (Di luar kamar ada seekor anak kucing.)</div>
-          </div>
-        </div>
-
-        <div class="classroom-item">
-          <div class="item-number" style="background:#8e44ad;">2</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">下午两点你（ <strong>D 能</strong> ）到吗？</div>
-            <div class="bubble-pinyin">Xiàwǔ liǎng diǎn nǐ néng dào ma?</div>
-            <div class="bubble-arti"><strong>Jawaban:</strong> D. 能 (Jam dua siang apakah kamu bisa sampai?)</div>
-          </div>
-        </div>
-
-        <div class="classroom-item">
-          <div class="item-number" style="background:#8e44ad;">3</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">我爸爸也（ <strong>C 在</strong> ）（ <strong>A 医院</strong> ）工作。</div>
-            <div class="bubble-pinyin">Wǒ bàba yě zài yīyuàn gōngzuò.</div>
-            <div class="bubble-arti"><strong>Jawaban:</strong> C. 在 &amp; A. 医院 (Papa saya juga bekerja di rumah sakit.)</div>
-          </div>
-        </div>
-
-        <div class="classroom-item">
-          <div class="item-number" style="background:#8e44ad;">4</div>
-          <div class="item-content">
-            <div class="bubble-hanzi">这只小猫真（ <strong>B 漂亮</strong> ）！</div>
-            <div class="bubble-pinyin">Zhè zhī xiǎomāo zhēn piàoliang!</div>
-            <div class="bubble-arti"><strong>Jawaban:</strong> B. 漂亮 (Anak kucing ini sungguh cantik!)</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -2794,19 +2626,46 @@
     if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
     const hzList = [];
-    let prevColor = null;
     for (const ch of hanziText) {
       if (isHanziChar(ch)) {
         hzList.push(ch);
-        if (!charColorMap[ch]) {
-          let colorIdx = Object.keys(charColorMap).length % COLOR_PALETTE.length;
-          let candidate = COLOR_PALETTE[colorIdx];
-          if (candidate === prevColor) {
-            candidate = COLOR_PALETTE[(colorIdx + 1) % COLOR_PALETTE.length];
+      }
+    }
+
+    for (let i = 0; i < hzList.length; i++) {
+      const ch = hzList[i];
+      const prevCh = i > 0 ? hzList[i - 1] : null;
+      const nextCh = i < hzList.length - 1 ? hzList[i + 1] : null;
+
+      if (!charColorMap[ch]) {
+        let colorIdx = Object.keys(charColorMap).length % COLOR_PALETTE.length;
+        let candidate = COLOR_PALETTE[colorIdx];
+        let offset = 0;
+        while (
+          (prevCh && charColorMap[prevCh] === candidate) ||
+          (nextCh && charColorMap[nextCh] === candidate)
+        ) {
+          offset++;
+          candidate = COLOR_PALETTE[(colorIdx + offset) % COLOR_PALETTE.length];
+        }
+        charColorMap[ch] = candidate;
+      } else {
+        if (
+          (prevCh && charColorMap[prevCh] === charColorMap[ch]) ||
+          (nextCh && charColorMap[nextCh] === charColorMap[ch])
+        ) {
+          let currentIdx = COLOR_PALETTE.indexOf(charColorMap[ch]);
+          let offset = 1;
+          let candidate = COLOR_PALETTE[(currentIdx + offset) % COLOR_PALETTE.length];
+          while (
+            (prevCh && candidate === charColorMap[prevCh]) ||
+            (nextCh && candidate === charColorMap[nextCh])
+          ) {
+            offset++;
+            candidate = COLOR_PALETTE[(currentIdx + offset) % COLOR_PALETTE.length];
           }
           charColorMap[ch] = candidate;
         }
-        prevColor = charColorMap[ch];
       }
     }
 

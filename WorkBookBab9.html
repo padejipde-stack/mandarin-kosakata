@@ -1,0 +1,2246 @@
+<style>
+  .listening-img-thumb {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin: 0.35rem 0;
+  }
+
+    @media (max-width: 600px) {
+      .classroom-header {
+        align-items: flex-start;
+        gap: 0.65rem;
+      }
+      .classroom-item {
+        align-items: flex-start;
+        gap: 0.65rem;
+        padding: 0.75rem 0.6rem;
+      }
+      .item-number {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+      }
+      .item-content {
+        min-width: 0;
+        flex: 1;
+        width: 100%;
+      }
+      .spok-formula {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.5rem;
+        gap: 0.25rem;
+      }
+      .spok-chip {
+        font-size: 0.72rem;
+        padding: 0.15rem 0.4rem;
+      }
+      [style*="grid-template-columns"] {
+        max-width: 100%;
+      }
+    }
+
+  </style>
+
+<style>
+  /* ── GRID TIANZIGE / MIZIGE (KOTAK KOTAK KALIGRAFI MANDARIN) ── */
+  .grid-mizige-table {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding: 0.35rem 0;
+  }
+  .mizige-cell {
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid #0d9488; /* Garis batas luar kotak karakter */
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    flex-shrink: 0;
+    margin-right: -1.5px;
+    user-select: none;
+  }
+  /* Garis putus-putus silang & tegak (Mizige) */
+  .mizige-cell::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 0;
+    border-top: 1px dashed rgba(13, 148, 136, 0.4);
+  }
+  .mizige-cell::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    border-left: 1px dashed rgba(13, 148, 136, 0.4);
+  }
+  .mizige-cross {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .mizige-cross::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top right, transparent calc(50% - 0.5px), rgba(13,148,136,0.25) 50%, transparent calc(50% + 0.5px)),
+                linear-gradient(to bottom right, transparent calc(50% - 0.5px), rgba(13,148,136,0.25) 50%, transparent calc(50% + 0.5px));
+  }
+  .mizige-char {
+    position: relative;
+    z-index: 2;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.85rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  .mizige-char.sample-teal { color: #0f766e; }
+  .mizige-char.sample-black { color: #0f172a; }
+  .mizige-char.trace-gray { color: #cbd5e1; }
+  .mizige-char.trace-light { color: #e2e8f0; }
+
+  /* Baris Kata Gabungan (Kombinasi Karakter + Label Kosakata) */
+  .writing-word-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 0.85rem;
+  }
+  .writing-word-label {
+    margin-top: 0.5rem;
+    padding-top: 0.45rem;
+    border-top: 1px dashed #e2e8f0;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buku Latihan (Workbook) Mandarin — Bab 9: 我明天上午在学校学习 (Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí)</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --primary:      #0d9488;
+      --primary-dark: #0f766e;
+      --primary-soft: rgba(13, 148, 136, 0.08);
+      --gold:         #d97706;
+      --bg:           #f4f6f9;
+      --card-bg:      #ffffff;
+      --text:         #2d3436;
+      --sub:          #636e72;
+      --border:       #e2e8f0;
+      --radius:       16px;
+      --shadow:       0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 48px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '九';
+      position: absolute;
+      font-size: 11rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.05);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    header h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      position: relative;
+    }
+    header p {
+      margin-top: 0.35rem;
+      font-size: 0.88rem;
+      opacity: 0.88;
+      position: relative;
+    }
+    header .bab {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 20px;
+      padding: 0.2rem 0.95rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 0.65rem;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    /* ── MODERN STICKY NAVBAR ── */
+    .nav-bar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .nav {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0.65rem 1rem;
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .nav-side-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-side-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .nav-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    .nav-home-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .nav-pager-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 0.95rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+    .nav-pager-btn.next {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(13, 148, 136, 0.25);
+    }
+    .nav-pager-btn.next:hover {
+      background: var(--primary-dark);
+      transform: translateX(2px);
+    }
+    .nav-pager-btn.prev {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid var(--border);
+    }
+    .nav-pager-btn.prev:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      transform: translateX(-2px);
+    }
+
+    /* ── WRAPPER ── */
+    .wrap {
+      max-width: 860px;
+      margin: 1.5rem auto 2.5rem;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ── CLASSROOM BOX ── */
+    .classroom-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-left: 5px solid var(--primary);
+    }
+    .classroom-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    }
+    .av-teal { background: linear-gradient(135deg, #0d9488, #0f766e); }
+    .classroom-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #0f766e;
+      background: #ccfbf1;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      margin-bottom: 0.25rem;
+    }
+    .classroom-desc {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: justify;
+    }
+
+    /* ── ATURAN BLOCKS ── */
+    .aturan-block {
+      background: #fafaf9;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .aturan-block-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.75rem;
+    }
+    .aturan-block-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.18rem 0.55rem;
+      border-radius: 8px;
+    }
+    .aturan-rule {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      padding: 0.75rem 0.95rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      text-align: justify;
+    }
+    .aturan-text {
+      text-align: justify;
+      flex: 1;
+    }
+    .rule-note { background: #f0fdfa; border-left: 4px solid #0d9488; color: #0f766e; }
+    .rule-ok   { background: #f0fdf4; border-left: 4px solid #22c55e; color: #14532d; }
+    .aturan-icon { font-size: 1.15rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── CARD PAIR GRID ── */
+    .pair-badge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin-top: 0.75rem;
+    }
+    @media (max-width: 650px) {
+      .pair-badge-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .pair-badge-item {
+      background: #ffffff;
+      border: 1.5px solid #99f6e4;
+      border-radius: 10px;
+      padding: 0.55rem 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .pair-badge-item:hover {
+      border-color: #0d9488;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(13, 148, 136, 0.08);
+    }
+    .pair-sub-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #9f1239;
+    }
+    .pair-letters {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #0d9488;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── INSTRUCTION BANNER BOX ── */
+    .instruction-banner {
+      background: #f0fdfa;
+      border: 1.5px solid #99f6e4;
+      border-left: 5px solid #0d9488;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .instruction-banner-top {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f766e;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .instruction-quote {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+    .instruction-trans {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #0f766e;
+    }
+    .contrast-table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+    }
+    .contrast-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+      background: #fff;
+    }
+    .contrast-table th {
+      background: #f0fdfa;
+      color: #0f766e;
+      font-weight: 700;
+      padding: 0.75rem 1rem;
+      border-bottom: 1.5px solid var(--border);
+      white-space: nowrap;
+    }
+    .contrast-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .contrast-table tr:last-child td {
+      border-bottom: none;
+    }
+    .contrast-table tr:hover {
+      background: #f0fdfa;
+    }
+    .pos-badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+    .pos-badge.change {
+      background: #ccfbf1;
+      color: #0d9488;
+      border: 1px solid #99f6e4;
+    }
+    .table-audio-btn {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .table-audio-btn:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
+    .dialog-toolbar {
+      position: fixed;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 2rem);
+      max-width: 720px;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.04);
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+    }
+    .toolbar-title {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .toolbar-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+      justify-content: flex-end;
+    }
+    .toggle-switch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1.5px solid #cbd5e1;
+      padding: 0.45rem 0.75rem;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .toggle-switch-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .toggle-switch-btn.active {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #10b981;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+    }
+    .toggle-switch-btn#btnColor.active {
+      background: #fef3c7;
+      color: #b45309;
+      border-color: #f59e0b;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    }
+
+    .btn-text-mobile { display: none; }
+
+    /* ── VISIBILITY TOGGLES (CSS CONTROLLED) ── */
+    body:not(.show-pinyin) .contrast-py,
+    body:not(.show-pinyin) .match-py,
+    body:not(.show-pinyin) .bubble-pinyin,
+    body:not(.show-pinyin) .opt-py,
+    body:not(.show-pinyin) .dialog-py { display: none !important; }
+
+    body:not(.show-arti) .contrast-arti,
+    body:not(.show-arti) .contrast-tag,
+    body:not(.show-arti) .match-arti,
+    body:not(.show-arti) .match-scene-desc,
+    body:not(.show-arti) .bubble-arti,
+    body:not(.show-arti) .opt-trans,
+    body:not(.show-arti) .dialog-arti { display: none !important; }
+
+    body:not(.show-vocab) .contrast-table-container,
+    body:not(.show-vocab) .match-badge,
+    body:not(.show-vocab) .matching-explanation,
+    body:not(.show-vocab) .soal-pembahasan,
+    body:not(.show-vocab) .quiz-check,
+    body:not(.show-vocab) .match-pic-badge { display: none !important; }
+
+    /* ── COLOR OVERRIDES ── */
+    body.show-color .contrast-py,
+    body.show-color .match-py,
+    body.show-color .contrast-table strong,
+    body.show-color .script-hz,
+    body.show-color .breakdown-hz,
+    body.show-color .match-hz,
+    body.show-color .bubble-hanzi,
+    body.show-color .bubble-pinyin,
+    body.show-color .opt-hz,
+    body.show-color .opt-py,
+    body.show-color .dialog-hz,
+    body.show-color .dialog-py,
+    body.show-color .vocab-pill strong,
+    body.show-color .vocab-py,
+    body.show-color .pair-box-hz,
+    body.show-color .pair-box-py,
+    body.show-color .reading-pic-hz,
+    body.show-color .reading-pic-py,
+    body.show-color .cloze-hz,
+    body.show-color .cloze-py { color: inherit !important; }
+
+    /* ── LATIHAN LISTENING PART 3 (DIALOG & PICTURE MATCHING) ── */
+    .dialog-box-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.15rem 1.25rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      transition: border-color 0.2s ease;
+    }
+    .dialog-box-card:hover {
+      border-color: #cbd5e1;
+    }
+    .dialog-line-row {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dialog-line-row:hover {
+      background: #f0fdfa;
+      transform: translateX(3px);
+    }
+    .dialog-role-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .dialog-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.4;
+    }
+    .dialog-py {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      font-family: var(--font-pinyin);
+    }
+    .dialog-arti {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-top: 0.2rem;
+      padding-top: 0.2rem;
+      border-top: 1px dashed rgba(0,0,0,0.06);
+    }
+    .match-pic-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #fef2f2;
+      border: 1px solid #99f6e4;
+      color: #9f1239;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+    }
+
+    /* ── LATIHAN LISTENING PART 2 (QUESTION & ANSWER) ── */
+    .classroom-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .classroom-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 0.95rem 1.15rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .classroom-item:hover {
+      border-color: #cbd5e1;
+      transform: translateX(3px);
+    }
+    .item-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+    .item-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      flex: 1;
+    }
+    .item-content .bubble-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.45;
+    }
+    .item-content .bubble-pinyin {
+      font-family: var(--font-pinyin);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .item-content .bubble-arti {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: #64748b;
+      margin-top: 0.15rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.08);
+      padding-top: 0.25rem;
+    }
+    .quiz-options {
+      margin-top: 0.65rem;
+      font-size: 0.92rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .quiz-option-btn {
+      width: 100%;
+      padding: 0.5rem 0.95rem;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      color: #1e293b;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+    .quiz-option-btn:hover {
+      border-color: var(--primary);
+      background: #f0fdfa;
+    }
+    .quiz-option-btn.correct {
+      background: #ecfdf5;
+      color: #065f46;
+      font-weight: 700;
+      border-color: #10b981;
+    }
+    .quiz-option-btn.correct .quiz-check {
+      color: #059669;
+      font-weight: 800;
+    }
+    .soal-pembahasan {
+      font-size: 0.82rem;
+      color: #334155;
+      background: #ffffff;
+      border-left: 3.5px solid #10b981;
+      border-radius: 0 8px 8px 0;
+      padding: 0.55rem 0.85rem;
+      margin-top: 0.65rem;
+      line-height: 1.55;
+    }
+
+    /* ── LATIHAN LISTENING PART 1 (PICTURE MATCHING) ── */
+    .matching-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 0.85rem;
+    }
+    .matching-item {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      transition: all 0.2s ease;
+    }
+    .matching-item:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+    }
+    .matching-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 0.55rem;
+    }
+    .matching-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .matching-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 700px) {
+      .matching-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .match-choice {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 0.75rem;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.35rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .match-choice:hover {
+      border-color: var(--primary);
+      background: #f0fdfa;
+      transform: translateY(-2px);
+    }
+    .match-choice.selected-wrong {
+      border: 1.5px solid #cbd5e1;
+      background: #f8fafc;
+    }
+    .match-choice.check-reference {
+      border: 2px solid #16a34a;
+      background: #f0fdf4;
+      box-shadow: 0 0 0 1px #16a34a inset;
+    }
+    .choice-badge-letter {
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 20px;
+      background: #e2e8f0;
+      color: #334155;
+    }
+    .match-choice.check-reference .choice-badge-letter {
+      background: #16a34a;
+      color: #fff;
+    }
+    .match-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin: 0.2rem 0;
+    }
+    .match-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .match-py {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-family: var(--font-pinyin);
+    }
+    .match-arti {
+      font-size: 0.8rem;
+      color: var(--sub);
+      line-height: 1.35;
+    }
+    .match-scene-desc {
+      font-size: 0.72rem;
+      color: #64748b;
+      background: rgba(0,0,0,0.03);
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      width: 100%;
+      margin-top: 0.25rem;
+    }
+    .match-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      margin-top: 0.2rem;
+    }
+    .matching-explanation {
+      background: #fff;
+      border-left: 3.5px solid #16a34a;
+      border-radius: 0 8px 8px 0;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.82rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    /* ── LATIHAN READING PART 1 (MATCH SENTENCE WITH PICTURE) ── */
+    .reading-pic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.15rem;
+    }
+    @media (max-width: 640px) {
+      .reading-pic-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .reading-pic-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .reading-pic-letter {
+      font-weight: 800;
+      font-size: 0.8rem;
+      background: #0d9488;
+      color: #fff;
+      padding: 0.15rem 0.55rem;
+      border-radius: 20px;
+    }
+    .reading-pic-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin: 0.2rem 0;
+    }
+    .reading-pic-label {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .reading-card-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .sentence-display-box {
+      background: #f0fdfa;
+      border: 1.5px solid #99f6e4;
+      border-radius: 10px;
+      padding: 0.95rem 1rem;
+      margin-bottom: 0.85rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .sentence-display-box:hover {
+      background: #ccfbf1;
+      border-color: #5eead4;
+      transform: translateY(-2px);
+    }
+    .sentence-display-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #0d9488;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.3px;
+    }
+    .vocab-pills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.65rem;
+      padding-top: 0.55rem;
+      border-top: 1px dashed #e2e8f0;
+    }
+    .vocab-pill {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.76rem;
+      color: #334155;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .vocab-pill strong {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .vocab-pill .vocab-py {
+      color: #0d9488;
+      font-family: var(--font-pinyin);
+      font-weight: 600;
+    }
+
+    /* ── LATIHAN READING PART 2 (MATCH SENTENCES / PAIRING) ── */
+    .pair-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 640px) {
+      .pair-choice-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .pair-choice-card {
+      background: #ffffff;
+      border: 1px solid #99f6e4;
+      border-radius: 10px;
+      padding: 0.65rem 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pair-choice-card:hover {
+      background: #f0fdfa;
+      border-color: #5eead4;
+      transform: translateY(-2px);
+    }
+    .pair-box-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .pair-sentence-box {
+      background: #f0fdfa;
+      border: 1.5px solid #99f6e4;
+      border-radius: 10px;
+      padding: 0.95rem 1rem;
+      margin-bottom: 0.85rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pair-sentence-box:hover {
+      background: #ccfbf1;
+      border-color: #5eead4;
+      transform: translateY(-2px);
+    }
+    .pair-box-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.45rem;
+    }
+    .pair-box-py {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0d9488;
+      margin-bottom: 0.25rem;
+    }
+    .pair-box-arti {
+      font-size: 0.84rem;
+      color: #475569;
+      text-align: center;
+      border-top: 1px dashed #99f6e4;
+      padding-top: 0.4rem;
+    }
+
+    /* ── LATIHAN READING PART 3 (CLOZE / 选词填空) ── */
+    .cloze-option-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+    }
+    @media (max-width: 640px) {
+      .cloze-option-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .cloze-pill {
+      background: #ffffff;
+      border: 1px solid #99f6e4;
+      border-radius: 8px;
+      padding: 0.6rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cloze-pill:hover {
+      background: #f0fdfa;
+      border-color: #5eead4;
+      transform: translateY(-2px);
+    }
+    .cloze-box-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.15rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .cloze-sentence-display {
+      text-align: center;
+      padding: 0.95rem 0.6rem;
+      background: #f0fdfa;
+      border-radius: 10px;
+      border: 1.5px solid #99f6e4;
+      margin-bottom: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cloze-sentence-display:hover {
+      background: #ccfbf1;
+      border-color: #5eead4;
+      transform: translateY(-2px);
+    }
+    .cloze-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.45rem;
+      color: #1e293b;
+    }
+    .cloze-py {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0d9488;
+      margin-bottom: 0.25rem;
+    }
+    .cloze-arti {
+      font-size: 0.84rem;
+      color: #475569;
+      margin-top: 0.35rem;
+      font-style: italic;
+      border-top: 1px dashed #99f6e4;
+      padding-top: 0.35rem;
+    }
+    .cloze-blank-tag {
+      color: #16a34a;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    /* ── RESPONSIVE MOBILE ── */
+    
+    /* ── MOBILE GLOBAL OVERFLOW & TEXT PROTECTION ── */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    code, pre {
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      white-space: pre-wrap !important;
+    }
+    .classroom-item, .classroom-desc, .classroom-intro {
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    .item-content {
+      min-width: 0;
+      flex: 1;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 600px) {
+      .btn-text-desktop { display: none; }
+      .btn-text-mobile { display: inline; }
+      header { padding: 1.8rem 0.8rem 1.4rem; }
+      header h1 { font-size: 1.45rem; }
+      header p { font-size: 0.82rem; }
+      header .bab {
+        max-width: 95%;
+        font-size: 0.74rem;
+        padding: 0.25rem 0.75rem;
+        line-height: 1.4;
+      }
+      header::before { font-size: 7.5rem; }
+      .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.4rem; }
+      .classroom-box { padding: 1.1rem 0.9rem; }
+      .nav { padding: 0.45rem 0.6rem !important; gap: 0.35rem !important; }
+      .nav-home-btn { padding: 0.38rem 0.65rem; font-size: 0.75rem; }
+      .nav-home-btn span.label { display: none; }
+      .nav-pager-btn { padding: 0.38rem 0.65rem; font-size: 0.75rem; gap: 0.25rem; }
+      
+      .dialog-toolbar {
+        bottom: 0.8rem;
+        width: calc(100% - 1.2rem);
+        padding: 0.5rem 0.6rem;
+      }
+      .toolbar-title { display: none; }
+      .toolbar-buttons { width: 100%; justify-content: space-between; gap: 0.35rem; }
+      .toggle-switch-btn {
+        flex: 1;
+        padding: 0.42rem 0.35rem;
+        font-size: 0.74rem;
+      }
+    }
+  </style>
+</head>
+<body class="show-pinyin show-arti show-vocab">
+
+<!-- ══ HEADER ══ -->
+<header>
+  <h1>📝 Buku Latihan Mandarin · 练习册</h1>
+  <p>HSK 1 练习册 · Workbook Pelajaran 9</p>
+  <div class="bab">Bab 9 — 我明天上午在学校学习 · Waktu, Tempat &amp; Aktivitas</div>
+  <div style="margin-top:0.55rem;"><a href="Bab9.html" style="display:inline-flex;align-items:center;gap:0.35rem;background:rgba(255,255,255,0.22);color:#fff;text-decoration:none;padding:0.3rem 0.9rem;border-radius:20px;font-size:0.78rem;font-weight:600;border:1px solid rgba(255,255,255,0.4);transition:all 0.2s ease;">📖 Buka Buku Teks Bab 9 →</a></div>
+</header>
+
+<!-- ══ 3-KOLOM STICKY NAVBAR ══ -->
+<div class="nav-bar">
+  <div class="nav">
+    <div class="nav-side-left">
+      <a href="WorkBookBab8.html" class="nav-pager-btn prev" title="Kembali ke Workbook Bab 8">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span class="btn-text-desktop">Workbook Bab 8</span>
+        <span class="btn-text-mobile">Bab 8</span>
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="nav-home-btn" title="Kembali ke Daftar Bab">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span class="label">Menu Utama</span>
+      </a>
+    </div>
+    <div class="nav-side-right">
+      <a href="Bab9.html" class="nav-pager-btn next" title="Buka Buku Teks Bab 9">
+        <span class="btn-text-desktop">Buku Teks Bab 9</span>
+        <span class="btn-text-mobile">Bab 9</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ WRAP UTAMA ══ -->
+<div class="wrap">
+
+<style>
+  .wb-choice-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.95rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    font-family: var(--font-pinyin, inherit);
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: #ffffff;
+    color: #1e293b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    min-width: 90px;
+  }
+  .wb-choice-btn:hover {
+    border-color: var(--primary);
+    background: #f0fdfa;
+    color: var(--primary);
+    transform: translateY(-1px);
+  }
+  .wb-choice-btn.correct-ans {
+    border: 2px solid #ef4444 !important;
+    background: #fef2f2 !important;
+    color: #b91c1c !important;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.15);
+    position: relative;
+  }
+  .wb-choice-btn.correct-ans::after {
+    content: "✓ Kunci";
+    position: absolute;
+    top: -9px;
+    right: -8px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Placeholder Styling Template */
+  .placeholder-box {
+    background: #ffffff;
+    border: 2px dashed #99f6e4;
+    border-radius: 12px;
+    padding: 1.5rem 1.2rem;
+    text-align: center;
+    color: #64748b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .placeholder-icon {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+  .placeholder-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f766e;
+  }
+  .placeholder-desc {
+    font-size: 0.85rem;
+    max-width: 540px;
+    line-height: 1.5;
+    color: #475569;
+  }
+  .placeholder-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    background: #ccfbf1;
+    color: #0f766e;
+    margin-top: 0.25rem;
+  }
+</style>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 1: 1. 音节辨析 (1) Syllable Distinction (1)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 1. 音节辨析 (1) · Syllable Distinction (1)</div>
+    <div class="classroom-box" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">1</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">1. 音节辨析（1）· Syllable Distinction (1)</div>
+          <div class="classroom-desc">Latihan Pembedaan Suku Kata Fonetik Mandarin (Inisial, Final &amp; Nada) — Sesuai HSK 1 Standard Course Workbook Pelajaran 9.</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎧</span>
+          <span>Instruksi Soal Buku</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          听录音，选择听到的音节并大声朗读。
+        </div>
+        <div class="instruction-trans">
+          (Listen, choose the syllables you hear, then read aloud.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">📋</div>
+        <div class="placeholder-title">Materi Bagian 1 Siap Diisi</div>
+        <div class="placeholder-desc">Template struktur tabel interaktif fonetik A vs B telah siap dengan tema warna Teal (#0d9488). Materi soal dapat ditambahkan kapan saja.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 2: 2. 音节辨析 (2) Syllable Distinction (2)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 2. 音节辨析 (2) · Syllable Distinction (2)</div>
+    <div class="classroom-box" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">2</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">2. 音节辨析（2）· Syllable Distinction (2)</div>
+          <div class="classroom-desc">Latihan Pembedaan Pasangan Fonetik &amp; Nada Berurutan — Sesuai HSK 1 Standard Course Workbook Pelajaran 9.</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎧</span>
+          <span>Instruksi Soal Buku</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          听录音，选择听到的音节并大声朗读。
+        </div>
+        <div class="instruction-trans">
+          (Listen, choose the syllables you hear, then read aloud.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">📋</div>
+        <div class="placeholder-title">Materi Bagian 2 Siap Diisi</div>
+        <div class="placeholder-desc">Template tabel perbandingan suku kata fonetik dan aturan pelafalan siap digunakan.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 3: 二、汉字 Aksara Tionghoa (Chinese Characters)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 二、汉字 · Aksara Tionghoa (Chinese Characters)</div>
+    <div class="classroom-box" id="hanzi-section" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">字</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">二、汉字 · Chinese Characters — Pelajaran 9</div>
+          <div class="classroom-desc">Aksara Radikal, Guratan &amp; Latihan Tianzige/Mizige — Sesuai HSK 1 Standard Course Workbook Pelajaran 9.</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">✍️</span>
+          <span>Instruksi Penulisan Aksara Hanzi</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          汉字书写及笔画部件解析。
+        </div>
+        <div class="instruction-trans">
+          (Analysis of Chinese Character Strokes, Radicals and Writing Practice.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">🖌️</div>
+        <div class="placeholder-title">Materi Aksara &amp; Kotak Kaligrafi Siap Diisi</div>
+        <div class="placeholder-desc">Struktur grid Tianzige/Mizige interaktif dengan garis bantu pelafalan dan kaligrafi siap dipasangkan dengan karakter Bab 9.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 4: 三、听力练习 · Part 1: 第一部分 (Soal 1–3)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 三、听力练习 · Part 1: 第一部分 (Soal 1–3)</div>
+    <div class="classroom-box" id="listening-part1-section" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">听</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 1 · 第一部分 (Soal 1–3)</div>
+          <div class="classroom-desc">Mencocokkan rekaman audio dengan ilustrasi situasi / gambar kegiatan yang sesuai (Pilihan A, B, atau C).</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎧</span>
+          <span>Instruksi Soal Listening Part 1</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          第一部分：听录音，选出与所听内容相符的图片。
+        </div>
+        <div class="instruction-trans">
+          (Part 1: Listen to the audio and choose the picture that matches what you hear.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">🎧</div>
+        <div class="placeholder-title">Materi Soal Listening Part 1 Siap Diisi</div>
+        <div class="placeholder-desc">Struktur kartu pilihan gambar interaktif A, B, C dengan audio player dan pembahasan kunci telah disiapkan.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 5: 三、听力练习 · Part 2: 第二部分 (Soal 4–5)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 三、听力练习 · Part 2: 第二部分 (Soal 4–5)</div>
+    <div class="classroom-box" id="listening-part2-section" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">2</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 2 · 第二部分 (Soal 4–5)</div>
+          <div class="classroom-desc">Mendengarkan pertanyaan lisan lalu menentukan pilihan jawaban yang paling logis dan gramatikal.</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎧</span>
+          <span>Instruksi Soal Listening Part 2</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          第二部分：听问句，选出最合适的答句。
+        </div>
+        <div class="instruction-trans">
+          (Part 2: Listen to the question and select the most appropriate response.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">💬</div>
+        <div class="placeholder-title">Materi Soal Listening Part 2 Siap Diisi</div>
+        <div class="placeholder-desc">Format tanya-jawab dengan audio bubble dan opsi pilihan berganda A/B/C telah siap.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 6: 三、听力练习 · Part 3: 第三部分 (Soal 6–8)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 三、听力练习 · Part 3: 第三部分 (Soal 6–8)</div>
+    <div class="classroom-box" id="listening-part3-section" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">3</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 3 · 第三部分 (Soal 6–8)</div>
+          <div class="classroom-desc">Mendengarkan dialog dua orang pembicara dan mencocokkan dengan konteks gambar yang sesuai.</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎧</span>
+          <span>Instruksi Soal Listening Part 3</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          第三部分：听对话，选择与对话内容相符的图片。
+        </div>
+        <div class="instruction-trans">
+          (Part 3: Listen to the dialogue and match with the corresponding picture.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">🗣️</div>
+        <div class="placeholder-title">Materi Soal Listening Part 3 Siap Diisi</div>
+        <div class="placeholder-desc">Struktur baris dialog interaktif per giliran bicara (A &amp; B) dengan audio lafal alami telah siap.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 7: 三、听力练习 · Part 4: 第四部分 (Soal 9–10)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 三、听力练习 · Part 4: 第四部分 (Soal 9–10)</div>
+    <div class="classroom-box" id="listening-part4-section" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">4</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 4 · 第四部分 (Soal 9–10)</div>
+          <div class="classroom-desc">Mendengarkan dialog singkat dan menjawab pertanyaan pemahaman isi percakapan.</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎧</span>
+          <span>Instruksi Soal Listening Part 4</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          第四部分：听简短对话和问题，选出正确答案。
+        </div>
+        <div class="instruction-trans">
+          (Part 4: Listen to the short dialogue and question, then choose the correct answer.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">📝</div>
+        <div class="placeholder-title">Materi Soal Listening Part 4 Siap Diisi</div>
+        <div class="placeholder-desc">Layout percakapan pendek, baris pertanyaan penutup, dan opsi jawaban siap dipakai.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 8: 二、阅读 · Reading Part 1: 第一部分 (Soal 11–13)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 二、阅读 · Reading Part 1: 第一部分 (Soal 11–13)</div>
+    <div class="classroom-box" id="reading-part1-section" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">读</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Reading Part 1 · 第一部分 (Soal 11–13)</div>
+          <div class="classroom-desc">Membaca kalimat tertulis dan mencocokkannya dengan kartu gambar situasi (A–D).</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">📖</span>
+          <span>Instruksi Soal Reading Part 1</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          第一部分：读句子，选择与句意相符的图片。
+        </div>
+        <div class="instruction-trans">
+          (Part 1: Read each sentence and match it with the correct picture.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">🖼️</div>
+        <div class="placeholder-title">Materi Soal Reading Part 1 Siap Diisi</div>
+        <div class="placeholder-desc">Grid gambar ilustrasi A–D dan blok kalimat membaca ber-audio siap dimasukkan.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 9: 二、阅读 · Reading Part 2: 第二部分 (Soal 14–16)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 二、阅读 · Reading Part 2: 第二部分 (Soal 14–16)</div>
+    <div class="classroom-box" id="reading-part2-section" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">配</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Reading Part 2 · 第二部分 (Soal 14–16)</div>
+          <div class="classroom-desc">Mencocokkan pasangan kalimat tanya-jawab atau pernyataan berkorelasi (A–D).</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🔗</span>
+          <span>Instruksi Soal Reading Part 2</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          第二部分：读句子，选择相对应的答句或配对句。
+        </div>
+        <div class="instruction-trans">
+          (Part 2: Read each sentence and choose the matching response or paired statement.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">🧩</div>
+        <div class="placeholder-title">Materi Soal Reading Part 2 Siap Diisi</div>
+        <div class="placeholder-desc">Grid opsi kartu respons dan kotak stimulus kalimat siap dihubungkan.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 10: Reading Part 3 · 第三部分 (Soal 17–18)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 Bagian 10: Reading Part 3 · 第三部分 (Soal 17–18)</div>
+    <div class="classroom-box" id="reading-part3-section" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">填</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Reading Part 3 · 第三部分 (Soal 17–18)</div>
+          <div class="classroom-desc">Melengkapi kalimat rumpang dengan kata yang paling tepat (选词填空 / Cloze Test).</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">✏️</span>
+          <span>Instruksi Soal Reading Part 3</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          第三部分：选词填空，选择最恰当的词语补全句子。
+        </div>
+        <div class="instruction-trans">
+          (Part 3: Fill in the blanks with the most appropriate words from the options.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">🔠</div>
+        <div class="placeholder-title">Materi Soal Reading Part 3 Siap Diisi</div>
+        <div class="placeholder-desc">Koleksi bank kata pilihan A–F dan kartu kalimat rumpang dengan tombol audio telah siap.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       BAGIAN 11: Reading Part 4 · 第四部分 (Soal 19–20)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 Bagian 11: Reading Part 4 · 第四部分 (Soal 19–20)</div>
+    <div class="classroom-box" id="reading-part4-section" style="border-left: 5px solid #0d9488;">
+      <div class="classroom-header">
+        <div class="avatar" style="background:#0d9488; font-size: 1.15rem; font-weight: 700; color: #fff;">答</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">第 19—20 题：选择正确答案 (Soal 19–20)</div>
+          <div class="classroom-desc">Membaca teks atau dialog pendek dan memilih jawaban pertanyaan yang paling akurat (A, B, atau C).</div>
+        </div>
+      </div>
+
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎯</span>
+          <span>Instruksi Soal Reading Part 4</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          第四部分：读短文或对话，选择正确答案。
+        </div>
+        <div class="instruction-trans">
+          (Part 4: Read the passage or dialogue, then choose the correct answer to the question.)
+        </div>
+      </div>
+
+      <div class="placeholder-box">
+        <div class="placeholder-icon">📑</div>
+        <div class="placeholder-title">Materi Soal Reading Part 4 Siap Diisi</div>
+        <div class="placeholder-desc">Format bacaan paragraf komprehensif, daftar pertanyaan, pembahasan, serta uraian vocab pills siap diisi.</div>
+        <span class="placeholder-badge">Section Ready · Template Bab 9</span>
+      </div>
+    </div>
+  </div>
+
+<!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
+  <div class="dialog-toolbar">
+    <div class="toolbar-title">
+      <span class="icon">⚙️</span>
+      <span>Bantuan:</span>
+    </div>
+    <div class="toolbar-buttons">
+      <button id="btnPinyin" class="toggle-switch-btn active" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+      <button id="btnArti" class="toggle-switch-btn active" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti">🇮🇩</button>
+      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Detail">📖</button>
+      <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warna-warni Karakter Per Kata">🎨</button>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+  // Palet warna cerah kontras untuk mode pewarnaan karakter per suku kata
+  const COLOR_PALETTE = [
+    '#e11d48', '#16a34a', '#2563eb', '#ea580c', '#7c3aed',
+    '#0891b2', '#c026d3', '#ca8a04', '#0d9488', '#059669',
+    '#d97706', '#db2777', '#0284c7', '#9333ea', '#65a30d'
+  ];
+
+  // Regex pemilah Pinyin baku
+  const _A = '[aāáǎà]';
+  const _O = '[oōóǒò]';
+  const _E = '[eēéěè]';
+  const _I = '[iīíǐì]';
+  const _U = '[uūúǔù]';
+  const _V = '[vüǖǘǚǜ]';
+  const _finals = [
+    _I+_A+_O, _U+_A+_I, _I+_A+_N+'g', _I+_A+_N, _I+_A+_O, _I+_E, _I+_N+'g', _I+_N,
+    _U+_A+_N+'g', _U+_A+_N, _U+_A, _U+_O, _U+_I, _U+_E, _U+_N,
+    _V+_E, _V+_N,
+    _A+_N+'g', _E+_N+'g', _O+_N+'g', _A+_N, _E+_N, _A+_I, _E+_I, _A+_O, _O+_U,
+    _V+_E, 'er',
+    _A, _O, _E, _I, _U, _V
+  ].join('|');
+  const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')(?:r(?![a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛ]))?', 'i');
+
+  function isHanziChar(ch) {
+    return /[\u3007\u4e00-\u9fa5]/.test(ch);
+  }
+
+  function colorizePair(hanziText, pinyinText) {
+    if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
+
+    const pySyllables = [];
+    let remPy = pinyinText;
+    while (remPy.length > 0) {
+      const tagMatch = remPy.match(/^<[^>]+>/);
+      if (tagMatch) { remPy = remPy.substring(tagMatch[0].length); continue; }
+      const nonLetterMatch = remPy.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
+      if (nonLetterMatch) { remPy = remPy.substring(nonLetterMatch[0].length); continue; }
+      const match = remPy.match(PINYIN_SYLL_RE);
+      if (match) {
+        pySyllables.push(match[0]);
+        remPy = remPy.substring(match[0].length);
+      } else {
+        remPy = remPy.substring(1);
+      }
+    }
+
+    const units = [];
+    let remHz = hanziText;
+    while (remHz.length > 0) {
+      const numMatch = remHz.match(/^\d+(?::\d+)?/);
+      if (numMatch) {
+        units.push({ text: numMatch[0], isNum: true });
+        remHz = remHz.substring(numMatch[0].length);
+        continue;
+      }
+      const ch = remHz[0];
+      if (isHanziChar(ch)) {
+        units.push({ text: ch, isHz: true });
+      } else {
+        units.push({ text: ch, isPunct: true });
+      }
+      remHz = remHz.substring(1);
+    }
+
+    const contentUnits = units.filter(u => u.isHz || u.isNum);
+    let prevColor = null;
+    contentUnits.forEach((u, i) => {
+      let hash = 0;
+      for (let k = 0; k < u.text.length; k++) hash = (hash << 5) - hash + u.text.charCodeAt(k);
+      let baseIdx = Math.abs(hash + i * 3) % COLOR_PALETTE.length;
+      let offset = 0;
+      let candidate = COLOR_PALETTE[baseIdx];
+      while (candidate === prevColor && offset < COLOR_PALETTE.length) {
+        offset++;
+        candidate = COLOR_PALETTE[(baseIdx + offset) % COLOR_PALETTE.length];
+      }
+      u.color = candidate;
+      prevColor = candidate;
+    });
+
+    const totalSylls = pySyllables.length;
+    const hzCount = contentUnits.filter(u => u.isHz).length;
+    const numCount = contentUnits.filter(u => u.isNum).length;
+
+    contentUnits.forEach(u => {
+      if (u.isHz) {
+        u.syllCount = 1;
+      } else if (u.isNum) {
+        if (numCount === 1) {
+          u.syllCount = Math.max(1, totalSylls - hzCount);
+        } else {
+          u.syllCount = Math.max(1, Math.round((totalSylls - hzCount) / numCount));
+        }
+      }
+    });
+
+    let outHz = '';
+    units.forEach(u => {
+      if (u.color) {
+        outHz += '<span style="color:' + u.color + ';font-weight:700;">' + u.text + '</span>';
+      } else {
+        outHz += u.text;
+      }
+    });
+
+    const syllColors = [];
+    contentUnits.forEach(u => {
+      for (let k = 0; k < u.syllCount; k++) {
+        syllColors.push(u.color);
+      }
+    });
+
+    let outPy = '';
+    let sIdx = 0;
+    let remaining = pinyinText;
+
+    while (remaining.length > 0) {
+      const tagMatch = remaining.match(/^<[^>]+>/);
+      if (tagMatch) {
+        outPy += tagMatch[0];
+        remaining = remaining.substring(tagMatch[0].length);
+        continue;
+      }
+
+      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
+      if (nonLetterMatch) {
+        outPy += nonLetterMatch[0];
+        remaining = remaining.substring(nonLetterMatch[0].length);
+        continue;
+      }
+
+      const match = remaining.match(PINYIN_SYLL_RE);
+      if (match) {
+        const syll = match[0];
+        const color = syllColors[sIdx] || syllColors[syllColors.length - 1];
+        if (color) {
+          outPy += '<span style="color:' + color + ';font-weight:700;">' + syll + '</span>';
+          sIdx++;
+        } else {
+          outPy += syll;
+        }
+        remaining = remaining.substring(syll.length);
+      } else {
+        outPy += remaining[0];
+        remaining = remaining.substring(1);
+      }
+    }
+
+    return { hanzi: outHz, pinyin: outPy };
+  }
+
+  function applyColors() {
+    document.querySelectorAll('.contrast-table tbody tr').forEach(row => {
+      row.querySelectorAll('td').forEach(td => {
+        const strEl = td.querySelector('strong');
+        const pyEl = td.querySelector('.contrast-py');
+        if (!strEl || !pyEl) return;
+        if (!strEl.dataset.origHtml) strEl.dataset.origHtml = strEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+        const res = colorizePair(strEl.dataset.origHtml, pyEl.dataset.origHtml);
+        strEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      });
+    });
+
+    document.querySelectorAll('.pair-badge-item').forEach(item => {
+      const hzEl = item.querySelector('.script-hz');
+      const pyEl = item.querySelector('.contrast-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    document.querySelectorAll('#hanzi-section .instruction-banner').forEach(banner => {
+      const hzEl = banner.querySelector('.breakdown-hz');
+      const pyEl = banner.querySelector('.contrast-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    document.querySelectorAll('.match-choice').forEach(choice => {
+      const hzEl = choice.querySelector('.match-hz');
+      const pyEl = choice.querySelector('.match-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    document.querySelectorAll('.classroom-item').forEach(item => {
+      const bHz = item.querySelector('.bubble-hanzi');
+      const bPy = item.querySelector('.bubble-pinyin');
+      if (bHz && bPy) {
+        if (!bHz.dataset.origHtml) bHz.dataset.origHtml = bHz.innerHTML;
+        if (!bPy.dataset.origHtml) bPy.dataset.origHtml = bPy.innerHTML;
+        const resB = colorizePair(bHz.dataset.origHtml, bPy.dataset.origHtml);
+        bHz.innerHTML = resB.hanzi;
+        bPy.innerHTML = resB.pinyin;
+      }
+
+      item.querySelectorAll('.quiz-option-btn').forEach(btn => {
+        const oHz = btn.querySelector('.opt-hz');
+        const oPy = btn.querySelector('.opt-py');
+        if (!oHz || !oPy) return;
+        if (!oHz.dataset.origHtml) oHz.dataset.origHtml = oHz.innerHTML;
+        if (!oPy.dataset.origHtml) oPy.dataset.origHtml = oPy.innerHTML;
+        const resO = colorizePair(oHz.dataset.origHtml, oPy.dataset.origHtml);
+        oHz.innerHTML = resO.hanzi;
+        oPy.innerHTML = resO.pinyin;
+      });
+    });
+
+    document.querySelectorAll('.dialog-line-row').forEach(row => {
+      const dHz = row.querySelector('.dialog-hz');
+      const dPy = row.querySelector('.dialog-py');
+      if (!dHz || !dPy) return;
+      if (!dHz.dataset.origHtml) dHz.dataset.origHtml = dHz.innerHTML;
+      if (!dPy.dataset.origHtml) dPy.dataset.origHtml = dPy.innerHTML;
+      const resD = colorizePair(dHz.dataset.origHtml, dPy.dataset.origHtml);
+      dHz.innerHTML = resD.hanzi;
+      dPy.innerHTML = resD.pinyin;
+    });
+
+    document.querySelectorAll('.sentence-display-box').forEach(box => {
+      const bHz = box.querySelector('.bubble-hanzi');
+      const bPy = box.querySelector('.bubble-pinyin');
+      if (!bHz || !bPy) return;
+      if (!bHz.dataset.origHtml) bHz.dataset.origHtml = bHz.innerHTML;
+      if (!bPy.dataset.origHtml) bPy.dataset.origHtml = bPy.innerHTML;
+      const resB = colorizePair(bHz.dataset.origHtml, bPy.dataset.origHtml);
+      bHz.innerHTML = resB.hanzi;
+      bPy.innerHTML = resB.pinyin;
+    });
+
+    document.querySelectorAll('.vocab-pill').forEach(pill => {
+      const hzEl = pill.querySelector('strong');
+      const pyEl = pill.querySelector('.vocab-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    document.querySelectorAll('.pair-sentence-box').forEach(box => {
+      const hzEl = box.querySelector('.pair-box-hz');
+      const pyEl = box.querySelector('.pair-box-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    document.querySelectorAll('.pair-choice-card').forEach(card => {
+      const hzEl = card.querySelector('.opt-hz');
+      const pyEl = card.querySelector('.opt-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    document.querySelectorAll('.reading-pic-card').forEach(card => {
+      const hzEl = card.querySelector('.reading-pic-hz');
+      const pyEl = card.querySelector('.reading-pic-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      let pyText = pyEl.dataset.origHtml.replace(/^[((]/, '').replace(/[))]$/, '');
+      const res = colorizePair(hzEl.dataset.origHtml, pyText);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = '(' + res.pinyin + ')';
+    });
+
+    document.querySelectorAll('.cloze-hz').forEach(hzEl => {
+      const container = hzEl.parentElement;
+      if (!container) return;
+      const pyEl = container.querySelector('.cloze-py');
+      if (!pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    document.querySelectorAll('.cloze-pill').forEach(pill => {
+      const hzEl = pill.querySelector('.opt-hz');
+      const pyEl = pill.querySelector('.opt-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      let pyText = pyEl.dataset.origHtml.replace(/^[((]/, '').replace(/[))]$/, '');
+      const res = colorizePair(hzEl.dataset.origHtml, pyText);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = '(' + res.pinyin + ')';
+    });
+  }
+
+  function removeColors() {
+    document.querySelectorAll('.contrast-table strong, .contrast-py, .script-hz, .breakdown-hz, .match-hz, .match-py, .bubble-hanzi, .bubble-pinyin, .opt-hz, .opt-py, .dialog-hz, .dialog-py, .vocab-pill strong, .vocab-py, .pair-box-hz, .pair-box-py, .reading-pic-hz, .reading-pic-py, .cloze-hz, .cloze-py').forEach(el => {
+      if (el.dataset.origHtml) {
+        el.innerHTML = el.dataset.origHtml;
+      }
+      el.style.color = '';
+    });
+  }
+
+  function updateToggleUI() {
+    const s = cl => document.body.classList.contains(cl);
+    const set = (id, cls) => {
+      const b = document.getElementById(id);
+      if (!b) return;
+      b.classList.toggle('active', s(cls));
+    };
+    set('btnPinyin', 'show-pinyin');
+    set('btnArti', 'show-arti');
+    set('btnVocab', 'show-vocab');
+    set('btnColor', 'show-color');
+  }
+
+  function togglePinyin() {
+    document.body.classList.toggle('show-pinyin');
+    localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleArti() {
+    document.body.classList.toggle('show-arti');
+    localStorage.setItem('mandarin_show_arti', document.body.classList.contains('show-arti') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleVocab() {
+    document.body.classList.toggle('show-vocab');
+    localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleColor() {
+    document.body.classList.toggle('show-color');
+    const on = document.body.classList.contains('show-color');
+    localStorage.setItem('mandarin_show_color', on ? '1' : '0');
+    on ? applyColors() : removeColors();
+    updateToggleUI();
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('mandarin_show_pinyin') === '1' || localStorage.getItem('mandarin_show_pinyin') === null) {
+      document.body.classList.add('show-pinyin');
+    }
+    if (localStorage.getItem('mandarin_show_arti') === '1' || localStorage.getItem('mandarin_show_arti') === null) {
+      document.body.classList.add('show-arti');
+    }
+    if (localStorage.getItem('mandarin_show_vocab') !== '0') {
+      document.body.classList.add('show-vocab');
+    }
+    if (localStorage.getItem('mandarin_show_color') === '1') {
+      document.body.classList.add('show-color');
+      applyColors();
+    }
+    updateToggleUI();
+  });
+
+  // Cache voice penutur asli bahasa Mandarin (Putonghua mainland china)
+  let chineseVoice = null;
+  function getChineseVoice() {
+    if (!('speechSynthesis' in window)) return null;
+    if (chineseVoice) return chineseVoice;
+    const voices = window.speechSynthesis.getVoices();
+    chineseVoice = voices.find(v => v.lang === 'zh-CN' && (v.name.includes('Xiaoxiao') || v.name.includes('Yunyang') || v.name.includes('Natural') || v.name.includes('Google')))
+                || voices.find(v => v.lang === 'zh-CN' || v.lang === 'zh_CN')
+                || voices.find(v => v.lang.startsWith('zh'));
+    return chineseVoice;
+  }
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = () => {
+      chineseVoice = null;
+      getChineseVoice();
+    };
+  }
+
+  function playWord(hanzi, pinyin) {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const textToSpeak = hanzi || pinyin;
+      const u = new SpeechSynthesisUtterance(textToSpeak);
+      u.lang = 'zh-CN';
+      u.rate = 0.82;
+      const v = getChineseVoice();
+      if (v) u.voice = v;
+      window.speechSynthesis.speak(u);
+    }
+  }
+
+  function playPinyin(text) {
+    playWord(text, text);
+  }
+</script>
+
+</body>
+</html>
+
