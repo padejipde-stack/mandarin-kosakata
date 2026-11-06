@@ -7,7 +7,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🈶</text></svg>" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
     :root {
       --primary:      #4f46e5;
       --primary-dark: #3730a3;
@@ -44,7 +44,7 @@
       overflow: hidden;
     }
     header::before {
-      content: '九';
+      content: '对话';
       position: absolute;
       font-size: 11rem;
       font-family: 'Noto Sans SC', sans-serif;
@@ -132,6 +132,31 @@
       background: #e2e8f0;
       color: #0f172a;
     }
+    .nav-tabs {
+      display: inline-flex;
+      background: #f1f5f9;
+      padding: 0.25rem;
+      border-radius: 10px;
+      gap: 0.25rem;
+      border: 1px solid var(--border);
+    }
+    .nav-tab {
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.38rem 0.9rem;
+      border-radius: 8px;
+      color: #64748b;
+      transition: all 0.2s ease;
+    }
+    .nav-tab:hover {
+      color: #1e293b;
+    }
+    .nav-tab.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    }
     .nav-pager-btn {
       display: inline-flex;
       align-items: center;
@@ -175,26 +200,19 @@
 
     /* ── SECTION TITLE ── */
     .section-title {
-      font-size: 1.15rem;
+      font-size: 0.92rem;
       font-weight: 700;
-      color: var(--text);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 0.85rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      margin-bottom: 0.8rem;
     }
 
     /* ── DIALOG BOX ── */
-    .dialog-box {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      padding: 1.6rem 1.4rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
+
     .dialog-header {
       display: flex;
       align-items: center;
@@ -216,178 +234,478 @@
       flex-direction: column;
       gap: 1.25rem;
     }
+    .dialog-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
 
     /* ── DIALOG LINE ── */
     .dialog-line {
       display: flex;
-      gap: 0.85rem;
       align-items: flex-start;
+      gap: 0.9rem;
     }
-    .dialog-line.right {
-      flex-direction: row-reverse;
-    }
+    .dialog-line.right { flex-direction: row-reverse; }
+
+    /* ── AVATARS ── */
     .avatar {
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
+      color: #fff;
       flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
     }
-    .av-xiaoyu { background: linear-gradient(135deg, #f39c12, #d68910); }
+    .av-xue    { background: linear-gradient(135deg, #27ae60, #1e8449); }
+    .av-liu    { background: linear-gradient(135deg, #1e3799, #0c2461); }
+    .av-yang   { background: linear-gradient(135deg, #6c5ce7, #4834d4); }
     .av-wang   { background: linear-gradient(135deg, #c0392b, #8e1a12); }
     .av-chen   { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
     .av-bai    { background: linear-gradient(135deg, #16a085, #0e6655); }
     .av-li     { background: linear-gradient(135deg, #e67e22, #d35400); }
     .av-anni   { background: linear-gradient(135deg, #e84393, #fd79a8); }
-    .av-yang   { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
-    .av-stu    { background: linear-gradient(135deg, #27ae60, #1e8449); }
+    .av-xiaoyu { background: linear-gradient(135deg, #f39c12, #d68910); }
+    .av-hu     { background: linear-gradient(135deg, #0284c7, #0369a1); }
+    .av-stu    { background: linear-gradient(135deg, #2980b9, #1a5276); }
 
     .bubble-wrap {
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
-      max-width: 80%;
+      max-width: 82%;
     }
-    .dialog-line.right .bubble-wrap {
-      align-items: flex-end;
-    }
+    .dialog-line.right .bubble-wrap { align-items: flex-end; }
+
     .speaker-name {
       font-size: 0.76rem;
       font-weight: 600;
       color: var(--sub);
-      display: flex;
-      gap: 0.35rem;
-      align-items: baseline;
-      padding: 0 0.2rem;
-    }
-    .speaker-hanzi {
-      font-family: 'Noto Sans SC', sans-serif;
-      font-weight: 700;
+      padding: 0 0.3rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
     }
     .speaker-pinyin {
-      font-weight: 500;
-      color: #94a3b8;
       display: none;
+      font-weight: 500;
+      color: #64748b;
     }
     body.show-pinyin .speaker-pinyin { display: inline; }
 
+    /* ── BUBBLES ── */
     .bubble {
-      background: #f8fafc;
-      border: 1.5px solid var(--border);
-      border-radius: 14px;
-      padding: 0.75rem 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-      transition: all 0.2s ease;
+      padding: 0.75rem 1.05rem;
+      border-radius: 0 16px 16px 16px;
+      position: relative;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
     }
     .dialog-line.right .bubble {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: #fff;
+      border-radius: 16px 0 16px 16px;
       border-color: transparent;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     }
+    .dialog-line.anni .bubble { background: linear-gradient(135deg, #e84393, #c2185b); }
+    .dialog-line.bai .bubble  { background: linear-gradient(135deg, #16a085, #0e6655); }
+    .dialog-line.yang .bubble { background: linear-gradient(135deg, #6c5ce7, #4834d4); }
+    .dialog-line.liu .bubble  { background: linear-gradient(135deg, #1e3799, #0c2461); }
+    .dialog-line.chen .bubble { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
+    .dialog-line.hu .bubble   { background: linear-gradient(135deg, #0284c7, #0369a1); }
+    .dialog-line.li .bubble   { background: linear-gradient(135deg, #e67e22, #d35400); }
+
     .bubble-hanzi {
       font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.28rem;
       font-weight: 600;
-      line-height: 1.4;
-      letter-spacing: 0.5px;
+      line-height: 1.45;
     }
     .bubble-pinyin {
-      font-size: 0.86rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
       font-weight: 500;
-      color: #475569;
-      line-height: 1.3;
+      color: #64748b;
+      margin-top: 0.3rem;
       display: none;
     }
-    .dialog-line.right .bubble-pinyin {
-      color: rgba(255, 255, 255, 0.88);
-    }
-    body.show-pinyin .bubble-pinyin { display: block; }
-
     .bubble-arti {
+      font-family: 'Poppins', sans-serif;
       font-size: 0.82rem;
-      color: var(--sub);
-      line-height: 1.35;
-      padding-top: 0.3rem;
-      border-top: 1px dashed rgba(0, 0, 0, 0.08);
+      font-weight: 400;
+      color: #475569;
+      margin-top: 0.35rem;
+      padding-top: 0.35rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.12);
       display: none;
     }
-    .dialog-line.right .bubble-arti {
-      color: rgba(255, 255, 255, 0.9);
+    .dialog-line.right .bubble .bubble-pinyin { color: rgba(255, 255, 255, 0.85); }
+    .dialog-line.right .bubble .bubble-arti {
+      color: rgba(255, 255, 255, 0.95);
       border-top-color: rgba(255, 255, 255, 0.25);
     }
-    body.show-arti .bubble-arti { display: block; }
 
-    /* ── SUB BREAKDOWN (KOSAKATA PER TEKS) ── */
+    body.show-pinyin .bubble-pinyin { display: block; }
+    body.show-arti   .bubble-arti   { display: block; }
+
+    /* ── SUB-BREAKDOWN ── */
     .sub-breakdown {
-      margin-top: 0.5rem;
-      padding-top: 1rem;
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
       border-top: 1.5px dashed var(--border);
       display: none;
     }
     body.show-vocab .sub-breakdown { display: block; }
-    .sub-title {
-      font-size: 0.8rem;
+    .sub-title,
+    .sub-breakdown-title {
+      font-size: 0.85rem;
       font-weight: 700;
       color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
       display: flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.4rem;
     }
     .breakdown-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+      gap: 0.85rem;
     }
     .word-card {
-      background: #ffffff;
+      background: #f8fafc;
       border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
       border-radius: 12px;
-      padding: 0.8rem 0.6rem;
+      padding: 0.95rem 0.75rem;
       text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
-      transition: all 0.2s ease;
+      justify-content: center;
     }
     .word-card:hover {
-      border-color: var(--primary);
-      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
       transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      background: #ffffff;
     }
     .word-char {
       font-family: 'Noto Sans SC', sans-serif;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 700;
       color: var(--primary-dark);
       line-height: 1.2;
     }
     .word-pinyin {
       font-size: 0.76rem;
-      font-weight: 600;
       color: #64748b;
-      line-height: 1.2;
+      font-weight: 600;
+      margin-top: 0.25rem;
+      display: none;
     }
+    body.show-pinyin .word-pinyin { display: block; }
     .word-arti {
-      font-size: 0.76rem;
+      font-size: 0.8rem;
       color: var(--text);
-      line-height: 1.25;
+      margin-top: 0.35rem;
+      line-height: 1.35;
+      display: none;
+    }
+    body.show-arti .word-arti { display: block; }
+
+    /* ── XIAOYU'S CLASSROOM BREAKDOWN (ARTI PER KATA) ── */
+    .char-breakdown {
+      display: none;
+      margin-top: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+    }
+    body.show-vocab .char-breakdown {
+      display: block;
+    }
+    .char-breakdown-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.55rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .char-breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+      gap: 0.55rem;
+    }
+    .char-breakdown-grid .word-card {
+      background: #ffffff;
+      padding: 0.65rem 0.5rem;
+      border-top: 3px solid var(--primary);
+      border-radius: 10px;
+    }
+    .char-breakdown-grid .word-char { font-size: 1.35rem; }
+    .char-breakdown-grid .word-pinyin { font-size: 0.75rem; }
+    .char-breakdown-grid .word-arti { font-size: 0.75rem; }
+
+    /* ── XIAOYU'S CLASSROOM ── */
+    .classroom-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-left: 5px solid var(--gold);
+    }
+    .classroom-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .classroom-intro { display: flex; flex-direction: column; gap: 0.2rem; }
+    .classroom-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #b7791f;
+      background: #fefcbf;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      margin-bottom: 0.25rem;
+    }
+    .classroom-desc {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .classroom-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .classroom-group-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 0.35rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .classroom-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 0.85rem 1.1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .classroom-item:hover {
+      border-color: #cbd5e1;
+      transform: translateX(3px);
+    }
+    .classroom-box .bubble-pinyin { display: none; }
+    body.show-pinyin .classroom-box .bubble-pinyin { display: block; }
+    .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
+    body.show-color .classroom-box .bubble-hanzi { color: var(--text); }
+    body.show-color .classroom-box .bubble-pinyin { color: var(--sub); }
+
+    /* ── SPOK / GRAMMAR FORMULA & CHIP STYLES ── */
+    .spok-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-left: 5px solid #2563eb;
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+    .spok-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .spok-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #1d4ed8;
+      background: #dbeafe;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+    }
+    .spok-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .spok-desc {
+      font-size: 0.85rem;
+      color: var(--sub);
+      line-height: 1.5;
+    }
+    .spok-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 680px) {
+      .spok-grid { grid-template-columns: 1fr; }
+    }
+    .spok-card {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .spok-card-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .spok-formula {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 0.65rem 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .spok-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .chip-s { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+    .chip-w { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .chip-t { background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; }
+    .chip-p { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .chip-o { background: #ffe4e6; color: #9f1239; border: 1px solid #fecdd3; }
+    .chip-k { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+    .spok-plus {
+      color: #94a3b8;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .spok-notes {
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.55;
+    }
+    .spok-notes strong { color: var(--text); }
+    .match-card-interactive:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important;
+      border-color: #cbd5e1 !important;
+    }
+    .item-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
       margin-top: 0.15rem;
     }
+    .item-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      flex: 1;
+    }
 
-    /* ── GRAMMAR BOX (.de-box) ── */
+    /* ── NUMBER CARDS (XIAOYU'S CLASSROOM) ── */
+    .number-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+      gap: 0.65rem;
+    }
+    .number-grid.wide {
+      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    }
+    .number-card {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 0.75rem 0.6rem;
+      text-align: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .number-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      background: #ffffff;
+    }
+    .number-card .bubble-hanzi {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.25;
+    }
+    .number-card .bubble-pinyin {
+      font-size: 0.78rem;
+      color: #64748b;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+    .number-card .bubble-arti {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 0.25rem;
+      padding-top: 0.25rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.12);
+    }
+
+/* ── GRAMMAR BOX (.de-box) ── */
     .de-box {
       background: var(--card-bg);
       border-radius: var(--radius);
@@ -1083,6 +1401,31 @@
       flex-direction: column;
       gap: 0.35rem;
     }
+    
+    /* ── MOBILE GLOBAL OVERFLOW & TEXT PROTECTION ── */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    code, pre {
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      white-space: pre-wrap !important;
+    }
+    .classroom-item, .classroom-desc, .classroom-intro {
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    .item-content {
+      min-width: 0;
+      flex: 1;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     @media (max-width: 600px) {
       .comp-photo-item {
         flex-direction: column;
@@ -1184,7 +1527,7 @@
     }
     body.show-arti .char-desc-arti { display: block; }
 
-    /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
+/* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
     .dialog-toolbar {
       position: fixed;
       bottom: 1.2rem;
@@ -1221,6 +1564,8 @@
       flex: 1;
       justify-content: flex-end;
     }
+
+    /* ── TOGGLE BUTTONS ── */
     .toggle-switch-btn {
       display: inline-flex;
       align-items: center;
@@ -1243,10 +1588,10 @@
       transform: translateY(-1px);
     }
     .toggle-switch-btn.active {
-      background: #e0e7ff;
-      color: #3730a3;
-      border-color: #6366f1;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #10b981;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
     }
     .toggle-switch-btn#btnColor.active {
       background: #fef3c7;
@@ -1254,6 +1599,7 @@
       border-color: #f59e0b;
       box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
     }
+    .btn-text-mobile { display: none; }
 
     /* 🎨 COLOR MODE HIGHLIGHTING ── */
     body.show-color .dialog-line.right .bubble {
@@ -1270,7 +1616,7 @@
       border-top-color: rgba(0, 0, 0, 0.12) !important;
     }
 
-    /* 🎨 Adaptasi Grammar Hero Banner saat Color Mode Aktif */
+/* 🎨 Adaptasi Grammar Hero Banner saat Color Mode Aktif */
     body.show-color .grammar-banner {
       background: #f8fafc !important;
       border-bottom: 2px solid #e2e8f0;
@@ -1294,8 +1640,35 @@
       color: #475569 !important;
     }
 
-    /* ── RESPONSIVE MOBILE ── */
+/* ── RESPONSIVE MOBILE ── */
+    
+    /* ── MOBILE GLOBAL OVERFLOW & TEXT PROTECTION ── */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    code, pre {
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      white-space: pre-wrap !important;
+    }
+    .classroom-item, .classroom-desc, .classroom-intro {
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    .item-content {
+      min-width: 0;
+      flex: 1;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     @media (max-width: 600px) {
+      .btn-text-desktop { display: none; }
+      .btn-text-mobile  { display: inline; }
       header { padding: 2rem 1rem 1.6rem; }
       header h1 { font-size: 1.55rem; }
       header::before { font-size: 8rem; }
@@ -1315,6 +1688,7 @@
       .word-arti { font-size: 0.74rem; }
       .nav { padding: 0.5rem 0.75rem; }
       .nav-home-btn span.label { display: none; }
+      .nav-tab { padding: 0.35rem 0.7rem; font-size: 0.78rem; }
       .nav-pager-btn { padding: 0.38rem 0.75rem; font-size: 0.78rem; }
       .dialog-toolbar {
         bottom: 0.8rem;
@@ -1327,9 +1701,21 @@
         flex: 1;
         padding: 0.42rem 0.35rem;
         font-size: 0.74rem;
+        gap: 0.25rem;
       }
+      .toggle-switch-btn .status-badge { font-size: 0.62rem; padding: 0.08rem 0.32rem; }
       .classroom-box { padding: 1.1rem 0.9rem; }
       .classroom-item { padding: 0.75rem 0.85rem; gap: 0.65rem; }
+      .char-breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
+      .number-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+      .number-grid.wide { grid-template-columns: repeat(2, 1fr); }
+      .number-card { padding: 0.6rem 0.4rem; }
+      .number-card .bubble-hanzi { font-size: 1.2rem; }
+      .number-card .bubble-pinyin { font-size: 0.72rem; }
+      .number-card .bubble-arti { font-size: 0.75rem; }
     }
   </style>
 </head>
