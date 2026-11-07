@@ -29,7 +29,7 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      padding-bottom: 4.5rem;
+      padding-bottom: 48px;
     }
 
     /* ── HEADER ── */
@@ -201,11 +201,11 @@
     /* ── WRAPPER ── */
     .wrap {
       max-width: 1020px;
-      margin: 1.2rem auto 0.8rem;
+      margin: 1.5rem auto 2.5rem;
       padding: 0 1rem;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.8rem;
     }
 
     /* ── SECTION TITLE ── */
@@ -558,6 +558,7 @@
 
     /* ── RESPONSIVE MOBILE ── */
     @media (max-width: 680px) {
+      .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.4rem; }
       header { padding: 2rem 1rem 1.6rem; }
       header h1 { font-size: 1.55rem; }
       header::before { font-size: 8rem; }
@@ -588,7 +589,7 @@
 <header>
   <h1>⚡ Kosakata Bahasa Mandarin — Peralatan &amp; Perkakas Kelistrikan</h1>
   <p>电气工程与电工常用工具设备词汇大全 · Daftar Lengkap Peralatan, Alat Ukur &amp; Perkakas Listrik</p>
-  <div class="bab">⚡ 电气设备与工具词汇 · 27 Kosakata Alat Listrik Lengkap + Foto Lapangan Asli &amp; Audio</div>
+  <div class="bab">⚡ 电气设备与工具词汇 · 36 Kosakata Alat Listrik Lengkap + Foto Lapangan Asli &amp; Audio</div>
 </header>
 
 <!-- STICKY NAVBAR -->
@@ -601,31 +602,31 @@
 
     <div class="nav-search-box">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-      <input type="text" id="searchInput" placeholder="Cari alat listrik (cth: multimeter, exit, ht, termohigrometer, 插座, 安全出口)..." oninput="handleSearch(this.value)" />
+      <input type="text" id="searchInput" placeholder="Cari alat listrik (cth: multimeter, las, apar, kabel, waterpass, harness, exit, ht)..." oninput="handleSearch(this.value)" />
     </div>
 
     <div class="nav-stats-pill" id="statsPill">
-      27 Alat Listrik Tersedia
+      36 Alat Listrik Tersedia
     </div>
   </div>
 </nav>
 
 <!-- FILTER BAR -->
 <div class="filter-bar">
-  <button class="filter-chip active" onclick="filterCategory('all', this)">⚡ Semua Alat (27)</button>
-  <button class="filter-chip" onclick="filterCategory('apd', this)">🦺 APD &amp; Keselamatan Listrik (6)</button>
-  <button class="filter-chip" onclick="filterCategory('ukur', this)">📏 Alat Ukur &amp; Uji Listrik (5)</button>
-  <button class="filter-chip" onclick="filterCategory('perkakas', this)">🔧 Perkakas &amp; Fasilitas Gardu (16)</button>
+  <button class="filter-chip active" onclick="filterCategory('all', this)">⚡ Semua Alat (36)</button>
+  <button class="filter-chip" onclick="filterCategory('apd', this)">🦺 APD &amp; Keselamatan Listrik (11)</button>
+  <button class="filter-chip" onclick="filterCategory('ukur', this)">📏 Alat Ukur &amp; Uji Listrik (6)</button>
+  <button class="filter-chip" onclick="filterCategory('perkakas', this)">🔧 Perkakas &amp; Fasilitas Gardu (19)</button>
 </div>
 
 
 <div class="wrap">
   
-    <!-- ══ KOSAKATA ALAT KELISTRIKAN (FOTO ASLI 1 - 27) ══ -->
+    <!-- ══ KOSAKATA ALAT KELISTRIKAN (FOTO ASLI 1 - 36) ══ -->
     <section class="vocab-category-section" id="cat-utama">
       <div class="section-title">
         <span class="sec-icon">⚡</span>
-        <span>Peralatan, Alat Ukur &amp; Perkakas Kelistrikan · 常用电气设备与电工工具大全 (27 Alat)</span>
+        <span>Peralatan, Alat Ukur &amp; Perkakas Kelistrikan · 常用电气设备与电工工具大全 (36 Alat)</span>
       </div>
       <div class="equipment-grid">
 
@@ -2084,6 +2085,521 @@
             </div>
           </div>
         </div>
+
+        <!-- Card 28: 电缆 / 电线 -->
+        <div class="dialog-box equip-card" data-category="perkakas" data-search="电缆 电线 diànlǎn diànxiàn kabel listrik gulungan kabel power cable wire roll penghantar listrik tenaga instalasi">
+          <div class="equip-img-wrapper">
+            <img src="images/28.jpeg" alt="电缆 / 电线 - Kabel Listrik / Gulungan Kabel (Power Cable Roll)" class="equip-img" loading="lazy" data-hz="电缆" data-icon="🔌" onerror="handleImgError(this)" />
+            <span class="equip-badge">⚡ Kabel &amp; Penghantar</span>
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E7%BC%86%20power%20cable%20electric%20wire" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar di Google">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Foto Google</span>
+            </a>
+          </div>
+
+          <div class="equip-info">
+            <div class="equip-header-row">
+              <div class="equip-title-group">
+                <div class="bubble-hanzi">电缆 / 电线</div>
+                <div class="bubble-pinyin">diànlǎn / diànxiàn</div>
+              </div>
+              <button class="audio-btn" onclick="speakChinese('电缆')" title="Dengarkan pengucapan bahasa Mandarin">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <span>Suara</span>
+              </button>
+            </div>
+
+            <div class="equip-translation">
+              <span class="equip-en">Power Cable / Electric Wire (Coil / Roll)</span>
+              <div class="bubble-arti">
+                <strong>Kabel Listrik / Gulungan Kabel Tenaga</strong>
+                <p class="equip-desc-text">Kabel konduktor berisolasi tebal dalam gulungan panjang yang digunakan untuk menyalurkan arus listrik tenaga pada instalasi mesin, panel, maupun pengelasan proyek.</p>
+              </div>
+            </div>
+
+            <!-- Sub Breakdown: Arti per Karakter -->
+            <div class="sub-breakdown">
+              <div class="sub-breakdown-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Arti per Karakter · 词汇拆解</span>
+              </div>
+              <div class="breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">电</div>
+                  <div class="word-pinyin">diàn</div>
+                  <div class="word-arti">listrik</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">缆</div>
+                  <div class="word-pinyin">lǎn</div>
+                  <div class="word-arti">kabel tebal / kawat baja</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">线</div>
+                  <div class="word-pinyin">xiàn</div>
+                  <div class="word-arti">kawat / kawat benang</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 29: 电焊机 -->
+        <div class="dialog-box equip-card" data-category="perkakas" data-search="电焊机 逆变电焊机 diànhànjī nìbiàn diànhànjī mesin las listrik inverter trafo las inverter arc welding machine zx7 500">
+          <div class="equip-img-wrapper">
+            <img src="images/29.jpeg" alt="电焊机 - Mesin Las Listrik (Inverter Arc Welding Machine)" class="equip-img" loading="lazy" data-hz="电焊机" data-icon="⚡" onerror="handleImgError(this)" />
+            <span class="equip-badge">🔧 Peralatan Las &amp; Fabrikasi</span>
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E7%84%8A%E6%9C%BA%20inverter%20welder%20arc%20welding%20machine" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar di Google">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Foto Google</span>
+            </a>
+          </div>
+
+          <div class="equip-info">
+            <div class="equip-header-row">
+              <div class="equip-title-group">
+                <div class="bubble-hanzi">电焊机</div>
+                <div class="bubble-pinyin">diànhànjī</div>
+              </div>
+              <button class="audio-btn" onclick="speakChinese('电焊机')" title="Dengarkan pengucapan bahasa Mandarin">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <span>Suara</span>
+              </button>
+            </div>
+
+            <div class="equip-translation">
+              <span class="equip-en">Electric Arc Welding Machine / Inverter Welder</span>
+              <div class="bubble-arti">
+                <strong>Mesin Las Listrik (Inverter DC)</strong>
+                <p class="equip-desc-text">Mesin las busur listrik tipe inverter portabel (seperti model ZX7-500) untuk menyambung logam atau struktur besi pada instalasi rangka dan grounding gardu listrik.</p>
+              </div>
+            </div>
+
+            <!-- Sub Breakdown: Arti per Karakter -->
+            <div class="sub-breakdown">
+              <div class="sub-breakdown-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Arti per Karakter · 词汇拆解</span>
+              </div>
+              <div class="breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">电</div>
+                  <div class="word-pinyin">diàn</div>
+                  <div class="word-arti">listrik</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">焊</div>
+                  <div class="word-pinyin">hàn</div>
+                  <div class="word-arti">mengelas / menyolder</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">机</div>
+                  <div class="word-pinyin">jī</div>
+                  <div class="word-arti">mesin / alat</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 30: 水平尺 -->
+        <div class="dialog-box equip-card" data-category="ukur" data-search="水平尺 水准尺 shuǐpíngchǐ shuǐzhǔnchǐ waterpass mistar perata spirit level leveling ruler alat ukur kedataran panel rangka">
+          <div class="equip-img-wrapper">
+            <img src="images/30.jpeg" alt="水平尺 - Waterpass / Mistar Pengukur Kedataran (Spirit Level)" class="equip-img" loading="lazy" data-hz="水平尺" data-icon="📏" onerror="handleImgError(this)" />
+            <span class="equip-badge">📏 Alat Ukur Presisi</span>
+            <a href="https://www.google.com/search?tbm=isch&q=%E6%B0%B4%E5%B9%B3%E5%B0%BA%20spirit%20level%20ruler" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar di Google">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Foto Google</span>
+            </a>
+          </div>
+
+          <div class="equip-info">
+            <div class="equip-header-row">
+              <div class="equip-title-group">
+                <div class="bubble-hanzi">水平尺</div>
+                <div class="bubble-pinyin">shuǐpíngchǐ</div>
+              </div>
+              <button class="audio-btn" onclick="speakChinese('水平尺')" title="Dengarkan pengucapan bahasa Mandarin">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <span>Suara</span>
+              </button>
+            </div>
+
+            <div class="equip-translation">
+              <span class="equip-en">Spirit Level / Leveling Bar / Bubble Level</span>
+              <div class="bubble-arti">
+                <strong>Waterpass / Mistar Pengukur Kedataran (Spirit Level)</strong>
+                <p class="equip-desc-text">Mistar logam dengan gelembung cairan presisi untuk memastikan kerataan vertikal, horizontal, maupun sudut kemiringan saat memasang panel gardu kubikel atau trafo.</p>
+              </div>
+            </div>
+
+            <!-- Sub Breakdown: Arti per Karakter -->
+            <div class="sub-breakdown">
+              <div class="sub-breakdown-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Arti per Karakter · 词汇拆解</span>
+              </div>
+              <div class="breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">水平</div>
+                  <div class="word-pinyin">shuǐpíng</div>
+                  <div class="word-arti">horizontal / rata datar</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">尺</div>
+                  <div class="word-pinyin">chǐ</div>
+                  <div class="word-arti">mistar / penggaris</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 31: 电焊条 / 焊条 -->
+        <div class="dialog-box equip-card" data-category="perkakas" data-search="电焊条 焊条 diànhàntiáo hàntiáo kawat las elektroda las welding rod welding electrodes batangan kawat las las listrik">
+          <div class="equip-img-wrapper">
+            <img src="images/31.jpeg" alt="电焊条 / 焊条 - Kawat Las / Elektroda Las Listrik (Welding Electrodes)" class="equip-img" loading="lazy" data-hz="焊条" data-icon="🥢" onerror="handleImgError(this)" />
+            <span class="equip-badge">🔧 Material Pengelasan</span>
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%84%8A%E6%9D%A1%20welding%20electrodes%20welding%20rods" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar di Google">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Foto Google</span>
+            </a>
+          </div>
+
+          <div class="equip-info">
+            <div class="equip-header-row">
+              <div class="equip-title-group">
+                <div class="bubble-hanzi">电焊条 / 焊条</div>
+                <div class="bubble-pinyin">diànhàntiáo / hàntiáo</div>
+              </div>
+              <button class="audio-btn" onclick="speakChinese('焊条')" title="Dengarkan pengucapan bahasa Mandarin">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <span>Suara</span>
+              </button>
+            </div>
+
+            <div class="equip-translation">
+              <span class="equip-en">Welding Electrodes / Welding Rods</span>
+              <div class="bubble-arti">
+                <strong>Kawat Las / Elektroda Las Listrik</strong>
+                <p class="equip-desc-text">Batang kawat berbalut fluks pelindung yang melebur sebagai bahan pengisi sambungan logam saat pengelasan SMAW (busur listrik manual).</p>
+              </div>
+            </div>
+
+            <!-- Sub Breakdown: Arti per Karakter -->
+            <div class="sub-breakdown">
+              <div class="sub-breakdown-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Arti per Karakter · 词汇拆解</span>
+              </div>
+              <div class="breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">电焊</div>
+                  <div class="word-pinyin">diànhàn</div>
+                  <div class="word-arti">las listrik</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">焊条</div>
+                  <div class="word-pinyin">hàntiáo</div>
+                  <div class="word-arti">batang / kawat las</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 32: 安全带 / 防坠安全带 -->
+        <div class="dialog-box equip-card" data-category="apd" data-search="安全带 防坠安全带 ānquándài fángzhuì ānquándài safety belt harness full body safety harness tali pengaman ketinggian sabuk keselamatan kerja jatuh apd">
+          <div class="equip-img-wrapper">
+            <img src="images/32.jpeg" alt="安全带 / 防坠安全带 - Full Body Harness / Sabuk Pengaman Ketinggian" class="equip-img" loading="lazy" data-hz="安全带" data-icon="🦺" onerror="handleImgError(this)" />
+            <span class="equip-badge">🦺 APD Kerja Ketinggian</span>
+            <a href="https://www.google.com/search?tbm=isch&q=%E9%98%B2%E5%9D%A0%E5%AE%89%E5%85%A8%E5%B8%A6%20full%20body%20safety%20harness" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar di Google">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Foto Google</span>
+            </a>
+          </div>
+
+          <div class="equip-info">
+            <div class="equip-header-row">
+              <div class="equip-title-group">
+                <div class="bubble-hanzi">安全带 / 防坠安全带</div>
+                <div class="bubble-pinyin">ānquándài / fángzhuì ānquándài</div>
+              </div>
+              <button class="audio-btn" onclick="speakChinese('防坠安全带')" title="Dengarkan pengucapan bahasa Mandarin">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <span>Suara</span>
+              </button>
+            </div>
+
+            <div class="equip-translation">
+              <span class="equip-en">Full Body Safety Harness / Fall Arrest Harness</span>
+              <div class="bubble-arti">
+                <strong>Full Body Harness / Sabuk Pengaman Anti-Jatuh</strong>
+                <p class="equip-desc-text">Perlengkapan APD pencegah jatuh dari ketinggian berupa harness seluruh tubuh lengkap dengan tali lanyard dan pengait karabiner kokoh saat teknisi memanjat tiang atau struktur gardu.</p>
+              </div>
+            </div>
+
+            <!-- Sub Breakdown: Arti per Karakter -->
+            <div class="sub-breakdown">
+              <div class="sub-breakdown-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Arti per Karakter · 词汇拆解</span>
+              </div>
+              <div class="breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">防坠</div>
+                  <div class="word-pinyin">fángzhuì</div>
+                  <div class="word-arti">anti-jatuh / cegah jatuh</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">安全</div>
+                  <div class="word-pinyin">ānquán</div>
+                  <div class="word-arti">aman / selamat</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">带</div>
+                  <div class="word-pinyin">dài</div>
+                  <div class="word-arti">sabuk / tali pita pengaman</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 33: 电焊面罩 / 焊工面罩 -->
+        <div class="dialog-box equip-card" data-category="apd" data-search="电焊面罩 焊工面罩 diànhàn miànzhào hàngōng miànzhào topeng las kedok las welding helmet welding mask pelindung muka las cahaya api las percikan apd">
+          <div class="equip-img-wrapper">
+            <img src="images/33.jpeg" alt="电焊面罩 / 焊工面罩 - Kedok Las / Topeng Pelindung Las (Welding Helmet)" class="equip-img" loading="lazy" data-hz="电焊面罩" data-icon="🎭" onerror="handleImgError(this)" />
+            <span class="equip-badge">🦺 APD Keselamatan Las</span>
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E7%84%8A%E9%9D%A2%E7%BD%A9%20welding%20helmet%20welding%20mask" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar di Google">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Foto Google</span>
+            </a>
+          </div>
+
+          <div class="equip-info">
+            <div class="equip-header-row">
+              <div class="equip-title-group">
+                <div class="bubble-hanzi">电焊面罩 / 焊工面罩</div>
+                <div class="bubble-pinyin">diànhàn miànzhào / hàngōng miànzhào</div>
+              </div>
+              <button class="audio-btn" onclick="speakChinese('电焊面罩')" title="Dengarkan pengucapan bahasa Mandarin">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <span>Suara</span>
+              </button>
+            </div>
+
+            <div class="equip-translation">
+              <span class="equip-en">Welding Helmet / Welding Face Shield</span>
+              <div class="bubble-arti">
+                <strong>Kedok Las / Topeng Pelindung Muka Las</strong>
+                <p class="equip-desc-text">Topeng pelindung wajah dengan kaca filter gelap untuk melindungi mata dan kulit wajah juru las dari radiasi sinar ultraviolet, panas, dan percikan bunga api las.</p>
+              </div>
+            </div>
+
+            <!-- Sub Breakdown: Arti per Karakter -->
+            <div class="sub-breakdown">
+              <div class="sub-breakdown-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Arti per Karakter · 词汇拆解</span>
+              </div>
+              <div class="breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">电焊</div>
+                  <div class="word-pinyin">diànhàn</div>
+                  <div class="word-arti">las listrik</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">面罩</div>
+                  <div class="word-pinyin">miànzhào</div>
+                  <div class="word-arti">topeng / pelindung muka</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 34: 灭火器 -->
+        <div class="dialog-box equip-card" data-category="apd" data-search="灭火器 推车式灭火器 手提式灭火器 mièhuǒqì tuīchēshì mièhuǒqì apar apab tabung pemadam api kebakaran fire extinguisher k3 pemadam darurat gardu listrik">
+          <div class="equip-img-wrapper">
+            <img src="images/34.jpeg" alt="灭火器 - Alat Pemadam Api Ringan &amp; Beroda (APAR &amp; APAB)" class="equip-img" loading="lazy" data-hz="灭火器" data-icon="🧯" onerror="handleImgError(this)" />
+            <span class="equip-badge">🧯 Fasilitas K3 Darurat</span>
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%81%AD%E7%81%AB%E5%99%A8%20fire%20extinguisher%20dry%20powder%20co2" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar di Google">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Foto Google</span>
+            </a>
+          </div>
+
+          <div class="equip-info">
+            <div class="equip-header-row">
+              <div class="equip-title-group">
+                <div class="bubble-hanzi">灭火器</div>
+                <div class="bubble-pinyin">mièhuǒqì</div>
+              </div>
+              <button class="audio-btn" onclick="speakChinese('灭火器')" title="Dengarkan pengucapan bahasa Mandarin">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <span>Suara</span>
+              </button>
+            </div>
+
+            <div class="equip-translation">
+              <span class="equip-en">Fire Extinguisher (Portable APAR &amp; Wheeled APAB)</span>
+              <div class="bubble-arti">
+                <strong>Alat Pemadam Api Ringan (APAR) &amp; Beroda (APAB)</strong>
+                <p class="equip-desc-text">Tabung pemadam kebakaran media serbuk kimia kering (dry chemical powder) atau CO2 berupa tabung jinjing di kotak pelindung dan tabung dorong beroda besar untuk darurat bahaya kebakaran listrik.</p>
+              </div>
+            </div>
+
+            <!-- Sub Breakdown: Arti per Karakter -->
+            <div class="sub-breakdown">
+              <div class="sub-breakdown-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Arti per Karakter · 词汇拆解</span>
+              </div>
+              <div class="breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">灭</div>
+                  <div class="word-pinyin">miè</div>
+                  <div class="word-arti">memadamkan</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">火</div>
+                  <div class="word-pinyin">huǒ</div>
+                  <div class="word-arti">api</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">器</div>
+                  <div class="word-pinyin">qì</div>
+                  <div class="word-arti">alat / perangkat</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 35: 携带型短路接地线 / 接地棒 -->
+        <div class="dialog-box equip-card" data-category="apd" data-search="携带型短路接地线 短路接地线 接地棒 xiédàixíng duǎnlù jiēdìxiàn jiēdìbàng ground rod earth grounding set tongkat pembumian portabel pentanahan keselamatan gardu listrik tegangan tinggi klem pentanahan">
+          <div class="equip-img-wrapper">
+            <img src="images/35.jpeg" alt="携带型短路接地线 - Tongkat Pembumian / Grounding Set Portabel" class="equip-img" loading="lazy" data-hz="接地线" data-icon="⏚" onerror="handleImgError(this)" />
+            <span class="equip-badge">⏚ Pengaman Proteksi Gardu</span>
+            <a href="https://www.google.com/search?tbm=isch&q=%E6%90%BA%E5%B8%A6%E5%9E%8B%E7%9F%AD%E8%B7%AF%E6%8E%A5%E5%9C%B0%E7%BA%BF%20portable%20grounding%20set" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar di Google">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Foto Google</span>
+            </a>
+          </div>
+
+          <div class="equip-info">
+            <div class="equip-header-row">
+              <div class="equip-title-group">
+                <div class="bubble-hanzi">携带型短路接地线 / 接地棒</div>
+                <div class="bubble-pinyin">xiédàixíng duǎnlù jiēdìxiàn / jiēdìbàng</div>
+              </div>
+              <button class="audio-btn" onclick="speakChinese('携带型短路接地线')" title="Dengarkan pengucapan bahasa Mandarin">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <span>Suara</span>
+              </button>
+            </div>
+
+            <div class="equip-translation">
+              <span class="equip-en">Portable Short-Circuit Grounding Wire Set / Grounding Rod</span>
+              <div class="bubble-arti">
+                <strong>Tongkat Grounding Portabel / Kawat Pentanahan Hubung Singkat</strong>
+                <p class="equip-desc-text">Perangkat keselamatan wajib saat pemeliharaan instalasi listrik: stik isolator serat kaca berujung klem tembaga dengan kabel tembaga fleksibel untuk membumikan (grounding) konduktor guna mencegah sengatan listrik akibat tegangan sisa atau salah penyalaan daya.</p>
+              </div>
+            </div>
+
+            <!-- Sub Breakdown: Arti per Karakter -->
+            <div class="sub-breakdown">
+              <div class="sub-breakdown-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Arti per Karakter · 词汇拆解</span>
+              </div>
+              <div class="breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">携带型</div>
+                  <div class="word-pinyin">xiédàixíng</div>
+                  <div class="word-arti">tipe portabel / mudah dibawa</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">短路</div>
+                  <div class="word-pinyin">duǎnlù</div>
+                  <div class="word-arti">korsleting / hubung singkat</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">接地线</div>
+                  <div class="word-pinyin">jiēdìxiàn</div>
+                  <div class="word-arti">kabel / kawat grounding (pembumian)</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">接地棒</div>
+                  <div class="word-pinyin">jiēdìbàng</div>
+                  <div class="word-arti">tongkat / stik isolasi grounding</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 36: 电焊手套 / 耐热手套 -->
+        <div class="dialog-box equip-card" data-category="apd" data-search="电焊手套 耐热手套 焊工手套 diànhàn shǒutào nàirè shǒutào hàngōng shǒutào sarung tangan las sarung tangan kulit tahan panas leather welding gloves apd pengelasan">
+          <div class="equip-img-wrapper">
+            <img src="images/36.jpeg" alt="电焊手套 / 耐热手套 - Sarung Tangan Kulit Las Tahan Panas" class="equip-img" loading="lazy" data-hz="电焊手套" data-icon="🧤" onerror="handleImgError(this)" />
+            <span class="equip-badge">🦺 APD Keselamatan Las</span>
+            <a href="https://www.google.com/search?tbm=isch&q=%E7%94%B5%E7%84%8A%E6%89%8B%E5%A5%97%20leather%20welding%20gloves" target="_blank" rel="noopener noreferrer" class="google-img-link" title="Buka Gambar di Google">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>Foto Google</span>
+            </a>
+          </div>
+
+          <div class="equip-info">
+            <div class="equip-header-row">
+              <div class="equip-title-group">
+                <div class="bubble-hanzi">电焊手套 / 耐热手套</div>
+                <div class="bubble-pinyin">diànhàn shǒutào / nàirè shǒutào</div>
+              </div>
+              <button class="audio-btn" onclick="speakChinese('电焊手套')" title="Dengarkan pengucapan bahasa Mandarin">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                <span>Suara</span>
+              </button>
+            </div>
+
+            <div class="equip-translation">
+              <span class="equip-en">Leather Welding Gloves / Heat Resistant Gloves</span>
+              <div class="bubble-arti">
+                <strong>Sarung Tangan Las Kulit / Sarung Tangan Tahan Panas</strong>
+                <p class="equip-desc-text">Sarung tangan kulit tebal berlengan panjang untuk melindungi tangan dan pergelangan teknisi dari percikan logam panas, sinar panas busur las, dan abrasi saat pekerjaan pengelasan.</p>
+              </div>
+            </div>
+
+            <!-- Sub Breakdown: Arti per Karakter -->
+            <div class="sub-breakdown">
+              <div class="sub-breakdown-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Arti per Karakter · 词汇拆解</span>
+              </div>
+              <div class="breakdown-grid">
+                <div class="word-card">
+                  <div class="word-char">电焊</div>
+                  <div class="word-pinyin">diànhàn</div>
+                  <div class="word-arti">las listrik</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">耐热</div>
+                  <div class="word-pinyin">nàirè</div>
+                  <div class="word-arti">tahan panas</div>
+                </div>
+                <div class="word-card">
+                  <div class="word-char">手套</div>
+                  <div class="word-pinyin">shǒutào</div>
+                  <div class="word-arti">sarung tangan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.equipment-grid -->
+    </section><!-- /#cat-utama -->
 
   <!-- FIXED FLOATING DOCK TOOLBAR -->
   <div class="dialog-toolbar">

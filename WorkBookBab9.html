@@ -729,27 +729,7 @@
     body:not(.show-vocab) .quiz-check,
     body:not(.show-vocab) .match-pic-badge { display: none !important; }
 
-    /* ── COLOR OVERRIDES ── */
-    body.show-color .contrast-py,
-    body.show-color .match-py,
-    body.show-color .contrast-table strong,
-    body.show-color .script-hz,
-    body.show-color .breakdown-hz,
-    body.show-color .match-hz,
-    body.show-color .bubble-hanzi,
-    body.show-color .bubble-pinyin,
-    body.show-color .opt-hz,
-    body.show-color .opt-py,
-    body.show-color .dialog-hz,
-    body.show-color .dialog-py,
-    body.show-color .vocab-pill strong,
-    body.show-color .vocab-py,
-    body.show-color .pair-box-hz,
-    body.show-color .pair-box-py,
-    body.show-color .reading-pic-hz,
-    body.show-color .reading-pic-py,
-    body.show-color .cloze-hz,
-    body.show-color .cloze-py { color: inherit !important; }
+    /* ── COLOR OVERRIDES (Handled dynamically by colorizePair JS) ── */
 
     /* ── LATIHAN LISTENING PART 3 (DIALOG & PICTURE MATCHING) ── */
     .dialog-box-card {
@@ -2617,7 +2597,1767 @@
   </div>
 
 
-<!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
+    <!-- ══════════════════════════════════════════════════
+       BAGIAN 4: 三、听力练习 (TĪNGLÌ LIÀNXÍ)
+       LATIHAN LISTENING PART 1 · 第一部分 (Soal 1–3)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 三、听力练习 · Part 1: 第一部分 (Soal 1–3)</div>
+    <div class="classroom-box" id="listening-part1-section" style="border-left: 5px solid #0d9488;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">听</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 1 · 第一部分 (Soal 1–3)</div>
+          <div class="classroom-desc">Mencocokkan rekaman audio dengan ilustrasi situasi / kegiatan yang sesuai (Pilihan A, B, atau C).</div>
+        </div>
+      </div>
+
+      <!-- Foto Lembar Soal Listening Asli Bab 9 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-listening-p1.jpg" alt="三、听力练习 第一部分 Listening Part 1" style="max-width: 100%; width: 620px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top">
+          <span style="font-size:1.15rem;">🎧</span>
+          <span>Instruksi Soal Listening Part 1</span>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          第一部分：听录音，选出与所听内容相符的图片。
+        </div>
+        <div class="instruction-trans">
+          (Part 1: Listen to the audio and choose the picture that matches what you hear.)
+        </div>
+        <div style="margin-top:0.35rem; padding-top:0.45rem; border-top:1px dashed #99f6e4; font-size:0.84rem; color:#475569; font-weight:500;">
+          💡 Perhatikan teks opsi (A, B, C) di bawah. Klik kartu opsi untuk mendengarkan audio pengucapan kosakata:
+        </div>
+      </div>
+
+      <!-- Daftar Soal 1 - 3 (Tanpa Gambar pada Kartu Opsi) -->
+      <div class="matching-list">
+        
+        <!-- ════════════ NOMOR 1 (AKTIVITAS: 看电视) ════════════ -->
+        <div class="matching-item">
+          <div class="matching-header">
+            <span class="matching-num" style="background:#0d9488;">1</span>
+            <div style="flex:1;">
+              <span style="font-size:0.9rem; font-weight:700; color:#1e293b;">Nomor 1: Aktivitas Hiburan &amp; Olahraga (踢足球 vs 看电视 vs 看电影)</span>
+            </div>
+          </div>
+
+          <div class="matching-grid">
+            
+            <!-- Pilihan A: 踢足球 -->
+            <div class="match-choice selected-wrong" onclick="playWord('踢足球', 'tī zúqiú')" title="Klik dengar audio A: 踢足球" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan A</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">踢足球</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">tī zúqiú</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Bermain sepak bola</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">踢 (tī = menendang) + 足球 (zúqiú = sepak bola) di lapangan terbuka</div>
+            </div>
+
+            <!-- Pilihan B: 看电视 (KUNCI JAWABAN) -->
+            <div class="match-choice check-reference" onclick="playWord('看电视', 'kàn diànshì')" title="Klik dengar audio B: 看电视 (Jawaban Benar)" style="padding:1rem 0.85rem; background:#f0fdf4; border-color:#86efac;">
+              <span class="choice-badge-letter" style="background:#16a34a; color:#fff;">Pilihan B</span>
+              <div class="match-hz" style="color:#15803d; font-size:1.45rem; font-weight:800; margin-top:0.35rem;">看电视</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#16a34a;">kàn diànshì</div>
+              <div class="match-arti" style="font-weight:700; color:#166534;">Menonton televisi</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#4b5563; margin-top:4px;">Sekeluarga duduk santai di sofa menonton acara TV</div>
+              <span class="match-badge" style="background:#dcfce7; color:#15803d; font-weight:700; font-size:0.75rem; padding:3px 10px; border-radius:12px; margin-top:8px;">✓ Kunci Jawaban (Audio: 看电视)</span>
+            </div>
+
+            <!-- Pilihan C: 看电影 -->
+            <div class="match-choice selected-wrong" onclick="playWord('看电影', 'kàn diànyǐng')" title="Klik dengar audio C: 看电影" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan C</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">看电影</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">kàn diànyǐng</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Menonton film / bioskop</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Banyak penonton duduk di kursi bioskop menyaksikan layar lebar</div>
+            </div>
+
+          </div>
+
+          <div class="matching-explanation" style="background:#f0fdfa; border-left:4px solid #0d9488; padding:0.65rem 0.85rem; border-radius:8px; font-size:0.85rem; margin-top:0.45rem;">
+            <strong>Pembahasan Soal 1:</strong> Rekaman audio menyebutkan aktivitas <strong>看电视 (kàn diànshì = menonton televisi)</strong>. Pilihan A adalah <em>踢足球 (tī zúqiú = main bola)</em> dan pilihan C adalah <em>看电影 (kàn diànyǐng = nonton bioskop)</em>. Jadi, jawaban yang tepat adalah <strong>B</strong>.
+          </div>
+        </div>
+
+        <!-- ════════════ NOMOR 2 (BENDA/BUKU: 一本中文书) ════════════ -->
+        <div class="matching-item">
+          <div class="matching-header">
+            <span class="matching-num" style="background:#0d9488;">2</span>
+            <div style="flex:1;">
+              <span style="font-size:0.9rem; font-weight:700; color:#1e293b;">Nomor 2: Benda &amp; Buku (三本书 vs 电话/手机 vs 一本中文书)</span>
+            </div>
+          </div>
+
+          <div class="matching-grid">
+            
+            <!-- Pilihan A: 三本书 -->
+            <div class="match-choice selected-wrong" onclick="playWord('三本书', 'sān běn shū')" title="Klik dengar audio A: 三本书" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan A</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">三本书</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">sān běn shū</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Tiga buah buku</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Tumpukan 3 jilid buku tebal (kata bantu bilangan: 本 běn)</div>
+            </div>
+
+            <!-- Pilihan B: 电话 / 手机 -->
+            <div class="match-choice selected-wrong" onclick="playWord('电话', 'diànhuà')" title="Klik dengar audio B: 电话" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan B</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">电话 / 手机</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">diànhuà / shǒujī</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Telepon meja / Ponsel HP</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Pesawat telepon kabel kantor berwarna putih</div>
+            </div>
+
+            <!-- Pilihan C: 一本中文书 (KUNCI JAWABAN) -->
+            <div class="match-choice check-reference" onclick="playWord('一本中文书', 'yī běn zhōngwén shū')" title="Klik dengar audio C: 一本中文书 (Jawaban Benar)" style="padding:1rem 0.85rem; background:#f0fdf4; border-color:#86efac;">
+              <span class="choice-badge-letter" style="background:#16a34a; color:#fff;">Pilihan C</span>
+              <div class="match-hz" style="color:#15803d; font-size:1.45rem; font-weight:800; margin-top:0.35rem;">一本中文书</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#16a34a;">yī běn zhōngwén shū</div>
+              <div class="match-arti" style="font-weight:700; color:#166534;">Satu buah buku bahasa Mandarin</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#4b5563; margin-top:4px;">Satu buku terbuka yang menampilkan halaman teks tulisan Mandarin</div>
+              <span class="match-badge" style="background:#dcfce7; color:#15803d; font-weight:700; font-size:0.75rem; padding:3px 10px; border-radius:12px; margin-top:8px;">✓ Kunci Jawaban (Audio: 一本中文书)</span>
+            </div>
+
+          </div>
+
+          <div class="matching-explanation" style="background:#f0fdfa; border-left:4px solid #0d9488; padding:0.65rem 0.85rem; border-radius:8px; font-size:0.85rem; margin-top:0.45rem;">
+            <strong>Pembahasan Soal 2:</strong> Rekaman audio menyebutkan frasa <strong>一本中文书 (yī běn zhōngwén shū = sebuah buku bahasa Mandarin)</strong>. Gambar C menampilkan satu buku terbuka berisi teks Mandarin, sedangkan gambar A adalah <em>三本书 (tiga buku)</em> dan B adalah <em>电话 (pesawat telepon)</em>. Jadi, jawaban yang tepat adalah <strong>C</strong>.
+          </div>
+        </div>
+
+        <!-- ════════════ NOMOR 3 (AKTIVITAS: 在家读书) ════════════ -->
+        <div class="matching-item">
+          <div class="matching-header">
+            <span class="matching-num" style="background:#0d9488;">3</span>
+            <div style="flex:1;">
+              <span style="font-size:0.9rem; font-weight:700; color:#1e293b;">Nomor 3: Aktivitas Seseorang (在家读书 vs 打电话 vs 唱歌)</span>
+            </div>
+          </div>
+
+          <div class="matching-grid">
+            
+            <!-- Pilihan A: 在家读书 (KUNCI JAWABAN) -->
+            <div class="match-choice check-reference" onclick="playWord('在家读书', 'zàijiā dúshū')" title="Klik dengar audio A: 在家读书 (Jawaban Benar)" style="padding:1rem 0.85rem; background:#f0fdf4; border-color:#86efac;">
+              <span class="choice-badge-letter" style="background:#16a34a; color:#fff;">Pilihan A</span>
+              <div class="match-hz" style="color:#15803d; font-size:1.45rem; font-weight:800; margin-top:0.35rem;">在家读书</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#16a34a;">zàijiā dúshū</div>
+              <div class="match-arti" style="font-weight:700; color:#166534;">Membaca buku di rumah</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#4b5563; margin-top:4px;">Seorang wanita duduk di meja membaca buku / belajar (读书 dúshū) di rumah</div>
+              <span class="match-badge" style="background:#dcfce7; color:#15803d; font-weight:700; font-size:0.75rem; padding:3px 10px; border-radius:12px; margin-top:8px;">✓ Kunci Jawaban (Audio: 在家读书)</span>
+            </div>
+
+            <!-- Pilihan B: 打电话 -->
+            <div class="match-choice selected-wrong" onclick="playWord('打电话', 'dǎ diànhuà')" title="Klik dengar audio B: 打电话" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan B</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">打电话</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">dǎ diànhuà</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Menelepon</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Pria berdasi memegang telepon di telinganya sedang bercakap-cakap</div>
+            </div>
+
+            <!-- Pilihan C: 唱歌 -->
+            <div class="match-choice selected-wrong" onclick="playWord('唱歌', 'chànggē')" title="Klik dengar audio C: 唱歌" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan C</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">唱歌</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">chànggē</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Bernyanyi / Menyanyi lagu</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Wanita memegang mic bernyanyi dengan ekspresi gembira</div>
+            </div>
+
+          </div>
+
+          <div class="matching-explanation" style="background:#f0fdfa; border-left:4px solid #0d9488; padding:0.65rem 0.85rem; border-radius:8px; font-size:0.85rem; margin-top:0.45rem;">
+            <strong>Pembahasan Soal 3:</strong> Rekaman audio memperdengarkan frasa <strong>在家读书 (zàijiā dúshū = membaca buku di rumah)</strong>. Pilihan B adalah <em>打电话 (dǎ diànhuà = menelepon)</em> dan pilihan C adalah <em>唱歌 (chànggē = bernyanyi)</em>. Jadi, jawaban yang tepat adalah <strong>A</strong>.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+        <!-- ══════════════════════════════════════════════════
+       BAGIAN 4B: 三、听力练习 (TĪNGLÌ LIÀNXÍ)
+       LATIHAN LISTENING PART 2 · 第二部分 (Soal 4–5)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 三、听力练习 · Part 2: 第二部分 (Soal 4–5)</div>
+    <div class="classroom-box" id="listening-part2-section" style="border-left: 5px solid #0d9488;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">问</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 2 · 第二部分 (Soal 4–5)</div>
+          <div class="classroom-desc">Mendengarkan pertanyaan dari rekaman audio (Audio 9-3), lalu memilih jawaban yang tepat (Pilihan A, B, atau C). Setiap soal diputar dua kali.</div>
+        </div>
+      </div>
+
+      <!-- Foto Lembar Soal Listening Asli Bab 9 Part 2 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-listening-p2.png" alt="三、听力练习 第二部分 Listening Part 2 (Soal 4-5)" style="max-width: 100%; width: 620px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div style="display:flex; align-items:center; gap:0.4rem;">
+            <span style="font-size:1.15rem;">🎧</span>
+            <span>Instruksi Soal Listening Part 2 (Audio 9-3)</span>
+          </div>
+          <button class="wb-audio-btn" onclick="playWord('听问题，选择正确回答。每题听两次。', 'Tīng wèntí, xuǎnzé zhèngquè huídá. Měi tí tīng liǎng cì.')" style="background:#0d9488; color:#fff; border:none; padding:0.35rem 0.8rem; border-radius:16px; font-size:0.78rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem;">
+            🔊 Putar Instruksi Audio
+          </button>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.08rem;">
+          第二部分：第4—5题：听问题，选择正确回答。每题听两次。
+        </div>
+        <div class="instruction-trans">
+          (Part 2: Questions 4–5: Listen to each question and choose the correct answer. Each question will be played twice.)
+        </div>
+        <div style="margin-top:0.35rem; padding-top:0.45rem; border-top:1px dashed #99f6e4; font-size:0.84rem; color:#475569; font-weight:500;">
+          💡 Klik tombol 🔊 untuk mendengarkan pertanyaan audio, dan klik kartu opsi (A, B, C) untuk mendengarkan lafal jawabannya:
+        </div>
+      </div>
+
+      <!-- Daftar Soal Contoh, Soal 4 & Soal 5 -->
+      <div class="matching-list">
+
+        <!-- ════════════ CONTOH SOAL (例如 lìrú: 今天天气怎么样？) ════════════ -->
+        <div class="matching-item">
+          <div class="matching-header">
+            <span class="matching-num" style="background:#64748b;">例</span>
+            <div style="flex:1; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+              <span style="font-size:0.9rem; font-weight:700; color:#1e293b;">Contoh Soal (Pertanyaan: 今天天气怎么样？)</span>
+              <button class="wb-audio-btn" onclick="playWord('今天天气怎么样？', 'Jīntiān tiānqì zěnmeyàng?')" style="background:#f1f5f9; color:#0f766e; border:1px solid #cbd5e1; padding:0.25rem 0.65rem; border-radius:14px; font-size:0.78rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.3rem;">
+                🔊 Putar Audio Contoh
+              </button>
+            </div>
+          </div>
+
+          <div style="background:#f8fafc; border-bottom:1px solid #e2e8f0; padding:0.6rem 0.85rem; font-size:0.84rem; color:#334155;">
+            <strong>Pertanyaan Audio:</strong> <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; color:#0f766e; font-size:1.05rem;">今天天气怎么样？</span> <span style="color:#64748b; font-family:var(--font-pinyin); font-weight:600;">(Jīntiān tiānqì zěnmeyàng?)</span> = <em>Bagaimana cuaca hari ini?</em>
+          </div>
+
+          <div class="matching-grid">
+            
+            <!-- Pilihan A: 非常热 (KUNCI CONTOH) -->
+            <div class="match-choice check-reference" onclick="playWord('非常热', 'fēicháng rè')" title="Klik dengar audio A: 非常热 (Jawaban Benar)" style="padding:1rem 0.85rem; background:#f0fdf4; border-color:#86efac;">
+              <span class="choice-badge-letter" style="background:#16a34a; color:#fff;">Pilihan A</span>
+              <div class="match-hz" style="color:#15803d; font-size:1.45rem; font-weight:800; margin-top:0.35rem;">非常热</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#16a34a;">fēicháng rè</div>
+              <div class="match-arti" style="font-weight:700; color:#166534;">Sangat panas (very hot)</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#4b5563; margin-top:4px;">Menjelaskan keadaan cuaca yang sangat terik/panas</div>
+              <span class="match-badge" style="background:#dcfce7; color:#15803d; font-weight:700; font-size:0.75rem; padding:3px 10px; border-radius:12px; margin-top:8px;">✓ Kunci Contoh (Jawaban Benar)</span>
+            </div>
+
+            <!-- Pilihan B: 很好听 -->
+            <div class="match-choice selected-wrong" onclick="playWord('很好听', 'hěn hǎotīng')" title="Klik dengar audio B: 很好听" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan B</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">很好听</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">hěn hǎotīng</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Sangat enak didengar (sounds beautiful)</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Digunakan untuk mendeskripsikan suara lagu atau musik</div>
+            </div>
+
+            <!-- Pilihan C: 在喝水 -->
+            <div class="match-choice selected-wrong" onclick="playWord('在喝水', 'zài hē shuǐ')" title="Klik dengar audio C: 在喝水" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan C</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">在喝水</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">zài hē shuǐ</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Sedang minum air (drinking water)</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Digunakan untuk aktivitas seseorang sedang minum</div>
+            </div>
+
+          </div>
+
+          <div class="soal-pembahasan" style="background:#f8fafc; border:1px solid #e2e8f0; padding:0.65rem 0.85rem; border-radius:8px; font-size:0.85rem; margin-top:0.45rem;">
+            <strong>Pembahasan Contoh:</strong> Pertanyaan menanyakan cuaca: <em>"今天天气怎么样？" (Bagaimana cuaca hari ini?)</em>. Jawaban yang logis dan sesuai untuk kondisi cuaca adalah <strong>非常热 (fēicháng rè = sangat panas)</strong>. Pilihan B (很好听) untuk suara merdu, dan pilihan C (在喝水) untuk aksi minum. Jadi, jawaban yang tepat adalah <strong>A</strong>.
+          </div>
+        </div>
+
+        <!-- ════════════ NOMOR 4 (KEPEMILIKAN: 那是谁的手机？) ════════════ -->
+        <div class="matching-item">
+          <div class="matching-header">
+            <span class="matching-num" style="background:#0d9488;">4</span>
+            <div style="flex:1; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+              <span style="font-size:0.9rem; font-weight:700; color:#1e293b;">Nomor 4: Kepemilikan Barang (那是谁的手机？)</span>
+              <button class="wb-audio-btn" onclick="playWord('那是谁的手机？', 'Nà shì shéi de shǒujī?')" style="background:#f0fdfa; color:#0d9488; border:1px solid #99f6e4; padding:0.25rem 0.65rem; border-radius:14px; font-size:0.78rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.3rem;">
+                🔊 Putar Pertanyaan Audio
+              </button>
+            </div>
+          </div>
+
+          <div style="background:#f0fdfa; border-bottom:1px solid #ccfbf1; padding:0.6rem 0.85rem; font-size:0.84rem; color:#0f766e;">
+            <strong>Pertanyaan Audio Soal 4:</strong> <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem;">那是谁的手机？</span> <span style="font-family:var(--font-pinyin); font-weight:600;">(Nà shì shéi de shǒujī?)</span> = <em>Ponsel itu milik siapa?</em>
+          </div>
+
+          <div class="matching-grid">
+            
+            <!-- Pilihan A: 书 -->
+            <div class="match-choice selected-wrong" onclick="playWord('书', 'shū')" title="Klik dengar audio A: 书" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan A</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">书</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">shū</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Buku (book)</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Menyebutkan benda buku, bukan pemiliknya</div>
+            </div>
+
+            <!-- Pilihan B: 我的 (KUNCI JAWABAN) -->
+            <div class="match-choice check-reference" onclick="playWord('我的', 'wǒ de')" title="Klik dengar audio B: 我的 (Jawaban Benar)" style="padding:1rem 0.85rem; background:#f0fdf4; border-color:#86efac;">
+              <span class="choice-badge-letter" style="background:#16a34a; color:#fff;">Pilihan B</span>
+              <div class="match-hz" style="color:#15803d; font-size:1.45rem; font-weight:800; margin-top:0.35rem;">我的</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#16a34a;">wǒ de</div>
+              <div class="match-arti" style="font-weight:700; color:#166534;">Punya saya / Milik saya (mine)</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#4b5563; margin-top:4px;">Menyatakan kepemilikan atas ponsel tersebut</div>
+              <span class="match-badge" style="background:#dcfce7; color:#15803d; font-weight:700; font-size:0.75rem; padding:3px 10px; border-radius:12px; margin-top:8px;">✓ Kunci Jawaban (Audio: 那是谁的手机？)</span>
+            </div>
+
+            <!-- Pilihan C: 他的电脑 -->
+            <div class="match-choice selected-wrong" onclick="playWord('他的电脑', 'tā de diànnǎo')" title="Klik dengar audio C: 他的电脑" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan C</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">他的电脑</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">tā de diànnǎo</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Komputer miliknya (his computer)</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Merujuk pada komputer, bukan ponsel (手机 shǒujī)</div>
+            </div>
+
+          </div>
+
+          <div class="soal-pembahasan" style="background:#f8fafc; border:1px solid #e2e8f0; padding:0.65rem 0.85rem; border-radius:8px; font-size:0.85rem; margin-top:0.45rem;">
+            <strong>Pembahasan Soal 4:</strong> Pertanyaan rekaman audio adalah <strong>那是谁的手机？ (Nà shì shéi de shǒujī? = Ponsel itu milik siapa?)</strong>. Kata tanya <em>谁的 (shéi de = milik siapa)</em> menanyakan kepemilikan atas 手机 (shǒujī = ponsel). Jawaban yang paling tepat adalah <strong>我的 (wǒ de = milik saya)</strong>. Pilihan A adalah <em>书 (buku)</em> dan pilihan C adalah <em>他的电脑 (komputernya)</em>. Jadi, jawaban yang tepat adalah <strong>B</strong>.
+          </div>
+        </div>
+
+        <!-- ════════════ NOMOR 5 (AKTIVITAS: 你星期日晚上做什么？) ════════════ -->
+        <div class="matching-item">
+          <div class="matching-header">
+            <span class="matching-num" style="background:#0d9488;">5</span>
+            <div style="flex:1; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+              <span style="font-size:0.9rem; font-weight:700; color:#1e293b;">Nomor 5: Rencana Aktivitas Waktu Luang (你星期日晚上做什么？)</span>
+              <button class="wb-audio-btn" onclick="playWord('你星期日晚上做什么？', 'Nǐ xīngqīrì wǎnshang zuò shénme?')" style="background:#f0fdfa; color:#0d9488; border:1px solid #99f6e4; padding:0.25rem 0.65rem; border-radius:14px; font-size:0.78rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.3rem;">
+                🔊 Putar Pertanyaan Audio
+              </button>
+            </div>
+          </div>
+
+          <div style="background:#f0fdfa; border-bottom:1px solid #ccfbf1; padding:0.6rem 0.85rem; font-size:0.84rem; color:#0f766e;">
+            <strong>Pertanyaan Audio Soal 5:</strong> <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem;">你星期日晚上做什么？</span> <span style="font-family:var(--font-pinyin); font-weight:600;">(Nǐ xīngqīrì wǎnshang zuò shénme?)</span> = <em>Kamu hari Minggu malam melakukan apa?</em>
+          </div>
+
+          <div class="matching-grid">
+            
+            <!-- Pilihan A: 星期天 -->
+            <div class="match-choice selected-wrong" onclick="playWord('星期天', 'Xīngqītiān')" title="Klik dengar audio A: 星期天" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan A</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">星期天</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">Xīngqītiān</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Hari Minggu (Sunday)</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Menyebutkan nama hari, bukan tindakan kegiatan</div>
+            </div>
+
+            <!-- Pilihan B: 孩子们 -->
+            <div class="match-choice selected-wrong" onclick="playWord('孩子们', 'háizimen')" title="Klik dengar audio B: 孩子们" style="padding:1rem 0.85rem;">
+              <span class="choice-badge-letter">Pilihan B</span>
+              <div class="match-hz" style="font-size:1.45rem; margin-top:0.35rem;">孩子们</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#0d9488;">háizimen</div>
+              <div class="match-arti" style="font-weight:600; color:#334155;">Anak-anak (children)</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#64748b; margin-top:4px;">Menyebutkan orang / subjek, bukan aktivitas</div>
+            </div>
+
+            <!-- Pilihan C: 去外边唱歌 (KUNCI JAWABAN) -->
+            <div class="match-choice check-reference" onclick="playWord('去外边唱歌', 'qù wàibian chànggē')" title="Klik dengar audio C: 去外边唱歌 (Jawaban Benar)" style="padding:1rem 0.85rem; background:#f0fdf4; border-color:#86efac;">
+              <span class="choice-badge-letter" style="background:#16a34a; color:#fff;">Pilihan C</span>
+              <div class="match-hz" style="color:#15803d; font-size:1.45rem; font-weight:800; margin-top:0.35rem;">去外边唱歌</div>
+              <div class="match-py" style="font-size:0.95rem; font-weight:700; color:#16a34a;">qù wàibian chànggē</div>
+              <div class="match-arti" style="font-weight:700; color:#166534;">Pergi keluar menyanyi / karaoke</div>
+              <div class="match-scene-desc" style="font-size:0.8rem; color:#4b5563; margin-top:4px;">Menyatakan aktivitas pergi keluar bernyanyi / karaoke</div>
+              <span class="match-badge" style="background:#dcfce7; color:#15803d; font-weight:700; font-size:0.75rem; padding:3px 10px; border-radius:12px; margin-top:8px;">✓ Kunci Jawaban (Audio: 你星期日晚上做什么？)</span>
+            </div>
+
+          </div>
+
+          <div class="soal-pembahasan" style="background:#f8fafc; border:1px solid #e2e8f0; padding:0.65rem 0.85rem; border-radius:8px; font-size:0.85rem; margin-top:0.45rem;">
+            <strong>Pembahasan Soal 5:</strong> Rekaman audio menanyakan kegiatan: <strong>你星期日晚上做什么？ (Nǐ xīngqīrì wǎnshang zuò shénme? = Kamu hari Minggu malam melakukan apa?)</strong>. Kata tanya <em>做什么 (zuò shénme = melakukan apa)</em> menanyakan perbuatan/aktivitas. Jawaban yang mendeskripsikan aktivitas adalah <strong>去外边唱歌 (qù wàibian chànggē = pergi keluar bernyanyi / karaoke)</strong>. Pilihan A adalah nama hari <em>(星期天)</em> dan B adalah orang <em>(孩子们)</em>. Jadi, jawaban yang tepat adalah <strong>C</strong>.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+      <!-- ══════════════════════════════════════════════════
+       BAGIAN 4C: 三、听力练习 (TĪNGLÌ LIÀNXÍ)
+       LATIHAN LISTENING PART 3 · 第三部分 (Soal 6–8)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 三、听力练习 · Part 3: 第三部分 (Soal 6–8)</div>
+    <div class="classroom-box" id="listening-part3-section" style="border-left: 5px solid #0d9488;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">话</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 3 · 第三部分 (第 6—8 题)</div>
+          <div class="classroom-desc">第6—8题：听对话，选择最匹配的图片。每题听两次。(Questions 6–8: Listen to each dialogue and choose the correct picture. Each dialogue will be played twice).</div>
+        </div>
+      </div>
+
+      <!-- Foto Lembar Soal Listening Asli Bab 9 Part 3 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-listening-p3.jpg" alt="三、听力练习 第三部分 Listening Part 3 (Soal 6-8)" style="max-width: 100%; width: 620px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div style="display:flex; align-items:center; gap:0.4rem;">
+            <span style="font-size:1.15rem;">🎧</span>
+            <span>Petunjuk Soal Listening Part 3 (Audio 9-4)</span>
+          </div>
+          <button class="wb-audio-btn" onclick="playWord('听对话，选择最匹配的图片。每题听两次。', 'Tīng duìhuà, xuǎnzé zuì pǐpèi de túpiàn. Měi tí tīng liǎng cì.')" style="background:#0d9488; color:#fff; border:none; padding:0.35rem 0.8rem; border-radius:16px; font-size:0.78rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem;">
+            🔊 Putar Instruksi Audio
+          </button>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem;">
+          第6—8题：听对话，选择最匹配的图片。每题听两次。
+        </div>
+        <div class="instruction-trans">
+          (Questions 6–8: Listen to each dialogue and choose the correct picture. Each dialogue will be played twice.)
+        </div>
+        <div style="margin-top:0.35rem; padding-top:0.45rem; border-top:1px dashed #99f6e4; font-size:0.84rem; color:#475569; font-weight:500;">
+          💡 Dengarkan percakapan tanya-jawab antara pembicara A dan B, lalu tentukan gambar yang paling sesuai (A, B, C, atau D).
+        </div>
+      </div>
+
+      <!-- Grid Referensi 4 Gambar Pilihan (A, B, C, D) Sesuai Lembar Soal -->
+      <div style="margin-top: 0.85rem;">
+        <div style="font-size:0.82rem; font-weight:700; color:#0f766e; text-transform:uppercase; margin-bottom:0.45rem;">
+          Pilihan Gambar Acuan (A, B, C, D):
+        </div>
+        <div class="reading-pic-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); max-width: 720px; margin: 0 auto 1.15rem; gap: 0.85rem;">
+          
+          <!-- Gambar A -->
+          <div class="reading-pic-card" style="border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
+            <span class="reading-pic-letter" style="background:#64748b; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar A</span>
+            <img src="images/wb9-l3-a.jpg" alt="Dua orang berjas berjabat tangan" style="width:100%; height:115px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
+            <div style="font-weight:700; font-size:0.85rem; color:#1e293b;">握手 / 认识</div>
+            <div style="font-size:0.75rem; color:#64748b;">(Berjabat tangan / Kenal)</div>
+          </div>
+
+          <!-- Gambar B -->
+          <div class="reading-pic-card" style="border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
+            <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar B</span>
+            <img src="images/wb9-l3-b.jpg" alt="Siswa belajar membaca buku di perpustakaan sekolah" style="width:100%; height:115px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
+            <div style="font-weight:700; font-size:0.85rem; color:#0f766e;">在学校学习 / 看书</div>
+            <div style="font-size:0.75rem; color:#64748b;">(Belajar di sekolah / Membaca)</div>
+          </div>
+
+          <!-- Gambar C -->
+          <div class="reading-pic-card" style="border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
+            <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar C</span>
+            <img src="images/wb9-l3-c.jpg" alt="Ayah dan anak perempuan belanja buah di supermarket" style="width:100%; height:115px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
+            <div style="font-weight:700; font-size:0.85rem; color:#0f766e;">去超市买东西</div>
+            <div style="font-size:0.75rem; color:#64748b;">(Pergi belanja di supermarket)</div>
+          </div>
+
+          <!-- Gambar D -->
+          <div class="reading-pic-card" style="border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
+            <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar D</span>
+            <img src="images/wb9-l3-d.jpg" alt="Anak anjing putih kecil duduk di luar pintu kamar" style="width:100%; height:115px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
+            <div style="font-weight:700; font-size:0.85rem; color:#0f766e;">房间外边的小狗</div>
+            <div style="font-size:0.75rem; color:#64748b;">(Anjing kecil di luar kamar)</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Kotak Catatan Tata Bahasa: ket 的 obj (obj yang ket) -->
+      <div style="background:#eff6ff; border:1px solid #bfdbfe; border-left:4px solid #3b82f6; border-radius:8px; padding:0.75rem 1rem; margin-bottom:1.25rem;">
+        <div style="font-weight:700; color:#1d4ed8; font-size:0.85rem; margin-bottom:0.25rem; display:flex; align-items:center; gap:0.35rem;">
+          <span>💡 Rumus Tata Bahasa Mandarin (Sesuai Catatan Buku):</span>
+        </div>
+        <div style="font-size:0.83rem; color:#1e3a8a; line-height:1.5;">
+          <strong>[ Keterangan ] + 的 (de) + [ Objek / Kata Benda ]</strong> ➔ Diartikan dalam bahasa Indonesia: <strong>Objek yang [Keterangan]</strong>.<br>
+          Contoh Soal 6: <code style="background:#dbeafe; padding:1px 5px; border-radius:4px; font-weight:700;">房间外边的小狗</code> = Anjing kecil (小狗) yang berada di luar kamar (房间外边).
+        </div>
+      </div>
+
+      <!-- Daftar Dialog & Soal 6, 7, 8 -->
+      <div style="display:flex; flex-direction:column; gap:1.25rem;">
+
+        <!-- ════════════ SOAL NOMOR 6 (ANJING DI LUAR KAMAR -> GAMBAR D) ════════════ -->
+        <div class="dialog-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+              <span class="matching-num" style="background:#0d9488;">6</span>
+              <span style="font-size:0.9rem; font-weight:700; color:#1e293b;">Soal No. 6: Kepemilikan Anjing di Luar Kamar</span>
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d;">
+                🐶 <strong>Kecocokan Gambar D:</strong> 房间外边的小狗是谁的？是我的。 ✓
+              </span>
+            </div>
+            <span style="font-size:0.76rem; color:#0d9488; font-weight:600;">Klik baris untuk memutar audio 🔊</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.65rem;">
+            <!-- Baris A -->
+            <div class="dialog-line-row" style="border-left:4px solid #0d9488;" onclick="playWord('房间外边的小狗是谁的？', 'Fángjiān wàibian de xiǎogǒu shì shéi de?')" title="Klik dengar audio: 房间外边的小狗是谁的？">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#ccfbf1; color:#0f766e;">A:</span>
+                <span class="dialog-hz">房间外边的小狗是谁的？</span>
+                <span class="dialog-py">Fángjiān wàibian de xiǎogǒu shì shéi de?</span>
+              </div>
+              <div class="dialog-arti">
+                Anjing kecil yang ada di luar kamar itu punya siapa? (Whose is the puppy outside the room?)
+              </div>
+            </div>
+
+            <!-- Baris B -->
+            <div class="dialog-line-row" style="border-left:4px solid #16a34a;" onclick="playWord('是我的。', 'Shì wǒ de.')" title="Klik dengar audio: 是我的。">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#dcfce7; color:#166534;">B:</span>
+                <span class="dialog-hz">是我的。</span>
+                <span class="dialog-py">Shì wǒ de.</span>
+              </div>
+              <div class="dialog-arti">
+                Punya saya / Milik saya. (It's mine.)
+              </div>
+            </div>
+          </div>
+
+          <div class="soal-pembahasan" style="margin-top:0.75rem;">
+            💡 <strong>Pembahasan Soal 6:</strong> Pembicara A menanyakan kepemilikan anak anjing di luar kamar: <em>"房间外边的小狗是谁的？" (Anjing kecil di luar kamar itu milik siapa?)</em> dan B menjawab <em>"是我的。" (Punya saya.)</em>. Gambar yang tepat adalah <strong>Gambar D</strong> yang memperlihatkan seekor anak anjing putih (小狗 xiǎogǒu) sedang duduk di depan pintu luar ruangan.
+          </div>
+        </div>
+
+        <!-- ════════════ SOAL NOMOR 7 (KE SUPERMARKET BELANJA -> GAMBAR C) ════════════ -->
+        <div class="dialog-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+              <span class="matching-num" style="background:#0d9488;">7</span>
+              <span style="font-size:0.9rem; font-weight:700; color:#1e293b;">Soal No. 7: Pergi ke Supermarket bersama Anak Perempuan</span>
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d;">
+                🛒 <strong>Kecocokan Gambar C:</strong> 我和女儿去超市买东西。 ✓
+              </span>
+            </div>
+            <span style="font-size:0.76rem; color:#0d9488; font-weight:600;">Klik baris untuk memutar audio 🔊</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.65rem;">
+            <!-- Baris A -->
+            <div class="dialog-line-row" style="border-left:4px solid #0d9488;" onclick="playWord('你星期六去哪儿？', 'Nǐ xīngqīliù qù nǎr?')" title="Klik dengar audio: 你星期六去哪儿？">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#ccfbf1; color:#0f766e;">A:</span>
+                <span class="dialog-hz">你星期六去哪儿？</span>
+                <span class="dialog-py">Nǐ xīngqīliù qù nǎr?</span>
+              </div>
+              <div class="dialog-arti">
+                Kamu hari Sabtu mau pergi ke mana? (Where are you going on Saturday?)
+              </div>
+            </div>
+
+            <!-- Baris B -->
+            <div class="dialog-line-row" style="border-left:4px solid #16a34a;" onclick="playWord('我和女儿去超市买东西。', 'Wǒ hé nǚ'ér qù chāoshì mǎi dōngxi.')" title="Klik dengar audio: 我和女儿去超市买东西。">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#dcfce7; color:#166534;">B:</span>
+                <span class="dialog-hz">我和女儿去超市买东西。</span>
+                <span class="dialog-py">Wǒ hé nǚ'ér qù chāoshì mǎi dōngxi.</span>
+              </div>
+              <div class="dialog-arti">
+                Saya dan anak perempuan saya pergi ke supermarket belanja barang. (My daughter and I are going to the supermarket to buy things.)
+              </div>
+            </div>
+          </div>
+
+          <div class="soal-pembahasan" style="margin-top:0.75rem;">
+            💡 <strong>Pembahasan Soal 7:</strong> Pembicara B menyatakan bahwa ia pergi bersama anak perempuannya belanja di supermarket (<strong>我和女儿去超市买东西 · Wǒ hé nǚ'ér qù chāoshì mǎi dōngxi</strong>). Gambar yang paling sesuai adalah <strong>Gambar C</strong> yang menampilkan seorang ayah dan anak perempuan kecilnya sedang memilih buah di rak supermarket (超市 chāoshì).
+          </div>
+        </div>
+
+        <!-- ════════════ SOAL NOMOR 8 (BELAJAR DI SEKOLAH -> GAMBAR B) ════════════ -->
+        <div class="dialog-box-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+              <span class="matching-num" style="background:#0d9488;">8</span>
+              <span style="font-size:0.9rem; font-weight:700; color:#1e293b;">Soal No. 8: Aktivitas Belajar di Sekolah pada Siang Hari</span>
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d;">
+                📚 <strong>Kecocokan Gambar B:</strong> 我下午在学校学习，你呢？ ✓
+              </span>
+            </div>
+            <span style="font-size:0.76rem; color:#0d9488; font-weight:600;">Klik baris untuk memutar audio 🔊</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.65rem;">
+            <!-- Baris A -->
+            <div class="dialog-line-row" style="border-left:4px solid #0d9488;" onclick="playWord('我下午在学校学习，你呢？', 'Wǒ xiàwǔ zài xuéxiào xuéxí, nǐ ne?')" title="Klik dengar audio: 我下午在学校学习，你呢？">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#ccfbf1; color:#0f766e;">A:</span>
+                <span class="dialog-hz">我下午在学校学习，你呢？</span>
+                <span class="dialog-py">Wǒ xiàwǔ zài xuéxiào xuéxí, nǐ ne?</span>
+              </div>
+              <div class="dialog-arti">
+                Saya siang/sore ini belajar di sekolah, kalau kamu? (I'm studying at school this afternoon, how about you?)
+              </div>
+            </div>
+
+            <!-- Baris B -->
+            <div class="dialog-line-row" style="border-left:4px solid #16a34a;" onclick="playWord('我下午有事，不在学校。', 'Wǒ xiàwǔ yǒu shì, bù zài xuéxiào.')" title="Klik dengar audio: 我下午有事，不在学校。">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#dcfce7; color:#166534;">B:</span>
+                <span class="dialog-hz">我下午有事，不在学校。</span>
+                <span class="dialog-py">Wǒ xiàwǔ yǒu shì, bù zài xuéxiào.</span>
+              </div>
+              <div class="dialog-arti">
+                Saya siang ini ada urusan, tidak ada di sekolah. (I have some business this afternoon, not at school.)
+              </div>
+            </div>
+          </div>
+
+          <div class="soal-pembahasan" style="margin-top:0.75rem;">
+            💡 <strong>Pembahasan Soal 8:</strong> Pembicara A menyatakan bahwa ia belajar di sekolah pada siang hari (<strong>我下午在学校学习 · Wǒ xiàwǔ zài xuéxiào xuéxí</strong>). Gambar yang paling cocok adalah <strong>Gambar B</strong> yang memperlihatkan seorang pemuda/siswa sedang duduk tekun membaca buku pelajaran di perpustakaan sekolah.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+    <!-- ══════════════════════════════════════════════════
+       BAGIAN 4D: 三、听力练习 (TĪNGLÌ LIÀNXÍ)
+       LATIHAN LISTENING PART 4 · 第四部分 (Soal 9–10)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 三、听力练习 · Part 4: 第四部分 (Soal 9–10)</div>
+    <div class="classroom-box" id="listening-part4-section" style="border-left: 5px solid #0d9488;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">句</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Part 4 · 第四部分 (第 9—10 题)</div>
+          <div class="classroom-desc">第9—10题：听句子和问题，选择正确答案。每题听两次。(Questions 9–10: Listen to each sentence and question, and choose the correct answer. Each sentence and question will be played twice).</div>
+        </div>
+      </div>
+
+      <!-- Foto Lembar Soal Listening Asli Bab 9 Part 4 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-listening-p4.png" alt="三、听力练习 第四部分 Listening Part 4 (Soal 9-10)" style="max-width: 100%; width: 620px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div style="display:flex; align-items:center; gap:0.4rem;">
+            <span style="font-size:1.15rem;">🎧</span>
+            <span>Petunjuk Soal Listening Part 4 (Audio 9-5)</span>
+          </div>
+          <button class="wb-audio-btn" onclick="playWord('听句子和问题，选择正确答案。每题听两次。', 'Tīng jùzi hé wèntí, xuǎnzé zhèngquè dá'àn. Měi tí tīng liǎng cì.')" style="background:#0d9488; color:#fff; border:none; padding:0.35rem 0.8rem; border-radius:16px; font-size:0.78rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem;">
+            🔊 Putar Instruksi Audio
+          </button>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem;">
+          第9—10题：听句子和问题，选择正确答案。每题听两次。
+        </div>
+        <div class="instruction-trans">
+          (Questions 9–10: Listen to each sentence and question, and choose the correct answer. Each sentence and question will be played twice.)
+        </div>
+        <div style="margin-top:0.35rem; padding-top:0.45rem; border-top:1px dashed #99f6e4; font-size:0.84rem; color:#475569; font-weight:500;">
+          💡 Dengarkan kalimat pernyataan audio dan pertanyaan yang diajukan pembicara, kemudian pilihlah jawaban yang paling benar (Pilihan A, B, atau C).
+        </div>
+      </div>
+
+      <!-- List Soal Part 4 (Contoh, Soal 9, Soal 10) -->
+      <div class="classroom-list" style="margin-top: 0.85rem; display:flex; flex-direction:column; gap:1.25rem;">
+        
+        <!-- ════════════ CONTOH SOAL (例如 / Lìrú) ════════════ -->
+        <div class="classroom-item" style="background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:12px; padding:1.15rem;">
+          <div class="item-number" style="background:#16a34a; font-size:0.8rem; width:28px; height:28px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0;">例</div>
+          <div class="item-content" style="flex:1;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.65rem;">
+              <span style="background:#16a34a; color:#fff; font-size:0.75rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; text-transform:uppercase;">例如 (Contoh)</span>
+              <button onclick="playWord('下午我去超市，我想买一些水果。说话人下午去哪里？', 'Xiàwǔ wǒ qù chāoshì, wǒ xiǎng mǎi yìxiē shuǐguǒ. Shuōhuàrén xiàwǔ qù nǎlǐ?')" style="cursor:pointer; background:#dcfce7; border:1px solid #86efac; color:#15803d; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+                <span>🔊 Putar Audio Contoh Lengkap</span>
+              </button>
+            </div>
+            
+            <!-- Pernyataan Audio Contoh -->
+            <div class="dialog-line-row" style="background:#ffffff; border-left:4px solid #16a34a; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.6rem; cursor:pointer;" onclick="playWord('下午我去超市，我想买一些水果。', 'Xiàwǔ wǒ qù chāoshì, wǒ xiǎng mǎi yìxiē shuǐguǒ.')" title="Klik dengar kalimat pernyataan audio">
+              <div style="font-size:0.75rem; font-weight:700; color:#15803d; text-transform:uppercase; letter-spacing:0.5px;">Pernyataan Pembicara (Audio):</div>
+              <div style="font-size:1.18rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="dialog-hz">下午我去超市，我想买一些水果。</span></div>
+              <div class="dialog-py" style="font-size:0.9rem; color:#16a34a; font-weight:600;">Xiàwǔ wǒ qù chāoshì, wǒ xiǎng mǎi yìxiē shuǐguǒ.</div>
+              <div class="dialog-arti" style="font-size:0.83rem; color:#475569;">Sore ini saya pergi ke supermarket, saya ingin membeli beberapa buah. <em>(I'm going to the supermarket this afternoon. I want to buy some fruit.)</em></div>
+            </div>
+
+            <!-- Pertanyaan Contoh (问) -->
+            <div class="dialog-line-row" style="background:#ffffff; border-left:4px solid #0d9488; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.75rem; cursor:pointer;" onclick="playWord('说话人下午去哪里？', 'Shuōhuàrén xiàwǔ qù nǎlǐ?')" title="Klik dengar pertanyaan audio">
+              <div style="font-size:0.75rem; font-weight:700; color:#0d9488; text-transform:uppercase; letter-spacing:0.5px;">Pertanyaan Audio (问):</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="bubble-hanzi">说话人下午去哪里？</span></div>
+              <div class="bubble-pinyin" style="color:#0d9488; font-weight:600; font-size:0.9rem;">Shuōhuàrén xiàwǔ qù nǎlǐ?</div>
+              <div class="bubble-arti" style="font-size:0.83rem; color:#475569;">Pembicara pergi ke mana sore ini? <em>(Where is the speaker going this afternoon?)</em></div>
+            </div>
+            
+            <!-- Pilihan Jawaban Contoh A, B, C -->
+            <div class="quiz-options" style="display:flex; flex-wrap:wrap; gap:0.65rem;">
+              <span class="quiz-option-btn correct" onclick="playWord('超市', 'chāoshì')" title="Klik dengar: chāoshì (KUNCI CONTOH)" style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                A. <span class="opt-hz" style="font-weight:700; color:#15803d;">超市</span> <em class="opt-py" style="color:#16a34a;">(chāoshì)</em> <span class="opt-trans" style="color:#334155;">= Supermarket</span> <span class="quiz-check" style="color:#16a34a; font-weight:800;">✓</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('医院', 'yīyuàn')" title="Klik dengar: yīyuàn" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                B. <span class="opt-hz">医院</span> <em class="opt-py">(yīyuàn)</em> <span class="opt-trans">= Rumah sakit (hospital)</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('学校', 'xuéxiào')" title="Klik dengar: xuéxiào" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                C. <span class="opt-hz">学校</span> <em class="opt-py">(xuéxiào)</em> <span class="opt-trans">= Sekolah (school)</span>
+              </span>
+            </div>
+
+            <!-- Pembahasan Contoh Soal -->
+            <div class="soal-pembahasan" style="margin-top:0.65rem; background:#ffffff; border-left:3.5px solid #16a34a; padding:0.55rem 0.85rem; border-radius:6px; font-size:0.82rem; color:#334155; line-height:1.45;">
+              💡 <strong>Pembahasan Contoh:</strong> Kalimat rekaman menyatakan <em>"下午我去超市..." (Sore ini saya pergi ke supermarket...)</em>, lalu pertanyaannya menanyakan tempat tujuan <em>"说话人下午去哪里？"</em>. Maka jawaban yang paling tepat adalah <strong>A. 超市 (chāoshì)</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════ SOAL NOMOR 9 (JAM MASUK KELAS KAKAK LAKI-LAKI -> JAWABAN A) ════════════ -->
+        <div class="classroom-item" style="background:#ffffff; border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div class="item-number" style="background:#0d9488; font-size:0.85rem; width:28px; height:28px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0;">9</div>
+          <div class="item-content" style="flex:1;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.65rem;">
+              <span style="font-size:0.95rem; font-weight:700; color:#0f766e;">Soal No. 9: Waktu Masuk Kelas Kakak Laki-laki</span>
+              <button onclick="playWord('我哥哥上午八点上课，姐姐十点上课。说话人的哥哥几点上课？', 'Wǒ gēge shàngwǔ bā diǎn shàngkè, jiějie shí diǎn shàngkè. Shuōhuàrén de gēge jǐ diǎn shàngkè?')" style="cursor:pointer; background:#f0fdfa; border:1px solid #99f6e4; color:#0d9488; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+                <span>🔊 Putar Audio Soal 9 Lengkap</span>
+              </button>
+            </div>
+
+            <!-- Pernyataan Audio Soal 9 -->
+            <div class="dialog-line-row" style="background:#f8fafc; border-left:4px solid #0d9488; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.6rem; cursor:pointer;" onclick="playWord('我哥哥上午八点上课，姐姐十点上课。', 'Wǒ gēge shàngwǔ bā diǎn shàngkè, jiějie shí diǎn shàngkè.')" title="Klik dengar kalimat pernyataan audio">
+              <div style="font-size:0.75rem; font-weight:700; color:#0d9488; text-transform:uppercase; letter-spacing:0.5px;">Pernyataan Pembicara (Audio):</div>
+              <div style="font-size:1.18rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="dialog-hz">我哥哥上午八点上课，姐姐十点上课。</span></div>
+              <div class="dialog-py" style="font-size:0.9rem; color:#0d9488; font-weight:600;">Wǒ gēge shàngwǔ bā diǎn shàngkè, jiějie shí diǎn shàngkè.</div>
+              <div class="dialog-arti" style="font-size:0.83rem; color:#475569;">Kakak laki-laki saya masuk kelas jam 08:00 pagi, kakak perempuan masuk kelas jam 10:00. <em>(My older brother has class at 8:00 AM, and my older sister has class at 10:00 AM.)</em></div>
+            </div>
+
+            <!-- Pertanyaan Soal 9 (问) -->
+            <div class="dialog-line-row" style="background:#f8fafc; border-left:4px solid #14b8a6; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.75rem; cursor:pointer;" onclick="playWord('说话人的哥哥几点上课？', 'Shuōhuàrén de gēge jǐ diǎn shàngkè?')" title="Klik dengar pertanyaan audio">
+              <div style="font-size:0.75rem; font-weight:700; color:#14b8a6; text-transform:uppercase; letter-spacing:0.5px;">Pertanyaan Audio (问):</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="bubble-hanzi">说话人的哥哥几点上课？</span></div>
+              <div class="bubble-pinyin" style="color:#0d9488; font-weight:600; font-size:0.9rem;">Shuōhuàrén de gēge jǐ diǎn shàngkè?</div>
+              <div class="bubble-arti" style="font-size:0.83rem; color:#475569;">Kakak laki-laki pembicara jam berapa masuk kelas? <em>(What time does the speaker's older brother have class?)</em></div>
+            </div>
+
+            <!-- Pilihan Jawaban Soal 9 A, B, C -->
+            <div class="quiz-options" style="display:flex; flex-wrap:wrap; gap:0.65rem;">
+              <span class="quiz-option-btn correct" onclick="playWord('上午八点', 'shàngwǔ bā diǎn')" title="Klik dengar: shàngwǔ 8:00 (KUNCI JAWABAN)" style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                A. <span class="opt-hz" style="font-weight:700; color:#15803d;">上午 8:00</span> <em class="opt-py" style="color:#16a34a;">(shàngwǔ)</em> <span class="opt-trans" style="color:#334155;">= Pagi jam 08:00</span> <span class="quiz-check" style="color:#16a34a; font-weight:800;">✓</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('上午十点', 'shàngwǔ shí diǎn')" title="Klik dengar: shàngwǔ 10:00" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                B. <span class="opt-hz">上午 10:00</span> <em class="opt-py">(shàngwǔ)</em> <span class="opt-trans">= Pagi jam 10:00 (Kakak perempuan / 姐姐)</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('晚上八点', 'wǎnshang bā diǎn')" title="Klik dengar: wǎnshang 8:00" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                C. <span class="opt-hz">晚上 8:00</span> <em class="opt-py">(wǎnshang)</em> <span class="opt-trans">= Malam jam 08:00 (20:00)</span>
+              </span>
+            </div>
+
+            <!-- Pembahasan Soal 9 -->
+            <div class="soal-pembahasan" style="margin-top:0.65rem; background:#f8fafc; border-left:3.5px solid #0d9488; padding:0.55rem 0.85rem; border-radius:6px; font-size:0.82rem; color:#334155; line-height:1.45;">
+              💡 <strong>Pembahasan Soal 9:</strong> Kalimat audio menyebutkan bahwa kakak laki-laki (<strong>哥哥 gēge</strong>) masuk kelas pada pukul <strong>上午八点 (shàngwǔ bā diǎn = 08:00 pagi)</strong>, sedangkan yang masuk jam 10:00 pagi adalah kakak perempuannya (姐姐 jiějie). Pertanyaan menanyakan jam berapa kakak laki-laki masuk kelas (<em>说话人的哥哥几点上课？</em>). Jadi, jawaban yang tepat adalah <strong>A. 上午 8:00</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════ SOAL NOMOR 10 (BERTEMU DI TOKO BUKU -> JAWABAN B) ════════════ -->
+        <div class="classroom-item" style="background:#ffffff; border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div class="item-number" style="background:#0d9488; font-size:0.85rem; width:28px; height:28px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0;">10</div>
+          <div class="item-content" style="flex:1;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.65rem;">
+              <span style="font-size:0.95rem; font-weight:700; color:#0f766e;">Soal No. 10: Tempat Tujuan Sore Hari</span>
+              <button onclick="playWord('我想买书，我们下午在书店见吧！说话人下午想去哪儿？', 'Wǒ xiǎng mǎi shū, wǒmen xiàwǔ zài shūdiàn jiàn ba! Shuōhuàrén xiàwǔ xiǎng qù nǎr?')" style="cursor:pointer; background:#f0fdfa; border:1px solid #99f6e4; color:#0d9488; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+                <span>🔊 Putar Audio Soal 10 Lengkap</span>
+              </button>
+            </div>
+
+            <!-- Pernyataan Audio Soal 10 -->
+            <div class="dialog-line-row" style="background:#f8fafc; border-left:4px solid #0d9488; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.6rem; cursor:pointer;" onclick="playWord('我想买书，我们下午在书店见吧！', 'Wǒ xiǎng mǎi shū, wǒmen xiàwǔ zài shūdiàn jiàn ba!')" title="Klik dengar kalimat pernyataan audio">
+              <div style="font-size:0.75rem; font-weight:700; color:#0d9488; text-transform:uppercase; letter-spacing:0.5px;">Pernyataan Pembicara (Audio):</div>
+              <div style="font-size:1.18rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="dialog-hz">我想买书，我们下午在书店见吧！</span></div>
+              <div class="dialog-py" style="font-size:0.9rem; color:#0d9488; font-weight:600;">Wǒ xiǎng mǎi shū, wǒmen xiàwǔ zài shūdiàn jiàn ba!</div>
+              <div class="dialog-arti" style="font-size:0.83rem; color:#475569;">Saya ingin membeli buku, mari kita bertemu di toko buku sore ini! <em>(I want to buy some books, let's meet at the bookstore this afternoon!)</em></div>
+            </div>
+
+            <!-- Pertanyaan Soal 10 (问) -->
+            <div class="dialog-line-row" style="background:#f8fafc; border-left:4px solid #14b8a6; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.75rem; cursor:pointer;" onclick="playWord('说话人下午想去哪儿？', 'Shuōhuàrén xiàwǔ xiǎng qù nǎr?')" title="Klik dengar pertanyaan audio">
+              <div style="font-size:0.75rem; font-weight:700; color:#14b8a6; text-transform:uppercase; letter-spacing:0.5px;">Pertanyaan Audio (问):</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="bubble-hanzi">说话人下午想去哪儿？</span></div>
+              <div class="bubble-pinyin" style="color:#0d9488; font-weight:600; font-size:0.9rem;">Shuōhuàrén xiàwǔ xiǎng qù nǎr?</div>
+              <div class="bubble-arti" style="font-size:0.83rem; color:#475569;">Pembicara sore ini ingin pergi ke mana? <em>(Where does the speaker want to go this afternoon?)</em></div>
+            </div>
+
+            <!-- Pilihan Jawaban Soal 10 A, B, C -->
+            <div class="quiz-options" style="display:flex; flex-wrap:wrap; gap:0.65rem;">
+              <span class="quiz-option-btn" onclick="playWord('菜店', 'càidiàn')" title="Klik dengar: càidiàn" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                A. <span class="opt-hz">菜店</span> <em class="opt-py">(càidiàn)</em> <span class="opt-trans">= Toko sayur / warung sayur</span>
+              </span>
+              <span class="quiz-option-btn correct" onclick="playWord('书店', 'shūdiàn')" title="Klik dengar: shūdiàn (KUNCI JAWABAN)" style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                B. <span class="opt-hz" style="font-weight:700; color:#15803d;">书店</span> <em class="opt-py" style="color:#16a34a;">(shūdiàn)</em> <span class="opt-trans" style="color:#334155;">= Toko buku (bookstore)</span> <span class="quiz-check" style="color:#16a34a; font-weight:800;">✓</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('超市', 'chāoshì')" title="Klik dengar: chāoshì" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                C. <span class="opt-hz">超市</span> <em class="opt-py">(chāoshì)</em> <span class="opt-trans">= Supermarket / pasar swalayan</span>
+              </span>
+            </div>
+
+            <!-- Pembahasan Soal 10 -->
+            <div class="soal-pembahasan" style="margin-top:0.65rem; background:#f8fafc; border-left:3.5px solid #0d9488; padding:0.55rem 0.85rem; border-radius:6px; font-size:0.82rem; color:#334155; line-height:1.45;">
+              💡 <strong>Pembahasan Soal 10:</strong> Kalimat audio menyatakan alasan dan tempat: <em>"我想买书，我们下午在书店见吧！" (Saya ingin beli buku, sore ini kita bertemu di toko buku ya!)</em>. Pertanyaan menanyakan tempat yang ingin dituju pembicara sore hari (<em>说话人下午想去哪儿？</em>). Karena pembicara ingin beli buku dan mengajak bertemu di toko buku, maka tempat yang dituju adalah <strong>书店 (shūdiàn = toko buku)</strong>. Pilihan A adalah <em>菜店 (toko sayur)</em> dan C adalah <em>超市 (supermarket)</em>. Jadi, jawaban yang tepat adalah <strong>B. 书店</strong>.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+    <!-- ══════════════════════════════════════════════════
+       BAGIAN 5: 二、阅读 (YUÈDÚ - READING)
+       READING PART 1 · 第一部分 (Soal 11–13)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 二、阅读 · Reading Part 1: 第一部分 (Soal 11–13)</div>
+    <div class="classroom-box" id="reading-part1-section" style="border-left: 5px solid #0d9488;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">阅</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Reading Part 1 · 第一部分 (第 11—13 题)</div>
+          <div class="classroom-desc">第11—13题：选择与句子最匹配的图片。(Questions 11–13: Choose the correct picture for each sentence / Pilih gambar yang paling cocok untuk setiap kalimat).</div>
+        </div>
+      </div>
+
+      <!-- Foto Lembar Soal Reading Asli Bab 9 Part 1 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-reading-p1.png" alt="二、阅读 第一部分 Reading Part 1 (Soal 11-13)" style="max-width: 100%; width: 620px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div style="display:flex; align-items:center; gap:0.4rem;">
+            <span style="font-size:1.15rem;">📖</span>
+            <span>Petunjuk Soal Reading Part 1</span>
+          </div>
+          <button class="wb-audio-btn" onclick="playWord('选择与句子最匹配的图片。', 'Xuǎnzé yǔ jùzi zuì pǐpèi de túpiàn.')" style="background:#0d9488; color:#fff; border:none; padding:0.35rem 0.8rem; border-radius:16px; font-size:0.78rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem;">
+            🔊 Putar Instruksi Audio
+          </button>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem;">
+          第11—13题：选择与句子最匹配的图片。
+        </div>
+        <div class="instruction-trans">
+          <strong>Bahasa Inggris:</strong> Questions 11–13: Choose the correct picture for each sentence.<br>
+          <strong>Bahasa Indonesia:</strong> Pertanyaan 11–13: Bacalah setiap kalimat, lalu tentukan gambar (A, B, C, atau D) yang paling sesuai.
+        </div>
+      </div>
+
+      <!-- Grid Referensi 4 Gambar (A, B, C, D) -->
+      <div style="margin-top: 0.85rem;">
+        <div style="font-size:0.84rem; font-weight:700; color:#0f766e; margin-bottom:0.65rem; display:flex; align-items:center; gap:0.4rem;">
+          <span>🖼️ Pilihan Gambar Tersedia (A — D):</span>
+        </div>
+
+        <div class="reading-pic-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); max-width: 720px; margin: 0 auto 1.25rem; gap: 0.85rem;">
+          
+          <!-- Gambar A: Membaca Buku -->
+          <div class="reading-pic-card" onclick="playWord('我很喜欢这本书', 'Wǒ hěn xǐhuan zhè běn shū')" title="Klik dengar audio: 我很喜欢这本书" style="cursor:pointer; border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
+            <span class="reading-pic-letter" style="background:#16a34a; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar A [Contoh]</span>
+            <img src="images/wb9-r1-a.jpg" alt="Wanita membaca buku" style="width:100%; height:110px; object-fit:contain; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1; background:#f8fafc;">
+            <div class="reading-pic-label" style="font-size: 0.88rem; font-weight:700; color:#1e293b;">
+              看书 / 喜欢这本书
+            </div>
+            <div style="font-size: 0.75rem; color: #64748b;">Wanita membaca buku</div>
+          </div>
+
+          <!-- Gambar B: Memegang Laptop (Komputer) -->
+          <div class="reading-pic-card" onclick="playWord('电脑', 'diànnǎo')" title="Klik dengar audio: 电脑" style="cursor:pointer; border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
+            <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar B</span>
+            <img src="images/wb9-r1-b.jpg" alt="Wanita memegang laptop komputer" style="width:100%; height:110px; object-fit:contain; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1; background:#f8fafc;">
+            <div class="reading-pic-label" style="font-size: 0.88rem; font-weight:700; color:#0f766e;">
+              电脑 / 第三个电脑
+            </div>
+            <div style="font-size: 0.75rem; color: #64748b;">Wanita memegang laptop (komputer)</div>
+          </div>
+
+          <!-- Gambar C: Anak Kucing di Luar Pintu -->
+          <div class="reading-pic-card" onclick="playWord('房间外有一只小猫', 'Fángjiān wài yǒu yì zhī xiǎomāo')" title="Klik dengar audio: 房间外有一只小猫" style="cursor:pointer; border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
+            <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar C</span>
+            <img src="images/wb9-r1-c.jpg" alt="Seekor anak kucing di luar pintu" style="width:100%; height:110px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
+            <div class="reading-pic-label" style="font-size: 0.88rem; font-weight:700; color:#0f766e;">
+              房间外有一只小猫
+            </div>
+            <div style="font-size: 0.75rem; color: #64748b;">Anak kucing di luar ruangan</div>
+          </div>
+
+          <!-- Gambar D: Adik Perempuan Bermain dengan Anjing di Rumah -->
+          <div class="reading-pic-card" onclick="playWord('妹妹和小狗在家里玩', 'Mèimei hé xiǎogǒu zài jiā lǐ wán')" title="Klik dengar audio: 妹妹和小狗在家里玩" style="cursor:pointer; border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
+            <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar D</span>
+            <img src="images/wb9-r1-d.jpg" alt="Anak perempuan kecil dan anjing bermain di sofa rumah" style="width:100%; height:110px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
+            <div class="reading-pic-label" style="font-size: 0.88rem; font-weight:700; color:#0f766e;">
+              妹妹和小狗在家里玩
+            </div>
+            <div style="font-size: 0.75rem; color: #64748b;">Adik perempuan bermain bersama anjing di rumah</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Kotak Contoh Soal Reading (例如 - Lìrú) -->
+      <div style="background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:12px; padding:1.1rem 1.25rem; margin-bottom:1.25rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+          <span style="background:#16a34a; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px; text-transform:uppercase;">例如 (Contoh Soal)</span>
+          <button onclick="playWord('我很喜欢这本书。', 'Wǒ hěn xǐhuan zhè běn shū.')" style="cursor:pointer; background:#ffffff; border:1px solid #86efac; color:#15803d; font-size:0.8rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+            <span>🔊 Putar Audio Kalimat</span>
+          </button>
+        </div>
+
+        <!-- Kalimat Contoh -->
+        <div class="sentence-display-box" onclick="playWord('我很喜欢这本书。', 'Wǒ hěn xǐhuan zhè běn shū.')" title="Klik dengar audio kalimat" style="background:#ffffff; border-color:#86efac; border-radius:10px; padding:0.85rem 1rem; margin-bottom:0.65rem;">
+          <div class="sentence-display-label" style="color:#15803d; font-size:0.75rem; font-weight:700; text-transform:uppercase;">Kalimat Soal:</div>
+          <div class="bubble-hanzi" style="font-size:1.4rem; font-weight:700; letter-spacing:0.05em; margin:0.25rem 0; color:#1e293b;">我很喜欢这本书。</div>
+          <div class="bubble-pinyin" style="font-size:0.92rem; font-weight:600; color:#16a34a;">Wǒ hěn xǐhuan zhè běn shū.</div>
+          <div class="bubble-arti" style="font-size:0.84rem; color:#475569; margin-top:0.35rem; padding-top:0.35rem; border-top:1px dashed #e2e8f0;">
+            Arti: Saya sangat menyukai buku ini. <em>(I like this book very much.)</em>
+          </div>
+        </div>
+
+        <!-- Penjelasan Jawaban Contoh -->
+        <div style="background:#ffffff; border:1px solid #bbf7d0; border-radius:8px; padding:0.75rem 1rem;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+            <span style="background:#16a34a; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px;">Jawaban: A ✓</span>
+            <span style="font-size:0.82rem; color:#15803d; font-weight:700;">📖 Membaca Buku</span>
+          </div>
+          <div class="soal-pembahasan" style="font-size:0.84rem; color:#475569; line-height:1.55; margin-top:0.25rem;">
+            💡 <strong>Penjelasan Contoh:</strong> Kalimat menyebutkan kata benda <strong>这本书 (zhè běn shū = buku ini)</strong> dan aktivitas menyukai buku, sehingga sangat cocok dengan <strong>Gambar A</strong> yang menampilkan seorang wanita sedang membaca buku.
+          </div>
+        </div>
+      </div>
+
+      <!-- Daftar Soal 11–13 Lengkap dengan Pembahasan, Audio, & Analisis Kosakata -->
+      <div style="display:flex; flex-direction:column; gap:1.25rem;">
+        
+        <!-- ════════════ NOMOR 11 (ADIK & ANJING BERMAIN DI RUMAH -> GAMBAR D) ════════════ -->
+        <div class="dialog-box-card" style="border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; background:#ffffff; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="matching-num" style="background:#0d9488;">11</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Soal No. 11: Bermain bersama Anjing di Rumah</span>
+            </div>
+            <button onclick="playWord('妹妹和小狗今天在家里玩。', 'Mèimei hé xiǎogǒu jīntiān zài jiā lǐ wán.')" style="cursor:pointer; background:#f0fdfa; border:1px solid #99f6e4; color:#0d9488; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Kalimat</span>
+            </button>
+          </div>
+
+          <!-- Kotak Kalimat Soal 11 -->
+          <div class="sentence-display-box" onclick="playWord('妹妹和小狗今天在家里玩。', 'Mèimei hé xiǎogǒu jīntiān zài jiā lǐ wán.')" title="Klik dengar audio kalimat" style="background:#f8fafc; border-color:#e2e8f0; border-radius:10px; padding:0.85rem 1rem; margin-bottom:0.65rem; cursor:pointer;">
+            <div class="sentence-display-label" style="color:#0d9488; font-size:0.75rem; font-weight:700; text-transform:uppercase;">Kalimat Soal:</div>
+            <div class="bubble-hanzi" style="font-size:1.4rem; font-weight:700; letter-spacing:0.05em; margin:0.25rem 0; color:#1e293b;">妹妹和小狗今天在家里玩。</div>
+            <div class="bubble-pinyin" style="font-size:0.92rem; font-weight:600; color:#0d9488;">Mèimei hé xiǎogǒu jīntiān zài jiā lǐ wán.</div>
+            <div class="bubble-arti" style="font-size:0.84rem; color:#475569; margin-top:0.35rem; padding-top:0.35rem; border-top:1px dashed #e2e8f0;">
+              Arti: Adik perempuan dan anak anjing hari ini bermain di dalam rumah.
+            </div>
+          </div>
+
+          <!-- Kotak Jawaban & Pembahasan Soal 11 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Pilihan Gambar: D ✓</span>
+              <span style="font-size:0.82rem; color:#0f766e; font-weight:700;">👧🐶 Adik &amp; Anjing di Sofa Rumah</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
+              💡 <strong>Penjelasan Soal 11:</strong> Kalimat menyebutkan subjek <strong>妹妹 (mèimei = adik perempuan)</strong> dan <strong>小狗 (xiǎogǒu = anak anjing)</strong> yang sedang bermain di rumah (<strong>在家里玩 zài jiā lǐ wán</strong>). Gambar yang tepat adalah <strong>Gambar D</strong> yang memperlihatkan seorang anak perempuan kecil sedang memangku dan bermain bersama anjing putih di sofa rumah.
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════ NOMOR 12 (ANAK KUCING DI LUAR KAMAR -> GAMBAR C) ════════════ -->
+        <div class="dialog-box-card" style="border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; background:#ffffff; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="matching-num" style="background:#0d9488;">12</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Soal No. 12: Keberadaan Kucing di Luar Ruangan</span>
+            </div>
+            <button onclick="playWord('房间外有一只小猫。', 'Fángjiān wài yǒu yì zhī xiǎomāo.')" style="cursor:pointer; background:#f0fdfa; border:1px solid #99f6e4; color:#0d9488; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Kalimat</span>
+            </button>
+          </div>
+
+          <!-- Kotak Kalimat Soal 12 -->
+          <div class="sentence-display-box" onclick="playWord('房间外有一只小猫。', 'Fángjiān wài yǒu yì zhī xiǎomāo.')" title="Klik dengar audio kalimat" style="background:#f8fafc; border-color:#e2e8f0; border-radius:10px; padding:0.85rem 1rem; margin-bottom:0.65rem; cursor:pointer;">
+            <div class="sentence-display-label" style="color:#0d9488; font-size:0.75rem; font-weight:700; text-transform:uppercase;">Kalimat Soal:</div>
+            <div class="bubble-hanzi" style="font-size:1.4rem; font-weight:700; letter-spacing:0.05em; margin:0.25rem 0; color:#1e293b;">房间外有一只小猫。</div>
+            <div class="bubble-pinyin" style="font-size:0.92rem; font-weight:600; color:#0d9488;">Fángjiān wài yǒu yì zhī xiǎomāo.</div>
+            <div class="bubble-arti" style="font-size:0.84rem; color:#475569; margin-top:0.35rem; padding-top:0.35rem; border-top:1px dashed #e2e8f0;">
+              Arti: Di luar kamar ada seekor anak kucing.
+            </div>
+          </div>
+
+          <!-- Kotak Jawaban & Pembahasan Soal 12 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Pilihan Gambar: C ✓</span>
+              <span style="font-size:0.82rem; color:#0f766e; font-weight:700;">🐱 Anak Kucing di Luar Pintu</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
+              💡 <strong>Penjelasan Soal 12:</strong> Kalimat menyatakan posisi keberadaan <strong>房间外 (fángjiān wài = di luar kamar)</strong> dan binatang <strong>一只小猫 (yì zhī xiǎomāo = seekor anak kucing)</strong>. Gambar yang cocok adalah <strong>Gambar C</strong> yang menampilkan seekor anak kucing sedang duduk di koridor luar pintu kamar.
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════ NOMOR 13 (KOMPUTER KETIGA SAYA -> GAMBAR B) ════════════ -->
+        <div class="dialog-box-card" style="border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; background:#ffffff; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="matching-num" style="background:#0d9488;">13</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Soal No. 13: Kepemilikan Komputer / Laptop Ketiga</span>
+            </div>
+            <button onclick="playWord('这是我的第三个电脑。', 'Zhè shì wǒ de dì-sān gè diànnǎo.')" style="cursor:pointer; background:#f0fdfa; border:1px solid #99f6e4; color:#0d9488; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Kalimat</span>
+            </button>
+          </div>
+
+          <!-- Kotak Kalimat Soal 13 -->
+          <div class="sentence-display-box" onclick="playWord('这是我的第三个电脑。', 'Zhè shì wǒ de dì-sān gè diànnǎo.')" title="Klik dengar audio kalimat" style="background:#f8fafc; border-color:#e2e8f0; border-radius:10px; padding:0.85rem 1rem; margin-bottom:0.65rem; cursor:pointer;">
+            <div class="sentence-display-label" style="color:#0d9488; font-size:0.75rem; font-weight:700; text-transform:uppercase;">Kalimat Soal:</div>
+            <div class="bubble-hanzi" style="font-size:1.4rem; font-weight:700; letter-spacing:0.05em; margin:0.25rem 0; color:#1e293b;">这是我的第三个电脑。</div>
+            <div class="bubble-pinyin" style="font-size:0.92rem; font-weight:600; color:#0d9488;">Zhè shì wǒ de dì-sān gè diànnǎo.</div>
+            <div class="bubble-arti" style="font-size:0.84rem; color:#475569; margin-top:0.35rem; padding-top:0.35rem; border-top:1px dashed #e2e8f0;">
+              Arti: Ini adalah komputer (laptop) saya yang ketiga.
+            </div>
+          </div>
+
+          <!-- Kotak Jawaban & Pembahasan Soal 13 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Pilihan Gambar: B ✓</span>
+              <span style="font-size:0.82rem; color:#0f766e; font-weight:700;">💻 Memegang Komputer Laptop</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
+              💡 <strong>Penjelasan Soal 13:</strong> Kalimat menyebutkan kata benda <strong>电脑 (diànnǎo = komputer / laptop)</strong> dan nomor urut <strong>第三个 (dì-sān gè = yang ketiga)</strong>. Gambar yang cocok adalah <strong>Gambar B</strong> yang memperlihatkan seorang wanita sedang tersenyum memegang dan memperlihatkan laptop komputernya.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+    <!-- ══════════════════════════════════════════════════
+       BAGIAN 6: 二、阅读 (YUÈDÚ - READING)
+       READING PART 2 · 第二部分 (Soal 14–16)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 二、阅读 · Reading Part 2: 第二部分 (Soal 14–16)</div>
+    <div class="classroom-box" id="reading-part2-section" style="border-left: 5px solid #0d9488;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">配</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Reading Part 2 · 第二部分 (第 14—16 题)</div>
+          <div class="classroom-desc">第14—16题：匹配句子。(Questions 14–16: Match the sentences / Cocokkan kalimat tanya dengan respon atau jawaban yang tepat).</div>
+        </div>
+      </div>
+
+      <!-- Foto Lembar Soal Reading Asli Bab 9 Part 2 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-reading-p2.png" alt="二、阅读 第二部分 Reading Part 2 (Soal 14-16)" style="max-width: 100%; width: 620px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div style="display:flex; align-items:center; gap:0.4rem;">
+            <span style="font-size:1.15rem;">💬</span>
+            <span>Petunjuk Soal Reading Part 2</span>
+          </div>
+          <button class="wb-audio-btn" onclick="playWord('匹配句子。', 'Pǐpèi jùzi.')" style="background:#0d9488; color:#fff; border:none; padding:0.35rem 0.8rem; border-radius:16px; font-size:0.78rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem;">
+            🔊 Putar Instruksi Audio
+          </button>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem;">
+          第14—16题：匹配句子。
+        </div>
+        <div class="instruction-trans">
+          <strong>Bahasa Inggris:</strong> Questions 14–16: Match the sentences.<br>
+          <strong>Bahasa Indonesia:</strong> Pertanyaan 14–16: Pasangkan setiap kalimat tanya dengan kalimat jawaban yang paling tepat dan logis secara konteks.
+        </div>
+      </div>
+
+      <!-- Bank Pilihan Jawaban (A - D) -->
+      <div style="margin-top:0.35rem;">
+        <div style="font-size:0.84rem; font-weight:700; color:#0f766e; margin-bottom:0.55rem; display:flex; align-items:center; gap:0.4rem;">
+          <span>📋 Pilihan Jawaban Tersedia (A — D):</span>
+        </div>
+        <div class="pair-choice-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:0.75rem;">
+          
+          <!-- A: 在家里。 -->
+          <div class="pair-choice-card" onclick="playWord('在家里。', 'Zài jiā li.')" title="Klik dengar opsi A: 在家里。" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:10px; padding:0.75rem 0.9rem; cursor:pointer;">
+            <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.15rem;">
+              <span style="font-weight:800; color:#0d9488; font-size:0.92rem;">A:</span>
+              <span class="opt-hz" style="font-size:1.15rem; font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">在家里。</span>
+            </div>
+            <div class="opt-py" style="font-size:0.85rem; font-weight:600; color:#0d9488; font-family:var(--font-pinyin);">(Zài jiā li)</div>
+            <div class="opt-trans" style="font-size:0.8rem; color:#64748b; margin-top:0.2rem;">– Di dalam rumah.</div>
+          </div>
+
+          <!-- B: 我女朋友。 -->
+          <div class="pair-choice-card" onclick="playWord('我女朋友。', 'Wǒ nǚpéngyou.')" title="Klik dengar opsi B: 我女朋友。" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:10px; padding:0.75rem 0.9rem; cursor:pointer;">
+            <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.15rem;">
+              <span style="font-weight:800; color:#0d9488; font-size:0.92rem;">B:</span>
+              <span class="opt-hz" style="font-size:1.15rem; font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">我女朋友。</span>
+            </div>
+            <div class="opt-py" style="font-size:0.85rem; font-weight:600; color:#0d9488; font-family:var(--font-pinyin);">(Wǒ nǚpéngyou)</div>
+            <div class="opt-trans" style="font-size:0.8rem; color:#64748b; margin-top:0.2rem;">– Pacar (perempuan) saya.</div>
+          </div>
+
+          <!-- C: 一只小猫。 -->
+          <div class="pair-choice-card" onclick="playWord('一只小猫。', 'Yì zhī xiǎomāo.')" title="Klik dengar opsi C: 一只小猫。" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:10px; padding:0.75rem 0.9rem; cursor:pointer;">
+            <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.15rem;">
+              <span style="font-weight:800; color:#0d9488; font-size:0.92rem;">C:</span>
+              <span class="opt-hz" style="font-size:1.15rem; font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">一只小猫。</span>
+            </div>
+            <div class="opt-py" style="font-size:0.85rem; font-weight:600; color:#0d9488; font-family:var(--font-pinyin);">(Yì zhī xiǎomāo)</div>
+            <div class="opt-trans" style="font-size:0.8rem; color:#64748b; margin-top:0.2rem;">– Seekor anak kucing.</div>
+          </div>
+
+          <!-- D: 好的，谢谢！ -->
+          <div class="pair-choice-card" onclick="playWord('好的，谢谢！', 'Hǎo de, xièxie!')" title="Klik dengar opsi D: 好的，谢谢！" style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:10px; padding:0.75rem 0.9rem; cursor:pointer;">
+            <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:0.15rem;">
+              <span style="font-weight:800; color:#16a34a; font-size:0.92rem;">D:</span>
+              <span class="opt-hz" style="font-size:1.15rem; font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#15803d;">好的，谢谢！</span>
+            </div>
+            <div class="opt-py" style="font-size:0.85rem; font-weight:600; color:#16a34a; font-family:var(--font-pinyin);">(Hǎo de, xièxie!)</div>
+            <div class="opt-trans" style="font-size:0.8rem; color:#166534; margin-top:0.2rem; font-weight:600;">– Baik, terima kasih! [Contoh]</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Kotak Contoh Soal (例如 - Lìrú) -->
+      <div style="background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:12px; padding:1.1rem 1.25rem; margin-top:0.85rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+          <span style="background:#16a34a; color:#fff; font-size:0.78rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:6px; text-transform:uppercase;">例如 (Contoh Soal)</span>
+          <button onclick="playWord('你喝水吗？', 'Nǐ hē shuǐ ma?')" style="cursor:pointer; background:#ffffff; border:1px solid #86efac; color:#15803d; font-size:0.8rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+            <span>🔊 Putar Pertanyaan</span>
+          </button>
+        </div>
+
+        <!-- Kotak Pertanyaan Contoh -->
+        <div class="pair-sentence-box" onclick="playWord('你喝水吗？', 'Nǐ hē shuǐ ma?')" title="Klik dengar audio pertanyaan" style="background:#ffffff; border-color:#86efac; border-radius:10px; padding:0.85rem 1rem; cursor:pointer;">
+          <div style="font-size:0.75rem; font-weight:700; color:#15803d; text-transform:uppercase; margin-bottom:0.25rem; letter-spacing:0.3px;">Pertanyaan:</div>
+          <div class="pair-box-hz" style="font-size:1.35rem; font-weight:700; color:#1e293b; margin:0.2rem 0;">你喝水吗？</div>
+          <div class="pair-box-py" style="font-size:0.9rem; font-weight:600; color:#16a34a;">Nǐ hē shuǐ ma?</div>
+          <div class="pair-box-arti" style="font-size:0.84rem; color:#475569; margin-top:0.35rem; padding-top:0.35rem; border-top:1px dashed #e2e8f0;">
+            Arti: Apakah Anda minum air? / Mau minum air? <em>(Would you like some water?)</em>
+          </div>
+        </div>
+
+        <!-- Penjelasan Jawaban Contoh -->
+        <div style="background:#ffffff; border:1px solid #bbf7d0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+            <span style="background:#16a34a; color:#fff; font-size:0.78rem; font-weight:800; padding:0.18rem 0.6rem; border-radius:6px;">Jawaban: D ✓</span>
+            <span style="font-weight:700; font-size:0.84rem; color:#15803d;">D: 好的，谢谢！(Baik, terima kasih!)</span>
+          </div>
+          <div class="soal-pembahasan" style="font-size:0.84rem; color:#475569; line-height:1.55; margin-top:0.25rem;">
+            💡 <strong>Penjelasan Contoh:</strong> Pertanyaan menawarkan minuman: <em>"你喝水吗？" (Mau minum air?)</em>. Jawaban sopan dan lazim dalam percakapan sehari-hari saat ditawari minuman adalah menerima dengan ramah: <strong>D (好的，谢谢！ · Hǎo de, xièxie! = Baik, terima kasih!)</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Pembahasan dan Pasangan Jawaban Soal 14–16 -->
+      <div style="display:flex; flex-direction:column; gap:1.25rem; margin-top:1.15rem;">
+        
+        <!-- ════════════ NOMOR 14 (ADA APA DI ATAS MEJA -> C) ════════════ -->
+        <div class="dialog-box-card" style="border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; background:#ffffff; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="matching-num" style="background:#0d9488;">14</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Soal No. 14: Menanyakan Benda/Makhluk di Atas Meja (什么 - Apa?)</span>
+            </div>
+            <button onclick="playWord('桌子上有什么？', 'Zhuōzi shang yǒu shénme?')" style="cursor:pointer; background:#f0fdfa; border:1px solid #99f6e4; color:#0d9488; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Pertanyaan</span>
+            </button>
+          </div>
+
+          <!-- Kotak Pertanyaan 14 -->
+          <div class="pair-sentence-box" onclick="playWord('桌子上有什么？', 'Zhuōzi shang yǒu shénme?')" title="Klik dengar audio kalimat" style="background:#f8fafc; border-color:#e2e8f0; border-radius:10px; padding:0.85rem 1rem; cursor:pointer;">
+            <div style="font-size:0.75rem; font-weight:700; color:#0d9488; text-transform:uppercase; margin-bottom:0.25rem; letter-spacing:0.3px;">Pertanyaan:</div>
+            <div class="pair-box-hz" style="font-size:1.35rem; font-weight:700; color:#1e293b; margin:0.2rem 0;">桌子上有什么？</div>
+            <div class="pair-box-py" style="font-size:0.9rem; font-weight:600; color:#0d9488;">Zhuōzi shang yǒu shénme?</div>
+            <div class="pair-box-arti" style="font-size:0.84rem; color:#475569; margin-top:0.35rem; padding-top:0.35rem; border-top:1px dashed #e2e8f0;">
+              Arti: Ada apa di atas meja? <em>(What is on the table?)</em>
+            </div>
+          </div>
+
+          <!-- Kotak Pasangan Jawaban 14 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Jawaban Tepat: C ✓</span>
+              <span style="font-weight:700; font-size:0.86rem; color:#0f766e;">C: 一只小猫。 (Seekor anak kucing)</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
+              💡 <strong>Pembahasan Soal 14:</strong> Pertanyaan menggunakan kata tanya benda/makhluk <strong>有什么 (yǒu shénme = ada apa?)</strong> di atas meja (桌子上). Jawaban yang menyebutkan wujud benda atau binatang adalah <strong>C. 一只小猫 (Yì zhī xiǎomāo = seekor anak kucing)</strong>.
+            </div>
+
+            <!-- Analisis Kosakata -->
+            <div class="vocab-pills-list" style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem;">
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>桌子</strong> (<span class="vocab-py">zhuōzi</span>) = Meja</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>上</strong> (<span class="vocab-py">shang</span>) = Atas</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>有</strong> (<span class="vocab-py">yǒu</span>) = Ada</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>什么</strong> (<span class="vocab-py">shénme</span>) = Apa</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>一只</strong> (<span class="vocab-py">yì zhī</span>) = Seekor</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>小猫</strong> (<span class="vocab-py">xiǎomāo</span>) = Anak kucing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════ NOMOR 15 (SIANG INI ADA DI MANA -> A) ════════════ -->
+        <div class="dialog-box-card" style="border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; background:#ffffff; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="matching-num" style="background:#0d9488;">15</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Soal No. 15: Menanyakan Lokasi Keberadaan (在哪儿 - Di mana?)</span>
+            </div>
+            <button onclick="playWord('你今天下午在哪儿？', 'Nǐ jīntiān xiàwǔ zài nǎr?')" style="cursor:pointer; background:#f0fdfa; border:1px solid #99f6e4; color:#0d9488; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Pertanyaan</span>
+            </button>
+          </div>
+
+          <!-- Kotak Pertanyaan 15 -->
+          <div class="pair-sentence-box" onclick="playWord('你今天下午在哪儿？', 'Nǐ jīntiān xiàwǔ zài nǎr?')" title="Klik dengar audio kalimat" style="background:#f8fafc; border-color:#e2e8f0; border-radius:10px; padding:0.85rem 1rem; cursor:pointer;">
+            <div style="font-size:0.75rem; font-weight:700; color:#0d9488; text-transform:uppercase; margin-bottom:0.25rem; letter-spacing:0.3px;">Pertanyaan:</div>
+            <div class="pair-box-hz" style="font-size:1.35rem; font-weight:700; color:#1e293b; margin:0.2rem 0;">你今天下午在哪儿？</div>
+            <div class="pair-box-py" style="font-size:0.9rem; font-weight:600; color:#0d9488;">Nǐ jīntiān xiàwǔ zài nǎr?</div>
+            <div class="pair-box-arti" style="font-size:0.84rem; color:#475569; margin-top:0.35rem; padding-top:0.35rem; border-top:1px dashed #e2e8f0;">
+              Arti: Kamu hari ini sore/siang berada di mana? <em>(Where are you this afternoon?)</em>
+            </div>
+          </div>
+
+          <!-- Kotak Pasangan Jawaban 15 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Jawaban Tepat: A ✓</span>
+              <span style="font-weight:700; font-size:0.86rem; color:#0f766e;">A: 在家里。 (Di dalam rumah)</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
+              💡 <strong>Pembahasan Soal 15:</strong> Pertanyaan menanyakan tempat/lokasi menggunakan kata tanya <strong>在哪儿 (zài nǎr = ada di mana?)</strong>. Jawaban yang menunjukkan keterangan tempat adalah <strong>A. 在家里 (Zài jiā li = di dalam rumah)</strong>.
+            </div>
+
+            <!-- Analisis Kosakata -->
+            <div class="vocab-pills-list" style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem;">
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>今天</strong> (<span class="vocab-py">jīntiān</span>) = Hari ini</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>下午</strong> (<span class="vocab-py">xiàwǔ</span>) = Siang / sore</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>在</strong> (<span class="vocab-py">zài</span>) = Berada di</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>哪儿</strong> (<span class="vocab-py">nǎr</span>) = Mana</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>家里</strong> (<span class="vocab-py">jiā li</span>) = Dalam rumah</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════ NOMOR 16 (KAMU DI SUPERMARKET BERSAMA SIAPA -> B) ════════════ -->
+        <div class="dialog-box-card" style="border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; background:#ffffff; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="matching-num" style="background:#0d9488;">16</span>
+              <span style="font-weight:700; color:#1e293b; font-size:0.95rem;">Soal No. 16: Menanyakan Teman/Orang Penyerta (和谁 - Bersama siapa?)</span>
+            </div>
+            <button onclick="playWord('你和谁在超市呢？', 'Nǐ hé shéi zài chāoshì ne?')" style="cursor:pointer; background:#f0fdfa; border:1px solid #99f6e4; color:#0d9488; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+              <span>🔊 Putar Pertanyaan</span>
+            </button>
+          </div>
+
+          <!-- Kotak Pertanyaan 16 -->
+          <div class="pair-sentence-box" onclick="playWord('你和谁在超市呢？', 'Nǐ hé shéi zài chāoshì ne?')" title="Klik dengar audio kalimat" style="background:#f8fafc; border-color:#e2e8f0; border-radius:10px; padding:0.85rem 1rem; cursor:pointer;">
+            <div style="font-size:0.75rem; font-weight:700; color:#0d9488; text-transform:uppercase; margin-bottom:0.25rem; letter-spacing:0.3px;">Pertanyaan:</div>
+            <div class="pair-box-hz" style="font-size:1.35rem; font-weight:700; color:#1e293b; margin:0.2rem 0;">你和谁在超市呢？</div>
+            <div class="pair-box-py" style="font-size:0.9rem; font-weight:600; color:#0d9488;">Nǐ hé shéi zài chāoshì ne?</div>
+            <div class="pair-box-arti" style="font-size:0.84rem; color:#475569; margin-top:0.35rem; padding-top:0.35rem; border-top:1px dashed #e2e8f0;">
+              Arti: Kamu berada di supermarket bersama siapa? <em>(Who are you at the supermarket with?)</em>
+            </div>
+          </div>
+
+          <!-- Kotak Pasangan Jawaban 16 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Jawaban Tepat: B ✓</span>
+              <span style="font-weight:700; font-size:0.86rem; color:#0f766e;">B: 我女朋友。 (Pacar perempuan saya)</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
+              💡 <strong>Pembahasan Soal 16:</strong> Pertanyaan menggunakan kata tanya orang <strong>和谁 (hé shéi = bersama siapa?)</strong>. Jawaban yang menyebutkan orang / pasangan adalah <strong>B. 我女朋友 (Wǒ nǚpéngyou = pacar perempuan saya)</strong>.
+            </div>
+
+            <!-- Analisis Kosakata -->
+            <div class="vocab-pills-list" style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem;">
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>和</strong> (<span class="vocab-py">hé</span>) = Dan / bersama</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>谁</strong> (<span class="vocab-py">shéi</span>) = Siapa</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>超市</strong> (<span class="vocab-py">chāoshì</span>) = Supermarket</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>女朋友</strong> (<span class="vocab-py">nǚpéngyou</span>) = Pacar perempuan</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+    <!-- ══════════════════════════════════════════════════
+       BAGIAN 7: 二、阅读 (YUÈDÚ - READING)
+       READING PART 3 · 第三部分 (Soal 17–18)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 二、阅读 · Reading Part 3: 第三部分 (Soal 17–18)</div>
+    <div class="classroom-box" id="reading-part3-section" style="border-left: 5px solid #0d9488;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">填</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Reading Part 3 · 第三部分 (第 17—18 题)</div>
+          <div class="classroom-desc">第17—18题：选词填空。(Questions 17–18: Choose the correct word to fill in each blank / Pilih kata yang tepat untuk melengkapi bagian rumpang).</div>
+        </div>
+      </div>
+
+      <!-- Foto Lembar Soal Reading Asli Bab 9 Part 3 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-reading-p3.png" alt="二、阅读 第三部分 Reading Part 3 (Soal 17-18)" style="max-width: 100%; width: 620px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div style="display:flex; align-items:center; gap:0.4rem;">
+            <span style="font-size:1.15rem;">✏️</span>
+            <span>Petunjuk Soal Reading Part 3 (选词填空)</span>
+          </div>
+          <button class="wb-audio-btn" onclick="playWord('选词填空。', 'Xuǎncí tiánkòng.')" style="background:#0d9488; color:#fff; border:none; padding:0.35rem 0.8rem; border-radius:16px; font-size:0.78rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem;">
+            🔊 Putar Instruksi Audio
+          </button>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem;">
+          第17—18题：选词填空。
+        </div>
+        <div class="instruction-trans">
+          <strong>Bahasa Inggris:</strong> Questions 17–18: Choose the correct word to fill in each blank.<br>
+          <strong>Bahasa Indonesia:</strong> Pertanyaan 17–18: Pilihlah kata yang tepat dari kotak pilihan (A, B, atau C) untuk melengkapi bagian rumpang pada kalimat.
+        </div>
+      </div>
+
+      <!-- Bank Pilihan Kata (A - C) -->
+      <div style="margin-top:0.35rem;">
+        <div style="font-size:0.84rem; font-weight:700; color:#0f766e; margin-bottom:0.55rem; display:flex; align-items:center; gap:0.4rem;">
+          <span>📋 Pilihan Kata Tersedia (A — C):</span>
+        </div>
+        <div class="cloze-option-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:0.75rem;">
+          
+          <!-- Pilihan A: 2:00 -->
+          <div class="cloze-pill" onclick="playWord('两点', 'liǎng diǎn')" title="Klik dengar opsi A: 2:00 (liǎng diǎn)" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:10px; padding:0.75rem 0.9rem; display:flex; align-items:center; gap:0.6rem; cursor:pointer;">
+            <span style="font-weight:800; color:#0d9488; font-size:1.05rem; width:22px;">A:</span>
+            <div style="display:flex; flex-direction:column;">
+              <div style="display:flex; align-items:baseline; gap:0.4rem;">
+                <span class="opt-hz" style="font-size:1.15rem; font-weight:700; color:#1e293b;">2:00</span>
+                <span class="opt-py" style="font-size:0.85rem; font-weight:600; color:#0d9488; font-family:var(--font-pinyin);">(liǎng diǎn)</span>
+              </div>
+              <span class="opt-trans" style="font-size:0.75rem; color:#64748b; line-height:1.2;">Jam 02:00</span>
+            </div>
+          </div>
+
+          <!-- Pilihan B: 上课 -->
+          <div class="cloze-pill" onclick="playWord('上课', 'shàngkè')" title="Klik dengar opsi B: 上课 (shàngkè)" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:10px; padding:0.75rem 0.9rem; display:flex; align-items:center; gap:0.6rem; cursor:pointer;">
+            <span style="font-weight:800; color:#0d9488; font-size:1.05rem; width:22px;">B:</span>
+            <div style="display:flex; flex-direction:column;">
+              <div style="display:flex; align-items:baseline; gap:0.4rem;">
+                <span class="opt-hz" style="font-size:1.15rem; font-weight:700; color:#1e293b; font-family:'Noto Sans SC',sans-serif;">上课</span>
+                <span class="opt-py" style="font-size:0.85rem; font-weight:600; color:#0d9488; font-family:var(--font-pinyin);">(shàngkè)</span>
+              </div>
+              <span class="opt-trans" style="font-size:0.75rem; color:#64748b; line-height:1.2;">Masuk kelas / mengikuti pelajaran</span>
+            </div>
+          </div>
+
+          <!-- Pilihan C: 名字 -->
+          <div class="cloze-pill" onclick="playWord('名字', 'míngzi')" title="Klik dengar opsi C: 名字 (míngzi)" style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:10px; padding:0.75rem 0.9rem; display:flex; align-items:center; gap:0.6rem; cursor:pointer;">
+            <span style="font-weight:800; color:#16a34a; font-size:1.05rem; width:22px;">C:</span>
+            <div style="display:flex; flex-direction:column;">
+              <div style="display:flex; align-items:baseline; gap:0.4rem;">
+                <span class="opt-hz" style="font-size:1.15rem; font-weight:700; color:#15803d; font-family:'Noto Sans SC',sans-serif;">名字</span>
+                <span class="opt-py" style="font-size:0.85rem; font-weight:600; color:#16a34a; font-family:var(--font-pinyin);">(míngzi)</span>
+              </div>
+              <span class="opt-trans" style="font-size:0.75rem; color:#166534; line-height:1.2; font-weight:600;">Nama [Kunci Contoh]</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contoh Soal (例如 - Lìrú) -->
+      <div style="background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:12px; padding:1.1rem; margin-top:0.85rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.75rem; border-bottom:1px solid #bbf7d0; padding-bottom:0.4rem;">
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <span style="background:#16a34a; color:#fff; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:6px; letter-spacing:0.5px;">CONTOH</span>
+            <span style="font-weight:700; font-size:0.95rem; color:#15803d;">例如 (Lìrú)</span>
+          </div>
+          <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci Contoh: [ C ✓ ] (名字 / míngzi)</span>
+        </div>
+
+        <!-- Kalimat Soal Contoh -->
+        <div class="cloze-sentence-display" style="background:#ffffff; border:1px solid #86efac; border-radius:10px; padding:0.85rem 1rem; text-align:center; cursor:pointer;" onclick="playWord('你叫什么名字？', 'Nǐ jiào shénme míngzi?')" title="Klik dengar kalimat lengkap">
+          <div class="cloze-py" style="font-size:0.95rem; font-weight:600; color:#16a34a; font-family:var(--font-pinyin);">Nǐ jiào shénme míngzi?</div>
+          <div class="cloze-hz" style="font-size:1.45rem; font-weight:700; color:#1e293b; margin:0.3rem 0; font-family:'Noto Sans SC',sans-serif;">你叫什么<span class="cloze-blank-tag">名字</span>？</div>
+          <div class="cloze-arti" style="font-size:0.84rem; color:#475569; margin-top:0.35rem; padding-top:0.35rem; border-top:1px dashed #e2e8f0;">
+            Arti: "Siapa namamu? (Kamu dipanggil nama apa?)" <em>(What is your name?)</em>
+          </div>
+          <div style="font-size:0.75rem; color:#16a34a; margin-top:0.35rem; font-weight:600;">🔊 Klik untuk mendengarkan kalimat lengkap</div>
+        </div>
+
+        <!-- Penjelasan Contoh -->
+        <div class="soal-pembahasan" style="background:#ffffff; border-radius:8px; padding:0.65rem 0.85rem; border-left:3.5px solid #16a34a; font-size:0.82rem; color:#475569; line-height:1.45; margin-top:0.65rem;">
+          💡 <strong>Penjelasan Contoh:</strong> Pola baku untuk menanyakan nama seseorang dalam bahasa Mandarin adalah <strong>你叫什么名字？</strong> (<em>Nǐ jiào shénme míngzi?</em>). Kata yang tepat untuk mengisi titik-titik setelah kata tanya <em>shénme...</em> adalah pilihan <strong>C (míngzi / 名字 = nama)</strong>.
+        </div>
+      </div>
+
+      <!-- Pembahasan dan Jawaban Soal 17–18 -->
+      <div style="display:flex; flex-direction:column; gap:1.25rem; margin-top:1.15rem;">
+        
+        <!-- ════════════ SOAL 17 (BELAJAR/KELAS DI SEKOLAH -> B: 上课) ════════════ -->
+        <div class="dialog-box-card" style="border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; background:#ffffff; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem; border-bottom:1px solid #f1f5f9; padding-bottom:0.4rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="matching-num" style="background:#0d9488;">17</span>
+              <span style="font-weight:700; font-size:0.95rem; color:#1e293b;">Soal No. 17: Kegiatan Pagi di Sekolah (上课)</span>
+            </div>
+            <span style="font-size:0.82rem; color:#15803d; font-weight:700;">Kunci: [ B ✓ ] (上课 / shàngkè)</span>
+          </div>
+
+          <!-- Kalimat Soal 17 -->
+          <div class="cloze-sentence-display" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:0.85rem 1rem; text-align:center; cursor:pointer;" onclick="playWord('我上午在学校上课，我们下午去看电影吧。', 'Wǒ shàngwǔ zài xuéxiào shàngkè, wǒmen xiàwǔ qù kàn diànyǐng ba.')" title="Klik dengar kalimat lengkap">
+            <div class="cloze-py" style="font-size:0.92rem; font-weight:600; color:#0d9488; font-family:var(--font-pinyin);">Wǒ shàngwǔ zài xuéxiào shàngkè, wǒmen xiàwǔ qù kàn diànyǐng ba.</div>
+            <div class="cloze-hz" style="font-size:1.4rem; font-weight:700; color:#1e293b; margin:0.3rem 0; font-family:'Noto Sans SC',sans-serif;">
+              我上午在学校<span class="cloze-blank-tag">上课</span>，我们下午去看电影吧。
+            </div>
+            <div class="cloze-arti" style="font-size:0.84rem; color:#475569; margin-top:0.35rem; padding-top:0.35rem; border-top:1px dashed #e2e8f0;">
+              Arti: "Pagi hari saya ada kelas / belajar di sekolah, sore nanti kita pergi nonton bioskop ya."
+            </div>
+            <div style="font-size:0.75rem; color:#0d9488; margin-top:0.35rem; font-weight:600;">🔊 Klik untuk mendengarkan lafal kalimat lengkap</div>
+          </div>
+
+          <!-- Penjelasan Soal 17 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Pilihan Kata: B ✓</span>
+              <span style="font-weight:700; font-size:0.86rem; color:#0f766e;">上课 (shàngkè = masuk kelas)</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
+              💡 <strong>Penjelasan Soal 17:</strong> Kalimat menyatakan tempat dan aktivitas di sekolah pada pagi hari: <em>"我上午在学校 ( ... )"</em>. Aktivitas yang lazim dilakukan siswa di sekolah adalah <strong>上课 (shàngkè = masuk kelas / mengikuti pelajaran)</strong>. Maka kalimat lengkapnya menjadi: <strong>我上午在学校上课，我们下午去看电影吧。</strong> Jadi, jawaban yang tepat adalah <strong>B. 上课</strong>.
+            </div>
+
+            <!-- Analisis Kosakata Soal 17 -->
+            <div class="vocab-pills-list" style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem;">
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>上午</strong> (<span class="vocab-py">shàngwǔ</span>) = Pagi</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>学校</strong> (<span class="vocab-py">xuéxiào</span>) = Sekolah</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>上课</strong> (<span class="vocab-py">shàngkè</span>) = Masuk kelas</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>下午</strong> (<span class="vocab-py">xiàwǔ</span>) = Siang / sore</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>看电影</strong> (<span class="vocab-py">kàn diànyǐng</span>) = Nonton bioskop / film</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════ SOAL 18 (JAM BERAPA KETEMUAN -> A: 2:00) ════════════ -->
+        <div class="dialog-box-card" style="border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; background:#ffffff; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem; border-bottom:1px solid #f1f5f9; padding-bottom:0.4rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="matching-num" style="background:#0d9488;">18</span>
+              <span style="font-weight:700; font-size:0.95rem; color:#1e293b;">Soal No. 18: Menjawab Pertanyaan Waktu (几点 -> 2:00)</span>
+            </div>
+            <span style="font-size:0.82rem; color:#15803d; font-weight:700;">Kunci: [ A ✓ ] (2:00 / liǎng diǎn)</span>
+          </div>
+
+          <!-- Dialog Soal 18 -->
+          <div style="display:flex; flex-direction:column; gap:0.55rem;">
+            <!-- Baris Pria (男) -->
+            <div class="dialog-line-row" style="border-left:4px solid #0d9488; background:#f8fafc; border-radius:8px; padding:0.6rem 0.9rem; cursor:pointer;" onclick="playWord('我们下午几点在学校见？', 'Wǒmen xiàwǔ jǐ diǎn zài xuéxiào jiàn?')" title="Klik dengar baris pria">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#ccfbf1; color:#0f766e; font-weight:800; padding:2px 8px; border-radius:4px;">男:</span>
+                <span class="dialog-hz" style="font-size:1.18rem; font-weight:700; color:#1e293b; font-family:'Noto Sans SC',sans-serif;">我们下午几点在学校见？</span>
+                <span class="dialog-py" style="font-size:0.88rem; font-weight:600; color:#0d9488; font-family:var(--font-pinyin);">Wǒmen xiàwǔ jǐ diǎn zài xuéxiào jiàn?</span>
+              </div>
+              <div class="dialog-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                Arti: "Kita siang/sore ini jam berapa bertemu di sekolah?"
+              </div>
+            </div>
+
+            <!-- Baris Wanita (女) -->
+            <div class="dialog-line-row" style="border-left:4px solid #16a34a; background:#f8fafc; border-radius:8px; padding:0.6rem 0.9rem; cursor:pointer;" onclick="playWord('下午两点吧。', 'Xiàwǔ liǎng diǎn ba.')" title="Klik dengar baris wanita">
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <span class="dialog-role-badge" style="background:#dcfce7; color:#166534; font-weight:800; padding:2px 8px; border-radius:4px;">女:</span>
+                <span class="dialog-hz" style="font-size:1.18rem; font-weight:700; color:#1e293b; font-family:'Noto Sans SC',sans-serif;">
+                  下午<span class="cloze-blank-tag">2:00</span>吧。
+                </span>
+                <span class="dialog-py" style="font-size:0.88rem; font-weight:600; color:#16a34a; font-family:var(--font-pinyin);">Xiàwǔ (liǎng diǎn) ba.</span>
+              </div>
+              <div class="dialog-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                Arti: "Sore jam 2:00 (14:00) saja ya."
+              </div>
+            </div>
+          </div>
+
+          <!-- Penjelasan Soal 18 -->
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Pilihan Kata: A ✓</span>
+              <span style="font-weight:700; font-size:0.86rem; color:#0f766e;">2:00 (liǎng diǎn = jam 2)</span>
+            </div>
+            <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
+              💡 <strong>Penjelasan Soal 18:</strong> Pembicara pria bertanya tentang jam/waktu pertemuan: <em>"我们下午几点在学校见？"</em> menggunakan kata tanya <strong>几点 (jǐ diǎn = jam berapa?)</strong>. Respon pembicara wanita haruslah berupa waktu jam (keterangan jam), yaitu <strong>A. 2:00 (两点 · liǎng diǎn = jam 2 siang)</strong>. Maka responnya menjadi: <strong>下午 2:00 吧。</strong> Jadi, jawaban yang tepat adalah <strong>A. 2:00</strong>.
+            </div>
+
+            <!-- Analisis Kosakata Soal 18 -->
+            <div class="vocab-pills-list" style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem;">
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>几点</strong> (<span class="vocab-py">jǐ diǎn</span>) = Jam berapa</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>见</strong> (<span class="vocab-py">jiàn</span>) = Bertemu / jumpa</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>2:00 / 两点</strong> (<span class="vocab-py">liǎng diǎn</span>) = Pukul 2</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>吧</strong> (<span class="vocab-py">ba</span>) = Partikel ajakan / saran (ya/saja)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+    <!-- ══════════════════════════════════════════════════
+       BAGIAN 8: 二、阅读 (YUÈDÚ - READING)
+       READING PART 4 · 第四部分 (Soal 19–20)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">📌 二、阅读 · Reading Part 4: 第四部分 (Soal 19–20)</div>
+    <div class="classroom-box" id="reading-part4-section" style="border-left: 5px solid #0d9488;">
+      
+      <!-- Classroom Header -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">答</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background: #0d9488; color: #fff;">Reading Part 4 · 第四部分 (第 19—20 题)</div>
+          <div class="classroom-desc">第19—20题：选择正确答案。(Questions 19–20: Choose the correct answer for each question / Baca pernyataan dan pertanyaan, lalu tentukan jawaban yang benar A, B, atau C).</div>
+        </div>
+      </div>
+
+      <!-- Foto Lembar Soal Reading Asli Bab 9 Part 4 -->
+      <div style="margin: 0.85rem 0 1rem 0; text-align: center;">
+        <img src="images/bab9-wb-reading-p4.png" alt="二、阅读 第四部分 Reading Part 4 (Soal 19-20)" style="max-width: 100%; width: 620px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      </div>
+
+      <!-- Petunjuk / Instruksi Soal -->
+      <div class="instruction-banner">
+        <div class="instruction-banner-top" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div style="display:flex; align-items:center; gap:0.4rem;">
+            <span style="font-size:1.15rem;">🎯</span>
+            <span>Petunjuk Soal Reading Part 4</span>
+          </div>
+          <button class="wb-audio-btn" onclick="playWord('选择正确答案。', 'Xuǎnzé zhèngquè dá'àn.')" style="background:#0d9488; color:#fff; border:none; padding:0.35rem 0.8rem; border-radius:16px; font-size:0.78rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:0.35rem;">
+            🔊 Putar Instruksi Audio
+          </button>
+        </div>
+        <div class="instruction-quote" style="font-family: 'Noto Sans SC', sans-serif; font-size: 1.05rem;">
+          第19—20题：选择正确答案。
+        </div>
+        <div class="instruction-trans">
+          <strong>Bahasa Inggris:</strong> Questions 19–20: Choose the correct answer for each question.<br>
+          <strong>Bahasa Indonesia:</strong> Pertanyaan 19–20: Pilihlah jawaban yang paling tepat (Pilihan A, B, atau C) untuk menjawab pertanyaan berdasarkan pernyataan bacaan.
+        </div>
+      </div>
+
+      <!-- List Soal Part 4 (Contoh, Soal 19, Soal 20) -->
+      <div class="classroom-list" style="margin-top:0.85rem; display:flex; flex-direction:column; gap:1.25rem;">
+        
+        <!-- ════════════ CONTOH SOAL (例如 - Lìrú) ════════════ -->
+        <div class="classroom-item" style="background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:12px; padding:1.15rem;">
+          <div class="item-number" style="background:#16a34a; font-size:0.8rem; width:28px; height:28px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0;">例</div>
+          <div class="item-content" style="flex:1;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.65rem;">
+              <span style="background:#16a34a; color:#fff; font-size:0.75rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; text-transform:uppercase;">例如 (Contoh Soal)</span>
+              <span style="font-size:0.82rem; color:#15803d; font-weight:700;">Kunci Contoh: [ A ✓ ] (时间 / shíjiān)</span>
+            </div>
+
+            <!-- Pernyataan Contoh -->
+            <div class="dialog-line-row" style="background:#ffffff; border-left:4px solid #16a34a; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.6rem; cursor:pointer;" onclick="playWord('请问，现在几点了？', 'Qǐngwèn, xiànzài jǐ diǎn le?')" title="Klik dengar pernyataan contoh">
+              <div style="font-size:0.75rem; font-weight:700; color:#15803d; text-transform:uppercase; letter-spacing:0.5px;">Pernyataan · 句子:</div>
+              <div style="font-size:1.18rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="dialog-hz">请问 现在 几点了？</span></div>
+              <div class="dialog-py" style="font-size:0.9rem; color:#16a34a; font-weight:600;">Qǐngwèn xiànzài jǐ diǎn le?</div>
+              <div class="dialog-arti" style="font-size:0.83rem; color:#475569;">"Permisi, sekarang jam berapa?" <em>(Excuse me, what time is it now?)</em></div>
+            </div>
+
+            <!-- Pertanyaan Contoh -->
+            <div class="dialog-line-row" style="background:#ffffff; border-left:4px solid #0d9488; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.75rem; cursor:pointer;" onclick="playWord('说话人想知道什么？', 'Shuōhuàrén xiǎng zhīdào shénme?')" title="Klik dengar pertanyaan">
+              <div style="font-size:0.75rem; font-weight:700; color:#0d9488; text-transform:uppercase; letter-spacing:0.5px;">Pertanyaan · 问:</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="bubble-hanzi">★ 说话人 想 知道 什么？</span></div>
+              <div class="bubble-pinyin" style="color:#0d9488; font-weight:600; font-size:0.9rem;">★ Shuōhuàrén xiǎng zhīdào shénme?</div>
+              <div class="bubble-arti" style="font-size:0.83rem; color:#475569;">"Pertanyaan: Apa yang ingin diketahui oleh pembicara?" <em>(What does the speaker want to know?)</em></div>
+            </div>
+
+            <!-- Opsi Pilihan Jawaban Contoh -->
+            <div class="quiz-options" style="display:flex; flex-wrap:wrap; gap:0.65rem;">
+              <span class="quiz-option-btn correct" onclick="playWord('时间', 'shíjiān')" title="Klik dengar: shíjiān (KUNCI CONTOH)" style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                A. <span class="opt-hz" style="font-weight:700; color:#15803d;">时间</span> <em class="opt-py" style="color:#16a34a;">(shíjiān)</em> <span class="opt-trans" style="color:#334155;">= Waktu (time)</span> <span class="quiz-check" style="color:#16a34a; font-weight:800;">✓</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('名字', 'míngzi')" title="Klik dengar: míngzi" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                B. <span class="opt-hz">名字</span> <em class="opt-py">(míngzi)</em> <span class="opt-trans">= Nama (name)</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('房间号', 'fángjiānhào')" title="Klik dengar: fángjiānhào" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                C. <span class="opt-hz">房间号</span> <em class="opt-py">(fángjiānhào)</em> <span class="opt-trans">= Nomor kamar (room number)</span>
+              </span>
+            </div>
+
+            <!-- Pembahasan Contoh -->
+            <div class="soal-pembahasan" style="margin-top:0.65rem; background:#ffffff; border-left:3.5px solid #16a34a; padding:0.55rem 0.85rem; border-radius:6px; font-size:0.82rem; color:#334155; line-height:1.45;">
+              💡 <strong>Pembahasan Contoh:</strong> Kalimat menyatakan <em>"现在几点了？" (sekarang jam berapa?)</em>. Kata tanya 几点 (jam berapa) menanyakan waktu (<strong>时间 · shíjiān</strong>). Jadi, pilihan yang tepat adalah <strong>A. 时间</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════ SOAL NOMOR 19 (PUNYA BERAPA ANJING KECIL -> JAWABAN A: 一) ════════════ -->
+        <div class="classroom-item" style="background:#ffffff; border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div class="item-number" style="background:#0d9488; font-size:0.85rem; width:28px; height:28px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0;">19</div>
+          <div class="item-content" style="flex:1;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.65rem;">
+              <span style="font-size:0.95rem; font-weight:700; color:#0f766e;">Soal No. 19: Jumlah Hewan Peliharaan (一只小狗)</span>
+              <button onclick="playWord('我有一只小狗，很漂亮，它是我的好朋友。说话人有几只小狗？', 'Wǒ yǒu yì zhī xiǎogǒu, hěn piàoliang, tā shì wǒ de hǎo péngyou. Shuōhuàrén yǒu jǐ zhī xiǎogǒu?')" style="cursor:pointer; background:#f0fdfa; border:1px solid #99f6e4; color:#0d9488; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+                <span>🔊 Putar Kalimat &amp; Pertanyaan</span>
+              </button>
+            </div>
+
+            <!-- Pernyataan Soal 19 -->
+            <div class="dialog-line-row" style="background:#f8fafc; border-left:4px solid #0d9488; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.6rem; cursor:pointer;" onclick="playWord('我有一只小狗，很漂亮，它是我的好朋友。', 'Wǒ yǒu yì zhī xiǎogǒu, hěn piàoliang, tā shì wǒ de hǎo péngyou.')" title="Klik dengar pernyataan Soal 19">
+              <div style="font-size:0.75rem; font-weight:700; color:#0d9488; text-transform:uppercase; letter-spacing:0.5px;">Pernyataan · 句子:</div>
+              <div style="font-size:1.18rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="dialog-hz">我有一只小狗，很漂亮，它是我的好朋友。</span></div>
+              <div class="dialog-py" style="font-size:0.9rem; color:#0d9488; font-weight:600;">Wǒ yǒu yì zhī xiǎogǒu, hěn piàoliang, tā shì wǒ de hǎo péngyou.</div>
+              <div class="dialog-arti" style="font-size:0.83rem; color:#475569;">"Saya mempunyai seekor anak anjing, sangat cantik/lucu, dia adalah teman baik saya." <em>(I have a little dog, very pretty, it is my good friend.)</em></div>
+            </div>
+
+            <!-- Pertanyaan Soal 19 -->
+            <div class="dialog-line-row" style="background:#f8fafc; border-left:4px solid #14b8a6; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.75rem; cursor:pointer;" onclick="playWord('说话人有几只小狗？', 'Shuōhuàrén yǒu jǐ zhī xiǎogǒu?')" title="Klik dengar pertanyaan">
+              <div style="font-size:0.75rem; font-weight:700; color:#14b8a6; text-transform:uppercase; letter-spacing:0.5px;">Pertanyaan · 问:</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="bubble-hanzi">★ 说话人 有 几只 小狗？</span></div>
+              <div class="bubble-pinyin" style="color:#0d9488; font-weight:600; font-size:0.9rem;">★ Shuōhuàrén yǒu jǐ zhī xiǎogǒu?</div>
+              <div class="bubble-arti" style="font-size:0.83rem; color:#475569;">"Pertanyaan: Pembicara mempunyai berapa ekor anak anjing?" <em>(How many little dogs does the speaker have?)</em></div>
+            </div>
+
+            <!-- Opsi Pilihan Jawaban Soal 19 -->
+            <div class="quiz-options" style="display:flex; flex-wrap:wrap; gap:0.65rem;">
+              <span class="quiz-option-btn correct" onclick="playWord('一', 'yī')" title="Klik dengar: yī (KUNCI JAWABAN)" style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                A. <span class="opt-hz" style="font-weight:700; color:#15803d;">一</span> <em class="opt-py" style="color:#16a34a;">(yī)</em> <span class="opt-trans" style="color:#334155;">= 1 (Satu ekor)</span> <span class="quiz-check" style="color:#16a34a; font-weight:800;">✓</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('四', 'sì')" title="Klik dengar: sì" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                B. <span class="opt-hz">四</span> <em class="opt-py">(sì)</em> <span class="opt-trans">= 4 (Empat)</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('十一', 'shíyī')" title="Klik dengar: shíyī" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                C. <span class="opt-hz">十一</span> <em class="opt-py">(shíyī)</em> <span class="opt-trans">= 11 (Sebelas)</span>
+              </span>
+            </div>
+
+            <!-- Pembahasan Soal 19 -->
+            <div class="soal-pembahasan" style="margin-top:0.65rem; background:#f8fafc; border-left:3.5px solid #0d9488; padding:0.55rem 0.85rem; border-radius:6px; font-size:0.82rem; color:#334155; line-height:1.45;">
+              💡 <strong>Pembahasan Soal 19:</strong> Pada kalimat pernyataan tertulis jelas: <strong>我有一只小狗 (Wǒ yǒu yì zhī xiǎogǒu = Saya mempunyai seekor anak anjing)</strong>. Kata bantu bilangan <strong>一只 (yì zhī)</strong> menunjukkan jumlahnya adalah <strong>一 (yī = satu)</strong>. Pertanyaan menanyakan jumlah anjing yang dimiliki pembicara (<em>说话人有几只小狗？</em>). Jadi, jawaban yang tepat adalah <strong>A. 一 (yī)</strong>.
+            </div>
+
+            <!-- Analisis Kosakata Soal 19 -->
+            <div class="vocab-pills-list" style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem;">
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>有</strong> (<span class="vocab-py">yǒu</span>) = Punya / ada</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>一只</strong> (<span class="vocab-py">yì zhī</span>) = Seekor</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>小狗</strong> (<span class="vocab-py">xiǎogǒu</span>) = Anak anjing</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>漂亮</strong> (<span class="vocab-py">piàoliang</span>) = Cantik / indah</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>好朋友</strong> (<span class="vocab-py">hǎo péngyou</span>) = Teman baik</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════ SOAL NOMOR 20 (DIMANA BERMAIN -> JAWABAN B: 房间里) ════════════ -->
+        <div class="classroom-item" style="background:#ffffff; border:1.5px solid #ccfbf1; border-radius:12px; padding:1.15rem; box-shadow:0 2px 8px rgba(13,148,136,0.04);">
+          <div class="item-number" style="background:#0d9488; font-size:0.85rem; width:28px; height:28px; border-radius:50%; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0;">20</div>
+          <div class="item-content" style="flex:1;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.65rem;">
+              <span style="font-size:0.95rem; font-weight:700; color:#0f766e;">Soal No. 20: Lokasi Aktivitas Bermain (房间里)</span>
+              <button onclick="playWord('星期天中午妈妈在做饭，我和妹妹在房间里玩。说话人和妹妹在哪儿？', 'Xīngqītiān zhōngwǔ māma zài zuò fàn, wǒ hé mèimei zài fángjiān li wán. Shuōhuàrén hé mèimei zài nǎr?')" style="cursor:pointer; background:#f0fdfa; border:1px solid #99f6e4; color:#0d9488; font-size:0.78rem; font-weight:700; border-radius:16px; padding:0.3rem 0.75rem; display:inline-flex; align-items:center; gap:0.35rem;">
+                <span>🔊 Putar Kalimat &amp; Pertanyaan</span>
+              </button>
+            </div>
+
+            <!-- Pernyataan Soal 20 -->
+            <div class="dialog-line-row" style="background:#f8fafc; border-left:4px solid #0d9488; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.6rem; cursor:pointer;" onclick="playWord('星期天中午妈妈在做饭，我和妹妹在房间里玩。', 'Xīngqītiān zhōngwǔ māma zài zuò fàn, wǒ hé mèimei zài fángjiān li wán.')" title="Klik dengar pernyataan Soal 20">
+              <div style="font-size:0.75rem; font-weight:700; color:#0d9488; text-transform:uppercase; letter-spacing:0.5px;">Pernyataan · 句子:</div>
+              <div style="font-size:1.18rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="dialog-hz">星期天 中午 妈妈在做饭，我和妹妹 在 房间里玩。</span></div>
+              <div class="dialog-py" style="font-size:0.9rem; color:#0d9488; font-weight:600;">Xīngqītiān zhōngwǔ māma zài zuò fàn, wǒ hé mèimei zài fángjiān li wán.</div>
+              <div class="dialog-arti" style="font-size:0.83rem; color:#475569;">"Hari Minggu siang ibu sedang memasak, saya dan adik perempuan bermain di dalam kamar." <em>(On Sunday noon mom is cooking, my younger sister and I are playing in the room.)</em></div>
+            </div>
+
+            <!-- Pertanyaan Soal 20 -->
+            <div class="dialog-line-row" style="background:#f8fafc; border-left:4px solid #14b8a6; border-radius:8px; padding:0.65rem 0.95rem; margin-bottom:0.75rem; cursor:pointer;" onclick="playWord('说话人和妹妹在哪儿？', 'Shuōhuàrén hé mèimei zài nǎr?')" title="Klik dengar pertanyaan">
+              <div style="font-size:0.75rem; font-weight:700; color:#14b8a6; text-transform:uppercase; letter-spacing:0.5px;">Pertanyaan · 问:</div>
+              <div style="font-size:1.15rem; font-weight:700; color:#1e293b; margin-top:2px;"><span class="bubble-hanzi">★ 说话人 和 妹妹 在 哪儿？</span></div>
+              <div class="bubble-pinyin" style="color:#0d9488; font-weight:600; font-size:0.9rem;">★ Shuōhuàrén hé mèimei zài nǎr?</div>
+              <div class="bubble-arti" style="font-size:0.83rem; color:#475569;">"Pertanyaan: Pembicara dan adik perempuannya berada di mana?" <em>(Where are the speaker and younger sister?)</em></div>
+            </div>
+
+            <!-- Opsi Pilihan Jawaban Soal 20 -->
+            <div class="quiz-options" style="display:flex; flex-wrap:wrap; gap:0.65rem;">
+              <span class="quiz-option-btn" onclick="playWord('外边', 'wàibian')" title="Klik dengar: wàibian" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                A. <span class="opt-hz">外边</span> <em class="opt-py">(wàibian)</em> <span class="opt-trans">= Di luar (outside)</span>
+              </span>
+              <span class="quiz-option-btn correct" onclick="playWord('房间里', 'fángjiān li')" title="Klik dengar: fángjiān li (KUNCI JAWABAN)" style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                B. <span class="opt-hz" style="font-weight:700; color:#15803d;">房间里</span> <em class="opt-py" style="color:#16a34a;">(fángjiān li)</em> <span class="opt-trans" style="color:#334155;">= Di dalam kamar (in the room)</span> <span class="quiz-check" style="color:#16a34a; font-weight:800;">✓</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playWord('超市里', 'chāoshì li')" title="Klik dengar: chāoshì li" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:8px; padding:0.5rem 0.85rem; font-weight:600; cursor:pointer;">
+                C. <span class="opt-hz">超市里</span> <em class="opt-py">(chāoshì li)</em> <span class="opt-trans">= Di dalam supermarket</span>
+              </span>
+            </div>
+
+            <!-- Pembahasan Soal 20 -->
+            <div class="soal-pembahasan" style="margin-top:0.65rem; background:#f8fafc; border-left:3.5px solid #0d9488; padding:0.55rem 0.85rem; border-radius:6px; font-size:0.82rem; color:#334155; line-height:1.45;">
+              💡 <strong>Pembahasan Soal 20:</strong> Kalimat menyatakan: <em>"我和妹妹在房间里玩" (Saya dan adik perempuan bermain di dalam kamar)</em>. Pertanyaan menanyakan lokasi keberadaan pembicara dan adiknya (<strong>说话人和妹妹在哪儿？</strong>). Maka jawaban yang paling tepat adalah <strong>B. 房间里 (fángjiān li = di dalam kamar)</strong>. Pilihan A adalah <em>外边 (di luar)</em> dan C adalah <em>超市里 (di supermarket)</em>.
+            </div>
+
+            <!-- Analisis Kosakata Soal 20 -->
+            <div class="vocab-pills-list" style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem;">
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>星期天</strong> (<span class="vocab-py">xīngqītiān</span>) = Hari Minggu</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>中午</strong> (<span class="vocab-py">zhōngwǔ</span>) = Siang hari</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>做饭</strong> (<span class="vocab-py">zuò fàn</span>) = Memasak</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>妹妹</strong> (<span class="vocab-py">mèimei</span>) = Adik perempuan</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>房间里</strong> (<span class="vocab-py">fángjiān li</span>) = Dalam kamar</span>
+              <span class="vocab-pill" style="background:#ffffff; border:1px solid #cbd5e1; padding:0.2rem 0.6rem; border-radius:6px; font-size:0.78rem;"><strong>玩</strong> (<span class="vocab-py">wán</span>) = Bermain</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
       <span class="icon">⚙️</span>
@@ -2642,17 +4382,13 @@
   ];
 
   // Regex pemilah Pinyin baku
-  const _A = '[aāáǎà]';
-  const _O = '[oōóǒò]';
-  const _E = '[eēéěè]';
-  const _I = '[iīíǐì]';
-  const _U = '[uūúǔù]';
-  const _V = '[vüǖǘǚǜ]';
+  const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
   const _finals = [
-    _I+_A+_O, _U+_A+_I, _I+_A+_N+'g', _I+_A+_N, _I+_A+_O, _I+_E, _I+_N+'g', _I+_N,
-    _U+_A+_N+'g', _U+_A+_N, _U+_A, _U+_O, _U+_I, _U+_E, _U+_N,
-    _V+_E, _V+_N,
-    _A+_N+'g', _E+_N+'g', _O+_N+'g', _A+_N, _E+_N, _A+_I, _E+_I, _A+_O, _O+_U,
+    _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
+    _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
+    _A+'ng', _E+'ng', _O+'ng',
+    _A+'i', _E+'i', _A+_O, _O+_U, _A+'n', _E+'n',
+    _I+_A, _I+_E, _I+'n', _I+_U, _U+_A, _U+_O, _U+_E, _U+_I, _U+'n',
     _V+_E, 'er',
     _A, _O, _E, _I, _U, _V
   ].join('|');
@@ -2684,6 +4420,12 @@
     const units = [];
     let remHz = hanziText;
     while (remHz.length > 0) {
+      const tagMatch = remHz.match(/^<[^>]+>/);
+      if (tagMatch) {
+        units.push({ text: tagMatch[0], isTag: true });
+        remHz = remHz.substring(tagMatch[0].length);
+        continue;
+      }
       const numMatch = remHz.match(/^\d+(?::\d+)?/);
       if (numMatch) {
         units.push({ text: numMatch[0], isNum: true });
