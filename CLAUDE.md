@@ -1127,6 +1127,27 @@ Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 
 ### 6.2 Komponen Khusus Workbook
 
 ### 6.3 Standar Baku Reading Part 3 (选词填空 · Cloze / Fill in the Blanks)
+
+### 6.4 Standar Baku Tipografi & Spasi Aksara Hanzi (Kaidah Alami Bahasa Mandarin)
+> [!IMPORTANT]
+> **Larangan Menyelipkan Spasi Di Antara Aksara Hanzi dalam Kalimat:**
+> - Kalimat bahasa Mandarin baku **TIDAK MENGGUNAKAN SPASI** antar karakter (aksara ditulis rapat alami sesuai ortografi asli Tionghoa).
+> - 🚫 **SALAH (Renggang/Spasi Buatan):** `我 没 有 手 机 ， 今 天 想 去 商 店 买 一 个 。` atau `这 件 衣 服 很 好 看`
+> - ✅ **BENAR (Rapat & Alami Standar Bab 9):** `我没有手机，今天想去商店买一个。` atau `这件衣服很好看，你也能穿，买一件吧。`
+> - Spasi hanya diperkenankan pada transliterasi **Pinyin** untuk memisahkan kata (misalnya: `Wǒ méiyǒu shǒujī, jīntiān xiǎng qù shāngdiàn mǎi yí gè.`).
+
+### 6.5 Standar Baku Reading Part 4 (选择正确答案 · Reading Comprehension)
+Mengikuti standar struktur **Bab 9**:
+1. **Header & Badge Bagian**:
+   - Avatar bertuliskan `答` dengan gradien tema bab.
+   - Badge dan deskripsi instruksi: `第19—20题：选择正确答案。(Questions 19–20: Choose the correct answer for each question / Baca pernyataan dan pertanyaan, lalu tentukan jawaban yang benar A, B, atau C).`
+2. **Foto Lembar Asli & Banner Instruksi**:
+   - Pratinjau gambar `images/babN-wb-reading-p4.png`.
+   - Kotak instruksi (`.instruction-banner`) memuat tombol pelafalan instruksi (`🔊 Putar Instruksi Audio`), kutipan instruksi, serta terjemahan bilingual.
+3. **Format Butir Soal (`.classroom-item` dalam `.classroom-list`)**:
+   - **Contoh Soal (`例如 - Lìrú`)**: Avatar lingkaran `例` hijau, kotak pernyataan `.dialog-line-row` (Hanzi rapat alami `.dialog-hz`, Pinyin `.dialog-py`, arti `.dialog-arti`), pertanyaan `.bubble-hanzi`, opsi jawaban `.quiz-options` (`.quiz-option-btn.correct`), dan ulasan pembahasan.
+   - **Soal 19 & 20**: Nomor badge lingkaran bulat (`19` dan `20`), kotak `.dialog-line-row` yang memuat pernyataan dan pertanyaan berbintang (`★`), opsi jawaban A, B, C dengan penanda kunci centang (`✓`), penjelasan gramatikal/kontekstual (`.soal-pembahasan`), serta analisis kosakata kunci (`.vocab-pills-list`).
+
 Struktur pada **Reading Part 3** di `WorkBookBabN.html` mengadopsi standar resmi dari **Bab 9**:
 
 1. **Header & Deskripsi Bagian**:
