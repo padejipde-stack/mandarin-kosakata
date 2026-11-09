@@ -135,7 +135,60 @@ Setiap file bab buku teks adalah dokumen mandiri (*self-contained*) dengan struk
 ```
 
 > [!NOTE]
-> Header menggunakan pseudo-element `header::before` dengan watermark Hanzi besar (misalnya `content: '三';` untuk Bab 3) beropacity rendah (`0.06 - 0.08`).
+> **Standar CSS & Dimensi Tinggi Header Resmi (`header`) dari Bab 9**:
+> Ketinggian dan proporsi header wajib mengikuti standar Bab 9 agar seragam di semua bab:
+> ```css
+>     /* ── HEADER RESMI (STANDAR BAB 9) ── */
+>     header {
+>       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+>       color: #fff;
+>       text-align: center;
+>       padding: 2.5rem 1rem 2rem;
+>       position: relative;
+>       overflow: hidden;
+>     }
+>     header::before {
+>       content: '对话';
+>       position: absolute;
+>       font-size: 11rem;
+>       font-family: 'Noto Sans SC', sans-serif;
+>       font-weight: 700;
+>       color: rgba(255, 255, 255, 0.05);
+>       top: 50%; left: 50%;
+>       transform: translate(-50%, -50%);
+>       pointer-events: none;
+>       user-select: none;
+>       line-height: 1;
+>     }
+>     header h1 {
+>       font-size: 1.9rem;
+>       font-weight: 700;
+>       letter-spacing: -0.3px;
+>       position: relative;
+>     }
+>     header p {
+>       margin-top: 0.35rem;
+>       font-size: 0.88rem;
+>       opacity: 0.88;
+>       position: relative;
+>     }
+>     header .bab {
+>       display: inline-block;
+>       background: var(--gold);
+>       color: #fff;
+>       border-radius: 20px;
+>       padding: 0.2rem 0.95rem;
+>       font-size: 0.8rem;
+>       font-weight: 700;
+>       margin-top: 0.65rem;
+>       position: relative;
+>       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+>     }
+> ```
+> Saat layar HP / mobile (`@media (max-width: 640px)`):
+> ```css
+>     header h1 { font-size: 1.4rem; }
+> ```
 
 ### 3.2 Navigasi Sticky 3-Kolom Simetris (`.nav-bar`)
 Bar navigasi menempel di bagian atas (`position: sticky; top: 0; z-index: 1000;`) dengan 3 slot simetris menggunakan CSS standar baku dari Bab 9:
