@@ -1125,6 +1125,32 @@ Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 
 > ```
 
 ### 6.2 Komponen Khusus Workbook
+
+### 6.3 Standar Baku Reading Part 3 (选词填空 · Cloze / Fill in the Blanks)
+Struktur pada **Reading Part 3** di `WorkBookBabN.html` mengadopsi standar resmi dari **Bab 9**:
+
+1. **Header & Deskripsi Bagian**:
+   - Memuat avatar bertuliskan aksara Hanzi `填` bergradien warna tema.
+   - Badge dan deskripsi instruksi: `第17—18题：选词填空。(Questions 17–18: Choose the correct word to fill in each blank / Pilih kata yang tepat untuk melengkapi bagian rumpang).`
+
+2. **Foto Lembar Soal Asli & Banner Instruksi**:
+   - Pratinjau foto lembar buku (`images/babN-wb-reading-p3.png`).
+   - Kotak instruksi (`.instruction-banner`) yang dilengkapi tombol audio pelafalan (`🔊 Putar Instruksi Audio` via `playWord`), kutipan instruksi Mandarin, serta terjemahan Inggris & Indonesia.
+
+3. **Bank Pilihan Kata (`.cloze-option-grid`)**:
+   - Menampilkan kartu pilihan kata (`.cloze-pill`) A, B, C dengan aksara Hanzi (`.opt-hz`), pinyin (`.opt-py`), terjemahan (`.opt-trans`), dan fungsi interaktif `onclick="playWord(...)"`.
+
+4. **Kartu Contoh Soal (`例如 · Lìrú`)**:
+   - Header badge contoh (`CONTOH` & `例如 (Lìrú)`) dengan badge hijau kunci contoh (`Kunci Contoh: [ C ✓ ]`).
+   - Kotak kalimat (`.cloze-sentence-display`) memuat Pinyin (`.cloze-py`), Hanzi (`.cloze-hz`) dengan kata pengisi bergaris bawah/badge (`.cloze-blank-tag`), dan arti (`.cloze-arti`).
+   - Kotak penjelasan (`.soal-pembahasan`).
+
+5. **Daftar Butir Soal 17 & 18 (`.cloze-box-card`)**:
+   - Setiap butir soal dibungkus dalam kartu (`.cloze-box-card`) dengan nomor badge (`.pos-badge`), judul konteks soal, dan kunci jawaban (`[ X ✓ ]`).
+   - Untuk soal kalimat tunggal: Menggunakan `.cloze-sentence-display` yang memuat pinyin, hanzi beranotasi `.cloze-blank-tag`, arti kalimat, dan tombol klik audio.
+   - Untuk soal dialog (percakapan): Menggunakan susunan baris percakapan (`.dialog-line-row`) yang membedakan pembicara laki-laki (`男:`) dan perempuan (`女:`) dengan aksen border warna berbeda, font hanzi `1.18rem`, pinyin `0.88rem`, dan terjemahan langsung.
+   - Kotak pembahasan memuat badge pilihan kata benar (`.match-pic-badge`), ulasan gramatikal/kontekstual lengkap (`.soal-pembahasan`), serta daftar analisis kosakata kunci (`.vocab-pills-list` & `.vocab-pill`).
+
 1. **Grid 4 Nada (`.phonetic-row`)**:
    Setiap sel nada (t1, t2, t3, t4) dapat diklik untuk menyuarakan audio via `playPinyin(...)`.
    ```html
