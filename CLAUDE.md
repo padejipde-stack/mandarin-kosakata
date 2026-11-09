@@ -178,6 +178,7 @@ Untuk menjamin konsistensi visual di seluruh bab, seluruh ukuran dimensi, tinggi
 
 | Komponen | Properti CSS | Nilai Standar Baku | Keterangan & Deskripsi |
 | :--- | :--- | :--- | :--- |
+| **Header Resmi (`header`)** | `padding` / `font-size h1` / `p` / `.bab` | `2.5rem 1rem 2rem` / `1.9rem` / `0.88rem` / `0.8rem` | Gradien bab 135deg, background watermark `对话` (11rem), badge bab `margin-top: 0.65rem` |
 | **Kontainer Utama (`.wrap`)** | `max-width` / `margin` / `gap` | `860px` / `1.5rem auto 2.5rem` / `1.8rem` | Padding samping `0 1rem` |
 | **Navigasi Atas (`.nav-bar .nav`)** | `padding` / `border-radius` | `0.65rem 1.25rem` / `14px` | Ketinggian proporsional dengan tombol `0.45rem 0.95rem` |
 | **Avatar Karakter (`.avatar`)** | `width` / `height` / `font-size` | `44px` / `44px` / `1rem` (font-weight: 700) | Lingkaran `border-radius: 50%`, bayangan `0 3px 8px rgba(0,0,0,0.12)` |
@@ -194,6 +195,7 @@ Untuk menjamin konsistensi visual di seluruh bab, seluruh ukuran dimensi, tinggi
 | **Item Kelas (`.classroom-item`)** | `padding` / `border-radius` / `gap`| `0.85rem 1.1rem` / `14px` / `0.85rem` | Border `1.5px solid var(--border)`, hover `translateX(3px)` |
 | **Nomor Item (`.item-number`)** | `width` / `height` / `border-radius`| `26px` / `26px` / `50%` | Berisi nomor butir soal / contoh kalimat |
 | **Hero Card (`.grammar-hero-card`)** | Banner padding / Content padding | `1.6rem 1.4rem` / `1.6rem 1.4rem` | Hanzi hero: `2.25rem`, Pinyin hero: `1.15rem`, Arti: `1rem` |
+| **Hero Card Color Mode Adapt** | Banner background saat `show-color` | `#ffffff !important` / teks `#1e293b` | Latar putih bersih agar warna Pinyin/Hanzi tidak bertabrakan dengan banner |
 | **Floating Dock (`.dialog-toolbar`)**| `max-width` / `padding` / `radius` | `720px` / `0.65rem 1rem` / `16px` | Posisi `fixed bottom: 1.2rem`, backdrop blur `14px` |
 | **Tombol Toggle (`.toggle-switch-btn`)**| `padding` / `border-radius` / `font-size` | `0.45rem 0.75rem` / `12px` / `1.15rem` | Status aktif: hijau `#ecfdf5` / warna `#fef3c7` |
 
@@ -443,6 +445,34 @@ Digunakan pada bab tingkat lanjut (seperti Bab 9) untuk menampilkan pola kalimat
     </div>
   </div>
 </div>
+
+> [!IMPORTANT]
+> **Adaptasi Warna Banner Tata Bahasa saat Mode Warna Aktif (`body.show-color`)**:
+> Ketika mode warna (🎨) dinyalakan, karakter Hanzi dan suku kata Pinyin akan diwarnai secara dinamis (merah, biru, ungu, oranye, dll.). Agar teks berwarna tersebut **tidak bertabrakan / silau** dengan latar belakang gradien hero banner (misal gradien merah atau biru pekat), tambahkan CSS adaptasi berikut ke dalam style:
+> ```css
+> body.show-color .grammar-banner {
+>   background: #ffffff !important;
+>   border-bottom: 2px solid #e2e8f0;
+>   color: #1e293b !important;
+> }
+> body.show-color .grammar-banner::after {
+>   border-color: #cbd5e1 transparent transparent transparent !important;
+> }
+> body.show-color .grammar-banner-hanzi {
+>   color: #1e293b !important;
+>   text-shadow: none !important;
+> }
+> body.show-color .grammar-banner-pinyin,
+> body.show-color .grammar-banner-arti {
+>   color: #64748b !important;
+> }
+> body.show-color .grammar-banner-hint {
+>   background: #f1f5f9 !important;
+>   color: #475569 !important;
+>   border: 1px solid #cbd5e1 !important;
+> }
+> ```
+> Hal ini menjamin teks Hanzi dan Pinyin yang berwarna-warni kontras maksimal di atas latar putih bersih.
 ```
 
 ### 4.8 Pemanasan & Pencocokan Gambar (`Warm-Up · 热身`)

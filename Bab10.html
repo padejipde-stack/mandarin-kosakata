@@ -55,26 +55,30 @@
       line-height: 1;
     }
     header h1 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
+      position: relative;
     }
     header p {
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       opacity: 0.88;
-      margin-top: 0.3rem;
+      margin-top: 0.35rem;
+      position: relative;
     }
     .bab {
       display: inline-block;
-      margin-top: 0.8rem;
+      margin-top: 0.65rem;
       background: rgba(255, 255, 255, 0.18);
       border: 1px solid rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(4px);
-      padding: 0.3rem 1.1rem;
+      padding: 0.2rem 0.95rem;
       border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
     /* ── NAVBAR ── */
@@ -788,6 +792,46 @@
     }
     body.show-vocab .sub-breakdown {
       display: block !important;
+    }
+
+    /* 🎨 COLOR MODE ADAPTATIONS ── */
+    body.show-color .dialog-line.reverse .bubble {
+      background: #ffffff !important;
+      color: var(--text) !important;
+      border: 1.5px solid var(--border) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+    }
+    body.show-color .dialog-line.reverse .bubble .bubble-pinyin {
+      color: #64748b !important;
+    }
+    body.show-color .dialog-line.reverse .bubble .bubble-arti {
+      color: #475569 !important;
+      border-top-color: rgba(0, 0, 0, 0.12) !important;
+    }
+
+    /* 🎨 Adaptasi Grammar Hero Banner saat Color Mode Aktif (Latar Putih Bersih agar Warna Pinyin/Hanzi Kontras & Nyaman Dibaca) */
+    body.show-color .grammar-banner {
+      background: #ffffff !important;
+      border-bottom: 2px solid #e2e8f0;
+      color: #1e293b !important;
+    }
+    body.show-color .grammar-banner::after {
+      border-color: #cbd5e1 transparent transparent transparent !important;
+    }
+    body.show-color .grammar-banner-hanzi {
+      color: #1e293b !important;
+      text-shadow: none !important;
+    }
+    body.show-color .grammar-banner-pinyin {
+      color: #64748b !important;
+    }
+    body.show-color .grammar-banner-arti {
+      color: #64748b !important;
+    }
+    body.show-color .grammar-banner-hint {
+      background: #f1f5f9 !important;
+      color: #475569 !important;
+      border: 1px solid #cbd5e1 !important;
     }
 
     /* ── RESPONSIVE ── */
