@@ -137,8 +137,99 @@ Setiap file bab buku teks adalah dokumen mandiri (*self-contained*) dengan struk
 > [!NOTE]
 > Header menggunakan pseudo-element `header::before` dengan watermark Hanzi besar (misalnya `content: '三';` untuk Bab 3) beropacity rendah (`0.06 - 0.08`).
 
-### 3.2 Navigasi Sticky 3-Kolom Simetris
-Bar navigasi menempel di bagian atas (`position: sticky; top: 0; z-index: 100;`) dengan 3 slot simetris:
+### 3.2 Navigasi Sticky 3-Kolom Simetris (`.nav-bar`)
+Bar navigasi menempel di bagian atas (`position: sticky; top: 0; z-index: 1000;`) dengan 3 slot simetris menggunakan CSS standar baku dari Bab 9:
+- **Kiri**: Tombol Bab Sebelumnya (`.nav-pager-btn.prev`)
+- **Tengah**: Tombol Navigasi Menu Utama (`.nav-home-btn`)
+- **Kanan**: Tombol Bab Berikutnya (`.nav-pager-btn.next`)
+
+#### Spesifikasi CSS Standar Baku Navbar (Baku Bab 9):
+```css
+    /* ── MODERN STICKY NAVBAR ── */
+    .nav-bar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    .nav {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0.65rem 1rem;
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .nav-side-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-side-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .nav-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    .nav-home-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .nav-pager-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 0.95rem;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+    .nav-pager-btn.next {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .nav-pager-btn.next:hover {
+      background: var(--primary-dark);
+      transform: translateX(2px);
+    }
+    .nav-pager-btn.prev {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid var(--border);
+    }
+    .nav-pager-btn.prev:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      transform: translateX(-2px);
+    }
+```
 ```html
 <nav class="nav-bar">
   <div class="nav">
@@ -180,7 +271,7 @@ Untuk menjamin konsistensi visual di seluruh bab, seluruh ukuran dimensi, tinggi
 | :--- | :--- | :--- | :--- |
 | **Header Resmi (`header`)** | `padding` / `font-size h1` / `p` / `.bab` | `2.5rem 1rem 2rem` / `1.9rem` / `0.88rem` / `0.8rem` | Gradien bab 135deg, background watermark `对话` (11rem), badge bab `margin-top: 0.65rem` |
 | **Kontainer Utama (`.wrap`)** | `max-width` / `margin` / `gap` | `860px` / `1.5rem auto 2.5rem` / `1.8rem` | Padding samping `0 1rem` |
-| **Navigasi Atas (`.nav-bar .nav`)** | `padding` / `border-radius` | `0.65rem 1.25rem` / `14px` | Ketinggian proporsional dengan tombol `0.45rem 0.95rem` |
+| **Navigasi Atas (`.nav-bar .nav`)** | `padding` / `border-radius` | `0.65rem 1rem` / `gap: 0.6rem` | Sticky dock dengan backdrop-filter `blur(10px)`, z-index: `1000`, padding tombol pager `0.45rem 0.95rem` |
 | **Avatar Karakter (`.avatar`)** | `width` / `height` / `font-size` | `44px` / `44px` / `1rem` (font-weight: 700) | Lingkaran `border-radius: 50%`, bayangan `0 3px 8px rgba(0,0,0,0.12)` |
 | **Kotak Dialog (`.dialog-box`)** | `padding` / `gap` / `border-radius` | `1.5rem` / `1.25rem` / `var(--radius)` (16px) | Header `padding-bottom: 0.85rem`, border-bottom dashed `1.5px` |
 | **Baris Dialog (`.dialog-line`)** | `gap` / `align-items` | `0.9rem` / `flex-start` | `.right` / `.reverse` menggunakan `row-reverse` |
