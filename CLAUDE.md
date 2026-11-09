@@ -22,7 +22,7 @@ Proyek ini memiliki dua salinan direktori yang harus selalu **sinkron 100% byte-
 ```text
 C:\laragon\www\Power\Mandarin\
 ├── Index.html                  # Portal beranda utama (daftar bab & workbook)
-├── Bab1.html - Bab7.html       # Modul buku teks percakapan (Bab 1 s.d. Bab 7)
+├── Bab1.html - Bab9.html       # Modul buku teks percakapan (Bab 1 s.d. Bab 9)
 ├── WorkBookBab1.html - ...     # Modul workbook latihan (Master CSS: WorkBookBab1.html)
 ├── kosakata kelistrikan.html   # Modul kosakata khusus teknis
 ├── favicon.ico                 # Favicon portal
@@ -53,7 +53,9 @@ Setiap bab memiliki identitas warna tema (`--primary`) yang unik, dengan struktu
 | **Bab 5** | Jingga / Amber | `#d35400` | `#a04000` | `rgba(211, 84, 0, 0.08)` |
 | **Bab 6** | Biru Teal | `#2980b9` | `#1a5276` | `rgba(41, 128, 185, 0.08)` |
 | **Bab 7** | Crimson / Rose | `#be123c` | `#881337` | `rgba(190, 18, 60, 0.08)` |
-| **Bab 8+** | Disarankan Indigo/Teal | `#4f46e5` / `#0d9488` | Sesuai turunan | Sesuai turunan 0.08 |
+| **Bab 8** | Emerald Teal | `#0d9488` | `#0f766e` | `rgba(13, 148, 136, 0.08)` |
+| **Bab 9** | Indigo Royal | `#4f46e5` | `#3730a3` | `rgba(79, 70, 229, 0.08)` |
+| **Bab 10+** | Disarankan Sky/Amber/Rose | `#0284c7` / `#d97706` | Sesuai turunan | Sesuai turunan 0.08 |
 
 ### 2.2 Palet Warna Workbook (`WorkBookBabN.html`)
 
@@ -63,7 +65,11 @@ Setiap bab memiliki identitas warna tema (`--primary`) yang unik, dengan struktu
 | **Bab 2** | `#7c3aed` | `#5b21b6` | `#6d28d9 → #4c1d95` | `#8b5cf6` |
 | **Bab 3** | `#0369a1` | `#0c4a6e` | `#0284c7 → #075985` | `#38bdf8` |
 | **Bab 4** | `#15803d` | `#14532d` | `#16a34a → #166534` | `#4ade80` |
-| **Bab 5** | `#b45309` | `#78350f` | `#d97706 → #92400e` | `#fbbf24` |
+| **Bab 5** | `#d35400` | `#a04000` | `#e67e22 → #d35400` | `#fbbf24` |
+| **Bab 6** | `#2980b9` | `#1a5276` | `#2980b9 → #1a5276` | `#38bdf8` |
+| **Bab 7** | `#be123c` | `#881337` | `#be123c → #881337` | `#fb7185` |
+| **Bab 8** | `#4f46e5` | `#3730a3` | `#4f46e5 → #3730a3` | `#818cf8` |
+| **Bab 9** | `#0d9488` | `#0f766e` | `#0d9488 → #0f766e` | `#2dd4bf` |
 
 ### 2.3 Variabel Global Baku (`:root`)
 ```css
@@ -184,7 +190,13 @@ Daftar avatar tokoh yang telah memiliki identitas gradien baku:
 - `.av-bai` (白家月 - Mahasiswi): `linear-gradient(135deg, #16a085, #0e6655)`
 - `.av-li` (李文 - Teman/Karakter): `linear-gradient(135deg, #e67e22, #d35400)`
 - `.av-anni` (安妮 - Mahasiswi Asing): `linear-gradient(135deg, #e84393, #fd79a8)`
-- `.av-xue` / `.av-stu` (学生 - Siswa/Umum): `linear-gradient(135deg, #27ae60, #1e8449)`
+- `.av-xue` (学生 - Siswa): `linear-gradient(135deg, #27ae60, #1e8449)`
+- `.av-stu` (学生/Umum): `linear-gradient(135deg, #2980b9, #1a5276)`
+- `.av-liu` (刘 - Tokoh): `linear-gradient(135deg, #1e3799, #0c2461)`
+- `.av-yang` (杨 - Tokoh): `linear-gradient(135deg, #6c5ce7, #4834d4)`
+- `.av-hu` (胡 - Tokoh/Dokter): `linear-gradient(135deg, #0284c7, #0369a1)`
+- `.av-xiaoxue` (小雪): `linear-gradient(135deg, #fd79a8, #e84393)`
+- `.av-xiaoming` (小明): `linear-gradient(135deg, #0984e3, #74b9ff)`
 
 ### 4.2 Struktur Kotak Dialog Percakapan (`.dialog-box`)
 Setiap dialog bab (umumnya Teks 1, Teks 2, Teks 3) dibungkus dalam `.dialog-box`:
@@ -368,7 +380,92 @@ Bagian evaluasi berisi latihan isi bagian rumpang (*selection box*) dan deskrips
 </div>
 ```
 
-### 4.7 Tongue Twister (`.twister-box`)
+### 4.7 Hero Banner Tata Bahasa Pokok (`.grammar-hero-card`)
+Digunakan pada bab tingkat lanjut (seperti Bab 9) untuk menampilkan pola kalimat utama yang mencolok dengan audio dan visual urutan kata:
+```html
+<div class="section-title">📐 Pola Tata Bahasa · 语法解析 (Struktur Kalimat)</div>
+<div class="grammar-hero-card">
+  <!-- Banner Interaktif Atas -->
+  <div class="grammar-banner" onclick="playPinyin('Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí.')" title="Klik dengar pelafalan audio">
+    <div class="grammar-banner-pinyin bubble-pinyin">Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí</div>
+    <div class="grammar-banner-hanzi bubble-hanzi">我明天上午在学校学习</div>
+    <div class="grammar-banner-arti">Saya besok pagi belajar di sekolah</div>
+    <div><span class="grammar-banner-hint">🔊 Klik banner ini untuk mendengarkan lafal audio</span></div>
+  </div>
+
+  <div class="grammar-content">
+    <div class="grammar-rule-badge"><span>📌 Rumus Pokok Kalimat (Word Order)</span></div>
+    <!-- Formula Bar Tag -->
+    <div class="grammar-formula-bar">
+      <span class="formula-tag tag-s">S (Subjek)</span>
+      <span class="formula-sep">+</span>
+      <span class="formula-tag tag-time">ket waktu</span>
+      <span class="formula-sep">+</span>
+      <span class="formula-tag tag-place">在 zài + tempat</span>
+      <span class="formula-sep">+</span>
+      <span class="formula-tag tag-verb">verb</span>
+    </div>
+    <!-- Breakdown Grid -->
+    <div class="grammar-breakdown-grid">
+      <div class="breakdown-box" style="border-top: 3px solid #4f46e5;">
+        <span class="breakdown-type tag-s">Subjek (S)</span>
+        <span class="breakdown-hz bubble-hanzi">我</span>
+        <span class="breakdown-py bubble-pinyin">wǒ</span>
+        <span class="breakdown-id">Saya</span>
+      </div>
+      ...
+    </div>
+  </div>
+</div>
+```
+
+### 4.8 Pemanasan & Pencocokan Gambar (`Warm-Up · 热身`)
+Section pembuka bab untuk mencocokkan kata/frasa dengan gambar ilustrasi buku (`babN-warmup.jpg`) dan merangkum kata satuan (*measure words* / 量词):
+```html
+<div class="section-title">🔥 Pemanasan · 热身 Warm-Up (Mencocokkan Gambar & Kata Satuan)</div>
+<div class="classroom-box" style="border-left: 5px solid #ea580c; background: #fff;">
+  <div class="classroom-header">
+    <div class="avatar" style="background:#ea580c; color:#fff;">热</div>
+    <div class="classroom-intro">
+      <div class="classroom-badge" style="background:#ffedd5; color:#c2410c;">热身 · Warm-Up</div>
+      <div class="classroom-desc">给下面的词语选择对应的图片 (Pasangkan kata dengan gambar yang sesuai).</div>
+    </div>
+  </div>
+  <!-- Gambar Soal Buku -->
+  <div style="text-align:center; margin:0.5rem 0;">
+    <img src="images/bab9-warmup.jpg" alt="Warm-Up Bab 9" style="max-width:100%; height:auto; border-radius:12px;" />
+  </div>
+  <!-- Grid Pilihan A - F -->
+</div>
+```
+
+### 4.9 Latihan Mendengarkan Interaktif (`Listening · 听力练习`)
+Ditempatkan sebelum teks percakapan (misal sebelum Teks 2 atau Teks 3) untuk latihan pemahaman audio / listening dengan badge jawaban:
+```html
+<div class="section-title">🎧 Latihan Mendengarkan · 听力练习 (Teks 2)</div>
+<div class="classroom-box">
+  <div class="classroom-list">
+    <div class="classroom-item" style="border-left:4px solid var(--primary);">
+      <div class="item-number">1</div>
+      <div class="item-content">
+        <div class="bubble-hanzi">椅子上有（一本书）。</div>
+        <div class="bubble-pinyin">Yǐzi shang yǒu (yì běn shū).</div>
+        <div class="bubble-arti">Arti: Di atas kursi ada satu buku.</div>
+        <div class="quiz-options">
+          <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669;">
+            <strong>A. 一本书</strong> <em>(yì běn shū)</em> → Sebuah buku ✓
+          </span>
+          <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+            <strong>B. 一只猫</strong> <em>(yì zhī māo)</em> → Seekor kucing
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+### 4.10 Tongue Twister (`.twister-box`)
 Diakhiri dengan latihan artikulasi lidah dan intonasi khas Tiongkok:
 ```html
 <div class="section-title">👅 Tongue Twister · 绕口令</div>
@@ -384,7 +481,7 @@ Diakhiri dengan latihan artikulasi lidah dan intonasi khas Tiongkok:
 </div>
 ```
 
-### 4.8 Floating Toolbar Bawah (`.dialog-toolbar`)
+### 4.11 Floating Toolbar Bawah (`.dialog-toolbar`)
 Toolbar melayang di bagian bawah dengan 4 tombol toggle kendali tampilan:
 ```html
 <div class="dialog-toolbar">
@@ -434,6 +531,21 @@ function colorizePair(hanziStr, pinyinStr, charColorMap) {
   // Menghasilkan tag <span style="color: ..."> yang seragam antara hanzi dan pinyin
   // Mengandung logika Erhua: jika suku kata berakhir -r (bukan "er/ér/ěr/èr")
   //   DAN Hanzi berikutnya = 儿, maka root silabel → Hanzi sebelum 儿, 'r' → 儿
+}
+
+// 4. Standar Selector removeColors() Buku Teks:
+// WAJIB mencakup seluruh selector elemen yang diwarnai oleh applyColors():
+function removeColors() {
+  const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py, .badge-hz, .badge-py';
+  document.querySelectorAll(selector).forEach(el => {
+    if (el.dataset.origHtml !== undefined) {
+      el.innerHTML = el.dataset.origHtml;
+    } else if (el.dataset.origText !== undefined) {
+      el.textContent = el.dataset.origText;
+    }
+    el.style.color = '';
+    el.style.fontWeight = '';
+  });
 }
 ```
 
@@ -501,26 +613,66 @@ function colorizePair(hanziStr, pinyinStr, charColorMap) {
 > 2. **TIDAK DIWARNAI jika Hanzi atau Pinyin berdiri sendiri (tanpa pasangan)**:
 >    - Jika suatu elemen **hanya memuat Hanzi saja** tanpa Pinyin (misalnya: judul bab, watermark avatar `.avatar`, header grup, teks tombol, badge navigasi) atau **hanya memuat Pinyin saja** tanpa teks Hanzi (misalnya: tabel fonetik murni fonologi tanpa karakter Hanzi), maka elemen tersebut **TIDAK BOLEH** diwarnai (harus tetap memakai warna teks bawaan / default). Jangan pernah memaksakan pewarnaan Hanzi jika tidak ada acuan suku kata Pinyin pasangannya, dan sebaliknya.
 
-// 4. State & Handler Toggle
-let colorActive = false;
+// 4. State & Handler Toggle (Didukung Persistensi localStorage & Preservasi Scroll)
+function updateToggleUI() {
+  const s = cl => document.body.classList.contains(cl);
+  const set = (id, cls) => {
+    const b = document.getElementById(id);
+    if (!b) return;
+    b.classList.toggle('active', s(cls));
+  };
+  set('btnPinyin', 'show-pinyin');
+  set('btnArti', 'show-arti');
+  set('btnVocab', 'show-vocab');
+  set('btnColor', 'show-color');
+}
 
-function togglePinyin() { document.body.classList.toggle('show-pinyin'); updateToggleUI(); }
-function toggleArti()   { document.body.classList.toggle('show-arti');   updateToggleUI(); }
-function toggleVocab()  { document.body.classList.toggle('show-vocab');  updateToggleUI(); }
-function toggleColor()  {
-  colorActive = !colorActive;
-  colorActive ? applyColors() : removeColors();
+function togglePinyin() {
+  document.body.classList.toggle('show-pinyin');
+  localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin') ? '1' : '0');
   updateToggleUI();
 }
 
-function updateToggleUI() {
-  document.getElementById('btnPinyin').classList.toggle('active', document.body.classList.contains('show-pinyin'));
-  document.getElementById('btnArti').classList.toggle('active',   document.body.classList.contains('show-arti'));
-  document.getElementById('btnVocab').classList.toggle('active',  document.body.classList.contains('show-vocab'));
-  document.getElementById('btnColor').classList.toggle('active',  colorActive);
+function toggleArti() {
+  document.body.classList.toggle('show-arti');
+  localStorage.setItem('mandarin_show_arti', document.body.classList.contains('show-arti') ? '1' : '0');
+  updateToggleUI();
 }
 
-// 5. Text-To-Speech (Web Speech API)
+function toggleVocab() {
+  // Preservasi scroll position agar viewport tidak melompat saat konten kosakata diperluas/disembunyikan
+  const anchor = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 3);
+  const viewportOffset = anchor ? anchor.getBoundingClientRect().top : 0;
+  document.body.classList.toggle('show-vocab');
+  localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
+  updateToggleUI();
+  if (anchor) {
+    const docOffsetAfter = anchor.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: docOffsetAfter - viewportOffset, behavior: 'instant' });
+  }
+}
+
+function toggleColor() {
+  document.body.classList.toggle('show-color');
+  const on = document.body.classList.contains('show-color');
+  localStorage.setItem('mandarin_show_color', on ? '1' : '0');
+  on ? applyColors() : removeColors();
+  updateToggleUI();
+}
+
+// Inisialisasi State Saat Halaman Dimuat
+window.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('mandarin_show_pinyin') === '1') document.body.classList.add('show-pinyin');
+  if (localStorage.getItem('mandarin_show_arti') === '1') document.body.classList.add('show-arti');
+  if (localStorage.getItem('mandarin_show_vocab') !== '0') document.body.classList.add('show-vocab');
+  if (localStorage.getItem('mandarin_show_color') === '1') {
+    document.body.classList.add('show-color');
+    applyColors();
+  }
+  updateToggleUI();
+});
+
+// 5. Text-To-Speech (Web Speech API) - WAJIB disertakan pada setiap Bab
 function playPinyin(text) {
   if (!('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel();

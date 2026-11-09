@@ -522,7 +522,7 @@
       display: flex;
       align-items: center;
       gap: 0.45rem;
-      font-size:0.88rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--text);
       white-space: nowrap;
@@ -538,36 +538,47 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 0.4rem;
       background: #f1f5f9;
       color: #475569;
       border: 1.5px solid #cbd5e1;
-      padding: 0.45rem 0.75rem;
-      border-radius: 12px;
-      font-size: 1.15rem;
-      line-height: 1;
+      padding: 0.42rem 0.8rem;
+      border-radius: 20px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
       user-select: none;
+      white-space: nowrap;
     }
     .toggle-switch-btn:hover {
       background: #e2e8f0;
       color: #0f172a;
       border-color: #94a3b8;
-      transform: translateY(-1px);
+    }
+    .toggle-switch-btn .status-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.12rem 0.42rem;
+      border-radius: 12px;
+      background: #cbd5e1;
+      color: #475569;
+      transition: all 0.2s ease;
     }
     .toggle-switch-btn.active {
       background: #ecfdf5;
       color: #047857;
       border-color: #10b981;
-      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
     }
-    .toggle-switch-btn#btnColor.active {
-      background: #fef3c7;
-      color: #b45309;
-      border-color: #f59e0b;
-      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    .toggle-switch-btn.active .status-badge {
+      background: #10b981;
+      color: #ffffff;
     }
 
+    .btn-text-mobile { display: none; }
+
+    
     /* ── FOOTER ── */
     footer {
       text-align: center;
@@ -1524,7 +1535,44 @@
         flex: 1;
         padding: 0.42rem 0.35rem;
         font-size: 0.74rem;
+        gap: 0.25rem;
       }
+      .toggle-switch-btn .status-badge { font-size: 0.62rem; padding: 0.08rem 0.32rem; }
+    }
+
+    /* ── TOGGLE BUTTONS (SYMBOLS ONLY) ── */
+    .toggle-switch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1.5px solid #cbd5e1;
+      padding: 0.45rem 0.75rem;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .toggle-switch-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .toggle-switch-btn.active {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #10b981;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+    }
+    .toggle-switch-btn#btnColor.active {
+      background: #fef3c7;
+      color: #b45309;
+      border-color: #f59e0b;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
     }
   
     @media (max-width: 600px) {
@@ -1564,7 +1612,7 @@
 
   </style>
 </head>
-<body class="show-pinyin show-arti show-vocab">
+<body>
 
 <!-- ══ HEADER ══ -->
 <header>
@@ -3875,17 +3923,17 @@
     </div>
   </div>
 
-  <!-- ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── -->
+  <!-- ══ TOGGLE CONTROLS (DI PALING BAWAH) ══ -->
   <div class="dialog-toolbar">
     <div class="toolbar-title">
       <span class="icon">⚙️</span>
       <span>Bantuan:</span>
     </div>
     <div class="toolbar-buttons">
-      <button id="btnPinyin" class="toggle-switch-btn active" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
-      <button id="btnArti" class="toggle-switch-btn active" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti">🇮🇩</button>
-      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Detail">📖</button>
-      <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warna-warni Karakter Per Kata">🎨</button>
+      <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+      <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti Kalimat">🇮🇩</button>
+      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Arti Per Kata">📖</button>
+      <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warna-warni Hanzi &amp; Pinyin">🎨</button>
     </div>
   </div>
 

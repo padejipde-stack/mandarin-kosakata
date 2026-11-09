@@ -1,0 +1,2806 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dialog Bahasa Mandarin - Bab 10: 这儿的苹果真便宜！ (Zhèr de píngguǒ zhēn piányi!)</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🈶</text></svg>" />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+    :root {
+      --primary:      #e06055;
+      --primary-dark: #b83a30;
+      --primary-soft: rgba(224, 96, 85, 0.08);
+      --gold:         #d97706;
+      --bg:           #f4f6f9;
+      --card-bg:      #ffffff;
+      --text:         #2d3436;
+      --sub:          #636e72;
+      --border:       #e2e8f0;
+      --radius:       16px;
+      --shadow:       0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 3rem;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '对话';
+      position: absolute;
+      font-size: 11rem;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.05);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.88;
+      margin-top: 0.3rem;
+    }
+    .bab {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 1.1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── NAVBAR ── */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    }
+    .nav {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0.45rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-side-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-side-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .nav-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 0.45rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    .nav-home-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .nav-tabs {
+      display: inline-flex;
+      background: #f1f5f9;
+      padding: 0.25rem;
+      border-radius: 10px;
+      gap: 0.25rem;
+      border: 1px solid var(--border);
+    }
+    .nav-tab {
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.38rem 0.9rem;
+      border-radius: 8px;
+      color: #64748b;
+      transition: all 0.2s ease;
+    }
+    .nav-tab:hover {
+      color: #1e293b;
+    }
+    .nav-tab.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    }
+    .nav-pager-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 0.45rem 0.75rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    .nav-pager-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* ── LAYOUT WRAP ── */
+    .wrap {
+      max-width: 860px;
+      margin: 1.8rem auto 0;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+
+    /* ── DIALOG BOX ── */
+    .dialog-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .dialog-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1.5px dashed var(--border);
+      padding: 0.9rem 1.2rem;
+      background: #fafbfc;
+    }
+    .dialog-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .dialog-body {
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .dialog-line {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+    .dialog-line.reverse {
+      flex-direction: row-reverse;
+    }
+
+    /* ── AVATARS ── */
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+      border: 2px solid #ffffff;
+      user-select: none;
+    }
+    .av-xue    { background: linear-gradient(135deg, #27ae60, #1e8449); }
+    .av-liu    { background: linear-gradient(135deg, #1e3799, #0c2461); }
+    .av-yang   { background: linear-gradient(135deg, #6c5ce7, #4834d4); }
+    .av-wang   { background: linear-gradient(135deg, #c0392b, #8e1a12); }
+    .av-chen   { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
+    .av-bai    { background: linear-gradient(135deg, #16a085, #0e6655); }
+    .av-li     { background: linear-gradient(135deg, #e67e22, #d35400); }
+    .av-anni   { background: linear-gradient(135deg, #e84393, #fd79a8); }
+    .av-xiaoyu { background: linear-gradient(135deg, #f39c12, #d68910); }
+    .av-hu     { background: linear-gradient(135deg, #0284c7, #0369a1); }
+    .av-stu    { background: linear-gradient(135deg, #2980b9, #1a5276); }
+    .av-shou   { background: linear-gradient(135deg, #0d9488, #0f766e); }
+    .av-xiaoxue { background: linear-gradient(135deg, #fd79a8, #e84393); }
+
+    .bubble-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .dialog-line.reverse .bubble-wrap {
+      align-items: flex-end;
+    }
+    .speaker-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--sub);
+      margin-bottom: 0.25rem;
+    }
+    .speaker-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .speaker-pinyin {
+      font-weight: 500;
+      color: var(--sub);
+      font-size: 0.74rem;
+    }
+
+    .bubble {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      max-width: 90%;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .bubble:hover {
+      background: #f1f5f9;
+    }
+    .dialog-line.reverse .bubble {
+      background: var(--primary-soft);
+      border-color: rgba(224, 96, 85, 0.2);
+    }
+    .dialog-line.reverse .bubble:hover {
+      background: rgba(224, 96, 85, 0.12);
+    }
+    .bubble-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+      letter-spacing: 0.5px;
+    }
+    .bubble-pinyin {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-top: 0.2rem;
+      display: none;
+    }
+    .bubble-arti {
+      font-size: 0.82rem;
+      color: var(--sub);
+      margin-top: 0.25rem;
+      border-top: 1px dashed var(--border);
+      padding-top: 0.3rem;
+      display: none;
+    }
+
+    /* ── WORD BREAKDOWN (SUB-BREAKDOWN) ── */
+    .sub-breakdown {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.1rem 1.25rem;
+      display: none;
+    }
+    .sub-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.65rem;
+    }
+    .word-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.55rem 0.65rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .word-card:hover {
+      background: #f1f5f9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .word-char {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .word-pinyin {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-top: 0.1rem;
+    }
+    .word-arti {
+      font-size: 0.74rem;
+      color: var(--sub);
+      margin-top: 0.15rem;
+    }
+
+    /* ── GRAMMAR HERO CARD ── */
+    .grammar-hero-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1.5px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .grammar-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #ffffff;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+    }
+    .grammar-banner-pinyin {
+      font-size: 1.05rem;
+      font-weight: 600;
+      opacity: 0.95;
+      letter-spacing: 0.5px;
+    }
+    .grammar-banner-hanzi {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0.35rem 0;
+      letter-spacing: 1px;
+    }
+    .grammar-banner-arti {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .grammar-banner-hint {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+    }
+    .grammar-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .grammar-rule-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.84rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 8px;
+      align-self: flex-start;
+    }
+    .grammar-formula-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      background: #f8fafc;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .formula-tag {
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .tag-s     { background: #e0e7ff; color: #4338ca; }
+    .tag-zhen  { background: #fee2e2; color: #b91c1c; }
+    .tag-adj   { background: #fef3c7; color: #b45309; }
+    .tag-excl  { background: #fce7f3; color: #be185d; }
+    .formula-sep {
+      color: var(--sub);
+      font-weight: 700;
+    }
+    .grammar-breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.75rem;
+    }
+    .breakdown-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.25rem;
+    }
+    .breakdown-type {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+    }
+    .breakdown-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 0.2rem;
+    }
+    .breakdown-py {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+    .breakdown-id {
+      font-size: 0.78rem;
+      color: var(--sub);
+    }
+    .grammar-compare-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    /* ── CLASSROOM BOX ── */
+    .classroom-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      border-left: 5px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .classroom-header {
+      display: flex;
+      gap: 0.85rem;
+      align-items: center;
+      padding-bottom: 0.85rem;
+      border-bottom: 1.5px dashed var(--border);
+    }
+    .classroom-intro {
+      flex: 1;
+    }
+    .classroom-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      margin-bottom: 0.25rem;
+    }
+    .classroom-desc {
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .classroom-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .classroom-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .item-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+    .item-content {
+      flex: 1;
+    }
+
+    /* ── TWISTER BOX ── */
+    .twister-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .twister-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.85rem;
+    }
+    .twister-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .twister-line {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .twister-line:hover {
+      background: #f1f5f9;
+    }
+    .tw-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .tw-py {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      display: none;
+    }
+    .tw-id {
+      font-size: 0.8rem;
+      color: var(--sub);
+      display: none;
+    }
+
+    /* ── COMPREHENSIVE EXERCISE / SELECTION BOX ── */
+    .selection-box {
+      background: #fff7ed;
+      border: 1.5px dashed #fdba74;
+      border-radius: 12px;
+      padding: 0.85rem 1.1rem;
+    }
+    .selection-box-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #c2410c;
+      margin-bottom: 0.5rem;
+    }
+    .selection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.5rem;
+    }
+    .selection-item {
+      background: #ffffff;
+      border: 1px solid #fed7aa;
+      border-radius: 8px;
+      padding: 0.4rem 0.65rem;
+      font-size: 0.82rem;
+    }
+    .selection-letter {
+      font-weight: 700;
+      color: #ea580c;
+    }
+    .selection-pinyin {
+      color: #7c2d12;
+      font-weight: 600;
+    }
+
+    /* ── FLOATING TOOLBAR ── */
+    .dialog-toolbar {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(10px);
+      border-radius: 40px;
+      padding: 0.45rem 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
+      z-index: 999;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .toolbar-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding-right: 0.35rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .toolbar-buttons {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .toggle-switch-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .toggle-switch-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: scale(1.08);
+    }
+    .toggle-switch-btn.active {
+      background: var(--primary);
+      border-color: #ffffff;
+      box-shadow: 0 0 10px rgba(224, 96, 85, 0.6);
+    }
+
+    /* ── TOGGLE STATES ── */
+    body.show-pinyin .bubble-pinyin,
+    body.show-pinyin .tw-py {
+      display: block !important;
+    }
+    body.show-arti .bubble-arti,
+    body.show-arti .tw-id {
+      display: block !important;
+    }
+    body.show-vocab .sub-breakdown {
+      display: block !important;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.4rem; }
+      .nav { padding: 0.35rem 0.5rem; }
+      .bubble { max-width: 95%; font-size: 1.1rem; }
+      .grammar-banner-hanzi { font-size: 1.6rem; }
+      .grammar-formula-bar { font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER RESMI -->
+<header>
+  <h1>🈶 Dialog Bahasa Mandarin</h1>
+  <p>Latihan percakapan · 对话练习</p>
+  <div class="bab">Bab 10 — 这儿的苹果真便宜！ (Zhèr de píngguǒ zhēn piányi!) · Apel di Sini Sangat Murah!</div>
+  <div style="margin-top:0.55rem;">
+    <a href="WorkBookBab10.html" style="display:inline-flex;align-items:center;gap:0.35rem;background:rgba(255,255,255,0.22);color:#fff;text-decoration:none;padding:0.3rem 0.9rem;border-radius:20px;font-size:0.78rem;font-weight:600;border:1px solid rgba(255,255,255,0.4);transition:all 0.2s ease;">
+      📝 Buka Workbook Bab 10 (Harga &amp; Belanja) →
+    </a>
+  </div>
+</header>
+
+<!-- NAVBAR 3-KOLOM SIMETRIS -->
+<nav class="nav-bar">
+  <div class="nav">
+    <div class="nav-side-left">
+      <a href="Bab9.html" class="nav-pager-btn prev" title="Kembali ke Bab 9">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span>Bab 9</span>
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="nav-home-btn" title="Kembali ke Menu Utama">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span class="label">Menu Utama</span>
+      </a>
+    </div>
+    <div class="nav-side-right">
+      <!-- Bab 10 adalah Bab terakhir saat ini -->
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ══ MATERI PENGANTAR TATA BAHASA: KALIMAT SERU DENGAN 真 (ZHĒN) ══ -->
+  <div>
+    <div class="section-title">📐 Pola Tata Bahasa · 语法解析 (Kalimat Pujian &amp; Seru dengan 真)</div>
+    
+    <div class="grammar-hero-card">
+      <!-- Banner Atas -->
+      <div class="grammar-banner" onclick="playPinyin('Zhèr de píngguǒ zhēn piányi!')" title="Klik dengar pelafalan audio">
+        <div class="grammar-banner-pinyin bubble-pinyin">Zhèr de píngguǒ zhēn piányi!</div>
+        <div class="grammar-banner-hanzi bubble-hanzi">这儿的苹果真便宜！</div>
+        <div class="grammar-banner-arti">The apples here are really affordable! · Apel di sini sungguh murah!</div>
+        <div>
+          <span class="grammar-banner-hint">🔊 Klik banner ini untuk mendengarkan lafal audio</span>
+        </div>
+      </div>
+
+      <!-- Konten Detail & Formula -->
+      <div class="grammar-content">
+        <div style="display:flex; flex-direction:column; gap:0.4rem;">
+          <div class="grammar-rule-badge">
+            <span>📌 Rumus Kalimat Seru dengan Kata Keterangan 真 (zhēn)</span>
+          </div>
+          <div style="font-size:0.88rem; color:#475569; line-height:1.55;">
+            Kata keterangan <strong>真 (zhēn)</strong> berarti <em>sungguh / benar-benar / sangat</em> dan diletakkan langsung di depan kata sifat untuk mengekspresikan nada kekaguman, pujian, atau seruan spontan dari penutur. Kalimat dengan <strong>真</strong> sering kali diakhiri dengan tanda seru (<strong>！</strong>).
+          </div>
+        </div>
+
+        <!-- Formula Bar -->
+        <div class="grammar-formula-bar">
+          <span class="formula-tag tag-s">Subjek (Topik)</span>
+          <span class="formula-sep">+</span>
+          <span class="formula-tag tag-zhen">真 zhēn (sungguh)</span>
+          <span class="formula-sep">+</span>
+          <span class="formula-tag tag-adj">Kata Sifat (Adjektiva)</span>
+          <span class="formula-sep">+</span>
+          <span class="formula-tag tag-excl">！(Tanda Seru)</span>
+        </div>
+
+        <!-- Grid Komponen Terurai -->
+        <div class="grammar-breakdown-grid">
+          <!-- 1. Subjek -->
+          <div class="breakdown-box" style="border-top: 3px solid #e06055;">
+            <span class="breakdown-type tag-s">Subjek Frasa Noun</span>
+            <span class="breakdown-hz bubble-hanzi">这儿的苹果</span>
+            <span class="breakdown-py bubble-pinyin">zhèr de píngguǒ</span>
+            <span class="breakdown-id">Apel di sini</span>
+          </div>
+          <!-- 2. Keterangan Penguat -->
+          <div class="breakdown-box" style="border-top: 3px solid #b83a30;">
+            <span class="breakdown-type tag-zhen">Kata Keterangan (Adv)</span>
+            <span class="breakdown-hz bubble-hanzi">真</span>
+            <span class="breakdown-py bubble-pinyin">zhēn</span>
+            <span class="breakdown-id">Sungguh / benar-benar</span>
+          </div>
+          <!-- 3. Kata Sifat -->
+          <div class="breakdown-box" style="border-top: 3px solid #d97706;">
+            <span class="breakdown-type tag-adj">Kata Sifat (Predikat)</span>
+            <span class="breakdown-hz bubble-hanzi">便宜</span>
+            <span class="breakdown-py bubble-pinyin">piányi</span>
+            <span class="breakdown-id">Murah</span>
+          </div>
+        </div>
+
+        <!-- Komparasi & Contoh -->
+        <div class="grammar-compare-box">
+          <div>
+            ✅ <strong>Contoh 1:</strong> 这儿的苹果 <strong>真便宜</strong>！ (<em>Zhèr de píngguǒ zhēn piányi!</em> = Apel di sini sungguh murah!)
+          </div>
+          <div style="margin-top:0.35rem;">
+            ✅ <strong>Contoh 2:</strong> 这家商店的衣服 <strong>真多</strong>！ (<em>Zhè jiā shāngdiàn de yīfu zhēn duō!</em> = Pakaian toko ini sungguh banyak!)
+          </div>
+          <div style="margin-top:0.35rem;">
+            ✅ <strong>Contoh 3:</strong> 这个杯子 <strong>真好看</strong>！ (<em>Zhè gè bēizi zhēn hǎokàn!</em> = Cangkir ini sungguh bagus dilihat!)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MATERI WARM-UP (热身 RÈSHĒN) & KOSAKATA BERGAMBAR ══ -->
+  <div>
+    <div class="section-title">🔥 Pemanasan · 热身 Warm-Up (Mencocokkan Gambar &amp; Kosakata)</div>
+    
+    <div class="classroom-box" style="border-left: 5px solid #e06055; background: #fff;">
+      <!-- Header Warm-Up -->
+      <div class="classroom-header">
+        <div class="avatar" style="background:#e06055; font-size:1.15rem; font-weight:700; color:#fff;">热</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:#b91c1c;">热身 · Warm-Up Bab 10</div>
+          <div class="classroom-desc">
+            <strong>给下面的词语选择对应的图片。</strong> (Match the words with the pictures / Pasangkan kata dengan gambar yang sesuai).
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustrasi Gambar Asli Buku -->
+      <div style="text-align:center; margin:0.5rem 0;">
+        <img src="images/bab10-warmup.png" alt="Warm-Up Bab 10" style="max-width:100%; height:auto; border-radius:12px; border:1.5px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.06);" />
+        <div style="font-size:0.75rem; color:#64748b; margin-top:0.4rem; font-style:italic;">
+          📌 Gambar Soal Pemanasan (Warm-Up) Buku Standar Bab 10
+        </div>
+      </div>
+
+      <!-- Grid 6 Soal Mencocokkan (A — F) -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.85rem; margin-top:0.35rem;">
+        
+        <!-- Item A: 衣服 yīfu -->
+        <div class="classroom-item" style="border:1.5px solid #fecaca; background:#fffaf9; border-radius:12px; padding:0.9rem;">
+          <div class="item-number" style="background:#e06055; color:#fff; font-size:0.85rem; width:30px; height:30px;">A</div>
+          <div class="item-content">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:0.75rem; color:#e06055;">PILIHAN A · KECOCOKAN GAMBAR</span>
+              <span style="font-size:0.75rem; font-weight:700; background:#dcfce7; color:#15803d; padding:1px 6px; border-radius:4px;">Gambar 2 (Baju terlipat)</span>
+            </div>
+            <div style="cursor:pointer; margin-top:0.25rem;" onclick="playPinyin('yī fu')" title="Klik dengar 衣服">
+              <div class="bubble-pinyin" style="font-size:0.88rem; font-weight:600; color:#e06055;">yī fu</div>
+              <div class="bubble-hanzi" style="font-size:1.35rem; font-weight:700; color:#1e293b;">衣服</div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.3rem;">
+              <strong>Arti:</strong> Pakaian / baju
+            </div>
+            <div style="background:#fee2e2; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#991b1b; cursor:pointer;" onclick="playPinyin('yí jiàn yīfu')" title="Klik dengar frasa">
+              📏 Kata Satuan: <strong>一件衣服</strong> (<em>yí jiàn yīfu</em>) = Sehelai baju
+            </div>
+          </div>
+        </div>
+
+        <!-- Item B: 便宜 piányi -->
+        <div class="classroom-item" style="border:1.5px solid #fecaca; background:#fffaf9; border-radius:12px; padding:0.9rem;">
+          <div class="item-number" style="background:#e06055; color:#fff; font-size:0.85rem; width:30px; height:30px;">B</div>
+          <div class="item-content">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:0.75rem; color:#e06055;">PILIHAN B · KECOCOKAN GAMBAR</span>
+              <span style="font-size:0.75rem; font-weight:700; background:#dcfce7; color:#15803d; padding:1px 6px; border-radius:4px;">Gambar 6 (Diskon 50%)</span>
+            </div>
+            <div style="cursor:pointer; margin-top:0.25rem;" onclick="playPinyin('pián yi')" title="Klik dengar 便宜">
+              <div class="bubble-pinyin" style="font-size:0.88rem; font-weight:600; color:#e06055;">pián yi</div>
+              <div class="bubble-hanzi" style="font-size:1.35rem; font-weight:700; color:#1e293b;">便宜</div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.3rem;">
+              <strong>Arti:</strong> Murah / terjangkau (lawan kata dari 贵 <em>guì</em> = mahal)
+            </div>
+            <div style="background:#fef3c7; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#92400e; cursor:pointer;" onclick="playPinyin('zhēn piányi')" title="Klik dengar frasa">
+              💡 Contoh Frasa: <strong>真便宜</strong> (<em>zhēn piányi</em>) = Sungguh murah!
+            </div>
+          </div>
+        </div>
+
+        <!-- Item C: 苹果 píngguǒ -->
+        <div class="classroom-item" style="border:1.5px solid #fecaca; background:#fffaf9; border-radius:12px; padding:0.9rem;">
+          <div class="item-number" style="background:#e06055; color:#fff; font-size:0.85rem; width:30px; height:30px;">C</div>
+          <div class="item-content">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:0.75rem; color:#e06055;">PILIHAN C · KECOCOKAN GAMBAR</span>
+              <span style="font-size:0.75rem; font-weight:700; background:#dcfce7; color:#15803d; padding:1px 6px; border-radius:4px;">Gambar 1 (Buah Apel Merah)</span>
+            </div>
+            <div style="cursor:pointer; margin-top:0.25rem;" onclick="playPinyin('píng guǒ')" title="Klik dengar 苹果">
+              <div class="bubble-pinyin" style="font-size:0.88rem; font-weight:600; color:#e06055;">píng guǒ</div>
+              <div class="bubble-hanzi" style="font-size:1.35rem; font-weight:700; color:#1e293b;">苹果</div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.3rem;">
+              <strong>Arti:</strong> Apel (buah)
+            </div>
+            <div style="background:#fee2e2; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#991b1b; cursor:pointer;" onclick="playPinyin('liǎng jīn píngguǒ')" title="Klik dengar frasa">
+              ⚖️ Satuan Timbangan: <strong>两斤苹果</strong> (<em>liǎng jīn píngguǒ</em>) = 1 kg apel (2 jin)
+            </div>
+          </div>
+        </div>
+
+        <!-- Item D: 穿 chuān -->
+        <div class="classroom-item" style="border:1.5px solid #fecaca; background:#fffaf9; border-radius:12px; padding:0.9rem;">
+          <div class="item-number" style="background:#e06055; color:#fff; font-size:0.85rem; width:30px; height:30px;">D</div>
+          <div class="item-content">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:0.75rem; color:#e06055;">PILIHAN D · KECOCOKAN GAMBAR</span>
+              <span style="font-size:0.75rem; font-weight:700; background:#dcfce7; color:#15803d; padding:1px 6px; border-radius:4px;">Gambar 4 (Mengenakan Pakaian)</span>
+            </div>
+            <div style="cursor:pointer; margin-top:0.25rem;" onclick="playPinyin('chuān')" title="Klik dengar 穿">
+              <div class="bubble-pinyin" style="font-size:0.88rem; font-weight:600; color:#e06055;">chuān</div>
+              <div class="bubble-hanzi" style="font-size:1.35rem; font-weight:700; color:#1e293b;">穿</div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.3rem;">
+              <strong>Arti:</strong> Memakai / mengenakan (pakaian, sepatu)
+            </div>
+            <div style="background:#e0e7ff; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#3730a3; cursor:pointer;" onclick="playPinyin('chuān yīfu')" title="Klik dengar frasa">
+              👔 Frasa Kerja: <strong>穿衣服</strong> (<em>chuān yīfu</em>) = Mengenakan pakaian
+            </div>
+          </div>
+        </div>
+
+        <!-- Item E: 杯子 bēizi -->
+        <div class="classroom-item" style="border:1.5px solid #fecaca; background:#fffaf9; border-radius:12px; padding:0.9rem;">
+          <div class="item-number" style="background:#e06055; color:#fff; font-size:0.85rem; width:30px; height:30px;">E</div>
+          <div class="item-content">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:0.75rem; color:#e06055;">PILIHAN E · KECOCOKAN GAMBAR</span>
+              <span style="font-size:0.75rem; font-weight:700; background:#dcfce7; color:#15803d; padding:1px 6px; border-radius:4px;">Gambar 3 (Cangkir Putih)</span>
+            </div>
+            <div style="cursor:pointer; margin-top:0.25rem;" onclick="playPinyin('bēi zi')" title="Klik dengar 杯子">
+              <div class="bubble-pinyin" style="font-size:0.88rem; font-weight:600; color:#e06055;">bēi zi</div>
+              <div class="bubble-hanzi" style="font-size:1.35rem; font-weight:700; color:#1e293b;">杯子</div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.3rem;">
+              <strong>Arti:</strong> Cangkir / gelas
+            </div>
+            <div style="background:#fee2e2; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#991b1b; cursor:pointer;" onclick="playPinyin('yí gè bēizi')" title="Klik dengar frasa">
+              ☕ Satuan Benda: <strong>一个杯子</strong> (<em>yí gè bēizi</em>) = Sebuah cangkir
+            </div>
+          </div>
+        </div>
+
+        <!-- Item F: 商店 shāngdiàn -->
+        <div class="classroom-item" style="border:1.5px solid #fecaca; background:#fffaf9; border-radius:12px; padding:0.9rem;">
+          <div class="item-number" style="background:#e06055; color:#fff; font-size:0.85rem; width:30px; height:30px;">F</div>
+          <div class="item-content">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:0.75rem; color:#e06055;">PILIHAN F · KECOCOKAN GAMBAR</span>
+              <span style="font-size:0.75rem; font-weight:700; background:#dcfce7; color:#15803d; padding:1px 6px; border-radius:4px;">Gambar 5 (Toko / Toko Pakaian)</span>
+            </div>
+            <div style="cursor:pointer; margin-top:0.25rem;" onclick="playPinyin('shāng diàn')" title="Klik dengar 商店">
+              <div class="bubble-pinyin" style="font-size:0.88rem; font-weight:600; color:#e06055;">shāng diàn</div>
+              <div class="bubble-hanzi" style="font-size:1.35rem; font-weight:700; color:#1e293b;">商店</div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.3rem;">
+              <strong>Arti:</strong> Toko / kedai
+            </div>
+            <div style="background:#fee2e2; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#991b1b; cursor:pointer;" onclick="playPinyin('zhè jiā shāngdiàn')" title="Klik dengar frasa">
+              🏬 Kata Satuan Tempat Usaha: <strong>这家商店</strong> (<em>zhè jiā shāngdiàn</em>) = Toko ini
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TEKS 1: MEMBELI CANGKIR DI TOKO (买杯子) ══ -->
+  <div>
+    <div class="section-title">💬 Teks 1: Di Toko Kelontong · 在一家小店 (Membeli Cangkir)</div>
+    
+    <!-- Ilustrasi Gambar Teks 1 dari Buku -->
+    <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:1rem; margin-bottom:1rem; text-align:center; box-shadow:var(--shadow);">
+      <img src="images/bab10-teks1.png" alt="Teks 1 Bab 10 - Membeli Cangkir" style="max-width:320px; width:100%; height:auto; border-radius:10px; border:1px solid #e2e8f0;" />
+      <div style="font-size:0.75rem; color:#64748b; margin-top:0.4rem; font-style:italic;">
+        📌 Ilustrasi Dialog Asli Buku Standar HSK 1 Bab 10 (Teks 1: 买杯子)
+      </div>
+    </div>
+
+    <div class="dialog-box">
+      <div class="dialog-header">
+        <div class="dialog-title">🛒 Teks 1: 王一雪 (Wang Yixue) dan 售货员 (Pelayan Toko) membeli cangkir</div>
+      </div>
+      <div class="dialog-body">
+
+        <!-- Line 1: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">(Wáng Yīxuě)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Qǐngwèn, yǒu bēizi ma?')">
+              <div class="bubble-hanzi">请问，有杯子吗？</div>
+              <div class="bubble-pinyin">Qǐng wèn, yǒu bēi zi ma?</div>
+              <div class="bubble-arti">Permisi, apakah ada cangkir/gelas?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 2: Shouhuoyuan -->
+        <div class="dialog-line reverse">
+          <div class="avatar av-shou" title="售货员 (Shòuhuòyuán)">售</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">售货员</span>
+              <span class="speaker-pinyin">(Shòuhuòyuán)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Yǒu, bēizi zài zhèbiān.')">
+              <div class="bubble-hanzi">有，杯子在这边。</div>
+              <div class="bubble-pinyin">Yǒu, bēi zi zài zhè biān.</div>
+              <div class="bubble-arti">Ada, cangkirnya ada di sebelah sini.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 3: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">(Wáng Yīxuě)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Duōshao qián yí gè?')">
+              <div class="bubble-hanzi">多少钱一个？</div>
+              <div class="bubble-pinyin">Duō shao qián yí gè?</div>
+              <div class="bubble-arti">Berapa harganya satu buah?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 4: Shouhuoyuan -->
+        <div class="dialog-line reverse">
+          <div class="avatar av-shou" title="售货员 (Shòuhuòyuán)">售</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">售货员</span>
+              <span class="speaker-pinyin">(Shòuhuòyuán)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Zhèxiē wǔ kuài qián yí gè, nàxiē shí kuài qián yí gè.')">
+              <div class="bubble-hanzi">这些五块钱一个，那些十块钱一个。</div>
+              <div class="bubble-pinyin">Zhè xiē wǔ kuài qián yí gè, nà xiē shí kuài qián yí gè.</div>
+              <div class="bubble-arti">Yang sebelah sini lima kuai (yuan) satu, yang di sana sepuluh kuai satu.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 5: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">(Wáng Yīxuě)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Wǒ mǎi zhè gè ba.')">
+              <div class="bubble-hanzi">我买这个吧。</div>
+              <div class="bubble-pinyin">Wǒ mǎi zhè ge ba.</div>
+              <div class="bubble-arti">Saya beli yang ini saja ya.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Kosakata Per Kata Teks 1 -->
+    <div class="sub-breakdown">
+      <div class="sub-title">📖 Arti Per Kata · 生词 (Teks 1)</div>
+      <div class="breakdown-grid">
+        <div class="word-card" onclick="playPinyin('bēizi')">
+          <div class="word-char">杯子</div>
+          <div class="word-pinyin">bēi zi</div>
+          <div class="word-arti">cangkir / gelas</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('shòuhuòyuán')">
+          <div class="word-char">售货员</div>
+          <div class="word-pinyin">shòu huò yuán</div>
+          <div class="word-arti">pramuniaga / kasir</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('zhèbiān')">
+          <div class="word-char">这边</div>
+          <div class="word-pinyin">zhè biān</div>
+          <div class="word-arti">sebelah sini</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('duōshao')">
+          <div class="word-char">多少</div>
+          <div class="word-pinyin">duō shao</div>
+          <div class="word-arti">berapa banyak</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('qián')">
+          <div class="word-char">钱</div>
+          <div class="word-pinyin">qián</div>
+          <div class="word-arti">uang / harga</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('kuài')">
+          <div class="word-char">块</div>
+          <div class="word-pinyin">kuài</div>
+          <div class="word-arti">kuai (satuan mata uang RMB)</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('zhèxiē')">
+          <div class="word-char">这些</div>
+          <div class="word-pinyin">zhè xiē</div>
+          <div class="word-arti">ini semua / yang ini</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('nàxiē')">
+          <div class="word-char">那些</div>
+          <div class="word-pinyin">nà xiē</div>
+          <div class="word-arti">itu semua / yang itu</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('mǎi')">
+          <div class="word-char">买</div>
+          <div class="word-pinyin">mǎi</div>
+          <div class="word-arti">membeli</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MATERI XIAOYU'S CLASSROOM: CARA MENYEBUTKAN NOMINAL UANG (钱数的表达) ══ -->
+  <div>
+    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (钱数的表达 · Menyebutkan Nominal Uang RMB)</div>
+    <div class="classroom-box" style="border-left: 5px solid #e06055;">
+      
+      <!-- Header Xiaoyu -->
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">语</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:#b91c1c;">1. 钱数的表达 Expression of Amount of Money</div>
+          <div class="classroom-desc">
+            中国的货币叫<strong>人民币 (RMB)</strong>。人民币的单位由大到小是 <strong>“元、角、分”</strong>，口语中也分别说 <strong>“块、毛、分”</strong>。表达顺序是：<strong>元/块 → 角/毛 → 分</strong>。<br>
+            <span style="font-size:0.8rem; color:#64748b; font-style:italic;">
+              (Mata uang Tiongkok disebut <em>Renminbi / RMB</em>. Urutan satuan dari besar ke kecil adalah: <strong>元 (yuán) → 角 (jiǎo) → 分 (fēn)</strong>, sedangkan dalam percakapan lisan sehari-hari lazim disebut: <strong>块 (kuài) → 毛 (máo) → 分 (fēn)</strong>).
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustrasi Asli Buku Teks -->
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.85rem; text-align:center;">
+        <img src="images/bab10-xiaoyu-money.jpg" alt="Xiaoyu's Classroom - Expression of Money" style="max-width:480px; width:100%; height:auto; border-radius:8px; border:1px solid #e2e8f0; box-shadow:0 3px 10px rgba(0,0,0,0.05);" />
+        <div style="font-size:0.75rem; color:#64748b; margin-top:0.35rem; font-style:italic;">
+          📌 Buku Teks HSK 1 Standar: Bagian 1 — 钱数的表达 (Membaca Angka &amp; Nominal Uang)
+        </div>
+      </div>
+
+      <!-- Panduan Membaca Nyaring (Read Aloud) -->
+      <div style="margin-top:0.3rem;">
+        <div style="font-size:0.9rem; font-weight:700; color:#b91c1c; display:flex; align-items:center; gap:0.4rem; margin-bottom:0.6rem;">
+          <span>🟥 大声朗读。Read aloud (Klik baris tabel untuk mendengarkan lafal audio):</span>
+        </div>
+
+        <!-- Tabel Perbandingan Bentuk Tulisan 1, Bentuk Tulisan 2 & Cara Baca -->
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; background:#ffffff; border-radius:12px; overflow:hidden; border:1.5px solid #fecaca; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+            <thead>
+              <tr style="background:#fed7aa; color:#7c2d12; font-size:0.85rem; font-weight:700; border-bottom:1.5px solid #fdba74;">
+                <th style="padding:0.7rem 0.8rem; text-align:center; width:22%;">写法 1<br><span style="font-size:0.72rem; font-weight:500;">(written form 1)</span></th>
+                <th style="padding:0.7rem 0.8rem; text-align:center; width:34%;">写法 2<br><span style="font-size:0.72rem; font-weight:500;">(written form 2)</span></th>
+                <th style="padding:0.7rem 0.8rem; text-align:left; width:44%;">读法<br><span style="font-size:0.72rem; font-weight:500;">(pronunciation)</span></th>
+              </tr>
+            </thead>
+            <tbody style="font-size:0.86rem;">
+              
+              <!-- Row 1: 0.02元 -->
+              <tr style="border-bottom:1px solid #fee2e2; cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('liǎng fēn')" title="Klik dengar pelafalan 0.02元">
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">0.02元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem; color:#1e293b;">两分</td>
+                <td style="padding:0.65rem 0.8rem; color:#b91c1c; font-weight:600;">
+                  <span style="font-size:0.95rem;">liǎng fēn</span>
+                  <div style="font-size:0.75rem; color:#64748b; font-weight:400;">2 fen (0.02 yuan)</div>
+                </td>
+              </tr>
+
+              <!-- Row 2: 0.2元 -->
+              <tr style="border-bottom:1px solid #fee2e2; cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('liǎng máo')" title="Klik dengar pelafalan 0.2元">
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">0.2元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem; color:#1e293b;">两毛</td>
+                <td style="padding:0.65rem 0.8rem; color:#b91c1c; font-weight:600;">
+                  <span style="font-size:0.95rem;">liǎng máo</span>
+                  <div style="font-size:0.75rem; color:#64748b; font-weight:400;">2 mao (0.2 yuan)</div>
+                </td>
+              </tr>
+
+              <!-- Row 3: 3元 -->
+              <tr style="border-bottom:1px solid #fee2e2; cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('sān kuài')" title="Klik dengar pelafalan 3元">
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">3元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem; color:#1e293b;">三块</td>
+                <td style="padding:0.65rem 0.8rem; color:#b91c1c; font-weight:600;">
+                  <span style="font-size:0.95rem;">sān kuài</span>
+                  <div style="font-size:0.75rem; color:#64748b; font-weight:400;">3 kuai (3 yuan)</div>
+                </td>
+              </tr>
+
+              <!-- Row 4: 3.2元 -->
+              <tr style="border-bottom:1px solid #fee2e2; cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('sān kuài èr')" title="Klik dengar pelafalan 3.2元">
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">3.2元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem; color:#1e293b;">三块二</td>
+                <td style="padding:0.65rem 0.8rem; color:#b91c1c; font-weight:600;">
+                  <span style="font-size:0.95rem;">sān kuài èr</span>
+                  <div style="font-size:0.75rem; color:#64748b; font-weight:400;">3 kuai 2 mao (kata mao boleh dihilangkan)</div>
+                </td>
+              </tr>
+
+              <!-- Row 5: 6.02元 -->
+              <tr style="border-bottom:1px solid #fee2e2; cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('liù kuài líng liǎng fēn')" title="Klik dengar pelafalan 6.02元">
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">6.02元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem; color:#1e293b;">六块零两分</td>
+                <td style="padding:0.65rem 0.8rem; color:#b91c1c; font-weight:600;">
+                  <span style="font-size:0.95rem;">liù kuài líng liǎng fēn</span>
+                  <div style="font-size:0.75rem; color:#64748b; font-weight:400;">6 kuai nol dua fen (ada angka 0 di posisi mao)</div>
+                </td>
+              </tr>
+
+              <!-- Row 6: 202.2元 -->
+              <tr style="cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('èr bǎi líng èr kuài liǎng máo')" title="Klik dengar pelafalan 202.2元">
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">202.2元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem; color:#1e293b;">二百零二块两毛</td>
+                <td style="padding:0.65rem 0.8rem; color:#b91c1c; font-weight:600;">
+                  <span style="font-size:0.95rem;">èrbǎi líng èr kuài liǎng máo</span>
+                  <div style="font-size:0.75rem; color:#64748b; font-weight:400;">202 kuai 2 mao (ratusan menggunakan èrbǎi, satuan 2 sebelum mao menggunakan liǎng)</div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Catatan Khusus Tata Bahasa Xiaoyu -->
+      <div style="background:#fff7ed; border:1px dashed #fdba74; border-radius:10px; padding:0.85rem 1rem; font-size:0.84rem; line-height:1.6; color:#7c2d12;">
+        <strong>💡 Kaidah Penting Penggunaan Angka 2 (二 èr vs 两 liǎng):</strong><br>
+        1. Untuk <strong>posisi ratusan (百 bǎi)</strong> biasanya memakai <strong>二 (èrbǎi)</strong>.<br>
+        2. Untuk nominal <strong>0.2元</strong> atau <strong>0.02元</strong> (sebelum kata satuan 毛 / 分), angka 2 selalu dibaca <strong>两 (liǎng máo / liǎng fēn)</strong>, bukan <em>èr</em>.<br>
+        3. Jika terdapat angka <strong>nol (0)</strong> di tengah desimal (seperti 6.02), wajib diucapkan kata <strong>零 (líng)</strong>.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ LATIHAN MENDENGARKAN (LISTENING) TEKS 2 ══ -->
+  <div>
+    <div class="section-title">🎧 Latihan Mendengarkan · 听力练习 (Teks 2)</div>
+    <div class="classroom-box" style="border-left: 5px solid #e06055;">
+      
+      <!-- Header Listening -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #e06055, #b83a30); color:#fff; font-size:1.05rem;">听</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:#b91c1c;">课文 2 Text 2 · 听力与理解</div>
+          <div class="classroom-desc">
+            📍 <strong>在菜市场，王一雪在买水果。</strong> (At the market, Wang Yixue was buying fruit / Di pasar sayur &amp; buah, Wang Yixue sedang membeli buah).<br>
+            🟥 <strong>听两遍对话，选择正确答案。</strong> Listen to the dialogue twice and choose the correct answer (Dengarkan dialog dua kali, lalu pilihlah jawaban yang tepat):
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustrasi Soal Asli Buku Teks -->
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.85rem; text-align:center;">
+        <img src="images/bab10-listening-teks2.png" alt="Listening Exercise Teks 2" style="max-width:520px; width:100%; height:auto; border-radius:8px; border:1px solid #e2e8f0; box-shadow:0 3px 10px rgba(0,0,0,0.05);" />
+        <div style="font-size:0.75rem; color:#64748b; margin-top:0.35rem; font-style:italic;">
+          📌 Soal Latihan Mendengarkan Buku Teks HSK 1 Bab 10 (课文 2 · 听力选择题)
+        </div>
+      </div>
+
+      <!-- Daftar Soal Pilihan Ganda -->
+      <div class="classroom-list" style="margin-top:0.3rem;">
+        
+        <!-- Soal 1 -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Zhèr de shuǐguǒ zhēn bù shǎo!')" title="Klik dengar kalimat soal 1">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Zhèr de shuǐ guǒ ( zhēn bù shǎo ).</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                （1）这儿的水果（ <strong>真不少</strong> ）。
+              </div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+              <strong>Arti:</strong> Buah-buahan di sini ( sungguh tidak sedikit / sangat banyak ).
+            </div>
+
+            <!-- Pilihan Jawaban A, B, C -->
+            <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>A. 很少</strong> <em>(hěn shǎo)</em> = sangat sedikit
+              </span>
+              <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('zhēn bù shǎo')">
+                <strong>B. 真不少</strong> <em>(zhēn bù shǎo)</em> = sungguh tidak sedikit ✓ (Jawaban Benar)
+              </span>
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>C. 真不多</strong> <em>(zhēn bù duō)</em> = benar-benar tidak banyak
+              </span>
+            </div>
+            <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
+              💡 <strong>Alasan:</strong> Wang Yixue membuka dialog dengan berkata: <em>"这儿的水果真不少！" (Zhèr de shuǐguǒ zhēn bù shǎo!)</em>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Píngguǒ sān kuài wǔ yì jīn.')" title="Klik dengar kalimat soal 2">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Píng guǒ ( sān kuài wǔ ) yì jīn.</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                （2）苹果（ <strong>三块五</strong> ）一斤。
+              </div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+              <strong>Arti:</strong> Apel ( tiga kuai lima / 3.5 yuan ) satu jin.
+            </div>
+
+            <!-- Pilihan Jawaban A, B, C -->
+            <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>A. 三块</strong> <em>(sān kuài)</em> = 3 kuai
+              </span>
+              <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('sān kuài wǔ')">
+                <strong>B. 三块五</strong> <em>(sān kuài wǔ)</em> = 3.5 kuai ✓ (Jawaban Benar)
+              </span>
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>C. 七块二</strong> <em>(qī kuài èr)</em> = 7.2 kuai (harga total 2 jin sebelum diskon)
+              </span>
+            </div>
+            <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
+              💡 <strong>Alasan:</strong> Pramuniaga menjelaskan harga satuan apel: <em>"苹果三块五一斤。" (Píngguǒ sān kuài wǔ yì jīn.)</em>.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TEKS 2: MEMBELI APEL DI TOKO BUAH (买水果) ══ -->
+  <div>
+    <div class="section-title">💬 Teks 2: Di Pasar Sayur &amp; Buah · 在菜市场 (Membeli Apel)</div>
+    
+    <!-- Ilustrasi Gambar Teks 2 dari Buku -->
+    <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:1rem; margin-bottom:1rem; text-align:center; box-shadow:var(--shadow);">
+      <img src="images/bab10-teks2.jpg" alt="Teks 2 Bab 10 - Membeli Buah di Pasar" style="max-width:320px; width:100%; height:auto; border-radius:10px; border:1px solid #e2e8f0;" />
+      <div style="font-size:0.75rem; color:#64748b; margin-top:0.4rem; font-style:italic;">
+        📌 Ilustrasi Dialog Asli Buku Standar HSK 1 Bab 10 (Teks 2: 在菜市场，王一雪在买水果)
+      </div>
+    </div>
+
+    <div class="dialog-box">
+      <div class="dialog-header">
+        <div class="dialog-title">🍎 Teks 2: 王一雪 (Wang Yixue) membeli apel di pasar sayur &amp; buah (在菜市场)</div>
+      </div>
+      <div class="dialog-body">
+
+        <!-- Line 1: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">(Wáng Yīxuě)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Zhèr de shuǐguǒ zhēn bù shǎo!')">
+              <div class="bubble-hanzi">这儿的水果真不少！</div>
+              <div class="bubble-pinyin">Zhèr de shuǐ guǒ zhēn bù shǎo!</div>
+              <div class="bubble-arti">Buah-buahan di sini sungguh tidak sedikit (banyak sekali)!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 2: Shouhuoyuan -->
+        <div class="dialog-line reverse">
+          <div class="avatar av-shou" title="售货员 (Shòuhuòyuán)">售</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">售货员</span>
+              <span class="speaker-pinyin">(Shòuhuòyuán)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Nín xiǎng mǎi shénme?')">
+              <div class="bubble-hanzi">您想买什么？</div>
+              <div class="bubble-pinyin">Nín xiǎng mǎi shén me?</div>
+              <div class="bubble-arti">Anda ingin membeli apa?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 3: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">(Wáng Yīxuě)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Wǒ xiǎng mǎi liǎng jīn píngguǒ.')">
+              <div class="bubble-hanzi">我想买两斤苹果。</div>
+              <div class="bubble-pinyin">Wǒ xiǎng mǎi liǎng jīn píng guǒ.</div>
+              <div class="bubble-arti">Saya ingin membeli dua jin (1 kg) apel.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 4: Shouhuoyuan -->
+        <div class="dialog-line reverse">
+          <div class="avatar av-shou" title="售货员 (Shòuhuòyuán)">售</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">售货员</span>
+              <span class="speaker-pinyin">(Shòuhuòyuán)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Píngguǒ sān kuài wǔ yì jīn. Zhèxiē qī kuài èr, qī kuài qián ba.')">
+              <div class="bubble-hanzi">苹果三块五一斤。这些七块二，七块钱吧。</div>
+              <div class="bubble-pinyin">Píng guǒ sān kuài wǔ yì jīn. Zhè xiē qī kuài èr, qī kuài qián ba.</div>
+              <div class="bubble-arti">Apel tiga kuai lima (3.5 yuan) satu jin. Ini semuanya tujuh kuai dua (7.2 yuan), jadikan tujuh kuai saja ya.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 5: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">(Wáng Yīxuě)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Hǎo de, zhèr de píngguǒ zhēn piányi!')">
+              <div class="bubble-hanzi">好的，这儿的苹果真便宜！</div>
+              <div class="bubble-pinyin">Hǎo de, zhèr de píng guǒ zhēn pián yi!</div>
+              <div class="bubble-arti">Baiklah, apel di sini sungguh sangat murah!</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Kosakata Per Kata Teks 2 -->
+    <div class="sub-breakdown">
+      <div class="sub-title">📖 Arti Per Kata · 生词 (Teks 2)</div>
+      <div class="breakdown-grid">
+        <div class="word-card" onclick="playPinyin('zhèr')">
+          <div class="word-char">这儿</div>
+          <div class="word-pinyin">zhèr</div>
+          <div class="word-arti">di sini</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('shuǐguǒ')">
+          <div class="word-char">水果</div>
+          <div class="word-pinyin">shuǐ guǒ</div>
+          <div class="word-arti">buah-buahan</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('zhēn')">
+          <div class="word-char">真</div>
+          <div class="word-pinyin">zhēn</div>
+          <div class="word-arti">sungguh / benar-benar</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('shǎo')">
+          <div class="word-char">少</div>
+          <div class="word-pinyin">shǎo</div>
+          <div class="word-arti">sedikit</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('jīn')">
+          <div class="word-char">斤</div>
+          <div class="word-pinyin">jīn</div>
+          <div class="word-arti">jin (satuan berat Tiongkok = 500 gram)</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('píngguǒ')">
+          <div class="word-char">苹果</div>
+          <div class="word-pinyin">píng guǒ</div>
+          <div class="word-arti">apel</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('piányi')">
+          <div class="word-char">便宜</div>
+          <div class="word-pinyin">pián yi</div>
+          <div class="word-arti">murah / terjangkau</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MATERI XIAOYU'S CLASSROOM: KALIMAT PREDIKAT KATA SIFAT (形容词谓语句) ══ -->
+  <div>
+    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (形容词谓语句 · Adjectival-Predicate Sentences)</div>
+    <div class="classroom-box" style="border-left: 5px solid #e06055;">
+      
+      <!-- Header Xiaoyu -->
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">语</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:#b91c1c;">2. 形容词谓语句 Adjectival-Predicate Sentences</div>
+          <div class="classroom-desc">
+            形容词可以直接作谓语，前面可用<strong>程度副词 (Adverb of Degree: 很, 真, 非常)</strong> 或<strong>否定副词 (Negative Adverb: 不)</strong>。<br>
+            <span style="font-size:0.8rem; color:#64748b; font-style:italic;">
+              (Kata sifat dapat berfungsi langsung sebagai predikat tanpa kata kerja 是 shì. Di depannya dapat diletakkan kata keterangan tingkat kepengikatan/derajat seperti <strong>很, 真</strong> atau kata negasi seperti <strong>不</strong>).
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustrasi Asli Buku Teks -->
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.85rem; text-align:center;">
+        <img src="images/bab10-xiaoyu-adjectival.png" alt="Xiaoyu's Classroom - Adjectival-Predicate Sentences" style="max-width:520px; width:100%; height:auto; border-radius:8px; border:1px solid #e2e8f0; box-shadow:0 3px 10px rgba(0,0,0,0.05);" />
+        <div style="font-size:0.75rem; color:#64748b; margin-top:0.35rem; font-style:italic;">
+          📌 Buku Teks HSK 1 Standar: Bagian 2 — 形容词谓语句 (Kalimat Predikat Kata Sifat)
+        </div>
+      </div>
+
+      <!-- Latihan Membaca Nyaring (大声朗读 · Read Aloud) -->
+      <div style="margin-top:0.3rem;">
+        <div style="font-size:0.9rem; font-weight:700; color:#b91c1c; display:flex; align-items:center; gap:0.4rem; margin-bottom:0.6rem;">
+          <span>🟥 大声朗读。Read aloud (Klik kartu contoh kalimat untuk mendengarkan lafal audio):</span>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.75rem;">
+          
+          <!-- Contoh 1: 这儿的水果真不少！ -->
+          <div class="classroom-item" style="border-left:4px solid #e06055; cursor:pointer;" onclick="playPinyin('Zhèr de shuǐguǒ zhēn bù shǎo!')" title="Klik dengar Contoh 1">
+            <div class="item-number" style="background:#e06055;">1</div>
+            <div class="item-content">
+              <div class="bubble-pinyin" style="font-size:0.88rem; font-weight:600; color:#e06055;">Zhèr de shuǐ guǒ zhēn bù shǎo!</div>
+              <div class="bubble-hanzi" style="font-size:1.25rem; font-weight:700; color:#1e293b;">
+                （1）这儿的水果真不少！
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Buah-buahan di sini sungguh tidak sedikit (sangat banyak)!
+              </div>
+              <div style="font-size:0.78rem; color:#64748b; margin-top:0.35rem; background:#fff7ed; padding:0.35rem 0.65rem; border-radius:6px; border:1px solid #fed7aa;">
+                🔍 <strong>Struktur:</strong> 这儿的水果 (Subjek) + <strong>真 (Adv tingkat)</strong> + 不少 (Predikat Adjektiva).
+              </div>
+            </div>
+          </div>
+
+          <!-- Contoh 2: 我的房间不大。 -->
+          <div class="classroom-item" style="border-left:4px solid #3b82f6; cursor:pointer;" onclick="playPinyin('Wǒ de fángjiān bú dà.')" title="Klik dengar Contoh 2">
+            <div class="item-number" style="background:#3b82f6;">2</div>
+            <div class="item-content">
+              <div class="bubble-pinyin" style="font-size:0.88rem; font-weight:600; color:#2563eb;">Wǒ de fáng jiān bú dà.</div>
+              <div class="bubble-hanzi" style="font-size:1.25rem; font-weight:700; color:#1e293b;">
+                （2）我的房间不大。
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Kamar saya tidak besar.
+              </div>
+              <div style="font-size:0.78rem; color:#64748b; margin-top:0.35rem; background:#eff6ff; padding:0.35rem 0.65rem; border-radius:6px; border:1px solid #bfdbfe;">
+                🔍 <strong>Struktur:</strong> 我的房间 (Subjek) + <strong>不 (Adv negasi)</strong> + 大 (Predikat Adjektiva). <em>*Perhatikan perubahan nada "bú dà".</em>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contoh 3: 那个苹果好吃。 -->
+          <div class="classroom-item" style="border-left:4px solid #10b981; cursor:pointer;" onclick="playPinyin('Nà ge píngguǒ hǎochī.')" title="Klik dengar Contoh 3">
+            <div class="item-number" style="background:#10b981;">3</div>
+            <div class="item-content">
+              <div class="bubble-pinyin" style="font-size:0.88rem; font-weight:600; color:#059669;">Nà ge píng guǒ hǎo chī.</div>
+              <div class="bubble-hanzi" style="font-size:1.25rem; font-weight:700; color:#1e293b;">
+                （3）那个苹果好吃。
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Apel yang itu enak (lezat).
+              </div>
+              <div style="font-size:0.78rem; color:#64748b; margin-top:0.35rem; background:#ecfdf5; padding:0.35rem 0.65rem; border-radius:6px; border:1px solid #a7f3d0;">
+                🔍 <strong>Struktur:</strong> 那个苹果 (Subjek) + <strong>好吃 (Predikat Adjektiva langsung)</strong>.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Kaidah Larangan "是 shì" -->
+      <div style="background:#fef2f2; border:1.5px dashed #fca5a5; border-radius:10px; padding:0.85rem 1rem; font-size:0.84rem; line-height:1.6; color:#991b1b; margin-top:0.2rem;">
+        <strong>⚠️ PANTANGAN TATA BAHASA MANDARIN:</strong><br>
+        Dalam bahasa Mandarin, <strong>DILARANG</strong> menyisipkan kata penghubung <strong>是 (shì)</strong> di antara Subjek dan Kata Sifat jika tidak ada penekanan khusus!<br>
+        ❌ <em>Salah:</em> 那个苹果 <strong>是</strong> 好吃。<br>
+        ✅ <em>Benar:</em> 那个苹果 <strong>好吃</strong> / 那个苹果 <strong>很好吃</strong>。
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ MATERI XIAOYU'S CLASSROOM: SATUAN BERAT JIN (斤) ══ -->
+  <div>
+    <div class="section-title">⚖️ Xiaoyu's Classroom · 小语讲堂 (Mengenal Satuan Berat 斤 Jīn)</div>
+    <div class="classroom-box" style="border-left: 5px solid #d97706;">
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">语</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fef3c7; color:#92400e;">Konversi Satuan Tradisional Tiongkok</div>
+          <div class="classroom-desc">
+            Di Tiongkok, saat berbelanja di pasar tradisional atau toko buah, satuan berat yang paling umum dipakai adalah <strong>斤 (jīn)</strong>:
+          </div>
+        </div>
+      </div>
+      
+      <div class="classroom-list">
+        <div class="classroom-item">
+          <div class="item-number" style="background:#d97706;">1</div>
+          <div class="item-content">
+            <div style="font-weight:700; color:var(--text); font-size:0.95rem;">1 斤 (yì jīn) = 500 gram (setengah kilogram)</div>
+            <div style="font-size:0.85rem; color:#475569; margin-top:0.25rem;">
+              Oleh karena itu, jika Anda ingin membeli 1 kilogram apel, gunakan frasa: <strong>两斤苹果 (liǎng jīn píngguǒ)</strong>.
+            </div>
+          </div>
+        </div>
+
+        <div class="classroom-item">
+          <div class="item-number" style="background:#d97706;">2</div>
+          <div class="item-content">
+            <div style="font-weight:700; color:var(--text); font-size:0.95rem;">Menyebutkan Harga Pecahan: 三块五 (sān kuài wǔ)</div>
+            <div style="font-size:0.85rem; color:#475569; margin-top:0.25rem;">
+              Dalam percakapan lisan, angka di belakang koma (satuan <em>máo / jiǎo</em>) sering disingkat tanpa kata <em>máo</em>:<br>
+              • <strong>三块五 (sān kuài wǔ)</strong> = ¥ 3.50 (tiga yuan lima puluh fen)<br>
+              • <strong>七块二 (qī kuài èr)</strong> = ¥ 7.20 (tujuh yuan dua puluh fen)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ LATIHAN MENDENGARKAN (LISTENING) TEKS 3 ══ -->
+  <div>
+    <div class="section-title">🎧 Latihan Mendengarkan · 听力练习 (Teks 3)</div>
+    <div class="classroom-box" style="border-left: 5px solid #e06055;">
+      
+      <!-- Header Listening -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #e06055, #b83a30); color:#fff; font-size:1.05rem;">听</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:#b91c1c;">课文 3 Text 3 · 听力与理解</div>
+          <div class="classroom-desc">
+            📍 <strong>在商场里，刘明和王一雪在给孩子买衣服。</strong> (In the shopping mall, Liu Ming and Wang Yixue were shopping for clothes for their children / Di pusat perbelanjaan, Liu Ming dan Wang Yixue sedang membelikan pakaian untuk anak-anak).<br>
+            🟥 <strong>听两遍对话，选择正确答案。</strong> Listen to the dialogue twice and choose the correct answer (Dengarkan dialog dua kali, lalu pilihlah jawaban yang tepat):
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustrasi Soal Asli Buku Teks -->
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.85rem; text-align:center;">
+        <img src="images/bab10-listening-teks3.png" alt="Listening Exercise Teks 3" style="max-width:520px; width:100%; height:auto; border-radius:8px; border:1px solid #e2e8f0; box-shadow:0 3px 10px rgba(0,0,0,0.05);" />
+        <div style="font-size:0.75rem; color:#64748b; margin-top:0.35rem; font-style:italic;">
+          📌 Soal Latihan Mendengarkan Buku Teks HSK 1 Bab 10 (课文 3 · 听力选择题)
+        </div>
+      </div>
+
+      <!-- Daftar Soal Pilihan Ganda -->
+      <div class="classroom-list" style="margin-top:0.3rem;">
+        
+        <!-- Soal 1 -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Zhè jiàn yīfu yìbǎi yuán.')" title="Klik dengar kalimat soal 1">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Zhè jiàn yī fu ( yì bǎi yuán ).</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                （1）这件衣服（ <strong>一百元</strong> ）。
+              </div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+              <strong>Arti:</strong> Baju ini seharga ( seratus yuan ).
+            </div>
+
+            <!-- Pilihan Jawaban A, B, C -->
+            <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>A. 二十元</strong> <em>(èrshí yuán)</em> = 20 yuan
+              </span>
+              <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('yì bǎi yuán')">
+                <strong>B. 一百元</strong> <em>(yìbǎi yuán)</em> = 100 yuan ✓ (Jawaban Benar)
+              </span>
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>C. 一百一十元</strong> <em>(yìbǎi yīshí yuán)</em> = 110 yuan
+              </span>
+            </div>
+            <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
+              💡 <strong>Alasan:</strong> Wang Yixue menyebutkan harga baju dalam dialog: <em>"这件一百元，怎么样？" (Zhè jiàn yìbǎi yuán, zěnmeyàng?)</em>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Zhè jiàn yīfu bú guì.')" title="Klik dengar kalimat soal 2">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Zhè jiàn yī fu ( bú guì ).</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                （2）这件衣服（ <strong>不贵</strong> ）。
+              </div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+              <strong>Arti:</strong> Baju ini harganya ( tidak mahal ).
+            </div>
+
+            <!-- Pilihan Jawaban A, B, C -->
+            <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>A. 太贵</strong> <em>(tài guì)</em> = terlalu mahal
+              </span>
+              <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
+                <strong>B. 很贵</strong> <em>(hěn guì)</em> = sangat mahal
+              </span>
+              <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('bú guì')">
+                <strong>C. 不贵</strong> <em>(bú guì)</em> = tidak mahal ✓ (Jawaban Benar)
+              </span>
+            </div>
+            <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
+              💡 <strong>Alasan:</strong> Liu Ming menjawab saat melihat baju tersebut: <em>"好看，也不贵。" (Hǎokàn, yě bú guì.)</em>.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TEKS 3: MEMBELI BAJU DI TOKO PAKAIAN (在商店买衣服) ══ -->
+  <div>
+    <div class="section-title">💬 Teks 3: Di Pusat Perbelanjaan · 在商场 (Membeli Pakaian Anak)</div>
+    
+    <!-- Ilustrasi Gambar Teks 3 dari Buku -->
+    <div style="background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:1rem; margin-bottom:1rem; text-align:center; box-shadow:var(--shadow);">
+      <img src="images/bab10-teks3.png" alt="Teks 3 Bab 10 - Membeli Pakaian Anak" style="max-width:320px; width:100%; height:auto; border-radius:10px; border:1px solid #e2e8f0;" />
+      <div style="font-size:0.75rem; color:#64748b; margin-top:0.4rem; font-style:italic;">
+        📌 Ilustrasi Dialog Asli Buku Standar HSK 1 Bab 10 (Teks 3: 在商场里，刘明和王一雪在给孩子买衣服)
+      </div>
+    </div>
+
+    <div class="dialog-box">
+      <div class="dialog-header">
+        <div class="dialog-title">👗 Teks 3: 王一雪 (Wang Yixue) dan 刘明 (Liu Ming) membelikan pakaian untuk 小雪 dan 小明</div>
+      </div>
+      <div class="dialog-body">
+
+        <!-- Line 1: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">(Wáng Yīxuě)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Zhè jiā shāngdiàn yīfu zhēn duō! Zhè jiàn yìbǎi yuán, zěnmeyàng?')">
+              <div class="bubble-hanzi">这家商店衣服真多！这件一百元，怎么样？</div>
+              <div class="bubble-pinyin">Zhè jiā shāng diàn yī fu zhēn duō! Zhè jiàn yì bǎi yuán, zěn me yàng?</div>
+              <div class="bubble-arti">Toko ini pakaiannya sungguh banyak! Yang ini seratus yuan, bagaimana menurutmu?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 2: Liu Ming -->
+        <div class="dialog-line reverse">
+          <div class="avatar av-liu" title="刘明 (Liú Míng)">刘</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">刘明</span>
+              <span class="speaker-pinyin">(Liú Míng)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Hǎokàn, yě bú guì.')">
+              <div class="bubble-hanzi">好看，也不贵。</div>
+              <div class="bubble-pinyin">Hǎo kàn, yě bú guì.</div>
+              <div class="bubble-arti">Bagus dilihat, dan juga tidak mahal.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 3: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">(Wáng Yīxuě)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Xiǎoxuě néng chuān, mǎi yí jiàn ba.')">
+              <div class="bubble-hanzi">小雪能穿，买一件吧。</div>
+              <div class="bubble-pinyin">Xiǎo xuě néng chuān, mǎi yí jiàn ba.</div>
+              <div class="bubble-arti">Xiaoxue bisa memakainya, beli sehelai saja ya.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 4: Liu Ming -->
+        <div class="dialog-line reverse">
+          <div class="avatar av-liu" title="刘明 (Liú Míng)">刘</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">刘明</span>
+              <span class="speaker-pinyin">(Liú Míng)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Hǎo de. Xiǎomíng néng chuān ma?')">
+              <div class="bubble-hanzi">好的。小明能穿吗？</div>
+              <div class="bubble-pinyin">Hǎo de. Xiǎo míng néng chuān ma?</div>
+              <div class="bubble-arti">Baiklah. Apakah Xiaoming bisa memakainya?</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 5: Wang Yixue -->
+        <div class="dialog-line">
+          <div class="avatar av-wang" title="王一雪 (Wáng Yīxuě)">王</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">王一雪</span>
+              <span class="speaker-pinyin">(Wáng Yīxuě)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Bù néng. Zhèxiē shì nǚ háizi chuān de yīfu, nán háizi de yīfu zài nàr.')">
+              <div class="bubble-hanzi">不能。这些是女孩子穿的衣服，男孩子的衣服在那儿。</div>
+              <div class="bubble-pinyin">Bù néng. Zhè xiē shì nǚ hái zi chuān de yī fu, nán hái zi de yī fu zài nàr.</div>
+              <div class="bubble-arti">Tidak bisa. Ini pakaian yang dipakai anak perempuan, pakaian anak laki-laki ada di sana.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line 6: Liu Ming -->
+        <div class="dialog-line reverse">
+          <div class="avatar av-liu" title="刘明 (Liú Míng)">刘</div>
+          <div class="bubble-wrap">
+            <span class="speaker-name">
+              <span class="speaker-hanzi">刘明</span>
+              <span class="speaker-pinyin">(Liú Míng)</span>
+            </span>
+            <div class="bubble" onclick="playPinyin('Hǎo de.')">
+              <div class="bubble-hanzi">好的。</div>
+              <div class="bubble-pinyin">Hǎo de.</div>
+              <div class="bubble-arti">Baiklah.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Kosakata Per Kata Teks 3 -->
+    <div class="sub-breakdown">
+      <div class="sub-title">📖 Arti Per Kata · 生词 (Teks 3)</div>
+      <div class="breakdown-grid">
+        <div class="word-card" onclick="playPinyin('shāngdiàn')">
+          <div class="word-char">商店</div>
+          <div class="word-pinyin">shāng diàn</div>
+          <div class="word-arti">toko / store</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('yīfu')">
+          <div class="word-char">衣服</div>
+          <div class="word-pinyin">yī fu</div>
+          <div class="word-arti">pakaian / baju</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('duō')">
+          <div class="word-char">多</div>
+          <div class="word-pinyin">duō</div>
+          <div class="word-arti">banyak</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('jiàn')">
+          <div class="word-char">件</div>
+          <div class="word-pinyin">jiàn</div>
+          <div class="word-arti">helai (satuan baju)</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('bǎi')">
+          <div class="word-char">百</div>
+          <div class="word-pinyin">bǎi</div>
+          <div class="word-arti">ratus / seratus</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('yuán')">
+          <div class="word-char">元</div>
+          <div class="word-pinyin">yuán</div>
+          <div class="word-arti">yuan (mata uang resmi)</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('zěnmeyàng')">
+          <div class="word-char">怎么样</div>
+          <div class="word-pinyin">zěn me yàng</div>
+          <div class="word-arti">bagaimana / bagaimana menurutmu</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('hǎokàn')">
+          <div class="word-char">好看</div>
+          <div class="word-pinyin">hǎo kàn</div>
+          <div class="word-arti">bagus dilihat / cantik</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('guì')">
+          <div class="word-char">贵</div>
+          <div class="word-pinyin">guì</div>
+          <div class="word-arti">mahal</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('chuān')">
+          <div class="word-char">穿</div>
+          <div class="word-pinyin">chuān</div>
+          <div class="word-arti">memakai / mengenakan</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('néng')">
+          <div class="word-char">能</div>
+          <div class="word-pinyin">néng</div>
+          <div class="word-arti">bisa / dapat</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('nǚ')">
+          <div class="word-char">女</div>
+          <div class="word-pinyin">nǚ</div>
+          <div class="word-arti">wanita / perempuan</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('nán')">
+          <div class="word-char">男</div>
+          <div class="word-pinyin">nán</div>
+          <div class="word-arti">pria / laki-laki</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('háizi')">
+          <div class="word-char">孩子</div>
+          <div class="word-pinyin">hái zi</div>
+          <div class="word-arti">anak-anak</div>
+        </div>
+        <div class="word-card" onclick="playPinyin('nàr')">
+          <div class="word-char">那儿</div>
+          <div class="word-pinyin">nàr</div>
+          <div class="word-arti">di sana</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TANYA JAWAB PEMAHAMAN TEKS 3 (根据课文内容回答问题) ══ -->
+  <div>
+    <div class="section-title">❓ Pertanyaan Pemahaman · 根据课文内容回答问题 (Teks 3)</div>
+    <div class="classroom-box" style="border-left: 5px solid #e06055;">
+      
+      <!-- Header Q&A -->
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">问</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:#b91c1c;">Latihan Mandiri · Pemahaman Isi Percakapan</div>
+          <div class="classroom-desc">
+            🟥 <strong>分角色朗读对话。</strong> Role-play the dialogue (Bacalah percakapan di atas dengan memainkan peran bersama teman).<br>
+            🟥 <strong>根据课文内容回答问题。</strong> Answer the questions according to the text (Jawablah pertanyaan berikut sesuai isi Teks 3):
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustrasi Asli Buku Teks -->
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.85rem; text-align:center;">
+        <img src="images/bab10-qa-teks3.png" alt="Question and Answer Teks 3" style="max-width:520px; width:100%; height:auto; border-radius:8px; border:1px solid #e2e8f0; box-shadow:0 3px 10px rgba(0,0,0,0.05);" />
+        <div style="font-size:0.75rem; color:#64748b; margin-top:0.35rem; font-style:italic;">
+          📌 Buku Teks HSK 1 Bab 10: Tanya Jawab Pemahaman Teks 3 (买衣服)
+        </div>
+      </div>
+
+      <!-- Daftar Soal & Kunci Jawaban Interaktif -->
+      <div class="classroom-list" style="margin-top:0.3rem;">
+        
+        <!-- Pertanyaan 1 -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Nà jiàn yīfu Wáng Yīxuě xiǎng mǎi jǐ jiàn?')" title="Klik dengar pertanyaan 1">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Nà jiàn yī fu Wáng Yī xuě xiǎng mǎi jǐ jiàn?</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                （1）那件衣服王一雪想买几件？
+              </div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+              <strong>Arti:</strong> Berapa helai baju yang ingin dibeli oleh Wang Yixue? <em>(How many pieces of that clothing does Wang Yixue want to buy?)</em>
+            </div>
+
+            <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Tā xiǎng mǎi yí jiàn.')" title="Klik dengar jawaban 1">
+              <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                ✅ <strong>参考答案 (Kunci Jawaban):</strong> 她想买一件。 (Tā xiǎng mǎi yí jiàn.) / 买一件。
+              </div>
+              <div style="font-size:0.8rem; color:#15803d; margin-top:0.2rem;">
+                <strong>Terjemahan:</strong> Dia ingin membeli satu helai.
+              </div>
+              <div style="font-size:0.76rem; color:#64748b; margin-top:0.3rem;">
+                💡 <strong>Kutipan Teks:</strong> Wang Yixue berkata: <em>"小雪能穿，买一件吧。" (Xiaoxue bisa memakainya, beli sehelai saja ya).</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pertanyaan 2 -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Nán háizi de yīfu zài nǎr?')" title="Klik dengar pertanyaan 2">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Nán hái zi de yī fu zài nǎr?</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                （2）男孩子的衣服在哪儿？
+              </div>
+            </div>
+            <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+              <strong>Arti:</strong> Di manakah pakaian anak laki-laki berada? <em>(Where is the boys' section?)</em>
+            </div>
+
+            <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Nán háizi de yīfu zài nàr.')" title="Klik dengar jawaban 2">
+              <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                ✅ <strong>参考答案 (Kunci Jawaban):</strong> 男孩子的衣服在那儿。 (Nán háizi de yīfu zài nàr.) / 在那儿。
+              </div>
+              <div style="font-size:0.8rem; color:#15803d; margin-top:0.2rem;">
+                <strong>Terjemahan:</strong> Pakaian anak laki-laki ada di sebelah sana.
+              </div>
+              <div style="font-size:0.76rem; color:#64748b; margin-top:0.3rem;">
+                💡 <strong>Kutipan Teks:</strong> Wang Yixue menjelaskan: <em>"这些是女孩子穿的衣服，男孩子的衣服在那儿。" (Ini pakaian yang dipakai anak perempuan, pakaian anak laki-laki ada di sebelah sana).</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MATERI XIAOYU'S CLASSROOM: KATA TANYA 怎么样 (INTERROGATIVE PRONOUN 怎么样) ══ -->
+  <div>
+    <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (疑问代词 “怎么样” · Interrogative Pronoun “怎么样”)</div>
+    <div class="classroom-box" style="border-left: 5px solid #e06055;">
+      
+      <!-- Header Xiaoyu -->
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">语</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:#b91c1c;">3. 疑问代词 “怎么样” Interrogative Pronoun “怎么样”</div>
+          <div class="classroom-desc">
+            疑问代词<strong>“怎么样” (zěnmeyàng)</strong> 用于征求意见、询问状况等。基本结构：<strong>……怎么样？</strong><br>
+            <span style="font-size:0.8rem; color:#64748b; font-style:italic;">
+              (Kata ganti tanya <strong>“怎么样” (zěnmeyàng)</strong> digunakan untuk meminta pendapat, saran, atau menanyakan keadaan suatu benda/situasi. Struktur dasar: <strong>[Topik / Hal yang Ditanyakan] + 怎么样？</strong>).
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustrasi Asli Buku Teks -->
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.85rem; text-align:center;">
+        <img src="images/bab10-xiaoyu-zenmeyang.png" alt="Xiaoyu's Classroom - Interrogative Pronoun Zenmeyang" style="max-width:520px; width:100%; height:auto; border-radius:8px; border:1px solid #e2e8f0; box-shadow:0 3px 10px rgba(0,0,0,0.05);" />
+        <div style="font-size:0.75rem; color:#64748b; margin-top:0.35rem; font-style:italic;">
+          📌 Buku Teks HSK 1 Standar: Bagian 3 — 疑问代词 “怎么样” (Menanyakan Pendapat / Kondisi)
+        </div>
+      </div>
+
+      <!-- Latihan Membaca Dialog (朗读对话 · Read the dialogues aloud) -->
+      <div style="margin-top:0.3rem;">
+        <div style="font-size:0.9rem; font-weight:700; color:#b91c1c; display:flex; align-items:center; gap:0.4rem; margin-bottom:0.6rem;">
+          <span>🟥 朗读对话。Read the dialogues aloud (Klik masing-masing baris untuk mendengar lafal audio):</span>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:0.85rem;">
+          
+          <!-- Dialog 1: 这个杯子怎么样？ -->
+          <div class="classroom-item" style="border-left:4px solid #e06055; flex-direction:column; gap:0.5rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="item-number" style="background:#e06055; margin-top:0;">1</span>
+              <span style="font-weight:700; font-size:0.88rem; color:#b91c1c;">Menanyakan Pendapat tentang Cangkir:</span>
+            </div>
+            
+            <div style="background:#fff; border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.85rem; cursor:pointer;" onclick="playPinyin('Zhè gè bēizi zěnmeyàng?')" title="Klik dengar A">
+              <span style="font-weight:700; color:#e06055; margin-right:0.35rem;">A:</span>
+              <span class="bubble-hanzi" style="font-size:1.1rem; font-weight:700;">这个杯子怎么样？</span>
+              <div class="bubble-pinyin" style="font-size:0.82rem; font-weight:600; color:#e06055;">Zhè gè bēi zi zěn me yàng?</div>
+              <div class="bubble-arti" style="font-size:0.78rem; color:#64748b;">Bagaimana menurutmu tentang cangkir ini?</div>
+            </div>
+
+            <div style="background:#fff; border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.85rem; cursor:pointer;" onclick="playPinyin('Wǒ hěn xǐhuan, yě bù guì.')" title="Klik dengar B">
+              <span style="font-weight:700; color:#059669; margin-right:0.35rem;">B:</span>
+              <span class="bubble-hanzi" style="font-size:1.1rem; font-weight:700;">我很喜欢，也不贵。</span>
+              <div class="bubble-pinyin" style="font-size:0.82rem; font-weight:600; color:#059669;">Wǒ hěn xǐ huan, yě bú guì.</div>
+              <div class="bubble-arti" style="font-size:0.78rem; color:#64748b;">Saya sangat suka, dan juga tidak mahal.</div>
+            </div>
+          </div>
+
+          <!-- Dialog 2: 这本书怎么样？ -->
+          <div class="classroom-item" style="border-left:4px solid #3b82f6; flex-direction:column; gap:0.5rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="item-number" style="background:#3b82f6; margin-top:0;">2</span>
+              <span style="font-weight:700; font-size:0.88rem; color:#1d4ed8;">Menanyakan Pendapat tentang Buku:</span>
+            </div>
+            
+            <div style="background:#fff; border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.85rem; cursor:pointer;" onclick="playPinyin('Zhè běn shū zěnmeyàng?')" title="Klik dengar A">
+              <span style="font-weight:700; color:#2563eb; margin-right:0.35rem;">A:</span>
+              <span class="bubble-hanzi" style="font-size:1.1rem; font-weight:700;">这本书怎么样？</span>
+              <div class="bubble-pinyin" style="font-size:0.82rem; font-weight:600; color:#2563eb;">Zhè běn shū zěn me yàng?</div>
+              <div class="bubble-arti" style="font-size:0.78rem; color:#64748b;">Bagaimana menurutmu tentang buku ini?</div>
+            </div>
+
+            <div style="background:#fff; border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.85rem; cursor:pointer;" onclick="playPinyin('Hěn hǎokàn.')" title="Klik dengar B">
+              <span style="font-weight:700; color:#059669; margin-right:0.35rem;">B:</span>
+              <span class="bubble-hanzi" style="font-size:1.1rem; font-weight:700;">很好看。</span>
+              <div class="bubble-pinyin" style="font-size:0.82rem; font-weight:600; color:#059669;">Hěn hǎo kàn.</div>
+              <div class="bubble-arti" style="font-size:0.78rem; color:#64748b;">Sangat bagus / sangat menarik dibaca.</div>
+            </div>
+          </div>
+
+          <!-- Dialog 3: 这个菜怎么样？ -->
+          <div class="classroom-item" style="border-left:4px solid #10b981; flex-direction:column; gap:0.5rem;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="item-number" style="background:#10b981; margin-top:0;">3</span>
+              <span style="font-weight:700; font-size:0.88rem; color:#047857;">Menanyakan Rasa Masakan / Hidangan:</span>
+            </div>
+            
+            <div style="background:#fff; border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.85rem; cursor:pointer;" onclick="playPinyin('Zhè gè cài zěnmeyàng?')" title="Klik dengar A">
+              <span style="font-weight:700; color:#059669; margin-right:0.35rem;">A:</span>
+              <span class="bubble-hanzi" style="font-size:1.1rem; font-weight:700;">这个菜怎么样？</span>
+              <div class="bubble-pinyin" style="font-size:0.82rem; font-weight:600; color:#059669;">Zhè gè cài zěn me yàng?</div>
+              <div class="bubble-arti" style="font-size:0.78rem; color:#64748b;">Bagaimana rasa hidangan/masakan ini?</div>
+            </div>
+
+            <div style="background:#fff; border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.85rem; cursor:pointer;" onclick="playPinyin('Zhè gè cài bú tài hǎochī, wǒ bù xǐhuan.')" title="Klik dengar B">
+              <span style="font-weight:700; color:#dc2626; margin-right:0.35rem;">B:</span>
+              <span class="bubble-hanzi" style="font-size:1.1rem; font-weight:700;">这个菜不太好吃，我不喜欢。</span>
+              <div class="bubble-pinyin" style="font-size:0.82rem; font-weight:600; color:#dc2626;">Zhè gè cài bú tài hǎo chī, wǒ bù xǐ huan.</div>
+              <div class="bubble-arti" style="font-size:0.78rem; color:#64748b;">Hidangan ini tidak terlalu enak, saya tidak suka.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ LATIHAN KOMPREHENSIF (COMPREHENSIVE EXERCISES) ══ -->
+  <div>
+    <div class="section-title">📝 Comprehensive Exercises · 综合练习 (选词填空 · Choose the Proper Words)</div>
+    <div class="classroom-box" style="border-left: 5px solid #e06055;">
+      
+      <!-- Header -->
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">练</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:#b91c1c;">综合练习 · Latihan Mengisi Titik-Titik</div>
+          <div class="classroom-desc">
+            🟥 <strong>选词填空。</strong> Choose the proper words/phrases to fill in the blanks (Pilihlah kata atau frasa yang tepat dari kotak pilihan di bawah ini untuk melengkapi kalimat):
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustrasi Asli Buku Teks -->
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.85rem; text-align:center;">
+        <img src="images/bab10-fill-blanks.png" alt="Comprehensive Exercises - Fill in the blanks" style="max-width:560px; width:100%; height:auto; border-radius:8px; border:1px solid #e2e8f0; box-shadow:0 3px 10px rgba(0,0,0,0.05);" />
+        <div style="font-size:0.75rem; color:#64748b; margin-top:0.35rem; font-style:italic;">
+          📌 Buku Teks HSK 1 Bab 10: 综合练习 · 选词填空 (Choose the proper words/phrases to fill in the blanks)
+        </div>
+      </div>
+      
+      <!-- Selection Bank Kata Asli Buku -->
+      <div class="selection-box">
+        <div class="selection-box-title">Pilihan Kata dari Buku (Option Bank):</div>
+        <div class="selection-grid">
+          <div class="selection-item" onclick="playPinyin('bēizi')" style="cursor:pointer;" title="Klik dengar">
+            <span class="selection-letter">A.</span> 杯子 <span class="selection-pinyin">(bēizi)</span> = cangkir / gelas
+          </div>
+          <div class="selection-item" onclick="playPinyin('zěnmeyàng')" style="cursor:pointer;" title="Klik dengar">
+            <span class="selection-letter">B.</span> 怎么样 <span class="selection-pinyin">(zěnmeyàng)</span> = bagaimana / apa pendapatmu
+          </div>
+          <div class="selection-item" onclick="playPinyin('duōshao')" style="cursor:pointer;" title="Klik dengar">
+            <span class="selection-letter">C.</span> 多少 <span class="selection-pinyin">(duōshao)</span> = berapa (banyak)
+          </div>
+          <div class="selection-item" onclick="playPinyin('zhèxiē')" style="cursor:pointer;" title="Klik dengar">
+            <span class="selection-letter">D.</span> 这些 <span class="selection-pinyin">(zhèxiē)</span> = (hal-hal / benda-benda) ini
+          </div>
+          <div class="selection-item" onclick="playPinyin('kuài')" style="cursor:pointer;" title="Klik dengar">
+            <span class="selection-letter">E.</span> 块 <span class="selection-pinyin">(kuài)</span> = kuai / yuan (satuan mata uang)
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Butir Soal Interaktif Lengkap dengan Audio & Kunci Jawaban -->
+      <div class="classroom-list">
+        
+        <!-- Soal 1 -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Qǐngwèn, zhè běn shū duōshao qián?')" title="Klik dengar kalimat lengkap">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Qǐng wèn, zhè běn shū <span style="text-decoration:underline; font-weight:800; color:#059669;">duō shao</span> qián?</div>
+              <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:#1e293b;">
+                （1）请问，这本书______钱？
+              </div>
+            </div>
+            
+            <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Qǐngwèn, zhè běn shū duōshao qián?')" title="Klik dengar jawaban">
+              <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                ✅ <strong>参考答案 (Kunci Jawaban):</strong> C. 多少 (duōshao)
+              </div>
+              <div style="font-size:0.88rem; font-weight:600; color:#065f46; margin-top:0.25rem;">
+                👉 Kalimat lengkap: 请问，这本书<strong>多少</strong>钱？
+              </div>
+              <div style="font-size:0.8rem; color:#15803d; margin-top:0.15rem;">
+                <strong>Pinyin:</strong> Qǐngwèn, zhè běn shū <strong>duōshao</strong> qián?
+              </div>
+              <div style="font-size:0.8rem; color:#475569; margin-top:0.2rem;">
+                <strong>Arti:</strong> Permisi, berapa harga buku ini? <em>(Excuse me, how much is this book?)</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Zhè gè bēizi bù piányi, liùshíwǔ kuài qián yí gè.')" title="Klik dengar kalimat lengkap">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Zhè gè <span style="text-decoration:underline; font-weight:800; color:#059669;">bēi zi</span> bù pián yi, liù shí wǔ <span style="text-decoration:underline; font-weight:800; color:#059669;">kuài</span> qián yí gè.</div>
+              <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:#1e293b;">
+                （2）这个______不便宜，六十五______钱一个。
+              </div>
+            </div>
+            
+            <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Zhè gè bēizi bù piányi, liùshíwǔ kuài qián yí gè.')" title="Klik dengar jawaban">
+              <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                ✅ <strong>参考答案 (Kunci Jawaban):</strong> A. 杯子 (bēizi) &amp; E. 块 (kuài)
+              </div>
+              <div style="font-size:0.88rem; font-weight:600; color:#065f46; margin-top:0.25rem;">
+                👉 Kalimat lengkap: 这个<strong>杯子</strong>不便宜，六十五<strong>块</strong>钱一个。
+              </div>
+              <div style="font-size:0.8rem; color:#15803d; margin-top:0.15rem;">
+                <strong>Pinyin:</strong> Zhège <strong>bēizi</strong> bù piányi, liùshíwǔ <strong>kuài</strong> qián yí gè.
+              </div>
+              <div style="font-size:0.8rem; color:#475569; margin-top:0.2rem;">
+                <strong>Arti:</strong> Cangkir ini tidak murah, enam puluh lima kuai per buahnya. <em>(This cup is not cheap, sixty-five yuan each.)</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Shòuhuòyuán: Zhèxiē píngguǒ hěn hǎochī, nǐ mǎi yìxiē ba. Wáng Yīxuě: Hǎo de, wǒ mǎi wǔ gè.')" title="Klik dengar dialog lengkap">
+              <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">
+                （3）售货员：______苹果很好吃，你买一些吧。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;王一雪：好的，我买五个。
+              </div>
+              <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#e06055; margin-top:0.2rem;">
+                Shòuhuòyuán: <span style="text-decoration:underline; font-weight:800; color:#059669;">Zhèxiē</span> píngguǒ hěn hǎochī, nǐ mǎi yìxiē ba.<br>
+                Wáng Yīxuě: Hǎo de, wǒ mǎi wǔ gè.
+              </div>
+            </div>
+            
+            <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Zhèxiē píngguǒ hěn hǎochī, nǐ mǎi yìxiē ba.')" title="Klik dengar jawaban">
+              <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                ✅ <strong>参考答案 (Kunci Jawaban):</strong> D. 这些 (zhèxiē)
+              </div>
+              <div style="font-size:0.88rem; font-weight:600; color:#065f46; margin-top:0.25rem;">
+                👉 Dialog lengkap: 售货员：<strong>这些</strong>苹果很好吃，你买一些吧。／ 王一雪：好的，我买五个。
+              </div>
+              <div style="font-size:0.8rem; color:#475569; margin-top:0.2rem;">
+                <strong>Arti:</strong><br>
+                • Pelayan: Apel-apel <strong>ini</strong> sangat enak, belilah beberapa.<br>
+                • Wang Yixue: Baiklah, saya beli lima buah.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal 4 -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Ānnī: Zhè jiàn yīfu zěnmeyàng? Bái Jiāyuè: Hěn hǎokàn.')" title="Klik dengar dialog lengkap">
+              <div class="bubble-hanzi" style="font-size:1.12rem; font-weight:700; color:#1e293b;">
+                （4）安&nbsp;&nbsp;&nbsp;&nbsp;妮：这件衣服______？<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;白家月：很好看。
+              </div>
+              <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#e06055; margin-top:0.2rem;">
+                Ān nī: Zhè jiàn yīfu <span style="text-decoration:underline; font-weight:800; color:#059669;">zěn me yàng</span>?<br>
+                Bái Jiā yuè: Hěn hǎo kàn.
+              </div>
+            </div>
+            
+            <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Zhè jiàn yīfu zěnmeyàng? Hěn hǎokàn.')" title="Klik dengar jawaban">
+              <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                ✅ <strong>参考答案 (Kunci Jawaban):</strong> B. 怎么样 (zěnmeyàng)
+              </div>
+              <div style="font-size:0.88rem; font-weight:600; color:#065f46; margin-top:0.25rem;">
+                👉 Dialog lengkap: 安妮：这件衣服<strong>怎么样</strong>？／ 白家月：很好看。
+              </div>
+              <div style="font-size:0.8rem; color:#475569; margin-top:0.2rem;">
+                <strong>Arti:</strong><br>
+                • An Ni: Baju ini <strong>bagaimana (menurutmu)</strong>?<br>
+                • Bai Jiayue: Sangat bagus.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ LATIHAN DESKRIPSI GAMBAR (DESCRIBE THE PICTURES) ══ -->
+  <div>
+    <div class="section-title">🖼️ Describe Pictures · 用本课新学的词语和语言点描述图片</div>
+    <div class="classroom-box" style="border-left: 5px solid #e06055;">
+      
+      <!-- Header -->
+      <div class="classroom-header">
+        <div class="avatar av-xiaoyu">图</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#fee2e2; color:#b91c1c;">综合练习 · 描述图片 Describe the Pictures</div>
+          <div class="classroom-desc">
+            🟥 <strong>用本课新学的词语和语言点描述图片。</strong> Describe the pictures using the newly-learned words and language points in this lesson (Deskripsikan gambar-gambar berikut menggunakan kosakata dan tata bahasa baru yang dipelajari pada bab ini):
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustrasi Asli Buku Teks -->
+      <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.85rem; text-align:center;">
+        <img src="images/bab10-describe-pictures.png" alt="Describe the pictures using newly learned words" style="max-width:580px; width:100%; height:auto; border-radius:8px; border:1px solid #e2e8f0; box-shadow:0 3px 10px rgba(0,0,0,0.05);" />
+        <div style="font-size:0.75rem; color:#64748b; margin-top:0.35rem; font-style:italic;">
+          📌 Buku Teks HSK 1 Bab 10: 描述图片 (Describe pictures with new vocabulary &amp; grammar)
+        </div>
+      </div>
+
+      <!-- 4 Gambar & Kunci Jawaban Lengkap -->
+      <div class="classroom-list" style="margin-top:0.5rem;">
+        
+        <!-- Gambar 1: Apel Banyak / Murah -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Zhèr de píngguǒ zhēn piányi! Zhèr de píngguǒ zhēn bù shǎo!')" title="Klik dengar kalimat 1">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Zhèr de píng guǒ ______。</div>
+              <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:#1e293b;">
+                这儿的苹果______。
+              </div>
+            </div>
+
+            <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Zhèr de píngguǒ zhēn piányi.')" title="Klik dengar opsi jawaban">
+              <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                ✅ <strong>参考答案 (Pilihan Jawaban yang Tepat):</strong>
+              </div>
+              <div style="font-size:0.88rem; font-weight:600; color:#065f46; margin-top:0.25rem;">
+                ① <strong>真便宜</strong> (zhēn piányi) / <strong>很大</strong> (hěn dà) / <strong>真不少</strong> (zhēn bù shǎo) / <strong>很好吃</strong> (hěn hǎochī)
+              </div>
+              <div style="font-size:0.82rem; color:#15803d; margin-top:0.2rem;">
+                👉 Kalimat utuh: 这儿的苹果<strong>真便宜</strong>！ (<em>Zhèr de píngguǒ zhēn piányi!</em>)
+              </div>
+              <div style="font-size:0.78rem; color:#475569; margin-top:0.2rem;">
+                <strong>Arti:</strong> Apel di sini sungguh murah / sungguh tidak sedikit (banyak) / sangat enak!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gambar 2: Menanyakan Film / Kosmonot -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Zhè gè diànyǐng zěnmeyàng?')" title="Klik dengar kalimat 2">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Zhè gè diàn yǐng ______？</div>
+              <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:#1e293b;">
+                这个电影______？
+              </div>
+            </div>
+
+            <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Zhè gè diànyǐng zěnmeyàng? Hěn hǎokàn.')" title="Klik dengar jawaban 2">
+              <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                ✅ <strong>参考答案 (Pilihan Jawaban yang Tepat):</strong>
+              </div>
+              <div style="font-size:0.88rem; font-weight:600; color:#065f46; margin-top:0.25rem;">
+                👉 Mengisi pertanyaan: <strong>怎么样</strong> (zěnmeyàng) / <strong>好不好看</strong> (hǎo bu hǎokàn)
+              </div>
+              <div style="font-size:0.82rem; color:#15803d; margin-top:0.2rem;">
+                👉 Kalimat utuh: 这个电影<strong>怎么样</strong>？ (<em>Zhège diànyǐng zěnmeyàng?</em>)
+              </div>
+              <div style="font-size:0.78rem; color:#475569; margin-top:0.2rem;">
+                <strong>Arti:</strong> Bagaimana film ini menurutmu? <em>(How is this movie?)</em><br>
+                💡 Contoh jawaban respons: 很好看。 (<em>Hěn hǎokàn</em> - Sangat bagus/menarik ditonton).
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gambar 3: Cangkir Berwarna-warni -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Nàxiē bēizi hěn hǎokàn, fēicháng piányi.')" title="Klik dengar kalimat 3">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Nà xiē bēi zi ______，fēi cháng ______。</div>
+              <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:#1e293b;">
+                那些杯子______，非常______。
+              </div>
+            </div>
+
+            <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Nàxiē bēizi hěn hǎokàn, fēicháng piányi.')" title="Klik dengar jawaban 3">
+              <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                ✅ <strong>参考答案 (Pilihan Jawaban yang Tepat):</strong>
+              </div>
+              <div style="font-size:0.88rem; font-weight:600; color:#065f46; margin-top:0.25rem;">
+                👉 Titik pertama: <strong>很好看</strong> (hěn hǎokàn) / <strong>真多</strong> (zhēn duō) / <strong>不大</strong> (bú dà)<br>
+                👉 Titik kedua: <strong>漂亮</strong> (piàoliang) / <strong>便宜</strong> (piányi) / <strong>贵</strong> (guì) / <strong>好看</strong> (hǎokàn)
+              </div>
+              <div style="font-size:0.82rem; color:#15803d; margin-top:0.2rem;">
+                👉 Kalimat utuh: 那些杯子<strong>很好看</strong>，非常<strong>便宜</strong>。 (<em>Nàxiē bēizi hěn hǎokàn, fēicháng piányi.</em>)
+              </div>
+              <div style="font-size:0.78rem; color:#475569; margin-top:0.2rem;">
+                <strong>Arti:</strong> Cangkir-cangkir itu sangat bagus, luar biasa murah.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gambar 4: Baju dengan Label Harga -->
+        <div class="classroom-item" style="border-left:4px solid var(--primary);">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div style="cursor:pointer;" onclick="playPinyin('Zhè jiàn yīfu hěn hǎokàn, yí jiàn yìbǎi kuài.')" title="Klik dengar kalimat 4">
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Zhè jiàn yī fu ______，yí jiàn ______ kuài。</div>
+              <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:#1e293b;">
+                这件衣服______，一件______块。
+              </div>
+            </div>
+
+            <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Zhè jiàn yīfu bù guì, yí jiàn yìbǎi kuài.')" title="Klik dengar jawaban 4">
+              <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                ✅ <strong>参考答案 (Pilihan Jawaban yang Tepat):</strong>
+              </div>
+              <div style="font-size:0.88rem; font-weight:600; color:#065f46; margin-top:0.25rem;">
+                👉 Titik pertama: <strong>不贵</strong> (bú guì) / <strong>很好看</strong> (hěn hǎokàn) / <strong>很漂亮</strong> (hěn piàoliang)<br>
+                👉 Titik kedua (angka uang): <strong>一百</strong> (yìbǎi) / <strong>五十</strong> (wǔshí) / <strong>八十</strong> (bāshí)
+              </div>
+              <div style="font-size:0.82rem; color:#15803d; margin-top:0.2rem;">
+                👉 Kalimat utuh: 这件衣服<strong>不贵</strong>，一件<strong>一百</strong>块。 (<em>Zhè jiàn yīfu bú guì, yí jiàn yìbǎi kuài.</em>)
+              </div>
+              <div style="font-size:0.78rem; color:#475569; margin-top:0.2rem;">
+                <strong>Arti:</strong> Baju ini tidak mahal, satu helai seratus kuai.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ TONGUE TWISTER (RÀOKǑULÌNG) ══ -->
+  <div>
+    <div class="section-title">👅 Tongue Twister · 绕口令 (Latihan Pelafalan)</div>
+    <div class="twister-box">
+      <div class="twister-title">吃葡萄不吐葡萄皮 · Chī pútáo bù tǔ pútáo pí</div>
+      <div class="twister-lines">
+        <div class="twister-line" onclick="playPinyin('Chī pútáo bù tǔ pútáo pí, bù chī pútáo dào tǔ pútáo pí.')">
+          <span class="tw-hz bubble-hanzi">吃葡萄不吐葡萄皮，不吃葡萄倒吐葡萄皮。</span>
+          <span class="tw-py bubble-pinyin">Chī pú tao bù tǔ pú tao pí, bù chī pú tao dào tǔ pú tao pí.</span>
+          <span class="tw-id">Makan anggur tidak melepeh kulit anggur, tidak makan anggur malah melepeh kulit anggur.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FLOATING TOOLBAR -->
+<div class="dialog-toolbar">
+  <div class="toolbar-title">
+    <span>⚙️</span>
+    <span>Bantuan:</span>
+  </div>
+  <div class="toolbar-buttons">
+    <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+    <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Terjemahan">🇮🇩</button>
+    <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Kotak Kosakata">📖</button>
+    <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warnai Karakter &amp; Pinyin Per Silabel">🎨</button>
+  </div>
+</div>
+
+<script>
+  const COLOR_PALETTE = [
+    '#e11d48', '#16a34a', '#2563eb', '#ea580c', '#7c3aed',
+    '#0891b2', '#c026d3', '#ca8a04', '#4f46e5', '#059669',
+    '#d97706', '#db2777', '#0284c7', '#9333ea', '#65a30d'
+  ];
+
+  const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
+  const _finals = [
+    _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
+    _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
+    _A+'ng', _E+'ng', _O+'ng',
+    _A+'i', _E+'i', _A+_O, _O+_U, _A+'n', _E+'n',
+    _I+_A, _I+_E, _I+'n', _I+_U, _U+_A, _U+_O, _U+_E, _U+_I, _U+'n',
+    _V+_E, 'er',
+    _A, _O, _E, _I, _U, _V
+  ].join('|');
+  const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
+
+  function isHanziChar(ch) {
+    return /[〇一-龥]/.test(ch);
+  }
+
+  function colorizePair(hanziText, pinyinText, charColorMap) {
+    if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
+
+    const hzItems = [];
+    let prevColor = null;
+
+    for (const ch of hanziText) {
+      if (isHanziChar(ch)) {
+        let chosenColor = charColorMap[ch];
+        if (!chosenColor || chosenColor === prevColor) {
+          let baseIdx = Object.keys(charColorMap).length;
+          let candidate = COLOR_PALETTE[baseIdx % COLOR_PALETTE.length];
+          let offset = 0;
+          while (candidate === prevColor) {
+            offset++;
+            candidate = COLOR_PALETTE[(baseIdx + offset) % COLOR_PALETTE.length];
+          }
+          chosenColor = candidate;
+          if (!charColorMap[ch]) {
+            charColorMap[ch] = chosenColor;
+          }
+        }
+        hzItems.push({ ch, color: chosenColor });
+        prevColor = chosenColor;
+      }
+    }
+
+    let outHz = '';
+    let hzAssignIdx = 0;
+    for (const ch of hanziText) {
+      if (isHanziChar(ch)) {
+        const item = hzItems[hzAssignIdx++];
+        outHz += '<span style=\"color:' + item.color + ';font-weight:700;\">' + ch + '</span>';
+      } else {
+        outHz += ch;
+      }
+    }
+
+    let outPy = '';
+    let hzIdx = 0;
+    let remaining = pinyinText;
+
+    while (remaining.length > 0) {
+      const tagMatch = remaining.match(/^<[^>]+>/);
+      if (tagMatch) {
+        outPy += tagMatch[0];
+        remaining = remaining.substring(tagMatch[0].length);
+        continue;
+      }
+
+      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
+      if (nonLetterMatch) {
+        outPy += nonLetterMatch[0];
+        remaining = remaining.substring(nonLetterMatch[0].length);
+        continue;
+      }
+
+      const match = remaining.match(PINYIN_SYLL_RE);
+      if (match) {
+        const syll = match[0];
+        const isErhua = /r$/i.test(syll) &&
+                        !/^[eēéěè]r$/i.test(syll) &&
+                        hzIdx + 1 < hzItems.length &&
+                        hzItems[hzIdx + 1].ch === '儿';
+        if (isErhua) {
+          const rootSyll = syll.slice(0, -1);
+          const rootItem = hzItems[hzIdx];
+          const erItem = hzItems[hzIdx + 1];
+          outPy += '<span style=\"color:' + rootItem.color + ';font-weight:700;\">' + rootSyll + '</span>' +
+                   '<span style=\"color:' + erItem.color + ';font-weight:700;\">r</span>';
+          hzIdx += 2;
+        } else {
+          const item = hzItems[hzIdx];
+          if (item) {
+            outPy += '<span style=\"color:' + item.color + ';font-weight:700;\">' + syll + '</span>';
+            hzIdx++;
+          } else {
+            outPy += syll;
+          }
+        }
+        remaining = remaining.substring(syll.length);
+      } else {
+        outPy += remaining[0];
+        remaining = remaining.substring(1);
+      }
+    }
+
+    return { hanzi: outHz, pinyin: outPy };
+  }
+
+  function applyColors() {
+    const charColorMap = {
+      '这': '#e11d48',
+      '儿': '#16a34a',
+      '的': '#2563eb',
+      '苹': '#ea580c',
+      '果': '#7c3aed',
+      '真': '#0891b2',
+      '便': '#c026d3',
+      '宜': '#ca8a04'
+    };
+
+    // 1. Dialog bubbles
+    document.querySelectorAll('.bubble').forEach(bubble => {
+      const hzEl = bubble.querySelector('.bubble-hanzi');
+      const pyEl = bubble.querySelector('.bubble-pinyin');
+      if (!hzEl || !pyEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 2. Word cards
+    document.querySelectorAll('.word-card').forEach(card => {
+      const charEl = card.querySelector('.word-char');
+      const pyEl = card.querySelector('.word-pinyin');
+      if (!charEl || !pyEl) return;
+
+      if (!charEl.dataset.origHtml) charEl.dataset.origHtml = charEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(charEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      charEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 3. Speaker names
+    document.querySelectorAll('.speaker-name').forEach(spk => {
+      const hzEl = spk.querySelector('.speaker-hanzi');
+      const pyEl = spk.querySelector('.speaker-pinyin');
+      if (!hzEl || !pyEl) return;
+
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 4. Grammar Hero Card
+    document.querySelectorAll('.grammar-hero-card').forEach(card => {
+      const bHz = card.querySelector('.grammar-banner-hanzi');
+      const bPy = card.querySelector('.grammar-banner-pinyin');
+      if (bHz && bPy) {
+        if (!bHz.dataset.origHtml) bHz.dataset.origHtml = bHz.innerHTML;
+        if (!bPy.dataset.origHtml) bPy.dataset.origHtml = bPy.innerHTML;
+        const res = colorizePair(bHz.dataset.origHtml, bPy.dataset.origHtml, charColorMap);
+        bHz.innerHTML = res.hanzi;
+        bPy.innerHTML = res.pinyin;
+      }
+      card.querySelectorAll('.breakdown-box').forEach(box => {
+        const hzEl = box.querySelector('.breakdown-hz');
+        const pyEl = box.querySelector('.breakdown-py');
+        if (!hzEl || !pyEl) return;
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      });
+    });
+
+    // 5. Tongue Twister
+    document.querySelectorAll('.twister-line').forEach(line => {
+      const hzEl = line.querySelector('.tw-hz');
+      const pyEl = line.querySelector('.tw-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+  }
+
+  function removeColors() {
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py, .tw-hz, .tw-py';
+    document.querySelectorAll(selector).forEach(el => {
+      if (el.dataset.origHtml !== undefined) {
+        el.innerHTML = el.dataset.origHtml;
+      } else if (el.dataset.origText !== undefined) {
+        el.textContent = el.dataset.origText;
+      }
+      el.style.color = '';
+      el.style.fontWeight = '';
+    });
+  }
+
+  function updateToggleUI() {
+    const s = cl => document.body.classList.contains(cl);
+    const set = (id, cls) => {
+      const b = document.getElementById(id);
+      if (!b) return;
+      b.classList.toggle('active', s(cls));
+    };
+    set('btnPinyin', 'show-pinyin');
+    set('btnArti', 'show-arti');
+    set('btnVocab', 'show-vocab');
+    set('btnColor', 'show-color');
+  }
+
+  function togglePinyin() {
+    document.body.classList.toggle('show-pinyin');
+    localStorage.setItem('mandarin_show_pinyin', document.body.classList.contains('show-pinyin') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleArti() {
+    document.body.classList.toggle('show-arti');
+    localStorage.setItem('mandarin_show_arti', document.body.classList.contains('show-arti') ? '1' : '0');
+    updateToggleUI();
+  }
+
+  function toggleVocab() {
+    const anchor = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 3);
+    const viewportOffset = anchor ? anchor.getBoundingClientRect().top : 0;
+    document.body.classList.toggle('show-vocab');
+    localStorage.setItem('mandarin_show_vocab', document.body.classList.contains('show-vocab') ? '1' : '0');
+    updateToggleUI();
+    if (anchor) {
+      const docOffsetAfter = anchor.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: docOffsetAfter - viewportOffset, behavior: 'instant' });
+    }
+  }
+
+  function toggleColor() {
+    document.body.classList.toggle('show-color');
+    const on = document.body.classList.contains('show-color');
+    localStorage.setItem('mandarin_show_color', on ? '1' : '0');
+    on ? applyColors() : removeColors();
+    updateToggleUI();
+  }
+
+  function playPinyin(text) {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'zh-CN';
+    utter.rate = 0.85;
+    window.speechSynthesis.speak(utter);
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('mandarin_show_pinyin') === '1') document.body.classList.add('show-pinyin');
+    if (localStorage.getItem('mandarin_show_arti') === '1') document.body.classList.add('show-arti');
+    if (localStorage.getItem('mandarin_show_vocab') !== '0') document.body.classList.add('show-vocab');
+    if (localStorage.getItem('mandarin_show_color') === '1') {
+      document.body.classList.add('show-color');
+      applyColors();
+    }
+    updateToggleUI();
+  });
+</script>
+
+</body>
+</html>
