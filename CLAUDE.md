@@ -481,21 +481,121 @@ Diakhiri dengan latihan artikulasi lidah dan intonasi khas Tiongkok:
 </div>
 ```
 
-### 4.11 Floating Toolbar Bawah (`.dialog-toolbar`)
-Toolbar melayang di bagian bawah dengan 4 tombol toggle kendali tampilan:
+### 4.11 Standar Floating Dialog Toolbar Bawah (`.dialog-toolbar`)
+Toolbar melayang di bagian bawah layar (*fixed floating bottom dock*) berfungsi sebagai panel kontrol interaktif bagi pengguna untuk mengatur visibilitas elemen teks dan mode warna belajar:
+
+#### A. Struktur HTML Standar
 ```html
-<div class="dialog-toolbar">
-  <div class="toolbar-title">
-    <span class="icon">⚙️</span>
-    <span>Bantuan:</span>
+  <!-- ══ TOGGLE CONTROLS (DI PALING BAWAH) ══ -->
+  <div class="dialog-toolbar">
+    <div class="toolbar-title">
+      <span class="icon">⚙️</span>
+      <span>Bantuan:</span>
+    </div>
+    <div class="toolbar-buttons">
+      <button id="btnPinyin" class="toggle-switch-btn active" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+      <button id="btnArti" class="toggle-switch-btn active" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti Kalimat">🇮🇩</button>
+      <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Arti Per Kata">📖</button>
+      <button id="btnColor" class="toggle-switch-btn active" onclick="toggleColor()" title="Warna-warni Hanzi &amp; Pinyin">🎨</button>
+    </div>
   </div>
-  <div class="toolbar-buttons">
-    <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
-    <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti">🇮🇩</button>
-    <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Detail">📖</button>
-    <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warnai Karakter Per Kata">🎨</button>
-  </div>
-</div>
+```
+
+#### B. Standar CSS (Dekstop, Mobile & Efek Aktif)
+Wajib menggunakan desain dock semi-transparan (*frosted glass* / `backdrop-filter: blur(14px)`) dengan tombol rounded berbentuk kapsul modern:
+```css
+    /* ── DIALOG TOOLBAR (FIXED FLOATING DOCK) ── */
+    .dialog-toolbar {
+      position: fixed;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 2rem);
+      max-width: 720px;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.04);
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+    }
+    .toolbar-title {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .toolbar-buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    /* ── TOGGLE BUTTONS (SYMBOLS ONLY) ── */
+    .toggle-switch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1.5px solid #cbd5e1;
+      padding: 0.45rem 0.75rem;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .toggle-switch-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .toggle-switch-btn.active {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #10b981;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+    }
+    .toggle-switch-btn#btnColor.active {
+      background: #fef3c7;
+      color: #b45309;
+      border-color: #f59e0b;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    }
+
+    /* ── RESPONSIVE MOBILE DOCK (< 640px) ── */
+    @media (max-width: 640px) {
+      .dialog-toolbar {
+        bottom: 0.8rem;
+        width: calc(100% - 1.2rem);
+        padding: 0.5rem 0.6rem;
+      }
+      .toolbar-title { display: none; }
+      .toolbar-buttons {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.35rem;
+      }
+      .toggle-switch-btn {
+        flex: 1;
+        padding: 0.45rem 0.35rem;
+        font-size: 1.05rem;
+      }
+    }
 ```
 
 ---
