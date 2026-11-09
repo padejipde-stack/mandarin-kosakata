@@ -173,6 +173,32 @@ Bar navigasi menempel di bagian atas (`position: sticky; top: 0; z-index: 100;`)
 ### 3.3 Container Konten (`<div class="wrap">`)
 Semua konten pembelajaran diletakkan di dalam satu pembungkus utama berukuran maksimal 860px:
 ```html
+### 3.3 Standar Ukuran, Jarak & Proporsi Komponen (Design Tokens)
+Untuk menjamin konsistensi visual di seluruh bab, seluruh ukuran dimensi, tinggi, padding, margin, dan tipografi komponen wajib mengikuti standar baku berikut (mengacu pada standar Bab 9):
+
+| Komponen | Properti CSS | Nilai Standar Baku | Keterangan & Deskripsi |
+| :--- | :--- | :--- | :--- |
+| **Kontainer Utama (`.wrap`)** | `max-width` / `margin` / `gap` | `860px` / `1.5rem auto 2.5rem` / `1.8rem` | Padding samping `0 1rem` |
+| **Navigasi Atas (`.nav-bar .nav`)** | `padding` / `border-radius` | `0.65rem 1.25rem` / `14px` | Ketinggian proporsional dengan tombol `0.45rem 0.95rem` |
+| **Avatar Karakter (`.avatar`)** | `width` / `height` / `font-size` | `44px` / `44px` / `1rem` (font-weight: 700) | Lingkaran `border-radius: 50%`, bayangan `0 3px 8px rgba(0,0,0,0.12)` |
+| **Kotak Dialog (`.dialog-box`)** | `padding` / `gap` / `border-radius` | `1.5rem` / `1.25rem` / `var(--radius)` (16px) | Header `padding-bottom: 0.85rem`, border-bottom dashed `1.5px` |
+| **Baris Dialog (`.dialog-line`)** | `gap` / `align-items` | `0.9rem` / `flex-start` | `.right` / `.reverse` menggunakan `row-reverse` |
+| **Pembungkus Balon (`.bubble-wrap`)**| `max-width` / `gap` | `82%` (Mobile: `86%`) / `0.25rem` | Rata kiri (default) / rata kanan (`.right`) |
+| **Balon Teks (`.bubble`)** | `padding` / `border-radius` | `0.75rem 1.05rem` / `0 16px 16px 16px` | Lawan bicara: `16px 0 16px 16px` |
+| **Tipografi Hanzi Balon** | `font-size` / `line-height` | `1.28rem` / `1.45` | `font-family: 'Noto Sans SC', sans-serif`, tebal `600` |
+| **Tipografi Pinyin Balon** | `font-size` / `margin-top` | `0.85rem` / `0.3rem` | Warna netral: `#64748b`, lawan bicara: `rgba(255,255,255,0.85)` |
+| **Tipografi Terjemahan Balon** | `font-size` / `margin-top` | `0.82rem` / `0.35rem` | Border atas `1px dashed rgba(0,0,0,0.12)` |
+| **Kosakata (`.word-card`)** | `padding` / `border-top` | `0.95rem 0.75rem` / `4px solid var(--primary)` | Hanzi: `1.7rem`, Pinyin: `0.76rem`, Arti: `0.8rem` |
+| **Grid Kosakata (`.breakdown-grid`)**| `grid-template-columns` / `gap` | `repeat(auto-fill, minmax(145px, 1fr))` / `0.85rem` | Tampilan kartu kosakata per kata seragam |
+| **Xiaoyu Box (`.classroom-box`)** | `padding` / `border-left` / `gap` | `1.5rem` / `5px solid [aksen]` / `1.1rem` | Header dengan ikon Xiaoyu berpadding `0.85rem` |
+| **Item Kelas (`.classroom-item`)** | `padding` / `border-radius` / `gap`| `0.85rem 1.1rem` / `14px` / `0.85rem` | Border `1.5px solid var(--border)`, hover `translateX(3px)` |
+| **Nomor Item (`.item-number`)** | `width` / `height` / `border-radius`| `26px` / `26px` / `50%` | Berisi nomor butir soal / contoh kalimat |
+| **Hero Card (`.grammar-hero-card`)** | Banner padding / Content padding | `1.6rem 1.4rem` / `1.6rem 1.4rem` | Hanzi hero: `2.25rem`, Pinyin hero: `1.15rem`, Arti: `1rem` |
+| **Floating Dock (`.dialog-toolbar`)**| `max-width` / `padding` / `radius` | `720px` / `0.65rem 1rem` / `16px` | Posisi `fixed bottom: 1.2rem`, backdrop blur `14px` |
+| **Tombol Toggle (`.toggle-switch-btn`)**| `padding` / `border-radius` / `font-size` | `0.45rem 0.75rem` / `12px` / `1.15rem` | Status aktif: hijau `#ecfdf5` / warna `#fef3c7` |
+
+---
+
 <div class="wrap">
   <!-- Semua section judul, percakapan, kelas Xiaoyu, dan latihan -->
 </div>
