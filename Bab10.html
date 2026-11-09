@@ -51,8 +51,6 @@
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
-      user-select: none;
-      line-height: 1;
     }
     header h1 {
       font-size: 1.9rem;
@@ -61,24 +59,22 @@
       position: relative;
     }
     header p {
+      margin-top: 0.35rem;
       font-size: 0.88rem;
       opacity: 0.88;
-      margin-top: 0.35rem;
       position: relative;
     }
-    .bab {
+    header .bab {
       display: inline-block;
-      margin-top: 0.65rem;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(4px);
-      padding: 0.2rem 0.95rem;
+      background: var(--gold);
+      color: #fff;
       border-radius: 20px;
+      padding: 0.2rem 0.95rem;
       font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: 0.3px;
+      margin-top: 0.65rem;
       position: relative;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     /* ── MODERN STICKY NAVBAR ── */
@@ -848,12 +844,30 @@
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      header h1 { font-size: 1.4rem; }
-      .nav { padding: 0.35rem 0.5rem; }
-      .bubble { max-width: 95%; font-size: 1.1rem; }
-      .grammar-banner-hanzi { font-size: 1.6rem; }
-      .grammar-formula-bar { font-size: 0.78rem; }
+    @media (max-width: 600px) {
+      .btn-text-desktop { display: none; }
+      .btn-text-mobile  { display: inline; }
+      header { padding: 2rem 1rem 1.6rem; }
+      header h1 { font-size: 1.55rem; }
+      header::before { font-size: 8rem; }
+      .wrap { margin: 1.2rem auto 2rem; padding: 0 0.8rem; gap: 1.4rem; }
+      .dialog-box { padding: 1.1rem 0.9rem; }
+      .dialog-line { gap: 0.65rem; }
+      .avatar { width: 38px; height: 38px; font-size: 0.9rem; }
+      .bubble-wrap { max-width: 86%; }
+      .bubble { padding: 0.6rem 0.85rem; }
+      .bubble-hanzi { font-size: 1.12rem; }
+      .bubble-pinyin { font-size: 0.8rem; }
+      .bubble-arti { font-size: 0.78rem; }
+      .breakdown-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+      .word-card { padding: 0.75rem 0.5rem; }
+      .word-char { font-size: 1.5rem; }
+      .word-pinyin { font-size: 0.72rem; }
+      .word-arti { font-size: 0.74rem; }
+      .nav { padding: 0.5rem 0.75rem; }
+      .nav-home-btn span.label { display: none; }
+      .nav-tab { padding: 0.35rem 0.7rem; font-size: 0.78rem; }
+      .nav-pager-btn { padding: 0.38rem 0.75rem; font-size: 0.78rem; }
       .dialog-toolbar {
         bottom: 0.8rem;
         width: calc(100% - 1.2rem);
