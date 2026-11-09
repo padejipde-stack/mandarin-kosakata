@@ -3112,7 +3112,7 @@
   function colorizePair(hanziText, pinyinText) {
     if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
-    // 1. Ekstrak suku kata Pinyin terlebih dahulu
+    // 1. Ekstrak suku kata Pinyin terlebih dahulu (abaikan tag HTML jika ada di teks pinyin)
     const pySyllables = [];
     let remPy = pinyinText;
     while (remPy.length > 0) {
@@ -3129,10 +3129,16 @@
       }
     }
 
-    // 2. Tokenisasi Hanzi ke dalam unit visual (karakter Hanzi, angka/jam seperti '7:15' / '10:00', tanda baca)
+    // 2. Tokenisasi Hanzi dengan menjaga TAG HTML tetap utuh (TIDAK dirusak/disisipi span di dalam tag)
     const units = [];
     let remHz = hanziText;
     while (remHz.length > 0) {
+      const htmlMatch = remHz.match(/^<[^>]+>/);
+      if (htmlMatch) {
+        units.push({ text: htmlMatch[0], isHtml: true });
+        remHz = remHz.substring(htmlMatch[0].length);
+        continue;
+      }
       const numMatch = remHz.match(/^\d+(?::\d+)?/);
       if (numMatch) {
         units.push({ text: numMatch[0], isNum: true });
@@ -3155,89 +3161,64 @@
       let hash = 0;
       for (let k = 0; k < u.text.length; k++) hash = (hash << 5) - hash + u.text.charCodeAt(k);
       let baseIdx = Math.abs(hash + i * 3) % COLOR_PALETTE.length;
-      let offset = 0;
-      let candidate = COLOR_PALETTE[baseIdx];
-      while (candidate === prevColor && offset < COLOR_PALETTE.length) {
-        offset++;
-        candidate = COLOR_PALETTE[(baseIdx + offset) % COLOR_PALETTE.length];
+      let color = COLOR_PALETTE[baseIdx];
+      if (color === prevColor) {
+        color = COLOR_PALETTE[(baseIdx + 1) % COLOR_PALETTE.length];
       }
-      u.color = candidate;
-      prevColor = candidate;
+      prevColor = color;
+      u.color = color;
     });
 
-    // 4. Hitung proporsi suku kata pinyin per unit konten
-    const totalSylls = pySyllables.length;
-    const hzCount = contentUnits.filter(u => u.isHz).length;
-    const numCount = contentUnits.filter(u => u.isNum).length;
-
-    contentUnits.forEach(u => {
-      if (u.isHz) {
-        u.syllCount = 1;
-      } else if (u.isNum) {
-        // Angka seperti '7:15' akan memayungi sisa suku kata pinyin (misal 'qī diǎn shíwǔ fēn' = 5 suku kata)
-        // Angka '10:00' / '12:00' memayungi 'shí diǎn' / 'shí'èr diǎn'
-        if (numCount === 1) {
-          u.syllCount = Math.max(1, totalSylls - hzCount);
-        } else {
-          u.syllCount = Math.max(1, Math.round((totalSylls - hzCount) / numCount));
-        }
-      }
-    });
-
-    // 5. Susun HTML Hanzi & Angka berwarna
+    // 4. Rekonstruksi string Hanzi beranotasi warna (TAG HTML tetap utuh)
     let outHz = '';
-    units.forEach(u => {
-      if (u.color) {
-        outHz += '<span style="color:' + u.color + ';font-weight:700;">' + u.text + '</span>';
-      } else {
+    for (const u of units) {
+      if (u.isHtml || u.isPunct) {
         outHz += u.text;
-      }
-    });
-
-    // 6. Buat peta warna suku kata pinyin berurutan
-    const syllColors = [];
-    contentUnits.forEach(u => {
-      for (let k = 0; k < u.syllCount; k++) {
-        syllColors.push(u.color);
-      }
-    });
-
-    // 7. Susun HTML Pinyin berwarna selaras
-    let outPy = '';
-    let sIdx = 0;
-    let remaining = pinyinText;
-
-    while (remaining.length > 0) {
-      const tagMatch = remaining.match(/^<[^>]+>/);
-      if (tagMatch) {
-        outPy += tagMatch[0];
-        remaining = remaining.substring(tagMatch[0].length);
-        continue;
-      }
-
-      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
-      if (nonLetterMatch) {
-        outPy += nonLetterMatch[0];
-        remaining = remaining.substring(nonLetterMatch[0].length);
-        continue;
-      }
-
-      const match = remaining.match(PINYIN_SYLL_RE);
-      if (match) {
-        const syll = match[0];
-        const color = syllColors[sIdx] || syllColors[syllColors.length - 1];
-        if (color) {
-          outPy += '<span style="color:' + color + ';font-weight:700;">' + syll + '</span>';
-          sIdx++;
-        } else {
-          outPy += syll;
-        }
-        remaining = remaining.substring(syll.length);
       } else {
-        outPy += remaining[0];
-        remaining = remaining.substring(1);
+        outHz += `<span style="color:${u.color};font-weight:700;">${u.text}</span>`;
       }
     }
+
+    // 5. Rekonstruksi string Pinyin beranotasi warna yang sinkron dengan unit Hanzi/Angka
+    let outPy = '';
+    let pyIdx = 0;
+    let inPunct = false;
+    let curPunct = '';
+
+    const flushPunct = () => {
+      if (curPunct) {
+        outPy += curPunct;
+        curPunct = '';
+        inPunct = false;
+      }
+    };
+
+    for (let k = 0; k < pinyinText.length; k++) {
+      const ch = pinyinText[k];
+      if (/[a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv]/i.test(ch)) {
+        flushPunct();
+        const rem = pinyinText.substring(k);
+        const sylMatch = rem.match(PINYIN_SYLL_RE);
+        if (sylMatch) {
+          const syl = sylMatch[0];
+          let color = '#3b82f6';
+          if (pyIdx < contentUnits.length) {
+            color = contentUnits[pyIdx].color;
+          } else if (contentUnits.length > 0) {
+            color = contentUnits[contentUnits.length - 1].color;
+          }
+          outPy += `<span style="color:${color};font-weight:700;">${syl}</span>`;
+          k += syl.length - 1;
+          pyIdx++;
+        } else {
+          outPy += ch;
+        }
+      } else {
+        inPunct = true;
+        curPunct += ch;
+      }
+    }
+    flushPunct();
 
     return { hanzi: outHz, pinyin: outPy };
   }
