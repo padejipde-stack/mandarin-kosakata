@@ -824,19 +824,117 @@ const _finals = [
 // ⚡ r? di akhir regex = support Erhua (suku kata berakhiran -r seperti nǎr, tiáor)
 const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
 
-// 3. Mesin Pemetaan & Pewarnaan Karakter (Erhua-aware)
-// ✅ WAJIB: engine HARUS mendeteksi Erhua sebelum memetakan suku kata ke Hanzi
+// 3. Palet Warna Standar (12 Warna Berkontras Tinggi di atas background putih)
+const COLOR_PALETTE = [
+  '#e11d48', '#16a34a', '#2563eb', '#ea580c', '#7c3aed', '#0891b2',
+  '#c026d3', '#ca8a04', '#059669', '#4f46e5', '#d97706', '#db2777'
+];
+
+// 4. Mesin Pemetaan & Pewarnaan Karakter (Erhua-aware & Anti Huruf/Silabel Berdampingan Sewarna)
+// ✅ WAJIB: Karakter/suku kata yang berdekatan/berdampingan TIDAK BOLEH memiliki warna yang sama!
 function colorizePair(hanziStr, pinyinStr, charColorMap) {
-  // Melakukan segmentasi Hanzi dan pemetaan pinyin per kata/suku kata via PINYIN_SYLL_RE
-  // Menghasilkan tag <span style="color: ..."> yang seragam antara hanzi dan pinyin
-  // Mengandung logika Erhua: jika suku kata berakhir -r (bukan "er/ér/ěr/èr")
-  //   DAN Hanzi berikutnya = 儿, maka root silabel → Hanzi sebelum 儿, 'r' → 儿
+  const cleanHanzi = hanziStr.replace(/<[^>]+>/g, '');
+  const cleanPinyin = pinyinStr.replace(/<[^>]+>/g, '');
+  const hanziChars = [];
+  for (const ch of cleanHanzi) {
+    if (isHanziChar(ch)) hanziChars.push(ch);
+  }
+  if (!hanziChars.length) return { hanzi: hanziStr, pinyin: pinyinStr };
+
+  // Penentuan warna karakter Hanzi dengan aturan: HURUF BERDEKATAN DILARANG SAMA WARNA (candidate !== prevColor)
+  const hzItems = [];
+  let prevColor = null;
+  for (let i = 0; i < cleanHanzi.length; i++) {
+    const ch = cleanHanzi[i];
+    if (isHanziChar(ch)) {
+      let chosenColor;
+      if (charColorMap && charColorMap[ch] && charColorMap[ch] !== prevColor) {
+        chosenColor = charColorMap[ch];
+      } else {
+        let baseIdx = Object.keys(charColorMap || {}).length + i;
+        let candidate = COLOR_PALETTE[baseIdx % COLOR_PALETTE.length];
+        let offset = 0;
+        // JAMINAN MUTLAK: Silabel/huruf bersebelahan tidak boleh sama warna
+        while (candidate === prevColor && offset < COLOR_PALETTE.length) {
+          offset++;
+          candidate = COLOR_PALETTE[(baseIdx + offset) % COLOR_PALETTE.length];
+        }
+        chosenColor = candidate;
+        if (charColorMap && !charColorMap[ch]) {
+          charColorMap[ch] = chosenColor;
+        }
+      }
+      hzItems.push({ ch, color: chosenColor });
+      prevColor = chosenColor;
+    }
+  }
+
+  // Rekonstruksi HTML Hanzi dengan warna
+  let outHz = '';
+  let hzAssignIdx = 0;
+  for (const ch of hanziStr) {
+    if (isHanziChar(ch)) {
+      const item = hzItems[hzAssignIdx++];
+      outHz += '<span style="color:' + item.color + ';font-weight:700;">' + ch + '</span>';
+    } else {
+      outHz += ch;
+    }
+  }
+
+  // Rekonstruksi HTML Pinyin dengan warna (mendukung Erhua 儿 dan sinkronisasi suku kata)
+  let outPy = '';
+  let hzIdx = 0;
+  let remaining = pinyinStr;
+  while (remaining.length > 0) {
+    const tagMatch = remaining.match(/^<[^>]+>/);
+    if (tagMatch) {
+      outPy += tagMatch[0];
+      remaining = remaining.substring(tagMatch[0].length);
+      continue;
+    }
+    const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
+    if (nonLetterMatch) {
+      outPy += nonLetterMatch[0];
+      remaining = remaining.substring(nonLetterMatch[0].length);
+      continue;
+    }
+    const match = remaining.match(PINYIN_SYLL_RE);
+    if (match) {
+      const syll = match[0];
+      const isErhua = /r$/i.test(syll) &&
+                      !/^[eēéěè]r$/i.test(syll) &&
+                      hzIdx + 1 < hzItems.length &&
+                      hzItems[hzIdx + 1].ch === '儿';
+      if (isErhua) {
+        const rootSyll = syll.slice(0, -1);
+        const rootItem = hzItems[hzIdx];
+        const erItem = hzItems[hzIdx + 1];
+        outPy += '<span style="color:' + rootItem.color + ';font-weight:700;">' + rootSyll + '</span>' +
+                 '<span style="color:' + erItem.color + ';font-weight:700;">r</span>';
+        hzIdx += 2;
+      } else {
+        const item = hzItems[hzIdx];
+        if (item) {
+          outPy += '<span style="color:' + item.color + ';font-weight:700;">' + syll + '</span>';
+          hzIdx++;
+        } else {
+          outPy += syll;
+        }
+      }
+      remaining = remaining.substring(syll.length);
+    } else {
+      outPy += remaining[0];
+      remaining = remaining.substring(1);
+    }
+  }
+
+  return { hanzi: outHz, pinyin: outPy };
 }
 
-// 4. Standar Selector removeColors() Buku Teks:
+// 5. Standar Selector removeColors() Buku Teks:
 // WAJIB mencakup seluruh selector elemen yang diwarnai oleh applyColors():
 function removeColors() {
-  const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py, .badge-hz, .badge-py';
+  const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .char-name-hanzi, .char-name-pinyin, .char-desc-hanzi, .char-desc-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py, .badge-hz, .badge-py, .classroom-box .bubble-hanzi, .classroom-box .bubble-pinyin';
   document.querySelectorAll(selector).forEach(el => {
     if (el.dataset.origHtml !== undefined) {
       el.innerHTML = el.dataset.origHtml;

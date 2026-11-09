@@ -1045,7 +1045,7 @@
               <strong>Arti:</strong> Pakaian / baju
             </div>
             <div style="background:#fee2e2; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#991b1b; cursor:pointer;" onclick="playPinyin('yí jiàn yīfu')" title="Klik dengar frasa">
-              📏 Kata Satuan: <strong>一件衣服</strong> (<em>yí jiàn yīfu</em>) = Sehelai baju
+              📏 Kata Satuan: <strong class="bubble-hanzi">一件衣服</strong> (<em class="bubble-pinyin">yí jiàn yī fu</em>) = Sehelai baju
             </div>
           </div>
         </div>
@@ -1066,7 +1066,7 @@
               <strong>Arti:</strong> Murah / terjangkau (lawan kata dari 贵 <em>guì</em> = mahal)
             </div>
             <div style="background:#fef3c7; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#92400e; cursor:pointer;" onclick="playPinyin('zhēn piányi')" title="Klik dengar frasa">
-              💡 Contoh Frasa: <strong>真便宜</strong> (<em>zhēn piányi</em>) = Sungguh murah!
+              💡 Contoh Frasa: <strong class="bubble-hanzi">真便宜</strong> (<em class="bubble-pinyin">zhēn pián yi</em>) = Sungguh murah!
             </div>
           </div>
         </div>
@@ -1087,7 +1087,7 @@
               <strong>Arti:</strong> Apel (buah)
             </div>
             <div style="background:#fee2e2; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#991b1b; cursor:pointer;" onclick="playPinyin('liǎng jīn píngguǒ')" title="Klik dengar frasa">
-              ⚖️ Satuan Timbangan: <strong>两斤苹果</strong> (<em>liǎng jīn píngguǒ</em>) = 1 kg apel (2 jin)
+              ⚖️ Satuan Timbangan: <strong class="bubble-hanzi">两斤苹果</strong> (<em class="bubble-pinyin">liǎng jīn píng guǒ</em>) = 1 kg apel (2 jin)
             </div>
           </div>
         </div>
@@ -1108,7 +1108,7 @@
               <strong>Arti:</strong> Memakai / mengenakan (pakaian, sepatu)
             </div>
             <div style="background:#e0e7ff; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#3730a3; cursor:pointer;" onclick="playPinyin('chuān yīfu')" title="Klik dengar frasa">
-              👔 Frasa Kerja: <strong>穿衣服</strong> (<em>chuān yīfu</em>) = Mengenakan pakaian
+              👔 Frasa Kerja: <strong class="bubble-hanzi">穿衣服</strong> (<em class="bubble-pinyin">chuān yī fu</em>) = Mengenakan pakaian
             </div>
           </div>
         </div>
@@ -1129,7 +1129,7 @@
               <strong>Arti:</strong> Cangkir / gelas
             </div>
             <div style="background:#fee2e2; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#991b1b; cursor:pointer;" onclick="playPinyin('yí gè bēizi')" title="Klik dengar frasa">
-              ☕ Satuan Benda: <strong>一个杯子</strong> (<em>yí gè bēizi</em>) = Sebuah cangkir
+              ☕ Satuan Benda: <strong class="bubble-hanzi">一个杯子</strong> (<em class="bubble-pinyin">yí gè bēi zi</em>) = Sebuah cangkir
             </div>
           </div>
         </div>
@@ -1150,7 +1150,7 @@
               <strong>Arti:</strong> Toko / kedai
             </div>
             <div style="background:#fee2e2; border-radius:6px; padding:0.4rem 0.6rem; margin-top:0.5rem; font-size:0.78rem; color:#991b1b; cursor:pointer;" onclick="playPinyin('zhè jiā shāngdiàn')" title="Klik dengar frasa">
-              🏬 Kata Satuan Tempat Usaha: <strong>这家商店</strong> (<em>zhè jiā shāngdiàn</em>) = Toko ini
+              🏬 Kata Satuan Tempat Usaha: <strong class="bubble-hanzi">这家商店</strong> (<em class="bubble-pinyin">zhè jiā shāng diàn</em>) = Toko ini
             </div>
           </div>
         </div>
@@ -2822,7 +2822,23 @@
       pyEl.innerHTML = res.pinyin;
     });
 
-    // 4. Grammar Hero Card
+    // 4. Classroom & Warm-up / Exercise items
+    document.querySelectorAll('.classroom-box').forEach(box => {
+      box.querySelectorAll('.bubble-hanzi').forEach(hzEl => {
+        const item = hzEl.closest('.bubble-wrap') || hzEl.parentElement;
+        const pyEl = item ? item.querySelector('.bubble-pinyin') : null;
+        if (!pyEl) return;
+
+        if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+        const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
+      });
+    });
+
+    // 5. Grammar Hero Card
     document.querySelectorAll('.grammar-hero-card').forEach(card => {
       const bHz = card.querySelector('.grammar-banner-hanzi');
       const bPy = card.querySelector('.grammar-banner-pinyin');
@@ -2845,7 +2861,7 @@
       });
     });
 
-    // 5. Tongue Twister
+    // 6. Tongue Twister
     document.querySelectorAll('.twister-line').forEach(line => {
       const hzEl = line.querySelector('.tw-hz');
       const pyEl = line.querySelector('.tw-py');
@@ -2859,7 +2875,7 @@
   }
 
   function removeColors() {
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py, .tw-hz, .tw-py';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py, .tw-hz, .tw-py, .classroom-box .bubble-hanzi, .classroom-box .bubble-pinyin';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml !== undefined) {
         el.innerHTML = el.dataset.origHtml;
