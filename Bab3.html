@@ -391,6 +391,12 @@
       display: none;
     }
     body.show-pinyin .word-pinyin { display: block; }
+    body.show-pinyin .de-ex-pinyin { display: block; }
+    body.show-pinyin .de-chip-py { display: inline; }
+    body.show-pinyin .de-emas-py { display: inline; }
+    body.show-pinyin .spo-title-py { display: inline; }
+    body.show-pinyin .spo-item-py { display: inline; }
+    body.show-pinyin .opt-py { display: inline; }
     .word-arti {
       font-size: 0.8rem;
       color: var(--text);
@@ -1067,6 +1073,14 @@
       font-size: 0.78rem;
       color: var(--sub);
       font-weight: 600;
+      display: none;
+    }
+    .de-chip-py,
+    .de-emas-py,
+    .spo-title-py,
+    .spo-item-py,
+    .opt-py {
+      display: none;
     }
     .de-ex-arti {
       font-size: 0.82rem;
@@ -1200,7 +1214,7 @@
           <div class="de-formula">
             <span class="de-chip chip-subj">Subjek (S)</span>
             <span class="de-plus">+</span>
-            <span class="de-chip chip-de">的 (de)</span>
+            <span class="de-chip chip-de">的 <span class="de-chip-py">(de)</span></span>
             <span class="de-plus">+</span>
             <span class="de-chip chip-obj2">Objek / Benda</span>
           </div>
@@ -1218,7 +1232,7 @@
           <div class="de-formula">
             <span class="de-chip chip-ket">Keterangan (Ket)</span>
             <span class="de-plus">+</span>
-            <span class="de-chip chip-de">的 (de)</span>
+            <span class="de-chip chip-de">的 <span class="de-chip-py">(de)</span></span>
             <span class="de-plus">+</span>
             <span class="de-chip chip-obj2">Objek / Benda</span>
           </div>
@@ -2497,7 +2511,7 @@
             <div class="bubble-hanzi" style="font-size:1.12rem;font-weight:700;color:var(--primary-dark);">
               你工作忙（ <span style="color:#059669;font-weight:700;text-decoration:underline;">B 吗</span> ）？
             </div>
-            <div class="bubble-pinyin" style="font-size:0.85rem;color:#7c3aed;font-weight:600;display:inline-block;margin-top:0.15rem;">
+            <div class="bubble-pinyin" style="font-size:0.85rem;color:#7c3aed;font-weight:600;margin-top:0.15rem;">
               Nǐ gōngzuò máng ma?
             </div>
             <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);margin-top:0.2rem;">
@@ -2541,7 +2555,7 @@
             <div class="bubble-hanzi" style="font-size:1.12rem;font-weight:700;color:var(--primary-dark);">
               我很（ <span style="color:#059669;font-weight:700;text-decoration:underline;">E 想</span> ）你们。
             </div>
-            <div class="bubble-pinyin" style="font-size:0.85rem;color:#7c3aed;font-weight:600;display:inline-block;margin-top:0.15rem;">
+            <div class="bubble-pinyin" style="font-size:0.85rem;color:#7c3aed;font-weight:600;margin-top:0.15rem;">
               Wǒ hěn xiǎng nǐmen.
             </div>
             <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);margin-top:0.2rem;">
@@ -3169,7 +3183,7 @@
 
   function removeColors() {
     // Kembalikan semua teks ke kondisi asli tanpa span warna
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .de-ex-hanzi, .de-ex-pinyin, .de-emas-hz, .de-emas-py, .spo-title-hz, .spo-title-py, .spo-item-hz, .spo-item-py, .opt-hz, .opt-py';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .de-ex-hanzi, .de-ex-pinyin, .de-chip-py, .de-emas-hz, .de-emas-py, .spo-title-hz, .spo-title-py, .spo-item-hz, .spo-item-py, .opt-hz, .opt-py';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;

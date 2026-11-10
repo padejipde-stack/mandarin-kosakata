@@ -20,6 +20,7 @@
       --border:       #e2e8f0;
       --radius:       16px;
       --shadow:       0 4px 20px rgba(0, 0, 0, 0.06);
+      --font-pinyin:  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1207,25 +1208,25 @@
       display: inline-block;
     }
     .phonetic-pinyin-raw {
-      font-size: 1.15rem;
+      font-size: 1.18rem;
       font-weight: 700;
       color: #475569;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-pinyin, inherit);
       letter-spacing: 0.02em;
     }
     .phonetic-pinyin-toned {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.35rem;
-      font-size: 1.25rem;
-      font-weight: 800;
+      gap: 0.45rem;
+      font-size: 1.55rem;
+      font-weight: 700;
       color: #b83a30;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-pinyin, inherit);
       background: #fef2f2 !important;
       border: 1.5px solid #fecaca !important;
       border-radius: 10px;
-      padding: 0.35rem 0.75rem;
+      padding: 0.45rem 0.75rem;
       cursor: pointer;
       width: 100%;
       transition: all 0.2s ease;

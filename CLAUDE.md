@@ -407,6 +407,14 @@ Setiap dialog bab (umumnya Teks 1, Teks 2, Teks 3) dibungkus dalam `.dialog-box`
       </div>
     </div>
   </div>
+
+  <!-- KOSAKATA TEKS [N] (STANDAR MUTLAK: WAJIB DI DALAM .dialog-box LANGSUNG SETELAH .dialog-body) -->
+  <div class="sub-breakdown">
+    <div class="sub-title">📖 Kosakata Baru · Teks [N]</div>
+    <div class="breakdown-grid">
+      <!-- word-card di sini -->
+    </div>
+  </div>
 </div>
 ```
 
@@ -443,25 +451,114 @@ Setiap dialog bab (umumnya Teks 1, Teks 2, Teks 3) dibungkus dalam `.dialog-box`
 > - Baris `.bubble-arti` **HANYA BOLEH MEMILIKI SATU `</div>`**.
 > - Selalu pastikan jumlah tag `<div>` yang dibuka dan ditutup dalam `.dialog-line` seimbang (3 buka : 3 tutup).
 
-### 4.3 Rincian Arti Per Kata (`.sub-breakdown`)
-Diletakkan tepat di bawah `.dialog-box` untuk membedah kosakata baru di teks tersebut:
+### 4.3 Rincian Kosakata Baru / Sub-Breakdown (`.sub-breakdown`)
+> [!IMPORTANT]
+> **STANDAR ARSITEKTUR DOM RESMI `.sub-breakdown`**:
+> Blok `.sub-breakdown` **WAJIB DILETAKKAN DI DALAM `<div class="dialog-box">`**, tepat setelah penutup `</div>` dari `.dialog-body`, dan SEBELUM penutup `</div>` dari `.dialog-box`.
+> 
+> DILARANG meletakkan `.sub-breakdown` di luar `.dialog-box` (misal sebagai elemen terpisah di `.wrap`), karena garis pemisah `border-top: 1.5px dashed var(--border)`, padding kartu, dan toggle visibilitas `body.show-vocab` terikat langsung di dalam kotak dialog teks bersangkutan (seperti standar pada `Bab1.html` dan `Bab9.html`).
+
+Standar resmi mengadopsi format dan CSS dari **Bab 9**:
+
 ```html
-<div class="sub-breakdown">
-  <div class="sub-title">Arti Per Kata · Teks [N]</div>
-  <div class="breakdown-grid">
-    <div class="word-card">
-      <div class="word-char">老师</div>
-      <div class="word-pinyin">lǎoshī</div>
-      <div class="word-arti">guru</div>
-    </div>
-    <div class="word-card">
-      <div class="word-char">忙</div>
-      <div class="word-pinyin">máng</div>
-      <div class="word-arti">sibuk</div>
+<div class="dialog-box">
+  <div class="dialog-header">...</div>
+  <div class="dialog-body">...</div>
+
+  <!-- KOSAKATA TEKS [N] (WAJIB DI DALAM .dialog-box) -->
+  <div class="sub-breakdown">
+    <div class="sub-title">📖 Kosakata Baru · Teks [N]</div>
+    <div class="breakdown-grid">
+      <div class="word-card" onclick="playPinyin('lǎoshī')">
+        <div class="word-char">老师</div>
+        <div class="word-pinyin">lǎo shī</div>
+        <div class="word-arti">guru (teacher)</div>
+      </div>
+      <div class="word-card" onclick="playPinyin('máng')">
+        <div class="word-char">忙</div>
+        <div class="word-pinyin">máng</div>
+        <div class="word-arti">sibuk (busy)</div>
+      </div>
     </div>
   </div>
 </div>
 ```
+
+#### Standar Baku CSS Sub-Breakdown & Word Card (`Bab9.html`):
+```css
+/* ── SUB-BREAKDOWN ── */
+.sub-breakdown {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1.5px dashed var(--border);
+  display: none;
+}
+body.show-vocab .sub-breakdown { display: block; }
+.sub-title,
+.sub-breakdown-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  gap: 0.85rem;
+}
+.word-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: 12px;
+  padding: 0.95rem 0.75rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+.word-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+}
+.word-char {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.2;
+}
+.word-pinyin {
+  font-size: 0.76rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 0.25rem;
+  display: none;
+}
+body.show-pinyin .word-pinyin { display: block; }
+.word-arti {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin-top: 0.35rem;
+  line-height: 1.35;
+  display: none;
+}
+body.show-arti .word-arti { display: block; }
+```
+
+> [!IMPORTANT]
+> **Aturan Wajib Kontrol Visibilitas Kosakata (`.word-card`)**:
+> 1. Judul sub-breakdown wajib menggunakan format standar: `📖 Kosakata Baru · Teks [N]`.
+> 2. Pinyin kartu kata (`.word-pinyin`) secara default bernilai `display: none;` dan **hanya tampil** jika `body.show-pinyin` aktif (`body.show-pinyin .word-pinyin { display: block; }`).
+> 3. Arti terjemahan kartu kata (`.word-arti`) secara default bernilai `display: none;` dan **hanya tampil** jika `body.show-arti` aktif (`body.show-arti .word-arti { display: block; }`).
+> 4. Seluruh kontainer `.sub-breakdown` dikontrol oleh toggle kosakata `body.show-vocab` (`display: none;` default, `display: block;` saat aktif).
+> 5. Setiap `.word-card` disarankan memiliki event `onclick="playPinyin('...')"` dan kursor pointer agar dapat dilafalkan audionya saat diklik.
 
 ### 4.4 Catatan & Analisis Tata Bahasa (`.de-box`, `.de-rule-card`)
 Digunakan untuk menjelaskan pola kalimat (seperti partikel `的`, negasi `不`, kalimat tanya `吗`, pola `太……了`):
@@ -533,8 +630,13 @@ Bagian evaluasi berisi latihan isi bagian rumpang (*selection box*) dan deskrips
   <div class="selection-box">
     <div class="selection-box-title">Pilihan Kata (Vocabulary Bank):</div>
     <div class="selection-grid">
-      <div class="selection-item"><span class="selection-letter">A.</span> 哪 <span class="selection-pinyin">(nǎ)</span> = yang mana</div>
-      <div class="selection-item"><span class="selection-letter">B.</span> 吗 <span class="selection-pinyin">(ma)</span> = partikel tanya (kah?)</div>
+      <!-- STANDAR WAJIB: Setiap item pada selection-grid WAJIB memiliki pewarnaan kontras per-karakter Hanzi & suku kata Pinyin (candidate !== prevColor) -->
+      <div class="selection-item" onclick="playPinyin('bēizi')" style="cursor:pointer;" title="Klik dengar">
+        <span class="selection-letter">A.</span> <strong><span style="color:#2563eb; font-weight:700;">杯</span><span style="color:#ea580c; font-weight:700;">子</span></strong> <span class="selection-pinyin">(<span style="color:#2563eb; font-weight:600;">bēi</span> <span style="color:#ea580c; font-weight:600;">zi</span>)</span> = cangkir / gelas
+      </div>
+      <div class="selection-item" onclick="playPinyin('zěnmeyàng')" style="cursor:pointer;" title="Klik dengar">
+        <span class="selection-letter">B.</span> <strong><span style="color:#0891b2; font-weight:700;">怎</span><span style="color:#e11d48; font-weight:700;">么</span><span style="color:#16a34a; font-weight:700;">样</span></strong> <span class="selection-pinyin">(<span style="color:#0891b2; font-weight:600;">zěn</span> <span style="color:#e11d48; font-weight:600;">me</span> <span style="color:#16a34a; font-weight:600;">yàng</span>)</span> = bagaimana / apa pendapatmu
+      </div>
     </div>
   </div>
   
@@ -544,13 +646,19 @@ Bagian evaluasi berisi latihan isi bagian rumpang (*selection box*) dan deskrips
       <div class="item-number">1</div>
       <div class="item-title">nadia (1) 你工作忙 <strong>吗</strong> ？</div>
       <div class="item-body">
-        <p><strong>Pilihan yang tepat:</strong> B. 吗 (ma)</p>
+        <p><strong>Pilihan yang tepat:</strong> B. <strong><span style="color:#059669;">吗</span></strong> <em>(<span style="color:#059669;">ma</span>)</em></p>
         <p><strong>Alasan:</strong> Kalimat ini menanyakan kabar atau kondisi...</p>
       </div>
     </div>
   </div>
 </div>
 ```
+
+> [!IMPORTANT]
+> **Standar Pewarnaan Bank Kosakata Pilihan (`.selection-box` / `.selection-item`)**:
+> 1. Pada kotak pilihan kata (*Option Bank / Vocabulary Bank*), teks Hanzi dan Pinyin **DILARANG KERAS** dibiarkan polos (hitam/abu-abu).
+> 2. Karakter Hanzi dan suku kata Pinyin **WAJIB** diberikan warna berpasangan dengan aturan anti-warna berdampingan (`candidate !== prevColor`).
+> 3. Kunci jawaban dan pembahasan di setiap nomor soal juga wajib menyertakan pewarnaan Hanzi dan Pinyin yang konsisten.
 
 ### 4.7 Hero Banner Tata Bahasa Pokok (`.grammar-hero-card`)
 Digunakan pada bab tingkat lanjut (seperti Bab 9) untuk menampilkan pola kalimat utama yang mencolok dengan audio dan visual urutan kata:
@@ -946,6 +1054,15 @@ function removeColors() {
   });
 }
 ```
+
+> [!CAUTION]
+> **Standar Anti-Warna Sama pada Elemen Berdekatan / Berdampingan & Pewarnaan Menyeluruh (Adjacent Contrast & Global Colorization Standard)**:
+> 1. **Dua karakter Hanzi atau suku kata Pinyin yang berdampingan/berdekatan DILARANG KERAS memiliki warna yang sama**. Hal ini berlaku baik saat mode pewarnaan dinamis (`colorizePair()`) aktif maupun pada elemen statis/kartu kosakata.
+> 2. Di dalam fungsi `colorizePair()`, algoritma wajib memverifikasi bahwa `candidate !== prevColor`. Jika karakter sudah terdaftar di `charColorMap` namun warnanya sama dengan karakter sebelum atau sesudahnya dalam kalimat tersebut, sistem wajib memilih kandidat warna berbeda dari `COLOR_PALETTE`.
+> 3. **Elemen Kartu Kosakata / Bedah Kalimat Statis**:
+>    Dilarang memberikan satu warna seragam (monokrom) untuk keseluruhan kata multi-karakter (misal `苹果` keduanya hijau, atau `便宜` keduanya ungu) jika diletakkan berdampingan dalam analisis bahasa. Setiap karakter Hanzi dan suku kata Pinyin harus memiliki warna aksen yang berbeda-beda satu sama lain agar pembaca dapat membedakan batas karakter dan silabel dengan jelas.
+> 4. **Pewarnaan Menyeluruh pada Soal Latihan & Pilihan Ganda (Quiz Options)**:
+>    Seluruh opsi pilihan ganda (misalnya pilihan A, B, C pada latihan listening, reading, atau pemahaman kalimat), tabel perbandingan, contoh kalimat, dan badge kosakata **WAJIB** diberikan pewarnaan kontras pada pasangan teks Hanzi dan Pinyin-nya (contoh: `<strong>A. <span style="color:#2563eb; font-weight:700;">很</span><span style="color:#ea580c; font-weight:700;">少</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">hěn</span> <span style="color:#ea580c; font-weight:600;">shǎo</span>)</em>`), dan tidak boleh dibiarkan polos tanpa warna (*uncolored text*).
 
 > [!CAUTION]
 > **Kewajiban Penggunaan Syllabic Regex Engine (Pencegahan Bug Kata Majemuk)**:
