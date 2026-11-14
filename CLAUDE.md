@@ -111,7 +111,7 @@ Setiap file bab buku teks adalah dokumen mandiri (*self-contained*) dengan struk
     /* CSS Variables & Global Resets */
     :root { ... }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); padding-bottom: 75px; }
+    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding-bottom: 3rem; }
     
     /* Header, Nav, Wrap, Dialog, Classroom, Cards, Toolbar Styles */
     ...
@@ -119,26 +119,26 @@ Setiap file bab buku teks adalah dokumen mandiri (*self-contained*) dengan struk
 </head>
 <body class="show-pinyin show-arti show-vocab">
 
-<!-- HEADER RESMI -->
+<!-- HEADER RESMI (STANDAR BAKU BAB 10 & 11) -->
 <header>
   <h1>🈶 Dialog Bahasa Mandarin</h1>
   <p>Latihan percakapan · 对话练习</p>
   <div class="bab">Bab N — [JUDUL_HANZI] ([JUDUL_PINYIN]) · [TERJEMAHAN_INDONESIA]</div>
   
-  <!-- Tautan Cepat ke Workbook jika sudah tersedia -->
+  <!-- Tautan Cepat ke Workbook -->
   <div style="margin-top:0.55rem;">
     <a href="WorkBookBabN.html" style="display:inline-flex;align-items:center;gap:0.35rem;background:rgba(255,255,255,0.22);color:#fff;text-decoration:none;padding:0.3rem 0.9rem;border-radius:20px;font-size:0.78rem;font-weight:600;border:1px solid rgba(255,255,255,0.4);transition:all 0.2s ease;">
-      📝 Buka Workbook Bab N ([Deskripsi Materi]) →
+      📝 Buka Workbook Bab N ([Deskripsi Singkat]) →
     </a>
   </div>
 </header>
 ```
 
 > [!NOTE]
-> **Standar CSS & Dimensi Tinggi Header Resmi (`header`) dari Bab 9**:
-> Ketinggian dan proporsi header wajib mengikuti standar Bab 9 agar seragam di semua bab:
+> **Standar CSS & Dimensi Tinggi Header Resmi (`header`)**:
+> Ketinggian, tipografi, gradien warna tema bab, dan watermark latar belakang `header` wajib mengikuti standar baku:
 > ```css
->     /* ── HEADER RESMI (STANDAR BAB 9) ── */
+>     /* ── HEADER RESMI (STANDAR BAKU BAB 10 & 11) ── */
 >     header {
 >       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
 >       color: #fff;
@@ -191,12 +191,12 @@ Setiap file bab buku teks adalah dokumen mandiri (*self-contained*) dengan struk
 > ```
 
 ### 3.2 Navigasi Sticky 3-Kolom Simetris (`.nav-bar`)
-Bar navigasi menempel di bagian atas (`position: sticky; top: 0; z-index: 1000;`) dengan 3 slot simetris menggunakan CSS standar baku dari Bab 9:
-- **Kiri**: Tombol Bab Sebelumnya (`.nav-pager-btn.prev`)
-- **Tengah**: Tombol Navigasi Menu Utama (`.nav-home-btn`)
-- **Kanan**: Tombol Bab Berikutnya (`.nav-pager-btn.next`)
+Bar navigasi menempel di bagian atas (`position: sticky; top: 0; z-index: 1000;`) dengan 3 slot simetris menggunakan CSS standar baku dari **Bab 10 & Bab 11**:
+- **Kiri (`.nav-side-left`)**: Tombol Bab Sebelumnya (`.nav-pager-btn.prev`) dengan ikon panah kiri SVG.
+- **Tengah (`.nav-center`)**: Tombol Navigasi Menu Utama (`.nav-home-btn`) ke `index.html` dengan ikon beranda SVG.
+- **Kanan (`.nav-side-right`)**: Tombol Bab Berikutnya (`.nav-pager-btn.next`) dengan latar warna tema bab (`var(--primary)`), bayangan lembut, dan ikon panah kanan SVG.
 
-#### Spesifikasi CSS Standar Baku Navbar (Baku Bab 9):
+#### Spesifikasi CSS Standar Baku Navbar (Standar Bab 10 & 11):
 ```css
     /* ── MODERN STICKY NAVBAR ── */
     .nav-bar {
@@ -296,7 +296,7 @@ Bar navigasi menempel di bagian atas (`position: sticky; top: 0; z-index: 1000;`
     </div>
     
     <div class="nav-center">
-      <a href="index.html" class="nav-home-btn" title="Kembali ke Daftar Bab">
+      <a href="index.html" class="nav-home-btn" title="Kembali ke Menu Utama">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
         <span class="label">Menu Utama</span>
       </a>
@@ -324,6 +324,7 @@ Untuk menjamin konsistensi visual di seluruh bab, seluruh ukuran dimensi, tinggi
 | :--- | :--- | :--- | :--- |
 | **Header Resmi (`header`)** | `padding` / `font-size h1` / `p` / `.bab` | `2.5rem 1rem 2rem` / `1.9rem` / `0.88rem` / `0.8rem` | Gradien bab 135deg, background watermark `对话` (11rem), badge bab `margin-top: 0.65rem` |
 | **Kontainer Utama (`.wrap`)** | `max-width` / `margin` / `gap` | `860px` / `1.5rem auto 2.5rem` / `1.8rem` | Padding samping `0 1rem` |
+| **Spasi Body Bawah (`body`)** | `padding-bottom` | `3rem` | Jarak standar baku Bab 10 antara viewport bawah/dock toolbar dengan konten akhir |
 | **Navigasi Atas (`.nav-bar .nav`)** | `padding` / `border-radius` | `0.65rem 1rem` / `gap: 0.6rem` | Sticky dock dengan backdrop-filter `blur(10px)`, z-index: `1000`, padding tombol pager `0.45rem 0.95rem` |
 | **Avatar Karakter (`.avatar`)** | `width` / `height` / `font-size` | `44px` / `44px` / `1rem` (font-weight: 700) | Lingkaran `border-radius: 50%`, bayangan `0 3px 8px rgba(0,0,0,0.12)` |
 | **Kotak Dialog (`.dialog-box`)** | `padding` / `gap` / `border-radius` | `1.5rem` / `1.25rem` / `var(--radius)` (16px) | Header `padding-bottom: 0.85rem`, border-bottom dashed `1.5px` |
@@ -773,20 +774,81 @@ Ditempatkan sebelum teks percakapan (misal sebelum Teks 2 atau Teks 3) untuk lat
 </div>
 ```
 
-### 4.10 Tongue Twister (`.twister-box`)
-Diakhiri dengan latihan artikulasi lidah dan intonasi khas Tiongkok:
+### 4.10 [Opsional / Non-Baku] Tongue Twister (`.twister-box`)
+> [!NOTE]
+> Tongue Twister (绕口令) **BUKAN BAGIAN STANDAR/WAJIB** dari kurikulum buku teks HSK. Jangan menambahkan bagian ini ke bab baru kecuali diminta secara khusus oleh pengguna. Jika bab tertentu memiliki latihan artikulasi ini, standar penulisannya adalah:
 ```html
-<div class="section-title">👅 Tongue Twister · 绕口令</div>
-<div class="twister-box">
-  <div class="twister-title">Judul Twister · [Hanzi]</div>
-  <div class="twister-lines">
-    <div class="twister-line">
-      <span class="tw-hz">四是四，十是十。</span>
-      <span class="tw-py">Sì shì sì, shí shì shí.</span>
-      <span class="tw-id">Empat adalah empat, sepuluh adalah sepuluh.</span>
+  <!-- ══ TONGUE TWISTER (RÀOKǑULÌNG) ══ -->
+  <div>
+    <div class="section-title">👅 Tongue Twister · 绕口令 (Latihan Pelafalan)</div>
+    <div class="twister-box">
+      <div class="twister-title">吃葡萄不吐葡萄皮 · Chī pútáo bù tǔ pútáo pí</div>
+      <div class="twister-lines">
+        <div class="twister-line" onclick="playPinyin('Chī pútáo bù tǔ pútáo pí, bù chī pútáo dào tǔ pútáo pí.')">
+          <span class="tw-hz bubble-hanzi">吃葡萄不吐葡萄皮，不吃葡萄倒吐葡萄皮。</span>
+          <span class="tw-py bubble-pinyin">Chī pú tao bù tǔ pú tao pí, bù chī pú tao dào tǔ pú tao pí.</span>
+          <span class="tw-id">Makan anggur tidak melepeh kulit anggur, tidak makan anggur malah melepeh kulit anggur.</span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+```
+
+#### Spesifikasi CSS Baku Tongue Twister:
+```css
+    /* ── TWISTER BOX ── */
+    .twister-box {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .twister-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.85rem;
+    }
+    .twister-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .twister-line {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .twister-line:hover {
+      background: #f1f5f9;
+    }
+    .tw-hz {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .tw-py {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      display: none;
+    }
+    body.show-pinyin .tw-py { display: block; }
+    .tw-id {
+      font-size: 0.8rem;
+      color: var(--sub);
+      display: none;
+    }
+    body.show-arti .tw-id { display: block; }
 ```
 
 ### 4.11 Standar Floating Dialog Toolbar Bawah (`.dialog-toolbar`)
@@ -905,6 +967,14 @@ Wajib menggunakan desain dock semi-transparan (*frosted glass* / `backdrop-filte
       }
     }
 ```
+
+#### C. Standar Jarak Baku `.wrap` terhadap `.dialog-toolbar`
+Untuk menjaga tampilan yang konsisten dan rapi (mengikuti standar baku **Bab 10**):
+1. **Margin Bawah `.wrap`**: `margin: 1.5rem auto 2.5rem;` (pada mobile layar `< 640px`: `margin: 1.2rem auto 2rem;`).
+2. **Padding Bawah `body`**: `padding-bottom: 3rem;`.
+3. **Floating Toolbar**: `bottom: 1.2rem;` (pada mobile layar `< 640px`: `bottom: 0.8rem;`).
+
+Kombinasi nilai di atas memastikan bahwa ketika pengguna melakukan *scroll* hingga bagian paling bawah halaman, elemen konten terakhir di dalam `.wrap` memiliki jarak visual yang pas, nyaman dipandang, dan tidak tertutup maupun berjarak terlalu renggang terhadap dock toolbar melayang `⚙️ Bantuan`.
 
 ---
 
@@ -1061,8 +1131,27 @@ function removeColors() {
 > 2. Di dalam fungsi `colorizePair()`, algoritma wajib memverifikasi bahwa `candidate !== prevColor`. Jika karakter sudah terdaftar di `charColorMap` namun warnanya sama dengan karakter sebelum atau sesudahnya dalam kalimat tersebut, sistem wajib memilih kandidat warna berbeda dari `COLOR_PALETTE`.
 > 3. **Elemen Kartu Kosakata / Bedah Kalimat Statis**:
 >    Dilarang memberikan satu warna seragam (monokrom) untuk keseluruhan kata multi-karakter (misal `苹果` keduanya hijau, atau `便宜` keduanya ungu) jika diletakkan berdampingan dalam analisis bahasa. Setiap karakter Hanzi dan suku kata Pinyin harus memiliki warna aksen yang berbeda-beda satu sama lain agar pembaca dapat membedakan batas karakter dan silabel dengan jelas.
-> 4. **Pewarnaan Menyeluruh pada Soal Latihan & Pilihan Ganda (Quiz Options)**:
->    Seluruh opsi pilihan ganda (misalnya pilihan A, B, C pada latihan listening, reading, atau pemahaman kalimat), tabel perbandingan, contoh kalimat, dan badge kosakata **WAJIB** diberikan pewarnaan kontras pada pasangan teks Hanzi dan Pinyin-nya (contoh: `<strong>A. <span style="color:#2563eb; font-weight:700;">很</span><span style="color:#ea580c; font-weight:700;">少</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">hěn</span> <span style="color:#ea580c; font-weight:600;">shǎo</span>)</em>`), dan tidak boleh dibiarkan polos tanpa warna (*uncolored text*).
+> 4. **Pewarnaan Menyeluruh pada Soal Latihan & Pilihan Ganda (Quiz Options / Latihan Mendengarkan & Membaca)**:
+>    Seluruh opsi pilihan ganda (misalnya opsi A, B, C pada latihan mendengarkan/listening, reading, latihan pemahaman kalimat, maupun latihan warm-up/pasangan gambar) **WAJIB** diberikan pewarnaan kontras per karakter/suku kata pada teks Hanzi dan Pinyin-nya secara eksplisit:
+>    - Format wajib:
+>      ```html
+>      <div style="padding:0.4rem 0.8rem; border-radius:8px; border:1px solid #e2e8f0; background:#fff; font-size:0.82rem; cursor:pointer;" onclick="playPinyin('shuìjiào')">
+>        C. <strong><span style="color:#059669; font-weight:700;">睡</span><span style="color:#2563eb; font-weight:700;">觉</span></strong> <em>(<span style="color:#059669; font-weight:600;">shuì</span> <span style="color:#2563eb; font-weight:600;">jiào</span>)</em> ✓ (Tidur)
+>      </div>
+>      ```
+>    - **DILARANG KERAS** membiarkan teks Hanzi maupun Pinyin pada opsi pilihan (A, B, C) berupa teks polos hitam/abu-abu (`A. <strong>玩</strong> <em>(wán)</em>` tanpa tag `<span style="color:...">`).
+>    - Setiap karakter Hanzi yang berdampingan dan pasangan suku kata Pinyin-nya harus menggunakan warna berbeda (*Adjacent Contrast Rule*).
+> 5. **Pewarnaan Wajib pada Kunci Jawaban & Pilihan Jawaban yang Tepat (参考答案 / Describe Pictures / Fill in the Blanks / Latihan Mandiri)**:
+>    Pada setiap blok kunci jawaban latihan (seperti `✅ 参考答案 (Pilihan Jawaban yang Tepat):`, `👉 Titik pertama:`, `👉 Mengisi pertanyaan:`, `👉 Kalimat utuh:`, dll.), teks Hanzi dan Pinyin **WAJIB** memiliki tone color (*adjacent contrast*). **DILARANG KERAS** menyajikan teks Hanzi/Pinyin dalam bentuk polos monokrom (`<strong>真便宜</strong> (zhēn piányi)` atau `<strong>怎么样</strong> (zěnmeyàng)` tanpa warna).
+>    - Format wajib pada daftar pilihan alternatif:
+>      ```html
+>      <strong><span style="color:#0891b2;">真</span><span style="color:#16a34a;">便</span><span style="color:#ea580c;">宜</span></strong> <em>(<span style="color:#0891b2;">zhēn</span> <span style="color:#16a34a;">pián</span><span style="color:#ea580c;">yi</span>)</em>
+>      ```
+>    - Format wajib pada Kalimat Utuh:
+>      ```html
+>      👉 Kalimat utuh: <span style="color:#e11d48;">这</span><span style="color:#16a34a;">儿</span><span style="color:#ea580c;">的</span><span style="color:#2563eb;">苹</span><span style="color:#7c3aed;">果</span><strong style="text-decoration:underline;"><span style="color:#0891b2;">真</span><span style="color:#16a34a;">便</span><span style="color:#ea580c;">宜</span></strong>！ (<em><span style="color:#e11d48;">Zhèr</span> <span style="color:#ea580c;">de</span> <span style="color:#2563eb;">píng</span><span style="color:#7c3aed;">guǒ</span> <strong style="text-decoration:underline;"><span style="color:#0891b2;">zhēn</span> <span style="color:#16a34a;">pián</span><span style="color:#ea580c;">yi</span></strong>!</em>)
+>      ```
+>    - Karakter atau suku kata yang bersebelahan **TIDAK BOLEH** memiliki warna yang sama.
 
 > [!CAUTION]
 > **Kewajiban Penggunaan Syllabic Regex Engine (Pencegahan Bug Kata Majemuk)**:
