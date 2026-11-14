@@ -33,7 +33,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      padding-bottom: 48px;
+      padding-bottom: 84px;
     }
 
     /* ── HEADER ── */
@@ -772,6 +772,9 @@
   
   
     @media (max-width: 600px) {
+      body {
+        padding-bottom: 96px;
+      }
       .classroom-header {
         align-items: flex-start;
         gap: 0.65rem;
@@ -801,8 +804,40 @@
         font-size: 0.72rem;
         padding: 0.15rem 0.4rem;
       }
+
+      /* Responsiveness untuk grid 4-kolom & pilihan kata pada layar kecil */
+      [style*="grid-template-columns: repeat(4, 1fr)"],
+      [style*="grid-template-columns:repeat(4, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+      }
+      [style*="grid-template-columns:repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+      }
       [style*="grid-template-columns"] {
         max-width: 100%;
+      }
+
+      /* Responsiveness untuk kartu pasangan komparasi Nada Asli vs Nada Netral */
+      div[style*="min-width:220px"],
+      div[style*="min-width:240px"] {
+        min-width: 100% !important;
+      }
+      .btn-text-desktop {
+        display: none !important;
+      }
+
+      /* Quiz options tombol agar fleksibel & nyaman disentuh */
+      .quiz-options {
+        gap: 0.45rem;
+      }
+      .quiz-option-btn {
+        width: 100%;
+        font-size: 0.85rem;
+        padding: 0.45rem 0.65rem;
+        white-space: normal;
+        word-break: break-word;
       }
     }
 
