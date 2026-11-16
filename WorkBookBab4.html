@@ -429,8 +429,12 @@
       white-space: nowrap;
     }
     .opt-py, .option-pill .word-pinyin, .option-pill .py-read {
-      display: inline-block !important;
       white-space: nowrap !important;
+    }
+    body.show-pinyin .opt-py,
+    body.show-pinyin .option-pill .word-pinyin,
+    body.show-pinyin .option-pill .py-read {
+      display: inline-block !important;
     }
     .py-orig {
       color: #94a3b8;
@@ -453,8 +457,16 @@
     }
 
     /* Visibilitas Toolbar Toggle Teks */
-    body:not(.show-pinyin) .word-pinyin { display: none !important; }
-    body:not(.show-arti) .word-arti { display: none !important; }
+    body:not(.show-pinyin) .word-pinyin,
+    body:not(.show-pinyin) .bubble-pinyin,
+    body:not(.show-pinyin) .opt-py,
+    body:not(.show-pinyin) .py-read,
+    body:not(.show-pinyin) .py-orig,
+    body:not(.show-pinyin) .py-arrow,
+    body:not(.show-pinyin) .quiz-options em { display: none !important; }
+
+    body:not(.show-arti) .word-arti,
+    body:not(.show-arti) .bubble-arti { display: none !important; }
     /* Tombol 📖 (Vocab): Pada halaman latihan Workbook (tanpa teks bacaan naratif), tidak ada elemen yang disembunyikan */
     .sub-breakdown { display: none; }
     body.show-vocab .sub-breakdown { display: block; }
@@ -843,7 +855,7 @@
 
   </style>
 </head>
-<body>
+<body class="show-pinyin show-arti show-vocab">
 
 <!-- ══ HEADER ══ -->
 <header>
@@ -3086,8 +3098,8 @@
       <span>Bantuan:</span>
     </div>
     <div class="toolbar-buttons">
-      <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
-      <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti Kalimat">🇮🇩</button>
+      <button id="btnPinyin" class="toggle-switch-btn active" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+      <button id="btnArti" class="toggle-switch-btn active" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti Kalimat">🇮🇩</button>
       <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Arti Per Kata">📖</button>
       <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warna-warni Hanzi &amp; Pinyin">🎨</button>
     </div>
@@ -3457,9 +3469,21 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('mandarin_show_pinyin') === '1') document.body.classList.add('show-pinyin');
-    if (localStorage.getItem('mandarin_show_arti') === '1') document.body.classList.add('show-arti');
-    if (localStorage.getItem('mandarin_show_vocab') !== '0') document.body.classList.add('show-vocab');
+    if (localStorage.getItem('mandarin_show_pinyin') === '1' || localStorage.getItem('mandarin_show_pinyin') === null) {
+      document.body.classList.add('show-pinyin');
+    } else {
+      document.body.classList.remove('show-pinyin');
+    }
+    if (localStorage.getItem('mandarin_show_arti') === '1' || localStorage.getItem('mandarin_show_arti') === null) {
+      document.body.classList.add('show-arti');
+    } else {
+      document.body.classList.remove('show-arti');
+    }
+    if (localStorage.getItem('mandarin_show_vocab') !== '0') {
+      document.body.classList.add('show-vocab');
+    } else {
+      document.body.classList.remove('show-vocab');
+    }
     if (localStorage.getItem('mandarin_show_color') === '1') {
       document.body.classList.add('show-color');
       applyColors();

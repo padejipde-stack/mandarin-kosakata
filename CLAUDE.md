@@ -1266,9 +1266,22 @@ function toggleColor() {
 
 // Inisialisasi State Saat Halaman Dimuat
 window.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('mandarin_show_pinyin') === '1') document.body.classList.add('show-pinyin');
-  if (localStorage.getItem('mandarin_show_arti') === '1') document.body.classList.add('show-arti');
-  if (localStorage.getItem('mandarin_show_vocab') !== '0') document.body.classList.add('show-vocab');
+  // Default aktif untuk Pinyin, Arti, dan Vocab saat pertama kali dibuka (nilai belum ada di localStorage / null)
+  if (localStorage.getItem('mandarin_show_pinyin') === '1' || localStorage.getItem('mandarin_show_pinyin') === null) {
+    document.body.classList.add('show-pinyin');
+  } else {
+    document.body.classList.remove('show-pinyin');
+  }
+  if (localStorage.getItem('mandarin_show_arti') === '1' || localStorage.getItem('mandarin_show_arti') === null) {
+    document.body.classList.add('show-arti');
+  } else {
+    document.body.classList.remove('show-arti');
+  }
+  if (localStorage.getItem('mandarin_show_vocab') !== '0') {
+    document.body.classList.add('show-vocab');
+  } else {
+    document.body.classList.remove('show-vocab');
+  }
   if (localStorage.getItem('mandarin_show_color') === '1') {
     document.body.classList.add('show-color');
     applyColors();
@@ -1354,6 +1367,26 @@ Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 
 >   </div>
 > </div>
 > ```
+
+### 6.1.1 Standar Baku Visibilitas Toolbar Toggle (🔤 Pinyin & 🇮🇩 Arti di Workbook)
+> [!CAUTION]
+> **ATURAN WAJIB TOGGLE VISIBILITAS WORKBOOK (Pencegahan Bug Tombol 🔤 / 🇮🇩 Tidak Bekerja)**:
+> 1. **Daftar Lengkap Selector Pinyin**: Seluruh elemen yang memuat teks fonetik / transliterasi Pinyin dalam latihan workbook wajib masuk ke dalam aturan CSS `body:not(.show-pinyin)`:
+>    ```css
+>    body:not(.show-pinyin) .word-pinyin,
+>    body:not(.show-pinyin) .bubble-pinyin,
+>    body:not(.show-pinyin) .opt-py,
+>    body:not(.show-pinyin) .py-read,
+>    body:not(.show-pinyin) .py-orig,
+>    body:not(.show-pinyin) .py-arrow,
+>    body:not(.show-pinyin) .quiz-options em,
+>    body:not(.show-pinyin) .match-py,
+>    body:not(.show-pinyin) .dialog-py,
+>    body:not(.show-pinyin) .cloze-py { display: none !important; }
+>    ```
+> 2. **Dilarang Menimpa Visibilitas dengan `!important`**: Hindari deklarasi seperti `.opt-py { display: inline-block !important; }` tanpa pembungkus `body.show-pinyin`, karena deklarasi tersebut akan mengalahkan aturan toggle sembunyikan.
+>    - ✅ **Benar**: `body.show-pinyin .opt-py { display: inline-block !important; }`
+> 3. **Sinkronisasi Default Tag Body & Tombol Toolbar**: Elemen `<body>` wajib memiliki kelas default `<body class="show-pinyin show-arti show-vocab">`, tombol bantuan di toolbar memuat kelas `active`, dan handler `DOMContentLoaded` memeriksa nilai `=== '1' || === null` agar pinyin & arti langsung tampil aktif pada kunjungan pertama.
 
 ### 6.2 Struktur Pembungkus Bagian & Komponen Khusus Workbook (Standar Baku WorkBookBab11)
 
