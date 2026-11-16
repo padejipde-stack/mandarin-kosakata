@@ -893,7 +893,7 @@
     }
   </style>
 </head>
-<body>
+<body class="show-pinyin show-arti show-vocab">
 
 <!-- HEADER RESMI -->
 <header>
@@ -3130,10 +3130,21 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('mandarin_show_pinyin') === '1') document.body.classList.add('show-pinyin');
-    if (localStorage.getItem('mandarin_show_arti') === '1') document.body.classList.add('show-arti');
-    if (localStorage.getItem('mandarin_show_vocab') !== '0') document.body.classList.add('show-vocab');
-    if (localStorage.getItem('mandarin_show_color') === '1') {
+    if (localStorage.getItem('mandarin_show_pinyin') === '1' || localStorage.getItem('mandarin_show_pinyin') === null) {
+      document.body.classList.add('show-pinyin');
+    } else {
+      document.body.classList.remove('show-pinyin');
+    }
+    if (localStorage.getItem('mandarin_show_arti') === '1' || localStorage.getItem('mandarin_show_arti') === null) {
+      document.body.classList.add('show-arti');
+    } else {
+      document.body.classList.remove('show-arti');
+    }
+    if (localStorage.getItem('mandarin_show_vocab') !== '0') {
+      document.body.classList.add('show-vocab');
+    } else {
+      document.body.classList.remove('show-vocab');
+    }if (localStorage.getItem('mandarin_show_color') === '1') {
       document.body.classList.add('show-color');
       applyColors();
     }

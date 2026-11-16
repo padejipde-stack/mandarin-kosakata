@@ -3068,8 +3068,8 @@
       <span>Bantuan:</span>
     </div>
     <div class="toolbar-buttons">
-      <button id="btnPinyin" class="toggle-switch-btn" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
-      <button id="btnArti" class="toggle-switch-btn" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti Kalimat">🇮🇩</button>
+      <button id="btnPinyin" class="toggle-switch-btn active" onclick="togglePinyin()" title="Tampilkan / Sembunyikan Pinyin">🔤</button>
+      <button id="btnArti" class="toggle-switch-btn active" onclick="toggleArti()" title="Tampilkan / Sembunyikan Arti Kalimat">🇮🇩</button>
       <button id="btnVocab" class="toggle-switch-btn active" onclick="toggleVocab()" title="Tampilkan / Sembunyikan Arti Per Kata">📖</button>
       <button id="btnColor" class="toggle-switch-btn" onclick="toggleColor()" title="Warna-warni Hanzi &amp; Pinyin">🎨</button>
     </div>
@@ -3368,10 +3368,21 @@
 
   // Load Preferences
   window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('mandarin_show_pinyin') === '0') document.body.classList.remove('show-pinyin');
-    if (localStorage.getItem('mandarin_show_arti') === '0') document.body.classList.remove('show-arti');
-    if (localStorage.getItem('mandarin_show_vocab') === '0') document.body.classList.remove('show-vocab');
-    if (localStorage.getItem('mandarin_show_color') === '1') {
+    if (localStorage.getItem('mandarin_show_pinyin') === '1' || localStorage.getItem('mandarin_show_pinyin') === null) {
+      document.body.classList.add('show-pinyin');
+    } else {
+      document.body.classList.remove('show-pinyin');
+    }
+    if (localStorage.getItem('mandarin_show_arti') === '1' || localStorage.getItem('mandarin_show_arti') === null) {
+      document.body.classList.add('show-arti');
+    } else {
+      document.body.classList.remove('show-arti');
+    }
+    if (localStorage.getItem('mandarin_show_vocab') !== '0') {
+      document.body.classList.add('show-vocab');
+    } else {
+      document.body.classList.remove('show-vocab');
+    }if (localStorage.getItem('mandarin_show_color') === '1') {
       document.body.classList.add('show-color');
       applyColors();
     }
