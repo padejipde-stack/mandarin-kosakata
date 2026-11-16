@@ -244,6 +244,9 @@
       font-family: 'Noto Sans SC', sans-serif;
     }
     .av-wang { background: linear-gradient(135deg, #c0392b, #8e1a12); }
+    .av-xue { background: linear-gradient(135deg, #27ae60, #1e8449); }
+    .av-yang { background: linear-gradient(135deg, #6c5ce7, #4834d4); }
+    .av-hu { background: linear-gradient(135deg, #0284c7, #0369a1); }
     .av-li { background: linear-gradient(135deg, #e67e22, #d35400); }
     .av-chen { background: linear-gradient(135deg, #8e44ad, #5b2c6f); }
     .av-bai { background: linear-gradient(135deg, #16a085, #0e6655); }
@@ -251,7 +254,11 @@
     .av-stu { background: linear-gradient(135deg, #2980b9, #1a5276); }
     .av-xiaoyu { background: linear-gradient(135deg, #f39c12, #d68910); }
 
-    /* ── BUBBLE STYLES ── */
+    /* ── PINYIN TYPOGRAPHY & FONT FIX ── */
+    .bubble-pinyin, .word-pinyin, .speaker-pinyin, .selection-pinyin, .classroom-box .bubble-pinyin, .dialog-box .bubble-pinyin {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-variant-ligatures: contextual;
+    }
     .bubble-wrap {
       display: flex;
       flex-direction: column;
@@ -875,8 +882,1638 @@
       </div>
     </div>
 
+    <!-- ── SECTION 1: LATIHAN MENDENGARKAN (LISTENING) TEKS 1 ── -->
+    <div>
+      <div class="section-title">🎧 Latihan Mendengarkan · 听力练习 (Teks 1)</div>
+      <div class="classroom-box" style="border-left: 5px solid var(--primary);">
+        
+        <!-- Header Listening -->
+        <div class="classroom-header">
+          <div class="avatar" style="background: linear-gradient(135deg, #c2410c, #9a3412); color:#fff; font-size:1.05rem;">听</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge" style="background:#ffedd5; color:#9a3412;">课文 1 Text 1 · 听力与理解</div>
+            <div class="classroom-desc">
+              📍 <strong>王一雪给王一飞打电话，询问王一飞那边的情况。</strong><br/>
+              (Wang Yixue was calling Wang Yifei to ask about the situation on her end / Wang Yixue menelepon Wang Yifei, menanyakan keadaan di tempat Wang Yifei).<br/>
+              🟥 <strong>听两遍对话，选择正确答案。</strong> Listen to the dialogue twice and choose the correct answer (Dengarkan dialog dua kali, lalu pilihlah jawaban yang tepat) <span style="font-size:0.82rem; color:#c2410c; font-weight:700;">🔊 12-1</span>:
+            </div>
+          </div>
+        </div>
 
-  </div>
+        <!-- Daftar Soal Pilihan Ganda -->
+        <div class="classroom-list" style="margin-top:0.3rem;">
+          
+          <!-- Soal 1 -->
+          <div class="classroom-item" style="border-left:4px solid var(--primary);">
+            <div class="item-number">1</div>
+            <div class="item-content">
+              <div style="cursor:pointer;" onclick="playPinyin('Wáng Yīfēi nàr de tiānqì bú tài hǎo.')" title="Klik dengar kalimat soal 1">
+                <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#c2410c;">
+                  <span style="color:#2563eb;">Wáng</span> <span style="color:#ea580c;">Yī</span><span style="color:#16a34a;">fēi</span> <span style="color:#7c3aed;">nàr</span> <span style="color:#0891b2;">de</span> <span style="color:#e11d48;">tiān</span><span style="color:#d97706;">qì</span> ( <strong style="color:#059669;"><span style="color:#0284c7;">bú</span> <span style="color:#ea580c;">tài</span> <span style="color:#16a34a;">hǎo</span></strong> )。
+                </div>
+                <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                  （1）<span style="color:#2563eb;">王</span><span style="color:#ea580c;">一</span><span style="color:#16a34a;">飞</span><span style="color:#7c3aed;">那</span><span style="color:#0891b2;">儿</span><span style="color:#e11d48;">的</span><span style="color:#d97706;">天</span><span style="color:#2563eb;">气</span>（ <strong style="color:#059669;"><span style="color:#0284c7;">不</span><span style="color:#ea580c;">太</span><span style="color:#16a34a;">好</span></strong> ）。
+                </div>
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Cuaca di tempat Wang Yifei ( tidak begitu baik ).
+              </div>
+
+              <!-- Pilihan Jawaban A, B, C -->
+              <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('hěn hǎo')" title="Klik dengar pelafalan">
+                  <strong>A. <span style="color:#2563eb; font-weight:700;">很</span><span style="color:#ea580c; font-weight:700;">好</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">hěn</span> <span style="color:#ea580c; font-weight:600;">hǎo</span>)</em> = sangat baik
+                </span>
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('hěn bù hǎo')" title="Klik dengar pelafalan">
+                  <strong>B. <span style="color:#2563eb; font-weight:700;">很</span><span style="color:#ea580c; font-weight:700;">不</span><span style="color:#16a34a; font-weight:700;">好</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">hěn</span> <span style="color:#ea580c; font-weight:600;">bù</span> <span style="color:#16a34a; font-weight:600;">hǎo</span>)</em> = sangat tidak baik
+                </span>
+                <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('bú tài hǎo')" title="Klik dengar pelafalan">
+                  <strong>C. <span style="color:#2563eb; font-weight:700;">不</span><span style="color:#ea580c; font-weight:700;">太</span><span style="color:#16a34a; font-weight:700;">好</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">bú</span> <span style="color:#ea580c; font-weight:600;">tài</span> <span style="color:#16a34a; font-weight:600;">hǎo</span>)</em> = tidak begitu baik ✓ (Jawaban Benar)
+                </span>
+              </div>
+              <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
+                💡 <strong>Alasan:</strong> Wang Yifei menjawab: <em>"这里的天不太好，下雨了。" (Zhèlǐ de tiān bú tài hǎo, xià yǔ le.)</em>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Soal 2 -->
+          <div class="classroom-item" style="border-left:4px solid var(--primary);">
+            <div class="item-number">2</div>
+            <div class="item-content">
+              <div style="cursor:pointer;" onclick="playPinyin('Wáng Yīfēi juéde hěn lěng.')" title="Klik dengar kalimat soal 2">
+                <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#c2410c;">
+                  <span style="color:#2563eb;">Wáng</span> <span style="color:#ea580c;">Yī</span><span style="color:#16a34a;">fēi</span> <span style="color:#7c3aed;">jué</span><span style="color:#0891b2;">de</span> ( <strong style="color:#059669;"><span style="color:#ea580c;">hěn</span> <span style="color:#16a34a;">lěng</span></strong> )。
+                </div>
+                <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                  （2）<span style="color:#2563eb;">王</span><span style="color:#ea580c;">一</span><span style="color:#16a34a;">飞</span><span style="color:#7c3aed;">觉</span><span style="color:#0891b2;">得</span>（ <strong style="color:#059669;"><span style="color:#ea580c;">很</span><span style="color:#16a34a;">冷</span></strong> ）。
+                </div>
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Wang Yifei merasa ( sangat dingin ).
+              </div>
+
+              <!-- Pilihan Jawaban A, B, C -->
+              <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('bù lěng')" title="Klik dengar pelafalan">
+                  <strong>A. <span style="color:#2563eb; font-weight:700;">不</span><span style="color:#ea580c; font-weight:700;">冷</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">bù</span> <span style="color:#ea580c; font-weight:600;">lěng</span>)</em> = tidak dingin
+                </span>
+                <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('hěn lěng')" title="Klik dengar pelafalan">
+                  <strong>B. <span style="color:#ea580c; font-weight:700;">很</span><span style="color:#16a34a; font-weight:700;">冷</span></strong> <em>(<span style="color:#ea580c; font-weight:600;">hěn</span> <span style="color:#16a34a; font-weight:600;">lěng</span>)</em> = sangat dingin ✓ (Jawaban Benar)
+                </span>
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('yǒudiǎnr lěng')" title="Klik dengar pelafalan">
+                  <strong>C. <span style="color:#2563eb; font-weight:700;">有</span><span style="color:#ea580c; font-weight:700;">点</span><span style="color:#16a34a; font-weight:700;">儿</span><span style="color:#7c3aed; font-weight:700;">冷</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">yǒu</span><span style="color:#ea580c; font-weight:600;">diǎnr</span> <span style="color:#7c3aed; font-weight:600;">lěng</span>)</em> = agak dingin
+                </span>
+              </div>
+              <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
+                💡 <strong>Alasan:</strong> Wang Yifei berkata: <em>"有点儿大，我觉得很冷。" (Yǒudiǎnr dà, wǒ juéde hěn lěng.)</em> — hujannya agak besar, saya merasa <strong>sangat dingin</strong>.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 2: TEKS 1 (PERCAKAPAN TELEPON) ── -->
+    <div>
+      <div class="section-title">💬 Teks 1 · 课文 1 (Percakapan di Telepon Mengenai Cuaca)</div>
+      
+      <div class="dialog-box">
+        <div class="dialog-header">
+          <div class="dialog-title">
+            <span>📍 王一雪给王一飞打电话，询问王一飞那边的情况。</span>
+          </div>
+          <div style="font-size:0.8rem; color:#64748b; font-style:italic;">
+            (Wang Yixue was calling Wang Yifei to ask about the situation on her end.)
+          </div>
+        </div>
+
+        <div class="dialog-body">
+          
+          <!-- Baris 1: Wang Yixue -->
+          <div class="dialog-line">
+            <div class="avatar av-xue" title="王一雪 (Wáng Yīxuě)">雪</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">王一雪</span> <span class="speaker-pinyin">Wáng Yīxuě</span></span>
+              <div class="bubble" onclick="playPinyin('Jīntiān tiānqì zěnmeyàng?')">
+                <div class="bubble-hanzi">今天天气怎么样？</div>
+                <div class="bubble-pinyin">Jīntiān tiānqì zěnmeyàng?</div>
+                <div class="bubble-arti">Bagaimana cuaca hari ini?</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 2: Wang Yifei -->
+          <div class="dialog-line reverse">
+            <div class="avatar av-wang" title="王一飞 (Wang Yifei)">王</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">王一飞</span> <span class="speaker-pinyin">Wáng Yīfēi</span></span>
+              <div class="bubble" onclick="playPinyin('Zhèlǐ de tiān bú tài hǎo, xià yǔ le.')">
+                <div class="bubble-hanzi">这里的天不太好，下雨了。</div>
+                <div class="bubble-pinyin">Zhèlǐ de tiān bú tài hǎo, xià yǔ le.</div>
+                <div class="bubble-arti">Cuaca (langit) di sini tidak begitu baik, turun hujan.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 3: Wang Yixue -->
+          <div class="dialog-line">
+            <div class="avatar av-xue" title="王一雪 (Wáng Yīxuě)">雪</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">王一雪</span> <span class="speaker-pinyin">Wáng Yīxuě</span></span>
+              <div class="bubble" onclick="playPinyin('Yǔ dà ma?')">
+                <div class="bubble-hanzi">雨大吗？</div>
+                <div class="bubble-pinyin">Yǔ dà ma?</div>
+                <div class="bubble-arti">Apakah hujannya lebat (besar)?</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 4: Wang Yifei -->
+          <div class="dialog-line reverse">
+            <div class="avatar av-wang" title="王一飞 (Wang Yifei)">王</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">王一飞</span> <span class="speaker-pinyin">Wáng Yīfēi</span></span>
+              <div class="bubble" onclick="playPinyin('Yǒudiǎnr dà, wǒ juéde hěn lěng.')">
+                <div class="bubble-hanzi">有点儿大，我觉得很冷。</div>
+                <div class="bubble-pinyin">Yǒudiǎnr dà, wǒ juéde hěn lěng.</div>
+                <div class="bubble-arti">Agak lebat, saya merasa sangat dingin.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── SUB-BREAKDOWN KOSAKATA TEKS 1 (WAJIB DI DALAM DIALOG-BOX) ── -->
+        <div class="sub-breakdown">
+          <div class="sub-title">📖 Kosakata Baru · Teks 1 (生词 New Words 🔊 12-2)</div>
+          <div class="breakdown-grid">
+            <div class="word-card" onclick="playPinyin('tiānqì')">
+              <div class="word-char">天气</div>
+              <div class="word-pinyin">tiān qì</div>
+              <div class="word-arti">cuaca (weather) · <em>n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('zhèlǐ')">
+              <div class="word-char">这里</div>
+              <div class="word-pinyin">zhè lǐ</div>
+              <div class="word-arti">di sini (here) · <em>pron.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('tiān')">
+              <div class="word-char">天</div>
+              <div class="word-pinyin">tiān</div>
+              <div class="word-arti">cuaca / langit / hari · <em>n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('xià yǔ')">
+              <div class="word-char">下雨</div>
+              <div class="word-pinyin">xià yǔ</div>
+              <div class="word-arti">turun hujan (to rain) · <em>v.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('le')">
+              <div class="word-char">了</div>
+              <div class="word-pinyin">le</div>
+              <div class="word-arti">partikel perubahan situasi · <em>part.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('yǔ')">
+              <div class="word-char">雨</div>
+              <div class="word-pinyin">yǔ</div>
+              <div class="word-arti">hujan (rain) · <em>n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('yǒudiǎnr')">
+              <div class="word-char">有点儿</div>
+              <div class="word-pinyin">yǒu diǎnr</div>
+              <div class="word-arti">agak / sedikit (rather/a bit) · <em>adv.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('juéde')">
+              <div class="word-char">觉得</div>
+              <div class="word-pinyin">jué de</div>
+              <div class="word-arti">merasa / berpikir (feel) · <em>v.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('lěng')">
+              <div class="word-char">冷</div>
+              <div class="word-pinyin">lěng</div>
+              <div class="word-arti">dingin (cold) · <em>adj.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('zěnmeyàng')">
+              <div class="word-char">怎么样</div>
+              <div class="word-pinyin">zěn me yàng</div>
+              <div class="word-arti">bagaimana (how is it) · <em>pron.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('tài')">
+              <div class="word-char">太</div>
+              <div class="word-pinyin">tài</div>
+              <div class="word-arti">terlalu (too/extremely) · <em>adv.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('bú tài')">
+              <div class="word-char">不太</div>
+              <div class="word-pinyin">bú tài</div>
+              <div class="word-arti">tidak begitu / tidak terlalu</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── SECTION 3: XIAOYU'S CLASSROOM (小语讲堂) ── -->
+    <div>
+      <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (Tata Bahasa &amp; Kaidah Kalimat)</div>
+      <div class="classroom-box" style="border-left: 5px solid var(--gold);">
+        
+        <!-- Header Xiaoyu -->
+        <div class="classroom-header">
+          <div class="avatar av-xiaoyu">语</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge">Xiaoyu's Classroom · 小语讲堂</div>
+            <div class="classroom-desc">Materi Tata Bahasa Bab 12: Kalimat Tanpa Subjek-Predikat (非主谓句) &amp; Partikel Modal “了 (1)” (语气助词 “了 (1)”).</div>
+          </div>
+        </div>
+
+        <!-- Ilustrasi Asli Buku Teks Xiaoyu's Classroom -->
+        <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.85rem; text-align:center;">
+          <img src="images/bab12-xiaoyu-classroom-1.png" alt="Xiaoyu's Classroom Bab 12 - Halaman 88" style="max-width:540px; width:100%; height:auto; border-radius:8px; border:1px solid #fed7aa; box-shadow:0 3px 10px rgba(0,0,0,0.05);" />
+          <div style="font-size:0.75rem; color:#64748b; margin-top:0.35rem; font-style:italic;">
+            📌 Materi Tata Bahasa Buku Teks Standar HSK 1 Bab 12 — Halaman 88 (小语讲堂)
+          </div>
+        </div>
+
+        <div class="classroom-list">
+
+          <!-- 1. 非主谓句 Non-Subject-Predicate Sentences -->
+          <div class="classroom-item" style="border-left: 4px solid var(--primary);">
+            <div class="item-title">
+              <span class="item-number">1</span>
+              <span>1. 非主谓句 Non-Subject-Predicate Sentences (Kalimat Tanpa Subjek-Predikat)</span>
+            </div>
+            <div class="item-body">
+              <div style="background:#fff; border-radius:10px; padding:0.85rem 1rem; border:1px solid var(--border); display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="font-size:0.88rem; color:#334155; line-height:1.6;">
+                  <strong>Kaidah Tata Bahasa:</strong><br/>
+                  非主谓句是由词或短语构成、不分主语和谓语的句子，口语中常用。<br/>
+                  <em>Non-subject-predicate sentences are composed of words or phrases without distinct subjects or predicates, and are commonly used in colloquial speech.</em><br/>
+                  (Kalimat non-subjek-predikat adalah kalimat yang dibentuk oleh satu kata atau frasa tanpa pembagian subjek dan predikat yang tegas, dan sangat umum digunakan dalam percakapan sehari-hari / lisan).
+                </div>
+
+                <!-- Latihan Membaca Aloud -->
+                <div style="border-top:1px dashed #e2e8f0; padding-top:0.6rem; margin-top:0.2rem;">
+                  <div style="font-size:0.84rem; font-weight:700; color:#c2410c; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.4rem;">
+                    <span>🟥 大声朗读 · Read aloud (Bacalah dengan nyaring):</span>
+                  </div>
+                  
+                  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:0.65rem;">
+                    
+                    <!-- Butir 1 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.6rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Xià yǔ le.')" title="Klik dengar: Xià yǔ le.">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Xià yǔ le.</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（1）下雨了。</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Hujan turun / sudah turun hujan.
+                      </div>
+                    </div>
+
+                    <!-- Butir 2 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.6rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Xià xuě le.')" title="Klik dengar: Xià xuě le.">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Xià xuě le.</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（2）下雪了。</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Salju turun / sudah turun salju.
+                      </div>
+                    </div>
+
+                    <!-- Butir 3 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.6rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Shàng kè le.')" title="Klik dengar: Shàng kè le.">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Shàng kè le.</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（3）上课了。</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Kelas dimulai / pelajaran sudah dimulai.
+                      </div>
+                    </div>
+
+                    <!-- Butir 4 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.6rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Zhēn piàoliang!')" title="Klik dengar: Zhēn piàoliang!">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Zhēn piàoliang!</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（4）真漂亮！</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Sungguh cantik / indah sekali!
+                      </div>
+                    </div>
+
+                    <!-- Butir 5 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.6rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Duìbuqǐ!')" title="Klik dengar: Duìbuqǐ!">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Duìbuqǐ!</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（5）对不起！</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Maaf! / Mohon maaf!
+                      </div>
+                    </div>
+
+                    <!-- Butir 6 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.6rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Méi guānxi!')" title="Klik dengar: Méi guānxi!">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Méi guānxi!</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（6）没关系！</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Tidak apa-apa! / Tidak masalah!
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. 语气助词 “了 (1)” Modal Particle “了 (1)” -->
+          <div class="classroom-item" style="border-left: 4px solid var(--gold);">
+            <div class="item-title">
+              <span class="item-number" style="background:var(--gold);">2</span>
+              <span>2. 语气助词 “了 (1)” Modal Particle “了 (1)” (Partikel Modal Perubahan Situasi)</span>
+            </div>
+            <div class="item-body">
+              <div style="background:#fff; border-radius:10px; padding:0.85rem 1rem; border:1px solid var(--border); display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="font-size:0.88rem; color:#334155; line-height:1.6;">
+                  <strong>Kaidah Tata Bahasa:</strong><br/>
+                  语气助词 “了 (1)” 位于句子末尾或句中停顿的地方，表示有变化或出现新情况。否定回答时，用副词 “没”，句子末尾不用 “了”。<br/>
+                  <em>The modal particle “了 (1)” is placed at the end of a sentence or at a pause within a sentence to indicate a change or a new situation. For negative responses, the adverb “没” is used, and “了” is omitted at the end of the sentence.</em><br/>
+                  (Partikel modal “了 (1)” diletakkan di akhir kalimat atau jeda kalimat untuk menyatakan adanya <strong>perubahan keadaan</strong> atau <strong>munculnya situasi baru</strong>. Saat menjawab kalimat penyangkalan/negatif, gunakan kata keterangan <strong>“没” (méi)</strong> dan partikel <strong>“了” TIDAK BOLEH dipakai</strong> di akhir kalimat).
+                </div>
+
+                <!-- Kotak Perhatian Negasi 了 -->
+                <div style="background:#fff7ed; border-left:4px solid #ea580c; padding:0.6rem 0.85rem; border-radius:6px; font-size:0.82rem; color:#9a3412; line-height:1.5;">
+                  💡 <strong>Rumus Jawaban Negatif:</strong><br/>
+                  • Kalimat Tanya: <strong>……了 + 吗？</strong><br/>
+                  • Penyangkalan: <strong>没(有) + Kata Kerja (TANPA 了 di akhir kalimat!)</strong>
+                </div>
+
+                <!-- Latihan Membaca Aloud -->
+                <div style="border-top:1px dashed #e2e8f0; padding-top:0.6rem; margin-top:0.2rem;">
+                  <div style="font-size:0.84rem; font-weight:700; color:#c2410c; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.4rem;">
+                    <span>🟥 大声朗读 · Read aloud (Bacalah dengan nyaring):</span>
+                  </div>
+                  
+                  <div style="display:flex; flex-direction:column; gap:0.65rem;">
+                    
+                    <!-- Butir 1 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Xià yǔ le.')" title="Klik dengar: Xià yǔ le.">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Xià yǔ le.</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（1）下雨了。</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Hujan sudah turun (sebelumnya tidak hujan, sekarang mulai turun hujan).
+                      </div>
+                    </div>
+
+                    <!-- Butir 2 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Shí\'èr diǎn le, chī wǔfàn ba.')" title="Klik dengar kalimat 2">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Shí'èr diǎn le, chī wǔfàn ba.</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（2）十二点了，吃午饭吧。</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Sudah jam 12, ayo makan siang (terjadi perubahan waktu menuju jam 12).
+                      </div>
+                    </div>
+
+                    <!-- Butir 3 (Dialog Tanya Jawab Negasi) -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Dìdi qǐchuáng le ma? Méi qǐchuáng ne.')" title="Klik dengar percakapan 3">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">A: Dìdi qǐchuáng le ma? &nbsp;&nbsp; B: Méi qǐchuáng ne.</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（3）A：弟弟起床了吗？ &nbsp;&nbsp; B：没起床呢。</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> A: Apakah adik laki-laki sudah bangun tidur? &nbsp;|&nbsp; B: Masih belum bangun. (Perhatikan: menggunakan <strong>没</strong> dan tidak memakai <strong>了</strong> di akhir).
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── SECTION 4: LATIHAN MENDENGARKAN (LISTENING) TEKS 2 ── -->
+    <div>
+      <div class="section-title">🎧 Latihan Mendengarkan · 听力练习 (Teks 2)</div>
+      <div class="classroom-box" style="border-left: 5px solid var(--primary);">
+        
+        <!-- Header Listening -->
+        <div class="classroom-header">
+          <div class="avatar" style="background: linear-gradient(135deg, #c2410c, #9a3412); color:#fff; font-size:1.05rem;">听</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge" style="background:#ffedd5; color:#9a3412;">课文 2 Text 2 · 听力与理解</div>
+            <div class="classroom-desc">
+              📍 <strong>在公司电梯里，王一雪和杨同乐在聊天儿。</strong><br/>
+              (In the company elevator, Wang Yixue and Yang Tongle were chatting / Di lift kantor perusahaan, Wang Yixue dan Yang Tongle sedang mengobrol).<br/>
+              🟥 <strong>听两遍对话，选择正确答案。</strong> Listen to the dialogue twice and choose the correct answer (Dengarkan dialog dua kali, lalu pilihlah jawaban yang tepat) <span style="font-size:0.82rem; color:#c2410c; font-weight:700;">🔊 12-3</span>:
+            </div>
+          </div>
+        </div>
+
+        <!-- Daftar Soal Pilihan Ganda -->
+        <div class="classroom-list" style="margin-top:0.3rem;">
+          
+          <!-- Soal 1 -->
+          <div class="classroom-item" style="border-left:4px solid var(--primary);">
+            <div class="item-number">1</div>
+            <div class="item-content">
+              <div style="cursor:pointer;" onclick="playPinyin('Yáng Tónglè zuótiān shēngbìng le.')" title="Klik dengar kalimat soal 1">
+                <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#c2410c;">
+                  <span style="color:#2563eb;">Yáng</span> <span style="color:#ea580c;">Tóng</span><span style="color:#16a34a;">lè</span> <span style="color:#7c3aed;">zuó</span><span style="color:#0891b2;">tiān</span> ( <strong style="color:#059669;"><span style="color:#2563eb;">shēng</span><span style="color:#ea580c;">bìng</span></strong> ) <span style="color:#d97706;">le</span>。
+                </div>
+                <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                  （1）<span style="color:#2563eb;">杨</span><span style="color:#ea580c;">同</span><span style="color:#16a34a;">乐</span><span style="color:#7c3aed;">昨</span><span style="color:#0891b2;">天</span>（ <strong style="color:#059669;"><span style="color:#2563eb;">生</span><span style="color:#ea580c;">病</span></strong> ）<span style="color:#d97706;">了</span>。
+                </div>
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Yang Tongle kemarin ( jatuh sakit ).
+              </div>
+
+              <!-- Pilihan Jawaban A, B, C -->
+              <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+                <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('shēngbìng')" title="Klik dengar pelafalan">
+                  <strong>A. <span style="color:#2563eb; font-weight:700;">生</span><span style="color:#ea580c; font-weight:700;">病</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">shēng</span><span style="color:#ea580c; font-weight:600;">bìng</span>)</em> = jatuh sakit ✓ (Jawaban Benar)
+                </span>
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('shàngbān')" title="Klik dengar pelafalan">
+                  <strong>B. <span style="color:#2563eb; font-weight:700;">上</span><span style="color:#ea580c; font-weight:700;">班</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">shàng</span><span style="color:#ea580c; font-weight:600;">bān</span>)</em> = masuk kerja
+                </span>
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('qù gōngsī')" title="Klik dengar pelafalan">
+                  <strong>C. <span style="color:#2563eb; font-weight:700;">去</span><span style="color:#ea580c; font-weight:700;">公</span><span style="color:#16a34a; font-weight:700;">司</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">qù</span> <span style="color:#ea580c; font-weight:600;">gōng</span><span style="color:#16a34a; font-weight:600;">sī</span>)</em> = pergi ke kantor perusahaan
+                </span>
+              </div>
+              <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
+                💡 <strong>Alasan:</strong> Wang Yixue bertanya: <em>"你昨天没来公司，生病了？"</em>, lalu Yang Tongle mengonfirmasi: <em>"对，我昨天去医院看病了。"</em>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Soal 2 -->
+          <div class="classroom-item" style="border-left:4px solid var(--primary);">
+            <div class="item-number">2</div>
+            <div class="item-content">
+              <div style="cursor:pointer;" onclick="playPinyin('Yáng Tónglè jīntiān lái gōngsī le.')" title="Klik dengar kalimat soal 2">
+                <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#c2410c;">
+                  <span style="color:#2563eb;">Yáng</span> <span style="color:#ea580c;">Tóng</span><span style="color:#16a34a;">lè</span> <span style="color:#7c3aed;">jīn</span><span style="color:#0891b2;">tiān</span> ( <strong style="color:#059669;"><span style="color:#2563eb;">lái</span> <span style="color:#ea580c;">gōng</span><span style="color:#16a34a;">sī</span></strong> ) <span style="color:#d97706;">le</span>。
+                </div>
+                <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                  （2）<span style="color:#2563eb;">杨</span><span style="color:#ea580c;">同</span><span style="color:#16a34a;">乐</span><span style="color:#7c3aed;">今</span><span style="color:#0891b2;">天</span>（ <strong style="color:#059669;"><span style="color:#2563eb;">来</span><span style="color:#ea580c;">公</span><span style="color:#16a34a;">司</span></strong> ）<span style="color:#d97706;">了</span>。
+                </div>
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Yang Tongle hari ini ( datang ke kantor perusahaan ).
+              </div>
+
+              <!-- Pilihan Jawaban A, B, C -->
+              <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('zài jiā li')" title="Klik dengar pelafalan">
+                  <strong>A. <span style="color:#2563eb; font-weight:700;">在</span><span style="color:#ea580c; font-weight:700;">家</span><span style="color:#16a34a; font-weight:700;">里</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">zài</span> <span style="color:#ea580c; font-weight:600;">jiā</span> <span style="color:#16a34a; font-weight:600;">li</span>)</em> = di dalam rumah
+                </span>
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('qù yīyuàn')" title="Klik dengar pelafalan">
+                  <strong>B. <span style="color:#2563eb; font-weight:700;">去</span><span style="color:#ea580c; font-weight:700;">医</span><span style="color:#16a34a; font-weight:700;">院</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">qù</span> <span style="color:#ea580c; font-weight:600;">yī</span><span style="color:#16a34a; font-weight:600;">yuàn</span>)</em> = pergi ke rumah sakit
+                </span>
+                <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('lái gōngsī')" title="Klik dengar pelafalan">
+                  <strong>C. <span style="color:#2563eb; font-weight:700;">来</span><span style="color:#ea580c; font-weight:700;">公</span><span style="color:#16a34a; font-weight:700;">司</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">lái</span> <span style="color:#ea580c; font-weight:600;">gōng</span><span style="color:#16a34a; font-weight:600;">sī</span>)</em> = datang ke kantor perusahaan ✓ (Jawaban Benar)
+                </span>
+              </div>
+              <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
+                💡 <strong>Alasan:</strong> Mereka berdua sedang mengobrol di dalam lift kantor perusahaan (在公司电梯里), sehingga hari ini Yang Tongle sudah masuk/datang ke kantor (来公司了).
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 5: TEKS 2 (PERCAKAPAN DI DALAM LIFT KANTOR) ── -->
+    <div>
+      <div class="section-title">💬 Teks 2 · 课文 2 (Percakapan di Dalam Lift Kantor Perusahaan)</div>
+      
+      <div class="dialog-box">
+        <div class="dialog-header">
+          <div class="dialog-title">
+            <span>📍 在公司电梯里，王一雪和杨同乐在聊天儿。</span>
+          </div>
+          <div style="font-size:0.8rem; color:#64748b; font-style:italic;">
+            (In the company elevator, Wang Yixue and Yang Tongle were chatting.)
+          </div>
+        </div>
+
+        <div class="dialog-body">
+          
+          <!-- Baris 1: Wang Yixue -->
+          <div class="dialog-line">
+            <div class="avatar av-xue" title="王一雪 (Wáng Yīxuě)">雪</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">王一雪</span> <span class="speaker-pinyin">Wáng Yīxuě</span></span>
+              <div class="bubble" onclick="playPinyin('Zuótiān xià xuě le.')">
+                <div class="bubble-hanzi">昨天下雪了。</div>
+                <div class="bubble-pinyin">Zuótiān xià xuě le.</div>
+                <div class="bubble-arti">Kemarin turun salju.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 2: Yang Tongle -->
+          <div class="dialog-line reverse">
+            <div class="avatar av-yang" title="杨同乐 (Yáng Tónglè)">杨</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">杨同乐</span> <span class="speaker-pinyin">Yáng Tónglè</span></span>
+              <div class="bubble" onclick="playPinyin('Shì de, tài lěng le.')">
+                <div class="bubble-hanzi">是的，太冷了。</div>
+                <div class="bubble-pinyin">Shì de, tài lěng le.</div>
+                <div class="bubble-arti">Benar, terlalu dingin / dingin sekali.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 3: Wang Yixue -->
+          <div class="dialog-line">
+            <div class="avatar av-xue" title="王一雪 (Wáng Yīxuě)">雪</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">王一雪</span> <span class="speaker-pinyin">Wáng Yīxuě</span></span>
+              <div class="bubble" onclick="playPinyin('Nǐ zuótiān méi lái gōngsī, shēngbìng le?')">
+                <div class="bubble-hanzi">你昨天没来公司，生病了？</div>
+                <div class="bubble-pinyin">Nǐ zuótiān méi lái gōngsī, shēngbìng le?</div>
+                <div class="bubble-arti">Kemarin kamu tidak datang ke kantor, sakit ya?</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 4: Yang Tongle -->
+          <div class="dialog-line reverse">
+            <div class="avatar av-yang" title="杨同乐 (Yáng Tónglè)">杨</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">杨同乐</span> <span class="speaker-pinyin">Yáng Tónglè</span></span>
+              <div class="bubble" onclick="playPinyin('Duì, wǒ zuótiān qù yīyuàn kànbìng le.')">
+                <div class="bubble-hanzi">对，我昨天去医院看病了。</div>
+                <div class="bubble-pinyin">Duì, wǒ zuótiān qù yīyuàn kànbìng le.</div>
+                <div class="bubble-arti">Iya, kemarin saya pergi ke rumah sakit untuk berobat / periksa dokter.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── SUB-BREAKDOWN KOSAKATA TEKS 2 (WAJIB DI DALAM DIALOG-BOX) ── -->
+        <div class="sub-breakdown">
+          <div class="sub-title">📖 Kosakata Baru · Teks 2 (生词 New Words 🔊 12-4)</div>
+          <div class="breakdown-grid">
+            <div class="word-card" onclick="playPinyin('xià')">
+              <div class="word-char">下</div>
+              <div class="word-pinyin">xià</div>
+              <div class="word-arti">turun (come down/fall) · <em>v.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('xuě')">
+              <div class="word-char">雪</div>
+              <div class="word-pinyin">xuě</div>
+              <div class="word-arti">salju (snow) · <em>n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('lái')">
+              <div class="word-char">来</div>
+              <div class="word-pinyin">lái</div>
+              <div class="word-arti">datang (come) · <em>v.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('gōngsī')">
+              <div class="word-char">公司</div>
+              <div class="word-pinyin">gōng sī</div>
+              <div class="word-arti">perusahaan / kantor (company) · <em>n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('shēngbìng')">
+              <div class="word-char">生病</div>
+              <div class="word-pinyin">shēng bìng</div>
+              <div class="word-arti">jatuh sakit (fall ill) · <em>v.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('kànbìng')">
+              <div class="word-char">看病</div>
+              <div class="word-pinyin">kàn bìng</div>
+              <div class="word-arti">berobat / periksa dokter · <em>v.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('zuótiān')">
+              <div class="word-char">昨天</div>
+              <div class="word-pinyin">zuó tiān</div>
+              <div class="word-arti">kemarin (yesterday) · <em>n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('xià xuě')">
+              <div class="word-char">下雪</div>
+              <div class="word-pinyin">xià xuě</div>
+              <div class="word-arti">turun salju (to snow) · <em>v.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('shì de')">
+              <div class="word-char">是的</div>
+              <div class="word-pinyin">shì de</div>
+              <div class="word-arti">betul / iya (yes, that's right)</div>
+            </div>
+            <div class="word-card" onclick="playPinyin('yīyuàn')">
+              <div class="word-char">医院</div>
+              <div class="word-pinyin">yī yuàn</div>
+              <div class="word-arti">rumah sakit (hospital) · <em>n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('shàngbān')">
+              <div class="word-char">上班</div>
+              <div class="word-pinyin">shàng bān</div>
+              <div class="word-arti">masuk kerja (go to work) · <em>v.</em></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── SECTION 6: TANYA JAWAB PEMAHAMAN TEKS 2 (根据课文内容回答问题) ── -->
+    <div>
+      <div class="section-title">❓ Tanya Jawab Pemahaman Teks · 根据课文内容回答问题 (Teks 2)</div>
+      <div class="classroom-box" style="border-left: 5px solid var(--primary);">
+        
+        <!-- Header Q&A -->
+        <div class="classroom-header">
+          <div class="avatar" style="background: linear-gradient(135deg, #c2410c, #9a3412); color:#fff; font-size:1.05rem;">问</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge" style="background:#ffedd5; color:#9a3412;">Latihan Mandiri · Pemahaman Isi Percakapan Teks 2</div>
+            <div class="classroom-desc">
+              🟥 <strong>分角色朗读对话。</strong> Role-play the dialogue (Bacalah percakapan Teks 2 dengan memainkan peran bersama teman).<br/>
+              🟥 <strong>根据课文内容回答问题。</strong> Answer the questions according to the text (Jawablah pertanyaan berikut sesuai isi Teks 2):
+            </div>
+          </div>
+        </div>
+
+        <!-- Daftar Soal & Kunci Jawaban Interaktif -->
+        <div class="classroom-list" style="margin-top:0.3rem;">
+          
+          <!-- Pertanyaan 1 -->
+          <div class="classroom-item" style="border-left:4px solid var(--primary);">
+            <div class="item-title">
+              <span class="item-number">1</span>
+              <span>Pertanyaan 1 (Soal Cuaca Kemarin)</span>
+            </div>
+            <div class="item-content">
+              <div style="cursor:pointer;" onclick="playPinyin('Zuótiān tiānqì zěnmeyàng?')" title="Klik dengar pertanyaan 1">
+                <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#c2410c;">Zuótiān tiānqì zěnmeyàng?</div>
+                <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                  （1）昨天天气怎么样？
+                </div>
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Bagaimana cuaca kemarin? <em>(How was the weather yesterday?)</em>
+              </div>
+
+              <!-- Jawaban 1 -->
+              <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Zuótiān xià xuě le, tài lěng le.')" title="Klik dengar kunci jawaban 1">
+                <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                  ✅ <strong>参考答案 (Kunci Jawaban):</strong>
+                </div>
+                <div style="font-size:1.1rem; font-weight:700; margin-top:0.35rem; font-family:'Noto Sans SC',sans-serif;">
+                  👉 <span style="color:#2563eb;">昨</span><span style="color:#ea580c;">天</span><span style="color:#16a34a;">下</span><span style="color:#0284c7;">雪</span><span style="color:#d97706;">了</span>，<span style="color:#e11d48;">太</span><span style="color:#0891b2;">冷</span><span style="color:#d97706;">了</span>。 <span style="font-size:0.92rem; font-weight:600; color:#475569;">/</span> <span style="color:#16a34a;">下</span><span style="color:#0284c7;">雪</span><span style="color:#d97706;">了</span>。
+                </div>
+                <div style="font-size:0.86rem; font-weight:600; margin-top:0.15rem;">
+                  <span style="color:#2563eb;">Zuó</span><span style="color:#ea580c;">tiān</span> <span style="color:#16a34a;">xià</span> <span style="color:#0284c7;">xuě</span> <span style="color:#d97706;">le</span>, <span style="color:#e11d48;">tài</span> <span style="color:#0891b2;">lěng</span> <span style="color:#d97706;">le</span>. <span style="color:#64748b; font-weight:500;">/</span> <span style="color:#16a34a;">Xià</span> <span style="color:#0284c7;">xuě</span> <span style="color:#d97706;">le</span>.
+                </div>
+                <div style="font-size:0.82rem; color:#15803d; margin-top:0.25rem;">
+                  <strong>Terjemahan:</strong> Kemarin turun salju, sangat dingin sekali. / Turun salju.
+                </div>
+                <div style="font-size:0.78rem; color:#475569; margin-top:0.35rem; border-top:1px dashed #a7f3d0; padding-top:0.3rem;">
+                  💡 <strong>Kutipan Teks:</strong> Wang Yixue berkata: <em>"昨天下雪了。"</em> dan disetujui oleh Yang Tongle: <em>"是的，太冷了。"</em>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pertanyaan 2 -->
+          <div class="classroom-item" style="border-left:4px solid var(--primary);">
+            <div class="item-title">
+              <span class="item-number">2</span>
+              <span>Pertanyaan 2 (Aktivitas Yang Tongle Kemarin)</span>
+            </div>
+            <div class="item-content">
+              <div style="cursor:pointer;" onclick="playPinyin('Yáng Tónglè zuótiān zuò shénme le?')" title="Klik dengar pertanyaan 2">
+                <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#c2410c;">Yáng Tónglè zuótiān zuò shénme le?</div>
+                <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                  （2）杨同乐昨天做什么了？
+                </div>
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Apa yang dilakukan Yang Tongle kemarin? <em>(What did Yang Tongle do yesterday?)</em>
+              </div>
+
+              <!-- Jawaban 2 -->
+              <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Tā zuótiān qù yīyuàn kànbìng le.')" title="Klik dengar kunci jawaban 2">
+                <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                  ✅ <strong>参考答案 (Kunci Jawaban):</strong>
+                </div>
+                <div style="font-size:1.1rem; font-weight:700; margin-top:0.35rem; font-family:'Noto Sans SC',sans-serif;">
+                  👉 <span style="color:#0891b2;">他</span><span style="color:#2563eb;">昨</span><span style="color:#ea580c;">天</span><span style="color:#7c3aed;">去</span><span style="color:#16a34a;">医</span><span style="color:#e11d48;">院</span><span style="color:#d97706;">看</span><span style="color:#0284c7;">病</span><span style="color:#7c3aed;">了</span>。 <span style="font-size:0.92rem; font-weight:600; color:#475569;">/</span> <span style="color:#7c3aed;">去</span><span style="color:#16a34a;">医</span><span style="color:#e11d48;">院</span><span style="color:#d97706;">看</span><span style="color:#0284c7;">病</span><span style="color:#7c3aed;">了</span>。
+                </div>
+                <div style="font-size:0.86rem; font-weight:600; margin-top:0.15rem;">
+                  <span style="color:#0891b2;">Tā</span> <span style="color:#2563eb;">zuó</span><span style="color:#ea580c;">tiān</span> <span style="color:#7c3aed;">qù</span> <span style="color:#16a34a;">yī</span><span style="color:#e11d48;">yuàn</span> <span style="color:#d97706;">kàn</span><span style="color:#0284c7;">bìng</span> <span style="color:#7c3aed;">le</span>. <span style="color:#64748b; font-weight:500;">/</span> <span style="color:#7c3aed;">qù</span> <span style="color:#16a34a;">yī</span><span style="color:#e11d48;">yuàn</span> <span style="color:#d97706;">kàn</span><span style="color:#0284c7;">bìng</span> <span style="color:#7c3aed;">le</span>.
+                </div>
+                <div style="font-size:0.82rem; color:#15803d; margin-top:0.25rem;">
+                  <strong>Terjemahan:</strong> Dia kemarin pergi ke rumah sakit untuk berobat / periksa dokter.
+                </div>
+                <div style="font-size:0.78rem; color:#475569; margin-top:0.35rem; border-top:1px dashed #a7f3d0; padding-top:0.3rem;">
+                  💡 <strong>Kutipan Teks:</strong> Yang Tongle menjawab: <em>"对，我昨天去医院看病了。" (Duì, wǒ zuótiān qù yīyuàn kànbìng le = Betul, kemarin saya pergi ke rumah sakit untuk periksa dokter).</em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 7: XIAOYU'S CLASSROOM SESI 2 (小语讲堂 · “太……了” 格式) ── -->
+    <div>
+      <div class="section-title">🎓 Xiaoyu's Classroom · 小语讲堂 (Pola Tata Bahasa “太……了”)</div>
+      <div class="classroom-box" style="border-left: 5px solid var(--gold);">
+        
+        <!-- Header Xiaoyu -->
+        <div class="classroom-header">
+          <div class="avatar av-xiaoyu">语</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge">Xiaoyu's Classroom · 小语讲堂</div>
+            <div class="classroom-desc">Materi Tata Bahasa Bab 12: Pola Kalimat Seru &amp; Tingkat Intensitas “太……了” (“太……了” Pattern).</div>
+          </div>
+        </div>
+
+        <!-- Ilustrasi Asli Buku Teks Xiaoyu's Classroom Bagian 3 -->
+        <div style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:0.85rem; text-align:center;">
+          <img src="images/bab12-xiaoyu-classroom-2.png" alt="Xiaoyu's Classroom Bab 12 - Pola Tai ... le" style="max-width:540px; width:100%; height:auto; border-radius:8px; border:1px solid #fed7aa; box-shadow:0 3px 10px rgba(0,0,0,0.05);" />
+          <div style="font-size:0.75rem; color:#64748b; margin-top:0.35rem; font-style:italic;">
+            📌 Materi Tata Bahasa Buku Teks Standar HSK 1 Bab 12 — Bagian 3: “太……了” 格式 (小语讲堂)
+          </div>
+        </div>
+
+        <div class="classroom-list">
+
+          <!-- 3. “太……了” 格式 “太……了” Pattern -->
+          <div class="classroom-item" style="border-left: 4px solid var(--gold);">
+            <div class="item-title">
+              <span class="item-number" style="background:var(--gold);">3</span>
+              <span>3. “太……了” 格式 “太……了” Pattern (Pola Kalimat Seru “太……了”)</span>
+            </div>
+            <div class="item-body">
+              <div style="background:#fff; border-radius:10px; padding:0.85rem 1rem; border:1px solid var(--border); display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="font-size:0.88rem; color:#334155; line-height:1.6;">
+                  <strong>Kaidah Tata Bahasa:</strong><br/>
+                  “太……了” 用于感叹程度很高或很深。<br/>
+                  <em>The “太……了” pattern expresses a very high or intense degree of exclamation.</em><br/>
+                  (Pola kalimat “太……了” digunakan untuk mengekspresikan kekaguman/seruan bahwa tingkat intensitas suatu sifat atau kondisi sangat tinggi / sangat dalam / terlalu / luar biasa).
+                </div>
+
+                <!-- Rumus Pola Kalimat -->
+                <div style="background:#fff7ed; border-left:4px solid #ea580c; padding:0.6rem 0.85rem; border-radius:6px; font-size:0.84rem; color:#9a3412; line-height:1.5;">
+                  💡 <strong>Rumus Pembentukan Pola:</strong><br/>
+                  <strong>太 + Kata Sifat (Adjective) / Kata Kerja Emosi + 了！</strong><br/>
+                  <span style="font-size:0.8rem; color:#7c2d12;">• Contoh: 太好看了 (sangat bagus sekali), 太热了 (terlalu panas), 太冷了 (sangat dingin).</span>
+                </div>
+
+                <!-- Latihan Membaca Aloud -->
+                <div style="border-top:1px dashed #e2e8f0; padding-top:0.6rem; margin-top:0.2rem;">
+                  <div style="font-size:0.84rem; font-weight:700; color:#c2410c; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.4rem;">
+                    <span>🟥 大声朗读 · Read aloud (Bacalah dengan nyaring):</span>
+                  </div>
+                  
+                  <div style="display:flex; flex-direction:column; gap:0.65rem;">
+                    
+                    <!-- Butir 1 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Tài lěng le!')" title="Klik dengar: Tài lěng le!">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Tài lěng le!</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（1）太冷了！</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Terlalu dingin! / Dingin sekali!
+                      </div>
+                    </div>
+
+                    <!-- Butir 2 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Zhè ge bēizi tài xiǎo le.')" title="Klik dengar kalimat 2">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Zhè ge bēizi tài xiǎo le.</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（2）这个杯子太小了。</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Gelas (cangkir) ini terlalu kecil.
+                      </div>
+                    </div>
+
+                    <!-- Butir 3 -->
+                    <div style="background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('Wǒmen jīntiān tài gāoxìng le!')" title="Klik dengar kalimat 3">
+                      <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; color:#c2410c;">Wǒmen jīntiān tài gāoxìng le!</div>
+                      <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（3）我们今天太高兴了！</div>
+                      <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:1px dashed #e2e8f0; padding-top:0.25rem;">
+                        → <strong>Arti:</strong> Kami hari ini sangat senang sekali / luar biasa gembira!
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── SECTION 8: LATIHAN MENDENGARKAN (LISTENING) TEKS 3 ── -->
+    <div>
+      <div class="section-title">🎧 Latihan Mendengarkan · 听力练习 (Teks 3)</div>
+      <div class="classroom-box" style="border-left: 5px solid var(--primary);">
+        
+        <!-- Header Listening -->
+        <div class="classroom-header">
+          <div class="avatar" style="background: linear-gradient(135deg, #c2410c, #9a3412); color:#fff; font-size:1.05rem;">听</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge" style="background:#ffedd5; color:#9a3412;">课文 3 Text 3 · 听力与理解</div>
+            <div class="classroom-desc">
+              📍 <strong>昨天在医院，医生给杨同乐看病。</strong><br/>
+              (Yesterday at the hospital, the doctor examined Yang Tongle / Kemarin di rumah sakit, dokter memeriksa penyakit Yang Tongle).<br/>
+              🟥 <strong>听两遍对话，选择正确答案。</strong> Listen to the dialogue twice and choose the correct answer (Dengarkan dialog dua kali, lalu pilihlah jawaban yang tepat) <span style="font-size:0.82rem; color:#c2410c; font-weight:700;">🔊 12-5</span>:
+            </div>
+          </div>
+        </div>
+
+        <!-- Daftar Soal Pilihan Ganda -->
+        <div class="classroom-list" style="margin-top:0.3rem;">
+          
+          <!-- Soal 1 -->
+          <div class="classroom-item" style="border-left:4px solid var(--primary);">
+            <div class="item-number">1</div>
+            <div class="item-content">
+              <div style="cursor:pointer;" onclick="playPinyin('Yáng Tónglè juéde hěn lěng.')" title="Klik dengar kalimat soal 1">
+                <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#c2410c;">
+                  <span style="color:#2563eb;">Yáng</span> <span style="color:#ea580c;">Tóng</span><span style="color:#16a34a;">lè</span> <span style="color:#7c3aed;">jué</span><span style="color:#0891b2;">de</span> ( <strong style="color:#059669;"><span style="color:#2563eb;">hěn</span> <span style="color:#ea580c;">lěng</span></strong> )。
+                </div>
+                <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                  （1）<span style="color:#2563eb;">杨</span><span style="color:#ea580c;">同</span><span style="color:#16a34a;">乐</span><span style="color:#7c3aed;">觉</span><span style="color:#0891b2;">得</span>（ <strong style="color:#059669;"><span style="color:#2563eb;">很</span><span style="color:#ea580c;">冷</span></strong> ）。
+                </div>
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Yang Tongle merasa ( sangat dingin ).
+              </div>
+
+              <!-- Pilihan Jawaban A, B, C -->
+              <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('hěn rè')" title="Klik dengar pelafalan">
+                  <strong>A. <span style="color:#2563eb; font-weight:700;">很</span><span style="color:#ea580c; font-weight:700;">热</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">hěn</span> <span style="color:#ea580c; font-weight:600;">rè</span>)</em> = sangat panas
+                </span>
+                <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('hěn lěng')" title="Klik dengar pelafalan">
+                  <strong>B. <span style="color:#2563eb; font-weight:700;">很</span><span style="color:#ea580c; font-weight:700;">冷</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">hěn</span> <span style="color:#ea580c; font-weight:600;">lěng</span>)</em> = sangat dingin ✓ (Jawaban Benar)
+                </span>
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('yǒudiǎnr lěng')" title="Klik dengar pelafalan">
+                  <strong>C. <span style="color:#2563eb; font-weight:700;">有</span><span style="color:#ea580c; font-weight:700;">点</span><span style="color:#16a34a; font-weight:700;">儿</span><span style="color:#7c3aed; font-weight:700;">冷</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">yǒu</span><span style="color:#ea580c; font-weight:600;">diǎnr</span> <span style="color:#7c3aed; font-weight:600;">lěng</span>)</em> = agak dingin
+                </span>
+              </div>
+              <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
+                💡 <strong>Alasan:</strong> Saat ditanya dokter, Yang Tongle menjawab dengan jelas: <em>"我很冷。" (Wǒ hěn lěng = Saya merasa sangat dingin).</em>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soal 2 -->
+          <div class="classroom-item" style="border-left:4px solid var(--primary);">
+            <div class="item-number">2</div>
+            <div class="item-content">
+              <div style="cursor:pointer;" onclick="playPinyin('Yīshēng duì Yáng Tónglè shuō: Jīntiān xiūxi bàntiān ba.')" title="Klik dengar kalimat soal 2">
+                <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#c2410c;">
+                  <span style="color:#2563eb;">Yī</span><span style="color:#ea580c;">shēng</span> <span style="color:#16a34a;">duì</span> <span style="color:#7c3aed;">Yáng</span> <span style="color:#0891b2;">Tóng</span><span style="color:#c026d3;">lè</span> <span style="color:#ca8a04;">shuō</span>: &ldquo;<span style="color:#4f46e5;">Jīn</span><span style="color:#059669;">tiān</span> ( <strong style="color:#059669;"><span style="color:#db2777;">xiū</span><span style="color:#ea580c;">xi</span> <span style="color:#16a34a;">bàn</span><span style="color:#7c3aed;">tiān</span></strong> ) <span style="color:#d97706;">ba</span>.&rdquo;
+                </div>
+                <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                  （2）<span style="color:#2563eb;">医</span><span style="color:#ea580c;">生</span><span style="color:#16a34a;">对</span><span style="color:#7c3aed;">杨</span><span style="color:#0891b2;">同</span><span style="color:#c026d3;">乐</span><span style="color:#ca8a04;">说</span>：“<span style="color:#4f46e5;">今</span><span style="color:#059669;">天</span>（ <strong style="color:#059669;"><span style="color:#db2777;">休</span><span style="color:#ea580c;">息</span><span style="color:#16a34a;">半</span><span style="color:#7c3aed;">天</span></strong> ）<span style="color:#d97706;">吧</span>。”
+                </div>
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Dokter berkata kepada Yang Tongle: "Hari ini ( istirahat setengah hari ) saja ya."
+              </div>
+
+              <!-- Pilihan Jawaban A, B, C -->
+              <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('shàngbān')" title="Klik dengar pelafalan">
+                  <strong>A. <span style="color:#2563eb; font-weight:700;">上</span><span style="color:#ea580c; font-weight:700;">班</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">shàng</span><span style="color:#ea580c; font-weight:600;">bān</span>)</em> = masuk kerja
+                </span>
+                <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('xiàbān')" title="Klik dengar pelafalan">
+                  <strong>B. <span style="color:#2563eb; font-weight:700;">下</span><span style="color:#ea580c; font-weight:700;">班</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">xià</span><span style="color:#ea580c; font-weight:600;">bān</span>)</em> = pulang kerja
+                </span>
+                <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('xiūxi bàntiān')" title="Klik dengar pelafalan">
+                  <strong>C. <span style="color:#2563eb; font-weight:700;">休</span><span style="color:#ea580c; font-weight:700;">息</span><span style="color:#16a34a; font-weight:700;">半</span><span style="color:#7c3aed; font-weight:700;">天</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">xiū</span><span style="color:#ea580c; font-weight:600;">xi</span> <span style="color:#16a34a; font-weight:600;">bàn</span><span style="color:#7c3aed; font-weight:600;">tiān</span>)</em> = istirahat setengah hari ✓ (Jawaban Benar)
+                </span>
+              </div>
+              <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
+                💡 <strong>Alasan:</strong> Dokter Hu berkata: <em>"好的，吃一点儿药，今天休息半天吧。" (Baiklah, minum sedikit obat, hari ini istirahat setengah hari saja ya).</em>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 9: TEKS 3 (KONSULTASI DOKTER DI RUMAH SAKIT) ── -->
+    <div>
+      <div class="section-title">💬 Teks 3 · 课文 3 (Kemarin di Rumah Sakit, Dokter Memeriksa Yang Tongle)</div>
+      
+      <div class="dialog-box">
+        <div class="dialog-header">
+          <div class="dialog-title">
+            <span>📍 昨天在医院，医生给杨同乐看病。</span>
+          </div>
+          <div style="font-size:0.8rem; color:#64748b; font-style:italic;">
+            (Yesterday at the hospital, the doctor examined Yang Tongle.)
+          </div>
+        </div>
+
+        <div class="dialog-body">
+          
+          <!-- Baris 1: Yang Tongle -->
+          <div class="dialog-line">
+            <div class="avatar av-yang" title="杨同乐 (Yáng Tónglè)">杨</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">杨同乐</span> <span class="speaker-pinyin">Yáng Tónglè</span></span>
+              <div class="bubble" onclick="playPinyin('Yīshēng, wǒ bìng le.')">
+                <div class="bubble-hanzi">医生，我病了。</div>
+                <div class="bubble-pinyin">Yīshēng, wǒ bìng le.</div>
+                <div class="bubble-arti">Dokter, saya sakit / tidak enak badan.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 2: Hu Yisheng -->
+          <div class="dialog-line reverse">
+            <div class="avatar av-hu" title="胡医生 (Hú Yīshēng)">胡</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">胡医生</span> <span class="speaker-pinyin">Hú Yīshēng</span></span>
+              <div class="bubble" onclick="playPinyin('Wǒ kànkan. Nǐ juéde zěnmeyàng?')">
+                <div class="bubble-hanzi">我看看。你觉得怎么样？</div>
+                <div class="bubble-pinyin">Wǒ kànkan. Nǐ juéde zěnmeyàng?</div>
+                <div class="bubble-arti">Coba saya periksa sebentar. Bagaimana perasaanmu / apa yang kamu rasakan?</div>
+              </div>
+              
+              <!-- Xiaoyu's Tip 1: Reduplikasi Kata Kerja 看看 -->
+              <div style="margin-top:0.45rem; background:#fff7ed; border-left:3px solid #ea580c; border-radius:6px; padding:0.45rem 0.75rem; font-size:0.78rem; color:#9a3412; line-height:1.45;">
+                <strong>💡 Xiaoyu's Tip (小语助力):</strong><br/>
+                <strong>“看看” (kànkan)</strong> 是 “看” 的重叠式，表示动作时间短。<br/>
+                <em>“看看” is the reduplicated form of “看”, indicating a brief action.</em><br/>
+                (Reduplikasi kata kerja <strong>AA</strong> menunjukkan aksi berlangsung sebentar, santai, atau bermakna "mencoba melihat / memeriksa sejenak").
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 3: Yang Tongle -->
+          <div class="dialog-line">
+            <div class="avatar av-yang" title="杨同乐 (Yáng Tónglè)">杨</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">杨同乐</span> <span class="speaker-pinyin">Yáng Tónglè</span></span>
+              <div class="bubble" onclick="playPinyin('Wǒ hěn lěng.')">
+                <div class="bubble-hanzi">我很冷。</div>
+                <div class="bubble-pinyin">Wǒ hěn lěng.</div>
+                <div class="bubble-arti">Saya merasa sangat kedinginan.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 4: Hu Yisheng -->
+          <div class="dialog-line reverse">
+            <div class="avatar av-hu" title="胡医生 (Hú Yīshēng)">胡</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">胡医生</span> <span class="speaker-pinyin">Hú Yīshēng</span></span>
+              <div class="bubble" onclick="playPinyin('Hǎo de, chī yìdiǎnr yào, jīntiān xiūxi bàntiān ba.')">
+                <div class="bubble-hanzi">好的，吃一点儿药，今天休息半天吧。</div>
+                <div class="bubble-pinyin">Hǎo de, chī yìdiǎnr yào, jīntiān xiūxi bàntiān ba.</div>
+                <div class="bubble-arti">Baiklah, minum (makan) sedikit obat, hari ini istirahat setengah hari saja ya.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 5: Yang Tongle -->
+          <div class="dialog-line">
+            <div class="avatar av-yang" title="杨同乐 (Yáng Tónglè)">杨</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">杨同乐</span> <span class="speaker-pinyin">Yáng Tónglè</span></span>
+              <div class="bubble" onclick="playPinyin('Hǎo de.')">
+                <div class="bubble-hanzi">好的。</div>
+                <div class="bubble-pinyin">Hǎo de.</div>
+                <div class="bubble-arti">Baik, dok.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Baris 6: Hu Yisheng -->
+          <div class="dialog-line reverse">
+            <div class="avatar av-hu" title="胡医生 (Hú Yīshēng)">胡</div>
+            <div class="bubble-wrap">
+              <span class="speaker-name"><span class="speaker-hanzi">胡医生</span> <span class="speaker-pinyin">Hú Yīshēng</span></span>
+              <div class="bubble" onclick="playPinyin('Huí jiā hòu zài hē xiē rè shuǐ.')">
+                <div class="bubble-hanzi">回家后再喝些热水。</div>
+                <div class="bubble-pinyin">Huí jiā hòu zài hē xiē rè shuǐ.</div>
+                <div class="bubble-arti">Setelah pulang ke rumah, minumlah lagi beberapa air hangat.</div>
+              </div>
+
+              <!-- Xiaoyu's Tip 2: Budaya Minum Air Hangat -->
+              <div style="margin-top:0.45rem; background:#eff6ff; border-left:3px solid #0284c7; border-radius:6px; padding:0.45rem 0.75rem; font-size:0.78rem; color:#1e40af; line-height:1.45;">
+                <strong>💡 Xiaoyu's Tip (小语助力 · Budaya Tiongkok):</strong><br/>
+                中国人喜欢喝热水，认为喝热水更健康。<br/>
+                <em>Chinese people like drinking warm water and believe that it is healthier.</em><br/>
+                (Orang Tiongkok memiliki kebiasaan menyukai minum air hangat / panas, terutama saat tubuh kurang sehat, karena diyakini sangat baik untuk melancarkan sirkulasi tubuh dan menjaga kesehatan).
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── SUB-BREAKDOWN KOSAKATA TEKS 3 (WAJIB DI DALAM DIALOG-BOX) ── -->
+        <div class="sub-breakdown">
+          <div class="sub-title">📖 Kosakata Baru · Teks 3 (生词 New Words 🔊 12-6)</div>
+          <div class="breakdown-grid">
+            <div class="word-card" onclick="playPinyin('bìng')">
+              <div class="word-char">病</div>
+              <div class="word-pinyin">bìng</div>
+              <div class="word-arti">sakit (fall ill/be sick) · <em>v./n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('yìdiǎnr')">
+              <div class="word-char">一点儿</div>
+              <div class="word-pinyin">yì diǎnr</div>
+              <div class="word-arti">sedikit (some) · <em>num.-m.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('yào')">
+              <div class="word-char">药</div>
+              <div class="word-pinyin">yào</div>
+              <div class="word-arti">obat (medicine) · <em>n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('tiān')">
+              <div class="word-char">天</div>
+              <div class="word-pinyin">tiān</div>
+              <div class="word-arti">hari (day) · <em>m.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('huí')">
+              <div class="word-char">回</div>
+              <div class="word-pinyin">huí</div>
+              <div class="word-arti">kembali / pulang (return) · <em>v.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('zài')">
+              <div class="word-char">再</div>
+              <div class="word-pinyin">zài</div>
+              <div class="word-arti">lalu / baru kemudian / lagi (then) · <em>adv.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('zài')">
+              <div class="word-char">在</div>
+              <div class="word-pinyin">zài</div>
+              <div class="word-arti">di / berada di (at / in) · <em>prep.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('hē')">
+              <div class="word-char">喝</div>
+              <div class="word-pinyin">hē</div>
+              <div class="word-arti">minum (drink) · <em>v.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('rè')">
+              <div class="word-char">热</div>
+              <div class="word-pinyin">rè</div>
+              <div class="word-arti">panas / hangat (hot/warm) · <em>adj.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('shuǐ')">
+              <div class="word-char">水</div>
+              <div class="word-pinyin">shuǐ</div>
+              <div class="word-arti">air (water) · <em>n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('yīshēng')">
+              <div class="word-char">医生</div>
+              <div class="word-pinyin">yī shēng</div>
+              <div class="word-arti">dokter (doctor) · <em>n.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('kànkan')">
+              <div class="word-char">看看</div>
+              <div class="word-pinyin">kàn kan</div>
+              <div class="word-arti">melihat sebentar (take a look)</div>
+            </div>
+            <div class="word-card" onclick="playPinyin('xiūxi')">
+              <div class="word-char">休息</div>
+              <div class="word-pinyin">xiū xi</div>
+              <div class="word-arti">istirahat (rest) · <em>v.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('bàntiān')">
+              <div class="word-char">半天</div>
+              <div class="word-pinyin">bàn tiān</div>
+              <div class="word-arti">setengah hari (half a day)</div>
+            </div>
+            <div class="word-card" onclick="playPinyin('xiē')">
+              <div class="word-char">些</div>
+              <div class="word-pinyin">xiē</div>
+              <div class="word-arti">beberapa / sedikit (some) · <em>m.</em></div>
+            </div>
+            <div class="word-card" onclick="playPinyin('rèshuǐ')">
+              <div class="word-char">热水</div>
+              <div class="word-pinyin">rè shuǐ</div>
+              <div class="word-arti">air hangat / air panas (warm water)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── SECTION 10: TANYA JAWAB PEMAHAMAN TEKS 3 (根据课文内容回答问题) ── -->
+    <div>
+      <div class="section-title">❓ Tanya Jawab Pemahaman Teks · 根据课文内容回答问题 (Teks 3)</div>
+      <div class="classroom-box" style="border-left: 5px solid var(--primary);">
+        
+        <!-- Header Q&A -->
+        <div class="classroom-header">
+          <div class="avatar" style="background: linear-gradient(135deg, #c2410c, #9a3412); color:#fff; font-size:1.05rem;">问</div>
+          <div class="classroom-intro">
+            <div class="classroom-badge" style="background:#ffedd5; color:#9a3412;">Latihan Mandiri · Pemahaman Isi Percakapan Teks 3</div>
+            <div class="classroom-desc">
+              🟥 <strong>分角色朗读对话。</strong> Role-play the dialogue (Bacalah percakapan Teks 3 dengan memainkan peran bersama teman).<br/>
+              🟥 <strong>根据课文内容回答问题。</strong> Answer the questions according to the text (Jawablah pertanyaan berikut sesuai isi Teks 3):
+            </div>
+          </div>
+        </div>
+
+        <!-- Daftar Soal & Kunci Jawaban Interaktif -->
+        <div class="classroom-list" style="margin-top:0.3rem;">
+          
+          <!-- Pertanyaan 1 -->
+          <div class="classroom-item" style="border-left:4px solid var(--primary);">
+            <div class="item-title">
+              <span class="item-number">1</span>
+              <span>Pertanyaan 1 (Kondisi Kesehatan Yang Tongle)</span>
+            </div>
+            <div class="item-content">
+              <div style="cursor:pointer;" onclick="playPinyin('Yáng Tónglè shēngbìng le ma?')" title="Klik dengar pertanyaan 1">
+                <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#c2410c;">Yáng Tónglè shēngbìng le ma?</div>
+                <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                  （1）杨同乐生病了吗？
+                </div>
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Apakah Yang Tongle jatuh sakit? <em>(Is Yang Tongle sick?)</em>
+              </div>
+
+              <!-- Jawaban 1 -->
+              <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Shì de, tā shēngbìng le.')" title="Klik dengar kunci jawaban 1">
+                <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                  ✅ <strong>参考答案 (Kunci Jawaban):</strong>
+                </div>
+                <div style="font-size:1.1rem; font-weight:700; margin-top:0.35rem; font-family:'Noto Sans SC',sans-serif;">
+                  👉 <span style="color:#2563eb;">是</span><span style="color:#ea580c;">的</span>，<span style="color:#0891b2;">他</span><span style="color:#16a34a;">生</span><span style="color:#7c3aed;">病</span><span style="color:#d97706;">了</span>。 <span style="font-size:0.92rem; font-weight:600; color:#475569;">/</span> <span style="color:#16a34a;">生</span><span style="color:#7c3aed;">病</span><span style="color:#d97706;">了</span>。
+                </div>
+                <div style="font-size:0.86rem; font-weight:600; margin-top:0.15rem;">
+                  <span style="color:#2563eb;">Shì</span> <span style="color:#ea580c;">de</span>, <span style="color:#0891b2;">tā</span> <span style="color:#16a34a;">shēng</span><span style="color:#7c3aed;">bìng</span> <span style="color:#d97706;">le</span>. <span style="color:#64748b; font-weight:500;">/</span> <span style="color:#16a34a;">Shēng</span><span style="color:#7c3aed;">bìng</span> <span style="color:#d97706;">le</span>.
+                </div>
+                <div style="font-size:0.82rem; color:#15803d; margin-top:0.25rem;">
+                  <strong>Terjemahan:</strong> Ya, dia jatuh sakit. / Sakit.
+                </div>
+                <div style="font-size:0.78rem; color:#475569; margin-top:0.35rem; border-top:1px dashed #a7f3d0; padding-top:0.3rem;">
+                  💡 <strong>Kutipan Teks:</strong> Yang Tongle berkata kepada dokter: <em>"医生，我病了。" (Yīshēng, wǒ bìng le = Dokter, saya sakit).</em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pertanyaan 2 -->
+          <div class="classroom-item" style="border-left:4px solid var(--primary);">
+            <div class="item-title">
+              <span class="item-number">2</span>
+              <span>Pertanyaan 2 (Anjuran Dokter Setelah Pulang ke Rumah)</span>
+            </div>
+            <div class="item-content">
+              <div style="cursor:pointer;" onclick="playPinyin('Kànbìng hòu, Yáng Tónglè huí jiā yào zuò shénme?')" title="Klik dengar pertanyaan 2">
+                <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#c2410c;">Kànbìng hòu, Yáng Tónglè huí jiā yào zuò shénme?</div>
+                <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
+                  （2）看病后，杨同乐回家要做什么？
+                </div>
+              </div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
+                <strong>Arti:</strong> Setelah berobat, apa yang harus dilakukan Yang Tongle setelah pulang ke rumah? <em>(What should Yang Tongle do at home after seeing the doctor?)</em>
+              </div>
+
+              <!-- Jawaban 2 -->
+              <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Tā yào chī yìdiǎnr yào, xiūxi bàntiān, zài hē xiē rè shuǐ.')" title="Klik dengar kunci jawaban 2">
+                <div style="font-weight:700; color:#059669; font-size:0.95rem;">
+                  ✅ <strong>参考答案 (Kunci Jawaban):</strong>
+                </div>
+                <div style="font-size:1.1rem; font-weight:700; margin-top:0.35rem; font-family:'Noto Sans SC',sans-serif;">
+                  👉 <span style="color:#0891b2;">他</span><span style="color:#ea580c;">要</span><span style="color:#2563eb;">吃</span><span style="color:#ea580c;">一</span><span style="color:#7c3aed;">点</span><span style="color:#0891b2;">儿</span><span style="color:#c026d3;">药</span>，<span style="color:#16a34a;">休</span><span style="color:#7c3aed;">息</span><span style="color:#d97706;">半</span><span style="color:#2563eb;">天</span>，<span style="color:#059669;">再</span><span style="color:#ea580c;">喝</span><span style="color:#0891b2;">些</span><span style="color:#e11d48;">热</span><span style="color:#2563eb;">水</span>。
+                </div>
+                <div style="font-size:0.86rem; font-weight:600; margin-top:0.15rem;">
+                  <span style="color:#0891b2;">Tā</span> <span style="color:#ea580c;">yào</span> <span style="color:#2563eb;">chī</span> <span style="color:#ea580c;">yì</span><span style="color:#7c3aed;">diǎn</span><span style="color:#0891b2;">r</span> <span style="color:#c026d3;">yào</span>, <span style="color:#16a34a;">xiū</span><span style="color:#7c3aed;">xi</span> <span style="color:#d97706;">bàn</span><span style="color:#2563eb;">tiān</span>, <span style="color:#059669;">zài</span> <span style="color:#ea580c;">hē</span> <span style="color:#0891b2;">xiē</span> <span style="color:#e11d48;">rè</span> <span style="color:#2563eb;">shuǐ</span>.
+                </div>
+                <div style="font-size:0.82rem; color:#15803d; margin-top:0.25rem;">
+                  <strong>Terjemahan:</strong> Dia harus minum sedikit obat, istirahat setengah hari, lalu minum beberapa air hangat.
+                </div>
+                <div style="font-size:0.78rem; color:#475569; margin-top:0.35rem; border-top:1px dashed #a7f3d0; padding-top:0.3rem;">
+                  💡 <strong>Kutipan Teks:</strong> Dokter Hu menyarankan: <em>"好的，吃一点儿药，今天休息半天吧。"</em> dan <em>"回家后再喝些热水。"</em>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 11: COMPREHENSIVE EXERCISES (综合练习) ── -->
+    <div>
+      <div class="section-title">📝 Latihan Komprehensif · 综合练习 (Comprehensive Exercises)</div>
+      <div class="classroom-box" style="border-left: 5px solid #8b5cf6;">
+        
+        <!-- Header Pengantar Latihan -->
+        <div style="background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border: 1px solid #ddd6fe; border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <span style="background: #7c3aed; color: #fff; font-size: 0.85rem; font-weight: 700; padding: 0.2rem 0.75rem; border-radius: 20px;">Review Materi</span>
+            <h3 style="margin: 0; font-size: 1.25rem; font-weight: 700; color: #5b21b6;">综合练习 Comprehensive Exercises</h3>
+          </div>
+          <p style="margin: 0; font-size: 0.92rem; color: #4c1d95; line-height: 1.6;">
+            Latihan komprehensif menguji penguasaan kosakata baru (生词) dan tata bahasa penting Bab 12: penggunaan partikel perubahan <strong style="color:#d97706;">了</strong>, pola eksklamasif <strong style="color:#e11d48;">太……了</strong>, serta mendeskripsikan peristiwa cuaca dan kondisi sehari-hari sesuai gambar.
+          </p>
+        </div>
+
+        <!-- ══ BAGIAN 1: 选词填空 (CHOOSE PROPER WORDS) ══ -->
+        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 1.3rem; margin-bottom: 1.8rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 2px dashed #e2e8f0; padding-bottom: 0.75rem;">
+            <span style="display:inline-block; width:12px; height:12px; background:#c2410c; border-radius:2px;"></span>
+            <h4 style="margin:0; font-size:1.1rem; color:#0f172a; font-weight:700;">
+              ■ 选词填空。 <span style="font-size:0.95rem; font-weight:500; color:#64748b;">Choose the proper words to fill in the blanks.</span>
+            </h4>
+          </div>
+
+          <!-- Bank Pilihan Kata A - E (3 di Atas, 2 di Bawah) -->
+          <div style="background: #faf5ff; border: 1.5px solid #d8b4fe; border-radius: 12px; padding: 1.1rem; margin-bottom: 1.4rem; display: flex; flex-direction: column; gap: 0.85rem; align-items: center;">
+            
+            <!-- Baris 1 (3 di atas: A, B, C) -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.85rem; width: 100%;">
+              <!-- A -->
+              <div style="flex: 1 1 180px; max-width: 210px; background: #ffffff; border: 1.5px solid #c084fc; border-radius: 8px; padding: 0.5rem 0.85rem; text-align: center; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.05);" onclick="playPinyin('zěnmeyàng')" title="Klik dengar pelafalan 怎么样">
+                <span style="color: #dc2626; font-weight: 800; font-size: 1.1rem; margin-right: 0.35rem;">A</span>
+                <span style="font-size: 1.25rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif;">
+                  <span style="color:#7c3aed;">怎</span><span style="color:#0891b2;">么</span><span style="color:#ea580c;">样</span>
+                </span>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.15rem;">
+                  <span style="color:#7c3aed;">zěn</span><span style="color:#0891b2;">me</span><span style="color:#ea580c;">yàng</span>
+                </div>
+                <div style="font-size: 0.74rem; color: #64748b; margin-top: 0.1rem;">bagaimana</div>
+              </div>
+
+              <!-- B -->
+              <div style="flex: 1 1 180px; max-width: 210px; background: #ffffff; border: 1.5px solid #c084fc; border-radius: 8px; padding: 0.5rem 0.85rem; text-align: center; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.05);" onclick="playPinyin('xuě')" title="Klik dengar pelafalan 雪">
+                <span style="color: #dc2626; font-weight: 800; font-size: 1.1rem; margin-right: 0.35rem;">B</span>
+                <span style="font-size: 1.25rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif;">
+                  <span style="color:#0284c7;">雪</span>
+                </span>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.15rem;">
+                  <span style="color:#0284c7;">xuě</span>
+                </div>
+                <div style="font-size: 0.74rem; color: #64748b; margin-top: 0.1rem;">salju</div>
+              </div>
+
+              <!-- C -->
+              <div style="flex: 1 1 180px; max-width: 210px; background: #ffffff; border: 1.5px solid #c084fc; border-radius: 8px; padding: 0.5rem 0.85rem; text-align: center; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.05);" onclick="playPinyin('le')" title="Klik dengar pelafalan 了">
+                <span style="color: #dc2626; font-weight: 800; font-size: 1.1rem; margin-right: 0.35rem;">C</span>
+                <span style="font-size: 1.25rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif;">
+                  <span style="color:#d97706;">了</span>
+                </span>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.15rem;">
+                  <span style="color:#d97706;">le</span>
+                </div>
+                <div style="font-size: 0.74rem; color: #64748b; margin-top: 0.1rem;">partikel perubahan/lampau</div>
+              </div>
+            </div>
+
+            <!-- Baris 2 (2 di bawah: D, E) -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.85rem; width: 100%;">
+              <!-- D -->
+              <div style="flex: 1 1 180px; max-width: 210px; background: #ffffff; border: 1.5px solid #c084fc; border-radius: 8px; padding: 0.5rem 0.85rem; text-align: center; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.05);" onclick="playPinyin('kàn')" title="Klik dengar pelafalan 看">
+                <span style="color: #dc2626; font-weight: 800; font-size: 1.1rem; margin-right: 0.35rem;">D</span>
+                <span style="font-size: 1.25rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif;">
+                  <span style="color:#059669;">看</span>
+                </span>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.15rem;">
+                  <span style="color:#059669;">kàn</span>
+                </div>
+                <div style="font-size: 0.74rem; color: #64748b; margin-top: 0.1rem;">melihat / periksa</div>
+              </div>
+
+              <!-- E -->
+              <div style="flex: 1 1 180px; max-width: 210px; background: #ffffff; border: 1.5px solid #c084fc; border-radius: 8px; padding: 0.5rem 0.85rem; text-align: center; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.05);" onclick="playPinyin('tài')" title="Klik dengar pelafalan 太">
+                <span style="color: #dc2626; font-weight: 800; font-size: 1.1rem; margin-right: 0.35rem;">E</span>
+                <span style="font-size: 1.25rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif;">
+                  <span style="color:#e11d48;">太</span>
+                </span>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.15rem;">
+                  <span style="color:#e11d48;">tài</span>
+                </div>
+                <div style="font-size: 0.74rem; color: #64748b; margin-top: 0.1rem;">terlalu / sangat</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Daftar Soal 选词填空 (1) - (4) -->
+          <div style="display: grid; gap: 1rem;">
+            
+            <!-- Soal 1 -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem;">
+              <div style="font-size: 1.15rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.35rem;">
+                <span style="color: #64748b;">( 1 )</span>
+                <span>
+                  <span style="color:#2563eb;">外</span><span style="color:#ea580c;">边</span><span style="color:#16a34a;">正</span><span style="color:#7c3aed;">在</span><span style="color:#0891b2;">下</span>
+                </span>
+                <span style="display:inline-block; width:65px; border-bottom:2px solid #3b82f6; text-align:center; color:#2563eb; font-weight:800;">( &nbsp;&nbsp; )</span>
+                <span>，</span>
+                <span style="display:inline-block; width:65px; border-bottom:2px solid #e11d48; text-align:center; color:#e11d48; font-weight:800;">( &nbsp;&nbsp; )</span>
+                <span>
+                  <span style="color:#059669;">冷</span><span style="color:#d97706;">了</span>！
+                </span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.25rem;">
+                <span style="color:#2563eb;">Wài</span><span style="color:#ea580c;">bian</span> <span style="color:#16a34a;">zhèng</span><span style="color:#7c3aed;">zài</span> <span style="color:#0891b2;">xià</span> <span style="color:#3b82f6; font-weight:800;">____</span>, <span style="color:#e11d48; font-weight:800;">____</span> <span style="color:#059669;">lěng</span> <span style="color:#d97706;">le</span>!
+              </div>
+              
+              <!-- Jawaban & Penjelasan Soal 1 -->
+              <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 0.7rem 0.9rem; margin-top: 0.65rem; cursor: pointer;" onclick="playPinyin('Wàibian zhèngzài xià xuě, tài lěng le!')" title="Klik dengar kalimat lengkap Soal 1">
+                <div style="font-size: 0.92rem; font-weight: 700; color: #166534;">
+                  ✅ <strong>Jawaban: <span style="color:#0284c7;">B (雪)</span> dan <span style="color:#e11d48;">E (太)</span></strong>
+                </div>
+                <div style="font-size: 1.05rem; font-weight: 700; margin-top: 0.3rem; font-family: 'Noto Sans SC', sans-serif;">
+                  👉 <span style="color:#2563eb;">外</span><span style="color:#ea580c;">边</span><span style="color:#16a34a;">正</span><span style="color:#7c3aed;">在</span><span style="color:#0891b2;">下</span><strong style="color:#0284c7; text-decoration:underline;">雪</strong>，<strong style="color:#e11d48; text-decoration:underline;">太</strong><span style="color:#059669;">冷</span><span style="color:#d97706;">了</span>！
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.15rem;">
+                  <span style="color:#2563eb;">Wài</span><span style="color:#ea580c;">bian</span> <span style="color:#16a34a;">zhèng</span><span style="color:#7c3aed;">zài</span> <span style="color:#0891b2;">xià</span> <strong style="color:#0284c7; text-decoration:underline;">xuě</strong>, <strong style="color:#e11d48; text-decoration:underline;">tài</strong> <span style="color:#059669;">lěng</span> <span style="color:#d97706;">le</span>!
+                </div>
+                <div style="font-size: 0.82rem; color: #334155; margin-top: 0.25rem;">
+                  <strong>Artinya:</strong> "Di luar sedang turun salju, dingin sekali!"<br/>
+                  <span style="color:#475569; font-size:0.78rem;">💡 <em>Analisis:</em> Kata kerja <strong>下</strong> berpasangan dengan fenomena cuaca <strong>雪</strong> (salju &rarr; <em>xià xuě</em>). Pola seruan eksklamatif <strong>太……了</strong> membingkai kata sifat <strong>冷</strong> (dingin &rarr; <em>tài lěng le!</em>).</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Soal 2 -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem;">
+              <div style="font-size: 1.15rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.35rem;">
+                <span style="color: #64748b;">( 2 )</span>
+                <span>
+                  <span style="color:#2563eb;">他</span><span style="color:#ea580c;">去</span><span style="color:#16a34a;">公</span><span style="color:#7c3aed;">司</span><span style="color:#0891b2;">工</span><span style="color:#059669;">作</span>
+                </span>
+                <span style="display:inline-block; width:75px; border-bottom:2px solid #d97706; text-align:center; color:#d97706; font-weight:800;">( &nbsp;&nbsp; )</span>
+                <span>。</span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.25rem;">
+                <span style="color:#2563eb;">Tā</span> <span style="color:#ea580c;">qù</span> <span style="color:#16a34a;">gōng</span><span style="color:#7c3aed;">sī</span> <span style="color:#0891b2;">gōng</span><span style="color:#059669;">zuò</span> <span style="color:#d97706; font-weight:800;">____</span>.
+              </div>
+              
+              <!-- Jawaban & Penjelasan Soal 2 -->
+              <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 0.7rem 0.9rem; margin-top: 0.65rem; cursor: pointer;" onclick="playPinyin('Tā qù gōngsī gōngzuò le.')" title="Klik dengar kalimat lengkap Soal 2">
+                <div style="font-size: 0.92rem; font-weight: 700; color: #166534;">
+                  ✅ <strong>Jawaban: <span style="color:#d97706;">C (了)</span></strong>
+                </div>
+                <div style="font-size: 1.05rem; font-weight: 700; margin-top: 0.3rem; font-family: 'Noto Sans SC', sans-serif;">
+                  👉 <span style="color:#2563eb;">他</span><span style="color:#ea580c;">去</span><span style="color:#16a34a;">公</span><span style="color:#7c3aed;">司</span><span style="color:#0891b2;">工</span><span style="color:#059669;">作</span><strong style="color:#d97706; text-decoration:underline;">了</strong>。
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.15rem;">
+                  <span style="color:#2563eb;">Tā</span> <span style="color:#ea580c;">qù</span> <span style="color:#16a34a;">gōng</span><span style="color:#7c3aed;">sī</span> <span style="color:#0891b2;">gōng</span><span style="color:#059669;">zuò</span> <strong style="color:#d97706; text-decoration:underline;">le</strong>.
+                </div>
+                <div style="font-size: 0.82rem; color: #334155; margin-top: 0.25rem;">
+                  <strong>Artinya:</strong> "Dia sudah pergi bekerja di kantor / perusahaan."<br/>
+                  <span style="color:#475569; font-size:0.78rem;">💡 <em>Analisis:</em> Partikel modal <strong>了</strong> di akhir kalimat menegaskan tindakan atau status baru telah terjadi (dia telah berangkat bekerja).</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Soal 3 -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem;">
+              <div style="font-size: 1.15rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.35rem;">
+                <span style="color: #64748b;">( 3 )</span>
+                <span><span style="color:#0284c7;">医</span><span style="color:#ea580c;">生</span>：</span>
+                <span>
+                  <span style="color:#2563eb;">你</span><span style="color:#ea580c;">觉</span><span style="color:#16a34a;">得</span>
+                </span>
+                <span style="display:inline-block; width:95px; border-bottom:2px solid #7c3aed; text-align:center; color:#7c3aed; font-weight:800;">( &nbsp;&nbsp; )</span>
+                <span>？</span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.25rem;">
+                <span style="color:#0284c7;">Yī</span><span style="color:#ea580c;">shēng</span>: <span style="color:#2563eb;">Nǐ</span> <span style="color:#ea580c;">jué</span><span style="color:#16a34a;">de</span> <span style="color:#7c3aed; font-weight:800;">____</span>?
+              </div>
+              <div style="font-size: 1.15rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif; margin-left: 1.5rem; margin-top: 0.35rem;">
+                <span><span style="color:#ea580c;">杨</span><span style="color:#2563eb;">同</span><span style="color:#16a34a;">乐</span>：</span><span style="color:#dc2626;">我</span><span style="color:#059669;">很</span><span style="color:#0891b2;">冷</span>。
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 600; margin-left: 1.5rem; margin-top: 0.15rem;">
+                <span style="color:#ea580c;">Yáng</span> <span style="color:#2563eb;">Tóng</span><span style="color:#16a34a;">lè</span>: <span style="color:#dc2626;">Wǒ</span> <span style="color:#059669;">hěn</span> <span style="color:#0891b2;">lěng</span>.
+              </div>
+              
+              <!-- Jawaban & Penjelasan Soal 3 -->
+              <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 0.7rem 0.9rem; margin-top: 0.65rem; cursor: pointer;" onclick="playPinyin('Nǐ juéde zěnmeyàng? Wǒ hěn lěng.')" title="Klik dengar percakapan Soal 3">
+                <div style="font-size: 0.92rem; font-weight: 700; color: #166534;">
+                  ✅ <strong>Jawaban: <span style="color:#7c3aed;">A (怎么样)</span></strong>
+                </div>
+                <div style="font-size: 1.05rem; font-weight: 700; margin-top: 0.3rem; font-family: 'Noto Sans SC', sans-serif;">
+                  👉 <span><span style="color:#0284c7;">医</span><span style="color:#ea580c;">生</span>：</span><span style="color:#2563eb;">你</span><span style="color:#ea580c;">觉</span><span style="color:#16a34a;">得</span><span style="color:#7c3aed;">怎</span><span style="color:#0891b2;">么</span><span style="color:#ea580c;">样</span>？<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span><span style="color:#ea580c;">杨</span><span style="color:#2563eb;">同</span><span style="color:#16a34a;">乐</span>：</span><span style="color:#dc2626;">我</span><span style="color:#059669;">很</span><span style="color:#0891b2;">冷</span>。
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.15rem;">
+                  <span style="color:#0284c7;">Yī</span><span style="color:#ea580c;">shēng</span>: <span style="color:#2563eb;">Nǐ</span> <span style="color:#ea580c;">jué</span><span style="color:#16a34a;">de</span> <span style="color:#7c3aed;">zěn</span><span style="color:#0891b2;">me</span><span style="color:#e11d48;">yàng</span>? &nbsp;|&nbsp; <span style="color:#ea580c;">Yáng</span> <span style="color:#2563eb;">Tóng</span><span style="color:#16a34a;">lè</span>: <span style="color:#dc2626;">Wǒ</span> <span style="color:#059669;">hěn</span> <span style="color:#0891b2;">lěng</span>.
+                </div>
+                <div style="font-size: 0.82rem; color: #334155; margin-top: 0.25rem;">
+                  <strong>Artinya:</strong> Dokter: "Bagaimana perasaanmu / apa yang kamu rasakan?" | Yang Tongle: "Saya merasa sangat dingin."<br/>
+                  <span style="color:#475569; font-size:0.78rem;">💡 <em>Analisis:</em> Kata tanya <strong>怎么样</strong> (<em>zěnmeyàng</em>) digunakan untuk menanyakan kondisi kesehatan, pendapat, atau keadaan tubuh.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Soal 4 -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem;">
+              <div style="font-size: 1.15rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.35rem;">
+                <span style="color: #64748b;">( 4 )</span>
+                <span><span style="color:#2563eb;">王</span><span style="color:#ea580c;">一</span><span style="color:#16a34a;">雪</span>：</span>
+                <span>
+                  <span style="color:#7c3aed;">你</span><span style="color:#0891b2;">昨</span><span style="color:#ea580c;">天</span><span style="color:#2563eb;">去</span><span style="color:#16a34a;">医</span><span style="color:#0284c7;">院</span>
+                </span>
+                <span style="display:inline-block; width:65px; border-bottom:2px solid #059669; text-align:center; color:#059669; font-weight:800;">( &nbsp;&nbsp; )</span>
+                <span>
+                  <span style="color:#e11d48;">病</span><span style="color:#d97706;">了</span><span style="color:#2563eb;">吗</span>？
+                </span>
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.25rem;">
+                <span style="color:#2563eb;">Wáng</span> <span style="color:#ea580c;">Yī</span><span style="color:#16a34a;">xuě</span>: <span style="color:#7c3aed;">Nǐ</span> <span style="color:#0891b2;">zuó</span><span style="color:#ea580c;">tiān</span> <span style="color:#2563eb;">qù</span> <span style="color:#16a34a;">yī</span><span style="color:#0284c7;">yuàn</span> <span style="color:#059669; font-weight:800;">____</span> <span style="color:#e11d48;">bìng</span> <span style="color:#d97706;">le</span> <span style="color:#2563eb;">ma</span>?
+              </div>
+              <div style="font-size: 1.15rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif; margin-left: 1.5rem; margin-top: 0.35rem;">
+                <span><span style="color:#ea580c;">杨</span><span style="color:#2563eb;">同</span><span style="color:#16a34a;">乐</span>：</span><span style="color:#0891b2;">没</span><span style="color:#2563eb;">有</span>，<span style="color:#dc2626;">我</span><span style="color:#ea580c;">今</span><span style="color:#7c3aed;">天</span><span style="color:#059669;">去</span>。
+              </div>
+              <div style="font-size: 0.88rem; font-weight: 600; margin-left: 1.5rem; margin-top: 0.15rem;">
+                <span style="color:#ea580c;">Yáng</span> <span style="color:#2563eb;">Tóng</span><span style="color:#16a34a;">lè</span>: <span style="color:#0891b2;">Méi</span><span style="color:#2563eb;">yǒu</span>, <span style="color:#dc2626;">wǒ</span> <span style="color:#ea580c;">jīn</span><span style="color:#7c3aed;">tiān</span> <span style="color:#059669;">qù</span>.
+              </div>
+              
+              <!-- Jawaban & Penjelasan Soal 4 -->
+              <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 0.7rem 0.9rem; margin-top: 0.65rem; cursor: pointer;" onclick="playPinyin('Nǐ zuótiān qù yīyuàn kàn bìng le ma? Méiyǒu, wǒ jīntiān qù.')" title="Klik dengar percakapan Soal 4">
+                <div style="font-size: 0.92rem; font-weight: 700; color: #166534;">
+                  ✅ <strong>Jawaban: <span style="color:#059669;">D (看)</span></strong>
+                </div>
+                <div style="font-size: 1.05rem; font-weight: 700; margin-top: 0.3rem; font-family: 'Noto Sans SC', sans-serif;">
+                  👉 <span><span style="color:#2563eb;">王</span><span style="color:#ea580c;">一</span><span style="color:#16a34a;">雪</span>：</span><span style="color:#7c3aed;">你</span><span style="color:#0891b2;">昨</span><span style="color:#ea580c;">天</span><span style="color:#2563eb;">去</span><span style="color:#16a34a;">医</span><span style="color:#0284c7;">院</span><span style="color:#059669;">看</span><span style="color:#e11d48;">病</span><span style="color:#d97706;">了</span><span style="color:#2563eb;">吗</span>？<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span><span style="color:#ea580c;">杨</span><span style="color:#2563eb;">同</span><span style="color:#16a34a;">乐</span>：</span><span style="color:#0891b2;">没</span><span style="color:#2563eb;">有</span>，<span style="color:#dc2626;">我</span><span style="color:#ea580c;">今</span><span style="color:#7c3aed;">天</span><span style="color:#059669;">去</span>。
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.15rem;">
+                  <span style="color:#2563eb;">Wáng</span> <span style="color:#ea580c;">Yī</span><span style="color:#16a34a;">xuě</span>: <span style="color:#7c3aed;">Nǐ</span> <span style="color:#0891b2;">zuó</span><span style="color:#ea580c;">tiān</span> <span style="color:#2563eb;">qù</span> <span style="color:#16a34a;">yī</span><span style="color:#0284c7;">yuàn</span> <span style="color:#059669;">kàn</span> <span style="color:#e11d48;">bìng</span> <span style="color:#d97706;">le</span> <span style="color:#2563eb;">ma</span>? &nbsp;|&nbsp; <span style="color:#ea580c;">Yáng</span> <span style="color:#2563eb;">Tóng</span><span style="color:#16a34a;">lè</span>: <span style="color:#0891b2;">Méi</span><span style="color:#2563eb;">yǒu</span>, <span style="color:#dc2626;">wǒ</span> <span style="color:#ea580c;">jīn</span><span style="color:#7c3aed;">tiān</span> <span style="color:#059669;">qù</span>.
+                </div>
+                <div style="font-size: 0.82rem; color: #334155; margin-top: 0.25rem;">
+                  <strong>Artinya:</strong> Wang Yixue: "Apakah kemarin kamu pergi ke rumah sakit untuk berobat / periksa dokter?" | Yang Tongle: "Tidak, saya perginya hari ini."<br/>
+                  <span style="color:#475569; font-size:0.78rem;">💡 <em>Analisis:</em> Frasa kata kerja tetap adalah <strong>看病</strong> (<em>kàn bìng</em> = berobat / memeriksakan diri ke dokter).</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ══ BAGIAN 2: 用本课新学的词语和语言点描述图片 ══ -->
+        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 1.3rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.65rem; border-bottom: 2px dashed #e2e8f0; padding-bottom: 0.75rem;">
+            <span style="display:inline-block; width:12px; height:12px; background:#c2410c; border-radius:2px;"></span>
+            <h4 style="margin:0; font-size:1.1rem; color:#0f172a; font-weight:700;">
+              ■ 用本课新学的词语和语言点描述图片。
+            </h4>
+          </div>
+          <div style="font-size:0.92rem; color:#64748b; margin-bottom: 1.25rem;">
+            <em>Describe the pictures using the newly-learned words and language points in this lesson.</em>
+          </div>
+
+          <!-- Gambar Pindai Latihan Buku Lengkap -->
+          <div style="text-align:center; margin-bottom:1.5rem;">
+            <img src="images/bab12-comprehensive-exercises.png" alt="Comprehensive Exercises Bab 12" style="max-width:540px; width:100%; height:auto; border-radius:10px; border:1px solid #e2e8f0; box-shadow:0 3px 12px rgba(0,0,0,0.06);" />
+            <div style="font-size:0.8rem; color:#64748b; margin-top:0.35rem;">
+              <em>Gambar 12.6: Halaman Asli 综合练习 (Comprehensive Exercises) Bab 12</em>
+            </div>
+          </div>
+
+          <!-- 4 Kartu Deskripsi Gambar (Grid 2 Kolom) -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+            
+            <!-- Gambar 1: Pohon & Hujan Lebat -->
+            <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span style="background: #0284c7; color: #fff; font-size: 0.78rem; font-weight: 700; padding: 0.15rem 0.55rem; border-radius: 14px;">Gambar 1 · Cuaca Hujan</span>
+                  <span style="font-size: 0.82rem; color: #64748b;">🌧️ Hujan Lebat</span>
+                </div>
+                <div style="font-size: 1.15rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif; margin-top: 0.4rem;">
+                  <span style="color:#2563eb;">昨</span><span style="color:#ea580c;">天</span> <span style="display:inline-block; min-width:120px; border-bottom:2px solid #0284c7; color:#0284c7; text-align:center;">________</span> 。
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.2rem;">
+                  <span style="color:#2563eb;">Zuó</span><span style="color:#ea580c;">tiān</span> <span style="color:#0284c7; font-weight:800;">________</span>.
+                </div>
+              </div>
+
+              <!-- Jawaban Gambar 1 -->
+              <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 0.65rem 0.85rem; margin-top: 0.85rem; cursor: pointer;" onclick="playPinyin('Zuótiān xià yǔ le.')" title="Klik dengar jawaban Gambar 1">
+                <div style="font-size: 0.85rem; font-weight: 700; color: #166534;">
+                  ✅ <strong>Referensi Jawaban:</strong>
+                </div>
+                <div style="font-size: 1.05rem; font-weight: 700; margin-top: 0.25rem; font-family: 'Noto Sans SC', sans-serif;">
+                  👉 <span style="color:#2563eb;">昨</span><span style="color:#ea580c;">天</span><span style="color:#16a34a;">下</span><span style="color:#0284c7;">雨</span><span style="color:#d97706;">了</span>。
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600;">
+                  <span style="color:#2563eb;">Zuó</span><span style="color:#ea580c;">tiān</span> <span style="color:#16a34a;">xià</span> <span style="color:#0284c7;">yǔ</span> <span style="color:#d97706;">le</span>.
+                </div>
+                <div style="font-size: 0.8rem; color: #334155; margin-top: 0.2rem;">
+                  <strong>Artinya:</strong> "Kemarin turun hujan."
+                </div>
+              </div>
+            </div>
+
+            <!-- Gambar 2: Langit Cerah & Sinar Matahari Panas -->
+            <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span style="background: #ea580c; color: #fff; font-size: 0.78rem; font-weight: 700; padding: 0.15rem 0.55rem; border-radius: 14px;">Gambar 2 · Langit Cerah / Panas</span>
+                  <span style="font-size: 0.82rem; color: #64748b;">☀️ Matahari Terik</span>
+                </div>
+                <div style="font-size: 1.15rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif; margin-top: 0.4rem;">
+                  <span style="color:#ea580c;">今</span><span style="color:#16a34a;">天</span> <span style="display:inline-block; min-width:120px; border-bottom:2px solid #ea580c; color:#ea580c; text-align:center;">________</span> 。
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600; margin-top: 0.2rem;">
+                  <span style="color:#ea580c;">Jīn</span><span style="color:#16a34a;">tiān</span> <span style="color:#ea580c; font-weight:800;">________</span>.
+                </div>
+              </div>
+
+              <!-- Jawaban Gambar 2 -->
+              <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 0.65rem 0.85rem; margin-top: 0.85rem; cursor: pointer;" onclick="playPinyin('Jīntiān tài rè le.')" title="Klik dengar jawaban Gambar 2">
+                <div style="font-size: 0.85rem; font-weight: 700; color: #166534;">
+                  ✅ <strong>Referensi Jawaban:</strong>
+                </div>
+                <div style="font-size: 1.05rem; font-weight: 700; margin-top: 0.25rem; font-family: 'Noto Sans SC', sans-serif;">
+                  👉 <span style="color:#ea580c;">今</span><span style="color:#16a34a;">天</span><span style="color:#e11d48;">太</span><span style="color:#0284c7;">热</span><span style="color:#d97706;">了</span>。
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600;">
+                  <span style="color:#ea580c;">Jīn</span><span style="color:#16a34a;">tiān</span> <span style="color:#e11d48;">tài</span> <span style="color:#0284c7;">rè</span> <span style="color:#d97706;">le</span>.
+                </div>
+                <div style="font-size: 0.8rem; color: #334155; margin-top: 0.2rem;">
+                  <strong>Artinya:</strong> "Hari ini panas sekali."
+                </div>
+              </div>
+            </div>
+
+            <!-- Gambar 3: Yang Tongle Sakit di Tempat Tidur -->
+            <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span style="background: #dc2626; color: #fff; font-size: 0.78rem; font-weight: 700; padding: 0.15rem 0.55rem; border-radius: 14px;">Gambar 3 · Sakit &amp; Kerja</span>
+                  <span style="font-size: 0.82rem; color: #64748b;">🤒 Kompres Demam</span>
+                </div>
+                <div style="font-size: 1.1rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif; margin-top: 0.4rem; line-height: 1.6;">
+                  <span style="color:#ea580c;">杨</span><span style="color:#2563eb;">同</span><span style="color:#16a34a;">乐</span> <span style="display:inline-block; min-width:45px; border-bottom:2px solid #dc2626; color:#dc2626; text-align:center;">____</span> <span style="color:#d97706;">了</span>，<span style="color:#2563eb;">他</span><span style="color:#ea580c;">昨</span><span style="color:#16a34a;">天</span><span style="color:#7c3aed;">去</span> <span style="display:inline-block; min-width:60px; border-bottom:2px solid #dc2626; color:#dc2626; text-align:center;">____</span>，<span style="color:#ea580c;">今</span><span style="color:#16a34a;">天</span><span style="color:#0891b2;">来</span> <span style="display:inline-block; min-width:55px; border-bottom:2px solid #dc2626; color:#dc2626; text-align:center;">____</span>。
+                </div>
+                <div style="font-size: 0.86rem; font-weight: 600; margin-top: 0.2rem;">
+                  <span style="color:#ea580c;">Yáng</span> <span style="color:#2563eb;">Tóng</span><span style="color:#16a34a;">lè</span> <span style="color:#dc2626; font-weight:800;">____</span> <span style="color:#d97706;">le</span>, <span style="color:#2563eb;">tā</span> <span style="color:#ea580c;">zuó</span><span style="color:#16a34a;">tiān</span> <span style="color:#7c3aed;">qù</span> <span style="color:#dc2626; font-weight:800;">____</span>, <span style="color:#ea580c;">jīn</span><span style="color:#16a34a;">tiān</span> <span style="color:#0891b2;">lái</span> <span style="color:#dc2626; font-weight:800;">____</span>.
+                </div>
+              </div>
+
+              <!-- Jawaban Gambar 3 -->
+              <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 0.65rem 0.85rem; margin-top: 0.85rem; cursor: pointer;" onclick="playPinyin('Yáng Tónglè shēngbìng le, tā zuótiān qù kànbìng, jīntiān lái shàngbān.')" title="Klik dengar jawaban Gambar 3">
+                <div style="font-size: 0.85rem; font-weight: 700; color: #166534;">
+                  ✅ <strong>Referensi Jawaban:</strong>
+                </div>
+                <div style="font-size: 1.05rem; font-weight: 700; margin-top: 0.25rem; font-family: 'Noto Sans SC', sans-serif;">
+                  👉 <span style="color:#ea580c;">杨</span><span style="color:#2563eb;">同</span><span style="color:#16a34a;">乐</span><span style="color:#dc2626;">生</span><span style="color:#7c3aed;">病</span><span style="color:#d97706;">了</span>，<span style="color:#2563eb;">他</span><span style="color:#ea580c;">昨</span><span style="color:#16a34a;">天</span><span style="color:#7c3aed;">去</span><span style="color:#059669;">看</span><span style="color:#e11d48;">病</span>，<span style="color:#ea580c;">今</span><span style="color:#16a34a;">天</span><span style="color:#0891b2;">来</span><span style="color:#2563eb;">上</span><span style="color:#ea580c;">班</span>。
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600;">
+                  <span style="color:#ea580c;">Yáng</span> <span style="color:#2563eb;">Tóng</span><span style="color:#16a34a;">lè</span> <span style="color:#dc2626;">shēng</span><span style="color:#7c3aed;">bìng</span> <span style="color:#d97706;">le</span>, <span style="color:#2563eb;">tā</span> <span style="color:#ea580c;">zuó</span><span style="color:#16a34a;">tiān</span> <span style="color:#7c3aed;">qù</span> <span style="color:#059669;">kàn</span><span style="color:#e11d48;">bìng</span>, <span style="color:#ea580c;">jīn</span><span style="color:#16a34a;">tiān</span> <span style="color:#0891b2;">lái</span> <span style="color:#2563eb;">shàng</span><span style="color:#ea580c;">bān</span>.
+                </div>
+                <div style="font-size: 0.8rem; color: #334155; margin-top: 0.2rem;">
+                  <strong>Artinya:</strong> "Yang Tongle jatuh sakit, kemarin dia pergi berobat, hari ini datang bekerja."
+                </div>
+              </div>
+            </div>
+
+            <!-- Gambar 4: Dokter Hu Memeriksa Yang Tongle -->
+            <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                  <span style="background: #059669; color: #fff; font-size: 0.78rem; font-weight: 700; padding: 0.15rem 0.55rem; border-radius: 14px;">Gambar 4 · Saran Dokter</span>
+                  <span style="font-size: 0.82rem; color: #64748b;">👨‍⚕️ Konsultasi Medis</span>
+                </div>
+                <div style="font-size: 1.1rem; font-weight: 700; font-family: 'Noto Sans SC', sans-serif; margin-top: 0.4rem; line-height: 1.6;">
+                  <span style="color:#0284c7;">医</span><span style="color:#ea580c;">生</span><span style="color:#7c3aed;">对</span><span style="color:#ea580c;">杨</span><span style="color:#2563eb;">同</span><span style="color:#16a34a;">乐</span><span style="color:#0891b2;">说</span>：“<span style="color:#ea580c;">今</span><span style="color:#16a34a;">天</span> <span style="display:inline-block; min-width:75px; border-bottom:2px solid #059669; color:#059669; text-align:center;">________</span>，<span style="color:#2563eb;">回</span><span style="color:#ea580c;">家</span> <span style="display:inline-block; min-width:85px; border-bottom:2px solid #059669; color:#059669; text-align:center;">________</span>。”
+                </div>
+                <div style="font-size: 0.86rem; font-weight: 600; margin-top: 0.2rem;">
+                  <span style="color:#0284c7;">Yī</span><span style="color:#ea580c;">shēng</span> <span style="color:#7c3aed;">duì</span> <span style="color:#ea580c;">Yáng</span> <span style="color:#2563eb;">Tóng</span><span style="color:#16a34a;">lè</span> <span style="color:#0891b2;">shuō</span>: "<span style="color:#ea580c;">Jīn</span><span style="color:#16a34a;">tiān</span> <span style="color:#059669; font-weight:800;">________</span>, <span style="color:#2563eb;">huí</span> <span style="color:#ea580c;">jiā</span> <span style="color:#059669; font-weight:800;">________</span>."
+                </div>
+              </div>
+
+              <!-- Jawaban Gambar 4 -->
+              <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 0.65rem 0.85rem; margin-top: 0.85rem; cursor: pointer;" onclick="playPinyin('Yīshēng duì Yáng Tónglè shuō: Jīntiān xiūxi bàntiān ba, huí jiā hòu zài hē xiē rè shuǐ.')" title="Klik dengar jawaban Gambar 4">
+                <div style="font-size: 0.85rem; font-weight: 700; color: #166534;">
+                  ✅ <strong>Referensi Jawaban:</strong>
+                </div>
+                <div style="font-size: 1.05rem; font-weight: 700; margin-top: 0.25rem; font-family: 'Noto Sans SC', sans-serif;">
+                  👉 <span style="color:#0284c7;">医</span><span style="color:#ea580c;">生</span><span style="color:#7c3aed;">对</span><span style="color:#ea580c;">杨</span><span style="color:#2563eb;">同</span><span style="color:#16a34a;">乐</span><span style="color:#0891b2;">说</span>：“<span style="color:#ea580c;">今</span><span style="color:#16a34a;">天</span><span style="color:#059669;">休</span><span style="color:#7c3aed;">息</span><span style="color:#d97706;">半</span><span style="color:#2563eb;">天</span><span style="color:#ea580c;">吧</span>，<span style="color:#2563eb;">回</span><span style="color:#ea580c;">家</span><span style="color:#16a34a;">后</span><span style="color:#059669;">再</span><span style="color:#ea580c;">喝</span><span style="color:#0891b2;">些</span><span style="color:#e11d48;">热</span><span style="color:#2563eb;">水</span>。”
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600;">
+                  <span style="color:#0284c7;">Yī</span><span style="color:#ea580c;">shēng</span> <span style="color:#7c3aed;">duì</span> <span style="color:#ea580c;">Yáng</span> <span style="color:#2563eb;">Tóng</span><span style="color:#16a34a;">lè</span> <span style="color:#0891b2;">shuō</span>: "<span style="color:#ea580c;">Jīn</span><span style="color:#16a34a;">tiān</span> <span style="color:#059669;">xiū</span><span style="color:#7c3aed;">xi</span> <span style="color:#d97706;">bàn</span><span style="color:#2563eb;">tiān</span> <span style="color:#ea580c;">ba</span>, <span style="color:#2563eb;">huí</span> <span style="color:#ea580c;">jiā</span> <span style="color:#16a34a;">hòu</span> <span style="color:#059669;">zài</span> <span style="color:#ea580c;">hē</span> <span style="color:#0891b2;">xiē</span> <span style="color:#e11d48;">rè</span> <span style="color:#2563eb;">shuǐ</span>."
+                </div>
+                <div style="font-size: 0.8rem; color: #334155; margin-top: 0.2rem;">
+                  <strong>Artinya:</strong> "Dokter berkata kepada Yang Tongle: 'Hari ini istirahatlah setengah hari, setelah pulang ke rumah minumlah air hangat.'"
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
 
   <!-- ══ TOGGLE CONTROLS (DI PALING BAWAH) ══ -->
   <div class="dialog-toolbar">
@@ -892,68 +2529,130 @@
     </div>
   </div>
 
-  <!-- ══ SCRIPT ENGINE BAKU ══ -->
+  <!-- ══ SCRIPT ENGINE BAKU (STANDAR CLAUDE.MD) ══ -->
   <script>
-    const PINYIN_SYLL_RE = /^(?:[bmdtnlgkhjqxzcsrzhchshwry]?[a-z\u00C0-\u024F\u1E00-\u1EFF]*[aeiou\u00FC\u0101\u00E1\u01CE\u00E0\u0113\u00E9\u0115\u00E8\u012B\u00ED\u01D0\u00EC\u014D\u00F3\u01D2\u00F2\u016B\u00FA\u01D4\u00F9\u01D6\u01D8\u01DA\u01DC\u00EA\u1EBF\u1EC1][a-z\u00C0-\u024F\u1E00-\u1EFF]*r?)/i;
+    const COLOR_PALETTE = [
+      '#e11d48', '#16a34a', '#2563eb', '#ea580c', '#7c3aed',
+      '#0891b2', '#c026d3', '#ca8a04', '#4f46e5', '#059669',
+      '#d97706', '#db2777', '#0284c7', '#9333ea', '#65a30d'
+    ];
 
-    const PALETTE = ['#2563eb', '#ea580c', '#16a34a', '#9333ea', '#0891b2', '#e11d48', '#d97706', '#4f46e5'];
+    const _A = '[aāáǎàĀÁǍÀ]', _O = '[oōóǒòŌÓǑÒ]', _E = '[eēéěèĒÉĚÈ]', _I = '[iīíǐìĪÍǏÌ]', _U = '[uūúǔùŪÚǓÙ]', _V = '[üǖǘǚǜǕǗǙǛv]';
+    const _finals = [
+      _I+_A+'ng', _I+_O+'ng', _U+_A+'ng', _U+_E+'ng',
+      _I+_A+'n', _I+_A+_O, _I+'ng', _U+_A+'i', _U+_A+'n', _U+_E+'n',
+      _A+'ng', _E+'ng', _O+'ng',
+      _A+'i', _E+'i', _A+_O, _O+_U, _A+'n', _E+'n',
+      _I+_A, _I+_E, _I+'n', _I+_U, _U+_A, _U+_O, _U+_E, _U+_I, _U+'n',
+      _V+_E, 'er',
+      _A, _O, _E, _I, _U, _V
+    ].join('|');
+    const PINYIN_SYLL_RE = new RegExp('^(?:zh|ch|sh|[bpmfdtnlgkhjqxzcsywr])?(?:' + _finals + ')r?', 'i');
 
     function isHanziChar(ch) {
-      return /[\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]/.test(ch);
-    }
-
-    function tokenizePinyin(str) {
-      const tokens = [];
-      let i = 0;
-      while (i < str.length) {
-        if (/[\s,.\?!;:\"'()\/，。？！；：“”（）]/.test(str[i])) {
-          tokens.push({ type: 'punct', text: str[i++] });
-          continue;
-        }
-        const sub = str.slice(i);
-        const m = sub.match(PINYIN_SYLL_RE);
-        if (m && m[0].length > 0) {
-          tokens.push({ type: 'syll', text: m[0] });
-          i += m[0].length;
-        } else {
-          tokens.push({ type: 'other', text: str[i++] });
-        }
-      }
-      return tokens;
+      return /[〇一-龥]/.test(ch);
     }
 
     function colorizePair(hanziText, pinyinText, charColorMap) {
-      const chars = Array.from(hanziText);
-      const tokens = tokenizePinyin(pinyinText);
-      const hanziIndices = [];
-      chars.forEach((c, idx) => { if (isHanziChar(c)) hanziIndices.push(idx); });
-      const syllTokens = tokens.filter(t => t.type === 'syll');
+      if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
+      const hzItems = [];
       let prevColor = null;
-      const count = Math.min(hanziIndices.length, syllTokens.length);
 
-      for (let k = 0; k < count; k++) {
-        const charIdx = hanziIndices[k];
-        const ch = chars[charIdx];
-        let color = charColorMap[ch];
-        if (!color || color === prevColor) {
-          const avail = PALETTE.filter(c => c !== prevColor);
-          color = avail[k % avail.length];
+      for (const ch of hanziText) {
+        if (isHanziChar(ch)) {
+          let chosenColor = charColorMap[ch];
+          if (!chosenColor || chosenColor === prevColor) {
+            let baseIdx = Object.keys(charColorMap).length;
+            let candidate = COLOR_PALETTE[baseIdx % COLOR_PALETTE.length];
+            let offset = 0;
+            while (candidate === prevColor) {
+              offset++;
+              candidate = COLOR_PALETTE[(baseIdx + offset) % COLOR_PALETTE.length];
+            }
+            chosenColor = candidate;
+            if (!charColorMap[ch]) {
+              charColorMap[ch] = chosenColor;
+            }
+          }
+          hzItems.push({ ch, color: chosenColor });
+          prevColor = chosenColor;
         }
-        prevColor = color;
-
-        chars[charIdx] = `<span style="color:${color}; font-weight:700;">${ch}</span>`;
-        syllTokens[k].text = `<span style="color:${color}; font-weight:600;">${syllTokens[k].text}</span>`;
       }
 
-      return {
-        hanzi: chars.join(''),
-        pinyin: tokens.map(t => t.text).join('')
-      };
+      let outHz = '';
+      let hzAssignIdx = 0;
+      for (const ch of hanziText) {
+        if (isHanziChar(ch)) {
+          const item = hzItems[hzAssignIdx++];
+          outHz += '<span style="color:' + item.color + ';font-weight:700;">' + ch + '</span>';
+        } else {
+          outHz += ch;
+        }
+      }
+
+      let outPy = '';
+      let hzIdx = 0;
+      let remaining = pinyinText;
+
+      while (remaining.length > 0) {
+        const tagMatch = remaining.match(/^<[^>]+>/);
+        if (tagMatch) {
+          outPy += tagMatch[0];
+          remaining = remaining.substring(tagMatch[0].length);
+          continue;
+        }
+
+        const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
+        if (nonLetterMatch) {
+          outPy += nonLetterMatch[0];
+          remaining = remaining.substring(nonLetterMatch[0].length);
+          continue;
+        }
+
+        const match = remaining.match(PINYIN_SYLL_RE);
+        if (match) {
+          const syll = match[0];
+          const isErhua = /r$/i.test(syll) &&
+                          !/^[eēéěè]r$/i.test(syll) &&
+                          hzIdx + 1 < hzItems.length &&
+                          hzItems[hzIdx + 1].ch === '儿';
+          if (isErhua) {
+            const rootSyll = syll.slice(0, -1);
+            const rootItem = hzItems[hzIdx];
+            const erItem = hzItems[hzIdx + 1];
+            outPy += '<span style="color:' + rootItem.color + ';font-weight:700;">' + rootSyll + '</span>' +
+                     '<span style="color:' + erItem.color + ';font-weight:700;">r</span>';
+            hzIdx += 2;
+          } else {
+            const item = hzItems[hzIdx];
+            if (item) {
+              outPy += '<span style="color:' + item.color + ';font-weight:700;">' + syll + '</span>';
+              hzIdx++;
+            } else {
+              outPy += syll;
+            }
+          }
+          remaining = remaining.substring(syll.length);
+        } else {
+          outPy += remaining[0];
+          remaining = remaining.substring(1);
+        }
+      }
+
+      return { hanzi: outHz, pinyin: outPy };
     }
 
     function applyColors() {
-      const charColorMap = {};
+      const charColorMap = {
+        '昨': '#2563eb',
+        '天': '#ea580c',
+        '下': '#16a34a',
+        '雪': '#0284c7',
+        '了': '#d97706'
+      };
+
+      // 0. Initial vocabulary from word cards
       const allCards = document.querySelectorAll('.word-card');
       let pIdx = 0;
       allCards.forEach(card => {
@@ -962,12 +2661,13 @@
         const txt = charEl.textContent.trim();
         for (const ch of txt) {
           if (isHanziChar(ch) && !charColorMap[ch]) {
-            charColorMap[ch] = PALETTE[pIdx % PALETTE.length];
+            charColorMap[ch] = COLOR_PALETTE[pIdx % COLOR_PALETTE.length];
             pIdx++;
           }
         }
       });
 
+      // 1. Dialog bubbles
       document.querySelectorAll('.bubble').forEach(bubble => {
         const hzEl = bubble.querySelector('.bubble-hanzi');
         const pyEl = bubble.querySelector('.bubble-pinyin');
@@ -981,6 +2681,7 @@
         pyEl.innerHTML = res.pinyin;
       });
 
+      // 2. Word cards
       document.querySelectorAll('.word-card').forEach(card => {
         const charEl = card.querySelector('.word-char');
         const pyEl = card.querySelector('.word-pinyin');
@@ -994,6 +2695,7 @@
         pyEl.innerHTML = res.pinyin;
       });
 
+      // 3. Speaker names
       document.querySelectorAll('.speaker-name').forEach(spk => {
         const hzEl = spk.querySelector('.speaker-hanzi');
         const pyEl = spk.querySelector('.speaker-pinyin');
@@ -1006,13 +2708,38 @@
         hzEl.innerHTML = res.hanzi;
         pyEl.innerHTML = res.pinyin;
       });
+
+      // 4. Classroom items
+      document.querySelectorAll('.classroom-box').forEach(box => {
+        box.querySelectorAll('.bubble-hanzi').forEach(hzEl => {
+          let pyEl = null;
+          if (hzEl.previousElementSibling && hzEl.previousElementSibling.classList.contains('bubble-pinyin')) {
+            pyEl = hzEl.previousElementSibling;
+          } else if (hzEl.nextElementSibling && hzEl.nextElementSibling.classList.contains('bubble-pinyin')) {
+            pyEl = hzEl.nextElementSibling;
+          } else {
+            const item = hzEl.closest('.bubble-wrap') || hzEl.parentElement;
+            if (item) pyEl = item.querySelector('.bubble-pinyin');
+          }
+          if (!pyEl) return;
+
+          if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+          if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+
+          const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+          hzEl.innerHTML = res.hanzi;
+          pyEl.innerHTML = res.pinyin;
+        });
+      });
     }
 
     function removeColors() {
-      const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin';
+      const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .classroom-box .bubble-hanzi, .classroom-box .bubble-pinyin';
       document.querySelectorAll(selector).forEach(el => {
         if (el.dataset.origHtml !== undefined) {
           el.innerHTML = el.dataset.origHtml;
+        } else if (el.dataset.origText !== undefined) {
+          el.textContent = el.dataset.origText;
         }
         el.style.color = '';
         el.style.fontWeight = '';

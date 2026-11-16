@@ -28,13 +28,13 @@ C:\laragon\www\Power\Mandarin\
 ├── favicon.ico                 # Favicon portal
 ├── images/                     # Aset gambar pembelajaran & kelistrikan
 ├── CLAUDE.md                   # Dokumen pedoman ini
-├── workbook.md                 # Ringkasan cepat spesifikasi workbook
+# (workbook.md telah dilebur secara utuh ke dalam CLAUDE.md Bagian 6)
 └── mandarin-kosakata/          # Cermin repositori Git (mirror identik)
 ```
 
 ### 1.3 Aturan File Bersih (Clean Workspace)
 - **DILARANG** meninggalkan file sementara atau skrip uji coba sekali pakai (seperti `analyze.js`, `download_*.js`, `temp.html`, `style2.css`, dll.) di root folder.
-- File yang boleh berada di root hanyalah: `Index.html`, `BabN.html`, `WorkBookBabN.html`, `kosakata kelistrikan.html`, `favicon.ico`, `images/`, `CLAUDE.md`, `workbook.md`, dan folder git.
+- File yang boleh berada di root hanyalah: `Index.html`, `BabN.html`, `WorkBookBabN.html`, `kosakata kelistrikan.html`, `favicon.ico`, `images/`, `CLAUDE.md`, dan folder git.
 
 ---
 
@@ -1293,9 +1293,34 @@ function playPinyin(text) {
 
 Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 nada, dan latihan mandiri.
 
-### 6.1 Template Master
-- **`WorkBookBab1.html` adalah MASTER TEMPLATE CSS.**
+### 6.1 Template Master & Skema Warna Per Bab
+- **`WorkBookBab1.html` adalah MASTER TEMPLATE CSS.** Seluruh struktur CSS wajib diwarisi dari template master agar konsisten antar bab.
 - Saat membuat workbook baru (`WorkBookBabN.html`), salin seluruh blok `<style>` dari `WorkBookBab1.html`, lalu cukup ubah variabel warna tema (`--primary`, `--primary-dark`, dsb.) dan header gradient.
+
+#### Tabel Skema Warna Tema Workbook
+| Bab | `--primary` | `--primary-dark` | Header Gradient | Badge |
+|:---:|:---:|:---:|:---:|:---:|
+| **Bab 1** | `#c0392b` (Merah) | `#8e1a12` | `#d35400 → #a04000` | `#f39c12` |
+| **Bab 2** | `#7c3aed` (Ungu) | `#5b21b6` | `#6d28d9 → #4c1d95` | `#8b5cf6` |
+| **Bab 3** | `#0369a1` (Biru) | `#0c4a6e` | `#0284c7 → #075985` | `#38bdf8` |
+| **Bab 4** | `#15803d` (Hijau) | `#14532d` | `#16a34a → #166534` | `#4ade80` |
+| **Bab 5** | `#b45309` (Amber) | `#78350f` | `#d97706 → #92400e` | `#fbbf24` |
+| **Bab 6** | `#0284c7` (Sky Blue) | `#0369a1` | `#0284c7 → #075985` | `#38bdf8` |
+| **Bab 7** | `#059669` (Emerald) | `#065f46` | `#059669 → #064e3b` | `#34d399` |
+| **Bab 8** | `#d97706` (Ochre) | `#b45309` | `#d97706 → #78350f` | `#fbbf24` |
+| **Bab 9** | `#4f46e5` (Indigo) | `#3730a3` | `#4f46e5 → #312e81` | `#818cf8` |
+| **Bab 10** | `#db2777` (Pink Rose) | `#9d174d` | `#db2777 → #831843` | `#f472b6` |
+| **Bab 11** | `#0d9488` (Teal) | `#115e59` | `#0d9488 → #134e4a` | `#2dd4bf` |
+| **Bab 12** | `#ea580c` (Tangerine/Snow Red) | `#c2410c` | `#ea580c → #9a3412` | `#fb923c` |
+
+#### Standar Header Workbook
+```html
+<header style="background: linear-gradient(135deg, [WARNA1] 0%, [WARNA2] 100%);">
+  <h1>📝 Buku Latihan Mandarin · 练习册</h1>
+  <p>HSK 1 练习册 · Workbook Pelajaran N</p>
+  <div class="bab" style="background: [BADGE_COLOR];">Bab N — [JUDUL BAB]</div>
+</header>
+```
 
 > [!IMPORTANT]
 > **Struktur Navbar Workbook (`.nav-bar`) Berbeda dengan Buku Teks**:
@@ -1330,7 +1355,41 @@ Buku latihan berfokus pada fonetik, aturan pinyin (spelling rules), pembacaan 4 
 > </div>
 > ```
 
-### 6.2 Komponen Khusus Workbook
+### 6.2 Struktur Pembungkus Bagian & Komponen Khusus Workbook (Standar Baku WorkBookBab11)
+
+#### A. Struktur Pembungkus Antar-Bagian (`<div>` murni tanpa inline margin)
+Mengikuti standar baku struktur **`WorkBookBab11.html`**:
+- Seluruh bagian/seksi di dalam `<div class="wrap">` dibungkus menggunakan tag kontainer murni:
+  ```html
+  <div>
+    <div class="section-title">📌 [JUDUL BAGIAN]</div>
+    <div class="classroom-box" style="border-left: 5px solid [WARNA_TEMA];">
+      ...
+    </div>
+  </div>
+  ```
+- 🚫 **DILARANG** menambahkan inline style seperti `<div style="margin-top: 1.8rem;">` pada pembungkus bagian.
+- **Alasan Teknis**: Jarak vertikal antar bagian diatur sepenuhnya secara otomatis dan seragam oleh properti CSS kontainer induk:
+  ```css
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem; /* Pada mobile: gap: 1.25rem */
+  }
+  ```
+  Menambahkan inline `margin-top` akan menyebabkan jarak berlebih (*double gap/margin jumping*) yang merusak ritme visual vertikal halaman.
+
+#### B. Komponen Khusus Latihan Workbook
+
+#### 1. Latihan Fonetik & Pencocokan Kata (听音节，匹配词语 · Syllable Matching)
+Modul mencocokkan suku kata Pinyin bernomor (1)–(6) dengan kosakata aksara Hanzi:
+- **Header Bagian**: Avatar nomor `2` dengan gradien tema bab, badge kelas `小语讲堂 · Xiaoyu's Classroom`, serta deskripsi instruksi.
+- **Banner Instruksi**: Tombol audio pelafalan (`🔊 Putar Instruksi Audio`), teks instruksi Mandarin berfont *Noto Sans SC*, dan terjemahan bilingual.
+- **Contoh Soal (例如 · Lìrú)**: Kotak contoh dengan badge `例如 Contoh`, panah asosiasi Pinyin ➔ Hanzi, serta penanda `Jawaban: ( 1 )`.
+- **Grid Pencocokan 2 Kolom (`.match-word-grid` & `.match-item-card`)**:
+  - **Kolom Kiri**: Daftar suku kata pinyin bernomor (1)–(6) (`.match-py`) beranotasi nada dan terjemahan arti (`.match-arti`), dilengkapi tombol dengar audio `playWord(...)`.
+  - **Kolom Kanan**: Kosakata Hanzi (`.match-hz`) dengan slot jawaban interaktif (`.match-input-slot.filled`) yang memuat nomor pasangan yang tepat.
+  - **Integrasi Toggle Bantuan Toolbar**: Kelas `.match-py` otomatis disembunyikan saat toggle Pinyin nonaktif (`body:not(.show-pinyin)`), dan `.match-arti` disembunyikan saat toggle Arti nonaktif (`body:not(.show-arti)`).
 
 ### 6.3 Standar Baku Reading Part 3 (选词填空 · Cloze / Fill in the Blanks)
 
