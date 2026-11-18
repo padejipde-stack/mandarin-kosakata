@@ -3705,11 +3705,11 @@
     img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
   }
 
-  // Palet warna kontras & cerah untuk karakter per kata
+  // Palet warna kontras tinggi (urutan bersebelahan selalu berbeda jauh warnanya)
   const COLOR_PALETTE = [
     '#e11d48', // Merah
-    '#16a34a', // Hijau
     '#2563eb', // Biru royal
+    '#16a34a', // Hijau
     '#ea580c', // Oranye
     '#7c3aed', // Ungu
     '#0891b2', // Cyan / Teal
@@ -3718,10 +3718,7 @@
     '#4f46e5', // Indigo
     '#059669', // Zamrud
     '#d97706', // Amber
-    '#db2777', // Pink cerah
-    '#0284c7', // Sky blue
-    '#9333ea', // Deep violet
-    '#65a30d'  // Lime green
+    '#db2777'  // Pink cerah
   ];
 
   // Finals dan Regex Pinyin untuk mencocokkan suku kata Mandarin
@@ -3741,24 +3738,24 @@
     return /[\u3007\u4e00-\u9fa5]/.test(ch);
   }
 
-  function colorizePair(hanziText, pinyinText, charColorMap) {
+  function colorizePair(hanziText, pinyinText) {
     if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
-    const hzList = [];
-    for (const ch of hanziText) {
-      if (isHanziChar(ch)) {
-        hzList.push(ch);
-        if (!charColorMap[ch]) {
-          const nextColor = COLOR_PALETTE[Object.keys(charColorMap).length % COLOR_PALETTE.length];
-          charColorMap[ch] = nextColor;
-        }
-      }
-    }
+    const hzColors = [];
+    let hzCount = 0;
+    let prevColor = null;
 
     let outHz = '';
     for (const ch of hanziText) {
       if (isHanziChar(ch)) {
-        outHz += '<span style="color:' + charColorMap[ch] + ';font-weight:700;">' + ch + '</span>';
+        let color = COLOR_PALETTE[hzCount % COLOR_PALETTE.length];
+        if (color === prevColor) {
+          color = COLOR_PALETTE[(hzCount + 1) % COLOR_PALETTE.length];
+        }
+        hzColors.push(color);
+        prevColor = color;
+        hzCount++;
+        outHz += '<span style="color:' + color + ';font-weight:700;">' + ch + '</span>';
       } else {
         outHz += ch;
       }
@@ -3786,9 +3783,9 @@
       const match = remaining.match(PINYIN_SYLL_RE);
       if (match) {
         const syll = match[0];
-        const pairedHz = hzList[hzIdx];
-        if (pairedHz && charColorMap[pairedHz]) {
-          outPy += '<span style="color:' + charColorMap[pairedHz] + ';font-weight:700;">' + syll + '</span>';
+        const color = hzColors[hzIdx];
+        if (color) {
+          outPy += '<span style="color:' + color + ';font-weight:700;">' + syll + '</span>';
           hzIdx++;
         } else {
           outPy += syll;
@@ -3804,15 +3801,13 @@
   }
 
   function applyColors() {
-    const charColorMap = {};
-
     document.querySelectorAll('.equip-card').forEach(card => {
       const hzEl = card.querySelector('.equip-title-group .bubble-hanzi');
       const pyEl = card.querySelector('.equip-title-group .bubble-pinyin');
       if (hzEl && pyEl) {
         if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
         if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
-        const res = colorizePair(hzEl.textContent, pyEl.textContent, charColorMap);
+        const res = colorizePair(hzEl.textContent, pyEl.textContent);
         hzEl.innerHTML = res.hanzi;
         pyEl.innerHTML = res.pinyin;
       }
@@ -3823,7 +3818,7 @@
         if (wChar && wPy) {
           if (!wChar.dataset.origHtml) wChar.dataset.origHtml = wChar.innerHTML;
           if (!wPy.dataset.origHtml) wPy.dataset.origHtml = wPy.innerHTML;
-          const res = colorizePair(wChar.textContent, wPy.textContent, charColorMap);
+          const res = colorizePair(wChar.textContent, wPy.textContent);
           wChar.innerHTML = res.hanzi;
           wPy.innerHTML = res.pinyin;
         }
