@@ -489,9 +489,13 @@
       border-color: #cbd5e1;
       transform: translateX(3px);
     }
-    /* Pinyin di classroom selalu tampil (tidak ikut toggle show-pinyin) */
+    /* Pinyin di classroom mengikuti toggle show-pinyin (termasuk elemen dengan inline display) */
     .classroom-box .bubble-pinyin { display: none; }
     body.show-pinyin .classroom-box .bubble-pinyin { display: block; }
+    body:not(.show-pinyin) .bubble-pinyin,
+    body:not(.show-pinyin) .pinyin-row,
+    body:not(.show-arti) .bubble-arti,
+    body:not(.show-arti) .arti-row { display: none !important; }
     .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
     /* Color mode: hapus override primary-dark agar span warna terlihat */
     body.show-color .classroom-box .bubble-hanzi { color: var(--text); }
@@ -894,13 +898,13 @@
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:55px;">Hanzi:</span>
                 <span class="bubble-hanzi" style="font-size:1.25rem;font-weight:700;">我晚上六点半下班</span>
               </div>
-              <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
+              <div class="pinyin-row" style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:55px;">Pinyin:</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.92rem;font-weight:600;">Wǒ wǎnshang liù diǎn bàn xiàbān</span>
               </div>
-              <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;border-top:1px dashed #e2e8f0;padding-top:0.35rem;margin-top:0.15rem;">
+              <div class="arti-row" style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;border-top:1px dashed #e2e8f0;padding-top:0.35rem;margin-top:0.15rem;">
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:55px;">Arti:</span>
-                <span style="font-size:0.86rem;color:#334155;font-weight:500;">Saya/aku selesai kerja jam 6.30 malam (I'll finish work at 6:30 in the evening)</span>
+                <span class="bubble-arti" style="font-size:0.86rem;color:#334155;font-weight:500;border-top:none;padding-top:0;margin-top:0;">Saya/aku selesai kerja jam 6.30 malam (I'll finish work at 6:30 in the evening)</span>
               </div>
             </div>
           </div>
@@ -919,7 +923,7 @@
                 <span class="bubble-hanzi" style="font-size:1.35rem;font-weight:700;">点</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">diǎn</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
                 Jam
               </div>
             </div>
@@ -930,7 +934,7 @@
                 <span class="bubble-hanzi" style="font-size:1.35rem;font-weight:700;">半</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">bàn</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
                 Setengah / 30 menit
               </div>
             </div>
@@ -941,7 +945,7 @@
                 <span class="bubble-hanzi" style="font-size:1.35rem;font-weight:700;">分</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">fēn</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
                 Menit
               </div>
             </div>
@@ -952,7 +956,7 @@
                 <span class="bubble-hanzi" style="font-size:1.25rem;font-weight:700;">半杯水</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">bàn bēi shuǐ</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
                 Setengah gelas air
               </div>
             </div>
@@ -971,7 +975,7 @@
                 <span style="font-size:0.82rem;font-weight:700;color:#059669;background:rgba(5,150,105,0.12);padding:0.18rem 0.55rem;border-radius:6px;">7.43</span>
                 <span class="bubble-hanzi" style="font-size:1.2rem;font-weight:700;">七点四十三分</span>
               </div>
-              <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
+              <div class="pinyin-row" style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:55px;">Pinyin:</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.9rem;font-weight:600;">qī diǎn sì shí sān fēn</span>
               </div>
@@ -993,7 +997,7 @@
                 <span class="bubble-hanzi" style="font-size:1.25rem;font-weight:700;">早上</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">zǎoshang</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
                 Pagi
               </div>
             </div>
@@ -1005,7 +1009,7 @@
                 <span class="bubble-hanzi" style="font-size:1.25rem;font-weight:700;">上午</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">shàngwǔ</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
                 Pagi menjelang siang
               </div>
             </div>
@@ -1017,7 +1021,7 @@
                 <span class="bubble-hanzi" style="font-size:1.25rem;font-weight:700;">中午</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">zhōngwǔ</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
                 Siang
               </div>
             </div>
@@ -1029,7 +1033,7 @@
                 <span class="bubble-hanzi" style="font-size:1.25rem;font-weight:700;">下午</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">xiàwǔ</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
                 Sore
               </div>
             </div>
@@ -1041,7 +1045,7 @@
                 <span class="bubble-hanzi" style="font-size:1.25rem;font-weight:700;">晚上</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">wǎnshang</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
                 Malam
               </div>
             </div>
@@ -1053,7 +1057,7 @@
                 <span class="bubble-hanzi" style="font-size:1.25rem;font-weight:700;">半夜</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">bànyè</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
                 Tengah malam
               </div>
             </div>
@@ -1065,7 +1069,7 @@
                 <span class="bubble-hanzi" style="font-size:1.25rem;font-weight:700;">凌晨</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">língchén</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.25rem;margin-top:0.2rem;">
                 Subuh
               </div>
             </div>
@@ -1088,7 +1092,7 @@
                 <span class="bubble-hanzi" style="font-size:1.35rem;font-weight:700;">上</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">shàng</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
                 Atas
               </div>
             </div>
@@ -1099,7 +1103,7 @@
                 <span class="bubble-hanzi" style="font-size:1.35rem;font-weight:700;">中</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">zhōng</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
                 Tengah
               </div>
             </div>
@@ -1110,7 +1114,7 @@
                 <span class="bubble-hanzi" style="font-size:1.35rem;font-weight:700;">下</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.85rem;font-weight:600;">xià</span>
               </div>
-              <div style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
+              <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;border-top:1px dashed #e2e8f0;padding-top:0.3rem;margin-top:0.15rem;">
                 Bawah
               </div>
             </div>
@@ -1144,12 +1148,12 @@
           <!-- Jam (Durasi) -->
           <div>
             <div style="font-size:0.88rem;font-weight:700;color:var(--primary-dark);margin-bottom:0.45rem;">
-              🕒 Jam (Durasi): <code style="background:#f1f5f9;color:#be123c;padding:0.2rem 0.5rem;border-radius:6px;font-family:inherit;font-size:0.84rem;">angka + 个 (gè) + 小时 (xiǎoshí)</code>
+              🕒 Jam (Durasi): <code style="background:#f1f5f9;color:#be123c;padding:0.2rem 0.5rem;border-radius:6px;font-family:inherit;font-size:0.84rem;">angka + 个 <span class="bubble-pinyin" style="display:inline;">(gè)</span> + 小时 <span class="bubble-pinyin" style="display:inline;">(xiǎoshí)</span></code>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));gap:0.55rem;">
               <!-- 1 jam -->
               <div class="number-card" style="background:#f8fafc;border:1px solid var(--border);border-left:3.5px solid #0284c7;border-radius:10px;padding:0.65rem 0.85rem;text-align:left;align-items:stretch;">
-                <div style="font-size:0.78rem;font-weight:700;color:#64748b;">1 jam</div>
+                <div class="bubble-arti" style="font-size:0.78rem;font-weight:700;color:#64748b;border-top:none;padding-top:0;margin-top:0;">1 jam</div>
                 <div style="display:flex;align-items:center;gap:0.45rem;margin-top:0.2rem;">
                   <span style="font-size:0.9rem;font-weight:700;color:#0284c7;">→</span>
                   <span class="bubble-hanzi" style="font-size:1.18rem;font-weight:700;">一个小时</span>
@@ -1158,7 +1162,7 @@
               </div>
               <!-- 2 jam -->
               <div class="number-card" style="background:#f8fafc;border:1px solid var(--border);border-left:3.5px solid #059669;border-radius:10px;padding:0.65rem 0.85rem;text-align:left;align-items:stretch;">
-                <div style="font-size:0.78rem;font-weight:700;color:#64748b;">2 jam</div>
+                <div class="bubble-arti" style="font-size:0.78rem;font-weight:700;color:#64748b;border-top:none;padding-top:0;margin-top:0;">2 jam</div>
                 <div style="display:flex;align-items:center;gap:0.45rem;margin-top:0.2rem;">
                   <span style="font-size:0.9rem;font-weight:700;color:#059669;">→</span>
                   <span class="bubble-hanzi" style="font-size:1.18rem;font-weight:700;">两个小时</span>
@@ -1171,12 +1175,12 @@
           <!-- Menit (Durasi) -->
           <div style="border-top:1px dashed var(--border);padding-top:0.75rem;">
             <div style="font-size:0.88rem;font-weight:700;color:var(--primary-dark);margin-bottom:0.45rem;">
-              ⏱️ Menit (Durasi): <code style="background:#f1f5f9;color:#be123c;padding:0.2rem 0.5rem;border-radius:6px;font-family:inherit;font-size:0.84rem;">angka + 分钟 (fēnzhōng)</code>
+              ⏱️ Menit (Durasi): <code style="background:#f1f5f9;color:#be123c;padding:0.2rem 0.5rem;border-radius:6px;font-family:inherit;font-size:0.84rem;">angka + 分钟 <span class="bubble-pinyin" style="display:inline;">(fēnzhōng)</span></code>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));gap:0.55rem;">
               <!-- 1 jam 20 menit -->
               <div class="number-card" style="background:#f8fafc;border:1px solid var(--border);border-left:3.5px solid #d97706;border-radius:10px;padding:0.65rem 0.85rem;text-align:left;align-items:stretch;">
-                <div style="font-size:0.78rem;font-weight:700;color:#64748b;">1 jam 20 menit</div>
+                <div class="bubble-arti" style="font-size:0.78rem;font-weight:700;color:#64748b;border-top:none;padding-top:0;margin-top:0;">1 jam 20 menit</div>
                 <div style="display:flex;align-items:center;gap:0.45rem;margin-top:0.2rem;">
                   <span style="font-size:0.9rem;font-weight:700;color:#d97706;">→</span>
                   <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;">一个小时二十分钟</span>
@@ -1185,7 +1189,7 @@
               </div>
               <!-- 3 jam 30 menit -->
               <div class="number-card" style="background:#f8fafc;border:1px solid var(--border);border-left:3.5px solid #8e44ad;border-radius:10px;padding:0.65rem 0.85rem;text-align:left;align-items:stretch;">
-                <div style="font-size:0.78rem;font-weight:700;color:#64748b;">3 jam 30 menit</div>
+                <div class="bubble-arti" style="font-size:0.78rem;font-weight:700;color:#64748b;border-top:none;padding-top:0;margin-top:0;">3 jam 30 menit</div>
                 <div style="display:flex;align-items:center;gap:0.45rem;margin-top:0.2rem;">
                   <span style="font-size:0.9rem;font-weight:700;color:#8e44ad;">→</span>
                   <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;">三个小时三十分钟</span>
@@ -1213,7 +1217,7 @@
                   <span class="bubble-hanzi" style="font-size:1.2rem;font-weight:700;">中午</span>
                   <span class="bubble-pinyin" style="display:inline-block;font-size:0.84rem;font-weight:600;">zhōngwǔ</span>
                 </div>
-                <div style="font-size:0.82rem;color:var(--text);font-weight:500;margin-top:0.25rem;border-top:1px dashed #e2e8f0;padding-top:0.25rem;">
+                <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;margin-top:0.25rem;border-top:1px dashed #e2e8f0;padding-top:0.25rem;">
                   Siang
                 </div>
               </div>
@@ -1224,7 +1228,7 @@
                   <span class="bubble-hanzi" style="font-size:1.2rem;font-weight:700;">下午</span>
                   <span class="bubble-pinyin" style="display:inline-block;font-size:0.84rem;font-weight:600;">xiàwǔ</span>
                 </div>
-                <div style="font-size:0.82rem;color:var(--text);font-weight:500;margin-top:0.25rem;border-top:1px dashed #e2e8f0;padding-top:0.25rem;">
+                <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;margin-top:0.25rem;border-top:1px dashed #e2e8f0;padding-top:0.25rem;">
                   Sore
                 </div>
               </div>
@@ -1235,7 +1239,7 @@
                   <span class="bubble-hanzi" style="font-size:1.2rem;font-weight:700;">刻</span>
                   <span class="bubble-pinyin" style="display:inline-block;font-size:0.84rem;font-weight:600;">kè</span>
                 </div>
-                <div style="font-size:0.82rem;color:var(--text);font-weight:500;margin-top:0.25rem;border-top:1px dashed #e2e8f0;padding-top:0.25rem;">
+                <div class="bubble-arti" style="font-size:0.82rem;color:var(--text);font-weight:500;margin-top:0.25rem;border-top:1px dashed #e2e8f0;padding-top:0.25rem;">
                   Seperempat jam / 15 menit<br>
                   <span style="font-size:0.75rem;color:#64748b;">(1 kè = 15 menit, 3 kè = 45 menit)</span>
                 </div>
@@ -1271,7 +1275,7 @@
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Hanzi:</span>
                 <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;">十点十分</span>
               </div>
-              <div style="display:flex;align-items:baseline;gap:0.5rem;">
+              <div class="pinyin-row" style="display:flex;align-items:baseline;gap:0.5rem;">
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Pinyin:</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.88rem;font-weight:600;">shí diǎn shí fēn</span>
               </div>
@@ -1292,7 +1296,7 @@
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Hanzi:</span>
                 <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;">中午十二点三十分 / 十二点半</span>
               </div>
-              <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
+              <div class="pinyin-row" style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Pinyin:</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.88rem;font-weight:600;">zhōngwǔ shí'èr diǎn sānshí fēn / shí'èr diǎn bàn</span>
               </div>
@@ -1313,7 +1317,7 @@
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Hanzi:</span>
                 <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;">十三点四十五分 / 中午一点四十五分 / 一点三刻</span>
               </div>
-              <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
+              <div class="pinyin-row" style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Pinyin:</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.88rem;font-weight:600;">shísān diǎn sìshíwǔ fēn / zhōngwǔ yì diǎn sìshíwǔ fēn / yì diǎn sān kè</span>
               </div>
@@ -1339,7 +1343,7 @@
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Hanzi:</span>
                 <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;">十五点二十分 / 下午三点二十分</span>
               </div>
-              <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
+              <div class="pinyin-row" style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Pinyin:</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.88rem;font-weight:600;">shíwǔ diǎn èrshí fēn / xiàwǔ sān diǎn èrshí fēn</span>
               </div>
@@ -1360,7 +1364,7 @@
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Hanzi:</span>
                 <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;">十八点 / 下午六点</span>
               </div>
-              <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
+              <div class="pinyin-row" style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Pinyin:</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.88rem;font-weight:600;">shíbā diǎn / xiàwǔ liù diǎn</span>
               </div>
@@ -1381,7 +1385,7 @@
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Hanzi:</span>
                 <span class="bubble-hanzi" style="font-size:1.15rem;font-weight:700;">八点十五分 / 八点一刻</span>
               </div>
-              <div style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
+              <div class="pinyin-row" style="display:flex;align-items:baseline;gap:0.5rem;flex-wrap:wrap;">
                 <span style="font-size:0.75rem;font-weight:700;color:#64748b;min-width:52px;">Pinyin:</span>
                 <span class="bubble-pinyin" style="display:inline-block;font-size:0.88rem;font-weight:600;">bā diǎn shíwǔ fēn / bā diǎn yí kè</span>
               </div>
@@ -1862,7 +1866,7 @@
               Li Wen sore ini ingin pergi ( menonton film ).
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem;font-size:0.88rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem;font-size:1.25rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.3rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <strong>A. 超市</strong> <em>(chāoshì)</em>
               </span>
@@ -1890,7 +1894,7 @@
               Bai Jiayue besok sore masih ( masuk kelas / kuliah ).
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem;font-size:0.88rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem;font-size:1.25rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
               <span style="background:#ecfdf5;color:#059669;font-weight:700;padding:0.3rem 0.75rem;border-radius:8px;border:1.5px solid #059669;">
                 <strong>A. 上课</strong> <em>(shàngkè)</em> ✓
               </span>
@@ -2284,7 +2288,7 @@
               Liu Ming ( sedang berada di rumah ) kok/lho.
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem;font-size:0.88rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem;font-size:1.25rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.3rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <strong>A. 上班</strong> <em>(shàngbān / Bekerja)</em>
               </span>
@@ -2316,7 +2320,7 @@
               Wang Yixue pulang kerja pukul ( setengah tujuh / 6:30 ).
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem;font-size:0.88rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem;font-size:1.25rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.3rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <strong>A. 五点</strong> <em>(wǔ diǎn / Jam 5)</em>
               </span>

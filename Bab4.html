@@ -337,6 +337,12 @@
     /* Active visibility state */
     body.show-pinyin .bubble-pinyin { display: block; }
     body.show-arti .bubble-arti { display: block; }
+    .quiz-options em, .quiz-arti { display: none; }
+    .quiz-badge { display: none !important; }
+    body.show-pinyin .quiz-options em { display: inline; }
+    body.show-arti .quiz-arti { display: inline; }
+    body.show-vocab .quiz-badge { display: inline-flex !important; }
+    body:not(.show-vocab) .quiz-options > span { background: #f8fafc !important; color: #334155 !important; border-color: var(--border) !important; }
 
     /* ── SUB-BREAKDOWN (ARTI PER KATA PER TEKS) ── */
     .sub-breakdown {
@@ -999,6 +1005,22 @@
       font-weight: 700;
       color: var(--primary-dark);
     }
+    .angka-table th:nth-child(2),
+    .angka-table .td-pinyin {
+      display: none;
+    }
+    body.show-pinyin .angka-table th:nth-child(2),
+    body.show-pinyin .angka-table .td-pinyin {
+      display: table-cell;
+    }
+    .angka-table th:nth-child(3),
+    .angka-table .td-arti {
+      display: none;
+    }
+    body.show-arti .angka-table th:nth-child(3),
+    body.show-arti .angka-table .td-arti {
+      display: table-cell;
+    }
     .angka-table .td-pinyin {
       font-size: 0.9rem;
       font-weight: 600;
@@ -1160,7 +1182,8 @@
     .label-e { background: #db2777; }
     .label-f { background: #d97706; }
     .match-hz { font-family: 'Noto Sans SC', sans-serif; font-size: 1rem; font-weight: 700; color: var(--primary-dark); }
-    .match-py { font-size: 0.75rem; color: #64748b; }
+    .match-py { display: none; font-size: 0.75rem; color: #64748b; }
+    body.show-pinyin .match-py { display: inline; }
     .match-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1214,14 +1237,18 @@
       line-height: 1.2;
     }
     .match-py-text {
+      display: none;
       font-size: 0.76rem;
       font-weight: 600;
       color: #475569;
     }
+    body.show-pinyin .match-py-text { display: block; }
     .match-id-text {
+      display: none;
       font-size: 0.75rem;
       color: var(--sub);
     }
+    body.show-arti .match-id-text { display: block; }
     @media (max-width: 600px) {
       .match-grid { grid-template-columns: repeat(2, 1fr); }
       .match-vocab-bank { gap: 0.4rem; }
@@ -2807,16 +2834,16 @@
             <!-- Pilihan Jawaban -->
             <div style="margin-top:0.65rem;">
               <div style="font-size:0.76rem; font-weight:700; color:#475569; margin-bottom:0.35rem;">Pilihan Jawaban:</div>
-              <div class="quiz-options" style="font-size:0.84rem; display:flex; gap:0.55rem; flex-wrap:wrap;">
+              <div class="quiz-options" style="font-size:1.25rem; display:flex; gap:0.55rem; flex-wrap:wrap;">
                 <span style="background:#ecfdf5; color:#047857; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #10b981; display:inline-flex; align-items:center; gap:0.35rem;">
-                  <span>A. 妹妹 <em>(mèimei)</em> – Adik perempuan</span>
-                  <span style="background:#10b981; color:#fff; font-size:0.68rem; padding:0.1rem 0.4rem; border-radius:10px;">Jawaban Benar ✓</span>
+                  <span>A. 妹妹 <em>(mèimei)</em><span class="quiz-arti"> – Adik perempuan</span></span>
+                  <span class="quiz-badge" style="background:#10b981; color:#fff; font-size:0.68rem; padding:0.1rem 0.4rem; border-radius:10px;">Jawaban Benar ✓</span>
                 </span>
                 <span style="background:#f8fafc; color:#64748b; padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                  B. 姐姐 <em>(jiějie)</em> – Kakak perempuan
+                  B. 姐姐 <em>(jiějie)</em><span class="quiz-arti"> – Kakak perempuan</span>
                 </span>
                 <span style="background:#f8fafc; color:#64748b; padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                  C. 哥哥 <em>(gēge)</em> – Kakak laki-laki
+                  C. 哥哥 <em>(gēge)</em><span class="quiz-arti"> – Kakak laki-laki</span>
                 </span>
               </div>
             </div>
@@ -2865,16 +2892,16 @@
             <!-- Pilihan Jawaban -->
             <div style="margin-top:0.65rem;">
               <div style="font-size:0.76rem; font-weight:700; color:#475569; margin-bottom:0.35rem;">Pilihan Jawaban:</div>
-              <div class="quiz-options" style="font-size:0.84rem; display:flex; gap:0.55rem; flex-wrap:wrap;">
+              <div class="quiz-options" style="font-size:1.25rem; display:flex; gap:0.55rem; flex-wrap:wrap;">
                 <span style="background:#f8fafc; color:#64748b; padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                  A. 两口人 <em>(liǎng kǒu rén)</em> – 2 orang
+                  A. 两口人 <em>(liǎng kǒu rén)</em><span class="quiz-arti"> – 2 orang</span>
                 </span>
                 <span style="background:#ecfdf5; color:#047857; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #10b981; display:inline-flex; align-items:center; gap:0.35rem;">
-                  <span>B. 四口人 <em>(sì kǒu rén)</em> – 4 orang</span>
-                  <span style="background:#10b981; color:#fff; font-size:0.68rem; padding:0.1rem 0.4rem; border-radius:10px;">Jawaban Benar ✓</span>
+                  <span>B. 四口人 <em>(sì kǒu rén)</em><span class="quiz-arti"> – 4 orang</span></span>
+                  <span class="quiz-badge" style="background:#10b981; color:#fff; font-size:0.68rem; padding:0.1rem 0.4rem; border-radius:10px;">Jawaban Benar ✓</span>
                 </span>
                 <span style="background:#f8fafc; color:#64748b; padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                  C. 五口人 <em>(wǔ kǒu rén)</em> – 5 orang
+                  C. 五口人 <em>(wǔ kǒu rén)</em><span class="quiz-arti"> – 5 orang</span>
                 </span>
               </div>
             </div>
@@ -3394,9 +3421,9 @@
                 </div>
               </div>
             </div>
-            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.92rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 一个 <em>(yí gè)</em></span>
-              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 两个 <em>(liǎng gè)</em> ✓</span>
+              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 两个 <em>(liǎng gè)</em> <span class="quiz-badge">✓</span></span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 三个 <em>(sān gè)</em></span>
             </div>
           </div>
@@ -3439,9 +3466,9 @@
                 </div>
               </div>
             </div>
-            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.92rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 五 <em>(wǔ)</em></span>
-              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 十二 <em>(shí'èr)</em> ✓</span>
+              <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 十二 <em>(shí'èr)</em> <span class="quiz-badge">✓</span></span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 二十 <em>(èrshí)</em></span>
             </div>
           </div>
@@ -4182,11 +4209,23 @@
       hzEl.innerHTML = res.hanzi;
       pyEl.innerHTML = res.pinyin;
     });
+
+    // 8. Warnai tabel angka (.angka-table)
+    document.querySelectorAll('.angka-table tbody tr').forEach(tr => {
+      const hzEl = tr.querySelector('.td-hanzi');
+      const pyEl = tr.querySelector('.td-pinyin');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
   }
 
   function removeColors() {
     // Kembalikan semua teks ke kondisi asli tanpa span warna
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .match-hz, .match-py, .match-hz-big, .match-py-text';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .twister-hanzi, .twister-pinyin, .match-hz, .match-py, .match-hz-big, .match-py-text, .td-hanzi, .td-pinyin';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml) {
         el.innerHTML = el.dataset.origHtml;

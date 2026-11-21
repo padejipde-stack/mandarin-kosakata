@@ -1085,7 +1085,9 @@
     .de-ex-arti {
       font-size: 0.82rem;
       color: var(--text);
+      display: none;
     }
+    body.show-arti .de-ex-arti { display: block; }
     .de-tip-box {
       background: #faf5ff;
       border: 1.5px solid #ddd6fe;
@@ -2923,8 +2925,8 @@
         let candidate = COLOR_PALETTE[colorIdx];
         let offset = 0;
         while (
-          (prevCh && charColorMap[prevCh] === candidate) ||
-          (nextCh && charColorMap[nextCh] === candidate)
+          (prevCh && prevCh !== ch && charColorMap[prevCh] === candidate) ||
+          (nextCh && nextCh !== ch && charColorMap[nextCh] === candidate)
         ) {
           offset++;
           candidate = COLOR_PALETTE[(colorIdx + offset) % COLOR_PALETTE.length];
@@ -2932,13 +2934,13 @@
         charColorMap[ch] = candidate;
       } else {
         // Jika karakter sudah ada warna tapi bentrok dengan karakter bersebelahan saat ini
-        if (prevCh && charColorMap[prevCh] === charColorMap[ch]) {
+        if (prevCh && prevCh !== ch && charColorMap[prevCh] === charColorMap[ch]) {
           let currentIdx = COLOR_PALETTE.indexOf(charColorMap[ch]);
           let offset = 1;
           let candidate = COLOR_PALETTE[(currentIdx + offset) % COLOR_PALETTE.length];
           while (
             candidate === charColorMap[prevCh] ||
-            (nextCh && candidate === charColorMap[nextCh])
+            (nextCh && nextCh !== ch && candidate === charColorMap[nextCh])
           ) {
             offset++;
             candidate = COLOR_PALETTE[(currentIdx + offset) % COLOR_PALETTE.length];
