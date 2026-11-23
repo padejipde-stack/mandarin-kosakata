@@ -502,7 +502,11 @@
     body:not(.show-pinyin) .match-py,
     body:not(.show-pinyin) .bubble-pinyin,
     body:not(.show-pinyin) .opt-py,
+    body:not(.show-pinyin) .pair-box-py,
+    body:not(.show-pinyin) .cloze-py,
     body:not(.show-pinyin) .dialog-py { display: none !important; }
+    .ans-pair .bubble-hanzi { display: inline; font-size: 0.95rem; font-weight: 700; color: inherit; }
+    .ans-pair .bubble-pinyin { display: inline; font-size: 0.88rem; }
 
     body:not(.show-arti) .contrast-arti,
     body:not(.show-arti) .contrast-tag,
@@ -510,6 +514,8 @@
     body:not(.show-arti) .match-scene-desc,
     body:not(.show-arti) .bubble-arti,
     body:not(.show-arti) .opt-trans,
+    body:not(.show-arti) .pair-box-arti,
+    body:not(.show-arti) .cloze-arti,
     body:not(.show-arti) .dialog-arti { display: none !important; }
 
     body:not(.show-vocab) .contrast-table-container,
@@ -517,6 +523,7 @@
     body:not(.show-vocab) .matching-explanation,
     body:not(.show-vocab) .soal-pembahasan,
     body:not(.show-vocab) .quiz-check,
+    body:not(.show-vocab) .vocab-pills-list,
     body:not(.show-vocab) .match-pic-badge { display: none !important; }
 
     /* ── COLOR OVERRIDES ── */
@@ -3139,7 +3146,7 @@
         <div style="background:#ffffff; border:1px solid #fecdd3; border-radius:8px; padding:0.75rem 1rem;">
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
             <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: D ✓</span>
-            <span style="font-size:0.88rem; font-weight:700; color:#be123c;">好的，谢谢！ (Hǎo de, xièxie!)</span>
+            <span class="ans-pair" style="font-size:0.88rem; font-weight:700; color:#be123c;"><span class="bubble-hanzi">好的，谢谢！</span> <span class="bubble-pinyin">(Hǎo de, xièxie!)</span></span>
           </div>
           <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
             <strong>Penjelasan Contoh:</strong> Pertanyaan menawarkan minuman (<em>Nǐ hē shuǐ ma?</em>). Jawaban yang paling sopan dan cocok untuk menyetujui tawaran adalah <strong>D. 好的，谢谢！ (Hǎo de, xièxie! - Baik, terima kasih!)</strong>.
@@ -3176,7 +3183,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: C ✓</span>
-              <span style="font-size:0.88rem; font-weight:700; color:#be123c;">电影院 (Diànyǐngyuàn)</span>
+              <span class="ans-pair" style="font-size:0.88rem; font-weight:700; color:#be123c;"><span class="bubble-hanzi">电影院</span> <span class="bubble-pinyin">(Diànyǐngyuàn)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Analisis &amp; Jawaban:</strong> Pertanyaan menggunakan kata tanya tempat <strong>在哪儿 (zài nǎr - di mana)</strong> untuk menanyakan lokasi pertemuan. Jawaban yang paling tepat adalah menyebutkan nama tempat atau gedung fasilitas umum, yaitu <strong>C. 电影院 (Diànyǐngyuàn - Bioskop)</strong>.
@@ -3219,7 +3226,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: A ✓</span>
-              <span style="font-size:0.88rem; font-weight:700; color:#be123c;">早上七点半 (Zǎoshang qī diǎn bàn)</span>
+              <span class="ans-pair" style="font-size:0.88rem; font-weight:700; color:#be123c;"><span class="bubble-hanzi">早上七点半</span> <span class="bubble-pinyin">(Zǎoshang qī diǎn bàn)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Analisis &amp; Jawaban:</strong> Pertanyaan menanyakan waktu secara langsung menggunakan <strong>几点 (jǐ diǎn - jam berapa)</strong>. Jawaban yang paling tepat adalah menyatakan jam/waktu, yaitu pilihan <strong>A. 早上七点半 (Zǎoshang qī diǎn bàn - Pukul setengah delapan pagi)</strong>.
@@ -3261,7 +3268,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: B ✓</span>
-              <span style="font-size:0.88rem; font-weight:700; color:#be123c;">对不起，我有课 (Duìbuqǐ, wǒ yǒu kè)</span>
+              <span class="ans-pair" style="font-size:0.88rem; font-weight:700; color:#be123c;"><span class="bubble-hanzi">对不起，我有课</span> <span class="bubble-pinyin">(Duìbuqǐ, wǒ yǒu kè)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Analisis &amp; Jawaban:</strong> Kalimat merupakan sebuah ajakan atau saran pergi ke supermarket dengan partikel <strong>吧 (ba)</strong>. Respons yang logis adalah memberikan jawaban atas ajakan tersebut, yaitu menolak secara halus dengan alasan memiliki jadwal pelajaran: <strong>B. 对不起，我有课 (Duìbuqǐ, wǒ yǒu kè - Maaf, saya ada kelas)</strong>.
@@ -3403,7 +3410,7 @@
           <!-- Kalimat Soal 17 (Vertikal Rata Tengah) -->
           <div class="cloze-sentence-display" onclick="playPinyin('Wǒmen zhōngwǔ shí\'èr diǎn xiàkè.')" title="Klik dengar kalimat lengkap">
             <div class="cloze-py">Wǒmen zhōngwǔ shí'èr diǎn xiàkè.</div>
-            <div class="cloze-hz">我们<span class="cloze-blank-tag">中午</span> 12:00 下课。</div>
+            <div class="cloze-hz">我们<span class="cloze-blank-tag">中午</span>十二点下课。</div>
             <div class="cloze-arti">
               Arti: "Kami selesai kelas / pulang sekolah pada pukul 12:00 siang."
             </div>
@@ -3977,6 +3984,18 @@
       if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
       if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
 
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 9b. Jawaban Ringkas (.ans-pair: .bubble-hanzi & .bubble-pinyin)
+    document.querySelectorAll('.ans-pair').forEach(pair => {
+      const hzEl = pair.querySelector('.bubble-hanzi');
+      const pyEl = pair.querySelector('.bubble-pinyin');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
       const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
       hzEl.innerHTML = res.hanzi;
       pyEl.innerHTML = res.pinyin;

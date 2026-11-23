@@ -496,6 +496,11 @@
     body:not(.show-pinyin) .pinyin-row,
     body:not(.show-arti) .bubble-arti,
     body:not(.show-arti) .arti-row { display: none !important; }
+    body:not(.show-pinyin) .quiz-options .opt-py,
+    body:not(.show-pinyin) .quiz-options .opt-sep { display: none !important; }
+    body:not(.show-arti) .quiz-options .opt-arti { display: none !important; }
+    body:not(.show-pinyin):not(.show-arti) .quiz-options em { display: none !important; }
+    body:not(.show-pinyin) .quiz-options em:not(:has(.opt-py)) { display: none !important; }
     .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
     /* Color mode: hapus override primary-dark agar span warna terlihat */
     body.show-color .classroom-box .bubble-hanzi { color: var(--text); }
@@ -1866,7 +1871,7 @@
               Li Wen sore ini ingin pergi ( menonton film ).
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem;font-size:1.25rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem;font-size:0.95rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.3rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <strong>A. 超市</strong> <em>(chāoshì)</em>
               </span>
@@ -1894,7 +1899,7 @@
               Bai Jiayue besok sore masih ( masuk kelas / kuliah ).
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem;font-size:1.25rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem;font-size:0.95rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
               <span style="background:#ecfdf5;color:#059669;font-weight:700;padding:0.3rem 0.75rem;border-radius:8px;border:1.5px solid #059669;">
                 <strong>A. 上课</strong> <em>(shàngkè)</em> ✓
               </span>
@@ -2288,7 +2293,7 @@
               Liu Ming ( sedang berada di rumah ) kok/lho.
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem;font-size:1.25rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem;font-size:0.95rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.3rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <strong>A. 上班</strong> <em>(shàngbān / Bekerja)</em>
               </span>
@@ -2320,7 +2325,7 @@
               Wang Yixue pulang kerja pukul ( setengah tujuh / 6:30 ).
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem;font-size:1.25rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem;font-size:0.95rem;display:flex;gap:0.65rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.3rem 0.75rem;border-radius:8px;border:1px solid var(--border);">
                 <strong>A. 五点</strong> <em>(wǔ diǎn / Jam 5)</em>
               </span>
@@ -2615,19 +2620,19 @@
           </div>
           <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>A. 医院</strong> <em>(yīyuàn / rumah sakit)</em>
+              <strong>A. 医院</strong> <em>(<span class="opt-py">yīyuàn</span><span class="opt-arti"><span class="opt-sep"> / </span>rumah sakit</span>)</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>B. 十二点半</strong> <em>(shí'èr diǎn bàn / jam 12:30)</em>
+              <strong>B. 十二点半</strong> <em>(<span class="opt-py">shí'èr diǎn bàn</span><span class="opt-arti"><span class="opt-sep"> / </span>jam 12:30</span>)</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>C. 课</strong> <em>(kè / kelas, pelajaran)</em>
+              <strong>C. 课</strong> <em>(<span class="opt-py">kè</span><span class="opt-arti"><span class="opt-sep"> / </span>kelas, pelajaran</span>)</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>D. 现在</strong> <em>(xiànzài / sekarang)</em>
+              <strong>D. 现在</strong> <em>(<span class="opt-py">xiànzài</span><span class="opt-arti"><span class="opt-sep"> / </span>sekarang</span>)</em>
             </span>
             <span style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>E. 见</strong> <em>(jiàn / bertemu)</em>
+              <strong>E. 见</strong> <em>(<span class="opt-py">jiàn</span><span class="opt-arti"><span class="opt-sep"> / </span>bertemu</span>)</em>
             </span>
           </div>
         </div>
@@ -3102,15 +3107,24 @@
         if (sm) {
           const prefix = sm[1];
           const hzPart = sm[2].replace(/<[^>]+>/g, '').trim();
-          const emClean = rawEm.replace(/<[^>]+>/g, '').trim().replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
-          // Pisahkan pinyin dari terjemahan (misal: "yīyuàn / rumah sakit")
-          const parts = emClean.split('/');
-          const pinyinPart = parts[0].trim();
-          const suffixPart = parts.length > 1 ? ' / ' + parts.slice(1).join('/').trim() : '';
+          const optPy = em.querySelector('.opt-py');
+          if (optPy) {
+            if (!optPy.dataset.origHtml) optPy.dataset.origHtml = optPy.innerHTML;
+            const pyClean = optPy.dataset.origHtml.replace(/<[^>]+>/g, '').trim();
+            const res = colorizePair(hzPart, pyClean, charColorMap);
+            strong.innerHTML = prefix + res.hanzi;
+            optPy.innerHTML = res.pinyin;
+          } else {
+            const emClean = rawEm.replace(/<[^>]+>/g, '').trim().replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+            // Pisahkan pinyin dari terjemahan (misal: "yīyuàn / rumah sakit")
+            const parts = emClean.split('/');
+            const pinyinPart = parts[0].trim();
+            const suffixPart = parts.length > 1 ? ' / ' + parts.slice(1).join('/').trim() : '';
 
-          const res = colorizePair(hzPart, pinyinPart, charColorMap);
-          strong.innerHTML = prefix + res.hanzi;
-          em.innerHTML = '(' + res.pinyin + suffixPart + ')';
+            const res = colorizePair(hzPart, pinyinPart, charColorMap);
+            strong.innerHTML = prefix + res.hanzi;
+            em.innerHTML = '(' + res.pinyin + suffixPart + ')';
+          }
         }
       });
     });
