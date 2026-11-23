@@ -319,6 +319,8 @@
 
     body.show-pinyin .bubble-pinyin { display: block; }
     body.show-arti   .bubble-arti   { display: block; }
+    .quiz-options em { display: none; }
+    body.show-pinyin .quiz-options em { display: inline; }
 
     /* ── SUB-BREAKDOWN ── */
     .sub-breakdown {
@@ -1062,7 +1064,7 @@
             <div class="bubble-hanzi">白家月明天想去超市。</div>
             <div class="bubble-pinyin">Bái Jiāyuè míngtiān xiǎng qù chāoshì.</div>
             <div class="bubble-arti">Bai Jiayue besok ingin pergi ke supermarket.</div>
-            <div class="quiz-options" style="margin-top:0.55rem;font-size:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.95rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 现在 <em>(xiànzài)</em></span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">B. 今天 <em>(jīntiān)</em></span>
               <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">C. 明天 <em>(míngtiān)</em> ✓</span>
@@ -1077,7 +1079,7 @@
             <div class="bubble-hanzi">白家月想买牛奶。</div>
             <div class="bubble-pinyin">Bái Jiāyuè xiǎng mǎi niúnǎi.</div>
             <div class="bubble-arti">Bai Jiayue ingin membeli susu.</div>
-            <div class="quiz-options" style="margin-top:0.55rem;font-size:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.95rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 菜 <em>(cài)</em></span>
               <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 牛奶 <em>(niúnǎi)</em> ✓</span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 面条儿和牛奶 <em>(miàntiáor hé niúnǎi)</em></span>
@@ -1479,7 +1481,7 @@
             <div class="bubble-hanzi">王一雪一家人想去西安饭店吃晚饭。</div>
             <div class="bubble-pinyin">Wáng Yīxuě yī jiā rén xiǎng qù Xī'ān fàndiàn chī wǎnfàn.</div>
             <div class="bubble-arti">Keluarga Wang Yixue ingin pergi ke Restoran Xi'an untuk makan malam.</div>
-            <div class="quiz-options" style="margin-top:0.55rem;font-size:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.95rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. <strong style="color:#1e40af;">吃早饭</strong> <em style="color:#0284c7;">(chī zǎofàn)</em></span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">B. <strong style="color:#1e40af;">吃午饭</strong> <em style="color:#0284c7;">(chī wǔfàn)</em></span>
               <span style="background:#ecfdf5;color:#047857;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid #10b981;">C. <strong style="color:#047857;">吃晚饭</strong> <em style="color:#059669;">(chī wǎnfàn)</em> <span style="color:#059669;font-weight:700;">✓</span></span>
@@ -1534,7 +1536,7 @@
             <div class="bubble-hanzi">刘小明不想吃包子。</div>
             <div class="bubble-pinyin">Liú Xiǎomíng bù xiǎng chī bāozi.</div>
             <div class="bubble-arti">Liu Xiaoming tidak ingin makan bakpao.</div>
-            <div class="quiz-options" style="margin-top:0.55rem;font-size:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.95rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. <strong style="color:#1e40af;">想吃包子</strong> <em style="color:#0284c7;">(xiǎng chī bāozi)</em></span>
               <span style="background:#ecfdf5;color:#047857;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid #10b981;">B. <strong style="color:#047857;">不想吃包子</strong> <em style="color:#059669;">(bù xiǎng chī bāozi)</em> <span style="color:#059669;font-weight:700;">✓</span></span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. <strong style="color:#1e40af;">想吃米饭</strong> <em style="color:#0284c7;">(xiǎng chī mǐfàn)</em></span>

@@ -604,7 +604,11 @@
     body:not(.show-pinyin) .bubble-pinyin,
     body:not(.show-pinyin) .quiz-options em,
     body:not(.show-pinyin) .dialog-py,
+    body:not(.show-pinyin) .opt-py,
+    body:not(.show-pinyin) .cloze-py,
     body:not(.show-pinyin) .pair-box-py { display: none !important; }
+    .ans-pair .bubble-hanzi { display: inline; font-size: 0.95rem; font-weight: 700; color: inherit; }
+    .ans-pair .bubble-pinyin { display: inline; font-size: 0.88rem; }
 
     body:not(.show-arti) .soal-id,
     body:not(.show-arti) .erhua-arti,
@@ -616,12 +620,14 @@
     body:not(.show-arti) .opt-trans,
     body:not(.show-arti) .soal-pembahasan,
     body:not(.show-arti) .dialog-arti,
+    body:not(.show-arti) .cloze-arti,
     body:not(.show-arti) .pair-box-arti { display: none !important; }
 
     body:not(.show-vocab) .erhua-en,
     body:not(.show-vocab) .listen-badge-correct,
     body:not(.show-vocab) .match-badge,
     body:not(.show-vocab) .quiz-check,
+    body:not(.show-vocab) .vocab-pills-list,
     body:not(.show-vocab) .soal-answer-badge { display: none !important; }
 
     /* ── LATIHAN LISTENING PART 2 (QUESTION & ANSWER) ── */
@@ -3229,7 +3235,7 @@
         <div style="background:#ffffff; border:1px solid #d8b4fe; border-radius:8px; padding:0.75rem 1rem;">
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
             <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: D ✓</span>
-            <span style="font-size:0.88rem; font-weight:700; color:#7c3aed;">好的，谢谢！ (Hǎo de, xièxie!)</span>
+            <span class="ans-pair" style="font-size:0.88rem; font-weight:700; color:#7c3aed;"><span class="bubble-hanzi">好的，谢谢！</span> <span class="bubble-pinyin">(Hǎo de, xièxie!)</span></span>
           </div>
           <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
             <strong>Penjelasan Contoh:</strong> Pertanyaan menawarkan minuman (<em>Nǐ hē shuǐ ma?</em>). Respons yang sopan dan paling tepat untuk menerima tawaran tersebut adalah <strong>D. 好的，谢谢！ (Hǎo de, xièxie! - Baik, terima kasih!)</strong>.
@@ -3266,7 +3272,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: C ✓</span>
-              <span style="font-size:0.88rem; font-weight:700; color:#7c3aed;">包子。 (Bāozi.)</span>
+              <span class="ans-pair" style="font-size:0.88rem; font-weight:700; color:#7c3aed;"><span class="bubble-hanzi">包子。</span> <span class="bubble-pinyin">(Bāozi.)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Analisis &amp; Jawaban:</strong> Pertanyaan menggunakan kata kerja <strong>吃 (chī - makan)</strong> dan kata tanya <strong>什么 (shénme - apa)</strong> untuk menanyakan jenis makanan yang dikonsumsi. Jawaban yang paling tepat adalah menyebutkan jenis makanan, yaitu pilihan <strong>C. 包子 (Bāozi - Bakpao)</strong>.
@@ -3308,7 +3314,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: A ✓</span>
-              <span style="font-size:0.88rem; font-weight:700; color:#7c3aed;">坐出租车。 (Zuò chūzūchē.)</span>
+              <span class="ans-pair" style="font-size:0.88rem; font-weight:700; color:#7c3aed;"><span class="bubble-hanzi">坐出租车。</span> <span class="bubble-pinyin">(Zuò chūzūchē.)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Analisis &amp; Jawaban:</strong> Pertanyaan menggunakan pola <strong>怎么去 (zěnme qù)</strong> untuk menanyakan cara atau moda transportasi yang akan digunakan. Jawaban yang paling cocok adalah menyatakan sarana transportasi, yaitu pilihan <strong>A. 坐出租车 (Zuò chūzūchē - Naik taksi)</strong>.
@@ -3350,7 +3356,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: B ✓</span>
-              <span style="font-size:0.88rem; font-weight:700; color:#7c3aed;">真好看！ (Zhēn hǎokàn!)</span>
+              <span class="ans-pair" style="font-size:0.88rem; font-weight:700; color:#7c3aed;"><span class="bubble-hanzi">真好看！</span> <span class="bubble-pinyin">(Zhēn hǎokàn!)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Analisis &amp; Jawaban:</strong> Kalimat ini adalah sebuah pernyataan yang memperkenalkan atau menunjukkan benda kepunyaan guru (<strong>新电脑 - komputer baru</strong>). Respons atau tanggapan yang paling wajar dan sesuai dalam percakapan adalah memberikan pujian atas benda tersebut, yaitu pilihan <strong>B. 真好看！ (Zhēn hǎokàn! - Bagus / indah sekali!)</strong>.

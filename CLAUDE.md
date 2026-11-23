@@ -1401,7 +1401,7 @@ Mengikuti standar baku struktur **`WorkBookBab11.html`**:
     </div>
   </div>
   ```
-- 🚫 **DILARANG** menambahkan inline style seperti `<div style="margin-top: 1.8rem;">` pada pembungkus bagian.
+- 🚫 **DILARANG** menambahkan inline style `margin-top` apa pun (seperti `<div style="margin-top: 1.5rem;">` atau `<div style="margin-top: 1.8rem;">`) pada pembungkus bagian di dalam `.wrap`, termasuk saat menyalin/mengadaptasi bagian dari bab sebelumnya. Gunakan `<div>` polos tanpa atribut `style`.
 - **Alasan Teknis**: Jarak vertikal antar bagian diatur sepenuhnya secara otomatis dan seragam oleh properti CSS kontainer induk:
   ```css
   .wrap {

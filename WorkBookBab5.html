@@ -959,12 +959,19 @@
       border-radius: 12px;
       background: #dcfce7;
       color: #166534;
+      display: none;
+    }
+    body.show-pinyin .sandhi-tag {
+      display: inline-block;
     }
     .sandhi-py-row {
-      display: flex;
+      display: none;
       align-items: center;
       gap: 0.4rem;
       font-size:0.88rem;
+    }
+    body.show-pinyin .sandhi-py-row {
+      display: flex;
     }
     .py-orig {
       color: #64748b;
@@ -980,6 +987,18 @@
       color: var(--text);
       border-top: 1px dashed var(--border);
       padding-top: 0.35rem;
+      margin-top: 0.15rem;
+      display: none;
+    }
+    body.show-arti .sandhi-arti {
+      display: block;
+    }
+    .sandhi-arti small,
+    .sandhi-arti br {
+      display: none;
+    }
+    body.show-vocab .sandhi-arti small {
+      display: block;
       margin-top: 0.15rem;
     }
 
@@ -1513,11 +1532,17 @@
       border: 1px solid var(--border);
       background: var(--bg);
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
+      display: inline-block;
       transition: all 0.2s ease;
     }
+    .quiz-options em, .quiz-arti { display: none; }
+    body.show-pinyin .quiz-options em { display: inline; }
+    body.show-arti .quiz-arti { display: inline; }
+    .quiz-detail { display: none; }
+    body.show-vocab .quiz-detail { display: block; }
+    .ans-pair .bubble-hanzi { display: inline; font-size: 0.95rem; font-weight: 700; color: inherit; }
+    .ans-pair .bubble-pinyin { font-size: 0.85rem; color: inherit; }
+    body.show-pinyin .ans-pair .bubble-pinyin { display: inline; }
     .quiz-option-btn.correct {
       background: #ecfdf5;
       color: var(--primary);
@@ -2393,6 +2418,128 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════
+       第一部分 PART I (第1—3题)
+  ══════════════════════════════════════════════════ -->
+  <div>
+    <div class="section-title">🎧 第一部分 Part I · 听短语，选择正确图片 (Mendengar &amp; Memilih Gambar)</div>
+    <div class="classroom-box" style="border-left: 5px solid #0d9488;">
+
+      <!-- Header Petunjuk Soal -->
+      <div class="classroom-header">
+        <div class="avatar" style="background: linear-gradient(135deg, #0d9488, #0f766e); font-size: 1.15rem; font-weight: 700; color: #fff;">听</div>
+        <div class="classroom-intro">
+          <div class="classroom-badge" style="background:#0d9488; color:#fff;">第 1—3 题：听短语，选择正确图片。每题听两次。</div>
+          <div class="classroom-desc">Dì 1—3 tí: tīng duǎnyǔ, xuǎnzé zhèngquè túpiàn. Měi tí tīng liǎng cì. (Soal 1–3: Dengarkan frasa pendeknya, lalu pilih gambar A, B, atau C yang sesuai. Setiap soal diperdengarkan dua kali).</div>
+        </div>
+      </div>
+
+      <!-- Foto Lembar Soal Listening Asli Bab 5 Part 1 -->
+      <div style="margin: 0.75rem 0 1rem 0; text-align: center;">
+        <img src="images/bab5-wb-listening-p1.png" alt="一、听力 第一部分 Listening Part 1 Buku Latihan Bab 5" style="max-width: 100%; width: 580px; height: auto; border-radius: 10px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+      </div>
+
+      <div class="classroom-list">
+        <!-- Soal 1 -->
+        <div class="classroom-item">
+          <div class="item-number" style="background:#0d9488;">1</div>
+          <div class="item-content">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#0d9488; color:#fff; font-size:0.72rem; font-weight:800; padding:0.15rem 0.5rem; border-radius:4px;">Soal 1 (Audio Frasa)</span>
+              <button onclick="playPinyin('做菜')" style="cursor:pointer; background:#ccfbf1; border:1px solid #99f6e4; color:#0f766e; font-size:0.76rem; font-weight:700; border-radius:6px; padding:0.2rem 0.55rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                <span>🔊 Putar Audio Soal 1</span>
+              </button>
+            </div>
+            <div class="bubble-hanzi">做菜</div>
+            <div class="bubble-pinyin" style="color:#0d9488;">zuòcài</div>
+            <div class="bubble-arti">Memasak / membuat hidangan</div>
+
+            <div class="quiz-options">
+              <span class="quiz-option-btn" onclick="playPinyin('跑步')" title="Klik dengar pǎobù">
+                A. 跑步 <em>(pǎobù)</em> <span class="quiz-arti">= Berlari (jogging)</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playPinyin('看书')" title="Klik dengar kànshū">
+                B. 看书 <em>(kànshū)</em> <span class="quiz-arti">= Membaca buku</span>
+              </span>
+              <span class="quiz-option-btn correct" onclick="playPinyin('做菜')" title="Klik dengar zuòcài">
+                C. 做菜 <em>(zuòcài)</em> <span class="quiz-arti">= Memasak</span> ✓
+              </span>
+            </div>
+
+            <div class="quiz-detail" style="margin-top:0.55rem; background:#f8fafc; border-left:3.5px solid #0d9488; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
+              💡 <strong>Penjelasan Materi:</strong> Frasa yang diperdengarkan adalah <strong>做菜 (zuòcài)</strong> yang berarti memasak. Gambar <strong>C</strong> menunjukkan dua orang sedang memasak di dapur (berbeda dengan A yang sedang berlari dan B yang sedang membaca sambil minum).
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="classroom-item">
+          <div class="item-number" style="background:#0d9488;">2</div>
+          <div class="item-content">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#0d9488; color:#fff; font-size:0.72rem; font-weight:800; padding:0.15rem 0.5rem; border-radius:4px;">Soal 2 (Audio Frasa)</span>
+              <button onclick="playPinyin('四个人')" style="cursor:pointer; background:#ccfbf1; border:1px solid #99f6e4; color:#0f766e; font-size:0.76rem; font-weight:700; border-radius:6px; padding:0.2rem 0.55rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                <span>🔊 Putar Audio Soal 2</span>
+              </button>
+            </div>
+            <div class="bubble-hanzi">四个人</div>
+            <div class="bubble-pinyin" style="color:#0d9488;">sì gè rén</div>
+            <div class="bubble-arti">Empat orang (4 orang)</div>
+
+            <div class="quiz-options">
+              <span class="quiz-option-btn correct" onclick="playPinyin('四个人')" title="Klik dengar sì gè rén">
+                A. 四个人 <em>(sì gè rén)</em> <span class="quiz-arti">= 4 orang</span> ✓
+              </span>
+              <span class="quiz-option-btn" onclick="playPinyin('两个人')" title="Klik dengar liǎng gè rén">
+                B. 两个人 <em>(liǎng gè rén)</em> <span class="quiz-arti">= 2 orang (belajar bersama)</span>
+              </span>
+              <span class="quiz-option-btn" onclick="playPinyin('三个人')" title="Klik dengar sān gè rén">
+                C. 三个人 <em>(sān gè rén)</em> <span class="quiz-arti">= 3 orang (berdiskusi)</span>
+              </span>
+            </div>
+
+            <div class="quiz-detail" style="margin-top:0.55rem; background:#f8fafc; border-left:3.5px solid #0d9488; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
+              💡 <strong>Penjelasan Materi:</strong> Kata bilangan <strong>四 (sì)</strong> + kata bantu bilangan umum <strong>个 (gè)</strong> + <strong>人 (rén)</strong> berarti empat orang. Pada gambar <strong>A</strong> terlihat ada 4 orang (tenaga medis), sedangkan gambar B berjumlah 2 orang dan gambar C berjumlah 3 orang.
+            </div>
+          </div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="classroom-item">
+          <div class="item-number" style="background:#0d9488;">3</div>
+          <div class="item-content">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+              <span style="background:#0d9488; color:#fff; font-size:0.72rem; font-weight:800; padding:0.15rem 0.5rem; border-radius:4px;">Soal 3 (Audio Frasa)</span>
+              <button onclick="playPinyin('六月十二日')" style="cursor:pointer; background:#ccfbf1; border:1px solid #99f6e4; color:#0f766e; font-size:0.76rem; font-weight:700; border-radius:6px; padding:0.2rem 0.55rem; display:inline-flex; align-items:center; gap:0.3rem;">
+                <span>🔊 Putar Audio Soal 3</span>
+              </button>
+            </div>
+            <div class="bubble-hanzi">六月十二日</div>
+            <div class="bubble-pinyin" style="color:#0d9488;">liù yuè shí'èr rì</div>
+            <div class="bubble-arti">Tanggal 12 Juni (6月12日)</div>
+
+            <div class="quiz-options">
+              <span class="quiz-option-btn" onclick="playPinyin('六月三日')" title="Klik dengar liù yuè sān rì">
+                A. 六月三日 <em>(liù yuè sān rì)</em> <span class="quiz-arti">= 3 Juni</span>
+              </span>
+              <span class="quiz-option-btn correct" onclick="playPinyin('六月十二日')" title="Klik dengar liù yuè shí'èr rì">
+                B. 六月十二日 <em>(liù yuè shí'èr rì)</em> <span class="quiz-arti">= 12 Juni</span> ✓
+              </span>
+              <span class="quiz-option-btn" onclick="playPinyin('六月二十一日')" title="Klik dengar liù yuè èrshíyī rì">
+                C. 六月二十一日 <em>(liù yuè èrshíyī rì)</em> <span class="quiz-arti">= 21 Juni</span>
+              </span>
+            </div>
+
+            <div class="quiz-detail" style="margin-top:0.55rem; background:#f8fafc; border-left:3.5px solid #0d9488; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
+              💡 <strong>Penjelasan Materi:</strong> Format penulisan tanggal dalam bahasa Mandarin dimulai dari bulan lalu tanggal: <strong>六月 (liù yuè = Juni)</strong> + <strong>十二日 (shí'èr rì = tanggal 12)</strong>. Pada kalender <strong>B</strong>, angka <strong>12</strong> dilingkari merah (A melingkari tanggal 3, C melingkari tanggal 21).
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
        第二部分 PART II (第4—5题)
   ══════════════════════════════════════════════════ -->
   <div>
@@ -2425,13 +2572,13 @@
             
             <div class="quiz-options">
               <span class="quiz-option-btn correct" onclick="playPinyin('fēicháng rè')" title="Klik dengar fēicháng rè">
-                A. 非常热 <em>(fēicháng rè)</em> = Sangat panas ✓
+                A. 非常热 <em>(fēicháng rè)</em> <span class="quiz-arti">= Sangat panas</span> ✓
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('hěn hǎotīng')" title="Klik dengar hěn hǎotīng">
-                B. 很 好听 <em>(hěn hǎotīng)</em> = Terdengar sangat merdu / bagus
+                B. 很 好听 <em>(hěn hǎotīng)</em> <span class="quiz-arti">= Terdengar sangat merdu / bagus</span>
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('zài hē shuǐ')" title="Klik dengar zài hē shuǐ">
-                C. 在 喝 水 <em>(zài hē shuǐ)</em> = Sedang minum air
+                C. 在 喝 水 <em>(zài hē shuǐ)</em> <span class="quiz-arti">= Sedang minum air</span>
               </span>
             </div>
           </div>
@@ -2453,17 +2600,17 @@
             
             <div class="quiz-options">
               <span class="quiz-option-btn correct" onclick="playPinyin('wǒ bú huì')" title="Klik dengar wǒ bú huì">
-                A. 我 不会 <em>(wǒ bú huì)</em> = Saya tidak bisa ✓
+                A. 我 不会 <em>(wǒ bú huì)</em> <span class="quiz-arti">= Saya tidak bisa</span> ✓
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('wǒ chī jiǎozi')" title="Klik dengar wǒ chī jiǎozi">
-                B. 我 吃 饺子 <em>(wǒ chī jiǎozi)</em> = Saya makan pangsit
+                B. 我 吃 饺子 <em>(wǒ chī jiǎozi)</em> <span class="quiz-arti">= Saya makan pangsit</span>
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('zuò miàntiáor')" title="Klik dengar zuò miàntiáor">
-                C. 做 面条儿 <em>(zuò miàntiáor)</em> = Membuat mi
+                C. 做 面条儿 <em>(zuò miàntiáor)</em> <span class="quiz-arti">= Membuat mi</span>
               </span>
             </div>
 
-            <div style="margin-top:0.55rem; background:#f8fafc; border-left:3.5px solid #0284c7; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
+            <div class="quiz-detail" style="margin-top:0.55rem; background:#f8fafc; border-left:3.5px solid #0284c7; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
               💡 <strong>Penjelasan Materi:</strong> Pertanyaan dimulai dengan modal verba <strong>会 (huì)</strong> yang berarti "bisa/dapat". Cara menjawab yang paling tepat dan logis untuk pertanyaan "Apakah kamu bisa memasak?" adalah menyatakan bisa atau tidak bisa, yaitu <strong>我不会 (wǒ bú huì)</strong>.
             </div>
           </div>
@@ -2485,17 +2632,17 @@
             
             <div class="quiz-options">
               <span class="quiz-option-btn" onclick="playPinyin('xiūxi')" title="Klik dengar xiūxi">
-                A. 休息 <em>(xiūxi)</em> = Istirahat
+                A. 休息 <em>(xiūxi)</em> <span class="quiz-arti">= Istirahat</span>
               </span>
               <span class="quiz-option-btn correct" onclick="playPinyin('Xīngqīsì')" title="Klik dengar Xīngqīsì">
-                B. 星期四 <em>(Xīngqīsì)</em> = Hari Kamis ✓
+                B. 星期四 <em>(Xīngqīsì)</em> <span class="quiz-arti">= Hari Kamis</span> ✓
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('wǔ kǒu rén')" title="Klik dengar wǔ kǒu rén">
-                C. 五 口 人 <em>(wǔ kǒu rén)</em> = Ada 5 orang (dalam keluarga)
+                C. 五 口 人 <em>(wǔ kǒu rén)</em> <span class="quiz-arti">= Ada 5 orang (dalam keluarga)</span>
               </span>
             </div>
 
-            <div style="margin-top:0.55rem; background:#f8fafc; border-left:3.5px solid #0284c7; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
+            <div class="quiz-detail" style="margin-top:0.55rem; background:#f8fafc; border-left:3.5px solid #0284c7; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
               💡 <strong>Penjelasan Materi:</strong> Kata tanya <strong>几 (jǐ)</strong> digunakan untuk menanyakan jumlah atau hari (dalam konteks hari ke- berapa). Kata kunci pada pertanyaan adalah <strong>星期几 (xīngqījǐ - hari apa)</strong>, sehingga jawaban yang menunjuk pada nama hari adalah <strong>星期四 (Xīngqīsì - Hari Kamis)</strong>.
             </div>
           </div>
@@ -2724,9 +2871,9 @@
             <!-- Kalimat Audio -->
             <div style="background:#ffffff; border-left:3px solid #2563eb; border-radius:6px; padding:0.45rem 0.75rem; margin-bottom:0.35rem; cursor:pointer;" onclick="playPinyin('Xiàwǔ wǒ qù chāoshì, wǒ xiǎng mǎi yìxiē shuǐguǒ.')" title="Klik dengar kalimat audio">
               <div style="font-size:0.72rem; font-weight:700; color:#2563eb; text-transform:uppercase;">Kalimat (Audio):</div>
-              <div style="font-size:1.02rem; font-weight:700; color:#1e293b;"><span class="word-char">下午 我 去 超市，我 想 买 一些 水果。</span></div>
-              <div class="word-pinyin py-read" style="font-size:0.84rem; color:#2563eb;">Xiàwǔ wǒ qù chāoshì, wǒ xiǎng mǎi yìxiē shuǐguǒ.</div>
-              <div class="word-arti" style="font-size:0.78rem; color:#475569;">Arti: Nanti sore saya pergi ke supermarket, saya ingin membeli beberapa buah.</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem;">下午 我 去 超市，我 想 买 一些 水果。</div>
+              <div class="bubble-pinyin" style="color:#2563eb;">Xiàwǔ wǒ qù chāoshì, wǒ xiǎng mǎi yìxiē shuǐguǒ.</div>
+              <div class="bubble-arti">Arti: Nanti sore saya pergi ke supermarket, saya ingin membeli beberapa buah.</div>
             </div>
 
             <!-- Pertanyaan -->
@@ -2736,13 +2883,13 @@
             
             <div class="quiz-options">
               <span class="quiz-option-btn correct" onclick="playPinyin('chāoshì')" title="Klik dengar chāoshì">
-                A. 超市 <em>(chāoshì)</em> = Supermarket ✓
+                A. 超市 <em>(chāoshì)</em> <span class="quiz-arti">= Supermarket</span> ✓
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('yīyuàn')" title="Klik dengar yīyuàn">
-                B. 医院 <em>(yīyuàn)</em> = Rumah sakit
+                B. 医院 <em>(yīyuàn)</em> <span class="quiz-arti">= Rumah sakit</span>
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('xuéxiào')" title="Klik dengar xuéxiào">
-                C. 学校 <em>(xuéxiào)</em> = Sekolah
+                C. 学校 <em>(xuéxiào)</em> <span class="quiz-arti">= Sekolah</span>
               </span>
             </div>
           </div>
@@ -2762,9 +2909,9 @@
             <!-- Kalimat Audio -->
             <div style="background:#ffffff; border-left:3px solid #2563eb; border-radius:6px; padding:0.45rem 0.75rem; margin-bottom:0.35rem; cursor:pointer;" onclick="playPinyin('Wǒ bābɑ qīshí suì le, tā zài jiā lǐ.')" title="Klik dengar kalimat audio">
               <div style="font-size:0.72rem; font-weight:700; color:#2563eb; text-transform:uppercase;">Kalimat (Audio):</div>
-              <div style="font-size:1.02rem; font-weight:700; color:#1e293b;"><span class="word-char">我 爸爸 七十 岁 了，他 在 家 里。</span></div>
-              <div class="word-pinyin py-read" style="font-size:0.84rem; color:#2563eb;">(Wǒ bābɑ qīshí suì le, tā zài jiā lǐ.)</div>
-              <div class="word-arti" style="font-size:0.78rem; color:#475569;">Arti: "Ayah saya sudah berusia 70 tahun, dia berada di rumah."</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem;">我 爸爸 七十 岁 了，他 在 家 里。</div>
+              <div class="bubble-pinyin" style="color:#2563eb;">(Wǒ bābɑ qīshí suì le, tā zài jiā lǐ.)</div>
+              <div class="bubble-arti">Arti: "Ayah saya sudah berusia 70 tahun, dia berada di rumah."</div>
             </div>
 
             <!-- Pertanyaan -->
@@ -2774,17 +2921,17 @@
             
             <div class="quiz-options">
               <span class="quiz-option-btn correct" onclick="playPinyin('qīshí suì')" title="Klik dengar qīshí suì">
-                A. 70 岁 <em>(qīshí suì)</em> = 70 tahun ✓
+                A. 70 岁 <em>(qīshí suì)</em> <span class="quiz-arti">= 70 tahun</span> ✓
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('bāshí suì')" title="Klik dengar bāshí suì">
-                B. 80 岁 <em>(bāshí suì)</em> = 80 tahun
+                B. 80 岁 <em>(bāshí suì)</em> <span class="quiz-arti">= 80 tahun</span>
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('jiǔshí suì')" title="Klik dengar jiǔshí suì">
-                C. 90 岁 <em>(jiǔshí suì)</em> = 90 tahun
+                C. 90 岁 <em>(jiǔshí suì)</em> <span class="quiz-arti">= 90 tahun</span>
               </span>
             </div>
 
-            <div style="margin-top:0.55rem; background:#eff6ff; border-left:3.5px solid #2563eb; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
+            <div class="quiz-detail" style="margin-top:0.55rem; background:#eff6ff; border-left:3.5px solid #2563eb; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
               💡 <strong>Penjelasan Materi:</strong> Pertanyaan menanyakan usia sang ayah menggunakan pola <strong>多大了 (duō dà le - berapa usianya)</strong>. Kalimat audio secara jelas menyatakan <strong>七十岁 (qīshí suì = 70 tahun)</strong>.
             </div>
           </div>
@@ -2804,9 +2951,9 @@
             <!-- Kalimat Audio -->
             <div style="background:#ffffff; border-left:3px solid #2563eb; border-radius:6px; padding:0.45rem 0.75rem; margin-bottom:0.35rem; cursor:pointer;" onclick="playPinyin('Míngtiān shí hào, wǒ xiūxi.')" title="Klik dengar kalimat audio">
               <div style="font-size:0.72rem; font-weight:700; color:#2563eb; text-transform:uppercase;">Kalimat (Audio):</div>
-              <div style="font-size:1.02rem; font-weight:700; color:#1e293b;"><span class="word-char">明天 十 号，我 休息。</span></div>
-              <div class="word-pinyin py-read" style="font-size:0.84rem; color:#2563eb;">(Míngtiān shí hào, wǒ xiūxi.)</div>
-              <div class="word-arti" style="font-size:0.78rem; color:#475569;">Arti: "Besok tanggal 10, saya libur / beristirahat."</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem;">明天 十 号，我 休息。</div>
+              <div class="bubble-pinyin" style="color:#2563eb;">(Míngtiān shí hào, wǒ xiūxi.)</div>
+              <div class="bubble-arti">Arti: "Besok tanggal 10, saya libur / beristirahat."</div>
             </div>
 
             <!-- Pertanyaan -->
@@ -2816,17 +2963,17 @@
             
             <div class="quiz-options">
               <span class="quiz-option-btn" onclick="playPinyin('sì hào')" title="Klik dengar sì hào">
-                A. 4 号 <em>(sì hào)</em> = Tanggal 4
+                A. 4 号 <em>(sì hào)</em> <span class="quiz-arti">= Tanggal 4</span>
               </span>
               <span class="quiz-option-btn correct" onclick="playPinyin('shí hào')" title="Klik dengar shí hào">
-                B. 10 号 <em>(shí hào)</em> = Tanggal 10 ✓
+                B. 10 号 <em>(shí hào)</em> <span class="quiz-arti">= Tanggal 10</span> ✓
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('shísì hào')" title="Klik dengar shísì hào">
-                C. 14 号 <em>(shísì hào)</em> = Tanggal 14
+                C. 14 号 <em>(shísì hào)</em> <span class="quiz-arti">= Tanggal 14</span>
               </span>
             </div>
 
-            <div style="margin-top:0.55rem; background:#eff6ff; border-left:3.5px solid #2563eb; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
+            <div class="quiz-detail" style="margin-top:0.55rem; background:#eff6ff; border-left:3.5px solid #2563eb; padding:0.45rem 0.75rem; border-radius:6px; font-size:0.78rem; color:#334155; line-height:1.45;">
               💡 <strong>Penjelasan Materi:</strong> Pertanyaan menanyakan tanggal berapa pembicara beristirahat/libur (<strong>几号休息, jǐ hào xiūxi</strong>). Di dalam kalimat pernyataan disebutkan <strong>明天十号 (besok tanggal 10)</strong> dan <strong>我休息 (saya libur)</strong>, sehingga informasi tanggal yang dicari adalah <strong>10 号 (shí hào)</strong>.
             </div>
           </div>
@@ -3114,7 +3261,7 @@
         <div style="background:#ffffff; border:1px solid #ddd6fe; border-radius:8px; padding:0.75rem 1rem;">
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
             <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: A ✓</span>
-            <span style="font-size:0.85rem; font-weight:700; color:#7c3aed;">好的，谢谢！ (Hǎo de, xièxie!)</span>
+            <span class="ans-pair" style="font-size:0.85rem; font-weight:700; color:#7c3aed;"><span class="bubble-hanzi">好的，谢谢！</span> <span class="bubble-pinyin">(Hǎo de, xièxie!)</span></span>
           </div>
           <div class="word-arti" style="font-size:0.84rem; color:#475569; line-height:1.55;">
             <strong>Penjelasan Contoh:</strong> Pertanyaan menawarkan minum air ("Nǐ hē shuǐ ma?"). Jawaban yang paling sopan dan tepat adalah <strong>A: 好的，谢谢！(Hǎo de, xièxie!)</strong> yang berarti "Baik, terima kasih!".
@@ -3157,7 +3304,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: C ✓</span>
-              <span style="font-size:0.85rem; font-weight:700; color:#7c3aed;">面条儿。 (Miàntiáor.)</span>
+              <span class="ans-pair" style="font-size:0.85rem; font-weight:700; color:#7c3aed;"><span class="bubble-hanzi">面条儿。</span> <span class="bubble-pinyin">(Miàntiáor.)</span></span>
             </div>
             <div class="word-arti" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Penjelasan Materi:</strong> Pertanyaan menanyakan benda/barang apa yang dibeli di supermarket (<strong>买什么, mǎi shénme</strong>). Dari pilihan yang tersedia, <strong>面条儿 (miàntiáor - mi)</strong> adalah nama benda/makanan yang logis sebagai jawaban atas objek yang dibeli.
@@ -3197,7 +3344,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: B ✓</span>
-              <span style="font-size:0.85rem; font-weight:700; color:#7c3aed;">我不会。 (Wǒ bú huì.)</span>
+              <span class="ans-pair" style="font-size:0.85rem; font-weight:700; color:#7c3aed;"><span class="bubble-hanzi">我不会。</span> <span class="bubble-pinyin">(Wǒ bú huì.)</span></span>
             </div>
             <div class="word-arti" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Penjelasan Materi:</strong> Pertanyaan menggunakan modal verba <strong>会 (huì - bisa)</strong> untuk menanyakan keahlian memasak. Respons yang tepat untuk pertanyaan dengan kata kunci <em>huì</em> adalah menyatakan kemampuan atau ketidakmampuan, yaitu <strong>我不会 (wǒ bú huì - saya tidak bisa)</strong>.
@@ -3237,7 +3384,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: D ✓</span>
-              <span style="font-size:0.85rem; font-weight:700; color:#7c3aed;">5 月 6 号。 (Wǔ yuè liù hào.)</span>
+              <span class="ans-pair" style="font-size:0.85rem; font-weight:700; color:#7c3aed;"><span class="bubble-hanzi">五月六号。</span> <span class="bubble-pinyin">(Wǔ yuè liù hào.)</span></span>
             </div>
             <div class="word-arti" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Penjelasan Materi:</strong> Kata tanya <strong>几号 (jǐ hào)</strong> digunakan untuk menanyakan tanggal. Pilihan yang menunjukkan format tanggal adalah <strong>D: 5 月 6 号 (5 Mei / Wǔ yuè liù hào)</strong>.
@@ -3463,17 +3610,17 @@
 
             <div class="quiz-options">
               <span class="quiz-option-btn correct" onclick="playPinyin('时间')" title="Klik dengar 时间">
-                A. 时间 <em>(shíjiān)</em> — Waktu ✓
+                A. 时间 <em>(shíjiān)</em> <span class="quiz-arti">— Waktu</span> ✓
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('名字')" title="Klik dengar 名字">
-                B. 名字 <em>(míngzi)</em> — Nama
+                B. 名字 <em>(míngzi)</em> <span class="quiz-arti">— Nama</span>
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('房间号')" title="Klik dengar 房间号">
-                C. 房间号 <em>(fángjiānhào)</em> — Nomor kamar
+                C. 房间号 <em>(fángjiānhào)</em> <span class="quiz-arti">— Nomor kamar</span>
               </span>
             </div>
 
-            <div style="background:#ffffff; border-radius:6px; padding:0.45rem 0.65rem; border-left:3px solid #64748b; font-size:0.78rem; color:#475569; margin-top:0.45rem; line-height:1.45;">
+            <div class="quiz-detail" style="background:#ffffff; border-radius:6px; padding:0.45rem 0.65rem; border-left:3px solid #64748b; font-size:0.78rem; color:#475569; margin-top:0.45rem; line-height:1.45;">
               💡 <strong>Penjelasan:</strong> Dalam kalimat <em>"Qǐngwèn, xiànzài jǐ diǎn le?"</em> (请问，现在几点了？ - Permisi, sekarang jam berapa?), hal yang ingin diketahui oleh pembicara adalah <strong>A (时间 - shíjiān / waktu)</strong>.
             </div>
           </div>
@@ -3506,17 +3653,17 @@
 
             <div class="quiz-options">
               <span class="quiz-option-btn" onclick="playPinyin('新电脑')" title="Klik dengar 新电脑">
-                A. 新电脑 <em>(xīn diànnǎo)</em> — Komputer baru
+                A. 新电脑 <em>(xīn diànnǎo)</em> <span class="quiz-arti">— Komputer baru</span>
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('中国菜')" title="Klik dengar 中国菜">
-                B. 中国菜 <em>(Zhōngguó cài)</em> — Masakan Tiongkok
+                B. 中国菜 <em>(Zhōngguó cài)</em> <span class="quiz-arti">— Masakan Tiongkok</span>
               </span>
               <span class="quiz-option-btn correct" onclick="playPinyin('中文名字')" title="Klik dengar 中文名字">
-                C. 中文名字 <em>(Zhōngwén míngzi)</em> — Nama Mandarin ✓
+                C. 中文名字 <em>(Zhōngwén míngzi)</em> <span class="quiz-arti">— Nama Mandarin</span> ✓
               </span>
             </div>
 
-            <div style="background:#f8fafc; border-radius:6px; padding:0.45rem 0.65rem; border-left:3px solid #059669; font-size:0.78rem; color:#334155; margin-top:0.45rem; line-height:1.45;">
+            <div class="quiz-detail" style="background:#f8fafc; border-radius:6px; padding:0.45rem 0.65rem; border-left:3px solid #059669; font-size:0.78rem; color:#334155; margin-top:0.45rem; line-height:1.45;">
               💡 <strong>Penjelasan:</strong> Kalimat menyatakan <em>"Wǒ fēicháng xǐhuan wǒ de Zhōngwén míngzi."</em> (我非常喜欢我的中文名字。 - Saya sangat menyukai nama Mandarin saya). Pertanyaannya: <em>"Shuōhuàrén xǐhuan shénme?"</em> (说话人喜欢什么？ - Apa yang disukai pembicara?), maka jawaban yang tepat adalah <strong>C (中文名字 / Zhōngwén míngzi)</strong>.
             </div>
           </div>
@@ -3535,7 +3682,7 @@
             <div style="background:#f0fdf4; border-radius:6px; border:1px solid #bbf7d0; padding:0.5rem 0.75rem; margin-bottom:0.35rem; cursor:pointer;" onclick="playPinyin('今天 8 号，你几号休息？')">
               <div style="font-size:0.72rem; font-weight:700; color:#059669; text-transform:uppercase;">Pernyataan · 句子</div>
               <div class="bubble-pinyin" style="color:#059669; font-size:0.85rem;">Jīntiān bā hào, nǐ jǐ hào xiūxī?</div>
-              <div class="bubble-hanzi" style="font-size:1.15rem;">今天 8 号，你几号休息？</div>
+              <div class="bubble-hanzi" style="font-size:1.15rem;">今天八号，你几号休息？</div>
               <div class="word-arti" style="font-size:0.78rem; color:#475569; font-style:italic;">"Hari ini tanggal 8, kamu tanggal berapa libur / istirahat?"</div>
             </div>
 
@@ -3549,17 +3696,17 @@
 
             <div class="quiz-options">
               <span class="quiz-option-btn" onclick="playPinyin('今天几号')" title="Klik dengar 今天几号">
-                A. 今天几号 <em>(jīntiān jǐ hào)</em> — Tanggal berapa hari ini
+                A. 今天几号 <em>(jīntiān jǐ hào)</em> <span class="quiz-arti">— Tanggal berapa hari ini</span>
               </span>
               <span class="quiz-option-btn correct" onclick="playPinyin('哪天休息')" title="Klik dengar 哪天休息">
-                B. 哪天休息 <em>(nǎ tiān xiūxī)</em> — Hari apa libur/istirahat ✓
+                B. 哪天休息 <em>(nǎ tiān xiūxī)</em> <span class="quiz-arti">— Hari apa libur/istirahat</span> ✓
               </span>
               <span class="quiz-option-btn" onclick="playPinyin('星期几上班')" title="Klik dengar 星期几上班">
-                C. 星期几上班 <em>(xīngqījǐ shàngbān)</em> — Hari apa masuk kerja
+                C. 星期几上班 <em>(xīngqījǐ shàngbān)</em> <span class="quiz-arti">— Hari apa masuk kerja</span>
               </span>
             </div>
 
-            <div style="background:#f8fafc; border-radius:6px; padding:0.45rem 0.65rem; border-left:3px solid #059669; font-size:0.78rem; color:#334155; margin-top:0.45rem; line-height:1.45;">
+            <div class="quiz-detail" style="background:#f8fafc; border-radius:6px; padding:0.45rem 0.65rem; border-left:3px solid #059669; font-size:0.78rem; color:#334155; margin-top:0.45rem; line-height:1.45;">
               💡 <strong>Penjelasan:</strong> Dalam kalimat <em>"Jīntiān bā hào, nǐ jǐ hào xiūxī?"</em> (今天 8 号，你几号休息？ - Hari ini tanggal 8, kamu tanggal berapa libur?), pembicara menanyakan kapan lawan bicaranya mengambil waktu istirahat/libur. Inti pertanyaan merujuk pada <code>哪天休息</code> (nǎ tiān xiūxī - hari apa istirahat/libur), sehingga pilihan <strong>B (哪天休息 / nǎ tiān xiūxī)</strong> adalah jawaban yang paling tepat.
             </div>
           </div>

@@ -335,6 +335,14 @@
     /* Active visibility state */
     body.show-pinyin .bubble-pinyin { display: block; }
     body.show-arti .bubble-arti { display: block; }
+    .quiz-options em, .quiz-arti { display: none; }
+    body.show-pinyin .quiz-options em { display: inline; }
+    body.show-arti .quiz-arti { display: inline; }
+    .opt-py-wrap, .opt-arti { display: none; }
+    body.show-pinyin .opt-py-wrap { display: inline; }
+    body.show-arti .opt-arti { display: inline; }
+    body:not(.show-pinyin) .opt-arti .opt-sep { display: none; }
+    body:not(.show-pinyin) .opt-arti::before { content: "— "; }
 
     /* ── SUB-BREAKDOWN (ARTI PER KATA) ── */
     .sub-breakdown {
@@ -1958,7 +1966,7 @@
                 </div>
               </div>
             </div>
-            <div class="quiz-options" style="margin-top:0.55rem;font-size:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.9rem;font-family:'Poppins','Noto Sans SC',sans-serif;display:flex;gap:0.75rem;flex-wrap:wrap;">
               <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">A. 会 <em>(huì)</em> ✓</span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">B. 不 <em>(bù)</em></span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 不会 <em>(bú huì)</em></span>
@@ -1998,7 +2006,7 @@
                 </div>
               </div>
             </div>
-            <div class="quiz-options" style="margin-top:0.55rem;font-size:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.9rem;font-family:'Poppins','Noto Sans SC',sans-serif;display:flex;gap:0.75rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 星期三 <em>(xīngqīsān)</em></span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">B. 星期六 <em>(xīngqīliù)</em></span>
               <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">C. 星期日 <em>(xīngqīrì)</em> ✓</span>
@@ -2297,7 +2305,7 @@
                 </div>
               </div>
             </div>
-            <div class="quiz-options" style="margin-top:0.55rem;font-size:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.9rem;font-family:'Poppins','Noto Sans SC',sans-serif;display:flex;gap:0.75rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 上班 <em>(shàngbān)</em></span>
               <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">B. 下班 <em>(xiàbān)</em> ✓</span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">C. 休息 <em>(xiūxi)</em></span>
@@ -2342,7 +2350,7 @@
                 </div>
               </div>
             </div>
-            <div class="quiz-options" style="margin-top:0.55rem;font-size:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.55rem;font-size:0.9rem;font-family:'Poppins','Noto Sans SC',sans-serif;display:flex;gap:0.75rem;flex-wrap:wrap;">
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">A. 名字 <em>(míngzi)</em></span>
               <span style="background:var(--bg);padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--border);">B. 工作 <em>(gōngzuò)</em></span>
               <span style="background:#ecfdf5;color:var(--primary);font-weight:700;padding:0.25rem 0.65rem;border-radius:8px;border:1px solid var(--primary);">C. 电脑 <em>(diànnǎo)</em> ✓</span>
@@ -2647,21 +2655,21 @@
           <div style="font-size:0.78rem;font-weight:700;color:#6b21a8;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.45rem;">
             Pilihan Kata · 选项 (A–E):
           </div>
-                              <div class="selection-options" style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+          <div class="selection-options" style="display:flex;gap:0.6rem;flex-wrap:wrap;">
             <span class="opt-item" style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>A. <span class="opt-hz">菜</span></strong> <em>(<span class="opt-py">cài</span>): Sayuran / hidangan / masakan</em>
+              <strong>A. <span class="opt-hz">菜</span></strong> <em><span class="opt-py-wrap">(<span class="opt-py">cài</span>)</span><span class="opt-arti"><span class="opt-sep">: </span>Sayuran / hidangan / masakan</span></em>
             </span>
             <span class="opt-item" style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>B. <span class="opt-hz">喜欢</span></strong> <em>(<span class="opt-py">xǐhuan</span>): Suka</em>
+              <strong>B. <span class="opt-hz">喜欢</span></strong> <em><span class="opt-py-wrap">(<span class="opt-py">xǐhuan</span>)</span><span class="opt-arti"><span class="opt-sep">: </span>Suka</span></em>
             </span>
             <span class="opt-item" style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>C. <span class="opt-hz">6月22号</span></strong> <em>(<span class="opt-py">liù yuè èrshí'èr hào</span>): Tanggal 22 Juni</em>
+              <strong>C. <span class="opt-hz">6月22号</span></strong> <em><span class="opt-py-wrap">(<span class="opt-py">liù yuè èrshí'èr hào</span>)</span><span class="opt-arti"><span class="opt-sep">: </span>Tanggal 22 Juni</span></em>
             </span>
             <span class="opt-item" style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>D. <span class="opt-hz">新</span></strong> <em>(<span class="opt-py">xīn</span>): Baru</em>
+              <strong>D. <span class="opt-hz">新</span></strong> <em><span class="opt-py-wrap">(<span class="opt-py">xīn</span>)</span><span class="opt-arti"><span class="opt-sep">: </span>Baru</span></em>
             </span>
             <span class="opt-item" style="background:#fff;border:1.5px solid #d8b4fe;padding:0.35rem 0.75rem;border-radius:8px;font-size:0.88rem;color:#581c87;">
-              <strong>E. <span class="opt-hz">真</span></strong> <em>(<span class="opt-py">zhēn</span> / zhēn de): Benar / sungguh / sungguh-sungguh</em>
+              <strong>E. <span class="opt-hz">真</span></strong> <em><span class="opt-py-wrap">(<span class="opt-py">zhēn</span> / zhēn de)</span><span class="opt-arti"><span class="opt-sep">: </span>Benar / sungguh / sungguh-sungguh</span></em>
             </span>
           </div>
         </div>
@@ -3187,7 +3195,10 @@
       let res = colorizePair(hzForColor, rawPy, charColorMap);
 
       if (rawHz.includes('6') || rawHz.includes('22')) {
-        let hzFinal = res.hanzi.replace(/六/g, '6').replace(/二十二/g, '22');
+        let hzFinal = res.hanzi
+          .replace(/六/g, '6')
+          .replace(/(<span[^>]*>)二<\/span><span[^>]*>十<\/span><span[^>]*>二<\/span>/g, '$122</span>')
+          .replace(/二十二/g, '22');
         hzEl.innerHTML = hzFinal;
       } else {
         hzEl.innerHTML = res.hanzi;
