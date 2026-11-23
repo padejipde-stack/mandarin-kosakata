@@ -2854,20 +2854,18 @@
 
     // 6. Warnai Xiaoyu Classroom items
     document.querySelectorAll('.classroom-box').forEach(box => {
-      box.querySelectorAll('.item-content, .number-card').forEach(item => {
-        const hzs = item.querySelectorAll('.bubble-hanzi');
-        const pys = item.querySelectorAll('.bubble-pinyin');
-        hzs.forEach((hzEl, i) => {
-          const pyEl = pys[i];
-          if (!hzEl || !pyEl) return;
+      box.querySelectorAll('.bubble-hanzi').forEach(hzEl => {
+        const pyEl = hzEl.parentElement
+          ? Array.from(hzEl.parentElement.children).find(el => el.classList.contains('bubble-pinyin'))
+          : null;
+        if (!pyEl) return;
 
-          if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
-          if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
+        if (!hzEl.dataset.origText) hzEl.dataset.origText = hzEl.textContent;
+        if (!pyEl.dataset.origText) pyEl.dataset.origText = pyEl.textContent;
 
-          const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
-          hzEl.innerHTML = res.hanzi;
-          pyEl.innerHTML = res.pinyin;
-        });
+        const res = colorizePair(hzEl.dataset.origText, pyEl.dataset.origText, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = res.pinyin;
       });
     });
 
