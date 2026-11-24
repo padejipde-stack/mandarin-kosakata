@@ -525,6 +525,15 @@
     }
     .classroom-box .bubble-pinyin { display: none; }
     body.show-pinyin .classroom-box .bubble-pinyin { display: block; }
+    body:not(.show-pinyin) .badge-py,
+    body:not(.show-pinyin) .badge-sep,
+    body:not(.show-pinyin) .quiz-options em { display: none !important; }
+    body:not(.show-arti) .breakdown-id,
+    body:not(.show-arti) .grammar-banner-arti,
+    body:not(.show-arti) .badge-arti,
+    body:not(.show-arti) .badge-sep,
+    body:not(.show-arti) .quiz-options .opt-arti { display: none !important; }
+    body:not(.show-pinyin):not(.show-arti) .comp-quiz-badge em { display: none !important; }
     .classroom-box .bubble-hanzi  { color: var(--primary-dark); }
     body.show-color .classroom-box .bubble-hanzi { color: var(--text); }
     body.show-color .classroom-box .bubble-pinyin { color: var(--sub); }
@@ -1949,25 +1958,25 @@
           <span>📏 Rangkuman Kata Satuan Penting (量词 · Liàngcí):</span>
         </div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:0.65rem;">
-          <div style="background:#fff; border:1px solid #fed7aa; border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer;" onclick="playPinyin('gè')" title="Klik dengar 个">
-            <span style="font-weight:700; color:#ea580c; font-size:1.05rem;">个</span> <span style="font-weight:600; color:#7c2d12;">(gè)</span>
+          <div class="comp-quiz-badge" style="background:#fff; border:1px solid #fed7aa; border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer;" onclick="playPinyin('gè')" title="Klik dengar 个">
+            <span class="badge-hz" style="font-weight:700; color:#ea580c; font-size:1.05rem;">个</span> <span class="badge-py" style="font-weight:600; color:#7c2d12;">(gè)</span>
             <div style="font-size:0.75rem; color:#64748b; margin-top:2px;">Satuan umum/general (orang, benda, dsb.)</div>
           </div>
-          <div style="background:#fff; border:1px solid #fed7aa; border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer;" onclick="playPinyin('kǒu')" title="Klik dengar 口">
-            <span style="font-weight:700; color:#ea580c; font-size:1.05rem;">口</span> <span style="font-weight:600; color:#7c2d12;">(kǒu)</span>
+          <div class="comp-quiz-badge" style="background:#fff; border:1px solid #fed7aa; border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer;" onclick="playPinyin('kǒu')" title="Klik dengar 口">
+            <span class="badge-hz" style="font-weight:700; color:#ea580c; font-size:1.05rem;">口</span> <span class="badge-py" style="font-weight:600; color:#7c2d12;">(kǒu)</span>
             <div style="font-size:0.75rem; color:#64748b; margin-top:2px;">Satuan anggota keluarga (misal: 一家三口人)</div>
           </div>
-          <div style="background:#fff; border:1px solid #fed7aa; border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer;" onclick="playPinyin('běn')" title="Klik dengar 本">
-            <span style="font-weight:700; color:#ea580c; font-size:1.05rem;">本</span> <span style="font-weight:600; color:#7c2d12;">(běn)</span>
-            <div style="font-size:0.75rem; color:#64748b; margin-top:2px;">Satuan buku/jilid (misal: 一本书 yì běn shū)</div>
+          <div class="comp-quiz-badge" style="background:#fff; border:1px solid #fed7aa; border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer;" onclick="playPinyin('běn')" title="Klik dengar 本">
+            <span class="badge-hz" style="font-weight:700; color:#ea580c; font-size:1.05rem;">本</span> <span class="badge-py" style="font-weight:600; color:#7c2d12;">(běn)</span>
+            <div style="font-size:0.75rem; color:#64748b; margin-top:2px;">Satuan buku/jilid (misal: 一本书<span class="badge-py"> yì běn shū</span>)</div>
           </div>
-          <div style="background:#fff; border:1px solid #fed7aa; border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer;" onclick="playPinyin('zhī')" title="Klik dengar 只">
-            <span style="font-weight:700; color:#ea580c; font-size:1.05rem;">只</span> <span style="font-weight:600; color:#7c2d12;">(zhī)</span>
+          <div class="comp-quiz-badge" style="background:#fff; border:1px solid #fed7aa; border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer;" onclick="playPinyin('zhī')" title="Klik dengar 只">
+            <span class="badge-hz" style="font-weight:700; color:#ea580c; font-size:1.05rem;">只</span> <span class="badge-py" style="font-weight:600; color:#7c2d12;">(zhī)</span>
             <div style="font-size:0.75rem; color:#64748b; margin-top:2px;">Satuan hewan/binatang (misal: 一只小狗)</div>
           </div>
-          <div style="background:#fff; border:1px solid #fed7aa; border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer;" onclick="playPinyin('bēi')" title="Klik dengar 杯">
-            <span style="font-weight:700; color:#ea580c; font-size:1.05rem;">杯</span> <span style="font-weight:600; color:#7c2d12;">(bēi)</span>
-            <div style="font-size:0.75rem; color:#64748b; margin-top:2px;">Satuan cangkir/gelas: <strong>一杯茶 (yì bēi chá)</strong> = Segelas teh</div>
+          <div class="comp-quiz-badge" style="background:#fff; border:1px solid #fed7aa; border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer;" onclick="playPinyin('bēi')" title="Klik dengar 杯">
+            <span class="badge-hz" style="font-weight:700; color:#ea580c; font-size:1.05rem;">杯</span> <span class="badge-py" style="font-weight:600; color:#7c2d12;">(bēi)</span>
+            <div style="font-size:0.75rem; color:#64748b; margin-top:2px;">Satuan cangkir/gelas: <strong>一杯茶<span class="badge-py"> (yì bēi chá)</span></strong> = Segelas teh</div>
           </div>
         </div>
       </div>
@@ -2149,7 +2158,7 @@
 
     <div class="dialog-box">
       <div class="dialog-header">
-        <div class="dialog-title">📍 Teks 1: 李文 (Li Wen) dan 白家月 (Bai Jiayue / Nadia) merencanakan nonton film</div>
+        <div class="dialog-title">📍 Teks 1: 李文 (Li Wen) dan 白家月 (Bai Jiayue) merencanakan nonton film</div>
       </div>
       <div class="dialog-body">
 
@@ -2171,10 +2180,10 @@
 
         <!-- Line 2: Bai Jiayue -->
         <div class="dialog-line right">
-          <div class="avatar av-bai" title="白家月 / Nadia (Bái Jiāyuè)">白</div>
+          <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">白</div>
           <div class="bubble-wrap">
             <span class="speaker-name">
-              <span class="speaker-hanzi">白家月 (Nadia)</span>
+              <span class="speaker-hanzi">白家月</span>
               <span class="speaker-pinyin">Bái Jiāyuè</span>
             </span>
             <div class="bubble">
@@ -2203,10 +2212,10 @@
 
         <!-- Line 4: Bai Jiayue -->
         <div class="dialog-line right">
-          <div class="avatar av-bai" title="白家月 / Nadia (Bái Jiāyuè)">白</div>
+          <div class="avatar av-bai" title="白家月 (Bái Jiāyuè)">白</div>
           <div class="bubble-wrap">
             <span class="speaker-name">
-              <span class="speaker-hanzi">白家月 (Nadia)</span>
+              <span class="speaker-hanzi">白家月</span>
               <span class="speaker-pinyin">Bái Jiāyuè</span>
             </span>
             <div class="bubble">
@@ -2446,7 +2455,7 @@
                 <div style="background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border:1px solid var(--border);">
                   <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.4rem;">
                     <span style="font-size:0.8rem; font-weight:700; color:var(--primary); text-transform:uppercase;">📌 Percakapan ( 1 )</span>
-                    <span style="background:#ecfdf5; color:#059669; font-size:0.75rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:6px; border:1px solid #a7f3d0;">Kunci: 在哪儿 (zài nǎr)</span>
+                    <span class="comp-quiz-badge" style="background:#ecfdf5; color:#059669; font-size:0.75rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:6px; border:1px solid #a7f3d0;">Kunci: <span class="badge-hz">在哪儿</span><span class="badge-py"> (zài nǎr)</span></span>
                   </div>
 
                   <!-- Dialog Baris A & B -->
@@ -2480,7 +2489,7 @@
                 <div style="background:#f8fafc; border-radius:8px; padding:0.65rem 0.85rem; border:1px solid var(--border);">
                   <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.4rem;">
                     <span style="font-size:0.8rem; font-weight:700; color:var(--primary); text-transform:uppercase;">📌 Percakapan ( 2 )</span>
-                    <span style="background:#ecfdf5; color:#059669; font-size:0.75rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:6px; border:1px solid #a7f3d0;">Kunci: 现在 (xiànzài)</span>
+                    <span class="comp-quiz-badge" style="background:#ecfdf5; color:#059669; font-size:0.75rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:6px; border:1px solid #a7f3d0;">Kunci: <span class="badge-hz">现在</span><span class="badge-py"> (xiànzài)</span></span>
                   </div>
 
                   <!-- Dialog Baris A & B -->
@@ -2539,24 +2548,24 @@
           <div class="item-number" style="background:var(--primary); color:#fff;">1</div>
           <div class="item-content">
             <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700;">
-              <span style="color:#0284c7;font-weight:700;">椅</span><span style="color:#059669;font-weight:700;">子</span><span style="color:#7c3aed;font-weight:700;">上</span><span style="color:#0891b2;font-weight:700;">有</span>（<span style="color:#059669;font-weight:700;">一</span><span style="color:#4f46e5;font-weight:700;">本</span><span style="color:#ca8a04;font-weight:700;">书</span>）。
+              椅子上有（一本书）。
             </div>
-            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
-              <span style="color:#0284c7;font-weight:700;">Yǐ</span><span style="color:#059669;font-weight:700;">zi</span> <span style="color:#7c3aed;font-weight:700;">shang</span> <span style="color:#0891b2;font-weight:700;">yǒu</span> (<span style="color:#059669;font-weight:700;">yì</span> <span style="color:#4f46e5;font-weight:700;">běn</span> <span style="color:#ca8a04;font-weight:700;">shū</span>).
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
+              Yǐzi shang yǒu (yì běn shū).
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
               Arti: Di atas kursi ada satu buku.
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem; font-size:1.28rem; display:flex; gap:0.65rem; flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem; font-size:0.95rem; display:flex; gap:0.65rem; flex-wrap:wrap;">
               <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669;">
-                <strong>A. <span style="color:#059669;font-weight:700;">一</span><span style="color:#4f46e5;font-weight:700;">本</span><span style="color:#ca8a04;font-weight:700;">书</span></strong> <em>(<span style="color:#059669;font-weight:700;">yì</span> <span style="color:#4f46e5;font-weight:700;">běn</span> <span style="color:#ca8a04;font-weight:700;">shū</span>)</em> → Sebuah buku ✓
+                <strong>A. 一本书</strong> <em>(yì běn shū)</em><span class="opt-arti"> → Sebuah buku</span> ✓
               </span>
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                <strong>B. <span style="color:#0284c7;font-weight:700;">一</span><span style="color:#ea580c;font-weight:700;">只</span><span style="color:#ca8a04;font-weight:700;">猫</span></strong> <em>(<span style="color:#0284c7;font-weight:700;">yì</span> <span style="color:#ea580c;font-weight:700;">zhī</span> <span style="color:#ca8a04;font-weight:700;">māo</span>)</em> → Seekor kucing
+                <strong>B. 一只猫</strong> <em>(yì zhī māo)</em><span class="opt-arti"> → Seekor kucing</span>
               </span>
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                <strong>C. <span style="color:#7c3aed;font-weight:700;">一</span><span style="color:#0891b2;font-weight:700;">个</span><span style="color:#0284c7;font-weight:700;">手</span><span style="color:#059669;font-weight:700;">机</span></strong> <em>(<span style="color:#7c3aed;font-weight:700;">yí</span> <span style="color:#0891b2;font-weight:700;">gè</span> <span style="color:#0284c7;font-weight:700;">shǒu</span><span style="color:#059669;font-weight:700;">jī</span>)</em> → Sebuah ponsel/HP
+                <strong>C. 一个手机</strong> <em>(yí gè shǒujī)</em><span class="opt-arti"> → Sebuah ponsel/HP</span>
               </span>
             </div>
           </div>
@@ -2567,24 +2576,24 @@
           <div class="item-number" style="background:var(--primary); color:#fff;">2</div>
           <div class="item-content">
             <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700;">
-              <span style="color:#0284c7;font-weight:700;">这</span><span style="color:#059669;font-weight:700;">是</span><span style="color:#8e44ad;font-weight:700;">陈</span><span style="color:#7c3aed;font-weight:700;">天</span><span style="color:#0284c7;font-weight:700;">中</span><span style="color:#ca8a04;font-weight:700;">的</span>（<span style="color:#4f46e5;font-weight:700;">第</span><span style="color:#ea580c;font-weight:700;">二</span><span style="color:#4f46e5;font-weight:700;">本</span>）<span style="color:#059669;font-weight:700;">中</span><span style="color:#0891b2;font-weight:700;">文</span><span style="color:#ca8a04;font-weight:700;">书</span>。
+              这是陈天中的（第二本）中文书。
             </div>
-            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
-              <span style="color:#0284c7;font-weight:700;">Zhè</span> <span style="color:#059669;font-weight:700;">shì</span> <span style="color:#8e44ad;font-weight:700;">Chén</span> <span style="color:#7c3aed;font-weight:700;">Tiān</span><span style="color:#0284c7;font-weight:700;">zhōng</span> <span style="color:#ca8a04;font-weight:700;">de</span> (<span style="color:#4f46e5;font-weight:700;">dì</span>-<span style="color:#ea580c;font-weight:700;">èr</span> <span style="color:#4f46e5;font-weight:700;">běn</span>) <span style="color:#059669;font-weight:700;">Zhōng</span><span style="color:#0891b2;font-weight:700;">wén</span> <span style="color:#ca8a04;font-weight:700;">shū</span>.
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
+              Zhè shì Chén Tiānzhōng de (dì-èr běn) Zhōngwén shū.
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
               Arti: Ini adalah buku bahasa Mandarin ke-2 milik Chen Tianzhong.
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem; font-size:1.28rem; display:flex; gap:0.65rem; flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem; font-size:0.95rem; display:flex; gap:0.65rem; flex-wrap:wrap;">
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                <strong>A. <span style="color:#4f46e5;font-weight:700;">第</span><span style="color:#059669;font-weight:700;">一</span><span style="color:#4f46e5;font-weight:700;">本</span></strong> <em>(<span style="color:#4f46e5;font-weight:700;">dì</span>-<span style="color:#059669;font-weight:700;">yī</span> <span style="color:#4f46e5;font-weight:700;">běn</span>)</em> → Buku pertama
+                <strong>A. 第一本</strong> <em>(dì-yī běn)</em><span class="opt-arti"> → Buku pertama</span>
               </span>
               <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669;">
-                <strong>B. <span style="color:#4f46e5;font-weight:700;">第</span><span style="color:#ea580c;font-weight:700;">二</span><span style="color:#4f46e5;font-weight:700;">本</span></strong> <em>(<span style="color:#4f46e5;font-weight:700;">dì</span>-<span style="color:#ea580c;font-weight:700;">èr</span> <span style="color:#4f46e5;font-weight:700;">běn</span>)</em> → Buku kedua ✓
+                <strong>B. 第二本</strong> <em>(dì-èr běn)</em><span class="opt-arti"> → Buku kedua</span> ✓
               </span>
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                <strong>C. <span style="color:#4f46e5;font-weight:700;">第</span><span style="color:#0284c7;font-weight:700;">三</span><span style="color:#4f46e5;font-weight:700;">本</span></strong> <em>(<span style="color:#4f46e5;font-weight:700;">dì</span>-<span style="color:#0284c7;font-weight:700;">sān</span> <span style="color:#4f46e5;font-weight:700;">běn</span>)</em> → Buku ketiga
+                <strong>C. 第三本</strong> <em>(dì-sān běn)</em><span class="opt-arti"> → Buku ketiga</span>
               </span>
             </div>
           </div>
@@ -2611,6 +2620,9 @@
           </div>
           <div style="font-size:0.8rem; color:#9f1239; line-height:1.45;">
             <em>When used as a positional word, “上” is pronounced with a neutral tone when it follows a noun, as in “椅子上” and “书上”. However, when indicating a higher position, or precedence in sequence or time, as in “上方” and “上半年”, it is pronounced with the fourth tone.</em>
+          </div>
+          <div style="font-size:0.8rem; color:#881337; line-height:1.45; margin-top:0.35rem;">
+            <strong>Terjemahan:</strong> Ketika digunakan sebagai kata penunjuk posisi, “上” dibaca dengan nada ringan/netral jika mengikuti kata benda, seperti pada “椅子上” dan “书上”. Namun, ketika menunjukkan posisi yang lebih tinggi, atau urutan maupun waktu yang lebih awal, seperti pada “上方” dan “上半年”, huruf ini dibaca dengan nada ke-4.
           </div>
           <div style="background:#ffffff; border-radius:8px; padding:0.5rem 0.75rem; margin-top:0.45rem; border:1px solid #fecdd3; font-size:0.8rem; color:#475569;">
             📌 <strong>Penjelasan Bahasa Indonesia:</strong><br>
@@ -2707,8 +2719,8 @@
           </div>
           <div class="word-card">
             <div class="word-char">上</div>
-            <div class="word-pinyin">shang</div>
-            <div class="word-arti">di atas (on, above)</div>
+            <div class="word-pinyin">shang / shàng</div>
+            <div class="word-arti">digunakan setelah kata benda untuk menunjukkan posisi / posisi lebih tinggi (di atas)</div>
           </div>
           <div class="word-card">
             <div class="word-char">下</div>
@@ -2942,22 +2954,22 @@
             <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700;">
               杨同乐唱歌（ 很好听 ）。
             </div>
-            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
               Yáng Tónglè chàng gē ( hěn hǎotīng ).
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
               Arti: Nyanyian Yang Tongle (sangat merdu / enak didengar).
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem; font-size:1.28rem; display:flex; gap:0.65rem; flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem; font-size:0.95rem; display:flex; gap:0.65rem; flex-wrap:wrap;">
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                <strong>A. 不太好</strong> <em>(bú tài hǎo)</em> → Kurang bagus
+                <strong>A. 不太好</strong> <em>(bú tài hǎo)</em><span class="opt-arti"> → Kurang bagus</span>
               </span>
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                <strong>B. 不好听</strong> <em>(bù hǎotīng)</em> → Tidak enak didengar
+                <strong>B. 不好听</strong> <em>(bù hǎotīng)</em><span class="opt-arti"> → Tidak enak didengar</span>
               </span>
               <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669;">
-                <strong>C. 很好听</strong> <em>(hěn hǎotīng)</em> → Sangat merdu / enak ✓
+                <strong>C. 很好听</strong> <em>(hěn hǎotīng)</em><span class="opt-arti"> → Sangat merdu / enak</span> ✓
               </span>
             </div>
 
@@ -2975,22 +2987,22 @@
             <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700;">
               王一雪家有一只（ 小狗 ）。
             </div>
-            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; display:inline-block; margin-top:0.15rem;">
+            <div class="bubble-pinyin" style="font-size:0.85rem; font-weight:600; margin-top:0.15rem;">
               Wáng Yīxuě jiā yǒu yì zhī ( xiǎogǒu ).
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:var(--text); margin-top:0.2rem;">
               Arti: Di rumah Wang Yixue ada seekor (anak anjing).
             </div>
             
-            <div class="quiz-options" style="margin-top:0.6rem; font-size:1.28rem; display:flex; gap:0.65rem; flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem; font-size:0.95rem; display:flex; gap:0.65rem; flex-wrap:wrap;">
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                <strong>A. 小猫</strong> <em>(xiǎomāo)</em> → Kucing kecil
+                <strong>A. 小猫</strong> <em>(xiǎomāo)</em><span class="opt-arti"> → Kucing kecil</span>
               </span>
               <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669;">
-                <strong>B. 小狗</strong> <em>(xiǎogǒu)</em> → Anjing kecil ✓
+                <strong>B. 小狗</strong> <em>(xiǎogǒu)</em><span class="opt-arti"> → Anjing kecil</span> ✓
               </span>
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border);">
-                <strong>C. 大狗</strong> <em>(dàgǒu)</em> → Anjing besar
+                <strong>C. 大狗</strong> <em>(dàgǒu)</em><span class="opt-arti"> → Anjing besar</span>
               </span>
             </div>
 
@@ -3294,11 +3306,11 @@
         <div class="comp-quiz-options">
           <div class="comp-quiz-tag">Pilihan Kata · 选项 (A–E):</div>
           <div class="comp-quiz-badges">
-            <span class="comp-quiz-badge"><strong>A. <span class="badge-hz" style="color:#059669;font-weight:700;">是</span></strong> <em>(<span class="badge-py" style="color:#059669;font-weight:700;">shì</span> / adalah)</em></span>
-            <span class="comp-quiz-badge"><strong>B. <span class="badge-hz"><span style="color:#ca8a04;font-weight:700;">好</span><span style="color:#2563eb;font-weight:700;">听</span></span></strong> <em>(<span class="badge-py"><span style="color:#ca8a04;font-weight:700;">hǎo</span><span style="color:#2563eb;font-weight:700;">tīng</span></span> / enak didengar, merdu)</em></span>
-            <span class="comp-quiz-badge"><strong>C. <span class="badge-hz"><span style="color:#ea580c;font-weight:700;">在</span><span style="color:#7c3aed;font-weight:700;">学</span><span style="color:#0891b2;font-weight:700;">校</span></span></strong> <em>(<span class="badge-py"><span style="color:#ea580c;font-weight:700;">zài</span> <span style="color:#7c3aed;font-weight:700;">xué</span><span style="color:#0891b2;font-weight:700;">xiào</span></span> / di sekolah)</em></span>
-            <span class="comp-quiz-badge"><strong>D. <span class="badge-hz"><span style="color:#16a34a;font-weight:700;">今</span><span style="color:#2563eb;font-weight:700;">天</span><span style="color:#d97706;font-weight:700;">上</span><span style="color:#c026d3;font-weight:700;">午</span></span></strong> <em>(<span class="badge-py"><span style="color:#16a34a;font-weight:700;">jīn</span><span style="color:#2563eb;font-weight:700;">tiān</span> <span style="color:#d97706;font-weight:700;">shàng</span><span style="color:#c026d3;font-weight:700;">wǔ</span></span> / pagi hari ini)</em></span>
-            <span class="comp-quiz-badge"><strong>E. <span class="badge-hz"><span style="color:#e11d48;font-weight:700;">椅</span><span style="color:#0284c7;font-weight:700;">子</span></span></strong> <em>(<span class="badge-py"><span style="color:#e11d48;font-weight:700;">yǐ</span><span style="color:#0284c7;font-weight:700;">zi</span></span> / kursi)</em></span>
+            <span class="comp-quiz-badge"><strong>A. <span class="badge-hz">是</span></strong> <em>(<span class="badge-py">shì</span><span class="badge-sep"> / </span><span class="badge-arti">adalah</span>)</em></span>
+            <span class="comp-quiz-badge"><strong>B. <span class="badge-hz">好听</span></strong> <em>(<span class="badge-py">hǎotīng</span><span class="badge-sep"> / </span><span class="badge-arti">enak didengar, merdu</span>)</em></span>
+            <span class="comp-quiz-badge"><strong>C. <span class="badge-hz">在学校</span></strong> <em>(<span class="badge-py">zài xuéxiào</span><span class="badge-sep"> / </span><span class="badge-arti">di sekolah</span>)</em></span>
+            <span class="comp-quiz-badge"><strong>D. <span class="badge-hz">今天上午</span></strong> <em>(<span class="badge-py">jīntiān shàngwǔ</span><span class="badge-sep"> / </span><span class="badge-arti">pagi hari ini</span>)</em></span>
+            <span class="comp-quiz-badge"><strong>E. <span class="badge-hz">椅子</span></strong> <em>(<span class="badge-py">yǐzi</span><span class="badge-sep"> / </span><span class="badge-arti">kursi</span>)</em></span>
           </div>
         </div>
 
@@ -3348,7 +3360,10 @@
           <div class="item-content">
             <div style="display:flex; flex-direction:column; gap:0.4rem;">
               <div style="display:flex; gap:0.4rem; align-items:flex-start;">
-                <strong style="color:var(--text); font-size:0.88rem; flex-shrink:0; margin-top:0.15rem;">王一雪：</strong>
+                <div style="flex-shrink:0;">
+                  <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">Wáng Yīxuě:</div>
+                  <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">王一雪：</div>
+                </div>
                 <div style="flex:1;">
                   <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
                     Nǐ chàng gē hěn ( hǎotīng ).
@@ -3359,7 +3374,10 @@
                 </div>
               </div>
               <div style="display:flex; gap:0.4rem; align-items:flex-start;">
-                <strong style="color:var(--text); font-size:0.88rem; flex-shrink:0; margin-top:0.15rem;">杨同乐：</strong>
+                <div style="flex-shrink:0;">
+                  <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">Yáng Tónglè:</div>
+                  <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">杨同乐：</div>
+                </div>
                 <div style="flex:1;">
                   <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
                     Xièxie!
@@ -3386,7 +3404,10 @@
           <div class="item-content">
             <div style="display:flex; flex-direction:column; gap:0.4rem;">
               <div style="display:flex; gap:0.4rem; align-items:flex-start;">
-                <strong style="color:var(--text); font-size:0.88rem; flex-shrink:0; margin-top:0.15rem;">陈天中：</strong>
+                <div style="flex-shrink:0;">
+                  <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">Chén Tiānzhōng:</div>
+                  <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">陈天中：</div>
+                </div>
                 <div style="flex:1;">
                   <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
                     Nǐ xiàwǔ qù nǎr?
@@ -3397,7 +3418,10 @@
                 </div>
               </div>
               <div style="display:flex; gap:0.4rem; align-items:flex-start;">
-                <strong style="color:var(--text); font-size:0.88rem; flex-shrink:0; margin-top:0.15rem;">安　妮：</strong>
+                <div style="flex-shrink:0;">
+                  <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">Ān Nī:</div>
+                  <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; color:var(--primary-dark);">安　妮：</div>
+                </div>
                 <div style="flex:1;">
                   <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600;">
                     Wǒ xiàwǔ hái ( zài xuéxiào ) shàngkè.
@@ -3736,6 +3760,43 @@
         pyEl.innerHTML = res.pinyin;
       });
     });
+
+    // 6. Quiz Badges & Inline Speakers (.comp-quiz-badge, .speaker-inline)
+    document.querySelectorAll('.comp-quiz-badge, .speaker-inline').forEach(badge => {
+      const hzEl = badge.querySelector('.badge-hz');
+      const pyEl = badge.querySelector('.badge-py');
+      if (!hzEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (pyEl) {
+        if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+        const hadParens = /^\s*\(/.test(pyEl.dataset.origHtml) && /\)\s*$/.test(pyEl.dataset.origHtml);
+        const pyClean = pyEl.dataset.origHtml.replace(/^\s*\(/, '').replace(/\)\s*$/, '');
+        const res = colorizePair(hzEl.dataset.origHtml, pyClean, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+        pyEl.innerHTML = hadParens ? ' (' + res.pinyin + ')' : res.pinyin;
+      } else if (badge.dataset.py) {
+        const res = colorizePair(hzEl.dataset.origHtml, badge.dataset.py, charColorMap);
+        hzEl.innerHTML = res.hanzi;
+      }
+    });
+
+    // 7. Quiz Options (.quiz-options span)
+    document.querySelectorAll('.quiz-options span').forEach(opt => {
+      const strong = opt.querySelector('strong');
+      const em = opt.querySelector('em');
+      if (!strong || !em) return;
+      if (!strong.dataset.origHtml) strong.dataset.origHtml = strong.innerHTML;
+      if (!em.dataset.origHtml) em.dataset.origHtml = em.innerHTML;
+      const sm = strong.dataset.origHtml.match(/^([A-Z][.:]\s*)([\s\S]+)$/u);
+      if (sm) {
+        const prefix = sm[1];
+        const hzPart = sm[2].replace(/<[^>]+>/g, '').trim();
+        const pyClean = em.dataset.origHtml.replace(/<[^>]+>/g, '').trim().replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        const res = colorizePair(hzPart, pyClean, charColorMap);
+        strong.innerHTML = prefix + res.hanzi;
+        em.innerHTML = '(' + res.pinyin + ')';
+      }
+    });
   }
 
   function removeColors() {
@@ -3748,6 +3809,12 @@
       }
       el.style.color = '';
       el.style.fontWeight = '';
+    });
+    document.querySelectorAll('.quiz-options span').forEach(opt => {
+      const strong = opt.querySelector('strong');
+      const em = opt.querySelector('em');
+      if (strong && strong.dataset.origHtml) strong.innerHTML = strong.dataset.origHtml;
+      if (em && em.dataset.origHtml) em.innerHTML = em.dataset.origHtml;
     });
   }
 

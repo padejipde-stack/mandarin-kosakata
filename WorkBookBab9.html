@@ -496,6 +496,10 @@
     body:not(.show-pinyin) .match-py,
     body:not(.show-pinyin) .bubble-pinyin,
     body:not(.show-pinyin) .opt-py,
+    body:not(.show-pinyin) .reading-pic-py,
+    body:not(.show-pinyin) .vocab-py,
+    body:not(.show-pinyin) .pair-box-py,
+    body:not(.show-pinyin) .cloze-py,
     body:not(.show-pinyin) .dialog-py { display: none !important; }
 
     body:not(.show-arti) .contrast-arti,
@@ -504,10 +508,13 @@
     body:not(.show-arti) .match-scene-desc,
     body:not(.show-arti) .bubble-arti,
     body:not(.show-arti) .opt-trans,
+    body:not(.show-arti) .reading-pic-arti,
+    body:not(.show-arti) .pair-box-arti,
+    body:not(.show-arti) .cloze-arti,
     body:not(.show-arti) .dialog-arti { display: none !important; }
 
-    body:not(.show-vocab) .contrast-table-container,
     body:not(.show-vocab) .match-badge,
+    body:not(.show-vocab) .vocab-pills-list,
     body:not(.show-vocab) .matching-explanation,
     body:not(.show-vocab) .soal-pembahasan,
     body:not(.show-vocab) .quiz-check,
@@ -2355,7 +2362,7 @@
           </div>
 
           <div style="background:#f8fafc; border-bottom:1px solid #e2e8f0; padding:0.6rem 0.85rem; font-size:0.84rem; color:#334155;">
-            <strong>Pertanyaan Audio:</strong> <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; color:#0f766e; font-size:1.05rem;">今天天气怎么样？</span> <span style="color:#64748b; font-family:var(--font-pinyin); font-weight:600;">(Jīntiān tiānqì zěnmeyàng?)</span> = <em>Bagaimana cuaca hari ini?</em>
+            <strong>Pertanyaan Audio:</strong> <span class="pair-answer-label"><span class="opt-hz" style="font-family:'Noto Sans SC',sans-serif; font-weight:700; color:#0f766e; font-size:1.05rem;">今天天气怎么样？</span> <span class="opt-py" style="color:#64748b; font-family:var(--font-pinyin); font-weight:600;">(Jīntiān tiānqì zěnmeyàng?)</span> <span class="opt-trans">= <em>Bagaimana cuaca hari ini?</em></span></span>
           </div>
 
           <div class="matching-grid">
@@ -2408,7 +2415,7 @@
           </div>
 
           <div style="background:#f0fdfa; border-bottom:1px solid #ccfbf1; padding:0.6rem 0.85rem; font-size:0.84rem; color:#0f766e;">
-            <strong>Pertanyaan Audio Soal 4:</strong> <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem;">那是谁的手机？</span> <span style="font-family:var(--font-pinyin); font-weight:600;">(Nà shì shéi de shǒujī?)</span> = <em>Ponsel itu milik siapa?</em>
+            <strong>Pertanyaan Audio Soal 4:</strong> <span class="pair-answer-label"><span class="opt-hz" style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem;">那是谁的手机？</span> <span class="opt-py" style="font-family:var(--font-pinyin); font-weight:600;">(Nà shì shéi de shǒujī?)</span> <span class="opt-trans">= <em>Ponsel itu milik siapa?</em></span></span>
           </div>
 
           <div class="matching-grid">
@@ -2461,7 +2468,7 @@
           </div>
 
           <div style="background:#f0fdfa; border-bottom:1px solid #ccfbf1; padding:0.6rem 0.85rem; font-size:0.84rem; color:#0f766e;">
-            <strong>Pertanyaan Audio Soal 5:</strong> <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem;">你星期日晚上做什么？</span> <span style="font-family:var(--font-pinyin); font-weight:600;">(Nǐ xīngqīrì wǎnshang zuò shénme?)</span> = <em>Kamu hari Minggu malam melakukan apa?</em>
+            <strong>Pertanyaan Audio Soal 5:</strong> <span class="pair-answer-label"><span class="opt-hz" style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.05rem;">你星期日晚上做什么？</span> <span class="opt-py" style="font-family:var(--font-pinyin); font-weight:600;">(Nǐ xīngqīrì wǎnshang zuò shénme?)</span> <span class="opt-trans">= <em>Kamu hari Minggu malam melakukan apa?</em></span></span>
           </div>
 
           <div class="matching-grid">
@@ -2556,38 +2563,50 @@
         <div style="font-size:0.82rem; font-weight:700; color:#0f766e; text-transform:uppercase; margin-bottom:0.45rem;">
           Pilihan Gambar Acuan (A, B, C, D):
         </div>
-        <div class="reading-pic-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); max-width: 720px; margin: 0 auto 1.15rem; gap: 0.85rem;">
+        <div class="reading-pic-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); max-width: 640px; margin: 0 auto 1.15rem; gap: 0.85rem;">
           
           <!-- Gambar A -->
           <div class="reading-pic-card" style="border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
             <span class="reading-pic-letter" style="background:#64748b; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar A</span>
             <img src="images/wb9-l3-a.jpg" alt="Dua orang berjas berjabat tangan" style="width:100%; height:115px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
-            <div style="font-weight:700; font-size:0.85rem; color:#1e293b;">握手 / 认识</div>
-            <div style="font-size:0.75rem; color:#64748b;">(Berjabat tangan / Kenal)</div>
+            <div style="font-weight:700; font-size:0.85rem; color:#1e293b;">
+              <span class="reading-pic-hz">握手 / 认识</span>
+              <span class="reading-pic-py" style="display:block; font-size:0.78rem; font-weight:600; color:#64748b;">(wòshǒu / rènshi)</span>
+            </div>
+            <div class="reading-pic-arti" style="font-size:0.75rem; color:#64748b;">(Berjabat tangan / Kenal)</div>
           </div>
 
           <!-- Gambar B -->
           <div class="reading-pic-card" style="border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
             <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar B</span>
             <img src="images/wb9-l3-b.jpg" alt="Siswa belajar membaca buku di perpustakaan sekolah" style="width:100%; height:115px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
-            <div style="font-weight:700; font-size:0.85rem; color:#0f766e;">在学校学习 / 看书</div>
-            <div style="font-size:0.75rem; color:#64748b;">(Belajar di sekolah / Membaca)</div>
+            <div style="font-weight:700; font-size:0.85rem; color:#0f766e;">
+              <span class="reading-pic-hz">在学校学习 / 看书</span>
+              <span class="reading-pic-py" style="display:block; font-size:0.78rem; font-weight:600; color:#0d9488;">(zài xuéxiào xuéxí / kàn shū)</span>
+            </div>
+            <div class="reading-pic-arti" style="font-size:0.75rem; color:#64748b;">(Belajar di sekolah / Membaca)</div>
           </div>
 
           <!-- Gambar C -->
           <div class="reading-pic-card" style="border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
             <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar C</span>
             <img src="images/wb9-l3-c.jpg" alt="Ayah dan anak perempuan belanja buah di supermarket" style="width:100%; height:115px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
-            <div style="font-weight:700; font-size:0.85rem; color:#0f766e;">去超市买东西</div>
-            <div style="font-size:0.75rem; color:#64748b;">(Pergi belanja di supermarket)</div>
+            <div style="font-weight:700; font-size:0.85rem; color:#0f766e;">
+              <span class="reading-pic-hz">去超市买东西</span>
+              <span class="reading-pic-py" style="display:block; font-size:0.78rem; font-weight:600; color:#0d9488;">(qù chāoshì mǎi dōngxi)</span>
+            </div>
+            <div class="reading-pic-arti" style="font-size:0.75rem; color:#64748b;">(Pergi belanja di supermarket)</div>
           </div>
 
           <!-- Gambar D -->
           <div class="reading-pic-card" style="border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
             <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar D</span>
             <img src="images/wb9-l3-d.jpg" alt="Anak anjing putih kecil duduk di luar pintu kamar" style="width:100%; height:115px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
-            <div style="font-weight:700; font-size:0.85rem; color:#0f766e;">房间外边的小狗</div>
-            <div style="font-size:0.75rem; color:#64748b;">(Anjing kecil di luar kamar)</div>
+            <div style="font-weight:700; font-size:0.85rem; color:#0f766e;">
+              <span class="reading-pic-hz">房间外边的小狗</span>
+              <span class="reading-pic-py" style="display:block; font-size:0.78rem; font-weight:600; color:#0d9488;">(fángjiān wàibian de xiǎogǒu)</span>
+            </div>
+            <div class="reading-pic-arti" style="font-size:0.75rem; color:#64748b;">(Anjing kecil di luar kamar)</div>
           </div>
 
         </div>
@@ -2987,16 +3006,17 @@
           <span>🖼️ Pilihan Gambar Tersedia (A — D):</span>
         </div>
 
-        <div class="reading-pic-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); max-width: 720px; margin: 0 auto 1.25rem; gap: 0.85rem;">
+        <div class="reading-pic-grid" style="display:grid; grid-template-columns: repeat(2, 1fr); max-width: 640px; margin: 0 auto 1.25rem; gap: 0.85rem;">
           
           <!-- Gambar A: Membaca Buku -->
           <div class="reading-pic-card" onclick="playWord('我很喜欢这本书', 'Wǒ hěn xǐhuan zhè běn shū')" title="Klik dengar audio: 我很喜欢这本书" style="cursor:pointer; border:1.5px solid #e2e8f0; border-radius:10px; padding:0.5rem; text-align:center; background:#ffffff;">
             <span class="reading-pic-letter" style="background:#16a34a; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar A [Contoh]</span>
             <img src="images/wb9-r1-a.jpg" alt="Wanita membaca buku" style="width:100%; height:110px; object-fit:contain; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1; background:#f8fafc;">
             <div class="reading-pic-label" style="font-size: 0.88rem; font-weight:700; color:#1e293b;">
-              看书 / 喜欢这本书
+              <span class="reading-pic-hz">看书 / 喜欢这本书</span>
+              <span class="reading-pic-py" style="display:block; font-size:0.78rem; font-weight:600; color:#16a34a;">(kàn shū / xǐhuan zhè běn shū)</span>
             </div>
-            <div style="font-size: 0.75rem; color: #64748b;">Wanita membaca buku</div>
+            <div class="reading-pic-arti" style="font-size: 0.75rem; color: #64748b;">Wanita membaca buku</div>
           </div>
 
           <!-- Gambar B: Memegang Laptop (Komputer) -->
@@ -3004,9 +3024,10 @@
             <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar B</span>
             <img src="images/wb9-r1-b.jpg" alt="Wanita memegang laptop komputer" style="width:100%; height:110px; object-fit:contain; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1; background:#f8fafc;">
             <div class="reading-pic-label" style="font-size: 0.88rem; font-weight:700; color:#0f766e;">
-              电脑 / 第三个电脑
+              <span class="reading-pic-hz">电脑 / 第三个电脑</span>
+              <span class="reading-pic-py" style="display:block; font-size:0.78rem; font-weight:600; color:#0d9488;">(diànnǎo / dì-sān gè diànnǎo)</span>
             </div>
-            <div style="font-size: 0.75rem; color: #64748b;">Wanita memegang laptop (komputer)</div>
+            <div class="reading-pic-arti" style="font-size: 0.75rem; color: #64748b;">Wanita memegang laptop (komputer)</div>
           </div>
 
           <!-- Gambar C: Anak Kucing di Luar Pintu -->
@@ -3014,9 +3035,10 @@
             <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar C</span>
             <img src="images/wb9-r1-c.jpg" alt="Seekor anak kucing di luar pintu" style="width:100%; height:110px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
             <div class="reading-pic-label" style="font-size: 0.88rem; font-weight:700; color:#0f766e;">
-              房间外有一只小猫
+              <span class="reading-pic-hz">房间外有一只小猫</span>
+              <span class="reading-pic-py" style="display:block; font-size:0.78rem; font-weight:600; color:#0d9488;">(fángjiān wài yǒu yì zhī xiǎomāo)</span>
             </div>
-            <div style="font-size: 0.75rem; color: #64748b;">Anak kucing di luar ruangan</div>
+            <div class="reading-pic-arti" style="font-size: 0.75rem; color: #64748b;">Anak kucing di luar ruangan</div>
           </div>
 
           <!-- Gambar D: Adik Perempuan Bermain dengan Anjing di Rumah -->
@@ -3024,9 +3046,10 @@
             <span class="reading-pic-letter" style="background:#0d9488; color:#fff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;">Gambar D</span>
             <img src="images/wb9-r1-d.jpg" alt="Anak perempuan kecil dan anjing bermain di sofa rumah" style="width:100%; height:110px; object-fit:cover; border-radius:6px; margin:0.35rem 0; border:1px solid #cbd5e1;">
             <div class="reading-pic-label" style="font-size: 0.88rem; font-weight:700; color:#0f766e;">
-              妹妹和小狗在家里玩
+              <span class="reading-pic-hz">妹妹和小狗在家里玩</span>
+              <span class="reading-pic-py" style="display:block; font-size:0.78rem; font-weight:600; color:#0d9488;">(mèimei hé xiǎogǒu zài jiā lǐ wán)</span>
             </div>
-            <div style="font-size: 0.75rem; color: #64748b;">Adik perempuan bermain bersama anjing di rumah</div>
+            <div class="reading-pic-arti" style="font-size: 0.75rem; color: #64748b;">Adik perempuan bermain bersama anjing di rumah</div>
           </div>
 
         </div>
@@ -3289,7 +3312,7 @@
         <div style="background:#ffffff; border:1px solid #bbf7d0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
             <span style="background:#16a34a; color:#fff; font-size:0.78rem; font-weight:800; padding:0.18rem 0.6rem; border-radius:6px;">Jawaban: D ✓</span>
-            <span style="font-weight:700; font-size:0.84rem; color:#15803d;">D: 好的，谢谢！(Baik, terima kasih!)</span>
+            <span class="pair-answer-label" style="font-weight:700; font-size:0.84rem; color:#15803d;">D: <span class="opt-hz">好的，谢谢！</span> <span class="opt-py" style="color:#16a34a;">(Hǎo de, xièxie!)</span> <span class="opt-trans">(Baik, terima kasih!)</span></span>
           </div>
           <div class="soal-pembahasan" style="font-size:0.84rem; color:#475569; line-height:1.55; margin-top:0.25rem;">
             💡 <strong>Penjelasan Contoh:</strong> Pertanyaan menawarkan minuman: <em>"你喝水吗？" (Mau minum air?)</em>. Jawaban sopan dan lazim dalam percakapan sehari-hari saat ditawari minuman adalah menerima dengan ramah: <strong>D (好的，谢谢！ · Hǎo de, xièxie! = Baik, terima kasih!)</strong>.
@@ -3326,7 +3349,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Jawaban Tepat: C ✓</span>
-              <span style="font-weight:700; font-size:0.86rem; color:#0f766e;">C: 一只小猫。 (Seekor anak kucing)</span>
+              <span class="pair-answer-label" style="font-weight:700; font-size:0.86rem; color:#0f766e;">C: <span class="opt-hz">一只小猫。</span> <span class="opt-py" style="color:#0d9488;">(Yì zhī xiǎomāo.)</span> <span class="opt-trans">(Seekor anak kucing)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
               💡 <strong>Pembahasan Soal 14:</strong> Pertanyaan menggunakan kata tanya benda/makhluk <strong>有什么 (yǒu shénme = ada apa?)</strong> di atas meja (桌子上). Jawaban yang menyebutkan wujud benda atau binatang adalah <strong>C. 一只小猫 (Yì zhī xiǎomāo = seekor anak kucing)</strong>.
@@ -3370,7 +3393,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Jawaban Tepat: A ✓</span>
-              <span style="font-weight:700; font-size:0.86rem; color:#0f766e;">A: 在家里。 (Di dalam rumah)</span>
+              <span class="pair-answer-label" style="font-weight:700; font-size:0.86rem; color:#0f766e;">A: <span class="opt-hz">在家里。</span> <span class="opt-py" style="color:#0d9488;">(Zài jiā li.)</span> <span class="opt-trans">(Di dalam rumah)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
               💡 <strong>Pembahasan Soal 15:</strong> Pertanyaan menanyakan tempat/lokasi menggunakan kata tanya <strong>在哪儿 (zài nǎr = ada di mana?)</strong>. Jawaban yang menunjukkan keterangan tempat adalah <strong>A. 在家里 (Zài jiā li = di dalam rumah)</strong>.
@@ -3413,7 +3436,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span class="match-pic-badge" style="background:#f0fdf4; border-color:#86efac; color:#15803d; font-size:0.82rem; font-weight:800; padding:0.3rem 0.7rem; border-radius:6px;">Jawaban Tepat: B ✓</span>
-              <span style="font-weight:700; font-size:0.86rem; color:#0f766e;">B: 我女朋友。 (Pacar perempuan saya)</span>
+              <span class="pair-answer-label" style="font-weight:700; font-size:0.86rem; color:#0f766e;">B: <span class="opt-hz">我女朋友。</span> <span class="opt-py" style="color:#0d9488;">(Wǒ nǚpéngyou.)</span> <span class="opt-trans">(Pacar perempuan saya)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.83rem; color:#475569; line-height:1.55;">
               💡 <strong>Pembahasan Soal 16:</strong> Pertanyaan menggunakan kata tanya orang <strong>和谁 (hé shéi = bersama siapa?)</strong>. Jawaban yang menyebutkan orang / pasangan adalah <strong>B. 我女朋友 (Wǒ nǚpéngyou = pacar perempuan saya)</strong>.
@@ -3530,7 +3553,7 @@
             <span style="background:#16a34a; color:#fff; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:6px; letter-spacing:0.5px;">CONTOH</span>
             <span style="font-weight:700; font-size:0.95rem; color:#15803d;">例如 (Lìrú)</span>
           </div>
-          <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci Contoh: [ C ✓ ] (名字 / míngzi)</span>
+          <span class="pair-answer-label" style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci Contoh: [ C ✓ ] (<span class="opt-hz">名字</span><span class="opt-py"> / míngzi</span>)</span>
         </div>
 
         <!-- Kalimat Soal Contoh -->
@@ -3559,7 +3582,7 @@
               <span class="matching-num" style="background:#0d9488;">17</span>
               <span style="font-weight:700; font-size:0.95rem; color:#1e293b;">Soal No. 17: Kegiatan Pagi di Sekolah (上课)</span>
             </div>
-            <span style="font-size:0.82rem; color:#15803d; font-weight:700;">Kunci: [ B ✓ ] (上课 / shàngkè)</span>
+            <span class="pair-answer-label" style="font-size:0.82rem; color:#15803d; font-weight:700;">Kunci: [ B ✓ ] (<span class="opt-hz">上课</span><span class="opt-py"> / shàngkè</span>)</span>
           </div>
 
           <!-- Kalimat Soal 17 -->
@@ -3602,7 +3625,7 @@
               <span class="matching-num" style="background:#0d9488;">18</span>
               <span style="font-weight:700; font-size:0.95rem; color:#1e293b;">Soal No. 18: Menjawab Pertanyaan Waktu (几点 -> 2:00)</span>
             </div>
-            <span style="font-size:0.82rem; color:#15803d; font-weight:700;">Kunci: [ A ✓ ] (2:00 / liǎng diǎn)</span>
+            <span class="pair-answer-label" style="font-size:0.82rem; color:#15803d; font-weight:700;">Kunci: [ A ✓ ] (<span class="opt-hz">2:00</span><span class="opt-py"> / liǎng diǎn</span>)</span>
           </div>
 
           <!-- Dialog Soal 18 -->
@@ -3711,7 +3734,7 @@
           <div class="item-content" style="flex:1;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.65rem;">
               <span style="background:#16a34a; color:#fff; font-size:0.75rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:4px; text-transform:uppercase;">例如 (Contoh Soal)</span>
-              <span style="font-size:0.82rem; color:#15803d; font-weight:700;">Kunci Contoh: [ A ✓ ] (时间 / shíjiān)</span>
+              <span class="pair-answer-label" style="font-size:0.82rem; color:#15803d; font-weight:700;">Kunci Contoh: [ A ✓ ] (<span class="opt-hz">时间</span><span class="opt-py"> / shíjiān</span>)</span>
             </div>
 
             <!-- Pernyataan Contoh -->
@@ -4160,16 +4183,20 @@
       pyEl.innerHTML = res.pinyin;
     });
 
-    document.querySelectorAll('.pair-choice-card').forEach(card => {
+    document.querySelectorAll('.pair-choice-card, .pair-answer-label').forEach(card => {
       const hzEl = card.querySelector('.opt-hz');
       const pyEl = card.querySelector('.opt-py');
       if (!hzEl || !pyEl) return;
       if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
       if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
-
-      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml);
+      const hadParens = /^\(/.test(pyEl.dataset.origHtml) && /\)$/.test(pyEl.dataset.origHtml);
+      let pyText = pyEl.dataset.origHtml.replace(/^[((]/, '').replace(/[))]$/, '');
+      const slashMatch = pyText.match(/^(\s*\/\s*)/);
+      const pyPrefix = slashMatch ? slashMatch[1] : '';
+      if (pyPrefix) pyText = pyText.substring(pyPrefix.length);
+      const res = colorizePair(hzEl.dataset.origHtml, pyText);
       hzEl.innerHTML = res.hanzi;
-      pyEl.innerHTML = res.pinyin;
+      pyEl.innerHTML = hadParens ? '(' + res.pinyin + ')' : pyPrefix + res.pinyin;
     });
 
     document.querySelectorAll('.reading-pic-card').forEach(card => {

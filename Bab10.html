@@ -340,6 +340,17 @@
       margin-top: 0.3rem;
       display: none;
     }
+    body:not(.show-pinyin) .quiz-options em,
+    body:not(.show-pinyin) .grammar-banner-pinyin,
+    body:not(.show-pinyin) .breakdown-py,
+    body:not(.show-pinyin) .money-py,
+    body:not(.show-pinyin) .badge-py,
+    body:not(.show-pinyin) .selection-pinyin { display: none !important; }
+    body:not(.show-arti) .quiz-options .opt-arti,
+    body:not(.show-arti) .grammar-banner-arti,
+    body:not(.show-arti) .money-arti,
+    body:not(.show-arti) .selection-arti,
+    body:not(.show-arti) .breakdown-id { display: none !important; }
     .bubble-arti {
       font-family: 'Poppins', sans-serif;
       font-size: 0.82rem;
@@ -350,6 +361,11 @@
       border-top: 1px dashed rgba(0, 0, 0, 0.12);
       display: none;
     }
+    body:not(.show-pinyin) .grammar-banner-pinyin,
+    body:not(.show-pinyin) .breakdown-py,
+    body:not(.show-pinyin) .selection-pinyin { display: none !important; }
+    body:not(.show-arti) .grammar-banner-arti,
+    body:not(.show-arti) .breakdown-id { display: none !important; }
 
     /* ── SUB-BREAKDOWN ── */
     .sub-breakdown {
@@ -358,6 +374,11 @@
       border-top: 1.5px dashed var(--border);
       display: none;
     }
+    body:not(.show-pinyin) .grammar-banner-pinyin,
+    body:not(.show-pinyin) .breakdown-py,
+    body:not(.show-pinyin) .selection-pinyin { display: none !important; }
+    body:not(.show-arti) .grammar-banner-arti,
+    body:not(.show-arti) .breakdown-id { display: none !important; }
     body.show-vocab .sub-breakdown { display: block; }
     .sub-title,
     .sub-breakdown-title {
@@ -406,6 +427,11 @@
       margin-top: 0.25rem;
       display: none;
     }
+    body:not(.show-pinyin) .grammar-banner-pinyin,
+    body:not(.show-pinyin) .breakdown-py,
+    body:not(.show-pinyin) .selection-pinyin { display: none !important; }
+    body:not(.show-arti) .grammar-banner-arti,
+    body:not(.show-arti) .breakdown-id { display: none !important; }
     body.show-pinyin .word-pinyin { display: block; }
     .word-arti {
       font-size: 0.8rem;
@@ -414,6 +440,11 @@
       line-height: 1.35;
       display: none;
     }
+    body:not(.show-pinyin) .grammar-banner-pinyin,
+    body:not(.show-pinyin) .breakdown-py,
+    body:not(.show-pinyin) .selection-pinyin { display: none !important; }
+    body:not(.show-arti) .grammar-banner-arti,
+    body:not(.show-arti) .breakdown-id { display: none !important; }
     body.show-arti .word-arti { display: block; }
 
     /* ── GRAMMAR HERO CARD ── */
@@ -683,11 +714,21 @@
       color: var(--primary-dark);
       display: none;
     }
+    body:not(.show-pinyin) .grammar-banner-pinyin,
+    body:not(.show-pinyin) .breakdown-py,
+    body:not(.show-pinyin) .selection-pinyin { display: none !important; }
+    body:not(.show-arti) .grammar-banner-arti,
+    body:not(.show-arti) .breakdown-id { display: none !important; }
     .tw-id {
       font-size: 0.8rem;
       color: var(--sub);
       display: none;
     }
+    body:not(.show-pinyin) .grammar-banner-pinyin,
+    body:not(.show-pinyin) .breakdown-py,
+    body:not(.show-pinyin) .selection-pinyin { display: none !important; }
+    body:not(.show-arti) .grammar-banner-arti,
+    body:not(.show-arti) .breakdown-id { display: none !important; }
 
     /* ── COMPREHENSIVE EXERCISE / SELECTION BOX ── */
     .selection-box {
@@ -704,7 +745,7 @@
     }
     .selection-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 0.5rem;
     }
     .selection-item {
@@ -983,66 +1024,42 @@
           <div style="font-weight:700; color:#b45309; font-size:0.92rem; margin-bottom:0.6rem; display:flex; align-items:center; gap:0.4rem;">
             <span>🔍</span> Bedah Kalimat &amp; Arti Per Kata (字词详解):
           </div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:0.6rem;">
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.6rem;">
             <!-- 1. 这儿 (这里) -->
-            <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:8px; padding:0.6rem; text-align:center;">
-              <div style="font-size:1.15rem; font-weight:700;">
-                <span style="color:#e11d48;">这</span><span style="color:#16a34a;">儿</span> <span style="font-size:0.9rem; color:#64748b; font-weight:500;">(<span style="color:#e11d48;">这</span><span style="color:#2563eb;">里</span>)</span>
-              </div>
-              <div style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">
-                <span style="color:#e11d48;">zhè</span><span style="color:#16a34a;">r</span> <span style="font-size:0.75rem; color:#64748b; font-weight:500;">(<span style="color:#e11d48;">zhè</span><span style="color:#2563eb;">lǐ</span>)</span>
-              </div>
-              <div style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">sini / di sini</div>
+            <div class="breakdown-box" style="background:#fef2f2; border:1px solid #fecaca; border-radius:8px; padding:0.6rem; text-align:center;">
+              <div class="breakdown-hz" style="font-size:1.15rem; font-weight:700;">这儿 (这里)</div>
+              <div class="breakdown-py" style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">zhèr (zhèlǐ)</div>
+              <div class="breakdown-id" style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">sini / di sini</div>
             </div>
             <!-- 2. 的 -->
-            <div style="background:#fef3c7; border:1px solid #fde68a; border-radius:8px; padding:0.6rem; text-align:center;">
-              <div style="font-size:1.15rem; font-weight:700;">
-                <span style="color:#2563eb;">的</span>
-              </div>
-              <div style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">
-                <span style="color:#2563eb;">de</span>
-              </div>
-              <div style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">partikel kepemilikan / yang (punya)</div>
+            <div class="breakdown-box" style="background:#fef3c7; border:1px solid #fde68a; border-radius:8px; padding:0.6rem; text-align:center;">
+              <div class="breakdown-hz" style="font-size:1.15rem; font-weight:700;">的</div>
+              <div class="breakdown-py" style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">de</div>
+              <div class="breakdown-id" style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">partikel kepemilikan / yang (punya)</div>
             </div>
             <!-- 3. 苹果 -->
-            <div style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:8px; padding:0.6rem; text-align:center;">
-              <div style="font-size:1.15rem; font-weight:700;">
-                <span style="color:#ea580c;">苹</span><span style="color:#7c3aed;">果</span>
-              </div>
-              <div style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">
-                <span style="color:#ea580c;">píng</span> <span style="color:#7c3aed;">guǒ</span>
-              </div>
-              <div style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">apel</div>
+            <div class="breakdown-box" style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:8px; padding:0.6rem; text-align:center;">
+              <div class="breakdown-hz" style="font-size:1.15rem; font-weight:700;">苹果</div>
+              <div class="breakdown-py" style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">píng guǒ</div>
+              <div class="breakdown-id" style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">apel</div>
             </div>
             <!-- 4. 真 -->
-            <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:0.6rem; text-align:center;">
-              <div style="font-size:1.15rem; font-weight:700;">
-                <span style="color:#0891b2;">真</span>
-              </div>
-              <div style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">
-                <span style="color:#0891b2;">zhēn</span>
-              </div>
-              <div style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">sungguh / benar-benar / sangat</div>
+            <div class="breakdown-box" style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:0.6rem; text-align:center;">
+              <div class="breakdown-hz" style="font-size:1.15rem; font-weight:700;">真</div>
+              <div class="breakdown-py" style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">zhēn</div>
+              <div class="breakdown-id" style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">sungguh / benar-benar / sangat</div>
             </div>
             <!-- 5. 便宜 -->
-            <div style="background:#f5f3ff; border:1px solid #ddd6fe; border-radius:8px; padding:0.6rem; text-align:center;">
-              <div style="font-size:1.15rem; font-weight:700;">
-                <span style="color:#c026d3;">便</span><span style="color:#ca8a04;">宜</span>
-              </div>
-              <div style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">
-                <span style="color:#c026d3;">pián</span> <span style="color:#ca8a04;">yi</span>
-              </div>
-              <div style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">murah</div>
+            <div class="breakdown-box" style="background:#f5f3ff; border:1px solid #ddd6fe; border-radius:8px; padding:0.6rem; text-align:center;">
+              <div class="breakdown-hz" style="font-size:1.15rem; font-weight:700;">便宜</div>
+              <div class="breakdown-py" style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">pián yi</div>
+              <div class="breakdown-id" style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">murah</div>
             </div>
             <!-- 6. 贵 -->
-            <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:8px; padding:0.6rem; text-align:center;">
-              <div style="font-size:1.15rem; font-weight:700;">
-                <span style="color:#e11d48;">贵</span>
-              </div>
-              <div style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">
-                <span style="color:#e11d48;">guì</span>
-              </div>
-              <div style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">mahal <em>(antonim)</em></div>
+            <div class="breakdown-box" style="background:#fff1f2; border:1px solid #fecdd3; border-radius:8px; padding:0.6rem; text-align:center;">
+              <div class="breakdown-hz" style="font-size:1.15rem; font-weight:700;">贵</div>
+              <div class="breakdown-py" style="font-size:0.8rem; font-weight:600; margin-top:0.15rem;">guì</div>
+              <div class="breakdown-id" style="font-size:0.75rem; color:#4b5563; margin-top:0.25rem;">mahal <em>(antonim)</em></div>
             </div>
           </div>
         </div>
@@ -1490,97 +1507,67 @@
               
               <!-- Row 1: 0.02元 -->
               <tr style="border-bottom:1px solid #fee2e2; cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('liǎng fēn')" title="Klik dengar pelafalan 0.02元">
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">0.02元</td>
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">
-                  <span style="color:#e11d48;">两</span><span style="color:#16a34a;">分</span>
-                </td>
+                <td class="money-hz" style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">0.02元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">两分</td>
                 <td style="padding:0.65rem 0.8rem; font-weight:600;">
-                  <span style="font-size:0.95rem;">
-                    <span style="color:#e11d48; font-weight:700;">liǎng</span> <span style="color:#16a34a; font-weight:700;">fēn</span>
-                  </span>
-                  <div style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">2 fen (0.02 yuan)</div>
+                  <span class="money-py" style="font-size:0.95rem;">liǎng fēn</span>
+                  <div class="money-arti" style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">2 fen (0.02 yuan)</div>
                 </td>
               </tr>
 
               <!-- Row 2: 0.2元 -->
               <tr style="border-bottom:1px solid #fee2e2; cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('liǎng máo')" title="Klik dengar pelafalan 0.2元">
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">0.2元</td>
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">
-                  <span style="color:#e11d48;">两</span><span style="color:#2563eb;">毛</span>
-                </td>
+                <td class="money-hz" style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">0.2元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">两毛</td>
                 <td style="padding:0.65rem 0.8rem; font-weight:600;">
-                  <span style="font-size:0.95rem;">
-                    <span style="color:#e11d48; font-weight:700;">liǎng</span> <span style="color:#2563eb; font-weight:700;">máo</span>
-                  </span>
-                  <div style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">2 mao (0.2 yuan)</div>
+                  <span class="money-py" style="font-size:0.95rem;">liǎng máo</span>
+                  <div class="money-arti" style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">2 mao (0.2 yuan)</div>
                 </td>
               </tr>
 
               <!-- Row 3: 3元 -->
               <tr style="border-bottom:1px solid #fee2e2; cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('sān kuài')" title="Klik dengar pelafalan 3元">
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">3元</td>
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">
-                  <span style="color:#ea580c;">三</span><span style="color:#7c3aed;">块</span>
-                </td>
+                <td class="money-hz" style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">3元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">三块</td>
                 <td style="padding:0.65rem 0.8rem; font-weight:600;">
-                  <span style="font-size:0.95rem;">
-                    <span style="color:#ea580c; font-weight:700;">sān</span> <span style="color:#7c3aed; font-weight:700;">kuài</span>
-                  </span>
-                  <div style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">3 kuai (3 yuan)</div>
+                  <span class="money-py" style="font-size:0.95rem;">sān kuài</span>
+                  <div class="money-arti" style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">3 kuai (3 yuan)</div>
                 </td>
               </tr>
 
               <!-- Row 4: 3.2元 -->
               <tr style="border-bottom:1px solid #fee2e2; cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('sān kuài èr, sān diǎn èr kuài')" title="Klik dengar pelafalan 3.2元">
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">3.2元</td>
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">
-                  <span style="color:#ea580c;">三</span><span style="color:#7c3aed;">块</span><span style="color:#0891b2;">二</span>
+                <td class="money-hz" style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">3.2元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">三块二
                   <div style="font-size:0.75rem; color:#475569; font-weight:500; margin-top:0.15rem;">
                     atau: <strong style="color:#2563eb;">三点二块</strong>
-                  </div>
-                </td>
+                  </div></td>
                 <td style="padding:0.65rem 0.8rem; font-weight:600;">
-                  <span style="font-size:0.95rem;">
-                    <span style="color:#ea580c; font-weight:700;">sān</span> <span style="color:#7c3aed; font-weight:700;">kuài</span> <span style="color:#0891b2; font-weight:700;">èr</span>
+                  <span class="money-py" style="font-size:0.95rem;">sān kuài èr
                   </span>
                   <span style="display:inline-block; margin-left:0.4rem; font-size:0.85rem; color:#2563eb; font-weight:600;">
-                    / <span style="font-weight:700;">三点二块</span> (<em>sān diǎn èr kuài</em>)
-                  </span>
-                  <div style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">3 kuai 2 mao (bisa juga dibaca <em>sān diǎn èr kuài</em> dengan titik desimal 点 diǎn)</div>
+                    / <span style="font-weight:700;">三点二块</span> (<em>sān diǎn èr kuài</em>)</span>
+                  <div class="money-arti" style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">3 kuai 2 mao (bisa juga dibaca <em>sān diǎn èr kuài</em> dengan titik desimal 点 diǎn)</div>
                 </td>
               </tr>
 
               <!-- Row 5: 6.02元 -->
               <tr style="border-bottom:1px solid #fee2e2; cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('liù kuài líng liǎng fēn')" title="Klik dengar pelafalan 6.02元">
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">6.02元</td>
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">
-                  <span style="color:#059669;">六</span><span style="color:#7c3aed;">块</span><span style="color:#d97706;">零</span><span style="color:#e11d48;">两</span><span style="color:#16a34a;">分</span>
-                </td>
+                <td class="money-hz" style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">6.02元</td>
+                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">六块零两分</td>
                 <td style="padding:0.65rem 0.8rem; font-weight:600;">
-                  <span style="font-size:0.95rem;">
-                    <span style="color:#059669; font-weight:700;">liù</span> <span style="color:#7c3aed; font-weight:700;">kuài</span> <span style="color:#d97706; font-weight:700;">líng</span> <span style="color:#e11d48; font-weight:700;">liǎng</span> <span style="color:#16a34a; font-weight:700;">fēn</span>
-                  </span>
-                  <div style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">6 kuai nol dua fen (ada angka 0 di posisi mao)</div>
+                  <span class="money-py" style="font-size:0.95rem;">liù kuài líng liǎng fēn</span>
+                  <div class="money-arti" style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">6 kuai nol dua fen (ada angka 0 di posisi mao)</div>
                 </td>
               </tr>
 
               <!-- Row 6: 202.2元 -->
               <tr style="cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='#fff7ed'" onmouseout="this.style.background='#ffffff'" onclick="playPinyin('liǎng bǎi líng èr kuài liǎng máo, èr bǎi líng èr kuài liǎng máo')" title="Klik dengar pelafalan 202.2元">
                 <td style="padding:0.65rem 0.8rem; text-align:center; font-weight:700; color:#c2410c;">202.2元</td>
-                <td style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">
-                  <span style="color:#e11d48;">二</span><span style="color:#2563eb;">百</span><span style="color:#d97706;">零</span><span style="color:#e11d48;">二</span><span style="color:#7c3aed;">块</span><span style="color:#059669;">两</span><span style="color:#2563eb;">毛</span>
-                  <div style="font-size:0.75rem; color:#475569; font-weight:500; margin-top:0.2rem;">
-                    lebih sering: <strong style="color:#2563eb;">两百零二块两毛</strong>
-                  </div>
-                </td>
+                <td class="money-hz" style="padding:0.65rem 0.8rem; text-align:center; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:1.1rem;">二百零二块两毛</td>
                 <td style="padding:0.65rem 0.8rem; font-weight:600;">
-                  <span style="font-size:0.95rem;">
-                    <span style="color:#e11d48; font-weight:700;">èr</span><span style="color:#2563eb; font-weight:700;">bǎi</span> <span style="color:#d97706; font-weight:700;">líng</span> <span style="color:#e11d48; font-weight:700;">èr</span> <span style="color:#7c3aed; font-weight:700;">kuài</span> <span style="color:#059669; font-weight:700;">liǎng</span> <span style="color:#2563eb; font-weight:700;">máo</span>
-                  </span>
-                  <div style="margin-top:0.25rem; font-size:0.85rem; color:#2563eb;">
-                    👉 <em>biasanya lbh sering pakai:</em> <strong>两百零二块两毛</strong> (<em>liǎngbǎi líng èr kuài liǎng máo</em>)
-                  </div>
-                  <div style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">202 kuai 2 mao (dalam lisan penutur asli, 200 lebih sering diucapkan <em>liǎngbǎi</em> daripada <em>èrbǎi</em>, dan angka 2 sebelum máo selalu <em>liǎng</em>)</div>
+                  <span class="money-py" style="font-size:0.95rem;">èrbǎi líng èr kuài liǎng máo</span>
+                  <div class="money-arti" style="font-size:0.75rem; color:#64748b; font-weight:400; margin-top:0.2rem;">202 kuai 2 mao (dalam lisan penutur asli, 200 lebih sering diucapkan <em>liǎngbǎi</em> daripada <em>èrbǎi</em>, dan angka 2 sebelum máo selalu <em>liǎng</em>)</div>
                 </td>
               </tr>
 
@@ -1633,30 +1620,26 @@
           <div class="item-number">1</div>
           <div class="item-content">
             <div style="cursor:pointer;" onclick="playPinyin('Zhèr de shuǐguǒ zhēn bù shǎo!')" title="Klik dengar kalimat soal 1">
-              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">
-                <span style="color:#2563eb;">Zhèr</span> <span style="color:#ea580c;">de</span> <span style="color:#0891b2;">shuǐ</span> <span style="color:#16a34a;">guǒ</span> ( <span style="color:#059669; font-weight:700;"><span style="color:#0891b2;">zhēn</span> <span style="color:#e11d48;">bù</span> <span style="color:#16a34a;">shǎo</span></span> ).
-              </div>
-              <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
-                （1）<span style="color:#2563eb;">这</span><span style="color:#ea580c;">儿</span><span style="color:#0891b2;">的</span><span style="color:#16a34a;">水</span><span style="color:#7c3aed;">果</span>（ <strong style="color:#059669;"><span style="color:#0891b2;">真</span><span style="color:#e11d48;">不</span><span style="color:#16a34a;">少</span></strong> ）。
-              </div>
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Zhèr de shuǐguǒ ( zhēn bù shǎo ).</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（1）这儿的水果（ <strong>真不少</strong> ）。</div>
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
               <strong>Arti:</strong> Buah-buahan di sini ( sungguh tidak sedikit / sangat banyak yaa ).
             </div>
-            <div style="font-size:0.78rem; color:#2563eb; margin-top:0.15rem; font-style:italic;">
+            <div class="bubble-arti" style="font-size:0.78rem; color:#2563eb; margin-top:0.15rem; font-style:italic; border-top:none; padding-top:0;">
               buah"an disini banyak juga/gak sedikit yaa.
             </div>
 
             <!-- Pilihan Jawaban A, B, C -->
-            <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('hěn shǎo')" title="Klik dengar pelafalan">
-                <strong>A. <span style="color:#2563eb; font-weight:700;">很</span><span style="color:#ea580c; font-weight:700;">少</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">hěn</span> <span style="color:#ea580c; font-weight:600;">shǎo</span>)</em> = sangat sedikit
+                <strong>A. 很少</strong> <em>(hěn shǎo)</em><span class="opt-arti"> = sangat sedikit</span>
               </span>
               <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('zhēn bù shǎo')" title="Klik dengar pelafalan">
-                <strong>B. <span style="color:#0891b2; font-weight:700;">真</span><span style="color:#e11d48; font-weight:700;">不</span><span style="color:#16a34a; font-weight:700;">少</span></strong> <em>(<span style="color:#0891b2; font-weight:600;">zhēn</span> <span style="color:#e11d48; font-weight:600;">bù</span> <span style="color:#16a34a; font-weight:600;">shǎo</span>)</em> = sungguh tidak sedikit ✓ (Jawaban Benar)
+                <strong>B. 真不少</strong> <em>(zhēn bù shǎo)</em><span class="opt-arti"> = sungguh tidak sedikit (Jawaban Benar)</span> ✓
               </span>
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('zhēn bù duō')" title="Klik dengar pelafalan">
-                <strong>C. <span style="color:#0891b2; font-weight:700;">真</span><span style="color:#e11d48; font-weight:700;">不</span><span style="color:#7c3aed; font-weight:700;">多</span></strong> <em>(<span style="color:#0891b2; font-weight:600;">zhēn</span> <span style="color:#e11d48; font-weight:600;">bù</span> <span style="color:#7c3aed; font-weight:600;">duō</span>)</em> = benar-benar tidak banyak
+                <strong>C. 真不多</strong> <em>(zhēn bù duō)</em><span class="opt-arti"> = benar-benar tidak banyak</span>
               </span>
             </div>
             <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
@@ -1670,12 +1653,8 @@
           <div class="item-number">2</div>
           <div class="item-content">
             <div style="cursor:pointer;" onclick="playPinyin('Píngguǒ sān kuài wǔ yì jīn.')" title="Klik dengar kalimat soal 2">
-              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">
-                <span style="color:#2563eb;">Píng</span> <span style="color:#ea580c;">guǒ</span> ( <span style="color:#059669; font-weight:700;"><span style="color:#ea580c;">sān</span> <span style="color:#7c3aed;">kuài</span> <span style="color:#059669;">wǔ</span></span> ) <span style="color:#0891b2;">yì</span> <span style="color:#e11d48;">jīn</span>.
-              </div>
-              <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">
-                （2）<span style="color:#2563eb;">苹</span><span style="color:#ea580c;">果</span>（ <strong style="color:#059669;"><span style="color:#ea580c;">三</span><span style="color:#7c3aed;">块</span><span style="color:#059669;">五</span></strong> ）<span style="color:#0891b2;">一</span><span style="color:#e11d48;">斤</span>。
-              </div>
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Píngguǒ ( sān kuài wǔ ) yì jīn.</div>
+              <div class="bubble-hanzi" style="font-size:1.18rem; font-weight:700; color:#1e293b;">（2）苹果（ <strong>三块五</strong> ）一斤。</div>
             </div>
             <div class="bubble-arti" style="font-size:0.82rem; color:#475569; margin-top:0.25rem;">
               <strong>Arti:</strong> Apel ( tiga kuai lima / 3.5 yuan ) satu jin.
@@ -1689,15 +1668,15 @@
             </div>
 
             <!-- Pilihan Jawaban A, B, C -->
-            <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('sān kuài')" title="Klik dengar pelafalan">
-                <strong>A. <span style="color:#ea580c; font-weight:700;">三</span><span style="color:#7c3aed; font-weight:700;">块</span></strong> <em>(<span style="color:#ea580c; font-weight:600;">sān</span> <span style="color:#7c3aed; font-weight:600;">kuài</span>)</em> = 3 kuai
+                <strong>A. 三块</strong> <em>(sān kuài)</em><span class="opt-arti"> = 3 kuai</span>
               </span>
               <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('sān kuài wǔ')" title="Klik dengar pelafalan">
-                <strong>B. <span style="color:#ea580c; font-weight:700;">三</span><span style="color:#7c3aed; font-weight:700;">块</span><span style="color:#059669; font-weight:700;">五</span></strong> <em>(<span style="color:#ea580c; font-weight:600;">sān</span> <span style="color:#7c3aed; font-weight:600;">kuài</span> <span style="color:#059669; font-weight:600;">wǔ</span>)</em> = 3.5 kuai ✓ (Jawaban Benar)
+                <strong>B. 三块五</strong> <em>(sān kuài wǔ)</em><span class="opt-arti"> = 3.5 kuai (Jawaban Benar)</span> ✓
               </span>
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('qī kuài èr')" title="Klik dengar pelafalan">
-                <strong>C. <span style="color:#2563eb; font-weight:700;">七</span><span style="color:#7c3aed; font-weight:700;">块</span><span style="color:#0891b2; font-weight:700;">二</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">qī</span> <span style="color:#7c3aed; font-weight:600;">kuài</span> <span style="color:#0891b2; font-weight:600;">èr</span>)</em> = 7.2 kuai (harga total 2 jin sebelum diskon)
+                <strong>C. 七块二</strong> <em>(qī kuài èr)</em><span class="opt-arti"> = 7.2 kuai (harga total 2 jin sebelum diskon)</span>
               </span>
             </div>
             <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
@@ -2037,15 +2016,15 @@
             </div>
 
             <!-- Pilihan Jawaban A, B, C -->
-            <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('èrshí yuán')" title="Klik dengar pelafalan">
-                <strong>A. <span style="color:#e11d48; font-weight:700;">二</span><span style="color:#2563eb; font-weight:700;">十</span><span style="color:#16a34a; font-weight:700;">元</span></strong> <em>(<span style="color:#e11d48; font-weight:600;">èr</span><span style="color:#2563eb; font-weight:600;">shí</span> <span style="color:#16a34a; font-weight:600;">yuán</span>)</em> = 20 yuan
+                <strong>A. 二十元</strong> <em>(èrshí yuán)</em><span class="opt-arti"> = 20 yuan</span>
               </span>
               <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('yì bǎi yuán')" title="Klik dengar pelafalan">
-                <strong>B. <span style="color:#059669; font-weight:700;">一</span><span style="color:#7c3aed; font-weight:700;">百</span><span style="color:#16a34a; font-weight:700;">元</span></strong> <em>(<span style="color:#059669; font-weight:600;">yì</span> <span style="color:#7c3aed; font-weight:600;">bǎi</span> <span style="color:#16a34a; font-weight:600;">yuán</span>)</em> = 100 yuan ✓ (Jawaban Benar)
+                <strong>B. 一百元</strong> <em>(yì bǎi yuán)</em><span class="opt-arti"> = 100 yuan (Jawaban Benar)</span> ✓
               </span>
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('yì bǎi yī shí yuán')" title="Klik dengar pelafalan">
-                <strong>C. <span style="color:#059669; font-weight:700;">一</span><span style="color:#7c3aed; font-weight:700;">百</span><span style="color:#059669; font-weight:700;">一</span><span style="color:#2563eb; font-weight:700;">十</span><span style="color:#16a34a; font-weight:700;">元</span></strong> <em>(<span style="color:#059669; font-weight:600;">yì</span><span style="color:#7c3aed; font-weight:600;">bǎi</span> <span style="color:#059669; font-weight:600;">yī</span><span style="color:#2563eb; font-weight:600;">shí</span> <span style="color:#16a34a; font-weight:600;">yuán</span>)</em> = 110 yuan
+                <strong>C. 一百一十元</strong> <em>(yìbǎi yīshí yuán)</em><span class="opt-arti"> = 110 yuan</span>
               </span>
             </div>
             <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
@@ -2069,15 +2048,15 @@
             </div>
 
             <!-- Pilihan Jawaban A, B, C -->
-            <div style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+            <div class="quiz-options" style="margin-top:0.6rem; font-size:0.86rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('tài guì')" title="Klik dengar pelafalan">
-                <strong>A. <span style="color:#d97706; font-weight:700;">太</span><span style="color:#e11d48; font-weight:700;">贵</span></strong> <em>(<span style="color:#d97706; font-weight:600;">tài</span> <span style="color:#e11d48; font-weight:600;">guì</span>)</em> = terlalu mahal
+                <strong>A. 太贵</strong> <em>(tài guì)</em><span class="opt-arti"> = terlalu mahal</span>
               </span>
               <span style="background:var(--bg); padding:0.35rem 0.75rem; border-radius:8px; border:1px solid var(--border); cursor:pointer;" onclick="playPinyin('hěn guì')" title="Klik dengar pelafalan">
-                <strong>B. <span style="color:#2563eb; font-weight:700;">很</span><span style="color:#e11d48; font-weight:700;">贵</span></strong> <em>(<span style="color:#2563eb; font-weight:600;">hěn</span> <span style="color:#e11d48; font-weight:600;">guì</span>)</em> = sangat mahal
+                <strong>B. 很贵</strong> <em>(hěn guì)</em><span class="opt-arti"> = sangat mahal</span>
               </span>
               <span style="background:#ecfdf5; color:#059669; font-weight:700; padding:0.35rem 0.75rem; border-radius:8px; border:1.5px solid #059669; cursor:pointer;" onclick="playPinyin('bú guì')" title="Klik dengar pelafalan">
-                <strong>C. <span style="color:#16a34a; font-weight:700;">不</span><span style="color:#e11d48; font-weight:700;">贵</span></strong> <em>(<span style="color:#16a34a; font-weight:600;">bú</span> <span style="color:#e11d48; font-weight:600;">guì</span>)</em> = tidak mahal ✓ (Jawaban Benar)
+                <strong>C. 不贵</strong> <em>(bú guì)</em><span class="opt-arti"> = tidak mahal (Jawaban Benar)</span> ✓
               </span>
             </div>
             <div style="font-size:0.78rem; color:#059669; margin-top:0.35rem; font-weight:600;">
@@ -2341,15 +2320,9 @@
               <div style="font-weight:700; color:#059669; font-size:0.95rem;">
                 ✅ <strong>参考答案 (Kunci Jawaban):</strong>
               </div>
-              <div style="font-size:1.1rem; font-weight:700; margin-top:0.35rem; font-family:'Noto Sans SC',sans-serif;">
-                👉 <span style="color:#0891b2;">她</span><span style="color:#7c3aed;">想</span><span style="color:#2563eb;">买</span><span style="color:#16a34a;">一</span><span style="color:#e11d48;">件</span>。 <span style="font-size:0.92rem; font-weight:600; color:#475569;">/</span> <span style="color:#7c3aed;">买</span><span style="color:#16a34a;">一</span><span style="color:#e11d48;">件</span>。
-              </div>
-              <div style="font-size:0.86rem; font-weight:600; margin-top:0.15rem;">
-                <span style="color:#0891b2;">Tā</span> <span style="color:#7c3aed;">xiǎng</span> <span style="color:#2563eb;">mǎi</span> <span style="color:#16a34a;">yí</span> <span style="color:#e11d48;">jiàn</span>. <span style="color:#64748b; font-weight:500;">/</span> <span style="color:#7c3aed;">mǎi</span> <span style="color:#16a34a;">yí</span> <span style="color:#e11d48;">jiàn</span>.
-              </div>
-              <div style="font-size:0.82rem; color:#15803d; margin-top:0.25rem;">
-                <strong>Terjemahan:</strong> Dia ingin membeli satu helai.
-              </div>
+              <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; margin-top:0.35rem;">👉 她想买一件。 <span style="font-size:0.92rem; font-weight:600; color:#475569;">/</span> 买一件。</div>
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; margin-top:0.15rem;">Tā xiǎng mǎi yí jiàn. / mǎi yí jiàn.</div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#15803d; margin-top:0.25rem; border-top:none; padding-top:0;"><strong>Terjemahan:</strong> Dia ingin membeli satu helai.</div>
               <div style="font-size:0.78rem; color:#475569; margin-top:0.35rem; border-top:1px dashed #a7f3d0; padding-top:0.3rem;">
                 💡 <strong>Kutipan Teks:</strong> Wang Yixue berkata: <em>"<span style="color:#7c3aed;">小</span><span style="color:#2563eb;">雪</span><span style="color:#16a34a;">能</span><span style="color:#0891b2;">穿</span>，<span style="color:#7c3aed;">买</span><span style="color:#16a34a;">一</span><span style="color:#e11d48;">件</span><span style="color:#ea580c;">吧</span>。" (Xiǎoxuě néng chuān, mǎi yí jiàn ba = Xiaoxue bisa memakainya, beli sehelai saja ya).</em>
               </div>
@@ -2375,17 +2348,11 @@
               <div style="font-weight:700; color:#059669; font-size:0.95rem;">
                 ✅ <strong>参考答案 (Kunci Jawaban):</strong>
               </div>
-              <div style="font-size:1.1rem; font-weight:700; margin-top:0.35rem; font-family:'Noto Sans SC',sans-serif;">
-                👉 <span style="color:#16a34a;">男</span><span style="color:#0891b2;">孩</span><span style="color:#ea580c;">子</span><span style="color:#64748b;">的</span><span style="color:#0891b2;">衣</span><span style="color:#ea580c;">服</span><span style="color:#e11d48;">在</span><span style="color:#b91c1c;">那</span><span style="color:#ea580c;">儿</span>。 <span style="font-size:0.92rem; font-weight:600; color:#475569;">/</span> <span style="color:#e11d48;">在</span><span style="color:#b91c1c;">那</span><span style="color:#ea580c;">儿</span>。
-              </div>
-              <div style="font-size:0.86rem; font-weight:600; margin-top:0.15rem;">
-                <span style="color:#16a34a;">Nán</span> <span style="color:#0891b2;">hái</span><span style="color:#ea580c;">zi</span> <span style="color:#64748b;">de</span> <span style="color:#0891b2;">yī</span><span style="color:#ea580c;">fu</span> <span style="color:#e11d48;">zài</span> <span style="color:#b91c1c;">nà</span><span style="color:#ea580c;">r</span>. <span style="color:#64748b; font-weight:500;">/</span> <span style="color:#e11d48;">zài</span> <span style="color:#b91c1c;">nà</span><span style="color:#ea580c;">r</span>.
-              </div>
-              <div style="font-size:0.82rem; color:#15803d; margin-top:0.25rem;">
-                <strong>Terjemahan:</strong> Pakaian anak laki-laki ada di sebelah sana.
-              </div>
+              <div class="bubble-hanzi" style="font-size:1.1rem; font-weight:700; margin-top:0.35rem;">👉 男孩子的衣服在那儿。 <span style="font-size:0.92rem; font-weight:600; color:#475569;">/</span> 在那儿。</div>
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; margin-top:0.15rem;">Nán háizi de yīfu zài nàr. / zài nàr.</div>
+              <div class="bubble-arti" style="font-size:0.82rem; color:#15803d; margin-top:0.25rem; border-top:none; padding-top:0;"><strong>Terjemahan:</strong> Pakaian anak laki-laki ada di sebelah sana.</div>
               <div style="font-size:0.78rem; color:#475569; margin-top:0.35rem; border-top:1px dashed #a7f3d0; padding-top:0.3rem;">
-                💡 <strong>Kutipan Teks:</strong> Wang Yixue menjelaskan: <em>"<span style="color:#e11d48;">这</span><span style="color:#0891b2;">些</span><span style="color:#b91c1c;">是</span><span style="color:#7c3aed;">女</span><span style="color:#16a34a;">孩</span><span style="color:#ea580c;">子</span><span style="color:#0891b2;">穿</span><span style="color:#64748b;">的</span><span style="color:#0891b2;">衣</span><span style="color:#ea580c;">服</span>，<span style="color:#16a34a;">男</span><span style="color:#0891b2;">孩</span><span style="color:#ea580c;">子</span><span style="color:#64748b;">的</span><span style="color:#0891b2;">衣</span><span style="color:#ea580c;">服</span><span style="color:#e11d48;">在</span><span style="color:#b91c1c;">那</span><span style="color:#ea580c;">儿</span>。" (Zhèxiē shì nǚ háizi chuān de yīfu, nán háizi de yīfu zài nàr).</em>
+                💡 <strong>Kutipan Teks:</strong> Wang Yixue menjelaskan: <em>"这些是女孩子穿的衣服，男孩子的衣服在那儿。" (Zhèxiē shì nǚ háizi chuān de yīfu, nán háizi de yīfu zài nàr).</em>
               </div>
             </div>
           </div>
@@ -2531,19 +2498,19 @@
         <div class="selection-box-title">Pilihan Kata dari Buku (Option Bank):</div>
         <div class="selection-grid">
           <div class="selection-item" onclick="playPinyin('bēizi')" style="cursor:pointer;" title="Klik dengar">
-            <span class="selection-letter">A.</span> <strong><span style="color:#2563eb; font-weight:700;">杯</span><span style="color:#ea580c; font-weight:700;">子</span></strong> <span class="selection-pinyin">(<span style="color:#2563eb; font-weight:600;">bēi</span> <span style="color:#ea580c; font-weight:600;">zi</span>)</span> = cangkir / gelas
+            <span class="selection-letter">A.</span> <strong>杯子</strong> <span class="selection-pinyin">(bēi zi)</span><span class="selection-arti"> = cangkir / gelas</span>
           </div>
           <div class="selection-item" onclick="playPinyin('zěnmeyàng')" style="cursor:pointer;" title="Klik dengar">
-            <span class="selection-letter">B.</span> <strong><span style="color:#0891b2; font-weight:700;">怎</span><span style="color:#e11d48; font-weight:700;">么</span><span style="color:#16a34a; font-weight:700;">样</span></strong> <span class="selection-pinyin">(<span style="color:#0891b2; font-weight:600;">zěn</span> <span style="color:#e11d48; font-weight:600;">me</span> <span style="color:#16a34a; font-weight:600;">yàng</span>)</span> = bagaimana / apa pendapatmu
+            <span class="selection-letter">B.</span> <strong>怎么样</strong> <span class="selection-pinyin">(zěn me yàng)</span><span class="selection-arti"> = bagaimana / apa pendapatmu</span>
           </div>
           <div class="selection-item" onclick="playPinyin('duōshao')" style="cursor:pointer;" title="Klik dengar">
-            <span class="selection-letter">C.</span> <strong><span style="color:#7c3aed; font-weight:700;">多</span><span style="color:#ea580c; font-weight:700;">少</span></strong> <span class="selection-pinyin">(<span style="color:#7c3aed; font-weight:600;">duō</span> <span style="color:#ea580c; font-weight:600;">shao</span>)</span> = berapa (banyak)
+            <span class="selection-letter">C.</span> <strong>多少</strong> <span class="selection-pinyin">(duō shao)</span><span class="selection-arti"> = berapa (banyak)</span>
           </div>
           <div class="selection-item" onclick="playPinyin('zhèxiē')" style="cursor:pointer;" title="Klik dengar">
-            <span class="selection-letter">D.</span> <strong><span style="color:#2563eb; font-weight:700;">这</span><span style="color:#059669; font-weight:700;">些</span></strong> <span class="selection-pinyin">(<span style="color:#2563eb; font-weight:600;">zhè</span> <span style="color:#059669; font-weight:600;">xiē</span>)</span> = (hal-hal / benda-benda) ini
+            <span class="selection-letter">D.</span> <strong>这些</strong> <span class="selection-pinyin">(zhè xiē)</span><span class="selection-arti"> = (hal-hal / benda-benda) ini</span>
           </div>
           <div class="selection-item" onclick="playPinyin('kuài')" style="cursor:pointer;" title="Klik dengar">
-            <span class="selection-letter">E.</span> <strong><span style="color:#e11d48; font-weight:700;">块</span></strong> <span class="selection-pinyin">(<span style="color:#e11d48; font-weight:600;">kuài</span>)</span> = kuai / yuan (satuan mata uang)
+            <span class="selection-letter">E.</span> <strong>块</strong> <span class="selection-pinyin">(kuài)</span><span class="selection-arti"> = kuai / yuan (satuan mata uang)</span>
           </div>
         </div>
       </div>
@@ -2564,17 +2531,11 @@
             
             <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Qǐngwèn, zhè běn shū duōshao qián?')" title="Klik dengar jawaban">
               <div style="font-weight:700; color:#059669; font-size:0.95rem;">
-                ✅ <strong>参考答案 (Kunci Jawaban):</strong> C. <strong><span style="color:#7c3aed;">多</span><span style="color:#ea580c;">少</span></strong> (<span style="color:#7c3aed;">duō</span> <span style="color:#ea580c;">shao</span>)
+                ✅ <strong>参考答案 (Kunci Jawaban):</strong> <span class="comp-quiz-badge">C. <strong class="badge-hz">多少</strong> <span class="badge-py">(duō shao)</span></span>
               </div>
-              <div style="font-size:0.88rem; font-weight:600; margin-top:0.3rem;">
-                👉 Kalimat lengkap: <span style="color:#7c3aed;">请</span><span style="color:#e11d48;">问</span>，<span style="color:#e11d48;">这</span><span style="color:#7c3aed;">本</span><span style="color:#0891b2;">书</span><strong style="text-decoration:underline;"><span style="color:#7c3aed;">多</span><span style="color:#ea580c;">少</span></strong><span style="color:#16a34a;">钱</span>？
-              </div>
-              <div style="font-size:0.84rem; font-weight:600; margin-top:0.15rem;">
-                <strong>Pinyin:</strong> <span style="color:#7c3aed;">Qǐng</span><span style="color:#e11d48;">wèn</span>, <span style="color:#e11d48;">zhè</span> <span style="color:#7c3aed;">běn</span> <span style="color:#0891b2;">shū</span> <strong style="text-decoration:underline;"><span style="color:#7c3aed;">duō</span> <span style="color:#ea580c;">shao</span></strong> <span style="color:#16a34a;">qián</span>?
-              </div>
-              <div style="font-size:0.8rem; color:#475569; margin-top:0.2rem;">
-                <strong>Arti:</strong> Permisi, berapa harga buku ini? <em>(Excuse me, how much is this book?)</em>
-              </div>
+              <div class="bubble-hanzi" style="font-size:0.95rem; font-weight:700; margin-top:0.3rem;">👉 Kalimat lengkap: 请问，这本书<strong style="text-decoration:underline;">多少</strong>钱？</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; margin-top:0.15rem;">Qǐngwèn, zhè běn shū <strong style="text-decoration:underline;">duō shao</strong> qián?</div>
+              <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:none; padding-top:0;"><strong>Arti:</strong> Permisi, berapa harga buku ini? <em>(Excuse me, how much is this book?)</em></div>
             </div>
           </div>
         </div>
@@ -2584,7 +2545,7 @@
           <div class="item-number">2</div>
           <div class="item-content">
             <div style="cursor:pointer;" onclick="playPinyin('Zhè gè bēizi bù piányi, liùshíwǔ kuài qián yí gè.')" title="Klik dengar kalimat lengkap">
-              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Zhè gè <span style="text-decoration:underline; font-weight:800; color:#059669;"><span style="color:#2563eb;">bēi</span> <span style="color:#ea580c;">zi</span></span> bù pián yi, liù shí wǔ <span style="text-decoration:underline; font-weight:800; color:#059669;"><span style="color:#e11d48;">kuài</span></span> qián yí gè.</div>
+              <div class="bubble-pinyin" style="font-size:0.86rem; font-weight:600; color:#e06055;">Zhè gè <span style="text-decoration:underline; font-weight:800; color:#059669;">bēi zi</span> bù pián yi, liù shí wǔ <span style="text-decoration:underline; font-weight:800; color:#059669;">kuài</span> qián yí gè.</div>
               <div class="bubble-hanzi" style="font-size:1.15rem; font-weight:700; color:#1e293b;">
                 （2）这个______不便宜，六十五______钱一个。
               </div>
@@ -2592,17 +2553,11 @@
             
             <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Zhè gè bēizi bù piányi, liùshíwǔ kuài qián yí gè.')" title="Klik dengar jawaban">
               <div style="font-weight:700; color:#059669; font-size:0.95rem;">
-                ✅ <strong>参考答案 (Kunci Jawaban):</strong> A. <strong><span style="color:#0891b2;">杯</span><span style="color:#ea580c;">子</span></strong> (<span style="color:#0891b2;">bēi</span> <span style="color:#ea580c;">zi</span>) &amp; E. <strong><span style="color:#e11d48;">块</span></strong> (<span style="color:#e11d48;">kuài</span>)
+                ✅ <strong>参考答案 (Kunci Jawaban):</strong> <span class="comp-quiz-badge">A. <strong class="badge-hz">杯子</strong> <span class="badge-py">(bēi zi)</span></span> &amp; <span class="comp-quiz-badge">E. <strong class="badge-hz">块</strong> <span class="badge-py">(kuài)</span></span>
               </div>
-              <div style="font-size:0.88rem; font-weight:600; margin-top:0.3rem;">
-                👉 Kalimat lengkap: <span style="color:#e11d48;">这</span><span style="color:#ea580c;">个</span><strong style="text-decoration:underline;"><span style="color:#0891b2;">杯</span><span style="color:#ea580c;">子</span></strong><span style="color:#e11d48;">不</span><span style="color:#16a34a;">便</span><span style="color:#ea580c;">宜</span>，<span style="color:#e11d48;">六</span><span style="color:#2563eb;">十</span><span style="color:#7c3aed;">五</span><strong style="text-decoration:underline;"><span style="color:#e11d48;">块</span></strong><span style="color:#16a34a;">钱</span><span style="color:#16a34a;">一</span><span style="color:#ea580c;">个</span>。
-              </div>
-              <div style="font-size:0.84rem; font-weight:600; margin-top:0.15rem;">
-                <strong>Pinyin:</strong> <span style="color:#e11d48;">Zhè</span><span style="color:#ea580c;">ge</span> <strong style="text-decoration:underline;"><span style="color:#0891b2;">bēi</span><span style="color:#ea580c;">zi</span></strong> <span style="color:#e11d48;">bù</span> <span style="color:#16a34a;">pián</span><span style="color:#ea580c;">yi</span>, <span style="color:#e11d48;">liù</span><span style="color:#2563eb;">shí</span><span style="color:#7c3aed;">wǔ</span> <strong style="text-decoration:underline;"><span style="color:#e11d48;">kuài</span></strong> <span style="color:#16a34a;">qián</span> <span style="color:#16a34a;">yí</span> <span style="color:#ea580c;">gè</span>.
-              </div>
-              <div style="font-size:0.8rem; color:#475569; margin-top:0.2rem;">
-                <strong>Arti:</strong> Cangkir ini tidak murah, enam puluh lima kuai per buahnya. <em>(This cup is not cheap, sixty-five yuan each.)</em>
-              </div>
+              <div class="bubble-hanzi" style="font-size:0.95rem; font-weight:700; margin-top:0.3rem;">👉 Kalimat lengkap: 这个<strong style="text-decoration:underline;">杯子</strong>不便宜，六十五<strong style="text-decoration:underline;">块</strong>钱一个。</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; margin-top:0.15rem;">Zhège <strong style="text-decoration:underline;">bēizi</strong> bù piányi, liùshíwǔ <strong style="text-decoration:underline;">kuài</strong> qián yí gè.</div>
+              <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.2rem; border-top:none; padding-top:0;"><strong>Arti:</strong> Cangkir ini tidak murah, enam puluh lima kuai per buahnya. <em>(This cup is not cheap, sixty-five yuan each.)</em></div>
             </div>
           </div>
         </div>
@@ -2617,30 +2572,21 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;王一雪：好的，我买五个。
               </div>
               <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#e06055; margin-top:0.2rem;">
-                Shòuhuòyuán: <span style="text-decoration:underline; font-weight:800; color:#059669;"><span style="color:#2563eb;">Zhè</span> <span style="color:#059669;">xiē</span></span> píngguǒ hěn hǎochī, nǐ mǎi yìxiē ba.<br>
+                Shòuhuòyuán: <span style="text-decoration:underline; font-weight:800; color:#059669;">Zhè xiē</span> píngguǒ hěn hǎochī, nǐ mǎi yìxiē ba.<br>
                 Wáng Yīxuě: Hǎo de, wǒ mǎi wǔ gè.
               </div>
             </div>
             
             <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Zhèxiē píngguǒ hěn hǎochī, nǐ mǎi yìxiē ba.')" title="Klik dengar jawaban">
               <div style="font-weight:700; color:#059669; font-size:0.95rem;">
-                ✅ <strong>参考答案 (Kunci Jawaban):</strong> D. <strong><span style="color:#e11d48;">这</span><span style="color:#0891b2;">些</span></strong> (<span style="color:#e11d48;">zhè</span> <span style="color:#0891b2;">xiē</span>)
+                ✅ <strong>参考答案 (Kunci Jawaban):</strong> <span class="comp-quiz-badge">D. <strong class="badge-hz">这些</strong> <span class="badge-py">(zhè xiē)</span></span>
               </div>
-              <div style="font-size:0.88rem; font-weight:600; margin-top:0.3rem;">
-                👉 Dialog lengkap:<br>
-                • 售货员：<strong style="text-decoration:underline;"><span style="color:#e11d48;">这</span><span style="color:#0891b2;">些</span></strong><span style="color:#16a34a;">苹</span><span style="color:#7c3aed;">果</span><span style="color:#7c3aed;">很</span><span style="color:#7c3aed;">好</span><span style="color:#0891b2;">吃</span>，<span style="color:#7c3aed;">你</span><span style="color:#7c3aed;">买</span><span style="color:#16a34a;">一</span><span style="color:#0891b2;">些</span><span style="color:#ea580c;">吧</span>。<br>
-                • 王一雪：<span style="color:#7c3aed;">好</span><span style="color:#ea580c;">的</span>，<span style="color:#7c3aed;">我</span><span style="color:#7c3aed;">买</span><span style="color:#7c3aed;">五</span><span style="color:#ea580c;">个</span>。
-              </div>
-              <div style="font-size:0.84rem; font-weight:600; margin-top:0.2rem;">
-                <strong>Pinyin:</strong><br>
-                • Shòuhuòyuán: <strong style="text-decoration:underline;"><span style="color:#e11d48;">Zhè</span><span style="color:#0891b2;">xiē</span></strong> <span style="color:#16a34a;">píng</span><span style="color:#7c3aed;">guǒ</span> <span style="color:#7c3aed;">hěn</span> <span style="color:#7c3aed;">hǎo</span><span style="color:#0891b2;">chī</span>, <span style="color:#7c3aed;">nǐ</span> <span style="color:#7c3aed;">mǎi</span> <span style="color:#16a34a;">yì</span><span style="color:#0891b2;">xiē</span> <span style="color:#ea580c;">ba</span>.<br>
-                • Wáng Yīxuě: <span style="color:#7c3aed;">Hǎo</span> <span style="color:#ea580c;">de</span>, <span style="color:#7c3aed;">wǒ</span> <span style="color:#7c3aed;">mǎi</span> <span style="color:#7c3aed;">wǔ</span> <span style="color:#ea580c;">gè</span>.
-              </div>
-              <div style="font-size:0.8rem; color:#475569; margin-top:0.25rem;">
-                <strong>Arti:</strong><br>
-                • Pelayan: Apel-apel <strong>ini</strong> sangat enak, belilah beberapa.<br>
-                • Wang Yixue: Baiklah, saya beli lima buah.
-              </div>
+              <div class="bubble-hanzi" style="font-size:0.92rem; font-weight:700; margin-top:0.3rem;">👉 Dialog lengkap:<br>• 售货员：<strong style="text-decoration:underline;">这些</strong>苹果很好吃，你买一些吧。<br>
+                • 王一雪：好的，我买五个。</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; margin-top:0.2rem;">• Shòuhuòyuán: <strong style="text-decoration:underline;">Zhèxiē</strong> píngguǒ hěn hǎochī, nǐ mǎi yìxiē ba.<br>
+                • Wáng Yīxuě: Hǎo de, wǒ mǎi wǔ gè.</div>
+              <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.25rem; border-top:none; padding-top:0;"><strong>Arti:</strong><br>• Pelayan: Apel-apel <strong>ini</strong> sangat enak, belilah beberapa.<br>
+                • Wang Yixue: Baiklah, saya beli lima buah.</div>
             </div>
           </div>
         </div>
@@ -2655,30 +2601,21 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;白家月：很好看。
               </div>
               <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; color:#e06055; margin-top:0.2rem;">
-                Ān nī: Zhè jiàn yīfu <span style="text-decoration:underline; font-weight:800; color:#059669;"><span style="color:#0891b2;">zěn</span> <span style="color:#e11d48;">me</span> <span style="color:#16a34a;">yàng</span></span>?<br>
+                Ān nī: Zhè jiàn yīfu <span style="text-decoration:underline; font-weight:800; color:#059669;">zěn me yàng</span>?<br>
                 Bái Jiā yuè: Hěn hǎo kàn.
               </div>
             </div>
             
             <div style="background:#ecfdf5; border:1.5px solid #059669; border-radius:8px; padding:0.6rem 0.85rem; margin-top:0.6rem; cursor:pointer;" onclick="playPinyin('Ānnī: Zhè jiàn yīfu zěnmeyàng? Bái Jiāyuè: Hěn hǎokàn.')" title="Klik dengar jawaban">
               <div style="font-weight:700; color:#059669; font-size:0.95rem;">
-                ✅ <strong>参考答案 (Kunci Jawaban):</strong> B. <strong><span style="color:#7c3aed;">怎</span><span style="color:#ea580c;">么</span><span style="color:#e11d48;">样</span></strong> (<span style="color:#7c3aed;">zěn</span> <span style="color:#ea580c;">me</span> <span style="color:#e11d48;">yàng</span>)
+                ✅ <strong>参考答案 (Kunci Jawaban):</strong> <span class="comp-quiz-badge">B. <strong class="badge-hz">怎么样</strong> <span class="badge-py">(zěn me yàng)</span></span>
               </div>
-              <div style="font-size:0.88rem; font-weight:600; margin-top:0.3rem;">
-                👉 Dialog lengkap:<br>
-                • 安妮：<span style="color:#e11d48;">这</span><span style="color:#b91c1c;">件</span><span style="color:#0891b2;">衣</span><span style="color:#ea580c;">服</span><strong style="text-decoration:underline;"><span style="color:#7c3aed;">怎</span><span style="color:#ea580c;">么</span><span style="color:#e11d48;">样</span></strong>？<br>
-                • 白家月：<span style="color:#7c3aed;">很</span><span style="color:#2563eb;">好</span><span style="color:#e11d48;">看</span>。
-              </div>
-              <div style="font-size:0.84rem; font-weight:600; margin-top:0.2rem;">
-                <strong>Pinyin:</strong><br>
-                • Ān nī: <span style="color:#e11d48;">Zhè</span> <span style="color:#b91c1c;">jiàn</span> <span style="color:#0891b2;">yī</span><span style="color:#ea580c;">fu</span> <strong style="text-decoration:underline;"><span style="color:#7c3aed;">zěn</span><span style="color:#ea580c;">me</span><span style="color:#e11d48;">yàng</span></strong>?<br>
-                • Bái Jiāyuè: <span style="color:#7c3aed;">Hěn</span> <span style="color:#2563eb;">hǎo</span><span style="color:#e11d48;">kàn</span>.
-              </div>
-              <div style="font-size:0.8rem; color:#475569; margin-top:0.25rem;">
-                <strong>Arti:</strong><br>
-                • An Ni: Baju ini <strong>bagaimana (menurutmu)</strong>?<br>
-                • Bai Jiayue: Sangat bagus.
-              </div>
+              <div class="bubble-hanzi" style="font-size:0.92rem; font-weight:700; margin-top:0.3rem;">👉 Dialog lengkap:<br>• 安妮：这件衣服<strong style="text-decoration:underline;">怎么样</strong>？<br>
+                • 白家月：很好看。</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; margin-top:0.2rem;">• Ān nī: Zhè jiàn yīfu <strong style="text-decoration:underline;">zěnmeyàng</strong>?<br>
+                • Bái Jiāyuè: Hěn hǎokàn.</div>
+              <div class="bubble-arti" style="font-size:0.8rem; color:#475569; margin-top:0.25rem; border-top:none; padding-top:0;"><strong>Arti:</strong><br>• An Ni: Baju ini <strong>bagaimana (menurutmu)</strong>?<br>
+                • Bai Jiayue: Sangat bagus.</div>
             </div>
           </div>
         </div>
@@ -2731,12 +2668,11 @@
                 ✅ <strong>参考答案 (Pilihan Jawaban yang Tepat):</strong>
               </div>
               <div style="font-size:0.88rem; font-weight:600; margin-top:0.3rem;">
-                ① <strong><span style="color:#0891b2;">真</span><span style="color:#16a34a;">便</span><span style="color:#ea580c;">宜</span></strong> (<span style="color:#0891b2;">zhēn</span> <span style="color:#16a34a;">pián</span><span style="color:#ea580c;">yi</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#7c3aed;">很</span><span style="color:#e11d48;">大</span></strong> (<span style="color:#7c3aed;">hěn</span> <span style="color:#e11d48;">dà</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#0891b2;">真</span><span style="color:#e11d48;">不</span><span style="color:#16a34a;">少</span></strong> (<span style="color:#0891b2;">zhēn</span> <span style="color:#e11d48;">bù</span> <span style="color:#16a34a;">shǎo</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#7c3aed;">很</span><span style="color:#2563eb;">好</span><span style="color:#0891b2;">吃</span></strong> (<span style="color:#7c3aed;">hěn</span> <span style="color:#2563eb;">hǎo</span><span style="color:#0891b2;">chī</span>)
+                ① <span class="comp-quiz-badge"><strong class="badge-hz">真便宜</strong> <span class="badge-py">(zhēn piányi)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">很大</strong> <span class="badge-py">(hěn dà)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">真不少</strong> <span class="badge-py">(zhēn bù shǎo)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">很好吃</strong> <span class="badge-py">(hěn hǎochī)</span></span>
               </div>
-              <div style="font-size:0.84rem; font-weight:600; margin-top:0.25rem;">
-                👉 Kalimat utuh: <span style="color:#e11d48;">这</span><span style="color:#16a34a;">儿</span><span style="color:#ea580c;">的</span><span style="color:#2563eb;">苹</span><span style="color:#7c3aed;">果</span><strong style="text-decoration:underline;"><span style="color:#0891b2;">真</span><span style="color:#16a34a;">便</span><span style="color:#ea580c;">宜</span></strong>！ (<span style="color:#e11d48;">Zhèr</span> <span style="color:#ea580c;">de</span> <span style="color:#2563eb;">píng</span><span style="color:#7c3aed;">guǒ</span> <strong style="text-decoration:underline;"><span style="color:#0891b2;">zhēn</span> <span style="color:#16a34a;">pián</span><span style="color:#ea580c;">yi</span></strong>!)
-              </div>
-              <div style="font-size:0.78rem; color:#475569; margin-top:0.2rem;">
+              <div class="bubble-hanzi" style="font-size:0.95rem; font-weight:700; margin-top:0.25rem;">👉 Kalimat utuh: 这儿的苹果<strong style="text-decoration:underline;">真便宜</strong>！</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; margin-top:0.15rem;">Zhèr de píngguǒ <strong style="text-decoration:underline;">zhēn piányi</strong>!</div>
+              <div class="bubble-arti" style="font-size:0.78rem; color:#475569; margin-top:0.2rem; border-top:none; padding-top:0;">
                 <strong>Arti:</strong> Apel di sini sungguh murah / sungguh tidak sedikit (banyak) / sangat enak!
               </div>
             </div>
@@ -2759,14 +2695,13 @@
                 ✅ <strong>参考答案 (Pilihan Jawaban yang Tepat):</strong>
               </div>
               <div style="font-size:0.88rem; font-weight:600; margin-top:0.3rem;">
-                👉 Mengisi pertanyaan: <strong><span style="color:#7c3aed;">怎</span><span style="color:#ea580c;">么</span><span style="color:#e11d48;">样</span></strong> (<span style="color:#7c3aed;">zěn</span><span style="color:#ea580c;">me</span><span style="color:#e11d48;">yàng</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#7c3aed;">好</span><span style="color:#ea580c;">不</span><span style="color:#2563eb;">好</span><span style="color:#e11d48;">看</span></strong> (<span style="color:#7c3aed;">hǎo</span> <span style="color:#ea580c;">bu</span> <span style="color:#2563eb;">hǎo</span><span style="color:#e11d48;">kàn</span>)
+                👉 Mengisi pertanyaan: <span class="comp-quiz-badge"><strong class="badge-hz">怎么样</strong> <span class="badge-py">(zěnmeyàng)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">好不好看</strong> <span class="badge-py">(hǎo bu hǎokàn)</span></span>
               </div>
-              <div style="font-size:0.84rem; font-weight:600; margin-top:0.25rem;">
-                👉 Kalimat utuh: <span style="color:#e11d48;">这</span><span style="color:#ea580c;">个</span><span style="color:#e11d48;">电</span><span style="color:#7c3aed;">影</span><strong style="text-decoration:underline;"><span style="color:#7c3aed;">怎</span><span style="color:#ea580c;">么</span><span style="color:#e11d48;">样</span></strong>？ (<span style="color:#e11d48;">Zhè</span><span style="color:#ea580c;">ge</span> <span style="color:#e11d48;">diàn</span><span style="color:#7c3aed;">yǐng</span> <strong style="text-decoration:underline;"><span style="color:#7c3aed;">zěn</span><span style="color:#ea580c;">me</span><span style="color:#e11d48;">yàng</span></strong>?)
-              </div>
-              <div style="font-size:0.78rem; color:#475569; margin-top:0.2rem;">
+              <div class="bubble-hanzi" style="font-size:0.95rem; font-weight:700; margin-top:0.25rem;">👉 Kalimat utuh: 这个电影<strong style="text-decoration:underline;">怎么样</strong>？</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; margin-top:0.15rem;">Zhège diànyǐng <strong style="text-decoration:underline;">zěnmeyàng</strong>?</div>
+              <div class="bubble-arti" style="font-size:0.78rem; color:#475569; margin-top:0.2rem; border-top:none; padding-top:0;">
                 <strong>Arti:</strong> Bagaimana film ini menurutmu? <em>(How is this movie?)</em><br>
-                💡 Contoh jawaban respons: <span style="color:#7c3aed;">很</span><span style="color:#2563eb;">好</span><span style="color:#e11d48;">看</span>。 (<span style="color:#7c3aed;">Hěn</span> <span style="color:#2563eb;">hǎo</span><span style="color:#e11d48;">kàn</span> - Sangat bagus/menarik ditonton).
+                💡 Contoh jawaban respons: 很好看。 (Hěn hǎokàn - Sangat bagus/menarik ditonton).
               </div>
             </div>
           </div>
@@ -2788,13 +2723,12 @@
                 ✅ <strong>参考答案 (Pilihan Jawaban yang Tepat):</strong>
               </div>
               <div style="font-size:0.88rem; font-weight:600; margin-top:0.3rem;">
-                👉 Titik pertama: <strong><span style="color:#0891b2;">真</span><span style="color:#2563eb;">好</span><span style="color:#e11d48;">看</span></strong> (<span style="color:#0891b2;">zhēn</span> <span style="color:#2563eb;">hǎo</span><span style="color:#e11d48;">kàn</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#0891b2;">真</span><span style="color:#2563eb;">多</span></strong> (<span style="color:#0891b2;">zhēn</span> <span style="color:#2563eb;">duō</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#16a34a;">不</span><span style="color:#e11d48;">大</span></strong> (<span style="color:#16a34a;">bú</span> <span style="color:#e11d48;">dà</span>)<br>
-                👉 Titik kedua: <strong><span style="color:#e11d48;">漂</span><span style="color:#ea580c;">亮</span></strong> (<span style="color:#e11d48;">piào</span><span style="color:#ea580c;">liang</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#16a34a;">便</span><span style="color:#ea580c;">宜</span></strong> (<span style="color:#16a34a;">pián</span><span style="color:#ea580c;">yi</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#e11d48;">贵</span></strong> (<span style="color:#e11d48;">guì</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#7c3aed;">好</span><span style="color:#e11d48;">看</span></strong> (<span style="color:#7c3aed;">hǎo</span><span style="color:#e11d48;">kàn</span>)
+                👉 Titik pertama: <span class="comp-quiz-badge"><strong class="badge-hz">真好看</strong> <span class="badge-py">(zhēn hǎokàn)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">真多</strong> <span class="badge-py">(zhēn duō)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">不大</strong> <span class="badge-py">(bú dà)</span></span><br>
+                👉 Titik kedua: <span class="comp-quiz-badge"><strong class="badge-hz">漂亮</strong> <span class="badge-py">(piàoliang)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">便宜</strong> <span class="badge-py">(piányi)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">贵</strong> <span class="badge-py">(guì)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">好看</strong> <span class="badge-py">(hǎokàn)</span></span>
               </div>
-              <div style="font-size:0.84rem; font-weight:600; margin-top:0.25rem;">
-                👉 Kalimat utuh: <span style="color:#e11d48;">那</span><span style="color:#0891b2;">些</span><span style="color:#2563eb;">杯</span><span style="color:#ea580c;">子</span><strong style="text-decoration:underline;"><span style="color:#0891b2;">真</span><span style="color:#2563eb;">好</span><span style="color:#e11d48;">看</span></strong>，<span style="color:#0891b2;">非</span><span style="color:#16a34a;">常</span><strong style="text-decoration:underline;"><span style="color:#16a34a;">便</span><span style="color:#ea580c;">宜</span></strong>。 (<span style="color:#e11d48;">Nà</span><span style="color:#0891b2;">xiē</span> <span style="color:#2563eb;">bēi</span><span style="color:#ea580c;">zi</span> <strong style="text-decoration:underline;"><span style="color:#0891b2;">zhēn</span> <span style="color:#2563eb;">hǎo</span><span style="color:#e11d48;">kàn</span></strong>, <span style="color:#0891b2;">fēi</span><span style="color:#16a34a;">cháng</span> <strong style="text-decoration:underline;"><span style="color:#16a34a;">pián</span><span style="color:#ea580c;">yi</span></strong>.)
-              </div>
-              <div style="font-size:0.78rem; color:#475569; margin-top:0.2rem;">
+              <div class="bubble-hanzi" style="font-size:0.95rem; font-weight:700; margin-top:0.25rem;">👉 Kalimat utuh: 那些杯子<strong style="text-decoration:underline;">真好看</strong>，非常<strong style="text-decoration:underline;">便宜</strong>。</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; margin-top:0.15rem;">Nàxiē bēizi <strong style="text-decoration:underline;">zhēn hǎokàn</strong>, fēicháng <strong style="text-decoration:underline;">piányi</strong>.</div>
+              <div class="bubble-arti" style="font-size:0.78rem; color:#475569; margin-top:0.2rem; border-top:none; padding-top:0;">
                 <strong>Arti:</strong> Cangkir-cangkir itu sangat bagus, luar biasa murah.
               </div>
             </div>
@@ -2817,13 +2751,12 @@
                 ✅ <strong>参考答案 (Pilihan Jawaban yang Tepat):</strong>
               </div>
               <div style="font-size:0.88rem; font-weight:600; margin-top:0.3rem;">
-                👉 Titik pertama: <strong><span style="color:#16a34a;">不</span><span style="color:#e11d48;">贵</span></strong> (<span style="color:#16a34a;">bú</span> <span style="color:#e11d48;">guì</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#0891b2;">真</span><span style="color:#2563eb;">好</span><span style="color:#e11d48;">看</span></strong> (<span style="color:#0891b2;">zhēn</span> <span style="color:#2563eb;">hǎo</span><span style="color:#e11d48;">kàn</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#0891b2;">真</span><span style="color:#e11d48;">漂</span><span style="color:#ea580c;">亮</span></strong> (<span style="color:#0891b2;">zhēn</span> <span style="color:#e11d48;">piào</span><span style="color:#ea580c;">liang</span>)<br>
-                👉 Titik kedua (angka uang): <strong><span style="color:#16a34a;">一</span><span style="color:#7c3aed;">百</span></strong> (<span style="color:#16a34a;">yì</span><span style="color:#7c3aed;">bǎi</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#16a34a;">一</span><span style="color:#7c3aed;">百</span><span style="color:#e11d48;">二</span><span style="color:#2563eb;">十</span></strong> (<span style="color:#16a34a;">yì</span><span style="color:#7c3aed;">bǎi</span> <span style="color:#e11d48;">èr</span><span style="color:#2563eb;">shí</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#7c3aed;">五</span><span style="color:#2563eb;">十</span></strong> (<span style="color:#7c3aed;">wǔ</span><span style="color:#2563eb;">shí</span>) <span style="color:#64748b;">/</span> <strong><span style="color:#0891b2;">八</span><span style="color:#2563eb;">十</span></strong> (<span style="color:#0891b2;">bā</span><span style="color:#2563eb;">shí</span>)
+                👉 Titik pertama: <span class="comp-quiz-badge"><strong class="badge-hz">不贵</strong> <span class="badge-py">(bú guì)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">真好看</strong> <span class="badge-py">(zhēn hǎokàn)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">真漂亮</strong> <span class="badge-py">(zhēn piàoliang)</span></span><br>
+                👉 Titik kedua (angka uang): <span class="comp-quiz-badge"><strong class="badge-hz">一百</strong> <span class="badge-py">(yìbǎi)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">一百二十</strong> <span class="badge-py">(yìbǎi èrshí)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">五十</strong> <span class="badge-py">(wǔshí)</span></span> / <span class="comp-quiz-badge"><strong class="badge-hz">八十</strong> <span class="badge-py">(bāshí)</span></span>
               </div>
-              <div style="font-size:0.84rem; font-weight:600; margin-top:0.25rem;">
-                👉 Kalimat utuh: <span style="color:#e11d48;">这</span><span style="color:#b91c1c;">件</span><span style="color:#0891b2;">衣</span><span style="color:#ea580c;">服</span><strong style="text-decoration:underline;"><span style="color:#16a34a;">不</span><span style="color:#e11d48;">贵</span></strong>，<span style="color:#16a34a;">一</span><span style="color:#b91c1c;">件</span><strong style="text-decoration:underline;"><span style="color:#16a34a;">一</span><span style="color:#7c3aed;">百</span></strong><span style="color:#e11d48;">块</span>。 (<span style="color:#e11d48;">Zhè</span> <span style="color:#b91c1c;">jiàn</span> <span style="color:#0891b2;">yī</span><span style="color:#ea580c;">fu</span> <strong style="text-decoration:underline;"><span style="color:#16a34a;">bú</span> <span style="color:#e11d48;">guì</span></strong>, <span style="color:#16a34a;">yí</span> <span style="color:#b91c1c;">jiàn</span> <strong style="text-decoration:underline;"><span style="color:#16a34a;">yì</span><span style="color:#7c3aed;">bǎi</span></strong> <span style="color:#e11d48;">kuài</span>.)
-              </div>
-              <div style="font-size:0.78rem; color:#475569; margin-top:0.2rem;">
+              <div class="bubble-hanzi" style="font-size:0.95rem; font-weight:700; margin-top:0.25rem;">👉 Kalimat utuh: 这件衣服<strong style="text-decoration:underline;">不贵</strong>，一件<strong style="text-decoration:underline;">一百</strong>块。</div>
+              <div class="bubble-pinyin" style="font-size:0.84rem; font-weight:600; margin-top:0.15rem;">Zhè jiàn yīfu <strong style="text-decoration:underline;">bú guì</strong>, yí jiàn <strong style="text-decoration:underline;">yìbǎi</strong> kuài.</div>
+              <div class="bubble-arti" style="font-size:0.78rem; color:#475569; margin-top:0.2rem; border-top:none; padding-top:0;">
                 <strong>Arti:</strong> Baju ini tidak mahal, satu helai seratus kuai.
               </div>
             </div>
@@ -3057,13 +2990,67 @@
         hzEl.innerHTML = res.hanzi;
         pyEl.innerHTML = res.pinyin;
       });
+
+    // 5b. Money Table (.money-hz & .money-py)
+    document.querySelectorAll('tr').forEach(tr => {
+      const hzEl = tr.querySelector('.money-hz');
+      const pyEl = tr.querySelector('.money-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+      const res = colorizePair(hzEl.dataset.origHtml, pyEl.dataset.origHtml, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = res.pinyin;
+    });
+
+    // 5c. Selection Bank (.selection-item) & Kunci Badges (.comp-quiz-badge)
+    document.querySelectorAll('.selection-item').forEach(item => {
+      const hzEl = item.querySelector('strong');
+      const pyEl = item.querySelector('.selection-pinyin');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+      const pyClean = pyEl.dataset.origHtml.replace(/^\(/, '').replace(/\)$/, '');
+      const res = colorizePair(hzEl.dataset.origHtml, pyClean, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = '(' + res.pinyin + ')';
+    });
+    document.querySelectorAll('.comp-quiz-badge').forEach(badge => {
+      const hzEl = badge.querySelector('.badge-hz');
+      const pyEl = badge.querySelector('.badge-py');
+      if (!hzEl || !pyEl) return;
+      if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
+      if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
+      const pyClean = pyEl.dataset.origHtml.replace(/^\(/, '').replace(/\)$/, '');
+      const res = colorizePair(hzEl.dataset.origHtml, pyClean, charColorMap);
+      hzEl.innerHTML = res.hanzi;
+      pyEl.innerHTML = '(' + res.pinyin + ')';
+    });
+
+    // 6. Quiz Options (.quiz-options span)
+    document.querySelectorAll('.quiz-options span').forEach(opt => {
+      const strong = opt.querySelector('strong');
+      const em = opt.querySelector('em');
+      if (!strong || !em) return;
+      if (!strong.dataset.origHtml) strong.dataset.origHtml = strong.innerHTML;
+      if (!em.dataset.origHtml) em.dataset.origHtml = em.innerHTML;
+      const sm = strong.dataset.origHtml.match(/^([A-Z][.:]\s*)([\s\S]+)$/u);
+      if (sm) {
+        const prefix = sm[1];
+        const hzPart = sm[2].replace(/<[^>]+>/g, '').trim();
+        const pyClean = em.dataset.origHtml.replace(/<[^>]+>/g, '').trim().replace(/^[(（]/, '').replace(/[)）]$/, '').trim();
+        const res = colorizePair(hzPart, pyClean, charColorMap);
+        strong.innerHTML = prefix + res.hanzi;
+        em.innerHTML = '(' + res.pinyin + ')';
+      }
+    });
     });
 
 
   }
 
   function removeColors() {
-    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py, .tw-hz, .tw-py, .classroom-box .bubble-hanzi, .classroom-box .bubble-pinyin';
+    const selector = '.bubble-hanzi, .bubble-pinyin, .word-char, .word-pinyin, .speaker-hanzi, .speaker-pinyin, .grammar-banner-hanzi, .grammar-banner-pinyin, .breakdown-hz, .breakdown-py, .tw-hz, .tw-py, .classroom-box .bubble-hanzi, .classroom-box .bubble-pinyin, .money-hz, .money-py, .selection-item strong, .selection-pinyin, .badge-hz, .badge-py';
     document.querySelectorAll(selector).forEach(el => {
       if (el.dataset.origHtml !== undefined) {
         el.innerHTML = el.dataset.origHtml;
@@ -3072,6 +3059,12 @@
       }
       el.style.color = '';
       el.style.fontWeight = '';
+    });
+    document.querySelectorAll('.quiz-options span').forEach(opt => {
+      const strong = opt.querySelector('strong');
+      const em = opt.querySelector('em');
+      if (strong && strong.dataset.origHtml) strong.innerHTML = strong.dataset.origHtml;
+      if (em && em.dataset.origHtml) em.innerHTML = em.dataset.origHtml;
     });
   }
 

@@ -502,6 +502,10 @@
     body:not(.show-pinyin) .match-py,
     body:not(.show-pinyin) .bubble-pinyin,
     body:not(.show-pinyin) .opt-py,
+    body:not(.show-pinyin) .reading-pic-py,
+    body:not(.show-pinyin) .vocab-py,
+    body:not(.show-pinyin) .pair-box-py,
+    body:not(.show-pinyin) .cloze-py,
     body:not(.show-pinyin) .dialog-py { display: none !important; }
 
     body:not(.show-arti) .contrast-arti,
@@ -510,12 +514,15 @@
     body:not(.show-arti) .match-scene-desc,
     body:not(.show-arti) .bubble-arti,
     body:not(.show-arti) .opt-trans,
+    body:not(.show-arti) .reading-pic-arti,
+    body:not(.show-arti) .pair-box-arti,
+    body:not(.show-arti) .cloze-arti,
     body:not(.show-arti) .dialog-arti { display: none !important; }
 
-    body:not(.show-vocab) .contrast-table-container,
     body:not(.show-vocab) .match-badge,
     body:not(.show-vocab) .matching-explanation,
     body:not(.show-vocab) .soal-pembahasan,
+    body:not(.show-vocab) .vocab-pills-list,
     body:not(.show-vocab) .quiz-check,
     body:not(.show-vocab) .match-pic-badge { display: none !important; }
 
@@ -2813,7 +2820,7 @@
               <span class="reading-pic-hz" style="font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">看书</span>
               <span class="reading-pic-py" style="font-weight:600; font-family:var(--font-pinyin); color:#4f46e5; margin-left:0.25rem;">(Kàn shū)</span>
             </div>
-            <div style="font-size: 0.76rem; color: #64748b;">Membaca buku</div>
+            <div class="reading-pic-arti" style="font-size: 0.76rem; color: #64748b;">Membaca buku</div>
           </div>
 
           <!-- Gambar B: Ponsel di Atas Meja -->
@@ -2824,7 +2831,7 @@
               <span class="reading-pic-hz" style="font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">手机在桌子上</span>
               <span class="reading-pic-py" style="font-weight:600; font-family:var(--font-pinyin); color:#4f46e5; margin-left:0.25rem;">(Shǒujī zài zhuōzi shang)</span>
             </div>
-            <div style="font-size: 0.76rem; color: #64748b;">Telepon genggam berada di atas meja</div>
+            <div class="reading-pic-arti" style="font-size: 0.76rem; color: #64748b;">Telepon genggam berada di atas meja</div>
           </div>
 
           <!-- Gambar C: Dokter & Perawat di Rumah Sakit -->
@@ -2835,7 +2842,7 @@
               <span class="reading-pic-hz" style="font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">医院里医生工作</span>
               <span class="reading-pic-py" style="font-weight:600; font-family:var(--font-pinyin); color:#4f46e5; margin-left:0.25rem;">(Yīyuàn lǐ yīshēng gōngzuò)</span>
             </div>
-            <div style="font-size: 0.76rem; color: #64748b;">Dokter dan perawat bekerja di rumah sakit</div>
+            <div class="reading-pic-arti" style="font-size: 0.76rem; color: #64748b;">Dokter dan perawat bekerja di rumah sakit</div>
           </div>
 
           <!-- Gambar D: Bersantap Makan Siang -->
@@ -2846,7 +2853,7 @@
               <span class="reading-pic-hz" style="font-weight:700; font-family:'Noto Sans SC',sans-serif; color:#1e293b;">吃午饭</span>
               <span class="reading-pic-py" style="font-weight:600; font-family:var(--font-pinyin); color:#4f46e5; margin-left:0.25rem;">(Chī wǔfàn)</span>
             </div>
-            <div style="font-size: 0.76rem; color: #64748b;">Bersantap makan siang</div>
+            <div class="reading-pic-arti" style="font-size: 0.76rem; color: #64748b;">Bersantap makan siang</div>
           </div></div>
       </div>
 
@@ -3125,7 +3132,7 @@
         <div style="background:#ffffff; border:1px solid #c7d2fe; border-radius:8px; padding:0.75rem 1rem; margin-top:0.65rem;">
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
             <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: D ✓</span>
-            <span style="font-weight:700; font-size:0.84rem; color:#1e293b;">D: 好的，谢谢！(Baik, terima kasih!)</span>
+            <span class="pair-answer-label" style="font-weight:700; font-size:0.84rem; color:#1e293b;">D: <span class="opt-hz">好的，谢谢！</span> <span class="opt-py" style="color:#4f46e5;">(Hǎo de, xièxie!)</span> <span class="opt-trans">(Baik, terima kasih!)</span></span>
           </div>
           <div class="soal-pembahasan" style="font-size:0.84rem; color:#475569; line-height:1.55; margin-top:0.25rem;">
             💡 <strong>Penjelasan Contoh:</strong> Pertanyaan menawarkan minuman (<em>你喝水吗？</em>). Jawaban sopan yang paling tepat dalam konteks percakapan adalah menyetujui dan berterima kasih: <strong>D (好的，谢谢！ · Hǎo de, xièxie!)</strong>.
@@ -3162,7 +3169,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban Tepat: C ✓</span>
-              <span style="font-weight:700; font-size:0.84rem; color:#1e293b;">C: 饺子和面条儿 (Pangsit dan mi)</span>
+              <span class="pair-answer-label" style="font-weight:700; font-size:0.84rem; color:#1e293b;">C: <span class="opt-hz">饺子和面条儿</span> <span class="opt-py" style="color:#4f46e5;">(Jiǎozi hé miàntiáor)</span> <span class="opt-trans">(Pangsit dan mi)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.84rem; color:#475569; line-height:1.55;">
               <strong>Pembahasan Soal 14:</strong> Pertanyaan menanyakan nama benda atau makanan yang ada di atas meja menggunakan kata tanya <strong>有什么 (yǒu shénme - ada apa?)</strong>. Dari pilihan yang tersedia, yang menyebutkan benda/makanan adalah <strong>C. 饺子和面条儿 (Jiǎozi hé miàntiáor - Jiaozi dan mi)</strong>.
@@ -3207,7 +3214,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban Tepat: B ✓</span>
-              <span style="font-weight:700; font-size:0.84rem; color:#1e293b;">B: 我老师 (Guru saya)</span>
+              <span class="pair-answer-label" style="font-weight:700; font-size:0.84rem; color:#1e293b;">B: <span class="opt-hz">我老师</span> <span class="opt-py" style="color:#4f46e5;">(Wǒ lǎoshī)</span> <span class="opt-trans">(Guru saya)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Pembahasan Soal 15:</strong> Pertanyaan menanyakan identitas orang menggunakan kata tanya <strong>谁 (shéi - siapa?)</strong>. Jawaban yang menyebutkan sebutan orang/relasi adalah <strong>B. 我老师 (Wǒ lǎoshī - Guru saya)</strong>.
@@ -3250,7 +3257,7 @@
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
               <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban Tepat: A ✓</span>
-              <span style="font-weight:700; font-size:0.84rem; color:#1e293b;">A: 医院 (Rumah sakit)</span>
+              <span class="pair-answer-label" style="font-weight:700; font-size:0.84rem; color:#1e293b;">A: <span class="opt-hz">医院</span> <span class="opt-py" style="color:#4f46e5;">(Yīyuàn)</span> <span class="opt-trans">(Rumah sakit)</span></span>
             </div>
             <div class="soal-pembahasan" style="font-size:0.82rem; color:#475569; line-height:1.55;">
               <strong>Pembahasan Soal 16:</strong> Pertanyaan menanyakan lokasi tempat kerja (<strong>在哪儿工作 · zài nǎr gōngzuò?</strong>). Jawaban yang menyatakan nama tempat/institusi kerja adalah <strong>A. 医院 (Yīyuàn - Rumah sakit)</strong>, sesuai judul Bab 8: <em>我爸爸也在医院工作 (Papa saya juga bekerja di rumah sakit)</em>.
@@ -3356,7 +3363,7 @@
             <span style="background:#4f46e5; color:#fff; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:6px; letter-spacing:0.5px;">CONTOH</span>
             <span style="font-weight:700; font-size:0.95rem; color:#4f46e5;">例如 (Lìrú)</span>
           </div>
-          <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci Contoh: [ C ✓ ] (名字 / míngzi)</span>
+          <span class="pair-answer-label" style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci Contoh: [ C ✓ ] (<span class="opt-hz">名字</span><span class="opt-py"> / míngzi</span>)</span>
         </div>
 
         <!-- Kalimat Soal Contoh (Susunan Vertikal Rata Tengah) -->
@@ -3385,7 +3392,7 @@
               <span style="background:#4f46e5; color:#fff; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:6px;">SOAL 17</span>
               <span style="font-weight:700; font-size:0.95rem; color:#1e293b;">Melengkapi Kalimat Keberadaan (Eksistensial)</span>
             </div>
-            <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci: [ B ✓ ] (有 / yǒu)</span>
+            <span class="pair-answer-label" style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci: [ B ✓ ] (<span class="opt-hz">有</span><span class="opt-py"> / yǒu</span>)</span>
           </div>
 
           <!-- Kalimat Soal 17 (Vertikal Rata Tengah) -->
@@ -3422,7 +3429,7 @@
               <span style="background:#4f46e5; color:#fff; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:6px;">SOAL 18</span>
               <span style="font-weight:700; font-size:0.95rem; color:#1e293b;">Melengkapi Dialog dengan Modal Auxiliary Verb</span>
             </div>
-            <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci: [ A ✓ ] (能 / néng)</span>
+            <span class="pair-answer-label" style="font-size:0.8rem; color:#16a34a; font-weight:700;">Kunci: [ A ✓ ] (<span class="opt-hz">能</span><span class="opt-py"> / néng</span>)</span>
           </div>
 
           <!-- Dialog Soal 18 (Vertikal Rata Tengah per Kalimat) -->
@@ -3517,7 +3524,7 @@
           <div class="item-content">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.45rem;">
               <span style="background:#4f46e5; color:#fff; font-size:0.72rem; font-weight:800; padding:0.15rem 0.5rem; border-radius:4px; letter-spacing:0.5px;">CONTOH 例如 (Lìrú)</span>
-              <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Jawaban Contoh: [ A ✓ ] (时间 / shíjiān)</span>
+              <span class="pair-answer-label" style="font-size:0.8rem; color:#16a34a; font-weight:700;">Jawaban Contoh: [ A ✓ ] (<span class="opt-hz">时间</span><span class="opt-py"> / shíjiān</span>)</span>
             </div>
 
             <!-- Pernyataan -->
@@ -3562,7 +3569,7 @@
           <div class="item-content">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.45rem;">
               <span style="background:#4f46e5; color:#fff; font-size:0.72rem; font-weight:800; padding:0.15rem 0.5rem; border-radius:4px;">SOAL 19 (第 19 题)</span>
-              <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Jawaban: [ A ✓ ] (在家里 / zài jiā li)</span>
+              <span class="pair-answer-label" style="font-size:0.8rem; color:#16a34a; font-weight:700;">Jawaban: [ A ✓ ] (<span class="opt-hz">在家里</span><span class="opt-py"> / zài jiā li</span>)</span>
             </div>
 
             <!-- Pernyataan -->
@@ -3626,7 +3633,7 @@
           <div class="item-content">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.45rem;">
               <span style="background:#4f46e5; color:#fff; font-size:0.72rem; font-weight:800; padding:0.15rem 0.5rem; border-radius:4px;">SOAL 20 (第 20 题)</span>
-              <span style="font-size:0.8rem; color:#16a34a; font-weight:700;">Jawaban: [ A ✓ ] (米饭 / mǐfàn)</span>
+              <span class="pair-answer-label" style="font-size:0.8rem; color:#16a34a; font-weight:700;">Jawaban: [ A ✓ ] (<span class="opt-hz">米饭</span><span class="opt-py"> / mǐfàn</span>)</span>
             </div>
 
             <!-- Pernyataan -->
@@ -3790,9 +3797,9 @@
       if (u.isHz) {
         u.syllCount = 1;
       } else if (u.isNum) {
-        // Angka seperti '7:15' akan memayungi sisa suku kata pinyin (misal 'qī diǎn shíwǔ fēn' = 5 suku kata)
-        // Angka '10:00' / '12:00' memayungi 'shí diǎn' / 'shí'èr diǎn'
-        if (numCount === 1) {
+        if (totalSylls <= hzCount) {
+          u.syllCount = 0;
+        } else if (numCount === 1) {
           u.syllCount = Math.max(1, totalSylls - hzCount);
         } else {
           u.syllCount = Math.max(1, Math.round((totalSylls - hzCount) / numCount));
@@ -3821,6 +3828,8 @@
     // 7. Susun HTML Pinyin berwarna selaras
     let outPy = '';
     let sIdx = 0;
+    const numUnits = contentUnits.filter(u => u.isNum && u.syllCount === 0);
+    let numIdx = 0;
     let remaining = pinyinText;
 
     while (remaining.length > 0) {
@@ -3831,7 +3840,15 @@
         continue;
       }
 
-      const nonLetterMatch = remaining.match(/^[^a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
+      const pyNumMatch = numUnits.length > numIdx ? remaining.match(/^\d+(?::\d+)?/) : null;
+      if (pyNumMatch) {
+        const nColor = numUnits[numIdx++].color;
+        outPy += '<span style="color:' + nColor + ';font-weight:700;">' + pyNumMatch[0] + '</span>';
+        remaining = remaining.substring(pyNumMatch[0].length);
+        continue;
+      }
+
+      const nonLetterMatch = remaining.match(/^[^0-9a-zA-ZāáǎàōóǒòēéěèīíǐìūúǔùüǖǘǚǜĀÁǍÀŌÓǑÒĒÉĚÈĪÍǏÌŪÚǓÙǕǗǙǛv<]+/);
       if (nonLetterMatch) {
         outPy += nonLetterMatch[0];
         remaining = remaining.substring(nonLetterMatch[0].length);
@@ -3987,8 +4004,8 @@
       pyEl.innerHTML = res.pinyin;
     });
 
-    // 10. Reading Part 2 Pilihan Kartu (.pair-choice-card: .opt-hz & .opt-py)
-    document.querySelectorAll('.pair-choice-card').forEach(card => {
+    // 10. Reading Part 2 Pilihan Kartu (.pair-choice-card & .pair-answer-label: .opt-hz & .opt-py)
+    document.querySelectorAll('.pair-choice-card, .pair-answer-label').forEach(card => {
       const hzEl = card.querySelector('.opt-hz');
       const pyEl = card.querySelector('.opt-py');
       if (!hzEl || !pyEl) return;
@@ -4008,10 +4025,14 @@
       if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
       if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
 
+      const hadParens = /^\(/.test(pyEl.dataset.origHtml) && /\)$/.test(pyEl.dataset.origHtml);
       let pyText = pyEl.dataset.origHtml.replace(/^[((]/, '').replace(/[))]$/, '');
+      const slashMatch = pyText.match(/^(\s*\/\s*)/);
+      const pyPrefix = slashMatch ? slashMatch[1] : '';
+      if (pyPrefix) pyText = pyText.substring(pyPrefix.length);
       const res = colorizePair(hzEl.dataset.origHtml, pyText);
       hzEl.innerHTML = res.hanzi;
-      pyEl.innerHTML = '(' + res.pinyin + ')';
+      pyEl.innerHTML = hadParens ? '(' + res.pinyin + ')' : pyPrefix + res.pinyin;
     });
 
     // 12. Reading Part 3 Kotak Kalimat Rumpang (.cloze-sentence-display, .cloze-hz & .cloze-py)
@@ -4036,10 +4057,14 @@
       if (!hzEl.dataset.origHtml) hzEl.dataset.origHtml = hzEl.innerHTML;
       if (!pyEl.dataset.origHtml) pyEl.dataset.origHtml = pyEl.innerHTML;
 
+      const hadParens = /^\(/.test(pyEl.dataset.origHtml) && /\)$/.test(pyEl.dataset.origHtml);
       let pyText = pyEl.dataset.origHtml.replace(/^[((]/, '').replace(/[))]$/, '');
+      const slashMatch = pyText.match(/^(\s*\/\s*)/);
+      const pyPrefix = slashMatch ? slashMatch[1] : '';
+      if (pyPrefix) pyText = pyText.substring(pyPrefix.length);
       const res = colorizePair(hzEl.dataset.origHtml, pyText);
       hzEl.innerHTML = res.hanzi;
-      pyEl.innerHTML = '(' + res.pinyin + ')';
+      pyEl.innerHTML = hadParens ? '(' + res.pinyin + ')' : pyPrefix + res.pinyin;
     });
   }
 
