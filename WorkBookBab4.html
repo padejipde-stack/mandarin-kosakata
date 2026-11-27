@@ -2696,7 +2696,11 @@
         <!-- Penjelasan Jawaban Contoh -->
         <div style="background:#ffffff; border:1px solid #ddd6fe; border-radius:8px; padding:0.75rem 1rem;">
           <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
-            <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: A ✓ (好的，谢谢！)</span>
+            <span style="display:inline-flex; align-items:center; gap:0.35rem; flex-wrap:wrap; background:#dcfce7; border:1px solid #86efac; color:#15803d; font-size:0.78rem; font-weight:800; padding:0.2rem 0.65rem; border-radius:6px;">
+              <span>Jawaban: A ✓</span>
+              <span class="opt-hz" style="font-family:'Noto Sans SC',sans-serif; font-size:0.95rem;">好的，谢谢！</span>
+              <span class="opt-py" style="font-weight:600;">(Hǎo de, xièxie!)</span>
+            </span>
             <span style="font-size:1.4rem;">🥛 🤝</span>
           </div>
           <div class="word-arti" style="font-size:0.84rem; color:#475569; line-height:1.55;">
@@ -2739,7 +2743,11 @@
           <!-- Kotak Jawaban & Pembahasan -->
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
-              <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: C ✓ (我女朋友。 - Wǒ nǚpéngyou.)</span>
+              <span style="display:inline-flex; align-items:center; gap:0.35rem; flex-wrap:wrap; background:#dcfce7; border:1px solid #86efac; color:#15803d; font-size:0.78rem; font-weight:800; padding:0.2rem 0.65rem; border-radius:6px;">
+                <span>Jawaban: C ✓</span>
+                <span class="opt-hz" style="font-family:'Noto Sans SC',sans-serif; font-size:0.95rem;">我女朋友。</span>
+                <span class="opt-py" style="font-weight:600;">(Wǒ nǚpéngyou.)</span>
+              </span>
               <span style="font-size:1.4rem;">👩 💖</span>
             </div>
             <div class="word-arti" style="font-size:0.82rem; color:#475569; line-height:1.55;">
@@ -2779,7 +2787,11 @@
           <!-- Kotak Jawaban & Pembahasan -->
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
-              <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: D ✓ (是的。 - Shì de.)</span>
+              <span style="display:inline-flex; align-items:center; gap:0.35rem; flex-wrap:wrap; background:#dcfce7; border:1px solid #86efac; color:#15803d; font-size:0.78rem; font-weight:800; padding:0.2rem 0.65rem; border-radius:6px;">
+                <span>Jawaban: D ✓</span>
+                <span class="opt-hz" style="font-family:'Noto Sans SC',sans-serif; font-size:0.95rem;">是的。</span>
+                <span class="opt-py" style="font-weight:600;">(Shì de.)</span>
+              </span>
               <span style="font-size:1.4rem;">🇫🇷 👍</span>
             </div>
             <div class="word-arti" style="font-size:0.82rem; color:#475569; line-height:1.55;">
@@ -2819,7 +2831,11 @@
           <!-- Kotak Jawaban & Pembahasan -->
           <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:0.75rem 1rem;">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
-              <span style="background:#10b981; color:#fff; font-size:0.75rem; font-weight:800; padding:0.15rem 0.55rem; border-radius:6px;">Jawaban: B ✓ (他今年 5 岁。 - Tā jīnnián 5 suì.)</span>
+              <span style="display:inline-flex; align-items:center; gap:0.35rem; flex-wrap:wrap; background:#dcfce7; border:1px solid #86efac; color:#15803d; font-size:0.78rem; font-weight:800; padding:0.2rem 0.65rem; border-radius:6px;">
+                <span>Jawaban: B ✓</span>
+                <span class="opt-hz" style="font-family:'Noto Sans SC',sans-serif; font-size:0.95rem;">他今年 5 岁。</span>
+                <span class="opt-py" style="font-weight:600;">(Tā jīnnián 5 suì.)</span>
+              </span>
               <span style="font-size:1.4rem;">👦 🎂</span>
             </div>
             <div class="word-arti" style="font-size:0.82rem; color:#475569; line-height:1.55;">
@@ -3322,13 +3338,27 @@
 
       const match = remaining.match(PINYIN_SYLL_RE);
       if (match) {
-        const syll = match[0];
-        const color = charColors[hzIdx];
-        if (color) {
-          outPy += '<span style="color:' + color + ';font-weight:700;">' + syll + '</span>';
-          hzIdx++;
+        let syll = match[0];
+        const endsWithR = /r$/i.test(syll) && !/^[eēéěè]r$/i.test(syll);
+        const isErhua = endsWithR && hzIdx + 1 < hzList.length && hzList[hzIdx + 1] === '儿';
+        if (endsWithR && !isErhua) {
+          syll = syll.slice(0, -1);
+        }
+        if (isErhua) {
+          const rootSyll = syll.slice(0, -1);
+          const rootColor = charColors[hzIdx];
+          const erColor = charColors[hzIdx + 1];
+          outPy += (rootColor ? '<span style="color:' + rootColor + ';font-weight:700;">' + rootSyll + '</span>' : rootSyll) +
+                   (erColor ? '<span style="color:' + erColor + ';font-weight:700;">r</span>' : 'r');
+          hzIdx += 2;
         } else {
-          outPy += syll;
+          const color = charColors[hzIdx];
+          if (color) {
+            outPy += '<span style="color:' + color + ';font-weight:700;">' + syll + '</span>';
+            hzIdx++;
+          } else {
+            outPy += syll;
+          }
         }
         remaining = remaining.substring(syll.length);
       } else {

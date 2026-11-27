@@ -3961,32 +3961,61 @@
   }
 
   // Mewarnai pasangan teks Hanzi dan Pinyin per-karakter / per-kata
+  // ✅ WAJIB (Rule CLAUDE.md): Karakter/suku kata yang berdekatan/berdampingan TIDAK BOLEH memiliki warna yang sama!
   function colorizePair(hanziText, pinyinText, charColorMap) {
     if (!hanziText || !pinyinText) return { hanzi: hanziText, pinyin: pinyinText };
 
-    // 1. Ekstrak semua karakter Hanzi dan pastikan punya warna
-    const hzList = [];
-    for (const ch of hanziText) {
+    const cleanHanzi = hanziText.replace(/<[^>]+>/g, '');
+    // 1. Tentukan warna tiap karakter Hanzi dengan aturan: HURUF BERDEKATAN DILARANG SAMA WARNA (candidate !== prevColor)
+    const hzItems = [];
+    let prevColor = null;
+    for (let i = 0; i < cleanHanzi.length; i++) {
+      const ch = cleanHanzi[i];
       if (isHanziChar(ch)) {
-        hzList.push(ch);
-        if (!charColorMap[ch]) {
-          const nextColor = COLOR_PALETTE[Object.keys(charColorMap).length % COLOR_PALETTE.length];
-          charColorMap[ch] = nextColor;
+        let chosenColor;
+        if (charColorMap && charColorMap[ch] && charColorMap[ch] !== prevColor) {
+          chosenColor = charColorMap[ch];
+        } else {
+          const baseIdx = Object.keys(charColorMap || {}).length + i;
+          let candidate = COLOR_PALETTE[baseIdx % COLOR_PALETTE.length];
+          let offset = 0;
+          while (candidate === prevColor && offset < COLOR_PALETTE.length) {
+            offset++;
+            candidate = COLOR_PALETTE[(baseIdx + offset) % COLOR_PALETTE.length];
+          }
+          chosenColor = candidate;
+          if (charColorMap && !charColorMap[ch]) {
+            charColorMap[ch] = chosenColor;
+          }
         }
+        hzItems.push({ ch, color: chosenColor });
+        prevColor = chosenColor;
       }
     }
+    if (!hzItems.length) return { hanzi: hanziText, pinyin: pinyinText };
 
-    // 2. Beri warna pada tiap karakter Hanzi
+    // 2. Beri warna pada tiap karakter Hanzi (pertahankan tag HTML jika ada)
     let outHz = '';
-    for (const ch of hanziText) {
-      if (isHanziChar(ch)) {
-        outHz += '<span style="color:' + charColorMap[ch] + ';font-weight:700;">' + ch + '</span>';
+    let hzAssignIdx = 0;
+    let remHz = hanziText;
+    while (remHz.length > 0) {
+      const tagMatch = remHz.match(/^<[^>]+>/);
+      if (tagMatch) {
+        outHz += tagMatch[0];
+        remHz = remHz.substring(tagMatch[0].length);
+        continue;
+      }
+      const ch = remHz[0];
+      if (isHanziChar(ch) && hzAssignIdx < hzItems.length) {
+        const item = hzItems[hzAssignIdx++];
+        outHz += '<span style="color:' + item.color + ';font-weight:700;">' + ch + '</span>';
       } else {
         outHz += ch;
       }
+      remHz = remHz.substring(1);
     }
 
-    // 3. Beri warna pada tiap suku kata Pinyin yang bersesuaian
+    // 3. Beri warna pada tiap suku kata Pinyin yang bersesuaian (termasuk dukungan Erhua 儿)
     let outPy = '';
     let hzIdx = 0;
     let remaining = pinyinText;
@@ -4028,12 +4057,25 @@
       const match = remaining.match(PINYIN_SYLL_RE);
       if (match) {
         const syll = match[0];
-        const pairedHz = hzList[hzIdx];
-        if (pairedHz && charColorMap[pairedHz]) {
-          outPy += '<span style="color:' + charColorMap[pairedHz] + ';font-weight:700;">' + syll + '</span>';
-          hzIdx++;
+        const isErhua = /r$/i.test(syll) &&
+                        !/^[eēéěè]r$/i.test(syll) &&
+                        hzIdx + 1 < hzItems.length &&
+                        hzItems[hzIdx + 1].ch === '儿';
+        if (isErhua) {
+          const rootSyll = syll.slice(0, -1);
+          const rootItem = hzItems[hzIdx];
+          const erItem = hzItems[hzIdx + 1];
+          outPy += '<span style="color:' + rootItem.color + ';font-weight:700;">' + rootSyll + '</span>' +
+                   '<span style="color:' + erItem.color + ';font-weight:700;">r</span>';
+          hzIdx += 2;
         } else {
-          outPy += syll;
+          const item = hzItems[hzIdx];
+          if (item) {
+            outPy += '<span style="color:' + item.color + ';font-weight:700;">' + syll + '</span>';
+            hzIdx++;
+          } else {
+            outPy += syll;
+          }
         }
         remaining = remaining.substring(syll.length);
       } else {
